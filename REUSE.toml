@@ -1,0 +1,19 @@
+version = 1
+
+[[annotations]]
+path = ["**"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Rob Kler Soares da Silva Junior, Bruno Valério, Matheus Hoffmann"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["scripts/**", ".github/**", "Makefile", "build/Makefile"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
+SPDX-License-Identifier = "AGPL-3.0-only"
+
+[[annotations]]
+path = ["format/**"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
+SPDX-License-Identifier = "MIT"
