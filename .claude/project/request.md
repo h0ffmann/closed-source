@@ -36,7 +36,9 @@ First paper should be. Closed Source: The God that failed
 | 10 | this folder |
 | follow-up: ASD-STE100 pass | `papers/closed-source/prose-ste/`, `STE100.md`, `.claude/commands/ste100.md`, `scripts/ste_check.py` |
 | follow-up: Nash, obfuscation, securing source | `papers/closed-source/prose/05a-securing-source.md` (section 6) |
-| follow-up: arXiv setup | `scripts/arxiv.py`, `make arxiv`, `docs/4-ways-of-working/releasing.md` |
+| follow-up: arXiv setup | `scripts/arxiv.py`, `make arxiv` (now `just arxiv`), `docs/4-ways-of-working/releasing.md` |
+| follow-up: just, tooling in picasso | `justfile`, `flake.nix`, `flake.lock`; h0ffmann/picasso#114 (`labs/paper`) |
+| follow-up: release guide and secrets | `README.md` ("Secrets and keys", "Release"), `scripts/release.sh` (signed tags) |
 
 "REA" was read as reverse engineering, AI-assisted; the paper says so in section 4.
 
@@ -54,4 +56,16 @@ do a sta100 pass, like we have in h0ffmann/picasso, without changing meaning
 
 ```text
 add some John Nash work to be cited in this paper. The paper should cite obsfuction terchniques like I used in h0ffmann/nashkell, its limitations, and how to secure source code in 2026, criptography on Git plus Keys(with 2FA)
+```
+
+## Second pull request (after #1 merged)
+
+Hoffmann, 2026-10-12 19:22 and 19:28 UTC, verbatim:
+
+```text
+use just, not makefile. ADD all binary tooling required in this repository to picasso, create a PR there (with new lab paper)
+```
+
+```text
+in the same PR add clear instructions on read on how to release with just to create NEW ZENODO record + NEW PDF on arvIX. ANY SECRET TOOLING MUST BE CLEAR on readme (keys, token needed)
 ```

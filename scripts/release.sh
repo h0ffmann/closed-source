@@ -5,7 +5,8 @@
 #   2. refuse a version that isn't vMAJOR.MINOR.PATCH, already exists, or releases nothing new
 #   3. tag and push; .github/workflows/release.yml builds the PDF, attaches it to a GitHub release
 #      and, if the ZENODO_TOKEN secret is set, uploads only the PDF to a Zenodo *draft*
-#   scripts/release.sh 0.1.0 [--dry-run]
+#   4. sign the tag when Git has a signing key (git config user.signingkey), else annotate it
+#   just release 0.1.0 [--dry-run]   (= scripts/release.sh 0.1.0 [--dry-run])
 set -euo pipefail
 dry_run=0 version=""
 for a in "$@"; do
@@ -14,7 +15,7 @@ for a in "$@"; do
     *) version="$a" ;;
   esac
 done
-[ -n "$version" ] || { echo "release: name the version, e.g. scripts/release.sh 0.1.0" >&2; exit 1; }
+[ -n "$version" ] || { echo "release: name the version, e.g. just release 0.1.0" >&2; exit 1; }
 [ "$(git branch --show-current)" = main ] || { echo "release: check out main first" >&2; exit 1; }
 [ -z "$(git status --porcelain --untracked-files=no)" ] || { echo "release: working tree is dirty" >&2; exit 1; }
 git fetch -q --tags origin main
@@ -31,12 +32,14 @@ if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
   echo "release: tag $tag already exists" >&2
   exit 1
 fi
+sign=-a
+if [ -n "$(git config --get user.signingkey || true)" ]; then sign=-s; fi
 echo "release: $tag at $(git log -1 --format='%h %s') (previous: ${prev:-none})"
 if [ "$dry_run" -eq 1 ]; then
-  echo "+ git tag -a $tag -m 'closed-source $tag'"
+  echo "+ git tag $sign $tag -m 'closed-source $tag'"
   echo "+ git push origin $tag"
   exit 0
 fi
-git tag -a "$tag" -m "closed-source $tag"
+git tag "$sign" "$tag" -m "closed-source $tag"
 git push origin "$tag"
 echo "release: pushed $tag. Review the Zenodo draft, then publish it there to mint the DOI."

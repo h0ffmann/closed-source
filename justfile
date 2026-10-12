@@ -1,0 +1,85 @@
+# Paper Fabric. `just` builds every paper; `just --list` shows the recipes.
+# Markdown prose -> pandoc (pandoc-crossref, citeproc, BibTeX) -> LaTeX -> XeLaTeX, after Sandy
+# Maguire's book builds (isovector/thinking-with-types). The tools come from picasso's paper lab:
+# `nix develop` (flake.nix) or `just shell`. Runs with the just 1.21 of Ubuntu 24.04.
+#
+# A paper is papers/<slug>/ with metadata.md, prose/NN-*.md and refs.bib. A paper with a
+# prose-ste/ directory (its ASD-STE100 text) also builds pdf/<slug>-ste.pdf; prose-ste/00-metadata.md
+# overrides metadata.md keys such as the abstract.
+set shell := ["bash", "-euo", "pipefail", "-c"]
+
+pandoc_opts := "--from markdown+fancy_lists+raw_tex -F pandoc-crossref --citeproc --metadata link-citations=true --number-sections --top-level-division=section --fail-if-warnings -s --template format/tex/template.tex -t latex --metadata-file format/crossref.yaml"
+
+# Build every paper, or the papers named: pdf/<slug>.pdf (and pdf/<slug>-ste.pdf).
+build *slugs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    slugs="{{slugs}}"
+    [ -n "$slugs" ] || slugs="$(ls papers)"
+    mkdir -p build/tex pdf
+    # The revision stamped on every page: short hash + commit count.
+    printf '%s+%s' "$(git rev-parse --short HEAD)" "$(git rev-list --count HEAD)" > build/.current-revision
+    for p in $slugs; do
+      [ -d "papers/$p" ] || { echo "build: no paper papers/$p" >&2; exit 1; }
+      just _pdf "$p" prose "$p"
+      if [ -d "papers/$p/prose-ste" ]; then just _pdf "$p" prose-ste "$p-ste"; fi
+    done
+
+# One PDF: papers/<slug>/<dir>/*.md -> build/tex/<out>.tex -> pdf/<out>.pdf (XeLaTeX twice).
+_pdf slug dir out:
+    pandoc {{pandoc_opts}} --bibliography papers/{{slug}}/refs.bib -o build/tex/{{out}}.tex \
+      papers/{{slug}}/metadata.md papers/{{slug}}/{{dir}}/*.md
+    cd build && for _ in 1 2; do \
+      xelatex -interaction=nonstopmode -halt-on-error tex/{{out}}.tex > /dev/null \
+        || { tail -n 30 {{out}}.log >&2; exit 1; }; \
+    done
+    cp build/{{out}}.pdf pdf/{{out}}.pdf
+    @echo "build: pdf/{{out}}.pdf"
+
+# Build, then check the reference logs and that each STE text keeps its citations and numbers.
+check: build
+    python3 scripts/refs_check.py papers/*/refs.bib
+    for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
+
+# Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
+arxiv: build
+    for p in $(ls papers); do python3 scripts/arxiv.py "$p"; done
+
+# Every script's --self-test (what CI runs before the build).
+self-test:
+    python3 scripts/refs_check.py --self-test
+    python3 scripts/arxiv.py --self-test
+    python3 scripts/zenodo_upload.py --self-test
+
+# Regenerate CITATION.cff and the README citation block from .zenodo.json.
+citation:
+    python3 scripts/citation.py
+
+# Remove every build output.
+clean:
+    rm -rf build pdf
+
+# Enter the toolchain: pandoc, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh (Nix).
+shell:
+    nix develop
+
+# Tag a release on main: VERSION is MAJOR.MINOR.PATCH. CI then builds the PDFs, makes the GitHub
+# release with the arXiv bundles and, with ZENODO_TOKEN set, a Zenodo draft. Add --dry-run first.
+release version *flags:
+    scripts/release.sh {{version}} {{flags}}
+
+# Upload pdf/*.pdf from this machine to a Zenodo draft (needs ZENODO_TOKEN; CI does this on a tag).
+zenodo-draft version: check
+    @[ -n "${ZENODO_TOKEN:-}" ] || { echo "zenodo-draft: export ZENODO_TOKEN first (README, Secrets)" >&2; exit 1; }
+    python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}} \
+      ${ZENODO_CONCEPT_RECID:+--concept-recid "$ZENODO_CONCEPT_RECID"}
+
+# The same against sandbox.zenodo.org, to rehearse (needs ZENODO_SANDBOX_TOKEN).
+zenodo-sandbox version: check
+    @[ -n "${ZENODO_SANDBOX_TOKEN:-}" ] || { echo "zenodo-sandbox: export ZENODO_SANDBOX_TOKEN first (README, Secrets)" >&2; exit 1; }
+    ZENODO_URL=https://sandbox.zenodo.org ZENODO_TOKEN="$ZENODO_SANDBOX_TOKEN" \
+      python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}}
+
+# What a Zenodo draft would contain, with no network and no token.
+zenodo-dry-run version: build
+    python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}} --dry-run

@@ -1,6 +1,6 @@
 % SPDX-License-Identifier: MIT
 % Paper Fabric article template for pandoc. Compiles with XeLaTeX (the local and CI build) and
-% with pdfLaTeX, which is the engine arXiv runs on submitted sources (make arxiv). Modelled on the layout of Sandy Maguire's
+% with pdfLaTeX, which is the engine arXiv runs on submitted sources (just arxiv). Modelled on the layout of Sandy Maguire's
 % book templates (isovector/thinking-with-types, format/tex/template.tex): one hand-written
 % template, metadata from the paper's metadata.md, and the Git revision stamped on every page.
 % The CSL and table blocks follow pandoc's default LaTeX template (pandoc -D latex).
@@ -53,24 +53,34 @@ $if(tables)$
 $endif$
 
 $if(csl-refs)$
+% citeproc citations and the reference list, as in pandoc 3.7's common.latex (pandoc >= 3.1.8
+% writes \citeproc and \bibitem). The \small in the list is ours.
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ \let\@cite@ofmt\@firstofone
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit}
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2]
- {\setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\small\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
-  \setlength{\parskip}{#2\cslentryspacingunit}
-  \small}
- {}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 $endif$
 
@@ -94,7 +104,7 @@ $endfor$
   pdfcreator={Paper Fabric (pandoc + XeLaTeX)}}
 \urlstyle{same}
 
-% The build writes the short Git hash and commit count here (build/Makefile, .current-revision).
+% The build writes the short Git hash and commit count here (justfile, build/.current-revision).
 \newcommand{\revision}{\IfFileExists{.current-revision}{\input{.current-revision}}{unversioned}}
 
 \pagestyle{fancy}

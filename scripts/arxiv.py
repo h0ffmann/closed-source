@@ -3,7 +3,7 @@
 """arxiv — package a paper's LaTeX source for arXiv and write its submission metadata.
 
 arXiv compiles submitted TeX itself, with pdfLaTeX, and refuses PDFs that were produced from TeX.
-So this script takes the .tex that `make` generates (citations already rendered by citeproc, so no
+So this script takes the .tex that `just build` generates (citations already rendered by citeproc, so no
 .bbl is needed), freezes the Git revision into it, checks that it compiles with pdfLaTeX in a
 clean directory holding only the bundle, and writes:
 
@@ -13,7 +13,7 @@ clean directory holding only the bundle, and writes:
 Submitting stays a human step on arxiv.org (endorsement, licence choice and the final preview are
 the submitter's). Metadata comes from the paper's metadata.md, `arxiv:` block included.
 
-    scripts/arxiv.py closed-source           # needs build/tex/closed-source.tex (make closed-source)
+    scripts/arxiv.py closed-source           # needs build/tex/closed-source.tex (just build closed-source)
     scripts/arxiv.py closed-source --no-compile
     scripts/arxiv.py --self-test
 """
@@ -113,7 +113,7 @@ def compile_check(tarball: Path, slug: str) -> None:
 def package(slug: str, compile_: bool) -> int:
     src = ROOT / "build" / "tex" / f"{slug}.tex"
     if not src.exists():
-        print(f"arxiv: {src.relative_to(ROOT)} is missing; run `make {slug}` first", file=sys.stderr)
+        print(f"arxiv: {src.relative_to(ROOT)} is missing; run `just build {slug}` first", file=sys.stderr)
         return 1
     text, errs = form_fields(metadata(slug))
     if errs:

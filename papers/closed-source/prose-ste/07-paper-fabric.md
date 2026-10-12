@@ -19,9 +19,10 @@ configuration that produced a paper are published with it.
 ## Pipeline
 
 The toolchain follows the books of Sandy Maguire [@maguire2019thinking]. The prose is in Markdown,
-with one file for each section. A `Makefile` runs pandoc with a custom LaTeX template and a BibTeX
-bibliography, and then runs XeLaTeX. The `Makefile` then stamps the PDF with the Git revision that
-the build used. Pandoc's built-in citeproc resolves the citations. The build treats warnings as
+with one file for each section. A `justfile` runs pandoc with a custom LaTeX template and a BibTeX
+bibliography, and then runs XeLaTeX. The `justfile` then stamps the PDF with the Git revision that
+the build used. A Nix flake sets each tool to one version, through the `paper` lab of picasso
+[@hoffmann2026picasso]. Pandoc's built-in citeproc resolves the citations. The build treats warnings as
 errors, so an unresolved citation key stops the build.
 
 Each paper is in its own directory, `papers/<slug>/`, with a `metadata.md`, numbered prose files

@@ -1,0 +1,48 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1791594108,
+        "narHash": "sha256-XK4KceonkwD8LuMAt/vNrz982mXJM5jeHAxMwsUXXAQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6510408d147d8c5e6d76043e899e9251756f6a75",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "paper": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "dir": "labs/paper",
+        "lastModified": 1791833608,
+        "narHash": "sha256-5FVx3kll7G7nvuudsvGgrY+XYA3xDEyvfr/zOTpjh5s=",
+        "owner": "h0ffmann",
+        "repo": "picasso",
+        "rev": "a697d5c53cfbe7eaff0bdd0dcf54aafd7e52c6cf",
+        "type": "github"
+      },
+      "original": {
+        "dir": "labs/paper",
+        "owner": "h0ffmann",
+        "ref": "labs/paper",
+        "repo": "picasso",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "paper": "paper"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
