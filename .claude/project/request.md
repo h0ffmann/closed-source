@@ -123,3 +123,11 @@ change hardrule to 100pgs, 2 pgs per author
 ```
 
 Recorded as the hard rule in AGENTS.md, with the roster in papers/closed-source/THINKERS.md.
+
+Hoffmann, 2026-10-12 20:58 UTC, verbatim:
+
+```text
+another hardrule, PTBR/EN distribution
+```
+
+Read as: every release ships a Brazilian Portuguese and an English edition. Recorded in AGENTS.md.

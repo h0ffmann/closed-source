@@ -39,6 +39,13 @@ Nobody. `papers/closed-source/THINKERS.md` is the roster, and `just check` fails
 exactly 50 distinct thinkers. A change that breaks the 100-page count is wrong. The current
 11-section text is material for those pages; ask the owner before you restructure it.
 
+## Two languages (hard rule)
+
+The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October
+2026). Every release ships both editions, each with the same 50 thinkers and 100 pages. A change
+to one edition's facts goes into the other in the same pull request, as `prose/` and `prose-ste/`
+already do. The pt-BR edition does not exist yet.
+
 ## Borrow, cite, propagate
 
 1. **Borrow** only what the licence allows. Read the licence first and record it. Keep the
