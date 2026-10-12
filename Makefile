@@ -50,3 +50,4 @@ citation:
 
 clean:
 	$(MAKE) -C build clean
+	rm -f pdf/*.pdf
