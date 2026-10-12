@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # A closed-source confession: Chemo-RX {#sec:chemorx}
 
 Matheus Hoffmann writes this section in the first person. The passages with the mark

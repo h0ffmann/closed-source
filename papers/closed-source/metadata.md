@@ -63,3 +63,4 @@ numbersections: true
 link-citations: true
 colorlinks: true
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->

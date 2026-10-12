@@ -2,6 +2,7 @@
 description: Refresh OUROBORIC.md and OUROBORIC_RESEARCH.md from the public ouroboric-dev repositories
 argument-hint: [optional focus, e.g. "ethics" or "yggdrasil"]
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 Refresh the two Ouroboric digests at the root of this repository. $ARGUMENTS, if given, is a focus
 for this run; still keep both files complete.

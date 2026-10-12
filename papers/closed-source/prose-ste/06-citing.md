@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # The ethical answer: professional citation {#sec:citing}
 
 If anyone can read your work, one protection remains: the norm that each person who uses the work

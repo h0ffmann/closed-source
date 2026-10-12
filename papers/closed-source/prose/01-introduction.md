@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Introduction {#sec:intro}
 
 In 1949 six writers who had left the Communist movement published their reasons in a book called

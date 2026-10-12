@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # The request
 
 Posted by Hoffmann in the project chat on 2026-10-12 at 18:33 UTC. Verbatim, typos included.
@@ -161,3 +162,23 @@ Another hardhule (ammend existent): Book is 100pg + nagori snapshot (partial)
 
 Read as: after the 100 pages, a partial snapshot of the private h0ffmann/nagori repository, outside
 the page count; the owner chooses its contents. Amended in AGENTS.md.
+
+Hoffmann, 2026-10-12 21:38 UTC, verbatim:
+
+```text
+Another Hardhule: Every MD is citted. Main author, Last author. Create PERSONAS.md
+```
+
+Read as: every tracked Markdown file carries a hidden cite line with a main and a last author, both
+personas defined in PERSONAS.md (Matheus Hoffmann, Mr. Nobody, Claude); scripts/cite_check.py
+enforces it in `just check`. Existing files: main Claude, last Matheus Hoffmann.
+
+Hoffmann, 2026-10-12 21:40 UTC, verbatim:
+
+```text
+Hardrule: just vm paper / book  should render the book locally on any Ubuntu using picasso labs paper / book.
+```
+
+Read as: `just paper` and `just book` work on any Ubuntu with only Nix and apt's just, with every
+tool from picasso's paper lab. The book needs no tool beyond the paper lab, so there is no separate
+book lab. CI's `ubuntu-just` job proves it.

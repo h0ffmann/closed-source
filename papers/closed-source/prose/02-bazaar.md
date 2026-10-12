@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # The bazaar that worked: Linus Torvalds, Linux and Git {#sec:bazaar}
 
 On 25 August 1991, a student at the University of Helsinki posted to the Usenet group

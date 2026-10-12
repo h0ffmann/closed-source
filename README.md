@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Closed Source: The God that Failed
 
 The first paper made with **Paper Fabric**, an open, self-improving pipeline for technical papers
@@ -16,6 +17,15 @@ for what must change before v1 and before this repository moves to the `ourobori
 organisation.
 
 ## Build the PDF
+
+On any Ubuntu, you need only Nix and just. Nothing else is installed on the machine:
+
+```sh
+curl -fsSL https://install.determinate.systems/nix | sh -s -- install   # Nix, once
+sudo apt install just                                                    # just 1.21 on 24.04
+just paper     # the PDFs, in picasso's paper lab -> pdf/
+just book      # the PDFs and the book's checks (50 thinkers, cite lines, references, STE)
+```
 
 The tools (pandoc 3.7, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh) come from the
 `paper` lab of [h0ffmann/picasso](https://github.com/h0ffmann/picasso/tree/main/labs/paper),
@@ -80,6 +90,7 @@ says more, with the other books behind this repository.
 | [`papers/closed-source/THINKERS.md`](papers/closed-source/THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: Pirsig, Hoppe, Kinsella, Boldrin and Levine |
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
+| [`PERSONAS.md`](PERSONAS.md) | the personas that every Markdown file cites as its main and last author (hard rule) |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
 ## Secrets and keys

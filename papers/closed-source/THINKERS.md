@@ -4,6 +4,7 @@ status: draft
 date: 2026-10-12
 related: [AGENTS.md, BOOKS.md, refs.bib]
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # The 50 thinkers
 

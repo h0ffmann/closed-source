@@ -4,6 +4,7 @@ status: draft
 date: 2026-10-12
 related: [AGENTS.md, .claude/commands/update-ouroboric.md, scripts/ouroboric.py]
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # OUROBORIC RESEARCH
 

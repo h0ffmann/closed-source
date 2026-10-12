@@ -5,6 +5,7 @@ date: 2026-10-12
 related: [../charter.md, "https://github.com/ouroboric-dev/asgard/blob/main/templates/readiness/checklist.md", "https://github.com/ouroboric-dev/ouroboric/blob/main/docs/1-company/readiness/2026-10-11-ready-to-build.md"]
 style: direction
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Ready to promote to ouroboric-dev — assessment 2026-10-12
 

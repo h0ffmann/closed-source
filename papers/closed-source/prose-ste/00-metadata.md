@@ -24,3 +24,4 @@ abstract: |
   Ouroboric style that improves itself and that produced this preprint. I also list its own known
   limitations.
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->

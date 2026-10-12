@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Conclusion {#sec:conclusion}
 
 Closed source asked researchers to trust secrecy to protect their work. Between 2024 and 2026, that

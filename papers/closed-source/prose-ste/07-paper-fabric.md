@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Paper Fabric: an ouroboric factory for papers {#sec:fabric}
 
 Paper Fabric is the open pipeline that produced this preprint. Its design permits reuse for any

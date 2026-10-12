@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Obfuscation, Nash's letters and how to secure source code in 2026 {#sec:securing}
 
 If secrecy fails as a protection, what is left for code that must stay private, and for the
