@@ -54,6 +54,12 @@ self-test:
     python3 scripts/zenodo_upload.py --self-test
     python3 scripts/logos.py --self-test
     python3 scripts/book_check.py --self-test
+    python3 scripts/ouroboric.py --self-test
+
+# Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
+# OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
+ouroboric-sources:
+    python3 scripts/ouroboric.py
 
 # Regenerate CITATION.cff and the README citation block from .zenodo.json.
 citation:
