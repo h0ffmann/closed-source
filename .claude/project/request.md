@@ -131,3 +131,12 @@ another hardrule, PTBR/EN distribution
 ```
 
 Read as: every release ships a Brazilian Portuguese and an English edition. Recorded in AGENTS.md.
+
+Hoffmann, 2026-10-12 20:58 UTC, verbatim:
+
+```text
+Hardrule: Enemies, proclaimed AI guru
+```
+
+Read as: proclaimed AI gurus are the book's opponents and never among the 50 thinkers; the book
+answers their public, cited claims with evidence. Recorded in AGENTS.md.

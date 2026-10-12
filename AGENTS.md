@@ -46,6 +46,14 @@ The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffma
 to one edition's facts goes into the other in the same pull request, as `prose/` and `prose-ste/`
 already do. The pt-BR edition does not exist yet.
 
+## The opponent (hard rule)
+
+The book's enemies are the proclaimed AI gurus (Hoffmann, 12 October 2026): people who sell
+certainty about AI without open work that anyone can check. None of the 50 thinkers is one. The
+book argues against their claims, not their persons: quote each claim exactly, cite where it was
+made, and answer it with evidence. Name a person only for a public claim that a source records;
+never state a private fact, a motive or an accusation that no source supports.
+
 ## Borrow, cite, propagate
 
 1. **Borrow** only what the licence allows. Read the licence first and record it. Keep the

@@ -12,7 +12,8 @@ thinker gets two first-person pages. The cover names Mr. Nobody. `just check` fa
 does not have exactly 50 numbered rows, or if a name appears twice.
 
 The first 22 rows are a proposal, taken from the people the paper already cites (refs.bib) and
-from BOOKS.md. Rows 23 to 50 are open. Change any row: the owner chooses the 50.
+from BOOKS.md. Rows 23 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
+thinker here: they are the book's opponents (AGENTS.md).
 
 Status: `open` (no thinker yet), `proposed`, `chosen`, `written` (the two pages exist).
 
