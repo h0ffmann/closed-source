@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(make:*)",
+      "Bash(pandoc:*)",
+      "Bash(python3 scripts/citation.py:*)",
+      "Bash(python3 scripts/refs_check.py:*)",
+      "Bash(python3 scripts/zenodo_upload.py --self-test)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ],
+    "ask": [
+      "Bash(python3 scripts/zenodo_upload.py:*)",
+      "Bash(scripts/release.sh:*)"
+    ]
+  }
+}

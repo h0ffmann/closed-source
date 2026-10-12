@@ -1,0 +1,69 @@
+# Generated from .zenodo.json by scripts/citation.py; edit that file, then `make citation`.
+cff-version: 1.2.0
+message: "If you use Closed Source: The God that Failed, please cite it using the metadata below."
+type: software
+title: "Closed Source: The God that Failed"
+abstract: >-
+  A position paper arguing that closed source has failed as a protection, for science first. Large
+  language models now decompile binaries into re-executable source; black-box queries extract
+  parts of production models; distillation copies capabilities at industrial scale; and the
+  largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI, turns
+  on people, laptops and recruiting rather than on code that stayed secret.
+
+  Against this background the paper revisits Linus Torvalds' Linux and Git as evidence that
+  openness scales, and one author's closed undergraduate thesis as evidence of what secrecy costs
+  a researcher. It argues that the ethical answer to universal reverse engineering is professional
+  citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper
+  Fabric, the open pipeline in the Ouroboric style that produced it.
+
+  v0 is a preprint and has not been peer reviewed. This record holds the rendered PDF only;
+  sources, build and agent configuration are on GitHub.
+authors:
+  - family-names: "Soares da Silva Junior"
+    given-names: "Rob Kler"
+    orcid: "https://orcid.org/0009-0003-3102-4996"
+    affiliation: "Ouroboric DEV"
+  - family-names: "Valério"
+    given-names: "Bruno"
+    orcid: "https://orcid.org/0009-0002-9778-953X"
+    affiliation: "Ouroboric DEV"
+  - family-names: "Hoffmann"
+    given-names: "Matheus"
+    orcid: "https://orcid.org/0009-0009-1056-7661"
+    affiliation: "Ouroboric DEV; Escola Politécnica, Universidade Federal do Rio de Janeiro"
+repository-code: "https://github.com/h0ffmann/closed-source"
+url: "https://github.com/h0ffmann/closed-source"
+license: CC-BY-4.0
+keywords:
+  - "open source"
+  - "closed source"
+  - "reverse engineering"
+  - "AI-assisted reverse engineering"
+  - "decompilation"
+  - "model extraction"
+  - "knowledge distillation"
+  - "trade secrets"
+  - "software citation"
+  - "research software"
+  - "FAIR"
+  - "persistent identifiers"
+  - "AI coding agents"
+  - "Linux"
+  - "Git"
+  - "position paper"
+preferred-citation:
+  type: generic
+  title: "Closed Source: The God that Failed"
+  authors:
+    - family-names: "Soares da Silva Junior"
+      given-names: "Rob Kler"
+      orcid: "https://orcid.org/0009-0003-3102-4996"
+    - family-names: "Valério"
+      given-names: "Bruno"
+      orcid: "https://orcid.org/0009-0002-9778-953X"
+    - family-names: "Hoffmann"
+      given-names: "Matheus"
+      orcid: "https://orcid.org/0009-0009-1056-7661"
+  year: 2026
+  medium: "preprint"
+  url: "https://github.com/h0ffmann/closed-source"

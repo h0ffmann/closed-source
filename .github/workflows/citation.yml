@@ -1,0 +1,27 @@
+# citation — the metadata Zenodo and GitHub read: .zenodo.json valid against Zenodo's vocabularies,
+# CITATION.cff generated from it (scripts/citation.py, borrowed from h0ffmann/picasso and
+# marola-dev/marola), then the CFF checked by the Citation File Format project's own validator.
+name: citation
+
+on:
+  pull_request:
+    paths: [CITATION.cff, .zenodo.json, README.md, scripts/citation.py, scripts/zenodo_upload.py]
+  push:
+    branches: [main]
+    paths: [CITATION.cff, .zenodo.json, README.md, scripts/citation.py, scripts/zenodo_upload.py]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/citation.py --self-test
+      - run: python3 scripts/citation.py --check
+      - run: python3 scripts/zenodo_upload.py --self-test
+      - uses: citation-file-format/cffconvert-github-action@2.0.0
+        with:
+          args: --validate

@@ -1,0 +1,49 @@
+# release — a pushed v* tag (scripts/release.sh) becomes a GitHub release with the rendered PDFs,
+# the arXiv source bundles and their form fields attached (arXiv submission stays manual). When the repository secret ZENODO_TOKEN exists, each PDF, and nothing else, is then
+# uploaded to a Zenodo *draft* with the metadata in .zenodo.json (v0 policy: PDF only). A person
+# reviews the draft on zenodo.org and publishes it; publishing mints the permanent DOI.
+# Zenodo's GitHub webhook integration must stay OFF for this repository: it would archive the
+# source tree, not the PDF.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions: {}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: the tag is MAJOR.MINOR.PATCH and on main
+        run: |
+          [[ "$GITHUB_REF_NAME" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main
+      - run: python3 scripts/citation.py --check
+      - run: scripts/setup-toolchain.sh
+      - run: make check
+      - run: make arxiv
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" pdf/*.pdf build/arxiv/* --repo "$GITHUB_REPOSITORY" --verify-tag \
+            --generate-notes --title "closed-source $GITHUB_REF_NAME"
+      - name: upload the PDF to a Zenodo draft
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          ZENODO_CONCEPT_RECID: ${{ vars.ZENODO_CONCEPT_RECID }}
+        run: |
+          if [ -z "$ZENODO_TOKEN" ]; then
+            echo "::notice::ZENODO_TOKEN is not set; skipping the Zenodo draft"
+            exit 0
+          fi
+          # One deposit holds the paper and its ASD-STE100 text: the same work, two PDFs.
+          python3 scripts/zenodo_upload.py pdf/*.pdf --version "$GITHUB_REF_NAME" \
+            ${ZENODO_CONCEPT_RECID:+--concept-recid "$ZENODO_CONCEPT_RECID"}
