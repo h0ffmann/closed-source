@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: AGPL-3.0-only
-"""zenodo_upload — put one rendered PDF, and nothing else, into a Zenodo deposit.
+"""zenodo_upload — put a paper's rendered PDFs, and nothing else, into one Zenodo deposit.
 
 Paper Fabric's v0 release policy archives only the PDF. Zenodo's GitHub integration would archive
 the whole source tree, so it stays switched off for this repository; this script uses Zenodo's
@@ -10,7 +10,7 @@ By default it creates a **draft**: nothing is public and no DOI is registered un
 reviews the draft on zenodo.org and presses Publish (Ouroboric principle: humans steer; a DOI is
 permanent). --publish publishes straight away and is meant for a human at a terminal, not CI.
 
-    scripts/zenodo_upload.py pdf/closed-source.pdf --version v0.1.0 --dry-run
+    scripts/zenodo_upload.py pdf/closed-source.pdf pdf/closed-source-ste.pdf --version v0.1.0 --dry-run
     ZENODO_TOKEN=... scripts/zenodo_upload.py pdf/closed-source.pdf --version v0.1.0
     ZENODO_TOKEN=... scripts/zenodo_upload.py pdf/closed-source.pdf --version v0.2.0 --concept-recid 123
     scripts/zenodo_upload.py --self-test
@@ -53,7 +53,7 @@ def _call(method: str, url: str, token: str, body: bytes | None = None, ctype: s
     return json.loads(raw) if raw else {}
 
 
-def upload(pdf: Path, version: str, concept_recid: str | None, publish: bool, base: str, token: str) -> dict:
+def upload(pdfs: list[Path], version: str, concept_recid: str | None, publish: bool, base: str, token: str) -> dict:
     api = f"{base.rstrip('/')}/api/deposit/depositions"
     if concept_recid:
         # A new version of an existing record: Zenodo copies the previous files; remove them so
@@ -68,8 +68,9 @@ def upload(pdf: Path, version: str, concept_recid: str | None, publish: bool, ba
     else:
         draft = _call("POST", api, token, b"{}")
     bucket = draft["links"]["bucket"]
-    with pdf.open("rb") as fh:
-        _call("PUT", f"{bucket}/{pdf.name}", token, fh.read(), "application/octet-stream")
+    for pdf in pdfs:
+        with pdf.open("rb") as fh:
+            _call("PUT", f"{bucket}/{pdf.name}", token, fh.read(), "application/octet-stream")
     meta = deposit_metadata(json.loads(ZENODO_JSON.read_text()), version)
     draft = _call("PUT", draft["links"]["self"], token, json.dumps(meta).encode())
     if publish:
@@ -90,7 +91,7 @@ def self_test() -> int:
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
-    ap.add_argument("pdf", nargs="?", type=Path)
+    ap.add_argument("pdfs", nargs="*", type=Path, metavar="pdf")
     ap.add_argument("--version")
     ap.add_argument("--concept-recid", help="concept record id of the paper, to add a new version")
     ap.add_argument("--publish", action="store_true", help="publish now (mints a permanent DOI)")
@@ -99,15 +100,17 @@ def main() -> int:
     args = ap.parse_args()
     if args.self_test:
         return self_test()
-    if not args.pdf or not args.version:
-        ap.error("a PDF and --version are required")
-    if args.pdf.suffix.lower() != ".pdf" or not args.pdf.is_file():
-        ap.error(f"{args.pdf} is not a PDF file; v0 archives the rendered PDF only")
+    if not args.pdfs or not args.version:
+        ap.error("at least one PDF and --version are required")
+    for pdf in args.pdfs:
+        if pdf.suffix.lower() != ".pdf" or not pdf.is_file():
+            ap.error(f"{pdf} is not a PDF file; v0 archives rendered PDFs only")
     base = os.environ.get("ZENODO_URL", "https://zenodo.org")
     if args.dry_run:
         meta = deposit_metadata(json.loads(ZENODO_JSON.read_text()), args.version)
         action = "publish" if args.publish else "leave as draft"
-        print(f"zenodo_upload: would upload {args.pdf} ({args.pdf.stat().st_size} bytes) to {base},"
+        names = ", ".join(f"{p} ({p.stat().st_size} bytes)" for p in args.pdfs)
+        print(f"zenodo_upload: would upload {names} to {base},"
               f" {'new version of ' + args.concept_recid if args.concept_recid else 'new record'},"
               f" then {action}", file=sys.stderr)  # fmt: skip
         print(json.dumps(meta, indent=2, ensure_ascii=False))
@@ -116,7 +119,7 @@ def main() -> int:
     if not token:
         print("zenodo_upload: ZENODO_TOKEN is not set; nothing uploaded", file=sys.stderr)
         return 1
-    dep = upload(args.pdf, args.version, args.concept_recid, args.publish, base, token)
+    dep = upload(args.pdfs, args.version, args.concept_recid, args.publish, base, token)
     state = "published" if dep.get("submitted") else "draft, waiting for a human to publish"
     print(f"zenodo_upload: {state}: {dep['links'].get('html', dep['links'].get('self'))}", file=sys.stderr)
     return 0

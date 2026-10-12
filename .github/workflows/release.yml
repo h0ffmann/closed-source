@@ -44,7 +44,6 @@ jobs:
             echo "::notice::ZENODO_TOKEN is not set; skipping the Zenodo draft"
             exit 0
           fi
-          for pdf in pdf/*.pdf; do
-            python3 scripts/zenodo_upload.py "$pdf" --version "$GITHUB_REF_NAME" \
-              ${ZENODO_CONCEPT_RECID:+--concept-recid "$ZENODO_CONCEPT_RECID"}
-          done
+          # One deposit holds the paper and its ASD-STE100 text: the same work, two PDFs.
+          python3 scripts/zenodo_upload.py pdf/*.pdf --version "$GITHUB_REF_NAME" \
+            ${ZENODO_CONCEPT_RECID:+--concept-recid "$ZENODO_CONCEPT_RECID"}
