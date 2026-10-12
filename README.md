@@ -56,6 +56,15 @@ Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs a
 pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
 GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
 
+The header's jacket sets the title after the title formula and book-jacket typography of
+
+> Hoppe, Hans-Hermann. *Democracy—The God That Failed: The Economics and Politics of Monarchy,
+> Democracy, and Natural Order*. New Brunswick, NJ: Transaction Publishers, 2001. ISBN 0-7658-0088-8.
+
+The book is under copyright (© 2001), so the site copies no cover art and no text from it. Hoppe
+argues that ideas should not be property; the law still gives the copyright. [`BOOKS.md`](BOOKS.md)
+says more, with the other books behind this repository.
+
 ## Layout
 
 | Path | What's there |
@@ -67,6 +76,7 @@ GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no sec
 | [`scripts/`](scripts/) | reference check, STE check, arXiv bundle, citation metadata, release and Zenodo upload |
 | [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
+| [`BOOKS.md`](BOOKS.md) | the books behind the paper: Pirsig, Hoppe, Kinsella, Boldrin and Levine |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
 ## Secrets and keys

@@ -101,42 +101,86 @@ fn section_head(
 
 fn header() -> Element(msg) {
   html.header([attribute.class("top")], [
-    html.div([attribute.class("wrap")], [
-      html.p([attribute.class("eyebrow")], [
-        html.text("Paper Fabric · Ouroboric DEV"),
-        html.span([attribute.class("version")], [html.text("v0")]),
-      ]),
-      html.h1([], [html.text(content.title)]),
-      html.p([attribute.class("lede")], [html.text(content.subtitle)]),
-      html.p([attribute.class("meta")], [
-        html.text(
-          content.date
-          <> " · "
-          <> content.authors
-          |> list.map(fn(a: Author) { a.name })
-          |> string.join(", "),
-        ),
-      ]),
-      html.ul([attribute.class("status")], [
-        html.li([attribute.class("is-soon")], [
-          html.span([attribute.class("dot")], []),
-          html.b([], [html.text("Preprint")]),
-          html.text(" not peer reviewed"),
+    html.div([attribute.class("wrap hero")], [
+      html.div([], [
+        html.p([attribute.class("eyebrow")], [
+          html.text("Paper Fabric · Ouroboric DEV"),
+          html.span([attribute.class("version")], [html.text("v0")]),
         ]),
-        html.li([attribute.class("is-live")], [
-          html.span([attribute.class("dot")], []),
-          html.b([], [html.text("Open")]),
-          html.text(" text CC BY 4.0, build AGPL-3.0"),
+        html.h1([], [html.text(content.title)]),
+        html.p([attribute.class("lede")], [html.text(content.subtitle)]),
+        html.p([attribute.class("meta")], [
+          html.text(content.date <> " · " <> author_names(", ")),
+        ]),
+        html.ul([attribute.class("status")], [
+          html.li([attribute.class("is-soon")], [
+            html.span([attribute.class("dot")], []),
+            html.b([], [html.text("Preprint")]),
+            html.text(" not peer reviewed"),
+          ]),
+          html.li([attribute.class("is-live")], [
+            html.span([attribute.class("dot")], []),
+            html.b([], [html.text("Open")]),
+            html.text(" text CC BY 4.0, build AGPL-3.0"),
+          ]),
+        ]),
+        html.nav([attribute.class("jump")], [
+          link("#read", "Read"),
+          link("#abstract", "Abstract"),
+          link("#contents", "Contents"),
+          link("#authors", "Authors"),
+          link("#fabric", "How it is made"),
+          link("#cite", "Cite"),
         ]),
       ]),
-      html.nav([attribute.class("jump")], [
-        link("#read", "Read"),
-        link("#abstract", "Abstract"),
-        link("#contents", "Contents"),
-        link("#authors", "Authors"),
-        link("#fabric", "How it is made"),
-        link("#cite", "Cite"),
-      ]),
+      jacket(),
+    ]),
+  ])
+}
+
+fn author_names(separator: String) -> String {
+  content.authors
+  |> list.map(fn(a: Author) { a.name })
+  |> string.join(separator)
+}
+
+/// The title as a book jacket: typography after the title formula of Hoppe's "Democracy: The
+/// God That Failed" (2001), which this paper's title echoes. No cover art is reproduced.
+fn jacket() -> Element(msg) {
+  let #(head, tail) = case string.split_once(content.title, ": ") {
+    Ok(parts) -> parts
+    Error(_) -> #(content.title, "")
+  }
+  html.figure([attribute.class("jacket-figure")], [
+    html.div(
+      [
+        attribute.class("jacket"),
+        attribute.role("img"),
+        attribute.aria_label("The title of the paper set as a book jacket"),
+      ],
+      [
+        html.p([attribute.class("jacket-head")], [html.text(head)]),
+        html.hr([]),
+        html.p([attribute.class("jacket-tail")], [html.text(tail)]),
+        html.hr([]),
+        html.p([attribute.class("jacket-sub")], [html.text(content.subtitle)]),
+        html.p([attribute.class("jacket-authors")], [
+          html.text(author_names(" · ")),
+        ]),
+        html.p([attribute.class("jacket-imprint")], [
+          html.text("Paper Fabric"),
+        ]),
+      ],
+    ),
+    html.figcaption([], [
+      html.text("Jacket after "),
+      external(
+        "https://en.wikipedia.org/wiki/Democracy:_The_God_That_Failed",
+        "Hoppe, Democracy: The God That Failed (2001)",
+      ),
+      html.text(". See "),
+      external(content.repo <> "/blob/main/BOOKS.md", "BOOKS.md"),
+      html.text("."),
     ]),
   ])
 }
@@ -353,7 +397,7 @@ fn footer() -> Element(msg) {
     ]),
     html.p([], [
       html.text(
-        "Style after picasso's site. Ouroboric's names and logos are not licensed here.",
+        "Style after picasso's site; the jacket after the title of Hoppe's Democracy: The God That Failed. Ouroboric's names and logos are not licensed here.",
       ),
     ]),
   ])

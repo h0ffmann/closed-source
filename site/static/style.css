@@ -296,3 +296,32 @@ button.copy {
   border: 1px solid var(--accent); border-radius: 999px; padding: 8px 14px; cursor: pointer;
 }
 .labs p a { font: inherit; }
+
+/* The jacket: book-jacket typography after the title formula of Hoppe's "Democracy: The God That
+   Failed" (Transaction, 2001), in picasso's palette. Type and rules only; no cover art. */
+.hero { grid-template-columns: 1fr 300px; }
+.jacket-figure { margin: 0; }
+.jacket {
+  aspect-ratio: 2 / 3; display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 34px 26px 22px; border-radius: 4px 10px 10px 4px;
+  background: linear-gradient(90deg, color-mix(in srgb, #000 22%, var(--surface)) 0 10px, var(--surface) 10px);
+  border: 1px solid var(--border); box-shadow: 0 18px 40px rgba(0, 0, 0, .35), inset 0 0 0 8px var(--bg), inset 0 0 0 9px var(--accent);
+  font-family: 'Libre Baskerville', Georgia, serif; color: var(--text);
+}
+.jacket p { margin: 0; }
+.jacket hr { width: 60%; border: 0; border-top: 1px solid var(--accent); margin: 14px 0; }
+.jacket-head { margin-top: 18px !important; font-size: 1.5rem; letter-spacing: .14em; text-transform: uppercase; }
+.jacket-tail { font-style: italic; font-size: 1.35rem; line-height: 1.3; color: var(--accent-text); }
+.jacket-sub { font-size: .78rem; line-height: 1.5; color: var(--muted); font-variant: small-caps; letter-spacing: .03em; }
+.jacket-authors { margin-top: auto !important; padding-top: 14px; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+.jacket-imprint { margin-top: 12px !important; font: 600 10px/1 Inter, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--accent-text); }
+.jacket-figure figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); text-align: center; }
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; }
+  .jacket-figure { order: -1; width: min(240px, 100%); margin: 0 auto; }
+  .jacket { padding: 26px 18px 16px; }
+  .jacket-head { font-size: 1.15rem; }
+  .jacket-tail { font-size: 1.05rem; }
+  .jacket-sub { font-size: .68rem; }
+  .jacket-authors { font-size: .62rem; }
+}
