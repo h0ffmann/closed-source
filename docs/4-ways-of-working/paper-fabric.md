@@ -30,7 +30,7 @@ Each paper runs the same loop. The *who* column is the Ouroboric rule: humans st
 | Personal accounts | authors | the anecdote placeholders, filled |
 | Check: `make check` | CI | PDF; fails on unresolved citations or unlogged references |
 | Readiness: what blocks the next step | agent, then authors | `docs/1-product/readiness/` |
-| Release: tag, PDF to a Zenodo draft | authors | GitHub release; DOI after a human publishes |
+| Release: tag, PDF to a Zenodo draft, arXiv bundle | authors | GitHub release; DOI after a human publishes; arXiv submission by hand |
 | Learn: what went wrong | agent, then authors | a journal entry; changes to this guide |
 
 ## 3. Rules that make the output credible
@@ -48,6 +48,7 @@ Each paper runs the same loop. The *who* column is the Ouroboric rule: humans st
 
 The build mirrors Sandy Maguire's (isovector) books: Markdown, pandoc with pandoc-crossref and
 citeproc, a hand-written LaTeX template, XeLaTeX twice, and a revision stamp. Differences: no
-Haskell `design-tools` filter, no EPUB target yet, BibTeX through citeproc instead of
+Haskell `design-tools` filter, no EPUB target yet, a template that also compiles with pdfLaTeX
+for arXiv, BibTeX through citeproc instead of
 `pandoc-citeproc` (which pandoc 2.11 replaced), and pinned versions in
 `scripts/setup-toolchain.sh`.

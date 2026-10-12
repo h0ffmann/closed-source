@@ -4,6 +4,7 @@
 #   make                     build every paper under papers/ into pdf/<slug>.pdf
 #   make closed-source       build one paper
 #   make check               build with warnings as errors and lint the reference log
+#   make arxiv               pdfLaTeX-checked arXiv source bundles in build/arxiv/
 #   make clean
 #
 # A paper is a directory papers/<slug>/ with metadata.md, prose/NN-*.md and refs.bib.
@@ -22,7 +23,7 @@ PANDOC_OPTS := --from markdown+fancy_lists+raw_tex \
 
 PANDOC_PDF_OPTS := --template $(TEMPLATE) -t latex
 
-.PHONY: all check clean citation $(PAPERS)
+.PHONY: all check clean citation arxiv $(PAPERS)
 all: $(PAPERS)
 
 $(PAPERS): %: pdf/%.pdf
@@ -45,9 +46,13 @@ pdf/%.pdf: build/tex/%.tex
 check: all
 	python3 scripts/refs_check.py papers/*/refs.bib
 
+arxiv: all
+	for p in $(PAPERS); do python3 scripts/arxiv.py $$p || exit 1; done
+
 citation:
 	python3 scripts/citation.py
 
 clean:
 	$(MAKE) -C build clean
 	rm -f pdf/*.pdf
+	rm -rf build/arxiv

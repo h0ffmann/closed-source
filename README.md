@@ -20,6 +20,7 @@ organisation.
 scripts/setup-toolchain.sh   # pandoc 3.1.3, pandoc-crossref 0.3.16.0, XeLaTeX (Debian/Ubuntu)
 make                         # every paper -> pdf/<slug>.pdf
 make check                   # the same, plus the reference-log check
+make arxiv                   # arXiv source bundles, checked with pdfLaTeX, in build/arxiv/
 ```
 
 The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
@@ -43,6 +44,10 @@ A release is a tag on `main` (`scripts/release.sh 0.1.0`). The release workflow 
 attaches it to a GitHub release and, when the `ZENODO_TOKEN` secret is set, uploads **only the
 PDF** to a Zenodo draft. A person publishes the draft on zenodo.org, which mints the DOI. See
 [releasing](docs/4-ways-of-working/releasing.md).
+
+arXiv gets the LaTeX source instead (`make arxiv`): a single `.tex` with citations rendered,
+checked with pdfLaTeX, plus the form fields. Submission is manual, and arXiv's CS category
+expects position papers to be peer reviewed first; see the same page.
 
 ## Cite
 

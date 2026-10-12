@@ -1,17 +1,26 @@
 % SPDX-License-Identifier: MIT
-% Paper Fabric article template for pandoc + XeLaTeX. Modelled on the layout of Sandy Maguire's
+% Paper Fabric article template for pandoc. Compiles with XeLaTeX (the local and CI build) and
+% with pdfLaTeX, which is the engine arXiv runs on submitted sources (make arxiv). Modelled on the layout of Sandy Maguire's
 % book templates (isovector/thinking-with-types, format/tex/template.tex): one hand-written
 % template, metadata from the paper's metadata.md, and the Git revision stamped on every page.
 % The CSL and table blocks follow pandoc's default LaTeX template (pandoc -D latex).
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(papersize)$$papersize$paper,$endif$]{article}
 
 \usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\else
 \usepackage{fontspec}
 \usepackage{unicode-math}
 \defaultfontfeatures{Ligatures=TeX}
 $if(mainfont)$
 \setmainfont{$mainfont$}
 $endif$
+\fi
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 \usepackage{microtype}
 \usepackage{xcolor}
@@ -22,8 +31,7 @@ $endif$
 \usepackage{titling}
 \usepackage{enumitem}
 \setlist{itemsep=2pt,topsep=4pt}
-\usepackage[bidi=default]{babel}
-\babelprovide[main,import]{english}
+\usepackage[english]{babel}
 \usepackage{csquotes}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}

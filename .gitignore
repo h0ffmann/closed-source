@@ -6,3 +6,4 @@ build/*.log
 build/*.out
 build/.current-revision
 __pycache__/
+build/arxiv/

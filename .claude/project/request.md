@@ -34,5 +34,14 @@ First paper should be. Closed Source: The God that failed
 | 8 | `papers/closed-source/metadata.md`, `.zenodo.json` |
 | 9 | `docs/1-product/readiness/2026-10-12-ready-to-promote.md` |
 | 10 | this folder |
+| follow-up: arXiv setup | `scripts/arxiv.py`, `make arxiv`, `docs/4-ways-of-working/releasing.md` |
 
 "REA" was read as reverse engineering, AI-assisted; the paper says so in section 4.
+
+## Follow-up in the thread
+
+Hoffmann, 2026-10-12 18:39 UTC, verbatim:
+
+```text
+This first PR should include arXiv setup as well
+```

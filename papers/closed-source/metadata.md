@@ -36,6 +36,11 @@ abstract: |
   persistent identifiers, machine-readable citation metadata and agents that borrow, cite and
   propagate credit by default. We describe Paper Fabric, an open, self-improving pipeline in
   the Ouroboric style that produced this preprint, and list its own known limitations.
+arxiv:
+  primary: cs.CY
+  cross-list: [cs.SE, cs.CR, cs.DL]
+  license: http://creativecommons.org/licenses/by/4.0/
+  comments: "v0 preprint, not peer reviewed. 1 table. Source, build and agent configuration: https://github.com/h0ffmann/closed-source"
 lang: en-US
 papersize: a4
 fontsize: 11pt

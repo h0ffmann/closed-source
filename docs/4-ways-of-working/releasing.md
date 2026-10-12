@@ -8,7 +8,8 @@ style: procedure
 
 # Releasing a paper
 
-v0 policy: Zenodo archives **only the rendered PDF**.
+v0 policy: Zenodo archives **only the rendered PDF**. arXiv receives the LaTeX source, because
+arXiv compiles submissions itself and refuses PDFs made from TeX.
 
 ## Once per repository
 
@@ -32,3 +33,24 @@ v0 policy: Zenodo archives **only the rendered PDF**.
    run `make citation`. Store the concept record id (the number in the concept DOI) as the
    repository variable `ZENODO_CONCEPT_RECID`, so later releases become new versions of the same
    record.
+
+## arXiv
+
+**Caution:** since 31 October 2025, arXiv's computer-science category accepts review articles and
+position papers only after they pass peer review at a journal or conference, with the journal
+reference and DOI in the submission ([arXiv blog](https://blog.arxiv.org/?p=1740)). A v0 position
+paper will be put on hold. Submit to arXiv after acceptance, or choose a non-CS category only if
+the paper genuinely belongs there.
+
+1. Run `make arxiv`. It writes `build/arxiv/<slug>.tar.gz` (the single `.tex` file, with
+   citations already rendered and the Git revision frozen) and `build/arxiv/<slug>.txt` (title,
+   authors, categories, licence, comments and abstract for the form). It fails if the bundle does
+   not compile with pdfLaTeX, the engine arXiv uses, or if the abstract exceeds 1,920 characters.
+2. The `release` workflow attaches both files to the GitHub release.
+3. On arxiv.org, start a new submission. The submitter needs an endorsement for the primary
+   category (`cs.CY`) on a first submission there.
+4. Choose the licence from `metadata.md` (`arxiv.license`, CC BY 4.0), upload the tarball, and
+   paste the fields from the `.txt` file.
+5. Check arXiv's compiled preview against `pdf/<slug>.pdf` before you submit.
+6. After the paper is announced, add `https://arxiv.org/abs/<id>` to `.zenodo.json` as a
+   related identifier with relation `isVariantFormOf` and scheme `url`, then run `make citation`.

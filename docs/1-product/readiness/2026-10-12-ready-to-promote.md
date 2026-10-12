@@ -28,6 +28,7 @@ the items that apply to a paper repository, plus issues specific to the move.
 | B5 | **Docket not read.** The Apple v. OpenAI case number (5:26-cv-07078, N.D. Cal.) comes from a secondary source with two conflicting judge suffixes. Check PACER and cite the complaint itself. | record | RP-04 | any author |
 | B6 | **Naming.** Ouroboric names its products and modules from Norse myth and reserves them as trademarks. "Paper Fabric" does not follow the naming record, and the repository name `closed-source` is the paper's, not the product's. Decide the product name and split the repository: one for the factory, one per paper or a papers umbrella. | brand | RB-06, RB-07 | Ouroboric operators |
 | B7 | **Publishing hardening not done.** The organisation's first-publish checklist: secret and private-data scan of the full history, branch protection on `main`, secret scanning with push protection, issues off and Discussions on, the Zenodo GitHub integration confirmed off, `ZENODO_TOKEN` stored as a secret. | security | RB-14, RP-04 | repository admin |
+| B8 | **arXiv will hold a position paper until it is peer reviewed.** Since 31 October 2025, arXiv CS accepts review and position papers only with documented peer review ([arXiv blog](https://blog.arxiv.org/?p=1740)). The arXiv tooling is ready (`make arxiv`), but submission waits for an accepted venue. The first submitter in `cs.CY` also needs an endorsement. | publishing | RP-03 | the three authors |
 
 ## Non-blocking issues
 
@@ -40,7 +41,7 @@ the items that apply to a paper repository, plus issues specific to the move.
 | N5 | Not peer reviewed. Choose a venue or an open-review route before v1. | direction | the three authors |
 | N6 | Skills are not vendored: the exported `.claude/` lists the skills and tools used, but Ouroboric requires a `skills.lock` with pinned, licensed copies. | supply chain | agent |
 | N7 | The organisation pull-request template expects an issue, a plan task id and a named proof test; this repository has no issue tracker or plan yet. | process | agent |
-| N8 | CI has not run yet: the first pull request is the first run of `pdf`, `citation` and `release` is untested until a tag. | build | agent |
+| N8 | CI has not run yet: the first pull request is the first run of `pdf`, `citation` and `release` is untested until a tag. The arXiv bundle was compiled with this container's TeX Live, not arXiv's own. | build | agent |
 | N9 | `pandoc-crossref` 0.3.16.0 is built for pandoc 3.1.2 and warns on 3.1.3. Pin both to a matching pair, or move to a Nix shell from picasso's publisher lab. | build | agent |
 
 ## Met

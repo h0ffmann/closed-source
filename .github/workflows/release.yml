@@ -1,5 +1,5 @@
-# release — a pushed v* tag (scripts/release.sh) becomes a GitHub release with the rendered PDFs
-# attached. When the repository secret ZENODO_TOKEN exists, each PDF, and nothing else, is then
+# release — a pushed v* tag (scripts/release.sh) becomes a GitHub release with the rendered PDFs,
+# the arXiv source bundles and their form fields attached (arXiv submission stays manual). When the repository secret ZENODO_TOKEN exists, each PDF, and nothing else, is then
 # uploaded to a Zenodo *draft* with the metadata in .zenodo.json (v0 policy: PDF only). A person
 # reviews the draft on zenodo.org and publishes it; publishing mints the permanent DOI.
 # Zenodo's GitHub webhook integration must stay OFF for this repository: it would archive the
@@ -29,10 +29,11 @@ jobs:
       - run: python3 scripts/citation.py --check
       - run: scripts/setup-toolchain.sh
       - run: make check
+      - run: make arxiv
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" pdf/*.pdf --repo "$GITHUB_REPOSITORY" --verify-tag \
+          gh release create "$GITHUB_REF_NAME" pdf/*.pdf build/arxiv/* --repo "$GITHUB_REPOSITORY" --verify-tag \
             --generate-notes --title "closed-source $GITHUB_REF_NAME"
       - name: upload the PDF to a Zenodo draft
         env:
