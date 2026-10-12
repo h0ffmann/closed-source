@@ -68,6 +68,9 @@ never state a private fact, a motive or an accusation that no source supports.
   change it in `prose-ste/` in the same pull request. Use `/ste100` and log the pass in
   `papers/<slug>/STE100.md`.
 
+- `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` digest the public ouroboric-dev repositories. Refresh
+  them with `just ouroboric-sources` and `/update-ouroboric`. Each fact in them has a source line;
+  do not add one without its source.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.

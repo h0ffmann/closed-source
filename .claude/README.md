@@ -2,7 +2,7 @@
 
 This folder publishes the configuration that produced this repository's first pull request, as
 the Paper Fabric charter's *learn in public* principle and the paper's AI-use statement promise.
-It is a record, not a live config: Claude Code reads only `settings.json` here.
+It is a record, not a live config: Claude Code reads only `settings.json` and `commands/` here.
 
 | File | What it is |
 |---|---|
@@ -12,6 +12,8 @@ It is a record, not a live config: Claude Code reads only `settings.json` here.
 | [`project/session.md`](project/session.md) | the session: environment, model, toolchain installed, repositories read |
 | [`project/tools-and-skills.md`](project/tools-and-skills.md) | the tools and skills used, and how |
 | [`settings.json`](settings.json) | Claude Code permissions for working in this repository |
+| [`commands/ste100.md`](commands/ste100.md) | `/ste100`: rewrite prose to ASD-STE100 |
+| [`commands/update-ouroboric.md`](commands/update-ouroboric.md) | `/update-ouroboric`: refresh `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` from the ouroboric-dev repositories |
 
 Nothing here is secret. Tokens, e-mail addresses and the harness's own system prompt are left
 out; the session summary describes the harness instead of quoting it.

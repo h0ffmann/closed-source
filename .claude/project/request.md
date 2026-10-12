@@ -140,3 +140,15 @@ Hardrule: Enemies, proclaimed AI guru
 
 Read as: proclaimed AI gurus are the book's opponents and never among the 50 thinkers; the book
 answers their public, cited claims with evidence. Recorded in AGENTS.md.
+
+## Fourth pull request: the Ouroboric digest
+
+Hoffmann, 2026-10-12 20:51 UTC, verbatim (relayed by the project's coordinator session):
+
+```text
+create a OUROBORIC.md from all knowledge from ouroboric-dev repos (1 note, including all ethics), it should have another OUROBORIC_RESEARCH.md to index curated lists or any research material on ouroboric, create a command update-ouroboric or skill
+```
+
+Read as: two files at the root, from every public ouroboric-dev repository (ouroboric-dev/contact
+is private), and `/update-ouroboric` as a Claude Code command in `.claude/commands/`, like
+`/ste100`, with `just ouroboric-sources` to fetch the repositories and list what changed.
