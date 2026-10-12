@@ -8,6 +8,8 @@ linked docs before you change what they cover.
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
 - Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
   `flake.lock`). Release and secrets: the README.
+- Website: `site/` (Gleam + Lustre). `just site-build`. `site/content.py` generates its content from
+  the paper; never write a fact into `site/src` by hand.
 - Charter and direction: `docs/1-product/charter.md`.
 - How a paper is made: `docs/4-ways-of-working/paper-fabric.md`.
 - Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.
@@ -27,6 +29,30 @@ linked docs before you change what they cover.
 5. Report allegations as allegations. Name the source and the status of any legal case.
 6. Never publish a Zenodo deposit. Drafts only; a human publishes. A DOI is permanent.
 7. Never commit secrets, tokens or personal contact data.
+
+## The book (hard rule)
+
+*Closed Source: The God that Failed* has exactly 100 pages: 50 authors, two pages per author
+(Hoffmann, 12 October 2026; first 50 pages and one per author, changed the same evening). The 50
+authors are thinkers the book is about, and each gets two first-person pages; the cover names Mr.
+Nobody. `papers/closed-source/THINKERS.md` is the roster, and `just check` fails unless it has
+exactly 50 distinct thinkers. A change that breaks the 100-page count is wrong. The current
+11-section text is material for those pages; ask the owner before you restructure it.
+
+## Two languages (hard rule)
+
+The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October
+2026). Every release ships both editions, each with the same 50 thinkers and 100 pages. A change
+to one edition's facts goes into the other in the same pull request, as `prose/` and `prose-ste/`
+already do. The pt-BR edition does not exist yet.
+
+## The opponent (hard rule)
+
+The book's enemies are the proclaimed AI gurus (Hoffmann, 12 October 2026): people who sell
+certainty about AI without open work that anyone can check. None of the 50 thinkers is one. The
+book argues against their claims, not their persons: quote each claim exactly, cite where it was
+made, and answer it with evidence. Name a person only for a public claim that a source records;
+never state a private fact, a motive or an accusation that no source supports.
 
 ## Borrow, cite, propagate
 

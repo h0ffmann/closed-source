@@ -21,6 +21,7 @@ build *slugs:
     printf '%s+%s' "$(git rev-parse --short HEAD)" "$(git rev-list --count HEAD)" > build/.current-revision
     for p in $slugs; do
       [ -d "papers/$p" ] || { echo "build: no paper papers/$p" >&2; exit 1; }
+      python3 scripts/logos.py "$p"
       just _pdf "$p" prose "$p"
       if [ -d "papers/$p/prose-ste" ]; then just _pdf "$p" prose-ste "$p-ste"; fi
     done
@@ -40,6 +41,7 @@ _pdf slug dir out:
 check: build
     python3 scripts/refs_check.py papers/*/refs.bib
     for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
+    python3 scripts/book_check.py $(ls papers)
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
@@ -50,6 +52,8 @@ self-test:
     python3 scripts/refs_check.py --self-test
     python3 scripts/arxiv.py --self-test
     python3 scripts/zenodo_upload.py --self-test
+    python3 scripts/logos.py --self-test
+    python3 scripts/book_check.py --self-test
 
 # Regenerate CITATION.cff and the README citation block from .zenodo.json.
 citation:
@@ -57,7 +61,7 @@ citation:
 
 # Remove every build output.
 clean:
-    rm -rf build pdf
+    rm -rf build pdf site/build site/dist
 
 # Enter the toolchain: pandoc, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh (Nix).
 shell:
@@ -83,3 +87,14 @@ zenodo-sandbox version: check
 # What a Zenodo draft would contain, with no network and no token.
 zenodo-dry-run version: build
     python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}} --dry-run
+
+# Build the website into site/dist/: the PDFs, the site's content from the papers, then the Gleam
+# app. Needs only Nix and just: each half runs in its own toolchain from picasso's labs.
+site-build:
+    nix develop --no-update-lock-file --command just build
+    nix develop --no-update-lock-file --command python3 site/content.py
+    nix develop --no-update-lock-file .#site --command bash -c 'cd site && just ci'
+
+# Build the website and serve it on http://localhost:8000
+site-serve: site-build
+    nix develop --no-update-lock-file .#site --command python3 -m http.server -d site/dist 8000

@@ -9,7 +9,8 @@ reference checked, every release citable.
 > to publish the method, mint an identifier, and cite whatever you use, and to require the same
 > of the agents that now do much of the reading and writing.
 
-**Authors:** Rob Kler Soares da Silva Junior, Bruno Valério, Matheus Hoffmann (Ouroboric DEV).
+**Author:** Mr. Nobody on the cover; written in the first person by Matheus Hoffmann. The ouroboric
+ideas are Bruno Valério's ([Ouroboric](https://github.com/ouroboric-dev/ouroboric)).
 **Status:** v0 preprint, not peer reviewed. See the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
@@ -39,16 +40,45 @@ The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](htt
 Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
 and the Git revision stamped on every page.
 
+## Website
+
+`site/` is the paper's website: a [Lustre](https://lustre.build) application in Gleam, in the
+style of [picasso's site](https://h0ffmann.github.io/picasso/). The title, abstract (original and
+ASD-STE100), authors, contents, counts and citations come from the paper and this README
+(`site/content.py`), so the site never repeats a fact by hand. The PDFs ship with it.
+
+```sh
+just site-build        # PDFs, then site/dist/; needs only Nix and just
+just site-serve        # the same, served on http://localhost:8000
+```
+
+Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs and the
+`gleam-website` lab for the site (`nix develop .#site`). The `site` workflow builds it on every
+pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
+GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
+
+The header's jacket sets the title after the title formula and book-jacket typography of
+
+> Hoppe, Hans-Hermann. *Democracy—The God That Failed: The Economics and Politics of Monarchy,
+> Democracy, and Natural Order*. New Brunswick, NJ: Transaction Publishers, 2001. ISBN 0-7658-0088-8.
+
+The book is under copyright (© 2001), so the site copies no cover art and no text from it. Hoppe
+argues that ideas should not be property; the law still gives the copyright. [`BOOKS.md`](BOOKS.md)
+says more, with the other books behind this repository.
+
 ## Layout
 
 | Path | What's there |
 |---|---|
 | [`papers/closed-source/`](papers/closed-source/) | the paper: `metadata.md`, `prose/NN-*.md`, `refs.bib`, and the reference log `REFERENCES.md` |
 | [`format/`](format/) | the LaTeX template and pandoc-crossref settings shared by every paper |
-| [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pin (picasso's `paper` lab) |
+| [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pins (picasso's `paper` and `gleam-website` labs) |
+| [`site/`](site/) | the website: Gleam + Lustre, `site/content.py` reads the paper |
 | [`scripts/`](scripts/) | reference check, STE check, arXiv bundle, citation metadata, release and Zenodo upload |
 | [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
+| [`papers/closed-source/THINKERS.md`](papers/closed-source/THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
+| [`BOOKS.md`](BOOKS.md) | the books behind the paper: Pirsig, Hoppe, Kinsella, Boldrin and Levine |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
 ## Secrets and keys
@@ -126,8 +156,8 @@ it after a venue accepts it. Details: [releasing](docs/4-ways-of-working/releasi
 BibTeX:
 
 ```bibtex
-@misc{soaresdasilvajunior_2026_closedsource,
-  author    = {Soares da Silva Junior, Rob Kler and Valério, Bruno and Hoffmann, Matheus},
+@misc{hoffmann_2026_closedsource,
+  author    = {Hoffmann, Matheus},
   title     = {{Closed Source: The God that Failed}},
   year      = {2026},
   url       = {https://github.com/h0ffmann/closed-source}
@@ -136,18 +166,18 @@ BibTeX:
 
 APA:
 
-> Soares da Silva Junior, R. K., Valério, B., & Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. https://github.com/h0ffmann/closed-source
+> Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. https://github.com/h0ffmann/closed-source
 
 ABNT (NBR 6023):
 
-> SOARES DA SILVA JUNIOR, Rob Kler; VALÉRIO, Bruno; HOFFMANN, Matheus. **Closed Source**: The God that Failed. [S. l.]: GitHub, 2026. Disponível em: https://github.com/h0ffmann/closed-source.
+> HOFFMANN, Matheus. **Closed Source**: The God that Failed. [S. l.]: GitHub, 2026. Disponível em: https://github.com/h0ffmann/closed-source.
 
 <!-- citation:end -->
 
 ## Licence
 
 - Paper text, docs and figures: [CC BY 4.0](LICENSE).
-- Scripts, workflows and build files (`scripts/`, `.github/`, `justfile`, `flake.nix`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
+- Scripts, workflows, build files and the website (`scripts/`, `.github/`, `justfile`, `flake.nix`, `site/`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
 - LaTeX template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
 - Ouroboric's names and logos are not licensed here; see Ouroboric's
   [trademark policy](https://github.com/ouroboric-dev/ouroboric/blob/main/TRADEMARKS.md).

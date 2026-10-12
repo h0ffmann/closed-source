@@ -69,3 +69,74 @@ use just, not makefile. ADD all binary tooling required in this repository to pi
 ```text
 in the same PR add clear instructions on read on how to release with just to create NEW ZENODO record + NEW PDF on arvIX. ANY SECRET TOOLING MUST BE CLEAR on readme (keys, token needed)
 ```
+
+## Third pull request: the website
+
+Hoffmann, 2026-10-12 20:06 UTC, verbatim (relayed by the project's coordinator session):
+
+```text
+now create a website for closed-source, in same picasso style, with gleam,create  PR in picasso to create gleam-website labs, to paper fabric doesnt need to install anything just vm site-build, using labs provided by picasso
+```
+
+Read as: `just site-build` with only Nix and just installed. Picasso: h0ffmann/picasso#115 (`labs/gleam-website`).
+
+## Third pull request, continued: the jacket, the books and the author
+
+Hoffmann, 2026-10-12, verbatim (relayed by the project's coordinator session):
+
+```text
+The website must have same style as picasso, but adapted from 'Democracy: The God That Failed' by HHH. Do citation in readme. There are no proprietary rights on HHH work, by its principle of non existent IP, which matches with Closed Source Philosophy. Add a BOOKS.md it should cover ZAMM and HHH Democracy, and the most famous book critizing IP
+```
+
+Read as: a jacket in the site's header after the title of Hoppe's book (type only: the book is
+under copyright), its citation in the README, and BOOKS.md (Pirsig, Hoppe, Kinsella, with Boldrin
+and Levine beside Kinsella).
+
+Hoffmann, 2026-10-12 20:35 and 20:37 UTC, verbatim:
+
+```text
+Only let my names for now, ouroboric ideas should be Credited only to Brunão, Picasso ia a use-case of self-improving system. Add marola and ouroboric logos to the book. This book will have only 50pages. explained later
+```
+
+```text
+author should be MR. NOBODY, in the front of the book, but will be written by me in 1st person for sure
+```
+
+Read as: the cover and title page say Mr. Nobody; the prose is in the first person singular; the
+citation metadata names Matheus Hoffmann alone; Ouroboric is credited to Bruno Valério; picasso is
+described as a use case of a self-improving system; the Marola and Ouroboric logos go on the title
+page and the site's jacket. The 50-page length waits for the explanation.
+
+Hoffmann, 2026-10-12 20:52 UTC, verbatim (relayed by the project's coordinator session), the
+explanation of the 50 pages:
+
+```text
+hard rule of the book, 50 authors, 1 page per author
+```
+
+
+On the decision card "Who are the 50 authors, one page each, in the book?", Hoffmann chose
+"50 thinkers" (20:56 UTC). Then, verbatim (20:57 UTC):
+
+```text
+change hardrule to 100pgs, 2 pgs per author
+```
+
+Recorded as the hard rule in AGENTS.md, with the roster in papers/closed-source/THINKERS.md.
+
+Hoffmann, 2026-10-12 20:58 UTC, verbatim:
+
+```text
+another hardrule, PTBR/EN distribution
+```
+
+Read as: every release ships a Brazilian Portuguese and an English edition. Recorded in AGENTS.md.
+
+Hoffmann, 2026-10-12 20:58 UTC, verbatim:
+
+```text
+Hardrule: Enemies, proclaimed AI guru
+```
+
+Read as: proclaimed AI gurus are the book's opponents and never among the 50 thinkers; the book
+answers their public, cited claims with evidence. Recorded in AGENTS.md.

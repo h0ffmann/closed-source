@@ -29,7 +29,7 @@ related work in Section [-@sec:related] also uses this method and has a concept 
 Coding and research agents now write a large part of new code and text, which includes the drafts
 of this paper (see the AI-use statement). Agents read much more than any person, and they copy
 easily. If agents do not cite, the REA explosion becomes a machine that launders work. Code and
-ideas enter with their authors and exit without them. Thus, we propose three rules for agents.
+ideas enter with their authors and exit without them. Thus, I propose three rules for agents.
 Paper Fabric's `AGENTS.md` makes these rules mandatory for each agent that works in its
 repositories.
 

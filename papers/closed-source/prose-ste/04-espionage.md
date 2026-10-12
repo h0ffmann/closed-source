@@ -1,10 +1,10 @@
 # Science and espionage in 2026: the reverse-engineering explosion {#sec:espionage}
 
-We use the term *reverse engineering* for any process that recovers how an artefact works from the
-artefact itself, without access to its design documents. Our project uses the shorthand REA for
+I use the term *reverse engineering* for any process that recovers how an artefact works from the
+artefact itself, without access to its design documents. My project uses the shorthand REA for
 reverse engineering, assisted. Examples are to decompile a binary, to infer a model from its
 outputs, or to build a product again from its parts. This section reviews four developments. The
-first development is a lawsuit, and its facts are allegations. We report them as allegations.
+first development is a lawsuit, and its facts are allegations. I report them as allegations.
 
 ## Apple v. OpenAI: secrets leave on two legs
 
@@ -24,7 +24,7 @@ employees now work at OpenAI [@perez2026allegations].
 OpenAI said publicly that it has "no interest in other companies' trade secrets"
 [@perez2026allegations]. In August, OpenAI moved to dismiss. It argued that Apple let employees use
 personal cloud accounts for work, did not revoke access correctly, and did not identify which
-secrets were taken [@perez2026motion]. When we wrote this paper, the motion to dismiss and a motion
+secrets were taken [@perez2026motion]. When I wrote this paper, the motion to dismiss and a motion
 for a preliminary injunction were pending, and no court ruled on the merits
 [@bridgecounsels2026apple; @perez2026motion].
 
@@ -36,7 +36,7 @@ part of OpenAI's defence is that Apple's own practices did not treat the informa
 secret that must have an active guard at each exit interview is expensive. The cost of the guard is
 part of the price of closed source.
 
-*Verification note.* We could not fetch the docket directly. Secondary sources give the case number
+*Verification note.* I could not fetch the docket directly. Secondary sources give the case number
 as 5:26-cv-07078, with two judge suffixes that do not agree (VKD and EJD). They give the caption
 both as *Apple Inc. v. OpenAI* and as *Apple Inc. v. Liu* [@bridgecounsels2026apple]. The number
 must be checked against PACER before this paper leaves v0.
@@ -56,7 +56,7 @@ ways" [@reuters2026deepseek]. DeepSeek did not reply to Reuters. Ten days later,
 to Anthropic, these campaigns used about 24,000 fraudulent accounts and more than 16 million
 exchanges with Anthropic's Claude models [@anthropic2026distillation].
 
-**[ANALYSIS]** These are accusations by interested parties, and we do not judge them. Their
+**[ANALYSIS]** These are accusations by interested parties, and I do not judge them. Their
 relevance here is structural. A model served behind an API is closed source in the strongest sense:
 its weights never leave the servers of the provider. But each answer from the model is a sample of
 its behaviour. Enough samples teach a student model much of what the teacher model knows. The
@@ -85,9 +85,9 @@ family of open models trained for decompilation. It produces source code that re
 the original tests. Its end-to-end models more than double the re-executability rate of GPT-4o and
 Ghidra on the HumanEval and ExeBench benchmarks [@tan2024llm4decompile].
 
-**[ANALYSIS]** If we put these four developments together, we see that the cost curve of reverse
+**[ANALYSIS]** If I put these four developments together, I see that the cost curve of reverse
 engineering collapsed on all axes. The axes are binaries (decompilation), models (extraction and
-distillation) and organisations (people who move between employers). We call this the *REA
+distillation) and organisations (people who move between employers). I call this the *REA
 explosion*. It does not make each artefact transparent overnight, and it does not make copies
 lawful where the law forbids them. But it does make secrecy a weak and expensive defence. It also
 makes the question of credit (who did what first, and who used whose work) more important than the

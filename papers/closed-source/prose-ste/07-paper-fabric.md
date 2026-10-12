@@ -1,7 +1,7 @@
 # Paper Fabric: an ouroboric factory for papers {#sec:fabric}
 
 Paper Fabric is the open pipeline that produced this preprint. Its design permits reuse for any
-paper, and it follows the philosophy of Ouroboric. The Ouroboric charter describes "open,
+paper, and it follows the philosophy of Ouroboric, the project of Bruno Valério. The Ouroboric charter describes "open,
 self-improving factories" that produce work, measure it and apply what they learn to themselves
 [@ouroboric2026]. The charter lists a research factory "for scientific research and papers" as a
 possible future direction. The charter explicitly states that this direction is not a commitment
@@ -9,8 +9,8 @@ possible future direction. The charter explicitly states that this direction is 
 
 ## Principles
 
-Paper Fabric uses four principles of Ouroboric directly. *Humans steer, agents build*: the authors
-approve the direction and every claim that is based on their own experience, and agents draft,
+Paper Fabric uses four principles of Ouroboric directly. These ideas are from Valério. *Humans steer, agents build*: I
+approve the direction and every claim that is based on my own experience, and agents draft,
 check and build. *Checks, not promises*: citations are checked against the source, and the build
 fails if a citation is missing. *Read before you borrow*: licences decide what may be reused, and
 each thing that is taken gets credit. *Learn in public*: the pipeline, the prompts and the agent
@@ -27,7 +27,7 @@ errors, so an unresolved citation key stops the build.
 
 Each paper is in its own directory, `papers/<slug>/`, with a `metadata.md`, numbered prose files
 and a `refs.bib`. The citation metadata for the repository is in `.zenodo.json`, and `CITATION.cff`
-is generated from that file. The authors borrowed this metadata, with credit, from their earlier
+is generated from that file. I borrowed this metadata, with credit, from my earlier
 projects [@hoffmann2026picasso; @hoffmann2026marola].
 
 A release is a Git tag. For v0, the release workflow builds the PDF and attaches it to a GitHub

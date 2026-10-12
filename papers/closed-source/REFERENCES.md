@@ -41,7 +41,7 @@ could not be confirmed), `unverified` (not fetched; must not be cited).
 | maguire2019thinking | partial | git clone of isovector/thinking-with-types | build files read; the year is the book's first edition, not checked |
 | hoffmann2018chemorx | verified | git clone of h0ffmann/chemo-rx | 8 commits, 23 Mar to 25 Apr 2018 |
 | hoffmann2026ww3gpu | verified | zenodo.org/records/23221351; repo CITATION.cff | concept DOI |
-| hoffmann2026marola | verified | zenodo.org/records/23224155; marola-dev/marola .zenodo.json | concept DOI; creators and ORCIDs |
+| hoffmann2026marola | verified | zenodo.org/records/23224155; marola-dev/marola .zenodo.json | concept DOI; creators and ORCIDs checked; cited as "Hoffmann and others" on the paper owner's instruction (12 October 2026) |
 | hoffmann2026picasso | partial | h0ffmann/picasso CITATION.cff | Zenodo record page rate-limited; concept DOI taken from the repo's CITATION.cff |
 | ouroboric2026 | verified | git clone of ouroboric-dev/ouroboric | charter quotes checked |
 | nash1950equilibrium | verified | Crossref | PNAS 36(1):48–49 |

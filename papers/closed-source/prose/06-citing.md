@@ -27,7 +27,7 @@ work in Section [-@sec:related], each item of which has a concept DOI.
 Coding and research agents now write a large share of new code and text, including the drafting
 of this paper (see the AI-use statement). Agents read far more than any person and copy fluently.
 If they do not cite, the REA explosion becomes a laundering machine: code and ideas go in with
-authors and come out without them. We therefore propose three rules for agents, which Paper
+authors and come out without them. I therefore propose three rules for agents, which Paper
 Fabric's `AGENTS.md` makes binding for any agent that works in its repositories.
 
 1. **Borrow only what the licence allows.** Before reusing code, text, figures or data, read

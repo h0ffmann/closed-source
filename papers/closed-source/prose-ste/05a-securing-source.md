@@ -28,7 +28,7 @@ is open, and only the key is secret.
 ## Obfuscation: what it gives and what it cannot give
 
 Obfuscation changes a program so that it does the same thing but is more difficult to read. One of
-the authors made a small, honest example. *nashkell* is a Haskell pipeline that applies OCR to the
+I made a small, honest example. *nashkell* is a Haskell pipeline that applies OCR to the
 declassified letters of Nash. It asks a language model to annotate and cross-check the letters. It
 stores its source code in Git with identifiers translated into Latin [@hoffmann2026nashkell].
 
@@ -97,6 +97,6 @@ to publish it, sign it and cite it.
 **[ANALYSIS]** In the vocabulary of Nash himself, this is a change of strategy in a game whose
 payoffs moved. When reverse engineering was expensive, secrecy could be a sensible strategy for an
 author. When reverse engineering is cheap, the payoff of secrecy falls towards zero. But the payoff
-of a publication that others can check and credit does not fall. We do not claim that we computed
-an equilibrium [@nash1950equilibrium]. We claim only that the costs on which the old strategy
+of a publication that others can check and credit does not fall. I do not claim that I computed
+an equilibrium [@nash1950equilibrium]. I claim only that the costs on which the old strategy
 rested are gone.

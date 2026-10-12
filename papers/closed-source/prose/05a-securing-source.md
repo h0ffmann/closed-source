@@ -27,7 +27,7 @@ and only the key is secret.
 ## Obfuscation: what it buys and what it cannot
 
 Obfuscation transforms a program so that it does the same thing but is harder to read. One of the
-authors built a small, honest example. *nashkell*, a Haskell pipeline that runs OCR on Nash's
+I built a small, honest example. *nashkell*, a Haskell pipeline that runs OCR on Nash's
 declassified letters and asks a language model to annotate and cross-check them, stores its source
 in Git with identifiers translated into Latin [@hoffmann2026nashkell]. A Git `clean` filter
 translates English identifiers to Latin on commit, and a `smudge` filter translates them back on
@@ -87,6 +87,6 @@ control. The source code itself is better published, signed and cited.
 **[ANALYSIS]** In Nash's own vocabulary, this is a change of strategy in a game whose payoffs have
 moved. When reverse engineering was expensive, secrecy could be a sensible strategy for an
 author. When reverse engineering is cheap, the payoff of secrecy falls towards zero, while the
-payoff of credited, verifiable publication does not. We do not claim to have computed an
-equilibrium [@nash1950equilibrium]; we claim only that the costs on which the old strategy rested
+payoff of credited, verifiable publication does not. I do not claim to have computed an
+equilibrium [@nash1950equilibrium]; I claim only that the costs on which the old strategy rested
 are gone.
