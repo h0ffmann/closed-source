@@ -1,0 +1,8 @@
+pdf/
+build/tex/
+build/*.pdf
+build/*.aux
+build/*.log
+build/*.out
+build/.current-revision
+__pycache__/
