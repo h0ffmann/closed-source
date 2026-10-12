@@ -34,6 +34,8 @@ First paper should be. Closed Source: The God that failed
 | 8 | `papers/closed-source/metadata.md`, `.zenodo.json` |
 | 9 | `docs/1-product/readiness/2026-10-12-ready-to-promote.md` |
 | 10 | this folder |
+| follow-up: ASD-STE100 pass | `papers/closed-source/prose-ste/`, `STE100.md`, `.claude/commands/ste100.md`, `scripts/ste_check.py` |
+| follow-up: Nash, obfuscation, securing source | `papers/closed-source/prose/05a-securing-source.md` (section 6) |
 | follow-up: arXiv setup | `scripts/arxiv.py`, `make arxiv`, `docs/4-ways-of-working/releasing.md` |
 
 "REA" was read as reverse engineering, AI-assisted; the paper says so in section 4.
@@ -44,4 +46,12 @@ Hoffmann, 2026-10-12 18:39 UTC, verbatim:
 
 ```text
 This first PR should include arXiv setup as well
+```
+
+```text
+do a sta100 pass, like we have in h0ffmann/picasso, without changing meaning
+```
+
+```text
+add some John Nash work to be cited in this paper. The paper should cite obsfuction terchniques like I used in h0ffmann/nashkell, its limitations, and how to secure source code in 2026, criptography on Git plus Keys(with 2FA)
 ```

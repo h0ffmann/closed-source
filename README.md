@@ -23,6 +23,15 @@ make check                   # the same, plus the reference-log check
 make arxiv                   # arXiv source bundles, checked with pdfLaTeX, in build/arxiv/
 ```
 
+Each paper builds twice: `pdf/<slug>.pdf` from `prose/`, and `pdf/<slug>-ste.pdf` from `prose-ste/`,
+the same paper in ASD-STE100 Simplified Technical English (after h0ffmann/picasso's
+`WHITEPAPER.md`). `/ste100` ([`.claude/commands/ste100.md`](.claude/commands/ste100.md)) makes the
+STE text; `scripts/ste_check.py`, run by `make check`, fails if it changes a citation, quotation,
+number or marker. The passes are logged in `papers/<slug>/STE100.md`.
+
+```sh
+```
+
 The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
 Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
 and the Git revision stamped on every page.

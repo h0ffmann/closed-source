@@ -25,7 +25,7 @@ check. Use the deposit API, creating drafts only. Mirror Sandy Maguire's layout,
 asked, with pinned pandoc and pandoc-crossref.
 
 ## Result
-28 references logged: 23 verified, 5 partial, none unverified. Fetching caught one wrong DOI
+41 references logged after the follow-ups: 34 verified, 7 partial, none unverified. Fetching caught one wrong DOI
 recalled from memory (Raymond 1998) and one unsupported claim (that a 2024 attack paper reported
 its responsible disclosure), both removed before the build. The build produces a 12-page PDF with
 no pandoc warnings. Pending: CI's first run, the authors' review and the first Zenodo draft.

@@ -64,6 +64,10 @@ def compare(orig: str, ste: str) -> list[str]:
     for kind in a:
         if a[kind] != b[kind]:
             lost, added = a[kind] - b[kind], b[kind] - a[kind]
+            # Splitting an [ANALYSIS] paragraph in two (the six-sentence rule) repeats its marker;
+            # that marks the same interpretation, so an added ANALYSIS marker is not a change.
+            if kind == "markers":
+                added = Counter({k: v for k, v in added.items() if k != "ANALYSIS"})
             if lost:
                 errs.append(f"{kind} lost: {sorted(lost.elements())}")
             if added:
@@ -102,6 +106,7 @@ def self_test() -> int:
     kinds = " ".join(errs)
     for k in ("citations lost", "quotations lost", "numbers lost", "numbers added", "markers lost"):
         assert k in kinds, errs
+    assert compare("**[ANALYSIS]** a. b.", "**[ANALYSIS]** a.\n\n**[ANALYSIS]** b.") == []
     assert long_sentences(" ".join(["word"] * 30) + ".") and not long_sentences("Short one.")
     print("ste_check: self-test ok", file=sys.stderr)
     return 0

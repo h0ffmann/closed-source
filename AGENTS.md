@@ -37,6 +37,10 @@ linked docs before you change what they cover.
 
 ## Writing
 
+- A paper's ASD-STE100 text is `papers/<slug>/prose-ste/`. If you change a fact in `prose/`,
+  change it in `prose-ste/` in the same pull request. Use `/ste100` and log the pass in
+  `papers/<slug>/STE100.md`.
+
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.

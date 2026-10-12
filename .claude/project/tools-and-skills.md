@@ -21,4 +21,13 @@ styles document, not loaded as skills; vendoring them is issue N6 in the readine
 
 ## Agents
 
-No sub-agents were started. One session did the work.
+The first pull request's initial commit came from one session. The ASD-STE100 pass used three
+sub-agents of that session, following picasso's two-pass method: two rewrote the paper in halves
+(pass 1), and one checked the whole text against the rules and the original and wrote the new
+section's STE text (pass 2). `scripts/ste_check.py` then checked mechanically that no citation,
+quotation, number or marker changed.
+
+## Commands
+
+`.claude/commands/ste100.md` is the `/ste100` command, copied from h0ffmann/picasso and adapted
+for papers.

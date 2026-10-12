@@ -37,7 +37,7 @@ the items that apply to a paper repository, plus issues specific to the move.
 | N1 | Docs check missing: front-matter and link checks and Vale with the `research` style are not wired into CI. | process | agent |
 | N2 | Docs layout is a partial product umbrella: no `2-engineering/` (spec of the build) or `3-using/` yet. | process | agent |
 | N3 | One `.zenodo.json` per repository, but Paper Fabric is meant for many papers. Move citation metadata to `papers/<slug>/` and loop the release over papers. | build | agent |
-| N4 | Reference gaps: Samuelson and Scotchmer's DOI not checked; picasso's Zenodo record not fetched (rate-limited); Ghidra's 2019 release year not re-fetched; no entry for the 1949 anthology the title alludes to; Wikipedia used for Linux and Git dates (primary sources preferred). | record | agent |
+| N4 | Reference gaps: Samuelson and Scotchmer's DOI not checked; picasso's Zenodo record not fetched (rate-limited); Ghidra's 2019 release year not re-fetched; no entry for the 1949 anthology the title alludes to; Wikipedia used for Linux and Git dates (primary sources preferred); Nash's "exponentially" quotation comes from a transcription, so check it against the scanned letter. | record | agent |
 | N5 | Not peer reviewed. Choose a venue or an open-review route before v1. | direction | the three authors |
 | N6 | Skills are not vendored: the exported `.claude/` lists the skills and tools used, but Ouroboric requires a `skills.lock` with pinned, licensed copies. | supply chain | agent |
 | N7 | The organisation pull-request template expects an issue, a plan task id and a named proof test; this repository has no issue tracker or plan yet. | process | agent |
