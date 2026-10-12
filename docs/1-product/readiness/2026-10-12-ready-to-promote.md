@@ -42,7 +42,7 @@ the items that apply to a paper repository, plus issues specific to the move.
 | N6 | Skills are not vendored: the exported `.claude/` lists the skills and tools used, but Ouroboric requires a `skills.lock` with pinned, licensed copies. | supply chain | agent |
 | N7 | The organisation pull-request template expects an issue, a plan task id and a named proof test; this repository has no issue tracker or plan yet. | process | agent |
 | N8 | CI has not run yet: the first pull request is the first run of `pdf`, `citation` and `release` is untested until a tag. The arXiv bundle was compiled with this container's TeX Live, not arXiv's own. | build | agent |
-| N9 | ~~`pandoc-crossref` 0.3.16.0 is built for pandoc 3.1.2 and warns on 3.1.3.~~ Fixed: the build uses picasso's `paper` lab (pandoc 3.7 with pandoc-crossref 0.3.21 built against it), pinned by `flake.lock`. After h0ffmann/picasso#114 merges, drop `ref=labs/paper` in `flake.nix` and run `nix flake update paper`. | build | agent |
+| N9 | ~~`pandoc-crossref` 0.3.16.0 is built for pandoc 3.1.2 and warns on 3.1.3.~~ Fixed: the build uses picasso's `paper` lab (pandoc 3.7 with pandoc-crossref 0.3.21 built against it), pinned by `flake.lock`. | build | agent |
 
 ## Met
 

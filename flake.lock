@@ -22,17 +22,16 @@
       },
       "locked": {
         "dir": "labs/paper",
-        "lastModified": 1791833608,
+        "lastModified": 1791835199,
         "narHash": "sha256-5FVx3kll7G7nvuudsvGgrY+XYA3xDEyvfr/zOTpjh5s=",
         "owner": "h0ffmann",
         "repo": "picasso",
-        "rev": "a697d5c53cfbe7eaff0bdd0dcf54aafd7e52c6cf",
+        "rev": "41bcafc59fcd2f0bf4d173fe27780ffbb90eccf8",
         "type": "github"
       },
       "original": {
         "dir": "labs/paper",
         "owner": "h0ffmann",
-        "ref": "labs/paper",
         "repo": "picasso",
         "type": "github"
       }
