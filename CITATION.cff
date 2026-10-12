@@ -14,7 +14,7 @@ abstract: >-
   openness scales, and the author's closed undergraduate thesis as evidence of what secrecy costs
   a researcher. It argues that the ethical answer to universal reverse engineering is professional
   citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper
-  Fabric, the open pipeline in the Ouroboric style of Bruno Valério that produced it.
+  Fabric, the open pipeline in the Ouroboric style that produced it.
 
   v0 is a preprint and has not been peer reviewed. This record holds the rendered PDF only;
   sources, build and agent configuration are on GitHub.

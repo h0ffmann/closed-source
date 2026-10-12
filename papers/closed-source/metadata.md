@@ -45,7 +45,7 @@ abstract: |
   argue that the ethical answer to universal reverse engineering is professional citation:
   persistent identifiers, machine-readable citation metadata and agents that borrow, cite and
   propagate credit by default. I describe Paper Fabric, an open, self-improving pipeline in
-  the Ouroboric style of Bruno Valério that produced this preprint, and list its own known limitations.
+  the Ouroboric style that produced this preprint, and list its own known limitations.
 arxiv:
   primary: cs.CY
   cross-list: [cs.SE, cs.CR, cs.DL]
