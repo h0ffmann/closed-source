@@ -38,8 +38,9 @@ The paper is organised as follows. Section [-@sec:bazaar] revisits Linux and Git
 openness scales. Section [-@sec:chemorx] is a confession: one author's closed undergraduate
 thesis. Section [-@sec:espionage] reviews science and espionage in 2026 and the explosion of
 AI-assisted reverse engineering. Section [-@sec:dead] gathers five lines of evidence that closed
-source is dead as a protection. Section [-@sec:citing] argues for professional citation and states
-rules for agents. Section [-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists our
+source is dead as a protection. Section [-@sec:securing] turns to obfuscation, John Nash's
+letters on cryptography and how to secure source code in 2026. Section [-@sec:citing] argues
+for professional citation and states rules for agents. Section [-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists our
 related work, and Section [-@sec:limits] states the limits of our argument.
 
 A note on method. This is a position paper, written in the *research* style of the Ouroboric

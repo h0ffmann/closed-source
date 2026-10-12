@@ -31,7 +31,10 @@ abstract: |
   largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI,
   turns on people, laptops and recruiting, not on code that stayed secret. Against this
   background we revisit Linus Torvalds' Linux and Git as evidence that openness scales, and one
-  author's closed undergraduate thesis as evidence of what secrecy costs a researcher. We then
+  author's closed undergraduate thesis as evidence of what secrecy costs a researcher. We review
+  obfuscation, including one author's own, and why it cannot hide code, and we contrast it with
+  John Nash's 1955 idea of security from computational cost: signed commits, keys held in
+  hardware and two-factor authentication protect what secrecy cannot. We then
   argue that the ethical answer to universal reverse engineering is professional citation:
   persistent identifiers, machine-readable citation metadata and agents that borrow, cite and
   propagate credit by default. We describe Paper Fabric, an open, self-improving pipeline in

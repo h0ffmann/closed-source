@@ -44,6 +44,19 @@ could not be confirmed), `unverified` (not fetched; must not be cited).
 | hoffmann2026marola | verified | zenodo.org/records/23224155; marola-dev/marola .zenodo.json | concept DOI; creators and ORCIDs |
 | hoffmann2026picasso | partial | h0ffmann/picasso CITATION.cff | Zenodo record page rate-limited; concept DOI taken from the repo's CITATION.cff |
 | ouroboric2026 | verified | git clone of ouroboric-dev/ouroboric | charter quotes checked |
+| nash1950equilibrium | verified | Crossref | PNAS 36(1):48–49 |
+| nash1955letters | partial | media.defense.gov PDF | dates Jan–Mar 1955 and NSA quote "affords only limited security" checked; OCR too poor for Nash's own text |
+| branwen2012nash | partial | gwern.net transcription | Nash's "exponentially" quote taken from this transcription (the transcriber marks one word as uncertain); NSA declassification in 2012 stated here |
+| rivest2012nash | verified | iacr.org rump-session page | chosen-plaintext polynomial, known-plaintext subexponential; "a much better game theorist than a cryptographer" |
+| barak2012impossibility | verified | Crossref; author's PDF abstract | JACM 59(2):1–48; virtual black box definition |
+| hoffmann2026nashkell | verified | git clone of h0ffmann/nashkell | README and README-latinizer: filter design and stated limitations, quotes checked |
+| chacon2014signing | verified | git-scm.com Pro Git chapter | GnuPG signing, merge --verify-signatures |
+| git2021relnotes234 | verified | git/git RelNotes 2.34.0 | ssh keys can sign |
+| git2020relnotes229 | verified | git/git RelNotes 2.29.0 | SHA-256 marked experimental |
+| openssh2020release82 | verified | openssh.org release notes | 14 Feb 2020; ecdsa-sk, ed25519-sk |
+| hanley2022twofactor | verified | github.blog | 4 May 2022; 2FA for code contributors by end of 2023 |
+| newman2022sigstore | verified | Crossref; abstract via sos-vo.org | CCS '22 pp. 2353–2367; ephemeral keys, OIDC identity, transparency logs |
+| stevens2017first | verified | link.springer.com | CRYPTO 2017, LNCS 10401 |
 
 ## Not used
 

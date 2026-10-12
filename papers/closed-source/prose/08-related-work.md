@@ -12,6 +12,9 @@ with a concept DOI, and carries machine-readable citation metadata.
   among its creators.
 - **picasso** [@hoffmann2026picasso]: self-contained Nix flakes that pin the toolchains used by the
   projects above, including a pandoc and TeX Live publishing pipeline.
+- **nashkell** [@hoffmann2026nashkell]: a Haskell pipeline that reads the declassified Nash–NSA
+  letters with OCR and a language model, and stores its identifiers in Latin through a Git filter;
+  Section [-@sec:securing] discusses it as an example of obfuscation and its limits.
 - **Ouroboric** [@ouroboric2026]: open factories that improve themselves, for software and
   companies. Its documentation standard, writing styles and readiness checklist shaped Paper
   Fabric.
