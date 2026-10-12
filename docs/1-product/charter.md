@@ -10,7 +10,7 @@ style: direction
 
 **Bottom line:** Paper Fabric is an open pipeline that helps its authors produce high-quality,
 technical, credible papers as PDFs, with agents doing the drafting and checking and people
-steering. This charter is a draft for the three authors to accept.
+steering. This charter is a draft for the author to accept.
 
 ## Vision
 

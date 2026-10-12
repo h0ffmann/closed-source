@@ -21,6 +21,7 @@ build *slugs:
     printf '%s+%s' "$(git rev-parse --short HEAD)" "$(git rev-list --count HEAD)" > build/.current-revision
     for p in $slugs; do
       [ -d "papers/$p" ] || { echo "build: no paper papers/$p" >&2; exit 1; }
+      python3 scripts/logos.py "$p"
       just _pdf "$p" prose "$p"
       if [ -d "papers/$p/prose-ste" ]; then just _pdf "$p" prose-ste "$p-ste"; fi
     done
@@ -50,6 +51,7 @@ self-test:
     python3 scripts/refs_check.py --self-test
     python3 scripts/arxiv.py --self-test
     python3 scripts/zenodo_upload.py --self-test
+    python3 scripts/logos.py --self-test
 
 # Regenerate CITATION.cff and the README citation block from .zenodo.json.
 citation:

@@ -8,7 +8,7 @@ the licence of the kernel to the GNU General Public License. Version 0.95, in Ma
 first release under this licence [@wikipedia2026linuxhistory].
 
 The hobby became the most widely deployed operating-system kernel in history. It runs on servers,
-phones, routers, cars and the supercomputers on which much of computational science depends. We do
+phones, routers, cars and the supercomputers on which much of computational science depends. I do
 not need a market-share figure for this point. Almost certainly, the reader's own week went through
 several Linux machines.
 
@@ -36,7 +36,7 @@ built and archived. Git's data model has the ethic that Section [-@sec:citing] a
 commit names its author and points by cryptographic hash to its exact history. Git is a citation
 graph for code.
 
-We praise Torvalds here without reservation for these two gifts, and for three decades of
-maintenance of the first gift. We also note what this praise does not require. It does not require
+I praise Torvalds here without reservation for these two gifts, and for three decades of
+maintenance of the first gift. I also note what this praise does not require. It does not require
 that others copy the technical style of one person, or that open source is free of conflict. The
 claim is narrower and stronger. At the largest scale that anyone ever tried, openness worked.

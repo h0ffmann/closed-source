@@ -104,7 +104,7 @@ fn header() -> Element(msg) {
     html.div([attribute.class("wrap hero")], [
       html.div([], [
         html.p([attribute.class("eyebrow")], [
-          html.text("Paper Fabric · Ouroboric DEV"),
+          html.text("Paper Fabric"),
           html.span([attribute.class("version")], [html.text("v0")]),
         ]),
         html.h1([], [html.text(content.title)]),
@@ -128,7 +128,7 @@ fn header() -> Element(msg) {
           link("#read", "Read"),
           link("#abstract", "Abstract"),
           link("#contents", "Contents"),
-          link("#authors", "Authors"),
+          link("#authors", "Author"),
           link("#fabric", "How it is made"),
           link("#cite", "Cite"),
         ]),
@@ -167,6 +167,17 @@ fn jacket() -> Element(msg) {
         html.p([attribute.class("jacket-authors")], [
           html.text(author_names(" · ")),
         ]),
+        html.p(
+          [attribute.class("jacket-logos")],
+          list.map(content.logos, fn(logo) {
+            let #(name, url) = logo
+            html.img([
+              attribute.src(url),
+              attribute.alt(string.capitalise(name) <> " logo"),
+              attribute.attribute("height", "28"),
+            ])
+          }),
+        ),
         html.p([attribute.class("jacket-imprint")], [
           html.text("Paper Fabric"),
         ]),
@@ -218,7 +229,10 @@ fn read_section() -> Element(msg) {
       stat(list.length(content.sections), "sections"),
       stat(content.references, "references"),
       stat(content.verified, "references fetched and verified"),
-      stat(list.length(content.authors), "authors"),
+      stat(list.length(content.authors), case list.length(content.authors) {
+        1 -> "author"
+        _ -> "authors"
+      }),
     ]),
   ])
 }
@@ -286,15 +300,32 @@ fn contents_section() -> Element(msg) {
 
 fn authors_section() -> Element(msg) {
   html.section([attribute.aria_labelledby("authors")], [
-    section_head("authors", "Authors", element.none()),
+    section_head("authors", "Author", element.none()),
     html.ul(
       [attribute.class("labs")],
       list.map(content.authors, fn(a: Author) {
+        let w = content.writer
         html.li([], [
           html.b([attribute.class("name")], [html.text(a.name)]),
-          html.p([], [html.text(a.affiliation)]),
+          case w.name == a.name {
+            True -> element.none()
+            False ->
+              html.p([], [
+                html.text(
+                  "The name on the cover. Written in the first person by ",
+                ),
+                html.b([], [html.text(w.name)]),
+                html.text("."),
+              ])
+          },
+          html.p([], [html.text(w.affiliation)]),
           html.p([], [
-            external("https://orcid.org/" <> a.orcid, "ORCID " <> a.orcid),
+            external("https://orcid.org/" <> w.orcid, "ORCID " <> w.orcid),
+          ]),
+          html.p([], [
+            html.text("The ouroboric ideas are Bruno Valério's ("),
+            external("https://github.com/ouroboric-dev/ouroboric", "Ouroboric"),
+            html.text(")."),
           ]),
         ])
       }),
@@ -397,7 +428,7 @@ fn footer() -> Element(msg) {
     ]),
     html.p([], [
       html.text(
-        "Style after picasso's site; the jacket after the title of Hoppe's Democracy: The God That Failed. Ouroboric's names and logos are not licensed here.",
+        "Style after picasso's site; the jacket after the title of Hoppe's Democracy: The God That Failed. Marola's and Ouroboric's names and logos are not licensed here; the logos load from their own repositories.",
       ),
     ]),
   ])

@@ -1,10 +1,10 @@
 # Why closed source is dead: five lines of evidence {#sec:dead}
 
-"Dead" is a strong word, and we should say what we mean. Closed-source software will be sold for
+"Dead" is a strong word, and I should say what I mean. Closed-source software will be sold for
 a long time. What is dead is closed source *as a protection*: the idea that keeping an artefact
 unreadable keeps its value safe, and that this protection is worth what it costs science. Five
 references, from cryptography, law, machine learning, software engineering and economics,
-support that claim. We chose them for credibility: each is peer reviewed, a primary legal or
+support that claim. I chose them for credibility: each is peer reviewed, a primary legal or
 historical source, or a widely cited working paper from a research university.
 
 Table: Five references on why secrecy fails as a protection. {#tbl:five}

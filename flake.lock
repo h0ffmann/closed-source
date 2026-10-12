@@ -58,16 +58,17 @@
       },
       "locked": {
         "dir": "labs/paper",
-        "lastModified": 1791835199,
-        "narHash": "sha256-5FVx3kll7G7nvuudsvGgrY+XYA3xDEyvfr/zOTpjh5s=",
+        "lastModified": 1791837525,
+        "narHash": "sha256-hUUGzjerr3BW8y/4pk2G7iJiVbfYp/lN34yvBn4Bn8g=",
         "owner": "h0ffmann",
         "repo": "picasso",
-        "rev": "41bcafc59fcd2f0bf4d173fe27780ffbb90eccf8",
+        "rev": "4aff59be14fe24e44c5bdb6da0b0e66bd651b57f",
         "type": "github"
       },
       "original": {
         "dir": "labs/paper",
         "owner": "h0ffmann",
+        "ref": "labs/paper-rsvg",
         "repo": "picasso",
         "type": "github"
       }

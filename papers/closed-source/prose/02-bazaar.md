@@ -9,7 +9,7 @@ release under it [@wikipedia2026linuxhistory].
 
 The hobby became the most widely deployed operating-system kernel in history. It runs on
 servers, phones, routers, cars and the supercomputers on which much of computational science
-depends. We do not need a market-share figure to make the point; the reader's own week almost
+depends. I do not need a market-share figure to make the point; the reader's own week almost
 certainly passed through several Linux machines.
 
 Torvalds' first achievement was not only technical. Eric Raymond's account of Linux development,
@@ -31,11 +31,11 @@ information manager from hell" [@torvalds2005git].
 accepted a closed tool for convenience. When the owner withdrew it, the community was exposed;
 when Torvalds replaced it with an open one, the replacement became the substrate of nearly all
 software development, including the repositories, pull requests and release tags through which
-this paper is built and archived. Git also embodies, in its data model, the ethic we argue for in
+this paper is built and archived. Git also embodies, in its data model, the ethic I argue for in
 Section [-@sec:citing]: every commit names its author and points, by cryptographic hash, to the
 exact history it builds on. Git is a citation graph for code.
 
-We praise Torvalds here without reservation for those two gifts and for three decades of
-maintaining the first. We also note what the praise does not require: that one person's
+I praise Torvalds here without reservation for those two gifts and for three decades of
+maintaining the first. I also note what the praise does not require: that one person's
 technical style be copied, or that open source be free of conflict. The claim is narrower and
 stronger. Openness, at the largest scale ever attempted, worked.

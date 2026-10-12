@@ -1,10 +1,10 @@
 # Science and espionage in 2026: the reverse-engineering explosion {#sec:espionage}
 
-We use *reverse engineering* (REA in our project's shorthand, for reverse engineering, assisted)
+I use *reverse engineering* (REA in my project's shorthand, for reverse engineering, assisted)
 for any process that recovers how an artefact works from the artefact itself, without access to
 its design documents: decompiling a binary, inferring a model from its outputs, or rebuilding a
 product from its parts. This section reviews four developments. The first is a lawsuit, and its
-facts are allegations; we report them as such.
+facts are allegations; I report them as such.
 
 ## Apple v. OpenAI: secrets walk out on two legs
 
@@ -32,7 +32,7 @@ leak. Note also that OpenAI's defence, as reported, is partly that Apple's own p
 treat the information as secret. A secret that must be actively guarded at every exit interview is
 expensive; the cost of the guard is part of the price of closed source.
 
-*Verification note.* We could not retrieve the docket directly. Secondary sources give the case
+*Verification note.* I could not retrieve the docket directly. Secondary sources give the case
 number as 5:26-cv-07078, with conflicting judge suffixes (VKD and EJD), and caption it both as
 *Apple Inc. v. OpenAI* and *Apple Inc. v. Liu* [@bridgecounsels2026apple]. The number must be
 checked against PACER before this paper leaves v0.
@@ -50,7 +50,7 @@ Ten days later Anthropic reported "industrial-scale campaigns by three AI labora
 DeepSeek, Moonshot AI and MiniMax, using about 24,000 fraudulent accounts and more than 16 million
 exchanges with its Claude models [@anthropic2026distillation].
 
-**[ANALYSIS]** These are accusations by interested parties, and we do not adjudicate them. Their
+**[ANALYSIS]** These are accusations by interested parties, and I do not adjudicate them. Their
 relevance here is structural. A model served behind an API is closed source in the strongest
 sense: its weights never leave the provider's servers. Yet every answer it gives is a sample of
 its behaviour, and enough samples teach a student model much of what the teacher knows. The
@@ -79,7 +79,7 @@ Ghidra on the HumanEval and ExeBench benchmarks [@tan2024llm4decompile].
 
 **[ANALYSIS]** Put these four developments together and the cost curve of reverse engineering
 has collapsed along every axis: for binaries (decompilation), for models (extraction and
-distillation) and for organisations (people moving between employers). We call this the
+distillation) and for organisations (people moving between employers). I call this the
 *REA explosion*. It does not make every artefact transparent overnight, and it does not make
 copying lawful where the law forbids it. It does make secrecy a weak and expensive defence, and it
 makes the question of credit, who did what first and who built on whom, more important than the

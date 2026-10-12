@@ -314,6 +314,9 @@ button.copy {
 .jacket-tail { font-style: italic; font-size: 1.35rem; line-height: 1.3; color: var(--accent-text); }
 .jacket-sub { font-size: .78rem; line-height: 1.5; color: var(--muted); font-variant: small-caps; letter-spacing: .03em; }
 .jacket-authors { margin-top: auto !important; padding-top: 14px; font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; }
+.jacket-logos { display: flex; gap: 14px; justify-content: center; align-items: center; margin-top: 14px !important;
+  padding: 6px 12px; border-radius: 6px; background: #fff; }
+.jacket-logos img { height: 22px; width: auto; }
 .jacket-imprint { margin-top: 12px !important; font: 600 10px/1 Inter, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--accent-text); }
 .jacket-figure figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); text-align: center; }
 @media (max-width: 760px) {

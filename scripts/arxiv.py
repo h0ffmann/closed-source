@@ -7,7 +7,7 @@ So this script takes the .tex that `just build` generates (citations already ren
 .bbl is needed), freezes the Git revision into it, checks that it compiles with pdfLaTeX in a
 clean directory holding only the bundle, and writes:
 
-    build/arxiv/<slug>.tar.gz     the upload: <slug>.tex and nothing else
+    build/arxiv/<slug>.tar.gz     the upload: <slug>.tex and the title-page logos, nothing else
     build/arxiv/<slug>.txt        the form fields: title, authors, abstract, comments, categories, licence
 
 Submitting stays a human step on arxiv.org (endorsement, licence choice and the final preview are
@@ -62,7 +62,9 @@ def form_fields(meta: dict) -> tuple[str, list[str]]:
     errs += [f"category {c!r} is not an arXiv category id" for c in cats if not CATEGORY_RE.match(c)]
     if not ax.get("license"):
         errs.append("arxiv.license is missing")
-    authors = ", ".join(a["name"] for a in meta.get("author", []))
+    # The cover may carry a pen name (`author`); arXiv gets the writer's name when one is given.
+    people = [meta["writer"]] if meta.get("writer") else meta.get("author", [])
+    authors = ", ".join(a["name"] for a in people)
     text = "\n".join(
         [
             f"Title: {title}",
@@ -126,6 +128,8 @@ def package(slug: str, compile_: bool) -> int:
     tarball = out / f"{slug}.tar.gz"
     with tarfile.open(tarball, "w:gz") as tf:
         tf.add(stage / f"{slug}.tex", arcname=f"{slug}.tex")
+        for logo in metadata(slug).get("logos", []):  # scripts/logos.py wrote them for the build
+            tf.add(ROOT / "build" / logo["file"], arcname=logo["file"])
     shutil.rmtree(stage)
     (out / f"{slug}.txt").write_text(text)
     if compile_:

@@ -9,7 +9,8 @@ reference checked, every release citable.
 > to publish the method, mint an identifier, and cite whatever you use, and to require the same
 > of the agents that now do much of the reading and writing.
 
-**Authors:** Rob Kler Soares da Silva Junior, Bruno Valério, Matheus Hoffmann (Ouroboric DEV).
+**Author:** Mr. Nobody on the cover; written in the first person by Matheus Hoffmann. The ouroboric
+ideas are Bruno Valério's ([Ouroboric](https://github.com/ouroboric-dev/ouroboric)).
 **Status:** v0 preprint, not peer reviewed. See the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
@@ -154,8 +155,8 @@ it after a venue accepts it. Details: [releasing](docs/4-ways-of-working/releasi
 BibTeX:
 
 ```bibtex
-@misc{soaresdasilvajunior_2026_closedsource,
-  author    = {Soares da Silva Junior, Rob Kler and Valério, Bruno and Hoffmann, Matheus},
+@misc{hoffmann_2026_closedsource,
+  author    = {Hoffmann, Matheus},
   title     = {{Closed Source: The God that Failed}},
   year      = {2026},
   url       = {https://github.com/h0ffmann/closed-source}
@@ -164,11 +165,11 @@ BibTeX:
 
 APA:
 
-> Soares da Silva Junior, R. K., Valério, B., & Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. https://github.com/h0ffmann/closed-source
+> Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. https://github.com/h0ffmann/closed-source
 
 ABNT (NBR 6023):
 
-> SOARES DA SILVA JUNIOR, Rob Kler; VALÉRIO, Bruno; HOFFMANN, Matheus. **Closed Source**: The God that Failed. [S. l.]: GitHub, 2026. Disponível em: https://github.com/h0ffmann/closed-source.
+> HOFFMANN, Matheus. **Closed Source**: The God that Failed. [S. l.]: GitHub, 2026. Disponível em: https://github.com/h0ffmann/closed-source.
 
 <!-- citation:end -->
 

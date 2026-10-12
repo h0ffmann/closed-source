@@ -81,10 +81,13 @@ def render(slug: str) -> str:
     refs = len(re.findall(r"^@\w+\{", bib, re.M))
     log = (paper / "REFERENCES.md").read_text() if (paper / "REFERENCES.md").exists() else ""
     verified = len(re.findall(r"\|\s*verified\s*\|", log))
-    authors = [
-        f"Author(name: {gleam_string(a['name'])}, orcid: {gleam_string(a.get('orcid', ''))}, affiliation: {gleam_string(a.get('affiliation', ''))})"
-        for a in m["author"]
-    ]
+    def author(a: dict) -> str:
+        return f"Author(name: {gleam_string(a['name'])}, orcid: {gleam_string(a.get('orcid', ''))}, affiliation: {gleam_string(a.get('affiliation', ''))})"
+
+    authors = [author(a) for a in m["author"]]
+    # `writer`: who wrote a paper whose cover carries a pen name; the cover's author otherwise.
+    writer = author(m.get("writer") or m["author"][0])
+    logos = [f"#({gleam_string(Path(l['file']).stem)}, {gleam_string(l['svg'])})" for l in m.get("logos", [])]
     cites = [f"#({gleam_string(l)}, {gleam_string(t)})" for l, t in citations((ROOT / "README.md").read_text())]
     keywords = [gleam_string(k) for k in m.get("keywords", [])]
     secs = [gleam_string(t) for t in sections(paper / "prose")]
@@ -120,6 +123,10 @@ pub const references = {refs}
 pub const verified = {verified}
 
 pub const authors = {gleam_list(authors)}
+
+pub const writer = {writer}
+
+pub const logos = {gleam_list(logos)}
 
 pub const keywords = {gleam_list(keywords)}
 

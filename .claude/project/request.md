@@ -79,3 +79,30 @@ now create a website for closed-source, in same picasso style, with gleam,create
 ```
 
 Read as: `just site-build` with only Nix and just installed. Picasso: h0ffmann/picasso#115 (`labs/gleam-website`).
+
+## Third pull request, continued: the jacket, the books and the author
+
+Hoffmann, 2026-10-12, verbatim (relayed by the project's coordinator session):
+
+```text
+The website must have same style as picasso, but adapted from 'Democracy: The God That Failed' by HHH. Do citation in readme. There are no proprietary rights on HHH work, by its principle of non existent IP, which matches with Closed Source Philosophy. Add a BOOKS.md it should cover ZAMM and HHH Democracy, and the most famous book critizing IP
+```
+
+Read as: a jacket in the site's header after the title of Hoppe's book (type only: the book is
+under copyright), its citation in the README, and BOOKS.md (Pirsig, Hoppe, Kinsella, with Boldrin
+and Levine beside Kinsella).
+
+Hoffmann, 2026-10-12 20:35 and 20:37 UTC, verbatim:
+
+```text
+Only let my names for now, ouroboric ideas should be Credited only to Brunão, Picasso ia a use-case of self-improving system. Add marola and ouroboric logos to the book. This book will have only 50pages. explained later
+```
+
+```text
+author should be MR. NOBODY, in the front of the book, but will be written by me in 1st person for sure
+```
+
+Read as: the cover and title page say Mr. Nobody; the prose is in the first person singular; the
+citation metadata names Matheus Hoffmann alone; Ouroboric is credited to Bruno Valério; picasso is
+described as a use case of a self-improving system; the Marola and Ouroboric logos go on the title
+page and the site's jacket. The 50-page length waits for the explanation.
