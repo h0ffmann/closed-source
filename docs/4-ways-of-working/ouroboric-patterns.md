@@ -5,6 +5,7 @@ date: 2026-10-12
 related: [paper-fabric.md, ../1-product/charter.md]
 style: guide
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Ouroboric patterns used in Paper Fabric
 

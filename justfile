@@ -42,6 +42,7 @@ check: build
     python3 scripts/refs_check.py papers/*/refs.bib
     for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
     python3 scripts/book_check.py $(ls papers)
+    python3 scripts/cite_check.py
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
@@ -55,6 +56,7 @@ self-test:
     python3 scripts/logos.py --self-test
     python3 scripts/book_check.py --self-test
     python3 scripts/ouroboric.py --self-test
+    python3 scripts/cite_check.py --self-test
 
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
@@ -100,6 +102,14 @@ site-build:
     nix develop --no-update-lock-file --command just build
     nix develop --no-update-lock-file --command python3 site/content.py
     nix develop --no-update-lock-file .#site --command bash -c 'cd site && just ci'
+
+# On any Ubuntu with only Nix and `apt install just`: render the paper's PDFs in picasso's paper lab.
+paper:
+    nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file --command just build
+
+# The same for the book: its PDFs, then its hard-rule checks (roster, cite lines, references, STE).
+book:
+    nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file --command just check
 
 # Build the website and serve it on http://localhost:8000
 site-serve: site-build

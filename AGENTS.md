@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # AGENTS.md
 
 This repository is Paper Fabric and the papers it builds. It is a map, not a manual. Read the
@@ -58,6 +59,20 @@ certainty about AI without open work that anyone can check. None of the 50 think
 book argues against their claims, not their persons: quote each claim exactly, cite where it was
 made, and answer it with evidence. Name a person only for a public claim that a source records;
 never state a private fact, a motive or an accusation that no source supports.
+
+## Every Markdown file is cited (hard rule)
+
+Each Markdown file names its main author and its last author (Hoffmann, 12 October 2026), on one
+line after its front matter, or as its first line: `<!-- cite: main="Claude"; last="Matheus
+Hoffmann" -->`. Both are personas in `PERSONAS.md`. A new file gets the line when it is created;
+`just check` fails without it.
+
+## Local render (hard rule)
+
+`just paper` and `just book` render the book on any Ubuntu that has only Nix and the `just` from
+`apt` (Hoffmann, 12 October 2026). Every tool comes from picasso's `paper` lab through
+`flake.nix`; nothing else may need to be installed on the machine. A recipe must parse with just
+1.21 (Ubuntu 24.04). CI's `ubuntu-just` job runs `just book` this way.
 
 ## Borrow, cite, propagate
 

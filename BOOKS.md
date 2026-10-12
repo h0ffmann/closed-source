@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Books
 
 Three books are behind this repository, and a fourth is the economic case beside the third. They

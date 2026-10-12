@@ -4,6 +4,7 @@ status: draft
 date: 2026-10-12
 style: research
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Reference log
 

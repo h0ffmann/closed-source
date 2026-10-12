@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # The coordinator's brief
 
 The project's coordinator session started a thread session on the request and gave it this

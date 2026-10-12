@@ -5,6 +5,7 @@ date: 2026-10-12
 related: [../1-product/charter.md]
 style: journal
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Journal
 

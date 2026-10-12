@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Science and espionage in 2026: the reverse-engineering explosion {#sec:espionage}
 
 I use the term *reverse engineering* for any process that recovers how an artefact works from the

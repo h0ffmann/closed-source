@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Claude project configuration export
 
 This folder publishes the configuration that produced this repository's first pull request, as

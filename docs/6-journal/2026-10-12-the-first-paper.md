@@ -5,6 +5,7 @@ status: open
 post-candidate: yes
 evidence: [../../papers/closed-source/REFERENCES.md, ../1-product/readiness/2026-10-12-ready-to-promote.md]
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 ## Challenge
 Set up Paper Fabric and produce its first paper in one pull request, drafted by an agent, with
 references a reviewer can trust and a v0 release that puts only the PDF on Zenodo.

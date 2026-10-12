@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Limitations {#sec:limits}
 
 I state the limits of my argument plainly, in line with the Ouroboric value of honesty about

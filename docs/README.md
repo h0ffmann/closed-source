@@ -4,6 +4,7 @@ status: draft
 date: 2026-10-12
 related: [../README.md, ../AGENTS.md]
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Paper Fabric docs
 

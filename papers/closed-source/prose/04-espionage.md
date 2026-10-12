@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Science and espionage in 2026: the reverse-engineering explosion {#sec:espionage}
 
 I use *reverse engineering* (REA in my project's shorthand, for reverse engineering, assisted)

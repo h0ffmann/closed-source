@@ -5,6 +5,7 @@ date: 2026-10-12
 related: [readiness/2026-10-12-ready-to-promote.md, ../4-ways-of-working/paper-fabric.md]
 style: direction
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Paper Fabric charter
 

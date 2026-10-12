@@ -5,6 +5,7 @@ date: 2026-10-12
 related: [../1-product/charter.md, ouroboric-patterns.md, releasing.md]
 style: guide
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # How Paper Fabric makes a paper
 

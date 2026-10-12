@@ -5,6 +5,7 @@ date: 2026-10-12
 related: [paper-fabric.md, ../../.zenodo.json]
 style: procedure
 ---
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Releasing a paper
 

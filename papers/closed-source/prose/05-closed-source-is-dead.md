@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Why closed source is dead: five lines of evidence {#sec:dead}
 
 "Dead" is a strong word, and I should say what I mean. Closed-source software will be sold for

@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Related work by the same author {#sec:related}
 
 The argument of this paper also describes how I worked from the time of the closed

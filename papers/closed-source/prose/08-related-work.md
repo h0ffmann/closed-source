@@ -1,3 +1,4 @@
+<!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Related work by the same author {#sec:related}
 
 The argument of this paper is also a description of how I have worked since the

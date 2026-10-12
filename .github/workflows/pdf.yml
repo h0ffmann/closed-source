@@ -36,3 +36,16 @@ jobs:
           name: arxiv-bundles
           path: build/arxiv/*
           if-no-files-found: error
+
+  # The local-render hard rule (AGENTS.md): on a plain Ubuntu, with only Nix and apt's just,
+  # `just book` renders the book.
+  ubuntu-just:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: DeterminateSystems/nix-installer-action@v23
+      - run: sudo apt-get update && sudo apt-get install -y just && just --version
+      - run: just book
