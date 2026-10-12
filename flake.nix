@@ -3,9 +3,7 @@
 
   # `nix flake update` picks up new revisions of the labs.
   inputs.paper.url = "github:h0ffmann/picasso?dir=labs/paper";
-  # Until h0ffmann/picasso#115 merges, this lab lives on its branch. After the merge, drop
-  # `&ref=labs/gleam-website` and run `nix flake update gleam-website`.
-  inputs.gleam-website.url = "github:h0ffmann/picasso?dir=labs/gleam-website&ref=labs/gleam-website";
+  inputs.gleam-website.url = "github:h0ffmann/picasso?dir=labs/gleam-website";
 
   outputs = { paper, gleam-website, ... }: {
     # default: the PDF and arXiv toolchain; site: the toolchain of site/.

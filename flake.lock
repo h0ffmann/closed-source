@@ -6,17 +6,16 @@
       },
       "locked": {
         "dir": "labs/gleam-website",
-        "lastModified": 1791835760,
-        "narHash": "sha256-R4sf6XEUrPSWVGAkwJ1XvlNNBv8UiT+uOoASg8OYlLU=",
+        "lastModified": 1791836301,
+        "narHash": "sha256-gXiBtUfwWADgPSsXCdHotyEbFKofq138qQxeOxNez8k=",
         "owner": "h0ffmann",
         "repo": "picasso",
-        "rev": "03802d116d82edf6a2b74cde144b5162b796012f",
+        "rev": "68723abc035215f7e819ac44c068461e0ff9f0d8",
         "type": "github"
       },
       "original": {
         "dir": "labs/gleam-website",
         "owner": "h0ffmann",
-        "ref": "labs/gleam-website",
         "repo": "picasso",
         "type": "github"
       }
