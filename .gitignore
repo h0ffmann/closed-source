@@ -1,9 +1,5 @@
 pdf/
-build/tex/
-build/*.pdf
-build/*.aux
-build/*.log
-build/*.out
-build/.current-revision
+build/
 __pycache__/
-build/arxiv/
+result
+result-*

@@ -142,7 +142,7 @@ def _repo(meta: dict) -> str:
 def render_cff(meta: dict, concept_doi: str = CONCEPT_DOI) -> str:
     repo = _repo(meta)
     out = [
-        "# Generated from .zenodo.json by scripts/citation.py; edit that file, then `make citation`.",
+        "# Generated from .zenodo.json by scripts/citation.py; edit that file, then `just citation`.",
         "cff-version: 1.2.0",
         f'message: "If you use {NAME}, please cite it using the metadata below."',
         f"type: {'dataset' if meta['upload_type'] == 'dataset' else 'software'}",
@@ -305,7 +305,7 @@ def run(zenodo: Path, cff: Path, check: bool, readmes: tuple[Path, ...] = README
     if check:
         if stale:
             names = ", ".join(p.name for p in stale)
-            print(f"citation: stale: {names}; run `make citation`", file=sys.stderr)
+            print(f"citation: stale: {names}; run `just citation`", file=sys.stderr)
             return 1
         print("citation: .zenodo.json valid, generated text current", file=sys.stderr)
         return 0

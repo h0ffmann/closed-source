@@ -16,21 +16,24 @@ organisation.
 
 ## Build the PDF
 
+The tools (pandoc 3.7, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh) come from the
+`paper` lab of [h0ffmann/picasso](https://github.com/h0ffmann/picasso/tree/main/labs/paper),
+pinned by `flake.lock`. You need [Nix](https://nixos.org/download/) with flakes on.
+
 ```sh
-scripts/setup-toolchain.sh   # pandoc 3.1.3, pandoc-crossref 0.3.16.0, XeLaTeX (Debian/Ubuntu)
-make                         # every paper -> pdf/<slug>.pdf
-make check                   # the same, plus the reference-log check
-make arxiv                   # arXiv source bundles, checked with pdfLaTeX, in build/arxiv/
+nix develop            # or `just shell`: every tool on PATH
+just                   # every paper -> pdf/<slug>.pdf and pdf/<slug>-ste.pdf
+just build closed-source
+just check             # build, then the reference-log and STE checks (what CI runs)
+just arxiv             # arXiv source bundles, checked with pdfLaTeX, in build/arxiv/
+just --list            # every recipe
 ```
 
 Each paper builds twice: `pdf/<slug>.pdf` from `prose/`, and `pdf/<slug>-ste.pdf` from `prose-ste/`,
 the same paper in ASD-STE100 Simplified Technical English (after h0ffmann/picasso's
 `WHITEPAPER.md`). `/ste100` ([`.claude/commands/ste100.md`](.claude/commands/ste100.md)) makes the
-STE text; `scripts/ste_check.py`, run by `make check`, fails if it changes a citation, quotation,
+STE text; `scripts/ste_check.py`, run by `just check`, fails if it changes a citation, quotation,
 number or marker. The passes are logged in `papers/<slug>/STE100.md`.
-
-```sh
-```
 
 The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
 Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
@@ -42,21 +45,79 @@ and the Git revision stamped on every page.
 |---|---|
 | [`papers/closed-source/`](papers/closed-source/) | the paper: `metadata.md`, `prose/NN-*.md`, `refs.bib`, and the reference log `REFERENCES.md` |
 | [`format/`](format/) | the LaTeX template and pandoc-crossref settings shared by every paper |
-| [`scripts/`](scripts/) | toolchain setup, reference check, citation metadata, release and Zenodo upload |
+| [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pin (picasso's `paper` lab) |
+| [`scripts/`](scripts/) | reference check, STE check, arXiv bundle, citation metadata, release and Zenodo upload |
 | [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
-## Release and Zenodo
+## Secrets and keys
 
-A release is a tag on `main` (`scripts/release.sh 0.1.0`). The release workflow builds the PDF,
-attaches it to a GitHub release and, when the `ZENODO_TOKEN` secret is set, uploads **only the
-PDF** to a Zenodo draft. A person publishes the draft on zenodo.org, which mints the DOI. See
-[releasing](docs/4-ways-of-working/releasing.md).
+Nothing secret is in this repository. A release needs these, and only these:
 
-arXiv gets the LaTeX source instead (`make arxiv`): a single `.tex` with citations rendered,
-checked with pdfLaTeX, plus the form fields. Submission is manual, and arXiv's CS category
-expects position papers to be peer reviewed first; see the same page.
+| What | Where it lives | Needed for | How to get it |
+|---|---|---|---|
+| GitHub account with **2FA** on | you | pushing, `just release` | github.com → Settings → Password and authentication |
+| SSH key (or `gh auth login`) that can push to this repository | your machine | `just release` pushes a tag | `ssh-keygen -t ed25519-sk` makes a key that stays on a FIDO security key; add it in GitHub → Settings → SSH and GPG keys |
+| Signing key (optional, recommended) | your machine, `git config user.signingkey` | `just release` signs the tag when it is set | the same SSH key: `git config gpg.format ssh`, `git config user.signingkey ~/.ssh/id_ed25519_sk.pub`, and add it again in GitHub as a **Signing key** |
+| `ZENODO_TOKEN` | GitHub → Settings → Secrets and variables → Actions → **Secrets** (or `gh secret set ZENODO_TOKEN`) | the Zenodo draft that the `release` workflow makes | zenodo.org → your account menu → Applications → Personal access tokens → New token, scopes `deposit:write` and `deposit:actions` |
+| `ZENODO_TOKEN` in your shell (optional) | `export ZENODO_TOKEN=...`, never in a file in the repository | `just zenodo-draft` from your machine | the same token |
+| `ZENODO_SANDBOX_TOKEN` (optional) | your shell | `just zenodo-sandbox`, a rehearsal | the same steps on sandbox.zenodo.org, a separate account |
+| `ZENODO_CONCEPT_RECID` | GitHub → Settings → Secrets and variables → Actions → **Variables** (or `gh variable set ZENODO_CONCEPT_RECID --body <id>`); not a secret | makes later releases new versions of the same record | the number in the concept DOI, after the first publication |
+| arXiv account, with an endorsement for `cs.CY` | arxiv.org | the arXiv submission | arxiv.org → Register; a first submission to a category needs an endorsement |
+
+The `release` workflow also uses `GITHUB_TOKEN`, which GitHub gives every run; you do not set it.
+**Never** commit a token, paste it in an issue or pull request, or put it in `.zenodo.json`. If a
+token leaks, delete it on zenodo.org at once and make a new one.
+
+Once per repository: on zenodo.org → GitHub, keep the switch for this repository **off**. The
+Zenodo GitHub integration archives the source tree, not the PDF.
+
+## Release: a new Zenodo record and a new arXiv PDF
+
+A release is a Git tag on `main`. One command makes it; CI does the rest; a person publishes.
+
+1. **Merge** the pull request. Check that the `pdf` and `citation` workflows pass on `main`.
+2. **Rehearse** (optional): `just zenodo-dry-run 0.1.0` prints the Zenodo metadata, with no network.
+   `just zenodo-sandbox 0.1.0` makes a draft on sandbox.zenodo.org.
+3. **Tag**:
+
+   ```sh
+   git switch main && git pull
+   just release 0.1.0 --dry-run   # shows the tag it will make
+   just release 0.1.0             # tags v0.1.0 (signed if you set a signing key) and pushes it
+   ```
+
+4. **CI** (the `release` workflow) builds both PDFs and the arXiv bundle, makes the GitHub release
+   with `pdf/*.pdf` and `build/arxiv/*` attached and, when `ZENODO_TOKEN` is set, uploads the
+   PDFs, and nothing else, to a Zenodo **draft**.
+   - With **no** `ZENODO_CONCEPT_RECID` variable, the draft is a **new Zenodo record**. Publishing
+     it mints a new concept DOI (all versions) and a version DOI (this one).
+   - With `ZENODO_CONCEPT_RECID` set, the draft is a **new version of that record**: a new version
+     DOI under the same concept DOI.
+   - Without `ZENODO_TOKEN`, use `just zenodo-draft 0.1.0` on your machine with the token in your
+     shell. It does the same upload.
+5. **Publish on Zenodo**: open the draft on zenodo.org (Uploads). Check the title, the three
+   authors with their ORCIDs, the licence, and that the files are only the PDFs. Press
+   **Publish**. **Caution:** a DOI is permanent, and you cannot delete a published record yourself.
+6. **After the first publication only**: put the concept DOI in `scripts/citation.py`
+   (`CONCEPT_DOI`), run `just citation`, and set the `ZENODO_CONCEPT_RECID` variable. Open a pull
+   request with the result.
+7. **arXiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
+   GitHub release, or run `just arxiv` (`build/arxiv/`).
+   - A **new paper**: arxiv.org → Start new submission. Licence CC BY 4.0, upload the tarball,
+     paste the title, authors, abstract, comments and categories from the `.txt` file.
+   - A **new version** of a paper already on arXiv: open it in your arXiv user page →
+     **Replace**, and upload the new tarball. arXiv makes it `v2`, `v3`, ….
+   - Check arXiv's compiled preview against `pdf/<slug>.pdf` before you submit.
+   - After the announcement, add `https://arxiv.org/abs/<id>` to `.zenodo.json` as a related
+     identifier (relation `isVariantFormOf`, scheme `url`), run `just citation`, and open a
+     pull request.
+
+**Caution, arXiv:** since 31 October 2025, arXiv's computer-science categories accept review
+articles and position papers only after peer review at a journal or conference
+([arXiv blog](https://blog.arxiv.org/?p=1740)). arXiv will hold this v0 position paper. Submit
+it after a venue accepts it. Details: [releasing](docs/4-ways-of-working/releasing.md).
 
 ## Cite
 
@@ -86,7 +147,7 @@ ABNT (NBR 6023):
 ## Licence
 
 - Paper text, docs and figures: [CC BY 4.0](LICENSE).
-- Scripts and workflows (`scripts/`, `.github/`, `Makefile`s): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
+- Scripts, workflows and build files (`scripts/`, `.github/`, `justfile`, `flake.nix`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
 - LaTeX template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
 - Ouroboric's names and logos are not licensed here; see Ouroboric's
   [trademark policy](https://github.com/ouroboric-dev/ouroboric/blob/main/TRADEMARKS.md).

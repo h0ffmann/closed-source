@@ -6,7 +6,8 @@ linked docs before you change what they cover.
 ## Map
 
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
-- Build: `make`, `make check`. Toolchain: `scripts/setup-toolchain.sh`.
+- Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
+  `flake.lock`). Release and secrets: the README.
 - Charter and direction: `docs/1-product/charter.md`.
 - How a paper is made: `docs/4-ways-of-working/paper-fabric.md`.
 - Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.
@@ -47,6 +48,6 @@ linked docs before you change what they cover.
 
 ## Checks before a pull request
 
-1. `make check` passes with no pandoc warning.
+1. `just check` passes with no pandoc warning.
 2. `python3 scripts/citation.py --check` passes.
 3. New references have a `verified` or `partial` row in `REFERENCES.md`.

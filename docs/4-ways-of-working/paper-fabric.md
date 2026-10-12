@@ -16,7 +16,7 @@ directory.
 1. Create `papers/<slug>/` with `metadata.md` (title, authors with ORCID and affiliation,
    abstract, keywords), `prose/01-introduction.md` and an empty `refs.bib`.
 2. Copy `papers/closed-source/REFERENCES.md`'s header into a new `REFERENCES.md`.
-3. Run `make <slug>`. The PDF lands in `pdf/<slug>.pdf`.
+3. Run `just build <slug>`. The PDF lands in `pdf/<slug>.pdf`.
 
 ## 2. The loop
 
@@ -28,7 +28,7 @@ Each paper runs the same loop. The *who* column is the Ouroboric rule: humans st
 | Research: find and fetch sources | agent | `refs.bib` entries, `REFERENCES.md` rows |
 | Draft: one prose file per section | agent | `prose/NN-*.md`, with `[ANALYSIS]` and `[AUTHOR ANECDOTE]` markers |
 | Personal accounts | authors | the anecdote placeholders, filled |
-| Check: `make check` | CI | PDF; fails on unresolved citations or unlogged references |
+| Check: `just check` | CI | PDF; fails on unresolved citations or unlogged references |
 | Readiness: what blocks the next step | agent, then authors | `docs/1-product/readiness/` |
 | Release: tag, PDF to a Zenodo draft, arXiv bundle | authors | GitHub release; DOI after a human publishes; arXiv submission by hand |
 | Learn: what went wrong | agent, then authors | a journal entry; changes to this guide |
@@ -50,5 +50,5 @@ The build mirrors Sandy Maguire's (isovector) books: Markdown, pandoc with pando
 citeproc, a hand-written LaTeX template, XeLaTeX twice, and a revision stamp. Differences: no
 Haskell `design-tools` filter, no EPUB target yet, a template that also compiles with pdfLaTeX
 for arXiv, BibTeX through citeproc instead of
-`pandoc-citeproc` (which pandoc 2.11 replaced), and pinned versions in
-`scripts/setup-toolchain.sh`.
+`pandoc-citeproc` (which pandoc 2.11 replaced), `just` instead of Make, and every tool pinned by
+`flake.lock` through the `paper` lab of h0ffmann/picasso.
