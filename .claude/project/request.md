@@ -182,3 +182,13 @@ Hardrule: just vm paper / book  should render the book locally on any Ubuntu usi
 Read as: `just paper` and `just book` work on any Ubuntu with only Nix and apt's just, with every
 tool from picasso's paper lab. The book needs no tool beyond the paper lab, so there is no separate
 book lab. CI's `ubuntu-just` job proves it.
+
+Hoffmann, 2026-10-12 22:36 UTC, verbatim except one name, replaced by its alias as the message
+asks:
+
+```text
+Notes from [friend1]: Kubeflow case where open source contributions were tooken commercially by Vertex. Katib UI matched Vertex UI (100%). Case from Elasticsearch vs AWS. Now spionage is at scale. Agents are at scale. Companies using IP used in Cloud and their Frontier Model are being stolen for everybody to see. Add Samuel Jackson argument to public executions. Impersonate [friend1] as friend1. add a SMART_NOTE_POLICY.md, for ingesting Notes in Zettelkasten style (Obsidian readable), create the command /note for me to use to create a note
+```
+
+Read as: SMART_NOTE_POLICY.md, `/note`, notes/ as an Obsidian vault, friend1 in PERSONAS.md, and
+the message filed as the first five notes, each with its verification status.

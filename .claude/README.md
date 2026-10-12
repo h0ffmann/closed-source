@@ -14,6 +14,7 @@ It is a record, not a live config: Claude Code reads only `settings.json` and `c
 | [`project/tools-and-skills.md`](project/tools-and-skills.md) | the tools and skills used, and how |
 | [`settings.json`](settings.json) | Claude Code permissions for working in this repository |
 | [`commands/ste100.md`](commands/ste100.md) | `/ste100`: rewrite prose to ASD-STE100 |
+| [`commands/note.md`](commands/note.md) | `/note`: make Zettelkasten notes in `notes/` (SMART_NOTE_POLICY.md) |
 | [`commands/update-ouroboric.md`](commands/update-ouroboric.md) | `/update-ouroboric`: refresh `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` from the ouroboric-dev repositories |
 
 Nothing here is secret. Tokens, e-mail addresses and the harness's own system prompt are left

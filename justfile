@@ -43,6 +43,7 @@ check: build
     for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
     python3 scripts/book_check.py $(ls papers)
     python3 scripts/cite_check.py
+    python3 scripts/notes_check.py
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
@@ -57,6 +58,7 @@ self-test:
     python3 scripts/book_check.py --self-test
     python3 scripts/ouroboric.py --self-test
     python3 scripts/cite_check.py --self-test
+    python3 scripts/notes_check.py --self-test
 
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
