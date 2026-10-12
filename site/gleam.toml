@@ -1,0 +1,16 @@
+name = "closed_source_site"
+version = "1.0.0"
+target = "javascript"
+description = "The site of Closed Source: The God that Failed, the first Paper Fabric paper"
+licences = ["AGPL-3.0-only"]
+repository = { type = "github", user = "h0ffmann", repo = "closed-source" }
+
+[javascript]
+runtime = "nodejs"
+
+[dependencies]
+gleam_stdlib = ">= 1.0.0 and < 2.0.0"
+lustre = ">= 5.7.1 and < 6.0.0"
+
+[dev_dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"

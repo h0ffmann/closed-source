@@ -1,0 +1,50 @@
+# site — build the website (site/, Gleam + Lustre) with `just site-build` on each pull request
+# and push to main, and publish site/dist to GitHub Pages from main.
+# Needs Settings → Pages → Source: GitHub Actions. The toolchains come from picasso's paper and
+# gleam-website labs through flake.nix.
+name: site
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: DeterminateSystems/nix-installer-action@v23
+      - name: content self-test
+        run: python3 site/content.py --self-test
+      - name: just site-build (PDFs, content, Gleam tests and bundle)
+        run: nix develop --no-update-lock-file --command just site-build
+      - uses: actions/upload-pages-artifact@v4
+        if: github.event_name != 'pull_request'
+        with:
+          path: site/dist
+
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

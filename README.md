@@ -39,13 +39,31 @@ The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](htt
 Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
 and the Git revision stamped on every page.
 
+## Website
+
+`site/` is the paper's website: a [Lustre](https://lustre.build) application in Gleam, in the
+style of [picasso's site](https://h0ffmann.github.io/picasso/). The title, abstract (original and
+ASD-STE100), authors, contents, counts and citations come from the paper and this README
+(`site/content.py`), so the site never repeats a fact by hand. The PDFs ship with it.
+
+```sh
+just site-build        # PDFs, then site/dist/; needs only Nix and just
+just site-serve        # the same, served on http://localhost:8000
+```
+
+Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs and the
+`gleam-website` lab for the site (`nix develop .#site`). The `site` workflow builds it on every
+pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
+GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
+
 ## Layout
 
 | Path | What's there |
 |---|---|
 | [`papers/closed-source/`](papers/closed-source/) | the paper: `metadata.md`, `prose/NN-*.md`, `refs.bib`, and the reference log `REFERENCES.md` |
 | [`format/`](format/) | the LaTeX template and pandoc-crossref settings shared by every paper |
-| [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pin (picasso's `paper` lab) |
+| [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pins (picasso's `paper` and `gleam-website` labs) |
+| [`site/`](site/) | the website: Gleam + Lustre, `site/content.py` reads the paper |
 | [`scripts/`](scripts/) | reference check, STE check, arXiv bundle, citation metadata, release and Zenodo upload |
 | [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
@@ -147,7 +165,7 @@ ABNT (NBR 6023):
 ## Licence
 
 - Paper text, docs and figures: [CC BY 4.0](LICENSE).
-- Scripts, workflows and build files (`scripts/`, `.github/`, `justfile`, `flake.nix`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
+- Scripts, workflows, build files and the website (`scripts/`, `.github/`, `justfile`, `flake.nix`, `site/`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
 - LaTeX template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
 - Ouroboric's names and logos are not licensed here; see Ouroboric's
   [trademark policy](https://github.com/ouroboric-dev/ouroboric/blob/main/TRADEMARKS.md).

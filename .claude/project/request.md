@@ -69,3 +69,13 @@ use just, not makefile. ADD all binary tooling required in this repository to pi
 ```text
 in the same PR add clear instructions on read on how to release with just to create NEW ZENODO record + NEW PDF on arvIX. ANY SECRET TOOLING MUST BE CLEAR on readme (keys, token needed)
 ```
+
+## Third pull request: the website
+
+Hoffmann, 2026-10-12 20:06 UTC, verbatim (relayed by the project's coordinator session):
+
+```text
+now create a website for closed-source, in same picasso style, with gleam,create  PR in picasso to create gleam-website labs, to paper fabric doesnt need to install anything just vm site-build, using labs provided by picasso
+```
+
+Read as: `just site-build` with only Nix and just installed. Picasso: h0ffmann/picasso#115 (`labs/gleam-website`).

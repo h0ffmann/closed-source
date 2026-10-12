@@ -8,6 +8,8 @@ linked docs before you change what they cover.
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
 - Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
   `flake.lock`). Release and secrets: the README.
+- Website: `site/` (Gleam + Lustre). `just site-build`. `site/content.py` generates its content from
+  the paper; never write a fact into `site/src` by hand.
 - Charter and direction: `docs/1-product/charter.md`.
 - How a paper is made: `docs/4-ways-of-working/paper-fabric.md`.
 - Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.

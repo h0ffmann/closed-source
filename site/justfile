@@ -1,0 +1,25 @@
+# The closed-source site. Run inside the gleam-website shell: `nix develop ..#site`, or use the
+# root justfile's `just site-build`, which does that for you.
+
+default:
+    @just --list
+
+# Compile, bundle and prerender into dist/ (content.gleam and the PDFs come from the root build)
+build:
+    rm -rf dist
+    mkdir -p dist
+    gleam build
+    esbuild entry.mjs --bundle --minify --format=esm --outfile=dist/app.js --log-level=warning
+    gleam run -m closed_source_site/prerender --no-print-progress > dist/index.html
+    cp -R static/. dist/
+    if ls ../pdf/*.pdf >/dev/null 2>&1; then cp ../pdf/*.pdf dist/; fi
+
+# Unit tests, on node
+test:
+    gleam test
+
+# Formatting, tests and a build: what CI runs
+ci:
+    gleam format --check src/closed_source_site/app.gleam src/closed_source_site/page.gleam src/closed_source_site/prerender.gleam src/closed_source_site/ffi.gleam src/closed_source_site.gleam test
+    just test
+    just build

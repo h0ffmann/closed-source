@@ -57,7 +57,7 @@ citation:
 
 # Remove every build output.
 clean:
-    rm -rf build pdf
+    rm -rf build pdf site/build site/dist
 
 # Enter the toolchain: pandoc, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh (Nix).
 shell:
@@ -83,3 +83,14 @@ zenodo-sandbox version: check
 # What a Zenodo draft would contain, with no network and no token.
 zenodo-dry-run version: build
     python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}} --dry-run
+
+# Build the website into site/dist/: the PDFs, the site's content from the papers, then the Gleam
+# app. Needs only Nix and just: each half runs in its own toolchain from picasso's labs.
+site-build:
+    nix develop --no-update-lock-file --command just build
+    nix develop --no-update-lock-file --command python3 site/content.py
+    nix develop --no-update-lock-file .#site --command bash -c 'cd site && just ci'
+
+# Build the website and serve it on http://localhost:8000
+site-serve: site-build
+    nix develop --no-update-lock-file .#site --command python3 -m http.server -d site/dist 8000

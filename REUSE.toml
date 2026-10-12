@@ -7,7 +7,7 @@ SPDX-FileCopyrightText = "2026 Rob Kler Soares da Silva Junior, Bruno Valério, 
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["scripts/**", ".github/**", "justfile", "flake.nix", "flake.lock"]
+path = ["scripts/**", ".github/**", "justfile", "flake.nix", "flake.lock", "site/**"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
 SPDX-License-Identifier = "AGPL-3.0-only"

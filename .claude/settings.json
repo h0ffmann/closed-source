@@ -7,6 +7,7 @@
       "Bash(just arxiv)",
       "Bash(just citation)",
       "Bash(just self-test)",
+      "Bash(just site-build)",
       "Bash(just zenodo-dry-run:*)",
       "Bash(nix develop:*)",
       "Bash(pandoc:*)",
