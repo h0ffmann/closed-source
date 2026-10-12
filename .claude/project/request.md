@@ -106,3 +106,20 @@ Read as: the cover and title page say Mr. Nobody; the prose is in the first pers
 citation metadata names Matheus Hoffmann alone; Ouroboric is credited to Bruno Valério; picasso is
 described as a use case of a self-improving system; the Marola and Ouroboric logos go on the title
 page and the site's jacket. The 50-page length waits for the explanation.
+
+Hoffmann, 2026-10-12 20:52 UTC, verbatim (relayed by the project's coordinator session), the
+explanation of the 50 pages:
+
+```text
+hard rule of the book, 50 authors, 1 page per author
+```
+
+
+On the decision card "Who are the 50 authors, one page each, in the book?", Hoffmann chose
+"50 thinkers" (20:56 UTC). Then, verbatim (20:57 UTC):
+
+```text
+change hardrule to 100pgs, 2 pgs per author
+```
+
+Recorded as the hard rule in AGENTS.md, with the roster in papers/closed-source/THINKERS.md.

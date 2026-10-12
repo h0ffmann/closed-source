@@ -30,6 +30,15 @@ linked docs before you change what they cover.
 6. Never publish a Zenodo deposit. Drafts only; a human publishes. A DOI is permanent.
 7. Never commit secrets, tokens or personal contact data.
 
+## The book (hard rule)
+
+*Closed Source: The God that Failed* has exactly 100 pages: 50 authors, two pages per author
+(Hoffmann, 12 October 2026; first 50 pages and one per author, changed the same evening). The 50
+authors are thinkers the book is about, and each gets two first-person pages; the cover names Mr.
+Nobody. `papers/closed-source/THINKERS.md` is the roster, and `just check` fails unless it has
+exactly 50 distinct thinkers. A change that breaks the 100-page count is wrong. The current
+11-section text is material for those pages; ask the owner before you restructure it.
+
 ## Borrow, cite, propagate
 
 1. **Borrow** only what the licence allows. Read the licence first and record it. Keep the

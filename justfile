@@ -41,6 +41,7 @@ _pdf slug dir out:
 check: build
     python3 scripts/refs_check.py papers/*/refs.bib
     for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
+    python3 scripts/book_check.py $(ls papers)
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
@@ -52,6 +53,7 @@ self-test:
     python3 scripts/arxiv.py --self-test
     python3 scripts/zenodo_upload.py --self-test
     python3 scripts/logos.py --self-test
+    python3 scripts/book_check.py --self-test
 
 # Regenerate CITATION.cff and the README citation block from .zenodo.json.
 citation:

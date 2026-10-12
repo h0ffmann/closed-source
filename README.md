@@ -77,6 +77,7 @@ says more, with the other books behind this repository.
 | [`scripts/`](scripts/) | reference check, STE check, arXiv bundle, citation metadata, release and Zenodo upload |
 | [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
+| [`papers/closed-source/THINKERS.md`](papers/closed-source/THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: Pirsig, Hoppe, Kinsella, Boldrin and Levine |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
