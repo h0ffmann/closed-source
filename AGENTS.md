@@ -39,6 +39,11 @@ Nobody. `papers/closed-source/THINKERS.md` is the roster, and `just check` fails
 exactly 50 distinct thinkers. A change that breaks the 100-page count is wrong. The current
 11-section text is material for those pages; ask the owner before you restructure it.
 
+After the 100 pages, the book carries a partial snapshot of `h0ffmann/nagori` (Hoffmann, 12
+October 2026), outside the 100-page count. nagori is a private repository: the owner chooses which
+parts go in and at which commit, and an agent copies nothing from it that the owner did not name.
+The snapshot states the commit it was taken from.
+
 ## Two languages (hard rule)
 
 The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October
