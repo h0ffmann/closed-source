@@ -15,6 +15,9 @@ The first 22 rows are a proposal, taken from the people the paper already cites 
 from BOOKS.md. Rows 23 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
 thinker here: they are the book's opponents (AGENTS.md).
 
+After the 100 pages comes a partial snapshot of the private `h0ffmann/nagori` repository, outside
+the count; the owner chooses what it holds (AGENTS.md).
+
 Status: `open` (no thinker yet), `proposed`, `chosen`, `written` (the two pages exist).
 
 | # | Thinker | Why in this book | Status |

@@ -152,3 +152,12 @@ create a OUROBORIC.md from all knowledge from ouroboric-dev repos (1 note, inclu
 Read as: two files at the root, from every public ouroboric-dev repository (ouroboric-dev/contact
 is private), and `/update-ouroboric` as a Claude Code command in `.claude/commands/`, like
 `/ste100`, with `just ouroboric-sources` to fetch the repositories and list what changed.
+
+Hoffmann, 2026-10-12 21:20 UTC, verbatim:
+
+```text
+Another hardhule (ammend existent): Book is 100pg + nagori snapshot (partial)
+```
+
+Read as: after the 100 pages, a partial snapshot of the private h0ffmann/nagori repository, outside
+the page count; the owner chooses its contents. Amended in AGENTS.md.
