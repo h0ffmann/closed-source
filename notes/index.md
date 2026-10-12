@@ -23,3 +23,11 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 ## Opponents and justice
 
 - [[202610122240-jackson-and-public-executions]]: Jackson's argument against summary executions (fleeting, open question)
+
+## Marola forecaster
+
+- [[202610122357-marola-forecaster-contextual-bandit]]: a contextual bandit over forecast models (permanent, open question)
+- [[202610122356-operational-weatherbench]]: Brightband's Operational WeatherBench method (literature, verified)
+- [[202610122358-brazilian-instruments-under-acts]]: Brazilian instruments under ACTs (fleeting, open question)
+- [[202610122359-exploit-in-operations-explore-in-simulation]]: exploit in operations, explore in simulation (permanent, open question)
+- [[202610130000-rea-for-forecast-models]]: REA for forecast models (permanent, partial)

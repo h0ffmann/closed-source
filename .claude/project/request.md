@@ -192,3 +192,15 @@ Notes from [friend1]: Kubeflow case where open source contributions were tooken 
 
 Read as: SMART_NOTE_POLICY.md, `/note`, notes/ as an Obsidian vault, friend1 in PERSONAS.md, and
 the message filed as the first five notes, each with its verification status.
+
+Hoffmann, 2026-10-12 23:56 UTC, verbatim:
+
+```text
+add NOTE with POLICY - Contextual Bandits for Weather Bench: The Marola forecaster. (add source with discipline https://owb.brightband.com/methodology, citation). The marola forecaster will be a contextual bandit implementation of this bench with Open Brazilian Instruments (Including Navy Acordo cop. tecnica, Petrobras Acordo cop. tecnica, INPO Acordo cop. tecnica). This should consider ww3-gpu effort vs picking up Latest Google Model, and/vs Google Tests vs Classical WW3 Regtest (in WW4, to be release on January of 2027). For safety and with ElNino in hand, the model picked should be whoever wins, and whoever wins can be a experimented with Contextual Bandit simulations. The good part about Marola is your basic reasoning. Exploration and Exploitation. We could use:
+
+1. Brazilian Open data private data with ACT's
+2. Read, Evaluate, Adopt (REA Pattern by Ouroboric) https://owb.brightband.com/methodology.
+```
+
+Read as: five notes under SMART_NOTE_POLICY.md, with the Operational WeatherBench methodology as a
+literature note and its citation.
