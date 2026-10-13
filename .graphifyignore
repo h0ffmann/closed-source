@@ -1,0 +1,9 @@
+# Read by `just viz` (graphify's own gitignore-style list): the code graph covers this repository's
+# scripts and site, not the forks or the build outputs.
+forks/**
+build/**
+pdf/**
+site/build/**
+site/dist/**
+**/*.json
+**/*.lock

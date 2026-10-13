@@ -462,3 +462,16 @@ Read as: a new PR with a root CLAUDE_PROJECT.md in the shape of picasso's: the "
 project's settings, and its memory. The memory store is empty (memory is off), so the export is
 what stands in for it: the book's facts, the hard rules, the decisions and the conventions
 recorded up to 2026-10-13. AGENTS.md gets a hard rule that no agent reads the file.
+
+## A viz lab in picasso, run here with just
+
+Hoffmann, 2026-10-13 03:36 UTC, verbatim (in the Picasso project):
+
+```text
+create a new labs, viz, only with grapfiphyy dependency, I will test it on closed-source repository, by doing just vmv there, In closed-source, h0ffmann/picasso is a submodule under forks. Use a new thread
+```
+
+Read as: a picasso lab `labs/viz` whose one dependency is graphify (h0ffmann/picasso#121), and a
+recipe here that runs it from the `forks/picasso` submodule. No recipe was named `vmv`; it is read
+as a typo, and the recipe is `just viz`. `.graphifyignore` keeps `forks/` out of the graph.
+
