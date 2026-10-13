@@ -623,3 +623,18 @@ layout table, in MEMORY.md and in the AGENTS.md map, and a "Citation scores" sec
 website, generated from the same file. The page says that the verdicts are a scale for texts and
 not a judgement of the other projects.
 
+```text
+Check first instagram post for picasso, do the same, with the same art, but promoting citing-score skill in the book promotion .... the book the author the skill the ref (thinkers)
+```
+
+```text
+the name of this PR should be essays: citation
+```
+
+Read as: `docs/social/instagram_001/` here, after picasso's folder of the same name at `29eb385`:
+five slides in the same slide system with picasso's drawings (read from the `forks/picasso`
+submodule, not copied), in the book cover's colours. The slides are the book, the author, the
+skill, the thinkers and the references, and where to read. It is a draft: the owner posts it.
+"This PR" is read as the pull request that carries the README, the skills and this post, #35,
+now titled "essays: citation".
+
