@@ -17,6 +17,8 @@ linked docs before you change what they cover.
 - Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.
 - Release and Zenodo: `docs/4-ways-of-working/releasing.md`.
 - Known gaps: `docs/1-product/readiness/`.
+- Skills written for this repository, their lock and the hooks: `.claude/skills/README.md`.
+- Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
 - Issue and pull request labels: `ISSUE_LABELS.md`.
 - Where the memory of this repository is, and the code graph (graphify): `MEMORY.md`.
 
@@ -132,6 +134,18 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 - `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` digest the public ouroboric-dev repositories. Refresh
   them with `just ouroboric-sources` and `/update-ouroboric`. Each fact in them has a source line;
   do not add one without its source.
+- `README.md` is in lower case, except acronyms (UFRJ, DOI, PDF), code and the generated
+  citation block (Hoffmann, 13 October 2026); use the `readme-style` skill.
+  `README.easy.pt-BR.md` is the same page in easy Brazilian Portuguese. It is always made from
+  `README.md` with the `easy-pt-br` skill, then stamped with `scripts/readme.sh --stamp`; never
+  edit it alone. `just check` runs `scripts/readme.sh --check`.
+- `scripts/citation-score.sh` counts how much of a text is cited (the `citation-score` skill). It
+  is a measure, not a gate: no check fails on a score.
+- A skill in `.claude/skills/` is written here and names its sources; do not copy a skill from
+  another repository. After a change to one, run `scripts/readme.sh --lock`.
+- The book's colours are black and red, with yellow letters for the title, after Hoppe's
+  *Democracy: The God That Failed* (Hoffmann, 13 October 2026). No brown: not on the site, the
+  slides or a badge.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.

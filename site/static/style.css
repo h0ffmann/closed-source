@@ -1,19 +1,20 @@
 /* The cover follows the type and colour scheme of the cover of Hoppe's "Democracy: The God That
-   Failed" (Transaction, 2001): a brown field, the first half of the title in white, a red band,
-   the second half in black on paper. Colours are estimates; no cover art is reproduced.
+   Failed" (Transaction, 2001), in the identity the owner set on 13 October 2026: a black field,
+   the first half of the title in yellow letters, a red band, the second half in black on paper.
+   No brown anywhere. Colours are choices, not samples; no cover art is reproduced.
    Motion follows Anthropic's frontend-design skill (Apache-2.0): one orchestrated entrance, and
    nothing moves under prefers-reduced-motion. */
 :root {
   --paper: #F4EFE6;
   --surface: #EBE3D6;
   --ink: #141210;
-  --muted: #6B5D4F;
-  --rule: #CDBFAC;
-  --brown: #5A3A22;
-  --brown-deep: #3E2817;
+  --muted: #5F5B56;
+  --rule: #CFC8BC;
+  --black: #0F0E0D;
+  --yellow: #F2C230;
   --red: #A3201C;
   --red-text: #A3201C;
-  --on-brown: #F4EFE6;
+  --on-black: #F4EFE6;
   --ok: #2F6B2F;
   --warn: #8A5A00;
   --serif: 'EB Garamond', Garamond, Georgia, serif;
@@ -23,13 +24,12 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #1C140E;
-    --surface: #271C14;
+    --paper: #121110;
+    --surface: #1C1B19;
     --ink: #F1EADF;
-    --muted: #B5A592;
-    --rule: #4A3828;
-    --brown: #4B3020;
-    --brown-deep: #2E1F14;
+    --muted: #B4AEA6;
+    --rule: #3A3734;
+    --black: #050505;
     --red-text: #E0675F;
     --ok: #7BC07B;
     --warn: #E0B35A;
@@ -56,9 +56,9 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
 
 /* The cover */
 .cover-art .field {
-  background: var(--brown);
+  background: var(--black);
   background-image: radial-gradient(80rem 30rem at 20% 0%, rgba(255, 240, 220, .08), transparent 70%);
-  color: var(--on-brown);
+  color: var(--on-black);
   padding: 72px 0 40px;
 }
 .imprint, .band p, .byline, .status, .jump a, .section-head h2, .tag, .figure span, .thinker .n {
@@ -73,6 +73,7 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
   font: 900 clamp(56px, 13vw, 168px)/.9 var(--display);
   letter-spacing: -.01em;
   text-transform: uppercase;
+  color: var(--yellow);
 }
 .band { background: var(--red); color: #FFF5EE; transform-origin: left center; }
 .band p { margin: 0; padding: 14px 0; font-size: clamp(12px, 1.6vw, 15px); }
@@ -200,7 +201,7 @@ h3 { margin: 0; font: 400 19px/1.3 var(--serif); }
 /* The DOIs section: one large tile for each work, after the product tiles of apple.com. The tiles
    are the only place on the page set in the system sans, with round corners and their own
    colours, so they stand apart from the book. Each colour is the work's subject: the cover's
-   brown for the paper, sea blue for marola (water), deep green for ww3-gpu (waves), and the pale
+   black, with a yellow name, for the paper, sea blue for marola (water), deep green for ww3-gpu (waves), and the pale
    blue of the Nix logo for picasso. */
 main section.shelf { padding-top: 48px; }
 .shelf {
@@ -214,19 +215,29 @@ main section.shelf { padding-top: 48px; }
   --tile: #1D1D1F; --on: #F5F5F7; --soft: rgba(245, 245, 247, .72); --chip: rgba(245, 245, 247, .16);
   position: relative; grid-column: span 2; display: flex; flex-direction: column;
   min-height: 340px; padding: 28px 28px 26px; border-radius: 28px;
-  background: var(--tile); color: var(--on);
+  background: var(--tile); color: var(--on); overflow: hidden; isolation: isolate;
   transition: transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s ease;
 }
-.tile-paper { --tile: #3E2817; grid-column: 1 / -1; min-height: 300px; }
-.tile-marola { --tile: #0A4D7C; }
-.tile-ww3-gpu { --tile: #0E4B43; }
-.tile-picasso { --tile: #DCE7F7; --on: #16233F; --soft: rgba(22, 35, 63, .74); --chip: rgba(22, 35, 63, .1); }
+
+.tile-paper { --tile: #0F0E0D; --drawing: url(drawings/padlock.svg); grid-column: 1 / -1; min-height: 300px; }
+.tile-marola { --tile: #0A4D7C; --drawing: url(drawings/fish.svg); }
+.tile-ww3-gpu { --tile: #0E4B43; --drawing: url(drawings/wave.svg); }
+.tile-picasso { --tile: #DCE7F7; --on: #16233F; --soft: rgba(22, 35, 63, .74); --chip: rgba(22, 35, 63, .1); --drawing: url(drawings/guitar.svg); }
+/* One line drawing behind each tile's text, after the drawings on picasso's site
+   (.claude/skills/card-style/SKILL.md). It is a mask, so it takes the tile's text colour. */
+.tile::before {
+  content: ""; position: absolute; z-index: -1; right: -22px; bottom: -18px;
+  width: min(74%, 400px); aspect-ratio: 3 / 2; pointer-events: none;
+  background: var(--on); opacity: .14;
+  -webkit-mask: var(--drawing, none) no-repeat center / contain; mask: var(--drawing, none) no-repeat center / contain;
+}
+.tile-paper::before { width: min(46%, 520px); right: 3%; bottom: -30px; opacity: .16; }
 .tile:hover { transform: scale(1.015); box-shadow: 0 18px 40px rgba(20, 18, 16, .22); }
 .tile:focus-within { outline: 3px solid var(--red-text); outline-offset: 3px; }
 .tile-tags { margin: 0; padding-right: 52px; display: flex; flex-wrap: wrap; gap: 8px; }
 .tile-tags span { padding: 6px 12px; border-radius: 999px; background: var(--chip); font: 600 14px/1 var(--sans); }
 .tile h3 { margin: 22px 0 0; font: 700 clamp(30px, 3.6vw, 44px)/1.05 var(--sans); letter-spacing: -.025em; }
-.tile-paper h3 { font-size: clamp(34px, 5vw, 60px); max-width: 14em; }
+.tile-paper h3 { font-size: clamp(34px, 5vw, 60px); max-width: 14em; color: #F2C230; }
 .tile h3 a { color: inherit; text-decoration: none; }
 .tile h3 a:focus-visible { outline: 0; }
 /* The whole tile is the link. */
@@ -247,6 +258,19 @@ main section.shelf { padding-top: 48px; }
 @media (max-width: 860px) { .tile { grid-column: span 3; } .tile-picasso { grid-column: 1 / -1; min-height: 260px; } }
 @media (max-width: 560px) { .tile, .tile-picasso { grid-column: 1 / -1; min-height: 0; padding: 24px 22px 22px; border-radius: 24px; } }
 @media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
+
+/* Citation scores: one bar for each README, in the band's colour. */
+.scores { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 18px; }
+.score { --band: var(--warn); --fill: #E3A900; border-top: 1px solid var(--rule); padding-top: 12px; }
+.score.is-high { --band: var(--ok); --fill: var(--ok); }
+.score.is-low { --band: var(--red-text); --fill: var(--red); }
+.score-name { margin: 0; }
+.score-name a { font: 700 22px/1.2 var(--display); }
+.score-name span { font-size: 15px; color: var(--muted); }
+.score-bar { margin: 8px 0 6px; height: 12px; background: var(--surface); border: 1px solid var(--rule); }
+.score-bar span { display: block; height: 100%; background: var(--fill); }
+.score-figure { margin: 0; font-size: 16px; color: var(--muted); }
+.score-figure b { color: var(--band); }
 
 /* A DOI as a two-part badge, after picasso's site. */
 .doi {

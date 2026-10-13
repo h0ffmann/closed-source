@@ -192,6 +192,48 @@ pub fn thinkers(roster: String) -> List(Thinker) {
   })
 }
 
+pub type Score {
+  Score(
+    name: String,
+    file: String,
+    href: String,
+    at: String,
+    cited: Int,
+    total: Int,
+    percent: Int,
+    verdict: String,
+  )
+}
+
+/// One row of CITATION_SCORES.md's table
+/// (README | File | At commit | Cited sentences | Sentences | Score | Verdict), in its order.
+pub fn scores(board: String) -> List(Score) {
+  re.scan(
+    re.compile(
+      "^\\|([^|]+)\\|\\s*\\[([^\\]]+)\\]\\(([^)]+)\\)\\s*\\|([^|]*)\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)\\s*\\|\\s*(\\d+)%\\s*\\|([^|]*)\\|\\s*$",
+      [re.Multiline],
+    ),
+    board,
+  )
+  |> list.map(fn(m) {
+    let assert [_, name, file, href, at, cited, total, percent, verdict, ..] = m
+    let assert Ok(cited) = int.parse(cited)
+    let assert Ok(total) = int.parse(total)
+    let assert Ok(percent) = int.parse(percent)
+    let plain = fn(s) { strip(string.replace(s, "`", "")) }
+    Score(
+      strip(name),
+      plain(file),
+      href,
+      plain(at),
+      cited,
+      total,
+      percent,
+      strip(verdict),
+    )
+  })
+}
+
 /// (file stem, title, type, status) for each note in notes/, newest first.
 fn notes(
   folder: String,
@@ -451,6 +493,30 @@ fn render(slug: String) -> Result(String, String) {
     True -> read("50THINKERS.md") |> result.map(thinkers)
     False -> Ok([])
   })
+  use board <- result.try(case sys.exists("CITATION_SCORES.md") {
+    True -> read("CITATION_SCORES.md") |> result.map(scores)
+    False -> Ok([])
+  })
+  let score_rows =
+    list.map(board, fn(s) {
+      "Score(name: "
+      <> gleam_string(s.name)
+      <> ", file: "
+      <> gleam_string(s.file)
+      <> ", href: "
+      <> gleam_string(s.href)
+      <> ", at: "
+      <> gleam_string(s.at)
+      <> ", cited: "
+      <> int.to_string(s.cited)
+      <> ", total: "
+      <> int.to_string(s.total)
+      <> ", percent: "
+      <> int.to_string(s.percent)
+      <> ", verdict: "
+      <> gleam_string(s.verdict)
+      <> ")"
+    })
   let thinker_rows =
     list.map(roster, fn(t) {
       "Thinker(n: "
@@ -516,6 +582,19 @@ pub type Thinker {
 
 pub type Note {
   Note(file: String, title: String, kind: String, status: String)
+}
+
+pub type Score {
+  Score(
+    name: String,
+    file: String,
+    href: String,
+    at: String,
+    cited: Int,
+    total: Int,
+    percent: Int,
+    verdict: String,
+  )
 }
 
 pub const slug = "
@@ -621,6 +700,11 @@ pub const thinkers = "
 
 pub const notes = "
     <> gleam_list(note_rows)
+    <> "
+
+/// CITATION_SCORES.md's table: how much of each README is cited (scripts/citation-score.sh).
+pub const scores: List(Score) = "
+    <> gleam_list(score_rows)
     <> "
 ",
   )

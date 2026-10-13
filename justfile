@@ -49,6 +49,7 @@ check: build
     tools/fabric book-check
     tools/fabric cite-check
     tools/fabric notes-check
+    scripts/readme.sh --check
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
@@ -62,6 +63,8 @@ self-test:
     tools/fabric zenodo-upload --self-test
     tools/fabric content --self-test
     scripts/release.sh --self-test
+    scripts/readme.sh --self-test
+    scripts/citation-score.sh --self-test
 
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
@@ -80,6 +83,25 @@ clean:
 # (tools/fabric), just, gh (Nix).
 shell:
     nix develop
+
+# README.md's style (lower case, except acronyms), README.easy.pt-BR.md's stamp and the skills'
+# lock. After the easy-pt-br skill updated the easy version: `scripts/readme.sh --stamp`.
+readme-check:
+    scripts/readme.sh --check
+
+# How much of a text is cited, with a coloured verdict: `just citation-score <text | file | URL | ->`
+# (.claude/skills/citation-score/SKILL.md).
+citation-score *args:
+    scripts/citation-score.sh {{args}}
+
+# Score the READMEs in scripts/citation-board.tsv and write CITATION_SCORES.md (needs the network).
+# The website reads that file through `tools/fabric content`.
+citation-board:
+    scripts/citation-board.sh
+
+# Turn on the Git hooks in .githooks/ for this clone (pre-commit: the README checks).
+hooks:
+    git config core.hooksPath .githooks
 
 # Tag main and publish: `just release` lists what is unreleased and suggests a bump, then
 # `just release minor|patch|major|X.Y.Z [--dry-run]` (scripts/release.sh, as in marola).

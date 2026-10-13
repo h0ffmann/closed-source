@@ -578,3 +578,98 @@ corners, one colour for each tile. The tags are in `papers/closed-source/metadat
 and `tools/fabric content` generates them. This pull request carries the site work of #32, which
 it replaces.
 
+## A lower-case README, an easy pt-BR version, and skills written here
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+Create PR to - Create Stylistic README.md like picasso does, FULL lower case except by UFRJ, IFS etc in closed-source, also create a easy.pt-BR with a hook with some tooling to always translate from README.md using VENDORED skills. Dont copy raw skills from other repos, CITE.
+```
+
+```text
+in the same pr add a VENDORED CITED skill to improve cards in the interface, adding picasso style (add some picasso stylings in the background of each card)
+```
+
+Read as: `README.md` gets picasso's header (a centred block, a line of links, flat badges) and is
+all in lower case; "UFRJ, IFS etc" is read as "acronyms keep their capitals". "easy.pt-BR" is
+`README.easy.pt-BR.md`, after marola's `MIP-0091.easy.pt-BR.md`. "A hook with some tooling" is
+`scripts/readme.sh`: it checks the style, a sha256 stamp that ties the easy version to the
+`README.md` it was made from, and the skills' lock; a Claude Code hook and a Git pre-commit hook
+call it, and `just check` runs it in CI. A script cannot translate, so the hook tells the agent
+to use the skill and the stamp proves it was done. "VENDORED skills" is read with "don't copy
+raw": the skills live in `.claude/skills/`, pinned by `skills.lock`, written here, each with a
+Sources section. "Cards in the interface" is read as the tiles of the site's DOIs section, and
+"picasso stylings" as one-line drawings in the manner of those on picasso's site: four new
+drawings, one behind each tile. No drawing by Pablo Picasso is copied.
+
+```text
+in the same README.md pr, create a skill citation-score, to score any Prhase, Text, Dump, URL. This skill should count (aprox.) How much of a text is cited. 100% cited - PERFECT. HIGHEST MATURITY LEVEL. 0% cited - POOR. 2 DIGIT IQ. citation-score skill should have coulored output, to give users idea of how 'original' their ideas are
+```
+
+Read as: a skill and its script, `scripts/citation-score.sh`. It counts the sentences that carry
+a citation mark over all sentences, for a phrase, a file, standard input or a URL, and prints a
+coloured bar with a verdict. The two ends of the scale are the owner's words; the four verdicts
+between them are the skill's. The uncited share is reported as "original, or unsupported",
+because a script cannot tell the two apart. It is a measure, not a check: nothing fails on it.
+
+```text
+In the same pr for citation-score, run the results on current state of README.md, compare marola-dev/marola/README.md, ouroboric-dev/.github, h0ffmann/h0ffmann, h0ffmann/picasso. This information should be clearly indexed in the repository, even in the website.
+```
+
+Read as: `CITATION_SCORES.md` at the root, written by `just citation-board` from a list of five
+READMEs, each scored at a named commit; "ouroboric-dev/.github" is read as its
+`profile/README.md`, the organisation's page. "Clearly indexed" is read as: a row in the README's
+layout table, in MEMORY.md and in the AGENTS.md map, and a "Citation scores" section on the
+website, generated from the same file. The page says that the verdicts are a scale for texts and
+not a judgement of the other projects.
+
+```text
+Check first instagram post for picasso, do the same, with the same art, but promoting citing-score skill in the book promotion .... the book the author the skill the ref (thinkers)
+```
+
+```text
+the name of this PR should be essays: citation
+```
+
+Read as: `docs/social/instagram_001/` here, after picasso's folder of the same name at `29eb385`:
+five slides in the same slide system with picasso's drawings (read from the `forks/picasso`
+submodule, not copied), in the book cover's colours. The slides are the book, the author, the
+skill, the thinkers and the references, and where to read. It is a draft: the owner posts it.
+"This PR" is read as the pull request that carries the README, the skills and this post, #35,
+now titled "essays: citation".
+
+```text
+quick feedback looking at the PR, Change all this BROWN in the image from Identity. The book color Identity should match black and red like Democracy from HHH, maybe with yellow letters
+```
+
+Read as: the brown goes from every place the identity shows, not only the slides: the site's
+cover and its dark theme, the closed-source tile, the README's badges and the Instagram slides.
+The field is black, the band is red, and the title is in yellow letters. The slides' highlighter
+mark and the middle band of the score bars are yellow too. "HHH" is Hans-Hermann Hoppe.
+
+```text
+Faça uma versão easy-ptbr, usando a skill, fazendo o post em portugues mais explicado
+```
+
+Read as: an easy Brazilian Portuguese version of the Instagram post, made with the `easy-pt-br`
+skill: five slides in Portuguese (`slide-N.easy.pt-BR.png`) with shorter sentences and the hard
+words explained on the slide, and `README.easy.pt-BR.md` in the post's folder with a list of the
+hard words, what the score means, a longer caption and the alt text. The skill gains a section
+for documents other than the root README.
+
+```text
+about the prhase is about lucky, people said he got lucky, but se said every he was painting
+```
+
+```text
+this QUOTE.md should be the first QUOTE, citing the Great, Pablo Picasso, as ref. add h0ffmann/picasso link in the quote
+```
+
+Read as: "Lucky" in the request for a note in picasso's README was a saying, not Picasso's dog
+Lump, which the first reading took it for. The saying found is "Inspiration does exist, but it
+must find you working." It is the first row of `QUOTES.md` here, with a link to h0ffmann/picasso.
+The one source fetched (Barry Popik, 2013) finds no documentary evidence that Picasso said it, so
+the row says "credited to" and its check is `partial`. The story as the owner told it, that
+people called Picasso lucky and he answered that he painted every day, was not found in a source
+and is given as the owner's words.
+

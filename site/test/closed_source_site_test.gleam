@@ -78,3 +78,15 @@ pub fn the_dois_section_has_a_tile_for_each_work_test() {
   })
   assert list.all(content.tags, fn(t) { string.contains(html, ">" <> t <> "<") })
 }
+
+pub fn the_citation_scores_are_on_the_page_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert list.length(content.scores) == 5
+  assert string.contains(html, "id=\"scores\"")
+  assert list.all(content.scores, fn(s) {
+    string.contains(html, s.name) && string.contains(html, s.verdict)
+  })
+  assert app.band(100) == "high"
+  assert app.band(48) == "mid"
+  assert app.band(0) == "low"
+}
