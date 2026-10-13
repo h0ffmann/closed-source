@@ -244,3 +244,12 @@ the reason is the open source spirit
 ```
 
 Read as: the reason for friend2's remark, filed in the second note.
+
+Hoffmann, 2026-10-13 01:55 UTC, verbatim:
+
+```text
+add this https://github.com/ouroboric-dev/ouroboric/tree/main/docs/4-ways-of-working as IS, doing proper citation to Ouroboric
+```
+
+Read as: the four files of that folder copied byte for byte into docs/4-ways-of-working/ouroboric/,
+with a README that cites Ouroboric at the commit, and the licensor's CC BY 4.0 notice in REUSE.toml.
