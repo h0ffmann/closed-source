@@ -78,7 +78,7 @@ pub fn glob(dir: String, suffix: String) -> List(String) {
 
 /// mkdir(parents=True, exist_ok=True)
 pub fn make_dirs(path: String) -> Result(Nil, String) {
-  make_dirs_ffi(join(path, "x"))
+  make_dirs_ffi(path)
 }
 
 @external(erlang, "fabric_ffi", "make_dirs")
