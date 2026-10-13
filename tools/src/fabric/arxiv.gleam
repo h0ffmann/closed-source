@@ -30,16 +30,16 @@ pub const abstract_max = 1920
 
 pub const title_max = 240
 
-const prog = "arxiv.py"
+const prog = "tools/fabric arxiv"
 
-const usage = "usage: arxiv.py [-h] [--no-compile] [slug]\n"
+const usage = "usage: tools/fabric arxiv [-h] [--no-compile] [slug]\n"
 
 const help =
   "
 arxiv — package a paper's LaTeX source for arXiv and write its submission metadata.
 
 arXiv compiles submitted TeX itself, with pdfLaTeX, and refuses PDFs that were produced from TeX.
-So this script takes the .tex that `just build` generates (citations already rendered by citeproc, so no
+So this command takes the .tex that `just build` generates (citations already rendered by citeproc, so no
 .bbl is needed), freezes the Git revision into it, checks that it compiles with pdfLaTeX in a
 clean directory holding only the bundle, and writes:
 
@@ -49,8 +49,8 @@ clean directory holding only the bundle, and writes:
 Submitting stays a human step on arxiv.org (endorsement, licence choice and the final preview are
 the submitter's). Metadata comes from the paper's metadata.md, `arxiv:` block included.
 
-    scripts/arxiv.py closed-source           # needs build/tex/closed-source.tex (just build closed-source)
-    scripts/arxiv.py closed-source --no-compile
+    tools/fabric arxiv closed-source         # needs build/tex/closed-source.tex (just build closed-source)
+    tools/fabric arxiv closed-source --no-compile
 
 positional arguments:
   slug

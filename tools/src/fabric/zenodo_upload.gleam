@@ -31,13 +31,13 @@ const keep = [
   "related_identifiers", "notes",
 ]
 
-const prog = "zenodo_upload.py"
+const prog = "tools/fabric zenodo-upload"
 
 const usage =
-  "usage: zenodo_upload.py [-h] [--version VERSION]
-                        [--concept-recid CONCEPT_RECID] [--publish]
-                        [--dry-run] [--self-test]
-                        [pdf ...]
+  "usage: tools/fabric zenodo-upload [-h] [--version VERSION]
+                                  [--concept-recid CONCEPT_RECID] [--publish]
+                                  [--dry-run] [--self-test]
+                                  [pdf ...]
 "
 
 const help =
@@ -46,17 +46,17 @@ const help =
 zenodo_upload — put a paper's rendered PDFs, and nothing else, into one Zenodo deposit.
 
 Paper Fabric's v0 release policy archives only the PDF. Zenodo's GitHub integration would archive
-the whole source tree, so it stays switched off for this repository; this script uses Zenodo's
+the whole source tree, so it stays switched off for this repository; this command uses Zenodo's
 deposit API instead, with the metadata in .zenodo.json.
 
 By default it creates a **draft**: nothing is public and no DOI is registered until a person
 reviews the draft on zenodo.org and presses Publish (Ouroboric principle: humans steer; a DOI is
 permanent). --publish publishes straight away and is meant for a human at a terminal, not CI.
 
-    scripts/zenodo_upload.py pdf/closed-source.pdf pdf/closed-source-ste.pdf --version v0.1.0 --dry-run
-    ZENODO_TOKEN=... scripts/zenodo_upload.py pdf/closed-source.pdf --version v0.1.0
-    ZENODO_TOKEN=... scripts/zenodo_upload.py pdf/closed-source.pdf --version v0.2.0 --concept-recid 123
-    scripts/zenodo_upload.py --self-test
+    tools/fabric zenodo-upload pdf/closed-source.pdf pdf/closed-source-ste.pdf --version v0.1.0 --dry-run
+    ZENODO_TOKEN=... tools/fabric zenodo-upload pdf/closed-source.pdf --version v0.1.0
+    ZENODO_TOKEN=... tools/fabric zenodo-upload pdf/closed-source.pdf --version v0.2.0 --concept-recid 123
+    tools/fabric zenodo-upload --self-test
 
 Environment: ZENODO_TOKEN (scope deposit:write, plus deposit:actions for --publish);
 ZENODO_URL (default https://zenodo.org; use https://sandbox.zenodo.org to rehearse).

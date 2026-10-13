@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# fabric: build tools/ (Gleam, Erlang target) and run one of its commands at the repository root,
-# where the Python scripts ran. Needs gleam and erl on PATH (`nix develop`). Output is UTF-8 whatever
-# the locale, as Python's was: with LANG unset, erl -noshell would print latin1.
+# fabric: build tools/ (Gleam, Erlang target) and run one of its commands at the repository root.
+# Needs gleam and erl on PATH (`nix develop`). Output is UTF-8 whatever the locale: with LANG unset,
+# erl -noshell would print latin1.
 #   tools/fabric book-check
 set -euo pipefail
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

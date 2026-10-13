@@ -14,7 +14,7 @@ import gleam/int
 import gleam/list
 import gleam/string
 
-/// Python's __doc__, printed as the usage.
+/// The usage, printed as refs_check.py printed its __doc__.
 const doc =
   "refs_check — every reference a paper cites must have been fetched and logged.
 
@@ -23,8 +23,7 @@ key, with status verified or partial, and no row for a key that refs.bib lacks. 
 carry a doi or url, so a reader can follow it. An `unverified` row fails the check: an agent that
 could not fetch a source must not cite it (AGENTS.md).
 
-    scripts/refs_check.py papers/*/refs.bib
-    scripts/refs_check.py --self-test
+    tools/fabric refs-check papers/*/refs.bib
 "
 
 const ok = ["verified", "partial"]

@@ -375,7 +375,7 @@ pub fn render_cff(meta: Json, doi: String) -> Result(String, String) {
   }
   list.flatten([
     [
-      "# Generated from .zenodo.json by scripts/citation.py; edit that file, then `just citation`.",
+      "# Generated from .zenodo.json by tools/fabric citation; edit that file, then `just citation`.",
       "cff-version: 1.2.0",
       "message: \"If you use "
         <> name
@@ -793,13 +793,16 @@ pub fn repr_str(s: String) -> String {
 
 // --- command line -------------------------------------------------------------------------
 
-const main_usage = "usage: citation.py [-h] [--check] [--self-test] {add} ..."
+const prog = "tools/fabric citation"
+
+const main_usage =
+  "usage: tools/fabric citation [-h] [--check] [--self-test] {add} ..."
 
 const add_usage =
-  "usage: citation.py add [-h] --name NAME [--orcid ORCID]
-                       [--affiliation AFFILIATION]
-                       [--type {ContactPerson,DataCollector,DataCurator,DataManager,Distributor,Editor,HostingInstitution,Other,Producer,ProjectLeader,ProjectManager,ProjectMember,RegistrationAgency,RegistrationAuthority,RelatedPerson,ResearchGroup,Researcher,RightsHolder,Sponsor,Supervisor,WorkPackageLeader}]
-                       [--author]"
+  "usage: tools/fabric citation add [-h] --name NAME [--orcid ORCID]
+                                 [--affiliation AFFILIATION]
+                                 [--type {ContactPerson,DataCollector,DataCurator,DataManager,Distributor,Editor,HostingInstitution,Other,Producer,ProjectLeader,ProjectManager,ProjectMember,RegistrationAgency,RegistrationAuthority,RelatedPerson,ResearchGroup,Researcher,RightsHolder,Sponsor,Supervisor,WorkPackageLeader}]
+                                 [--author]"
 
 const main_help =
   "
@@ -808,16 +811,16 @@ citation — .zenodo.json is the one hand-edited citation file; CITATION.cff is 
 
 Zenodo reads only .zenodo.json when both exist, and GitHub's \"Cite this repository\" reads only
 CITATION.cff, so the CFF is derived here, with the BibTeX, APA and ABNT references between the
-READMEs' citation markers, and --check fails when any of them drifts. Copied from
+READMEs' citation markers, and --check fails when any of them drifts. Ported to Gleam from
 h0ffmann/picasso's scripts/citation.py, itself copied from marola-dev/marola's (MIP-0079). Changes
 for Paper Fabric: the record may be a preprint (upload_type publication), the licence may be
 CC BY 4.0, and a publication gets a CFF preferred-citation and a BibTeX @misc instead of @software.
 
-    scripts/citation.py                  # validate .zenodo.json, rewrite CITATION.cff and the READMEs' block
-    scripts/citation.py --check          # validate; exit 1 if any generated text is stale
-    scripts/citation.py add --name \"Family, Given\" [--orcid ID] [--affiliation TEXT]
-                        [--type Researcher | --author]
-    scripts/citation.py --self-test
+    tools/fabric citation                  # validate .zenodo.json, rewrite CITATION.cff and the READMEs' block
+    tools/fabric citation --check          # validate; exit 1 if any generated text is stale
+    tools/fabric citation add --name \"Family, Given\" [--orcid ID] [--affiliation TEXT]
+                          [--type Researcher | --author]
+    tools/fabric citation --self-test
 
 positional arguments:
   {add}
@@ -908,7 +911,7 @@ fn parse_main(args: List(String), opts: Opts) -> Result(Opts, Exit) {
             _ ->
               Error(usage_error(
                 main_usage,
-                "citation.py",
+                prog,
                 "argument cmd: invalid choice: "
                   <> repr_str(arg)
                   <> " (choose from 'add')",
@@ -919,7 +922,7 @@ fn parse_main(args: List(String), opts: Opts) -> Result(Opts, Exit) {
             arg,
             ["--help", "--check", "--self-test"],
             main_usage,
-            "citation.py",
+            prog,
           ))
           case flag {
             "-h" | "--help" -> {
@@ -931,7 +934,7 @@ fn parse_main(args: List(String), opts: Opts) -> Result(Opts, Exit) {
                 Ok(#(_, v)) ->
                   Error(usage_error(
                     main_usage,
-                    "citation.py",
+                    prog,
                     "argument "
                       <> flag
                       <> ": ignored explicit argument "
@@ -948,7 +951,7 @@ fn parse_main(args: List(String), opts: Opts) -> Result(Opts, Exit) {
   }
 }
 
-const add_prog = "citation.py add"
+const add_prog = "tools/fabric citation add"
 
 fn parse_add(args: List(String), a: Add, opts: Opts) -> Result(Opts, Exit) {
   case args {
@@ -1041,7 +1044,7 @@ pub fn main(args: List(String)) -> Int {
     Ok(Opts(extra: [_, ..] as extra, ..)) ->
       usage_error(
         main_usage,
-        "citation.py",
+        prog,
         "unrecognized arguments: " <> string.join(extra, " "),
       ).code
     Ok(Opts(self_test: True, ..)) -> self_test()

@@ -22,7 +22,7 @@ build *slugs:
     printf '%s+%s' "$(git rev-parse --short HEAD)" "$(git rev-list --count HEAD)" > build/.current-revision
     for p in $slugs; do
       [ -d "papers/$p" ] || { echo "build: no paper papers/$p" >&2; exit 1; }
-      python3 scripts/logos.py "$p"
+      tools/fabric logos "$p"
       just _pdf "$p" prose "$p"
       if [ -d "papers/$p/prose-ste" ]; then just _pdf "$p" prose-ste "$p-ste"; fi
       if [ -d "papers/$p/prose-pt-BR" ]; then just _pdf "$p" prose-pt-BR "$p-pt-BR"; fi
@@ -42,43 +42,41 @@ _pdf slug dir out:
 # Build, then check the reference logs and that each STE text and translation keeps its citations
 # and numbers.
 check: build
-    python3 scripts/refs_check.py papers/*/refs.bib
-    for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
-    for p in papers/*/prose-pt-BR; do p="${p#papers/}"; python3 scripts/ste_check.py --translation "${p%/prose-pt-BR}"; done
-    python3 scripts/book_check.py
-    python3 scripts/cite_check.py
-    python3 scripts/notes_check.py
+    tools/fabric refs-check papers/*/refs.bib
+    for p in papers/*/prose-ste; do p="${p#papers/}"; tools/fabric ste-check "${p%/prose-ste}"; done
+    for p in papers/*/prose-pt-BR; do p="${p#papers/}"; tools/fabric ste-check --translation "${p%/prose-pt-BR}"; done
+    tools/fabric book-check
+    tools/fabric cite-check
+    tools/fabric notes-check
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
-    for p in $(ls papers); do python3 scripts/arxiv.py "$p"; done
+    for p in $(ls papers); do tools/fabric arxiv "$p"; done
 
-# Every script's --self-test (what CI runs before the build).
+# The tools' tests (gleeunit, in tools/), the three --self-test flags the workflows run, and
+# release.sh's self-test (what CI runs before the build).
 self-test:
-    python3 scripts/refs_check.py --self-test
-    python3 scripts/arxiv.py --self-test
-    python3 scripts/zenodo_upload.py --self-test
-    python3 scripts/logos.py --self-test
-    python3 scripts/book_check.py --self-test
-    python3 scripts/ouroboric.py --self-test
-    python3 scripts/cite_check.py --self-test
-    python3 scripts/notes_check.py --self-test
+    cd tools && gleam test
+    tools/fabric citation --self-test
+    tools/fabric zenodo-upload --self-test
+    tools/fabric content --self-test
     scripts/release.sh --self-test
 
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
 ouroboric-sources:
-    python3 scripts/ouroboric.py
+    tools/fabric ouroboric
 
 # Regenerate CITATION.cff and the README citation block from .zenodo.json.
 citation:
-    python3 scripts/citation.py
+    tools/fabric citation
 
 # Remove every build output.
 clean:
     rm -rf build pdf site/build site/dist
 
-# Enter the toolchain: pandoc, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh (Nix).
+# Enter the toolchain: pandoc, pandoc-crossref, XeLaTeX, pdfLaTeX, Gleam and Erlang
+# (tools/fabric), just, gh (Nix).
 shell:
     nix develop
 
@@ -94,24 +92,24 @@ releases:
 # Upload pdf/*.pdf from this machine to a Zenodo draft (needs ZENODO_TOKEN; CI does this on a tag).
 zenodo-draft version: check
     @[ -n "${ZENODO_TOKEN:-}" ] || { echo "zenodo-draft: export ZENODO_TOKEN first (README, Secrets)" >&2; exit 1; }
-    python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}} \
+    tools/fabric zenodo-upload pdf/*.pdf --version {{version}} \
       ${ZENODO_CONCEPT_RECID:+--concept-recid "$ZENODO_CONCEPT_RECID"}
 
 # The same against sandbox.zenodo.org, to rehearse (needs ZENODO_SANDBOX_TOKEN).
 zenodo-sandbox version: check
     @[ -n "${ZENODO_SANDBOX_TOKEN:-}" ] || { echo "zenodo-sandbox: export ZENODO_SANDBOX_TOKEN first (README, Secrets)" >&2; exit 1; }
     ZENODO_URL=https://sandbox.zenodo.org ZENODO_TOKEN="$ZENODO_SANDBOX_TOKEN" \
-      python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}}
+      tools/fabric zenodo-upload pdf/*.pdf --version {{version}}
 
 # What a Zenodo draft would contain, with no network and no token.
 zenodo-dry-run version: build
-    python3 scripts/zenodo_upload.py pdf/*.pdf --version {{version}} --dry-run
+    tools/fabric zenodo-upload pdf/*.pdf --version {{version}} --dry-run
 
 # Build the website into site/dist/: the PDFs, the site's content from the papers, then the Gleam
 # app. Needs only Nix and just: each half runs in its own toolchain from picasso's labs.
 site-build:
     nix develop --no-update-lock-file --command just build
-    nix develop --no-update-lock-file --command python3 site/content.py
+    nix develop --no-update-lock-file --command tools/fabric content
     nix develop --no-update-lock-file .#site --command bash -c 'cd site && just ci'
 
 # On any Ubuntu with only Nix and `apt install just`: render the paper's PDFs in picasso's paper lab.

@@ -116,7 +116,10 @@ fi
   || { echo "release: the working tree is dirty; commit or stash first" >&2; exit 1; }
 [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ] \
   || { echo "release: main is not level with origin/main; pull or push first" >&2; exit 1; }
-python3 scripts/citation.py --check
+# The human runs this on Ubuntu with only Nix (README's installer, flakes not enabled): the tools
+# come from the flake's toolchain.
+nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file \
+  --command tools/fabric citation --check
 
 sign=-a
 if [ -n "$(git config --get user.signingkey || true)" ]; then sign=-s; fi
