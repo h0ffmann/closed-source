@@ -463,6 +463,7 @@ fn render(slug: String) -> Result(String, String) {
   }
   let logos = list.map(json.get_list(m, "logos"), logo)
   let works = list.map(json.get_list(m, "works"), work)
+  let friends = list.map(json.get_list(m, "friends"), work)
   let doi = citation.concept_doi
   let versions =
     case doi {
@@ -659,6 +660,12 @@ pub const writer = "
 
 pub const works = "
     <> gleam_list(works)
+    <> "
+
+/// Work by friends that the paper stands on: a tile on the site, never the writer's own work. A
+/// friend's `doi` is \"\" while the work has none.
+pub const friends = "
+    <> gleam_list(friends)
     <> "
 
 /// Two short tags for this paper's own tile.

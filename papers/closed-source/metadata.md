@@ -32,6 +32,15 @@ works:
     doi: 10.5281/zenodo.23311208
     tags: [profit, nix]
     href: https://github.com/h0ffmann/picasso
+# Work by friends that this paper stands on, for a wide tile in the site's DOIs section. It is not
+# the writer's work, so it is not in `works` and not in the Author section. `tags` are the owner's
+# words (Hoffmann, 13 October 2026); the question mark is his. `text` is from OUROBORIC.md, section
+# 2 (the charter: "Making money is not a goal for Ouroboric for now"). No `doi`: none exists yet.
+friends:
+  - name: ouroboric
+    text: "open factories that improve themselves, by Bruno Valério. a company whose charter says that making money is not a goal for now. the ouroboric ideas in this paper are his."
+    href: https://github.com/ouroboric-dev
+    tags: ["profit (?)", ideas, friends]
 # Shown on the title page. Trademarks of their projects, not licensed here: `tools/fabric logos`
 # fetches each SVG at a pinned commit, checks its hash and converts it; nothing is committed.
 # The website shows the same marks as linked stamps, after picasso's site, and reads the keys from

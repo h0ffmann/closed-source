@@ -177,14 +177,17 @@ fn dois() -> Element(msg) {
   }
 }
 
-/// One work as one large tile. The whole tile opens the work's DOI; `more` holds the tile's
-/// second link, which stays clickable above it.
+/// One work as one large tile. The whole tile opens `href`; `more` holds the tile's second
+/// link, which stays clickable above it. `label` and `value` are the line under the text: "DOI"
+/// and the DOI, or what stands in for one.
 fn tile(
   kind: String,
   tags: List(String),
   name: String,
   text: String,
-  doi: String,
+  href: String,
+  label: String,
+  value: String,
   more: Element(msg),
 ) -> Element(msg) {
   html.li([attribute.class("tile tile-" <> kind)], [
@@ -196,7 +199,7 @@ fn tile(
       html.a(
         [
           attribute.class("tile-link"),
-          attribute.href("https://doi.org/" <> doi),
+          attribute.href(href),
           attribute.rel("noopener"),
         ],
         [html.text(name)],
@@ -204,12 +207,62 @@ fn tile(
     ]),
     html.p([attribute.class("tile-text")], [html.text(text)]),
     html.p([attribute.class("tile-doi")], [
-      html.span([], [html.text("DOI")]),
-      html.text(" " <> doi),
+      html.span([], [html.text(label)]),
+      html.text(" " <> value),
     ]),
     html.p([attribute.class("tile-more")], [more]),
     html.span([attribute.class("tile-go"), attribute.aria_hidden(True)], []),
   ])
+}
+
+/// A tile for a work with a DOI: the tile opens doi.org.
+fn doi_tile(
+  kind: String,
+  tags: List(String),
+  name: String,
+  text: String,
+  doi: String,
+  more: Element(msg),
+) -> Element(msg) {
+  tile(kind, tags, name, text, "https://doi.org/" <> doi, "DOI", doi, more)
+}
+
+/// A wide tile for a friend's work. With no DOI yet, it opens the work's own page and says so.
+fn friend_tile(k: Work) -> Element(msg) {
+  case k.doi {
+    "" ->
+      tile(
+        k.name <> " tile-friend",
+        k.tags,
+        k.name,
+        k.text,
+        k.href,
+        "DOI",
+        "none yet",
+        external(k.href, string.replace(k.href, "https://", "")),
+      )
+    doi ->
+      doi_tile(
+        k.name <> " tile-friend",
+        k.tags,
+        k.name,
+        k.text,
+        doi,
+        external(k.href, "Repository"),
+      )
+  }
+}
+
+/// The works on the shelf: this paper, the writer's other works and the friends' works.
+pub fn shelf_works() -> Int {
+  1 + list.length(content.works) + list.length(content.friends)
+}
+
+/// How many of them have a DOI.
+pub fn shelf_dois() -> Int {
+  1
+  + list.length(content.works)
+  + list.length(list.filter(content.friends, fn(k: Work) { k.doi != "" }))
 }
 
 /// Every DOI of the writer's work, this paper's first: large tiles that open doi.org.
@@ -221,49 +274,53 @@ fn shelf_section() -> Element(msg) {
         [attribute.class("shelf"), attribute.aria_labelledby("dois")],
         [
           html.h2([attribute.id("dois")], [
-            html.text(case list.length(content.works) {
-              0 -> "One work, one DOI."
-              n ->
-                int.to_string(n + 1)
-                <> " works, "
-                <> int.to_string(n + 1)
-                <> " DOIs."
-            }),
+            html.text(
+              int.to_string(shelf_works())
+              <> " works, "
+              <> int.to_string(shelf_dois())
+              <> " DOIs.",
+            ),
           ]),
           html.p([attribute.class("shelf-lede")], [
             html.text(
-              "Click a tile to open its DOI. A DOI still resolves after a repository moves, so cite the DOI, not the URL.",
+              "Click a tile to open its DOI, or the work's own page when it has no DOI yet. A DOI still resolves after a repository moves, so cite the DOI, not the URL.",
             ),
           ]),
-          html.ul([attribute.class("tiles")], [
-            tile(
-              "paper",
-              content.tags,
-              content.slug,
-              content.title
-                <> ": the paper you are reading about. Its latest DOI always opens the newest release.",
-              doi,
-              case latest_version() {
-                Ok(#(version, own)) ->
-                  external(
-                    "https://doi.org/" <> own,
-                    "Permanent DOI for " <> version <> ": " <> own,
-                  )
-                Error(_) ->
-                  external("https://zenodo.org/doi/" <> doi, "All versions")
-              },
-            ),
-            ..list.map(content.works, fn(k: Work) {
-              tile(
-                k.name,
-                k.tags,
-                k.name,
-                k.text,
-                k.doi,
-                external(k.href, "Repository"),
-              )
-            })
-          ]),
+          html.ul(
+            [attribute.class("tiles")],
+            list.flatten([
+              [
+                doi_tile(
+                  "paper",
+                  content.tags,
+                  content.slug,
+                  content.title
+                    <> ": the paper you are reading about. Its latest DOI always opens the newest release.",
+                  doi,
+                  case latest_version() {
+                    Ok(#(version, own)) ->
+                      external(
+                        "https://doi.org/" <> own,
+                        "Permanent DOI for " <> version <> ": " <> own,
+                      )
+                    Error(_) ->
+                      external("https://zenodo.org/doi/" <> doi, "All versions")
+                  },
+                ),
+              ],
+              list.map(content.works, fn(k: Work) {
+                doi_tile(
+                  k.name,
+                  k.tags,
+                  k.name,
+                  k.text,
+                  k.doi,
+                  external(k.href, "Repository"),
+                )
+              }),
+              list.map(content.friends, friend_tile),
+            ]),
+          ),
         ],
       )
   }
