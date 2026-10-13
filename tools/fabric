@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# fabric: build tools/ (Gleam, Erlang target) and run one of its commands at the repository root,
+# where the Python scripts ran. Needs gleam and erl on PATH (`nix develop`).
+#   tools/fabric book-check
+set -euo pipefail
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+(cd "$here" && gleam build --no-print-progress >&2)
+cd "$here/.."
+exec erl -noshell -pa "$here"/build/dev/erlang/*/ebin -eval 'fabric:main(), erlang:halt(0).' -extra "$@"
