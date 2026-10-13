@@ -332,3 +332,12 @@ Add Cicero, Plato, Aristotle, Socrates, justify only by 'mathematics'
 
 Read as: thinkers 32 to 35, status chosen, each with "mathematics" as the only reason, and a row
 each in 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:27 UTC, verbatim:
+
+```text
+Dante Aligheri
+```
+
+Read as: Dante Alighieri as thinker 36, status chosen, reason left for the owner, with a row in
+500AUTHORS.md.

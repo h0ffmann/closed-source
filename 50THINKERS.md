@@ -14,7 +14,7 @@ does not have exactly 50 numbered rows, if a name appears twice, or if a thinker
 the long list in [500AUTHORS.md](500AUTHORS.md).
 
 The first 22 rows are a proposal, taken from the people the paper already cites (refs.bib) and
-from BOOKS.md. Rows 23 to 27 and 29 to 35 are the owner's choices of 13 October 2026, and row 28 is kept for a thinker the owner will name. Rows 36 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
+from BOOKS.md. Rows 23 to 27 and 29 to 36 are the owner's choices of 13 October 2026, and row 28 is kept for a thinker the owner will name. Rows 37 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
 thinker here: they are the book's opponents (AGENTS.md).
 
 After the 100 pages comes a partial snapshot of the private `h0ffmann/nagori` repository, outside
@@ -59,7 +59,7 @@ Status: `open` (no thinker yet), `proposed`, `chosen`, `written` (the two pages 
 | 33 | Plato | mathematics | chosen |
 | 34 | Aristotle | mathematics | chosen |
 | 35 | Socrates | mathematics | chosen |
-| 36 | — | — | open |
+| 36 | Dante Alighieri | reason to come | chosen |
 | 37 | — | — | open |
 | 38 | — | — | open |
 | 39 | — | — | open |

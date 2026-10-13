@@ -104,3 +104,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 83 | Plato | — (the owner's choice: mathematics) | 33 |
 | 84 | Aristotle | — (the owner's choice: mathematics) | 34 |
 | 85 | Socrates | — (the owner's choice: mathematics) | 35 |
+| 86 | Dante Alighieri | — (the owner's choice) | 36 |
