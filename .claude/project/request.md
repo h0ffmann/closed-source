@@ -295,3 +295,40 @@ Inocentes" (title from olavodecarvalho.org's English biography); Theodore Dalrym
 Michel de Montaigne for the Essays; Hideaki Anno for Neon Genesis Evangelion; and row 28 kept open
 for the reverse-engineering thinker, whom the owner names. Each named thinker gets a row in
 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:22 UTC, verbatim:
+
+```text
+add author Roube como um Artista
+```
+
+Read as: Austin Kleon, author of Steal Like an Artist (Workman, 2012; Rocco's pt-BR edition, 2013,
+checked on Wikipedia and Skoob), as thinker 29, status chosen, with a row in 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:22 UTC, verbatim:
+
+```text
+o Autor de O caminho do artista
+```
+
+Read as: Julia Cameron, author of The Artist's Way (Tarcher, 1992, checked on Wikipedia; pt-BR
+title O Caminho do Artista), as thinker 30, status chosen, with a row in 500AUTHORS.md. Kleon stays
+at row 29: the next message (Wolfe) shows these are additions.
+
+Hoffmann, 2026-10-13 02:23 UTC, verbatim:
+
+```text
+A Beleza Salvará o Mundo - Gregory Wolfe
+```
+
+Read as: Gregory Wolfe, Beauty Will Save the World (ISI Books, 2011, checked on PhilArchive), as
+thinker 31, status chosen, with a row in 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:24 UTC, verbatim:
+
+```text
+Add Cicero, Plato, Aristotle, Socrates, justify only by 'mathematics'
+```
+
+Read as: thinkers 32 to 35, status chosen, each with "mathematics" as the only reason, and a row
+each in 500AUTHORS.md.
