@@ -73,6 +73,7 @@ pub fn view(model: Model) -> Element(Msg) {
   html.div([], [
     header(),
     html.main([attribute.class("wrap")], [
+      shelf_section(),
       thinkers_section(),
       notes_section(),
       read_section(),
@@ -175,6 +176,98 @@ fn dois() -> Element(msg) {
   }
 }
 
+/// One work as one large tile. The whole tile opens the work's DOI; `more` holds the tile's
+/// second link, which stays clickable above it.
+fn tile(
+  kind: String,
+  tags: List(String),
+  name: String,
+  text: String,
+  doi: String,
+  more: Element(msg),
+) -> Element(msg) {
+  html.li([attribute.class("tile tile-" <> kind)], [
+    html.p(
+      [attribute.class("tile-tags")],
+      list.map(tags, fn(t) { html.span([], [html.text(t)]) }),
+    ),
+    html.h3([], [
+      html.a(
+        [
+          attribute.class("tile-link"),
+          attribute.href("https://doi.org/" <> doi),
+          attribute.rel("noopener"),
+        ],
+        [html.text(name)],
+      ),
+    ]),
+    html.p([attribute.class("tile-text")], [html.text(text)]),
+    html.p([attribute.class("tile-doi")], [
+      html.span([], [html.text("DOI")]),
+      html.text(" " <> doi),
+    ]),
+    html.p([attribute.class("tile-more")], [more]),
+    html.span([attribute.class("tile-go"), attribute.aria_hidden(True)], []),
+  ])
+}
+
+/// Every DOI of the writer's work, this paper's first: large tiles that open doi.org.
+fn shelf_section() -> Element(msg) {
+  case content.doi {
+    "" -> element.none()
+    doi ->
+      html.section(
+        [attribute.class("shelf"), attribute.aria_labelledby("dois")],
+        [
+          html.h2([attribute.id("dois")], [
+            html.text(case list.length(content.works) {
+              0 -> "One work, one DOI."
+              n ->
+                int.to_string(n + 1)
+                <> " works, "
+                <> int.to_string(n + 1)
+                <> " DOIs."
+            }),
+          ]),
+          html.p([attribute.class("shelf-lede")], [
+            html.text(
+              "Click a tile to open its DOI. A DOI still resolves after a repository moves, so cite the DOI, not the URL.",
+            ),
+          ]),
+          html.ul([attribute.class("tiles")], [
+            tile(
+              "paper",
+              content.tags,
+              content.slug,
+              content.title
+                <> ": the paper you are reading about. Its latest DOI always opens the newest release.",
+              doi,
+              case latest_version() {
+                Ok(#(version, own)) ->
+                  external(
+                    "https://doi.org/" <> own,
+                    "Permanent DOI for " <> version <> ": " <> own,
+                  )
+                Error(_) ->
+                  external("https://zenodo.org/doi/" <> doi, "All versions")
+              },
+            ),
+            ..list.map(content.works, fn(k: Work) {
+              tile(
+                k.name,
+                k.tags,
+                k.name,
+                k.text,
+                k.doi,
+                external(k.href, "Repository"),
+              )
+            })
+          ]),
+        ],
+      )
+  }
+}
+
 fn section_head(
   id: String,
   title: String,
@@ -192,6 +285,7 @@ fn header() -> Element(msg) {
 
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
+    link("#dois", "DOIs"),
     link("#thinkers", "50 Thinkers"),
     link("#notes", "Second brain"),
     link("#read", "Read"),

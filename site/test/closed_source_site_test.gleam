@@ -65,3 +65,16 @@ pub fn both_dois_and_the_other_works_are_on_the_page_test() {
     string.contains(html, "https://doi.org/" <> w.doi)
   })
 }
+
+pub fn the_dois_section_has_a_tile_for_each_work_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert string.contains(html, "id=\"dois\"")
+  assert string.contains(html, "4 works, 4 DOIs.")
+  assert string.contains(html, "tile-paper")
+  assert list.all(content.works, fn(w) {
+    string.contains(html, "tile-" <> w.name)
+    && list.length(w.tags) == 2
+    && list.all(w.tags, fn(t) { string.contains(html, ">" <> t <> "<") })
+  })
+  assert list.all(content.tags, fn(t) { string.contains(html, ">" <> t <> "<") })
+}

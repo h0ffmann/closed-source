@@ -65,8 +65,8 @@ pub fn version_dois_keep_only_the_concept_test() {
 pub fn work_test() {
   let assert Ok(entry) =
     json.decode(
-      "{\"name\":\"marola\",\"text\":\"sea\",\"doi\":\"10.5281/zenodo.1\",\"href\":\"https://x\"}",
+      "{\"name\":\"marola\",\"text\":\"sea\",\"doi\":\"10.5281/zenodo.1\",\"href\":\"https://x\",\"tags\":[\"non-profit\",\"water\"]}",
     )
   assert content.work(entry)
-    == "Work(name: \"marola\", text: \"sea\", doi: \"10.5281/zenodo.1\", href: \"https://x\")"
+    == "Work(name: \"marola\", text: \"sea\", doi: \"10.5281/zenodo.1\", href: \"https://x\", tags: [\"non-profit\", \"water\"])"
 }

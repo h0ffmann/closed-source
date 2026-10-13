@@ -274,7 +274,21 @@ pub fn work(w: json.Json) -> String {
   <> field("doi")
   <> ", href: "
   <> field("href")
+  <> ", tags: "
+  <> strings(json.get_list(w, "tags"))
   <> ")"
+}
+
+/// A JSON list's strings as a one-line Gleam list.
+pub fn strings(items: List(json.Json)) -> String {
+  let quoted =
+    list.filter_map(items, fn(i) {
+      case i {
+        json.String(s) -> Ok(gleam_string(s))
+        _ -> Error(Nil)
+      }
+    })
+  "[" <> string.join(quoted, ", ") <> "]"
 }
 
 /// The URL that lists every Zenodo version of a concept DOI, newest first; "" when the DOI is
@@ -493,7 +507,7 @@ pub type Logo {
 }
 
 pub type Work {
-  Work(name: String, text: String, doi: String, href: String)
+  Work(name: String, text: String, doi: String, href: String, tags: List(String))
 }
 
 pub type Thinker {
@@ -566,6 +580,11 @@ pub const writer = "
 
 pub const works = "
     <> gleam_list(works)
+    <> "
+
+/// Two short tags for this paper's own tile.
+pub const tags: List(String) = "
+    <> strings(json.get_list(m, "tags"))
     <> "
 
 /// The concept DOI: one for the whole work, it resolves to the latest release. \"\" before the

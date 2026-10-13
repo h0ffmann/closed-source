@@ -555,3 +555,26 @@ Author section and the README's Author paragraph: both list marola, ww3-gpu and 
 their concept DOIs, from the `works:` list in `papers/closed-source/metadata.md`, whose source is
 the "DOI's" list of h0ffmann/h0ffmann (`me/ways-of-working.md` at `1a3a7e1`). h0ffmann/h0ffmann#51
 adds this paper's concept DOI to that list.
+
+## A DOIs section on the website
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+Create a Big PR in closed-source to add DOI properly to website (all 4, with slangs, marola, non-profit + water - ww3-gpu - non-profit + waves, picasso, profit + nix). this should be VISIBLE, CLICKABLE, APPLE
+```
+
+```text
+closed-source should self-refer here - non-profit + ideas
+```
+
+Read as: a DOIs section, first on the page and first in the navigation, with one large tile for
+each of the four works. "Slangs" is read as two short tags for each work, shown as chips: marola
+non-profit and water, ww3-gpu non-profit and waves, picasso profit and nix, closed-source
+non-profit and ideas. "Self-refer" is read as: this repository has its own tile beside the other
+three, under its repository name. "CLICKABLE" is read as: the whole tile opens the DOI at doi.org.
+"APPLE" is read as the look of the product tiles of apple.com: the system sans, large type, round
+corners, one colour for each tile. The tags are in `papers/closed-source/metadata.md` (`tags:`),
+and `tools/fabric content` generates them. This pull request carries the site work of #32, which
+it replaces.
+
