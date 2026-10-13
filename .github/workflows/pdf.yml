@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: DeterminateSystems/nix-installer-action@v23
+      - uses: cachix/install-nix-action@v31
       - name: the lock is current
         run: nix flake metadata --no-update-lock-file >/dev/null
       - run: nix develop --no-update-lock-file --command just self-test
@@ -46,6 +46,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: DeterminateSystems/nix-installer-action@v23
+      # The README's own install: the official nixos.org installer, no flakes config (the recipe
+      # passes the flag itself).
+      - name: install Nix as the README does
+        run: |
+          curl -fsSL https://nixos.org/nix/install | sh -s -- --daemon --yes
+          echo /nix/var/nix/profiles/default/bin >> "$GITHUB_PATH"
       - run: sudo apt-get update && sudo apt-get install -y just && just --version
       - run: just book

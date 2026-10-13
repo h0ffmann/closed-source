@@ -18,18 +18,21 @@ organisation.
 
 ## Build the PDF
 
-On any Ubuntu, you need only Nix and just. Nothing else is installed on the machine:
+On any Ubuntu, you need only Nix and just. Nothing else is installed on the machine. Nix comes
+from the official installer at [nixos.org](https://nixos.org/download/):
 
 ```sh
-curl -fsSL https://install.determinate.systems/nix | sh -s -- install   # Nix, once
-sudo apt install just                                                    # just 1.21 on 24.04
+curl -fsSL https://nixos.org/nix/install | sh -s -- --daemon        # Nix, once; then open a new shell
+echo 'experimental-features = nix-command flakes' | sudo tee -a /etc/nix/nix.conf   # flakes on, once
+sudo apt install just                                               # just 1.21 on 24.04
 just paper     # the PDFs, in picasso's paper lab -> pdf/
 just book      # the PDFs and the book's checks (50 thinkers, cite lines, references, STE)
 ```
 
 The tools (pandoc 3.7, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh) come from the
 `paper` lab of [h0ffmann/picasso](https://github.com/h0ffmann/picasso/tree/main/labs/paper),
-pinned by `flake.lock`. You need [Nix](https://nixos.org/download/) with flakes on.
+pinned by `flake.lock`. `just paper` and `just book` turn flakes on for themselves; the commands
+below need the `nix.conf` line above.
 
 ```sh
 nix develop            # or `just shell`: every tool on PATH
