@@ -17,3 +17,17 @@ path = ["format/**"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
 SPDX-License-Identifier = "MIT"
+
+# Copied as is from ouroboric-dev/ouroboric (docs/4-ways-of-working/ouroboric/README.md): the
+# licensor's own notice, as CC BY 4.0 requires.
+[[annotations]]
+path = ["docs/4-ways-of-working/ouroboric/*.md"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Bruno Guilhermo de Barros Valério"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["docs/4-ways-of-working/ouroboric/README.md"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
+SPDX-License-Identifier = "CC-BY-4.0"
