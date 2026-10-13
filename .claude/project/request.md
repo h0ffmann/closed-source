@@ -412,3 +412,12 @@ add h0ffmann/h0ffmann, add ww3-gpu, add marola-dev/marola
 
 Read as: three more shallow submodules in the same PR: h0ffmann/h0ffmann, h0ffmann/ww3-gpu and
 marola-dev/marola (the upstream, as named), each MIT.
+
+Hoffmann, 2026-10-13 02:53 UTC, verbatim (relayed):
+
+```text
+https://github.com/h0ffmann/closed-source - > get port options to changing current python tooling to Go, using Go patterns present in ouroboric-dev. If is just scripting, use vlang
+```
+
+Read as: options, not the port: a change proposal that lists the Python files, the Go patterns
+ouroboric-dev documents, options with cost and effort, and what changes in picasso and marola.
