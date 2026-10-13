@@ -2,6 +2,7 @@
 //// which builds this project and starts it at the repository root.
 
 import fabric/book_check
+import fabric/citation
 import fabric/cite_check
 import fabric/content
 import fabric/notes_check
@@ -22,6 +23,7 @@ fn commands() -> List(#(String, fn(List(String)) -> Int)) {
     #("refs-check", refs_check.main),
     #("ste-check", ste_check.main),
   ]
+  [#("citation", citation.main)]
 }
 
 pub fn main() -> Nil {
