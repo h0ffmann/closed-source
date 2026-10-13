@@ -68,5 +68,5 @@ is about.
 - The four conditions are a proposal. They were not taken from a source.
 
 **Open, for the owner:** is this what you mean by MetaQuality? If not, write the definition in
-your words and this note changes to it. Which thinker of the 50 does the essay belong to: Pirsig
-(row 14), or a page of its own?
+your words and this note changes to it. Which thinker of the 50 does the essay belong to: Pirsig,
+or a page of its own?

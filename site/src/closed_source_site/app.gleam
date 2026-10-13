@@ -85,6 +85,7 @@ pub fn view(model: Model) -> Element(Msg) {
       contents_section(),
       authors_section(),
       fabric_section(),
+      ci_section(),
       scores_section(),
       cite_section(model),
     ]),
@@ -362,6 +363,7 @@ fn jump() -> Element(msg) {
     link("#contents", "Contents"),
     link("#authors", "Author"),
     link("#fabric", "How it is made"),
+    link("#ci", "CI"),
     link("#scores", "Scores"),
     link("#cite", "Cite"),
   ])
@@ -861,6 +863,153 @@ fn fabric_section() -> Element(msg) {
 }
 
 /// The band of a citation score, as the script's colours: 75 and up, 25 and up, below.
+/// A workflow of this repository: its name as GitHub shows it, its file in .github/workflows/,
+/// and what it does, in lower case as on the tiles. `just site-build` fails if a file named here
+/// is not in .github/workflows/.
+pub type Check {
+  Check(name: String, file: String, does: String)
+}
+
+/// The checks that read a pull request before a person merges it.
+pub const checks = [
+  Check(
+    "pdf",
+    "pdf.yml",
+    "builds the three PDFs. a citation with no source stops it. checks every reference, the simplified english and the portuguese.",
+  ),
+  Check(
+    "site",
+    "site.yml",
+    "builds this website from the book's own files and runs its tests.",
+  ),
+  Check(
+    "citation",
+    "citation.yml",
+    "checks the record that Zenodo and GitHub read, so the work stays citable.",
+  ),
+  Check(
+    ".md",
+    "md.yml",
+    "three analysers read the markdown: structure, plain words, links to files.",
+  ),
+]
+
+/// What runs after the merge, and at a release.
+pub const after = [
+  Check(
+    "site",
+    "site.yml",
+    "after the merge, the website is published again, with the new PDF.",
+  ),
+  Check(
+    "live links",
+    "links.yml",
+    "then every web link of the website and the markdown is fetched. green means 100% answer.",
+  ),
+  Check(
+    "release",
+    "release.yml",
+    "when the owner tags a version: the PDFs go to a GitHub release, and Zenodo mints a permanent DOI.",
+  ),
+]
+
+/// The state of a workflow as a badge that GitHub's own data draws (through shields.io), the
+/// same badges as in README.md. It opens the workflow's runs.
+fn status(check: Check) -> Element(msg) {
+  let #(owner, name) = repo_name()
+  // A release runs on a tag, not on main.
+  let branch = case check.file {
+    "release.yml" -> ""
+    _ -> "branch=main&"
+  }
+  html.li([], [
+    html.a(
+      [
+        attribute.class("ci-status"),
+        attribute.href(content.repo <> "/actions/workflows/" <> check.file),
+        attribute.rel("noopener"),
+      ],
+      [
+        html.img([
+          attribute.src(
+            "https://img.shields.io/github/actions/workflow/status/"
+            <> owner
+            <> "/"
+            <> name
+            <> "/"
+            <> check.file
+            <> "?"
+            <> branch
+            <> "label="
+            <> string.replace(check.name, " ", "%20")
+            <> "&style=flat-square&labelColor=111111",
+          ),
+          attribute.alt(check.name <> ": the state of its last run"),
+          attribute.height(20),
+          attribute.attribute("loading", "lazy"),
+        ]),
+      ],
+    ),
+    html.span([attribute.class("ci-does")], [html.text(check.does)]),
+  ])
+}
+
+/// What happens when the book changes: the checks before a merge and what runs after it, each
+/// with its state now. One card, after the tiles (.claude/skills/card-style/SKILL.md).
+fn ci_section() -> Element(msg) {
+  let stage = fn(title: String, text: String, rows: List(Check)) {
+    html.li([attribute.class("ci-stage")], [
+      html.h4([], [html.text(title)]),
+      html.p([], [html.text(text)]),
+      case rows {
+        [] -> element.none()
+        _ -> html.ul([attribute.class("ci-rows")], list.map(rows, status))
+      },
+    ])
+  }
+  html.section([attribute.class("shelf"), attribute.aria_labelledby("ci")], [
+    html.div([attribute.class("ci-card")], [
+      html.p([attribute.class("tile-tags")], [
+        html.span([], [html.text("every change")]),
+        html.span([], [html.text("state now")]),
+      ]),
+      html.h2([attribute.id("ci")], [
+        html.text("what happens when the book changes"),
+      ]),
+      html.p([attribute.class("tile-text")], [
+        html.text(
+          "a change to the book is a proposal first. machines read it, then a person decides. each badge is the state of that check now, drawn from GitHub's own data.",
+        ),
+      ]),
+      html.ol([attribute.class("ci-stages")], [
+        stage(
+          "a change is proposed",
+          "a pull request on GitHub: the text that changes, and why.",
+          [],
+        ),
+        stage(
+          "four checks read it",
+          "each one reads the change before the merge. a red one is a reason not to merge.",
+          checks,
+        ),
+        stage(
+          "a person merges, and it is published",
+          "the rule here: no agent merges. after the merge:",
+          after,
+        ),
+      ]),
+      html.p([attribute.class("tile-more")], [
+        external(content.repo <> "/actions", "all runs on GitHub"),
+        html.text(" · "),
+        external(
+          content.repo <> "/blob/main/docs/4-ways-of-working/md-quality.md",
+          "what the checks do not check",
+        ),
+      ]),
+    ]),
+  ])
+}
+
 pub fn band(percent: Int) -> String {
   case percent {
     p if p >= 75 -> "high"

@@ -919,3 +919,22 @@ of different links that go there from the Markdown files. `scripts/md-quality.sh
 them, `just site-build` publishes the numbers as `links.json` on the website, and the badges
 read that file, so no number is written by hand. "graph" is read as a badge; if the owner meant
 a chart on the website, that is another change.
+
+```text
+Create a CI card in the website, so people now what happens when I change the book (STATUS acessment, like we do in CI badges in README.md would also be very cool in the website, if added with Picasso styling)
+```
+
+Read as: a section "CI" on the website with one card, "what happens when the book changes":
+three steps (a change is proposed; four checks read it; a person merges and it is published),
+and for each workflow a badge with its state now, the same shields.io badges as in `README.md`.
+The card follows the `card-style` skill: the cover's red, a yellow name, and a new one-line
+drawing, a press wheel. `main` is not a protected branch, so the card does not say that a check
+must pass before a merge.
+
+```text
+in the same PR do a new shuffle of Thinkers, Cicero, Aristotle, Plato are all side by side in the website
+```
+
+Read as: the 50 rows of `50THINKERS.md` drawn at random again, and redrawn until no two
+neighbours share an area, so the three cannot land together again by chance. The easy pt-BR
+version has the same new order. No thinker, area, reason or status changed; only the numbers.

@@ -144,3 +144,22 @@ pub fn the_paper_pdf_is_linked_from_the_cover_the_tile_and_read_test() {
   assert string.contains(html, "src=\"paper.pdf\"")
   assert string.contains(html, "download=\"closed-source.pdf\"")
 }
+
+pub fn the_ci_card_shows_each_workflow_with_its_state_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert string.contains(html, "what happens when the book changes")
+  assert list.length(app.checks) == 4
+  assert list.all(list.append(app.checks, app.after), fn(c: app.Check) {
+    string.contains(
+      html,
+      "href=\"" <> content.repo <> "/actions/workflows/" <> c.file <> "\"",
+    )
+    && string.contains(
+      html,
+      "/actions/workflow/status/h0ffmann/closed-source/" <> c.file <> "?",
+    )
+  })
+  // A release runs on a tag, so its badge does not ask for main.
+  assert string.contains(html, "release.yml?label=release")
+  assert string.contains(html, "href=\"#ci\"")
+}
