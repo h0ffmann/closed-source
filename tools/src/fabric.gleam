@@ -2,12 +2,18 @@
 //// which builds this project and starts it at the repository root.
 
 import fabric/content
+import fabric/ouroboric
+import fabric/ste_check
 import fabric/sys
 import gleam/list
 import gleam/string
 
 fn commands() -> List(#(String, fn(List(String)) -> Int)) {
-  [#("content", content.main)]
+  [
+    #("content", content.main),
+    #("ouroboric", ouroboric.main),
+    #("ste-check", ste_check.main),
+  ]
 }
 
 pub fn main() -> Nil {
