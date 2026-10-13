@@ -1,0 +1,20 @@
+# Adapted from ouroboric-dev/.github ISSUE_TEMPLATE/change_proposal.yml (MIT, © 2026 Bruno Guilhermo de Barros Valério).
+name: Change proposal
+description: A change to something that exists, such as a hard rule, the roster or the book's structure. Needs the owner's approval.
+labels: ["kind/proposal"]
+body:
+  - type: textarea
+    attributes:
+      label: Why
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What changes
+      description: Added, modified and removed rules or text.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Impact
+      description: What else this touches (both editions, the STE text, the site, a check).

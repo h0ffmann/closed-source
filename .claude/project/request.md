@@ -123,7 +123,7 @@ On the decision card "Who are the 50 authors, one page each, in the book?", Hoff
 change hardrule to 100pgs, 2 pgs per author
 ```
 
-Recorded as the hard rule in AGENTS.md, with the roster in papers/closed-source/THINKERS.md.
+Recorded as the hard rule in AGENTS.md, with the roster in papers/closed-source/THINKERS.md (now 50THINKERS.md).
 
 Hoffmann, 2026-10-12 20:58 UTC, verbatim:
 
@@ -253,6 +253,17 @@ add this https://github.com/ouroboric-dev/ouroboric/tree/main/docs/4-ways-of-wor
 
 Read as: the four files of that folder copied byte for byte into docs/4-ways-of-working/ouroboric/,
 with a README that cites Ouroboric at the commit, and the licensor's CC BY 4.0 notice in REUSE.toml.
+
+Hoffmann, 2026-10-13 02:01 UTC, verbatim:
+
+```text
+check other important patterns from Ouroboric to be added to this repo ...  500AUTHORS.md 50THINKERS.md
+```
+
+Read as: the roster moves to 50THINKERS.md; 500AUTHORS.md is the long list the 50 are chosen from
+(at most 500, every thinker listed, checked by book_check); and the most important Ouroboric
+patterns not yet here: guardrail invariants, PR and change-proposal templates, SECURITY.md,
+TRADEMARKS.md and change proposals.
 
 Hoffmann, 2026-10-13, verbatim:
 
