@@ -295,3 +295,12 @@ Inocentes" (title from olavodecarvalho.org's English biography); Theodore Dalrym
 Michel de Montaigne for the Essays; Hideaki Anno for Neon Genesis Evangelion; and row 28 kept open
 for the reverse-engineering thinker, whom the owner names. Each named thinker gets a row in
 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:22 UTC, verbatim:
+
+```text
+add author Roube como um Artista
+```
+
+Read as: Austin Kleon, author of Steal Like an Artist (Workman, 2012; Rocco's pt-BR edition, 2013,
+checked on Wikipedia and Skoob), as thinker 29, status chosen, with a row in 500AUTHORS.md.
