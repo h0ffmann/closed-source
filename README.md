@@ -5,7 +5,7 @@
 
 # closed source: the god that failed
 
-<sub>since 2026 · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
+<sub>since 2026 · <a href="https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf">read the paper (PDF)</a> · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
 
 [![h0ffmann/closed-source on github: star the repository](https://img.shields.io/github/stars/h0ffmann/closed-source?style=for-the-badge&logo=github&logoColor=white&label=h0ffmann%2Fclosed-source&labelColor=111111&color=A3201C)](https://github.com/h0ffmann/closed-source)
 
@@ -20,6 +20,10 @@
 the first paper made with **paper fabric**, an open, self-improving pipeline for technical papers
 in the [ouroboric](https://github.com/ouroboric-dev/ouroboric) style. markdown in, PDF out, every
 reference checked, every release citable.
+
+**read the paper:** [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
+[in simplified technical english](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-ste.pdf) ·
+[em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf)
 
 </div>
 
@@ -39,6 +43,11 @@ other citable work by the writer, each with its latest DOI:
 **status:** v0.2.0 is live ([releases](RELEASES.md)). a v0 preprint, not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
+
+**where the PDF is.** the three links above always open the PDFs of the latest release, from
+its github release. the DOI opens the zenodo record, which holds the source archive and links
+back to the PDF. the [site](https://h0ffmann.github.io/closed-source/) has the PDFs built from
+`main`.
 
 **style.** this page is in lower case, except acronyms such as UFRJ, DOI and PDF, code, and the
 generated citation block. the layout follows [picasso's README](https://github.com/h0ffmann/picasso/blob/29eb385/README.md).

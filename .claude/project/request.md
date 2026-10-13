@@ -801,3 +801,16 @@ repository builds with its labs, and `cites` nashkell, which the paper cites and
 not name; nashkell has no DOI, so that tie is a URL. Ouroboric has no Zenodo record; it stays
 cited by URL, and issue #40 asks for its DOI.
 
+```text
+PDF doesnt seem to be properly linked. The full white paper. Fix this
+```
+
+Read as: the PDF files were reachable (the site's three PDFs and the release's assets all
+answered 200), but the path to them was poor. The README had no link to the PDF at all; the DOI
+opens a Zenodo record that holds a source archive and no PDF; and on the site the PDF was one
+card far down the page. So: a "read the paper (PDF)" link at the top of the README and its easy
+version, a black "read the paper | PDF" pill on the site's cover before the GitHub pill, a PDF
+link on the closed-source tile, and in `.zenodo.json` a sentence with the link and an
+`isVariantFormOf` tie to the PDF. The README and Zenodo links use the release's
+`latest/download` URL, which always serves the newest release's PDF.
+

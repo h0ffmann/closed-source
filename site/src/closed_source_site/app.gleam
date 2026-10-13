@@ -297,15 +297,22 @@ fn shelf_section() -> Element(msg) {
                   string.lowercase(content.title)
                     <> ": the paper you are reading about. its latest DOI always opens the newest release.",
                   doi,
-                  case latest_version() {
-                    Ok(#(version, own)) ->
-                      external(
-                        "https://doi.org/" <> own,
-                        "permanent DOI for " <> version <> ": " <> own,
-                      )
-                    Error(_) ->
-                      external("https://zenodo.org/doi/" <> doi, "all versions")
-                  },
+                  html.span([], [
+                    link(pdf(Original), "read the paper (PDF)"),
+                    html.text(" · "),
+                    case latest_version() {
+                      Ok(#(version, own)) ->
+                        external(
+                          "https://doi.org/" <> own,
+                          "permanent DOI for " <> version <> ": " <> own,
+                        )
+                      Error(_) ->
+                        external(
+                          "https://zenodo.org/doi/" <> doi,
+                          "all versions",
+                        )
+                    },
+                  ]),
                 ),
               ],
               list.map(content.works, fn(k: Work) {
@@ -479,6 +486,11 @@ pub fn repo_name() -> #(String, String) {
 fn github_pill() -> Element(msg) {
   let #(owner, name) = repo_name()
   html.p([attribute.class("gh-row")], [
+    // The paper itself comes first: the PDF built with this page.
+    html.a([attribute.class("gh gh-read"), attribute.href(pdf(Original))], [
+      html.span([attribute.class("gh-name")], [html.text("read the paper")]),
+      html.span([attribute.class("gh-version")], [html.text("PDF")]),
+    ]),
     html.a(
       [
         attribute.class("gh"),

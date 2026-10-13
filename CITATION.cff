@@ -19,6 +19,9 @@ abstract: >-
   v0 is a preprint and has not been peer reviewed. This record holds the source of the paper at
   the release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
   attached to the GitHub release of the same tag.
+
+  Read the paper as a PDF, in its newest release:
+  https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf.
 authors:
   - family-names: "Hoffmann"
     given-names: "Matheus"

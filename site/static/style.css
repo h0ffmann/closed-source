@@ -96,6 +96,11 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
   color: var(--ink); text-decoration: none; font: 400 16px/1 var(--caps); letter-spacing: .06em;
 }
 .gh:hover { text-decoration: none; border-color: var(--red-text); }
+/* The first pill is the paper itself, in the cover's black with yellow letters. */
+.gh-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.gh-read { background: var(--black); border-color: var(--black); color: var(--yellow); }
+.gh-read .gh-version { color: var(--on-black); border-left-color: rgba(244, 239, 230, .35); }
+.gh-read:hover { border-color: var(--red); }
 .gh img { flex: none; }
 .gh-name { font-weight: 600; }
 .gh-owner { color: var(--muted); font-weight: 400; }

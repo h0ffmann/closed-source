@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="de22f47d04d3b92a42f7ad2d50d184ea876534522c4f453c94908386f91a9a74" -->
+<!-- easy: source="README.md"; sha256="653f5644dfb9e92c5b0ff19acabea736c7e9f335e56858859ad0dfd64e06bcba" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -17,6 +17,11 @@ the god that failed* ("código fechado: o deus que falhou"). a ferramenta se cha
 fabric**. ela recebe texto em markdown e entrega um PDF. ela confere cada referência e dá a cada
 versão um identificador para citação. o estilo de trabalho é o da
 [ouroboric](https://github.com/ouroboric-dev/ouroboric).
+
+**leia o artigo:** [o PDF em inglês](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
+[em inglês técnico simplificado](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-ste.pdf) ·
+[em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf). esses links abrem sempre os PDFs da versão mais
+recente.
 
 a ideia do artigo, em poucas palavras:
 
