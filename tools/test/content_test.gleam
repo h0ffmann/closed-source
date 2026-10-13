@@ -1,4 +1,5 @@
 import fabric/content
+import fabric/json
 
 pub fn gleam_string_test() {
   assert content.gleam_string("a\"b\\c\nd") == "\"a\\\"b\\\\c\\nd\""
@@ -34,4 +35,16 @@ pub fn splitlines_and_strip_test() {
   assert content.splitlines("") == []
   assert content.splitlines("a\n\nb") == ["a", "", "b"]
   assert content.strip(" \n\u{a0}x y\t\n") == "x y"
+}
+
+pub fn logo_test() {
+  let entry =
+    json.Object([
+      #("file", json.String("logos/marola.pdf")),
+      #("svg", json.String("https://x/logo.svg")),
+      #("href", json.String("https://marola.dev")),
+      #("width", json.String("56")),
+    ])
+  assert content.logo(entry)
+    == "Logo(name: \"marola\", svg: \"https://x/logo.svg\", svg_dark: \"\", href: \"https://marola.dev\", label: \"\", text: \"\", width: \"56\", height: \"\")"
 }

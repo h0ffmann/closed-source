@@ -11,13 +11,25 @@ writer:
   affiliation: Escola Politécnica, Universidade Federal do Rio de Janeiro
 # Shown on the title page. Trademarks of their projects, not licensed here: `tools/fabric logos`
 # fetches each SVG at a pinned commit, checks its hash and converts it; nothing is committed.
+# The website shows the same marks as linked stamps, after picasso's site, and reads the keys from
+# `href` down; it loads each SVG from its owner's repository at the same commit.
 logos:
   - file: logos/marola.pdf
     svg: https://raw.githubusercontent.com/marola-dev/marola/d0d576ea014335acbc190a09ce9fcbe0f89a391d/docs/assets/logo.svg
     sha256: 71567f8c69a5c5e18b8b712a280cae1dac402e6a2e7ceb331408a4e713159cf9
+    href: https://marola.dev
+    label: marola
+    text: "open ocean science, live at marola.dev"
+    width: "56"
+    height: "54"
   - file: logos/ouroboric.pdf
     svg: https://raw.githubusercontent.com/ouroboric-dev/ouroboric/4ab80ed2486a5e0ab0ade13e5089c2a4acdb4216/docs/7-branding/identity/logo/ouroboric-logo-horizontal.svg
     sha256: 935eb9acf636f5da8651bdee14e6b53670e216d6a1667b46c48d62ec6f26f59d
+    href: https://github.com/ouroboric-dev
+    svg-dark: https://raw.githubusercontent.com/ouroboric-dev/ouroboric/4ab80ed2486a5e0ab0ade13e5089c2a4acdb4216/docs/7-branding/identity/logo/ouroboric-logo-horizontal-dark.svg
+    text: "open factories that improve themselves"
+    width: "224"
+    height: "44"
 date: "October 2026"
 version: "v0 (preprint, not peer reviewed)"
 keywords:
