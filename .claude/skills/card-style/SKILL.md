@@ -16,7 +16,8 @@ through `tools/fabric content`; never write a work, a tag or a DOI in `site/src`
 1. **Tags**, at most two, as round chips. They are the owner's words (`tags:` in `metadata.md`).
 2. **The name**, large and tight, as the card's `h3`. Its link covers the whole card
    (`.tile-link::after`), so the card is one click target and one stop for the keyboard.
-3. **One sentence** that says what the work is.
+3. **One sentence** that says what the work is, in lower case as on the README; an acronym such
+   as DOI keeps its capitals. The card's second link is in lower case too.
 4. **The DOI** on one line that does not wrap, and one second link that stays clickable above the
    card's link (`position: relative; z-index: 1`).
 5. **One flat colour** from the work's subject (`--tile`), with the text colour (`--on`) at a

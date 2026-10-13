@@ -98,3 +98,22 @@ pub fn the_citation_scores_are_on_the_page_test() {
   assert app.band(48) == "mid"
   assert app.band(0) == "low"
 }
+
+pub fn the_cover_counts_the_commits_beside_the_pages_and_the_notes_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert content.commits > 0
+  assert string.contains(html, "/commits/main")
+  assert string.contains(html, ">commits<")
+  assert string.contains(html, ">pages, two each<")
+  assert string.contains(html, ">notes in the second brain<")
+}
+
+pub fn the_paper_tile_is_in_lower_case_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert string.contains(
+    html,
+    string.lowercase(content.title) <> ": the paper you are reading about.",
+  )
+  assert string.contains(html, "permanent DOI for ")
+    || string.contains(html, "all versions")
+}
