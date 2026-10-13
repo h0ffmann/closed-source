@@ -1,8 +1,12 @@
 //// Paper Fabric's tools, one subcommand per former Python script. Run through `tools/fabric`,
 //// which builds this project and starts it at the repository root.
 
+import fabric/book_check
+import fabric/cite_check
 import fabric/content
+import fabric/notes_check
 import fabric/ouroboric
+import fabric/refs_check
 import fabric/ste_check
 import fabric/sys
 import gleam/list
@@ -10,8 +14,12 @@ import gleam/string
 
 fn commands() -> List(#(String, fn(List(String)) -> Int)) {
   [
+    #("book-check", book_check.main),
+    #("cite-check", cite_check.main),
     #("content", content.main),
+    #("notes-check", notes_check.main),
     #("ouroboric", ouroboric.main),
+    #("refs-check", refs_check.main),
     #("ste-check", ste_check.main),
   ]
 }
