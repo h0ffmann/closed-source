@@ -42,7 +42,7 @@ work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, a
 | 8 | Marcus Baffa | — | to be explained | ☐ | chosen |
 | 9 | Adi Shamir | cryptography | public-key cryptography: secrecy only of the key | ☑ | proposed |
 | 10 | Marc Stevens | cryptography | the first SHA-1 collision, why Git moved on | ☑ | proposed |
-| 11 | — | — | — | — | open |
+| 11 | Edmund Burke | politics, philosophy | later named the founder of conservatism; in 1775 he opposed the extension of Watt's steam-engine patent, and backed the extension of a porcelain patent (notes/202610130526) | ☐ | chosen |
 | 12 | Nicholas Carlini | machine learning security | stealing part of a production language model (Section 4) | ☑ | proposed |
 | 13 | — | — | — | — | open |
 | 14 | Robert M. Pirsig | philosophy | Quality, and maintaining your own machine (BOOKS.md) | ☐ | proposed |

@@ -492,3 +492,26 @@ Read as: a picasso lab `labs/viz` whose one dependency is graphify (h0ffmann/pic
 recipe here that runs it from the `forks/picasso` submodule. No recipe was named `vmv`; it is read
 as a typo, and the recipe is `just viz`. `.graphifyignore` keeps `forks/` out of the graph.
 
+## Authors' rights, patents and Edmund Burke
+
+Hoffmann, 2026-10-13, verbatim (relayed by the project's coordinator session):
+
+```text
+Create another content in closed-source - Authoral Rights: The god that failed. Patents: The god that Failed. Also add to THINKERS edmunk burke and add note with displine that Edmund Burke, creator of conservatism philosophy was against, during the time, efforts to add patents to machines. third Content: The man who warned (Edmund Burke) featured
+```
+
+```text
+put the part that complicates, explicitly in the burke note
+```
+
+Read as: this repository has no "content" type and nothing "featured", so the three contents are
+three permanent notes under SMART_NOTE_POLICY.md, and "featured" is a Featured section at the top
+of notes/index.md plus the `featured` tag (the Burke note also has the newest id, so the site,
+which lists notes newest first, shows it first). "Authoral Rights" is read as *direitos autorais*:
+"Authors' Rights", which the note says is copyright in common-law English. Edmund Burke takes
+open row 11 of 50THINKERS.md, status chosen, with row 93 of 500AUTHORS.md. The note with
+discipline is a literature note. The sources support a narrower sentence than the request's, and
+the note says so under "What complicates this": in 1775 Burke opposed the extension of Watt's
+patent and backed the extension of Cookworthy's porcelain patent for Richard Champion of Bristol.
+The four notes cite main author Claude, because Claude wrote them from the sources; the titles
+and the thesis are the owner's. QUOTES.md and INDEX_REMISS.md stay skeletons until the ingest.

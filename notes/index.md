@@ -10,6 +10,16 @@ related: [SMART_NOTE_POLICY.md]
 
 The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidian as a vault.
 
+## Featured
+
+- [[202610130529-the-man-who-warned-edmund-burke]]: The Man Who Warned (Edmund Burke) (permanent, partial)
+
+## Authors' rights and patents
+
+- [[202610130527-authors-rights-the-god-that-failed]]: Authors' Rights: The God that Failed (permanent, partial)
+- [[202610130528-patents-the-god-that-failed]]: Patents: The God that Failed (permanent, partial)
+- [[202610130526-burke-and-the-watt-patent-1775]]: Burke opposed the extension of Watt's patent, 1775, and what complicates it (literature, partial)
+
 ## Cloud and open source
 
 - [[202610122238-cloud-capture-of-open-source]]: cloud providers capture open source (permanent, partial)
