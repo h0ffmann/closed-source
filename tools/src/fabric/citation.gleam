@@ -69,7 +69,7 @@ const spdx = [
 
 // Zenodo publication types accepted for upload_type "publication", sorted.
 const publication_types = [
-  "article", "preprint", "report", "technicalnote", "workingpaper",
+  "article", "book", "preprint", "report", "technicalnote", "workingpaper",
 ]
 
 // Zenodo sets these itself (version from the tag, date from the release, DOI minted); a value
@@ -342,7 +342,11 @@ pub fn render_cff(meta: Json, doi: String) -> Result(String, String) {
       list.flatten([
         [
           "preferred-citation:",
-          "  type: generic",
+          "  type: "
+            <> case json.get_string(meta, "publication_type") {
+            "book" -> "book"
+            _ -> "generic"
+          },
           "  title: " <> q(title),
           "  authors:",
         ],
@@ -496,9 +500,13 @@ pub fn render_refs(meta: Json, doi: String) -> Result(String, String) {
     Ok(ss) -> ss
     Error(_) -> #(title, "")
   }
-  let #(kind, medium) = case json.get_string(meta, "upload_type") {
-    "publication" -> #("misc", "Preprint")
-    _ -> #("software", "Computer software")
+  let #(kind, medium) = case
+    json.get_string(meta, "upload_type"),
+    json.get_string(meta, "publication_type")
+  {
+    "publication", "book" -> #("book", "Book")
+    "publication", _ -> #("misc", "Preprint")
+    _, _ -> #("software", "Computer software")
   }
   let family_slug = case people {
     [#(f, _), ..] -> slug(f)
@@ -813,8 +821,9 @@ Zenodo reads only .zenodo.json when both exist, and GitHub's \"Cite this reposit
 CITATION.cff, so the CFF is derived here, with the BibTeX, APA and ABNT references between the
 READMEs' citation markers, and --check fails when any of them drifts. Ported to Gleam from
 h0ffmann/picasso's scripts/citation.py, itself copied from marola-dev/marola's (MIP-0079). Changes
-for Paper Fabric: the record may be a preprint (upload_type publication), the licence may be
-CC BY 4.0, and a publication gets a CFF preferred-citation and a BibTeX @misc instead of @software.
+for Paper Fabric: the record may be a preprint or a book (upload_type publication), the licence may
+be CC BY 4.0, and a publication gets a CFF preferred-citation and a BibTeX @misc (a book: @book)
+instead of @software.
 
     tools/fabric citation                  # validate .zenodo.json, rewrite CITATION.cff and the READMEs' block
     tools/fabric citation --check          # validate; exit 1 if any generated text is stale

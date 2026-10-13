@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="653f5644dfb9e92c5b0ff19acabea736c7e9f335e56858859ad0dfd64e06bcba" -->
+<!-- easy: source="README.md"; sha256="6ac275a8469f21643619d4179dca600e211becbbb5851a6c535f2b9a5e7f4c28" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -18,9 +18,10 @@ fabric**. ela recebe texto em markdown e entrega um PDF. ela confere cada refer�
 versão um identificador para citação. o estilo de trabalho é o da
 [ouroboric](https://github.com/ouroboric-dev/ouroboric).
 
-**leia o artigo:** [o PDF em inglês](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
+**leia o artigo:** [veja o PDF no navegador, sem baixar](https://h0ffmann.github.io/closed-source/paper.pdf) ·
+para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
 [em inglês técnico simplificado](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-ste.pdf) ·
-[em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf). esses links abrem sempre os PDFs da versão mais
+[em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf). os links de baixar trazem sempre os PDFs da versão mais
 recente.
 
 a ideia do artigo, em poucas palavras:
@@ -39,7 +40,7 @@ muda):
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) e
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**situação:** a versão v0.2.0 está no ar ([lista de versões](RELEASES.md)). é um rascunho público (*preprint*). nenhuma revista revisou o texto
+**situação:** a versão v0.2.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
 ainda. a [avaliação de prontidão](docs/1-product/readiness/2026-10-12-ready-to-promote.md) diz o
 que falta para a v1.
 

@@ -13,6 +13,8 @@ build:
     gleam run -m closed_source_site/prerender --no-print-progress > dist/index.html
     cp -R static/. dist/
     if ls ../pdf/*.pdf >/dev/null 2>&1; then cp ../pdf/*.pdf dist/; fi
+    # One name that does not change, for the Zenodo record and the READMEs: the first paper.
+    slug="$(ls ../papers | head -n 1)"; if [ -f "dist/$slug.pdf" ]; then cp "dist/$slug.pdf" dist/paper.pdf; fi
 
 # Unit tests, on node
 test:

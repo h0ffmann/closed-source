@@ -5,7 +5,7 @@
 
 # closed source: the god that failed
 
-<sub>since 2026 · <a href="https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf">read the paper (PDF)</a> · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
+<sub>since 2026 · <a href="https://h0ffmann.github.io/closed-source/paper.pdf">read the paper (PDF)</a> · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
 
 [![h0ffmann/closed-source on github: star the repository](https://img.shields.io/github/stars/h0ffmann/closed-source?style=for-the-badge&logo=github&logoColor=white&label=h0ffmann%2Fclosed-source&labelColor=111111&color=A3201C)](https://github.com/h0ffmann/closed-source)
 
@@ -21,7 +21,8 @@ the first paper made with **paper fabric**, an open, self-improving pipeline for
 in the [ouroboric](https://github.com/ouroboric-dev/ouroboric) style. markdown in, PDF out, every
 reference checked, every release citable.
 
-**read the paper:** [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
+**read the paper:** [preview the PDF in the browser](https://h0ffmann.github.io/closed-source/paper.pdf) ·
+download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
 [in simplified technical english](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-ste.pdf) ·
 [em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf)
 
@@ -40,7 +41,7 @@ other citable work by the writer, each with its latest DOI:
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) and
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**status:** v0.2.0 is live ([releases](RELEASES.md)). a v0 preprint, not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
+**status:** v0.2.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
 
@@ -288,7 +289,7 @@ reader here. each has its own page, with the counts and the day they were read.
 BibTeX:
 
 ```bibtex
-@misc{hoffmann_2026_closedsource,
+@book{hoffmann_2026_closedsource,
   author    = {Hoffmann, Matheus},
   title     = {{Closed Source: The God that Failed}},
   year      = {2026},
@@ -300,7 +301,7 @@ BibTeX:
 
 APA:
 
-> Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.23333656
+> Hoffmann, M. (2026). *Closed Source: The God that Failed* [Book]. Zenodo. https://doi.org/10.5281/zenodo.23333656
 
 ABNT (NBR 6023):
 

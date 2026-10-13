@@ -351,3 +351,6 @@ main section.shelf { padding-top: 48px; }
 @keyframes settle { from { opacity: 0; letter-spacing: .08em; } to { opacity: 1; letter-spacing: -.01em; } }
 @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* The preview of the book: the PDF in a frame, with the cover's rule above it. */
+.preview { display: block; width: 100%; height: min(80vh, 900px); margin: 28px 0 8px; border: 0; border-top: 3px solid var(--ink); background: var(--paper, #fff); }

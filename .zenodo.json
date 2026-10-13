@@ -1,8 +1,8 @@
 {
   "title": "Closed Source: The God that Failed",
   "upload_type": "publication",
-  "publication_type": "preprint",
-  "description": "<p>A position paper arguing that closed source has failed as a protection, for science first. Large language models now decompile binaries into re-executable source; black-box queries extract parts of production models; distillation copies capabilities at industrial scale; and the largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI, turns on people, laptops and recruiting rather than on code that stayed secret.</p><p>Against this background the paper revisits Linus Torvalds' Linux and Git as evidence that openness scales, and the author's closed undergraduate thesis as evidence of what secrecy costs a researcher. It argues that the ethical answer to universal reverse engineering is professional citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper Fabric, the open pipeline in the Ouroboric style that produced it.</p><p>v0 is a preprint and has not been peer reviewed. This record holds the source of the paper at the release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are attached to the GitHub release of the same tag.</p><p>Read the paper as a PDF, in its newest release: <a href=\"https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf\">https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf</a>.</p>",
+  "publication_type": "book",
+  "description": "<p>A position paper arguing that closed source has failed as a protection, for science first. Large language models now decompile binaries into re-executable source; black-box queries extract parts of production models; distillation copies capabilities at industrial scale; and the largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI, turns on people, laptops and recruiting rather than on code that stayed secret.</p><p>Against this background the paper revisits Linus Torvalds' Linux and Git as evidence that openness scales, and the author's closed undergraduate thesis as evidence of what secrecy costs a researcher. It argues that the ethical answer to universal reverse engineering is professional citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper Fabric, the open pipeline in the Ouroboric style that produced it.</p><p>This record is a book. It has not been peer reviewed. It holds the source of the book at the release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are attached to the GitHub release of the same tag.</p><p>Preview the full text as a PDF in the browser: <a href=\"https://h0ffmann.github.io/closed-source/paper.pdf\">https://h0ffmann.github.io/closed-source/paper.pdf</a>.</p><p>The writer develops in the open. His three other works each have a permanent DOI, and this record cites all three: marola, an open, non-profit platform for sea conditions and bathing-water quality, written with five other people (<a href=\"https://doi.org/10.5281/zenodo.23224155\">10.5281/zenodo.23224155</a>); WW3 GPU Lab, a bit-for-bit GPU port of WAVEWATCH III (<a href=\"https://doi.org/10.5281/zenodo.23221351\">10.5281/zenodo.23221351</a>); and picasso, Nix flakes for scientific and agentic toolchains, which builds this book (<a href=\"https://doi.org/10.5281/zenodo.23311208\">10.5281/zenodo.23311208</a>). The book is made in the Ouroboric style, and the Ouroboric ideas are Bruno Valério's (<a href=\"https://github.com/ouroboric-dev/ouroboric\">https://github.com/ouroboric-dev/ouroboric</a>); Ouroboric has no DOI yet, so this record cites it by its address.</p>",
   "creators": [
     {
       "name": "Hoffmann, Matheus",
@@ -43,10 +43,10 @@
       "scheme": "url"
     },
     {
-      "identifier": "https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf",
+      "identifier": "https://h0ffmann.github.io/closed-source/paper.pdf",
       "relation": "isVariantFormOf",
       "scheme": "url",
-      "resource_type": "publication-preprint"
+      "resource_type": "publication-book"
     },
     {
       "identifier": "10.5281/zenodo.23221351",

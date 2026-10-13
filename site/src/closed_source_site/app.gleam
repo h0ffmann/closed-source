@@ -60,6 +60,10 @@ pub fn citation(index: Int) -> #(String, String) {
   }
 }
 
+/// The paper's PDF under a name that does not change, for links from outside (the Zenodo record,
+/// the READMEs) and for the preview. site/justfile copies it.
+pub const paper = "paper.pdf"
+
 /// The PDF's file name in dist/: the original, or its ASD-STE100 text.
 pub fn pdf(text: Text) -> String {
   case text {
@@ -653,6 +657,18 @@ fn read_section() -> Element(msg) {
         "Releases",
         "Each tagged release: the PDFs and the arXiv source bundle. Zenodo archives each one and gives it a permanent DOI.",
       ),
+    ]),
+    // A preview of the whole text, from the name that does not change (site/justfile).
+    html.iframe([
+      attribute.class("preview"),
+      attribute.src(paper),
+      attribute.title("Preview of the book (PDF)"),
+      attribute.attribute("loading", "lazy"),
+    ]),
+    html.p([attribute.class("sub")], [
+      html.text("The preview does not show on every phone. "),
+      link(paper, "Open the PDF"),
+      html.text("."),
     ]),
     html.div([attribute.class("stats")], [
       stat(content.pages, "pages"),

@@ -814,3 +814,26 @@ link on the closed-source tile, and in `.zenodo.json` a sentence with the link a
 `isVariantFormOf` tie to the PDF. The README and Zenodo links use the release's
 `latest/download` URL, which always serves the newest release's PDF.
 
+
+```text
+adjust in this PR https://github.com/h0ffmann/closed-source/pull/45 in Zenodo I want to be indexed no as preprint, but as a book, with a existing paper.pdf attached to the website so they can have a preview of it.
+```
+
+Read as: in `.zenodo.json` the record's type changes from `preprint` to `book`, and
+`tools/fabric citation` learns that type (CFF `type: book`, BibTeX `@book`, APA "[Book]"). The
+release's `latest/download` link sends the PDF as a download, so it gives no preview; the site
+serves the PDF as `application/pdf`, which a browser shows. So the site now also publishes the
+paper under one name that does not change, `paper.pdf`, shows it in a frame in "Read", and the
+Zenodo record and the READMEs link to it for the preview. The READMEs keep the release links for
+the download. The record itself still holds the source archive: Zenodo's GitHub webhook attaches
+no PDF, and the hard rules forbid a deposit by hand. The paper's own text still calls itself a
+preprint; it was not changed.
+
+```text
+Make sure my zenodo records is mentioning my other 3 DOIs and the work been done on Ouroboric. To show I develop at open space
+```
+
+Read as: the record already tied itself to marola, ww3-gpu and picasso by DOI and to Ouroboric by
+URL (`related_identifiers`), but its description did not say so. A paragraph in the description
+now names the three works with their DOIs and says the book is made in the Ouroboric style, whose
+ideas are Bruno Valério's. It reaches Zenodo with the next release.
