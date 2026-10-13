@@ -638,3 +638,38 @@ skill, the thinkers and the references, and where to read. It is a draft: the ow
 "This PR" is read as the pull request that carries the README, the skills and this post, #35,
 now titled "essays: citation".
 
+```text
+quick feedback looking at the PR, Change all this BROWN in the image from Identity. The book color Identity should match black and red like Democracy from HHH, maybe with yellow letters
+```
+
+Read as: the brown goes from every place the identity shows, not only the slides: the site's
+cover and its dark theme, the closed-source tile, the README's badges and the Instagram slides.
+The field is black, the band is red, and the title is in yellow letters. The slides' highlighter
+mark and the middle band of the score bars are yellow too. "HHH" is Hans-Hermann Hoppe.
+
+```text
+Faça uma versão easy-ptbr, usando a skill, fazendo o post em portugues mais explicado
+```
+
+Read as: an easy Brazilian Portuguese version of the Instagram post, made with the `easy-pt-br`
+skill: five slides in Portuguese (`slide-N.easy.pt-BR.png`) with shorter sentences and the hard
+words explained on the slide, and `README.easy.pt-BR.md` in the post's folder with a list of the
+hard words, what the score means, a longer caption and the alt text. The skill gains a section
+for documents other than the root README.
+
+```text
+about the prhase is about lucky, people said he got lucky, but se said every he was painting
+```
+
+```text
+this QUOTE.md should be the first QUOTE, citing the Great, Pablo Picasso, as ref. add h0ffmann/picasso link in the quote
+```
+
+Read as: "Lucky" in the request for a note in picasso's README was a saying, not Picasso's dog
+Lump, which the first reading took it for. The saying found is "Inspiration does exist, but it
+must find you working." It is the first row of `QUOTES.md` here, with a link to h0ffmann/picasso.
+The one source fetched (Barry Popik, 2013) finds no documentary evidence that Picasso said it, so
+the row says "credited to" and its check is `partial`. The story as the owner told it, that
+people called Picasso lucky and he answered that he painted every day, was not found in a source
+and is given as the owner's words.
+

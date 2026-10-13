@@ -14,15 +14,18 @@ caption: pt-BR
 **Not posted.** The owner posts it; an agent does not. When it is posted, put the link in
 `instagram:` above and change `status`.
 
-A carousel of five slides, 1080x1350 (4:5), for Hoffmann's personal Instagram page. The story is
+A carousel of five slides, 1080x1350 (4:5), for Hoffmann's personal Instagram page. There are two
+versions: this one, in English (`slide-N.png`), and an easy Brazilian Portuguese one with more
+explanation (`slide-N.easy.pt-BR.png`, [README.easy.pt-BR.md](README.easy.pt-BR.md)), made with
+the `easy-pt-br` skill. The story is
 the book, its author, the `citation-score` skill and the thinkers the book stands on. Each number
 on a slide shows its source under it, and `render.mjs` reads each number from that source when it
 renders.
 
 It follows the first picasso post, h0ffmann/picasso
 [`docs/social/instagram_001/`](https://github.com/h0ffmann/picasso/tree/29eb385/docs/social/instagram_001)
-at commit `29eb385`: the same slide system and the same drawings. The colours are this book
-cover's brown and red in place of picasso's blue.
+at commit `29eb385`: the same slide system and the same drawings. The colours are the book's
+identity, black and red with yellow letters, in place of picasso's blue.
 
 | Slide | Shows | Sources |
 |---|---|---|
@@ -62,7 +65,7 @@ Link in the bio: https://h0ffmann.github.io/closed-source/
 
 ## Alt text
 
-1. A book cover block: CLOSED SOURCE in cream on brown, THE GOD THAT FAILED on a red band. Text: if anyone can reverse engineer anything, cite what you borrow. The DOI 10.5281/zenodo.23333656. A one-line owl.
+1. A book cover block: CLOSED SOURCE in yellow letters on black, THE GOD THAT FAILED on a red band. Text: if anyone can reverse engineer anything, cite what you borrow. The DOI 10.5281/zenodo.23333656. A one-line owl.
 2. The author. Mr. Nobody on the cover, a person behind it: written in the first person by Matheus Hoffmann, Escola Politécnica, UFRJ. Three other works with their DOIs: marola, ww3-gpu and picasso. A one-line face.
 3. The skill. How much of your text is cited? 100%: perfect, highest maturity level. 0%: poor, 2 digit IQ. Five READMEs scored as bars: closed-source 30%, marola 48%, ouroboric-dev 50%, h0ffmann 73%, picasso 42%. It counts marks, not truth.
 4. The references. 50 thinkers, two pages each: 100 pages, 42 thinkers named and 8 places open; 41 references in the paper, each fetched before it was cited. Fourteen names, from Auguste Kerckhoffs to Geoffrey Hinton. A one-line cubist guitar.
@@ -74,8 +77,9 @@ Link in the bio: https://h0ffmann.github.io/closed-source/
 git submodule update --init --depth 1 forks/picasso   # the drawings
 just citation-board                                   # refresh CITATION_SCORES.md, if the READMEs changed
 cd docs/social/instagram_001
-node render.mjs            # needs node and Chrome; CHROMIUM=<path> to pick a browser
+node render.mjs            # both versions; needs node and Chrome; CHROMIUM=<path> to pick a browser
 ```
 
 The slides need the fonts Inter, Inter Display and DejaVu Sans Mono on the machine. If the
-numbers in `CITATION_SCORES.md` change, update the alt text of slide 3 here.
+numbers in `CITATION_SCORES.md` change, update the alt text of slide 3 here and in the easy
+version. If a slide's words change in `render.mjs`, change both versions there, then both READMEs.

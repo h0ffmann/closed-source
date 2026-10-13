@@ -306,8 +306,8 @@ fn author_names(separator: String) -> String {
 }
 
 /// The title as a book cover, after the cover of Hoppe's "Democracy: The God That Failed"
-/// (Transaction, 2001), which this paper's title echoes: a brown field with the first half of the
-/// title in white, a red band, then the second half in black. Only the type and colour scheme are
+/// (Transaction, 2001), which this paper's title echoes: a black field with the first half of the
+/// title in yellow letters, a red band, then the second half in black. Only the type and colour scheme are
 /// borrowed; no cover art, image or text is reproduced.
 fn cover() -> Element(msg) {
   let #(head, tail) = case string.split_once(content.title, ": ") {

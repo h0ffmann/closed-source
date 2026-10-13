@@ -143,6 +143,9 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   is a measure, not a gate: no check fails on a score.
 - A skill in `.claude/skills/` is written here and names its sources; do not copy a skill from
   another repository. After a change to one, run `scripts/readme.sh --lock`.
+- The book's colours are black and red, with yellow letters for the title, after Hoppe's
+  *Democracy: The God That Failed* (Hoffmann, 13 October 2026). No brown: not on the site, the
+  slides or a badge.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.

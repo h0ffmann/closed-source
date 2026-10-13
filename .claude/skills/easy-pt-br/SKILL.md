@@ -1,6 +1,6 @@
 ---
 name: easy-pt-br
-description: "Make or update README.easy.pt-BR.md, the easy Brazilian Portuguese version of README.md. Use after any change to README.md, when the hook or scripts/readme.sh --check says the easy version is older than README.md, or when asked for a 'versão fácil'."
+description: "Make or update an easy Brazilian Portuguese version of a document: README.easy.pt-BR.md from README.md, or <name>.easy.pt-BR.md beside any other source, such as a social post. Use after any change to README.md, when the hook or scripts/readme.sh --check says the easy version is older than README.md, or when asked for a 'versão fácil' or an 'easy pt-BR' of anything."
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
@@ -60,6 +60,21 @@ what this file is:
 > - **o que ficou de fora:** <what was shortened, and where it is in the original>.
 > - **escrita por:** claude, com a skill `easy-pt-br`; revisão de matheus hoffmann.
 ```
+
+## Other documents
+
+The same rules make an easy version of any document. Put it beside its source, with the same
+name and `.easy.pt-BR.md` at the end, and start it with the header block.
+
+- **The case follows the source.** Only the root `README.md` and its easy version are in lower
+  case. A document in sentence case gets an easy version in sentence case.
+- **More explanation is allowed, more facts are not.** An easy version may add a list of the hard
+  words with one plain sentence each, as `docs/social/instagram_001/README.easy.pt-BR.md` does.
+  Each sentence explains a word; it does not add a claim about the work.
+- **Images with words** (the slides of a post) get an easy version too: the words are in
+  `T['easy.pt-BR']` in the post's `render.mjs`, and the files are `slide-N.easy.pt-BR.png`.
+- **Only the root README has a stamp.** `scripts/readme.sh` checks that one. For any other
+  document, the header block's "feita a partir de" line carries the date of the source.
 
 ## Why there is a stamp
 

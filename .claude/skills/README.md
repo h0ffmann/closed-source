@@ -16,7 +16,7 @@ names the file and the commit it was read from (AGENTS.md, "Borrow, cite, propag
 | Skill | Use it to | Read from |
 |---|---|---|
 | [`readme-style`](readme-style/SKILL.md) | write `README.md` in its style: picasso's header, lower case except acronyms | h0ffmann/picasso `README.md` at `29eb385`; h0ffmann/h0ffmann `README.md` at `1a3a7e1` |
-| [`easy-pt-br`](easy-pt-br/SKILL.md) | make `README.easy.pt-BR.md` from `README.md` | marola-dev/marola `docs/MIPs/MIP-0091.easy.pt-BR.md` and `.claude/skills/eli5/SKILL.md` at `cf7bd4f` |
+| [`easy-pt-br`](easy-pt-br/SKILL.md) | make `README.easy.pt-BR.md` from `README.md`, or an easy pt-BR version of any other document | marola-dev/marola `docs/MIPs/MIP-0091.easy.pt-BR.md` and `.claude/skills/eli5/SKILL.md` at `cf7bd4f` |
 | [`citation-score`](citation-score/SKILL.md) | score how much of a phrase, a text, a dump, a file or a URL is cited, with a coloured verdict (`scripts/citation-score.sh`) | Hyland and Jiang (2019), doi:10.1093/applin/amx012; Liu, Zhang and Liang (2023), arXiv:2304.09848 |
 | [`card-style`](card-style/SKILL.md) | style the site's cards, with a one-line drawing behind each | h0ffmann/picasso `site/static/drawings/` at `29eb385`; Anthropic's `frontend-design` skill (Apache-2.0) |
 

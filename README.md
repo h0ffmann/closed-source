@@ -12,8 +12,8 @@
 [![site](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml)
 [![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
 [![v0.1.0 DOI](https://img.shields.io/badge/v0.1.0_DOI-10.5281%2Fzenodo.23333657-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23333657)
-[![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-5A3A22?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
-[![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-5A3A22?style=flat-square&logo=gnu&logoColor=white)](#licence)
+[![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-111111?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
+[![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-111111?style=flat-square&logo=gnu&logoColor=white)](#licence)
 
 the first paper made with **paper fabric**, an open, self-improving pipeline for technical papers
 in the [ouroboric](https://github.com/ouroboric-dev/ouroboric) style. markdown in, PDF out, every
@@ -117,8 +117,8 @@ book cover, after the colour scheme and type of the cover of
 > hoppe, hans-hermann. *democracy—the god that failed: the economics and politics of monarchy,
 > democracy, and natural order*. new brunswick, NJ: transaction publishers, 2001. ISBN 0-7658-0088-8.
 
-its 2001 cover has a brown field, a white title, a red band and the rest of the title in black. the
-site's colours are estimates from that description, not samples. the book is under copyright
+the identity is black and red, as on that cover, with the title in yellow letters; the owner set
+it on 13 october 2026. the colours are choices, not samples. the book is under copyright
 (© 2001), so the site copies no cover art and no text from it. the motion follows anthropic's
 [frontend-design skill](https://github.com/anthropics/skills) (apache-2.0): one entrance, and
 nothing moves when the reader asks for reduced motion. hoppe
