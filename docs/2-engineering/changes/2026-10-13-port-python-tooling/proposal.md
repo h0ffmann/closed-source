@@ -1,5 +1,5 @@
 ---
-title: "Port the Python tooling to Go and V"
+title: "Port the Python tooling to Go, V or Gleam"
 status: proposed
 date: 2026-10-13
 related: [../README.md, ../../../../justfile, ../../../../flake.nix]
@@ -7,9 +7,11 @@ style: research
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
-# Port the Python tooling to Go and V
+# Port the Python tooling to Go, V or Gleam
 
-**Decided:** not yet. The owner picks one option below; `delta.md` and `tasks.md` follow then.
+**Decided 2026-10-13:** option B (Go for everything), then paused the same minute: the owner asked
+first whether all of the Python can be ported to Gleam (option E below). `delta.md` and `tasks.md`
+follow the final choice.
 
 ## Why
 
@@ -101,3 +103,52 @@ and standard library can change between releases.
   keeps its own.
 - **CI:** the 28 `python3` call sites become `go run ./cmd/fabric ...` or a built binary; the
   `just 1.21` rule is unaffected.
+
+## E. Gleam for everything (checked on 13 October 2026)
+
+**Yes: every line of the 1,570 can be written in Gleam.** No Python feature in these files lacks a
+Gleam equivalent. The table lists each capability the scripts use and what replaces it. Package
+versions are the latest on Hex on 13 October 2026.
+
+| Python | Used in | Gleam |
+|---|---|---|
+| `pathlib` read, write, glob, mkdir | all | `simplifile` 2.7.0 (both targets) |
+| `re` | all | `gleam_regexp` 1.1.1; see the regex notes below |
+| `json` | citation, zenodo_upload, logos, arxiv, content | `gleam_json` 3.1.0 with `gleam/dynamic/decode` |
+| `subprocess` (git, pandoc, pdfinfo, pdflatex, rsvg-convert) | cite_check, ouroboric, arxiv, logos, content | `shellout` 1.8.0; the same external programs as today |
+| `urllib.request` (GET, POST, PUT, DELETE, bearer token, binary body) | zenodo_upload, logos | Erlang: `gleam_httpc` 5.0.0 with `gleam_http` 4.5.0, synchronous. JavaScript: `gleam_fetch` 1.4.1, asynchronous (promises) |
+| `hashlib.sha256` | logos | `gleam_crypto` 1.6.0 (both targets) |
+| `tarfile` (write and extract `.tar.gz`) | arxiv | Erlang: OTP's `erl_tar` through a one-line FFI. JavaScript: node has no tar, so run `tar` with `shellout` |
+| `os.environ` | zenodo_upload | `envoy` 1.2.0 |
+| `sys.argv`, `argparse` | all | `argv` 1.1.0 and a hand-written flag parser (the flags are few) |
+| `sys.exit(code)` | all | `shellout`'s exit, or a one-line FFI |
+| `tempfile` | arxiv, logos, refs_check, citation, content | a directory under `build/`, or `mktemp -d` through `shellout` |
+| `html.unescape` | citation | a small function: `.zenodo.json` holds no HTML entity today (checked); full HTML5 parity would need the entity table |
+| `collections.Counter` | ste_check | `gleam/dict` |
+| `--self-test` | all | `gleeunit` tests (`gleam test`), as `site/` already does |
+
+**Regex notes.** `gleam_regexp` exposes only the case-insensitive and multi-line flags.
+
+- No dot-all flag: the three patterns that use `re.S` (refs_check, ste_check, content) write
+  `[\s\S]` for `.`.
+- `\Z` (content) works on Erlang; on JavaScript it becomes `$(?![\s\S])`.
+- Lookbehind (ste_check) works on both targets.
+- `\w` and `\b`: Erlang compiles with `unicode` and `ucp`, so they match accented letters as Python
+  does. JavaScript's `\w` is ASCII only even with the `u` flag, so ste_check's number rule could
+  read pt-BR text differently from Python. This is the one place where the targets differ in
+  meaning, not only in code.
+
+**Target.** Two choices, the same code otherwise:
+
+- **Erlang (recommended for the tooling):** the same regex meaning as Python, synchronous HTTP,
+  `erl_tar` built in. It needs Erlang/OTP in the toolchain: picasso's `gleam-website` lab has
+  gleam, node, esbuild, just and python, not Erlang (checked in its flake.nix). That is a picasso
+  PR, or `erlang` added to this repository's own devShell.
+- **JavaScript (as `site/`):** no new toolchain, but asynchronous HTTP, `tar` from the system, and
+  the `\w` difference above.
+
+**What stays outside Gleam.** The five external programs the scripts already call (git, pandoc,
+pdfinfo, pdflatex, rsvg-convert), and `scripts/release.sh`, which is bash, not Python, and matches
+picasso's.
+
+**A bonus.** `site/content.py` writes `content.gleam`; in Gleam it can live in `site/` itself.
