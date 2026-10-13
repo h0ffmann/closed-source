@@ -22,3 +22,7 @@ Adapted from Yggdrasil's
 [change proposals](https://github.com/ouroboric-dev/yggdrasil/blob/ffedea7c476d10c04498d5db74596a72a5ab0cbb/docs/2-engineering/changes/README.md)
 (CC BY 4.0), which follows Ouroboric's spec-driven development
 (`docs/4-ways-of-working/ouroboric/spec-driven-development.md`).
+
+## Open
+
+- [2026-10-13-port-python-tooling](2026-10-13-port-python-tooling/proposal.md): port the Python tooling to Go and V.
