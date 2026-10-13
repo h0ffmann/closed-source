@@ -33,7 +33,7 @@ The same words as the commit subjects (`feat`, `fix`, `docs`, `chore`).
 | `area/site` | `#BFDADC` | `site/`: the Gleam page and GitHub Pages |
 | `area/tooling` | `#BFD4F2` | `scripts/`, `tools/`, `justfile`, `flake.nix`, `format/` |
 | `area/ci` | `#006B75` | `.github/workflows/` and the CI gate |
-| `area/release` | `#FBCA04` | Tags, `CITATION.cff`, `.zenodo.json` and the Zenodo draft |
+| `area/release` | `#FBCA04` | Tags, `CITATION.cff`, `.zenodo.json` and the Zenodo record |
 | `area/forks` | `#EDEDED` | `forks/`: the submodules and their upstreams |
 | `area/repo` | `#FEF2C0` | README, AGENTS.md, licences, `PERSONAS.md`, `TRADEMARKS.md`, the docs |
 

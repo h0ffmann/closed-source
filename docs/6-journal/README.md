@@ -16,3 +16,4 @@ names, client data or raw transcripts.
 | Date | Entry | Tags | Status | Post candidate |
 |---|---|---|---|---|
 | 2026-10-12 | [the first paper](2026-10-12-the-first-paper.md) | references, agents, zenodo, tooling | open | yes |
+| 2026-10-13 | [the first DOI](2026-10-13-the-first-doi.md) | release, zenodo, rules | open | no |

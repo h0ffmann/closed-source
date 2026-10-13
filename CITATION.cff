@@ -16,8 +16,9 @@ abstract: >-
   citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper
   Fabric, the open pipeline in the Ouroboric style that produced it.
 
-  v0 is a preprint and has not been peer reviewed. This record holds the rendered PDF only;
-  sources, build and agent configuration are on GitHub.
+  v0 is a preprint and has not been peer reviewed. This record holds the source of the paper at
+  the release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
+  attached to the GitHub release of the same tag.
 authors:
   - family-names: "Hoffmann"
     given-names: "Matheus"
@@ -25,6 +26,11 @@ authors:
     affiliation: "Escola Politécnica, Universidade Federal do Rio de Janeiro"
 repository-code: "https://github.com/h0ffmann/closed-source"
 url: "https://github.com/h0ffmann/closed-source"
+doi: 10.5281/zenodo.23333656
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23333656
+    description: Concept DOI, resolves to the latest release
 license: CC-BY-4.0
 keywords:
   - "open source"
@@ -53,3 +59,4 @@ preferred-citation:
   year: 2026
   medium: "preprint"
   url: "https://github.com/h0ffmann/closed-source"
+  doi: 10.5281/zenodo.23333656

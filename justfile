@@ -82,7 +82,8 @@ shell:
     nix develop
 
 # Tag main and publish: `just release` lists what is unreleased and suggests a bump, then
-# `just release minor|patch|major|X.Y.Z [--dry-run]` (scripts/release.sh, as in picasso).
+# `just release minor|patch|major|X.Y.Z [--dry-run]` (scripts/release.sh, as in marola).
+# release.yml publishes the GitHub release and Zenodo's webhook mints its DOI.
 release *args:
     scripts/release.sh {{args}}
 
@@ -90,7 +91,8 @@ release *args:
 releases:
     git fetch -q --tags origin && git tag -l 'v*' --sort=-v:refname --format='%(refname:short)  %(creatordate:short)  %(subject)'
 
-# Upload pdf/*.pdf from this machine to a Zenodo draft (needs ZENODO_TOKEN; CI does this on a tag).
+# Upload pdf/*.pdf from this machine to a Zenodo draft (needs ZENODO_TOKEN). Not part of a
+# release: the webhook archives each release. A draft made here is a separate record.
 zenodo-draft version: check
     @[ -n "${ZENODO_TOKEN:-}" ] || { echo "zenodo-draft: export ZENODO_TOKEN first (README, Secrets)" >&2; exit 1; }
     tools/fabric zenodo-upload pdf/*.pdf --version {{version}} \

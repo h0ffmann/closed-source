@@ -11,36 +11,63 @@ style: procedure
 
 The README's "Release" section is the short checklist. This page gives the reasons.
 
-v0 policy: Zenodo archives **only the rendered PDF**. arXiv receives the LaTeX source, because
-arXiv compiles submissions itself and refuses PDFs made from TeX.
+Policy: every published GitHub release is archived by Zenodo's GitHub webhook, which mints a
+version DOI under one concept DOI. The pattern is marola's
+([`scripts/release.sh`](https://github.com/marola-dev/marola/blob/cf7bd4f/scripts/release.sh) and
+[`release.yml`](https://github.com/marola-dev/marola/blob/cf7bd4f/.github/workflows/release.yml),
+its MIP-0079), adopted here by the change proposal
+[2026-10-13-zenodo-webhook-release](../2-engineering/changes/2026-10-13-zenodo-webhook-release/proposal.md).
+The Zenodo record holds the source tree at the tag. The rendered PDFs are attached to the GitHub
+release. arXiv receives the LaTeX source, because arXiv compiles submissions itself and refuses
+PDFs made from TeX.
+
+The first release, v0.1.0, has the version DOI
+[10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657). The concept DOI, which always
+resolves to the latest version, is
+[10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
 
 ## Once per repository
 
-1. On zenodo.org, keep the GitHub integration **off** for this repository. It archives source, not
-   the PDF.
-2. Create a Zenodo personal access token with scopes `deposit:write` and `deposit:actions`.
-3. Store it as the repository secret `ZENODO_TOKEN`.
-4. Rehearse on sandbox.zenodo.org first: `ZENODO_SANDBOX_TOKEN=<sandbox token> just zenodo-sandbox 0.0.1`.
+1. On zenodo.org, log in with GitHub and switch this repository **on** (your account menu →
+   GitHub). Zenodo then adds a webhook to the repository. No token is stored in GitHub.
+2. Keep `ZENODO_TOKEN` **unset** as a repository secret. Nothing in the release reads it.
 
-The README's "Secrets and keys" table lists every token and key, where it lives and how to get it.
+The README's "Secrets and keys" table lists every key, where it lives and how to get it.
 
 ## Each release
 
 1. Merge the release's pull request to `main`. Check that the `pdf` and `citation` workflows pass.
 2. Run `just release` to see what is unreleased and the suggested bump. Then run
-   `just release minor --dry-run` (or `patch`, `major`, or a version such as `0.1.0`), then the
-   same without `--dry-run`. The tag is signed when `git config user.signingkey` is set. The
-   script is the one picasso uses, with tag signing and the Zenodo draft added.
-3. Wait for the `release` workflow. It attaches the PDF to the GitHub release and creates a
-   Zenodo draft.
-4. Open the draft on zenodo.org. Check the metadata, the authors and that the only file is the
-   PDF.
-5. Press Publish. **Caution:** a published DOI is permanent.
-6. After the first publication, put the concept DOI in `tools/src/fabric/citation.gleam`
-   (`concept_doi`) and
-   run `just citation`. Store the concept record id (the number in the concept DOI) as the
-   repository variable `ZENODO_CONCEPT_RECID`, so later releases become new versions of the same
-   record.
+   `just release minor --dry-run` (or `patch`, `major`, or a version such as `0.2.0`), then the
+   same without `--dry-run`. The tag is signed when `git config user.signingkey` is set. The dry
+   run is the rehearsal: there are no `-rc` tags, because each archived release is a permanent
+   DOI.
+3. Wait for the `release` workflow. It reruns the checks and the pointer guard, builds the PDFs
+   and the arXiv bundle, and publishes the GitHub release with them attached.
+4. Wait a few minutes for Zenodo. Its webhook archives the release with `.zenodo.json` from the
+   tagged commit. **Caution:** the DOI is permanent.
+5. Open the new version on zenodo.org and check the metadata. An edit to `.zenodo.json` reaches
+   Zenodo only with the next release; a wrong field on a published version is corrected by hand
+   on zenodo.org.
+
+## Rules the release keeps
+
+- **`.zenodo.json` is the only citation file edited by hand.** `just citation` generates
+  `CITATION.cff` and the README's citation block from it, and the check fails on drift.
+- **A submodule pointer move never makes a Zenodo version.** `scripts/release.sh --guard` refuses
+  a release whose only change since the previous `v*` tag is a pointer under `forks/`.
+  `just release` runs it, and `release.yml` runs it again, so a tag pushed by hand is caught too.
+- **Cite the concept DOI**, never a version DOI, in the README and in `CITATION.cff`
+  (`concept_doi` in `tools/src/fabric/citation.gleam`).
+- **An agent does not release** unless the owner asks for that release by name (AGENTS.md,
+  invariant 6).
+
+## A deposit made by hand
+
+`tools/fabric zenodo-upload`, with `just zenodo-draft`, `just zenodo-sandbox` and
+`just zenodo-dry-run`, still uploads PDFs to a Zenodo draft through the deposit API. It is not
+part of a release. A draft made with it is a separate record with its own DOI, so do not publish
+one for a version that the webhook already archived.
 
 ## arXiv
 

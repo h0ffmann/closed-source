@@ -10,6 +10,9 @@ reference checked, every release citable.
 > to publish the method, mint an identifier, and cite whatever you use, and to require the same
 > of the agents that now do much of the reading and writing.
 
+[![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
+[![v0.1.0 DOI](https://img.shields.io/badge/v0.1.0_DOI-10.5281%2Fzenodo.23333657-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23333657)
+
 **Author:** Mr. Nobody on the cover; written in the first person by Matheus Hoffmann. The ouroboric
 ideas are Bruno Valério's ([Ouroboric](https://github.com/ouroboric-dev/ouroboric)).
 **Status:** v0 preprint, not peer reviewed. See the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
@@ -130,10 +133,8 @@ Nothing secret is in this repository. A release needs these, and only these:
 | GitHub account with **2FA** on | you | pushing, `just release` | github.com → Settings → Password and authentication |
 | SSH key (or `gh auth login`) that can push to this repository | your machine | `just release` pushes a tag | `ssh-keygen -t ed25519-sk` makes a key that stays on a FIDO security key; add it in GitHub → Settings → SSH and GPG keys |
 | Signing key (optional, recommended) | your machine, `git config user.signingkey` | `just release` signs the tag when it is set | the same SSH key: `git config gpg.format ssh`, `git config user.signingkey ~/.ssh/id_ed25519_sk.pub`, and add it again in GitHub as a **Signing key** |
-| `ZENODO_TOKEN` | GitHub → Settings → Secrets and variables → Actions → **Secrets** (or `gh secret set ZENODO_TOKEN`) | the Zenodo draft that the `release` workflow makes | zenodo.org → your account menu → Applications → Personal access tokens → New token, scopes `deposit:write` and `deposit:actions` |
-| `ZENODO_TOKEN` in your shell (optional) | `export ZENODO_TOKEN=...`, never in a file in the repository | `just zenodo-draft` from your machine | the same token |
-| `ZENODO_SANDBOX_TOKEN` (optional) | your shell | `just zenodo-sandbox`, a rehearsal | the same steps on sandbox.zenodo.org, a separate account |
-| `ZENODO_CONCEPT_RECID` | GitHub → Settings → Secrets and variables → Actions → **Variables** (or `gh variable set ZENODO_CONCEPT_RECID --body <id>`); not a secret | makes later releases new versions of the same record | the number in the concept DOI, after the first publication |
+| Zenodo account linked to GitHub, with this repository switched on | zenodo.org → your account menu → GitHub | the DOI that Zenodo mints for each release | log in to zenodo.org with GitHub, then flip the switch beside `h0ffmann/closed-source`; no token is stored anywhere |
+| `ZENODO_SANDBOX_TOKEN` (optional) | your shell, never in a file in the repository | `just zenodo-sandbox`, a rehearsal of a hand-made deposit | sandbox.zenodo.org, a separate account → Applications → Personal access tokens |
 | arXiv account, with an endorsement for `cs.CY` | arxiv.org | the arXiv submission | arxiv.org → Register; a first submission to a category needs an endorsement |
 
 The `release` workflow also uses `GITHUB_TOKEN`, which GitHub gives every run; you do not set it.
@@ -143,42 +144,39 @@ token leaks, delete it on zenodo.org at once and make a new one.
 Once per repository: on zenodo.org → GitHub, keep the switch for this repository **off**. The
 Zenodo GitHub integration archives the source tree, not the PDF.
 
-## Release: a new Zenodo record and a new arXiv PDF
+## Release: a new Zenodo version and a new arXiv PDF
 
-A release is a Git tag on `main`. One command makes it; CI does the rest; a person publishes.
+A release is a Git tag on `main`. One command makes it; CI publishes it; Zenodo mints its DOI.
+No secret is in the chain, as in [marola](https://github.com/marola-dev/marola/blob/cf7bd4f/scripts/release.sh).
 
 1. **Merge** the pull request. Check that the `pdf` and `citation` workflows pass on `main`.
-2. **Rehearse** (optional): `just zenodo-dry-run 0.1.0` prints the Zenodo metadata, with no network.
-   `just zenodo-sandbox 0.1.0` makes a draft on sandbox.zenodo.org.
+2. **Rehearse**: `just release minor --dry-run` runs every check and tags nothing. There are no
+   `-rc` tags: each release is a permanent DOI.
 3. **Tag**:
 
    ```sh
    git switch main && git pull
    just release                   # lists what is unreleased and suggests patch, minor or major
-   just release minor --dry-run   # shows the tag it will make (or name it: just release 0.1.0)
+   just release minor --dry-run   # shows the tag it will make (or name it: just release 0.2.0)
    just release minor             # tags it (signed if you set a signing key) and pushes it
    just releases                  # the release tags, newest first
    ```
 
-   The script refuses unless main is clean and level with `origin/main`, the version goes up, and
-   `CITATION.cff` matches `.zenodo.json`. A `feat` pull request suggests a minor bump, a breaking
+   The script refuses unless main is clean and level with `origin/main`, the version goes up,
+   `CITATION.cff` matches `.zenodo.json`, and something changed outside the `forks/` submodule
+   pointers since the last tag. A `feat` pull request suggests a minor bump, a breaking
    change (`!`) a major bump (a minor bump before 1.0.0), anything else a patch.
 
-4. **CI** (the `release` workflow) builds both PDFs and the arXiv bundle, makes the GitHub release
-   with `pdf/*.pdf` and `build/arxiv/*` attached and, when `ZENODO_TOKEN` is set, uploads the
-   PDFs, and nothing else, to a Zenodo **draft**.
-   - With **no** `ZENODO_CONCEPT_RECID` variable, the draft is a **new Zenodo record**. Publishing
-     it mints a new concept DOI (all versions) and a version DOI (this one).
-   - With `ZENODO_CONCEPT_RECID` set, the draft is a **new version of that record**: a new version
-     DOI under the same concept DOI.
-   - Without `ZENODO_TOKEN`, use `just zenodo-draft 0.1.0` on your machine with the token in your
-     shell. It does the same upload.
-5. **Publish on Zenodo**: open the draft on zenodo.org (Uploads). Check the title, the three
-   authors with their ORCIDs, the licence, and that the files are only the PDFs. Press
-   **Publish**. **Caution:** a DOI is permanent, and you cannot delete a published record yourself.
-6. **After the first publication only**: put the concept DOI in `tools/src/fabric/citation.gleam`
-   (`concept_doi`), run `just citation`, and set the `ZENODO_CONCEPT_RECID` variable. Open a pull
-   request with the result.
+4. **CI** (the `release` workflow) reruns the checks, builds the PDFs and the arXiv bundle, and
+   publishes the GitHub release with `pdf/*.pdf` and `build/arxiv/*` attached.
+5. **Zenodo** archives the published release a few minutes later, through its GitHub webhook
+   (switched on once at zenodo.org → your account menu → GitHub). It reads `.zenodo.json` from the
+   tagged commit and mints a version DOI under the concept DOI,
+   [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). The record holds the
+   source tree at the tag; the PDFs are on the GitHub release. **Caution:** a DOI is permanent,
+   and you cannot delete a published record yourself.
+6. **Check** the new version on zenodo.org: the title, the authors with their ORCIDs and the
+   licence. An edit to `.zenodo.json` reaches Zenodo only with the next release.
 7. **arXiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
    GitHub release, or run `just arxiv` (`build/arxiv/`).
    - A **new paper**: arxiv.org → Start new submission. Licence CC BY 4.0, upload the tarball,
@@ -197,6 +195,31 @@ it after a venue accepts it. Details: [releasing](docs/4-ways-of-working/releasi
 
 ## Cite
 
+### Two DOIs: the latest and the permanent
+
+A DOI is an identifier that keeps resolving when a URL moves. Zenodo gives this work two kinds,
+and each answers a different question.
+
+| | Latest DOI (concept DOI) | Permanent DOI (version DOI) |
+|---|---|---|
+| This work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| Resolves to | the newest release, whichever it is on the day you click | one release, the same bytes forever |
+| How many | one for the whole work | one for each release |
+| Changes when a release is made | no; it starts to point at the new release | no; the new release gets its own |
+| Use it to | cite the work: "Closed Source: The God that Failed" | say exactly which text you read, quoted or reproduced |
+
+- **Cite the latest DOI** in a reference list. A reader then gets the corrected text, and all
+  citations count for one work.
+- **Add the permanent DOI** when the exact wording matters: a quotation, a reproduction, a
+  review. Version v0.1.0 will always be the source archive of 13 October 2026.
+- Neither can be deleted. A wrong release stays on Zenodo; a new release replaces it only as the
+  latest.
+
+`just release` makes a new permanent DOI: Zenodo archives the release and mints it a few minutes
+after the tag ([Release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)). So a release cannot
+print its own permanent DOI; [Zenodo's page for the latest DOI](https://zenodo.org/doi/10.5281/zenodo.23333656)
+lists every version with its DOI. The block below uses the latest DOI.
+
 <!-- citation:start -->
 
 BibTeX:
@@ -206,17 +229,19 @@ BibTeX:
   author    = {Hoffmann, Matheus},
   title     = {{Closed Source: The God that Failed}},
   year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23333656},
   url       = {https://github.com/h0ffmann/closed-source}
 }
 ```
 
 APA:
 
-> Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. https://github.com/h0ffmann/closed-source
+> Hoffmann, M. (2026). *Closed Source: The God that Failed* [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.23333656
 
 ABNT (NBR 6023):
 
-> HOFFMANN, Matheus. **Closed Source**: The God that Failed. [S. l.]: GitHub, 2026. Disponível em: https://github.com/h0ffmann/closed-source.
+> HOFFMANN, Matheus. **Closed Source**: The God that Failed. [S. l.]: Zenodo, 2026. DOI 10.5281/zenodo.23333656.
 
 <!-- citation:end -->
 

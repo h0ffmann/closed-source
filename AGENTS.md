@@ -31,7 +31,10 @@ linked docs before you change what they cover.
    author.
 4. Mark interpretation with `**[ANALYSIS]**`. Keep facts and analysis in separate paragraphs.
 5. Report allegations as allegations. Name the source and the status of any legal case.
-6. Never publish a Zenodo deposit. Drafts only; a human publishes. A DOI is permanent.
+6. A release mints a DOI, and a DOI is permanent: Zenodo's webhook archives every published GitHub
+   release. Never tag or release unless the owner asks for that release by name; prepare the pull
+   request and give the owner the `just release` command. Never publish a Zenodo deposit by hand
+   or through the API.
 7. Never commit secrets, tokens or personal contact data.
 8. Never merge a pull request, and never push to `main`. Humans merge.
 9. Never weaken a guardrail to get green: a check in `tools/` or `scripts/`, a CI job, a hard rule above or
