@@ -142,6 +142,7 @@ site-build:
     nix develop --no-update-lock-file --command just build
     nix develop --no-update-lock-file --command tools/fabric content
     nix develop --no-update-lock-file .#site --command bash -c 'cd site && just ci'
+    scripts/md-quality.sh --count > site/dist/links.json
 
 # On any Ubuntu with only Nix and `apt install just`: render the paper's PDFs in picasso's paper lab.
 paper:

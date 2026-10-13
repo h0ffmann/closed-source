@@ -32,7 +32,7 @@ The next release's changes (#44, #45 and the pull request that adds `just md-qua
 - the record's description starts with the book as a PDF: the link to read it and the link to
   download it;
 - three analysers check the Markdown files (`just md-quality`), and a badge in the README says
-  if every link is alive.
+  if every link is alive; two more count the links to GitHub and to Zenodo.
 
 After the merge, the owner releases it: `just release minor`. When Zenodo has minted the DOI,
 this section becomes a row of the table below.

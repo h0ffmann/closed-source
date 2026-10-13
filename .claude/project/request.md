@@ -909,3 +909,13 @@ create a badge, in readme on live links in the website if 100%, show as green
 Read as: a workflow, `live links`, in which lychee fetches every web link of the published
 website and of the Markdown files. It passes only when all of them answer, so its badge in
 `README.md` is green only at 100%.
+
+```text
+also add another graph for link indexing (Github Links counter, Zenodo Links counter)
+```
+
+Read as: two more badges in `README.md`, "github links" and "zenodo links", each with the number
+of different links that go there from the Markdown files. `scripts/md-quality.sh --count` counts
+them, `just site-build` publishes the numbers as `links.json` on the website, and the badges
+read that file, so no number is written by hand. "graph" is read as a badge; if the owner meant
+a chart on the website, that is another change.

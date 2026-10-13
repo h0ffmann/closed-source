@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="afd7cefd51930cbe7691f0754cb5dc75d74dc57e2cd27d29ef5ae3009e45aab3" -->
+<!-- easy: source="README.md"; sha256="adafe840cebf0ce89da3a78a51eed3737d844f8d85b6909c94d3d86cf764dfb1" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**

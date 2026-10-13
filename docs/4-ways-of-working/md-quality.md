@@ -85,6 +85,23 @@ down for an hour must not block a merge.
 
 A 403 and a 429 count as an answer: some sites refuse a robot and serve a person.
 
+## The link counters
+
+Two badges in `README.md` count where the links go: "github links" and "zenodo links".
+
+`scripts/md-quality.sh --count` prints the numbers as JSON, with `git` and `grep` only. It counts
+each different web link once, in the files that the analysers check. A GitHub link starts with
+`github.com`. A Zenodo link is `zenodo.org`, or a DOI that Zenodo minted (`10.5281/zenodo.N`)
+through `doi.org` or DataCite's API.
+
+`just site-build` writes the JSON to `site/dist/links.json`, so the website publishes it at
+<https://h0ffmann.github.io/closed-source/links.json>, and the badges read it from there. No
+number is written into `README.md` by hand, so none can go stale: the count changes with each
+deploy from `main`.
+
+A count is not a quality. It says how much of this repository points at open code and at
+permanent records, and nothing about whether a link is the right one.
+
 ## What the three do not check
 
 They are judges of form. The note [what is MetaQuality](../../notes/202610131752-what-is-metaquality.md) says a judge must say what it does
