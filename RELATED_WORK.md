@@ -94,6 +94,20 @@ The paper itself cites 41 works (`papers/closed-source/refs.bib`, each with its 
 `REFERENCES.md`). Only these are in the record, because a record's ties are for the works the
 paper stands on most, not for its whole reference list.
 
+## Added for the next release
+
+The record of v0.2.0 is frozen. Two ties were added to `.zenodo.json` after it, so that the
+writer's other works are cited here in full. They show from v0.2.1 on.
+
+| Tie | To | Why |
+|---|---|---|
+| requires | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) (picasso) | This repository builds its PDFs and its website with picasso's `paper` and `gleam-website` labs, pinned in `flake.nix`. The paper already cites picasso; `requires` says the second thing, and it answers the `isRequiredBy` that picasso's record gets in return |
+| cites | <https://github.com/h0ffmann/nashkell> (nashkell) | The paper cites it three times (sections 6 and 9; `hoffmann2026nashkell` in `refs.bib`), and the record did not name it. It is the writer's work and has no DOI, so the tie is a URL: stored, and not counted |
+
+With these, every work of the writer that the paper cites is in the record: marola, ww3-gpu and
+picasso by DOI, and nashkell by URL. A DOI for nashkell would turn its tie into one that counts;
+that is a release of nashkell with Zenodo switched on, as for the others.
+
 ## What points at these works
 
 The other direction: which records cite each work, as DataCite showed on the date of record.
@@ -124,19 +138,21 @@ record names the column's work by its DOI.
 | **closed-source** v0.2.0 ([10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204)) | ✓ `cites` | ✓ `cites` | ✓ `cites` | — |
 
 Seven of the twelve possible ties exist. Five are missing, and each is a line in another
-repository's `.zenodo.json`:
+repository's `.zenodo.json`. A pull request for each was opened on 13 October 2026:
 
-| In | Add | Why it is true |
-|---|---|---|
-| marola | `requires` 10.5281/zenodo.23311208 (picasso) | picasso's record already says it `isRequiredBy` marola; marola's does not answer |
-| marola | `isCitedBy` 10.5281/zenodo.23333656 (closed-source) | this paper cites marola |
-| ww3-gpu | `requires` 10.5281/zenodo.23311208 (picasso) | picasso's record already says it `isRequiredBy` ww3-gpu; its toolchain comes from picasso |
-| ww3-gpu | `isCitedBy` 10.5281/zenodo.23333656 (closed-source) | this paper cites ww3-gpu |
-| picasso | `isCitedBy` and `isRequiredBy` 10.5281/zenodo.23333656 (closed-source) | this paper cites picasso, and builds with picasso's `paper` and `gleam-website` labs |
+| In | Adds | Why it is true | Pull request |
+|---|---|---|---|
+| marola | `requires` 10.5281/zenodo.23311208 (picasso) | its `flake.nix` takes the `lint` and `agentic` labs from h0ffmann/nix-config, which is picasso's earlier name | [marola-dev/marola#809](https://github.com/marola-dev/marola/pull/809) |
+| marola | `isCitedBy` 10.5281/zenodo.23333656 (closed-source) | this paper cites marola | the same |
+| ww3-gpu | `requires` 10.5281/zenodo.23311208 (picasso) | its toolchain is the `nix-config` submodule and a flake input on h0ffmann/nix-config | [h0ffmann/ww3-gpu#106](https://github.com/h0ffmann/ww3-gpu/pull/106) |
+| ww3-gpu | `isCitedBy` 10.5281/zenodo.23333656 (closed-source) | this paper cites ww3-gpu | the same |
+| picasso | `isCitedBy` and `isRequiredBy` 10.5281/zenodo.23333656 (closed-source) | this paper cites picasso, and builds with picasso's `paper` and `gleam-website` labs | [h0ffmann/picasso#125](https://github.com/h0ffmann/picasso/pull/125) |
 
-Use the concept DOI of the other work, as these records already do, so the tie follows its
-latest version. Each change shows from that repository's next release. Nothing in this
-repository can make them; they are proposed, not done.
+Each uses the concept DOI of the other work, as these records already do, so the tie follows its
+latest version. A pull request is a proposal: the tie exists on Zenodo only after the owner
+merges it and that repository makes its next release. Until then the table of ticks above is the
+state of the record. When all three have released, the twelve ties will be there, and this
+section is read again against the records.
 
 A second kind of link is the keyword. Three keywords are shared across these records today:
 "research software" is on all four, "AI coding agents" on ww3-gpu, picasso and this paper, and

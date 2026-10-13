@@ -61,6 +61,12 @@
       "resource_type": "software"
     },
     {
+      "identifier": "10.5281/zenodo.23311208",
+      "relation": "requires",
+      "scheme": "doi",
+      "resource_type": "software"
+    },
+    {
       "identifier": "10.7717/peerj-cs.86",
       "relation": "cites",
       "scheme": "doi"
@@ -79,6 +85,12 @@
       "identifier": "https://github.com/ouroboric-dev/ouroboric",
       "relation": "cites",
       "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/h0ffmann/nashkell",
+      "relation": "cites",
+      "scheme": "url",
+      "resource_type": "software"
     }
   ],
   "notes": "Text CC BY 4.0. The record is the source tree at the release tag, archived by Zenodo from the GitHub release; the rendered PDFs are attached to that GitHub release. Build scripts are AGPL-3.0-only and the LaTeX template is MIT. Drafted with a Claude coding agent under the author's direction; see the paper's AI-use statement."
