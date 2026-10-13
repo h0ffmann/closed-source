@@ -21,10 +21,12 @@ The Zenodo record holds the source tree at the tag. The rendered PDFs are attach
 release. arXiv receives the LaTeX source, because arXiv compiles submissions itself and refuses
 PDFs made from TeX.
 
-The first release, v0.1.0, has the version DOI
+The latest release is v0.2.0, with the version DOI
+[10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204). The first, v0.1.0, has
 [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657). The concept DOI, which always
 resolves to the latest version, is
 [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
+[`RELEASES.md`](../../RELEASES.md) lists every release.
 
 ## Once per repository
 
@@ -49,6 +51,11 @@ The README's "Secrets and keys" table lists every key, where it lives and how to
 5. Open the new version on zenodo.org and check the metadata. An edit to `.zenodo.json` reaches
    Zenodo only with the next release; a wrong field on a published version is corrected by hand
    on zenodo.org.
+6. Open a pull request that adds the release to [`RELEASES.md`](../../RELEASES.md) with its
+   version DOI, and updates the places that name the latest release: the README's badge and its
+   DOI table (and the easy version, with `scripts/readme.sh --stamp`), this page, and any open
+   draft in `docs/social/`. The website needs no change: its next build asks Zenodo for the
+   version DOIs.
 
 ## Rules the release keeps
 

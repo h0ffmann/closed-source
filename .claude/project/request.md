@@ -673,3 +673,20 @@ the row says "credited to" and its check is `partial`. The story as the owner to
 people called Picasso lucky and he answered that he painted every day, was not found in a source
 and is given as the owner's words.
 
+## v0.2.0
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+make a new release of closed-source (minor), after you done create a PR to report to announce 0.2.0v is live (update ALL references in the repo)
+```
+
+Read as: the owner asks for this release by name, which AGENTS.md invariant 6 requires, so
+`just release minor` was run on `main` at `0cecd8d` and made v0.2.0. Zenodo minted
+10.5281/zenodo.23335204 for it. The pull request that follows is the report: a new `RELEASES.md`
+with a row for each release, and every place that named v0.1.0 as the latest release now names
+v0.2.0 (the README's badge, status and DOI table, the easy version, `releasing.md`, the Instagram
+draft's slides and captions). "ALL references" is read as the references to the latest release:
+v0.1.0 stays where it is history (the first release, its own DOI) and in the examples and tests
+of `scripts/release.sh` and `tools/`, which are not statements about the latest release.
+

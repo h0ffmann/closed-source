@@ -65,7 +65,7 @@ para uma fonte quando tem um link, um DOI, ou um autor e um ano.
 ## Legenda (pt-BR, versão fácil)
 
 ```text
-Saiu a primeira versão de "Closed Source: The God that Failed" ("Código fechado: o deus que falhou").
+Saiu a versão 0.2.0 de "Closed Source: The God that Failed" ("Código fechado: o deus que falhou").
 
 A ideia é simples. Código fechado é um programa que você usa, mas não pode ler por dentro. Hoje, com inteligência artificial, qualquer pessoa consegue desmontar um programa e ver como ele funciona. Então esconder não protege mais. O caminho honesto é outro: mostrar como você fez e citar de quem você pegou cada ideia.
 

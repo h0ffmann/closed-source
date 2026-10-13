@@ -11,7 +11,7 @@
 [![pdf](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml)
 [![site](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml)
 [![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
-[![v0.1.0 DOI](https://img.shields.io/badge/v0.1.0_DOI-10.5281%2Fzenodo.23333657-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23333657)
+[![v0.2.0 DOI](https://img.shields.io/badge/v0.2.0_DOI-10.5281%2Fzenodo.23335204-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23335204)
 [![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-111111?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
 [![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-111111?style=flat-square&logo=gnu&logoColor=white)](#licence)
 
@@ -34,7 +34,7 @@ other citable work by the writer, each with its latest DOI:
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) and
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**status:** v0 preprint, not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
+**status:** v0.2.0 is live ([releases](RELEASES.md)). a v0 preprint, not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
 
@@ -142,6 +142,7 @@ says more, with the other books behind this repository.
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
 | [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
+| [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.2.0 is the latest |
 | [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of five READMEs is cited (this one, marola, ouroboric-dev, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
@@ -204,7 +205,8 @@ no secret is in the chain, as in [marola](https://github.com/marola-dev/marola/b
    source tree at the tag; the PDFs are on the github release. **caution:** a DOI is permanent,
    and you cannot delete a published record yourself.
 6. **check** the new version on zenodo.org: the title, the authors with their ORCIDs and the
-   licence. an edit to `.zenodo.json` reaches zenodo only with the next release.
+   licence. then open a pull request that adds the release's row, with its DOI, to
+   [`RELEASES.md`](RELEASES.md) and updates this page's badge and table. an edit to `.zenodo.json` reaches zenodo only with the next release.
 7. **arxiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
    github release, or run `just arxiv` (`build/arxiv/`).
    - a **new paper**: arxiv.org → start new submission. licence CC BY 4.0, upload the tarball,
@@ -230,7 +232,7 @@ and each answers a different question.
 
 | | latest DOI (concept DOI) | permanent DOI (version DOI) |
 |---|---|---|
-| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.2.0: [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204); v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
 | resolves to | the newest release, whichever it is on the day you click | one release, the same bytes forever |
 | how many | one for the whole work | one for each release |
 | changes when a release is made | no; it starts to point at the new release | no; the new release gets its own |
@@ -239,14 +241,15 @@ and each answers a different question.
 - **cite the latest DOI** in a reference list. a reader then gets the corrected text, and all
   citations count for one work.
 - **add the permanent DOI** when the exact wording matters: a quotation, a reproduction, a
-  review. version v0.1.0 will always be the source archive of 13 october 2026.
+  review. version v0.2.0 will always be the source archive of its tag, and v0.1.0 of its own.
 - neither can be deleted. a wrong release stays on zenodo; a new release replaces it only as the
   latest.
 
 `just release` makes a new permanent DOI: zenodo archives the release and mints it a few minutes
 after the tag ([release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)). so a release cannot
 print its own permanent DOI; [zenodo's page for the latest DOI](https://zenodo.org/doi/10.5281/zenodo.23333656)
-lists every version with its DOI. the block below uses the latest DOI.
+lists every version with its DOI, and so does [`RELEASES.md`](RELEASES.md). the block below uses
+the latest DOI.
 
 <!-- citation:start -->
 
