@@ -236,3 +236,11 @@ add friend2, use SMART_POLICY, in the same way you added friend1. The note from 
 
 Read as: friend2 in PERSONAS.md, and friend2's remark filed as a fleeting note, with an open
 question note for the reason behind it.
+
+Hoffmann, 2026-10-13 01:21 UTC, verbatim:
+
+```text
+the reason is the open source spirit
+```
+
+Read as: the reason for friend2's remark, filed in the second note.

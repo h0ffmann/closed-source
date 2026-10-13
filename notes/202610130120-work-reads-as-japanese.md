@@ -16,4 +16,4 @@ friend2, in conversation, said that my work is very Japanese, and meant it as a 
 **Status: unverified.** This is a remark, not a claim with a source. friend2 did not say, in what
 I have filed, what makes it read that way.
 
-The question it opens: [[202610130121-what-makes-the-work-japanese]].
+Why it reads that way: [[202610130121-what-makes-the-work-japanese]].

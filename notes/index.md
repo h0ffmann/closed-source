@@ -27,7 +27,7 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 ## Feedback on the work
 
 - [[202610130120-work-reads-as-japanese]]: friend2: the work reads as very Japanese, a compliment (fleeting, unverified)
-- [[202610130121-what-makes-the-work-japanese]]: what makes the work read as Japanese? (permanent, open question)
+- [[202610130121-what-makes-the-work-japanese]]: what makes it read as Japanese: the open-source spirit (permanent, partial)
 
 ## Marola forecaster
 
