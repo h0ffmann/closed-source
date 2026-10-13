@@ -801,3 +801,68 @@ repository builds with its labs, and `cites` nashkell, which the paper cites and
 not name; nashkell has no DOI, so that tie is a URL. Ouroboric has no Zenodo record; it stays
 cited by URL, and issue #40 asks for its DOI.
 
+```text
+PDF doesnt seem to be properly linked. The full white paper. Fix this
+```
+
+Read as: the PDF files were reachable (the site's three PDFs and the release's assets all
+answered 200), but the path to them was poor. The README had no link to the PDF at all; the DOI
+opens a Zenodo record that holds a source archive and no PDF; and on the site the PDF was one
+card far down the page. So: a "read the paper (PDF)" link at the top of the README and its easy
+version, a black "read the paper | PDF" pill on the site's cover before the GitHub pill, a PDF
+link on the closed-source tile, and in `.zenodo.json` a sentence with the link and an
+`isVariantFormOf` tie to the PDF. The README and Zenodo links use the release's
+`latest/download` URL, which always serves the newest release's PDF.
+
+
+```text
+adjust in this PR https://github.com/h0ffmann/closed-source/pull/45 in Zenodo I want to be indexed no as preprint, but as a book, with a existing paper.pdf attached to the website so they can have a preview of it.
+```
+
+Read as: in `.zenodo.json` the record's type changes from `preprint` to `book`, and
+`tools/fabric citation` learns that type (CFF `type: book`, BibTeX `@book`, APA "[Book]"). The
+release's `latest/download` link sends the PDF as a download, so it gives no preview; the site
+serves the PDF as `application/pdf`, which a browser shows. So the site now also publishes the
+paper under one name that does not change, `paper.pdf`, shows it in a frame in "Read", and the
+Zenodo record and the READMEs link to it for the preview. The READMEs keep the release links for
+the download. The record itself still holds the source archive: Zenodo's GitHub webhook attaches
+no PDF, and the hard rules forbid a deposit by hand. The paper's own text still calls itself a
+preprint; it was not changed.
+
+```text
+Make sure my zenodo records is mentioning my other 3 DOIs and the work been done on Ouroboric. To show I develop at open space
+```
+
+Read as: the record already tied itself to marola, ww3-gpu and picasso by DOI and to Ouroboric by
+URL (`related_identifiers`), but its description did not say so. A paragraph in the description
+now names the three works with their DOIs and says the book is made in the Ouroboric style, whose
+ideas are Bruno Valério's. It reaches Zenodo with the next release.
+
+```text
+Now that zenodo record will be book, make sure latest version of PDF (white) and latest version of the book PDF, they SHOULD be downloaded easily
+```
+
+Read as: the white paper's newest PDF must be one click to download from the record, the site and
+the READMEs. The record's description now has two links: the preview on the site and the
+download from the newest release. The site's "Read" has a download link beside the preview. The
+READMEs already had both. There is one PDF text today, the paper in three editions: the book of
+the 50 thinkers is a roster (`50THINKERS.md`) with no pages written and no PDF build, so there is
+no book PDF to link yet. Nothing was invented to stand for it.
+
+```text
+create, in the PR a 50THINKERS easy pt-BR version
+```
+
+Read as: `50THINKERS.easy.pt-BR.md` beside its source, made with the `easy-pt-br` skill: the
+header block, the whole table with its 50 rows in the same order, and a list of the hard words.
+No fact was added; names and titles stay as in the original.
+
+```text
+in the same PR add a new content to the book (essay): What is MetaQuality
+```
+
+Read as: a note for the book, `notes/202610131752-what-is-metaquality.md`, as the two essays
+before it were notes. The owner has not defined the word, so the note gives one reading as a
+proposal (how good is the thing that judges quality) with examples from this repository, and its
+status is `open-question` until the owner says what he means. No source was invented for the
+word.

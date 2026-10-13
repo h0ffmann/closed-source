@@ -17,22 +17,29 @@ row of a release is added in a pull request after it
 
 **v0.2.0 is live** (13 October 2026).
 
-## Next: v0.2.1 (not released yet)
+## Next: v0.3.0 (not released yet)
 
-The next release's changes, all on the website and the README (#41 and the pull request that adds
-this section):
+The next release's changes (#44 and #45):
 
-- the closed-source tile is in lower case, like the other tiles;
-- the cover has a fourth box, the number of commits, beside the pages and the notes;
-- a GitHub pill in the middle of the cover: the repository, the latest release and a star; and
-  the same pill at the top of `README.md`;
-- new Zenodo keywords, chosen for reverse engineers ([`KEYWORDS.md`](KEYWORDS.md)): eight added,
-  three dropped.
+- on Zenodo the record is a **book**, not a preprint (`publication_type` in `.zenodo.json`); the
+  generated citations follow: CFF `type: book`, BibTeX `@book`, APA "[Book]";
+- the website publishes the paper as `paper.pdf`, a name that does not change, and shows a
+  preview of it in "Read"; the Zenodo record and the READMEs link to that preview;
+- the record's description names the writer's three other works with their DOIs (marola,
+  WW3 GPU Lab, picasso) and says whose the Ouroboric ideas are;
+- the record's ties add `requires` picasso and `cites` nashkell (#44).
 
-After the merge, the owner releases it by its name: `just release 0.2.1` (or `just release
-patch`). `just release` alone will suggest a minor bump, v0.3.0, because #41 was merged under a
-`feat` title; the owner's number is 0.2.1. When Zenodo has minted the DOI, this section becomes a
-row of the table below.
+After the merge, the owner releases it: `just release minor`. When Zenodo has minted the DOI,
+this section becomes a row of the table below.
+
+## v0.2.1: on GitHub, with no DOI
+
+v0.2.1 was tagged and released on GitHub on 13 October 2026
+([release](https://github.com/h0ffmann/closed-source/releases/tag/v0.2.1)): the lower-case tile,
+the commits box, the GitHub pill and the new keywords (#41 to #43). GitHub's two deliveries of
+that release to Zenodo's webhook failed with a 500, so Zenodo made no record and minted no DOI
+for it. Read on 13 October 2026: Zenodo lists v0.2.0 and v0.1.0 only. v0.3.0 carries the same
+changes; if the owner redelivers the v0.2.1 delivery (Settings, Webhooks), it gets its own row.
 
 ## Released
 

@@ -130,3 +130,17 @@ pub fn the_github_pill_names_the_repository_and_the_latest_release_test() {
     [] -> True
   }
 }
+
+pub fn the_paper_pdf_is_linked_from_the_cover_the_tile_and_read_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  let link = "href=\"" <> app.pdf(app.Original) <> "\""
+  // The cover's pill, the paper's tile and the Read section.
+  assert list.length(string.split(html, link)) - 1 >= 3
+  assert string.contains(html, "gh gh-read")
+  assert string.contains(html, "read the paper (PDF)")
+  // The preview, from the name the Zenodo record links to.
+  assert app.paper == "paper.pdf"
+  assert string.contains(html, "<iframe class=\"preview\"")
+  assert string.contains(html, "src=\"paper.pdf\"")
+  assert string.contains(html, "download=\"closed-source.pdf\"")
+}

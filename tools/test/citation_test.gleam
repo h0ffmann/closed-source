@@ -25,7 +25,7 @@ pub fn validate_errors_test() {
     )
   assert citation.validate(bad)
     == [
-      "publication_type must be one of ['article', 'preprint', 'report', 'technicalnote', 'workingpaper']",
+      "publication_type must be one of ['article', 'book', 'preprint', 'report', 'technicalnote', 'workingpaper']",
       "license \"it's\" has no SPDX mapping here",
       "language must be an ISO 639-3 code such as eng",
       "version is set by Zenodo; remove it",

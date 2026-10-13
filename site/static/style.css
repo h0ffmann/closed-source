@@ -96,6 +96,11 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
   color: var(--ink); text-decoration: none; font: 400 16px/1 var(--caps); letter-spacing: .06em;
 }
 .gh:hover { text-decoration: none; border-color: var(--red-text); }
+/* The first pill is the paper itself, in the cover's black with yellow letters. */
+.gh-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.gh-read { background: var(--black); border-color: var(--black); color: var(--yellow); }
+.gh-read .gh-version { color: var(--on-black); border-left-color: rgba(244, 239, 230, .35); }
+.gh-read:hover { border-color: var(--red); }
 .gh img { flex: none; }
 .gh-name { font-weight: 600; }
 .gh-owner { color: var(--muted); font-weight: 400; }
@@ -346,3 +351,6 @@ main section.shelf { padding-top: 48px; }
 @keyframes settle { from { opacity: 0; letter-spacing: .08em; } to { opacity: 1; letter-spacing: -.01em; } }
 @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* The preview of the book: the PDF in a frame, with the cover's rule above it. */
+.preview { display: block; width: 100%; height: min(80vh, 900px); margin: 28px 0 8px; border: 0; border-top: 3px solid var(--ink); background: var(--paper, #fff); }

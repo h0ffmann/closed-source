@@ -60,6 +60,10 @@ pub fn citation(index: Int) -> #(String, String) {
   }
 }
 
+/// The paper's PDF under a name that does not change, for links from outside (the Zenodo record,
+/// the READMEs) and for the preview. site/justfile copies it.
+pub const paper = "paper.pdf"
+
 /// The PDF's file name in dist/: the original, or its ASD-STE100 text.
 pub fn pdf(text: Text) -> String {
   case text {
@@ -297,15 +301,22 @@ fn shelf_section() -> Element(msg) {
                   string.lowercase(content.title)
                     <> ": the paper you are reading about. its latest DOI always opens the newest release.",
                   doi,
-                  case latest_version() {
-                    Ok(#(version, own)) ->
-                      external(
-                        "https://doi.org/" <> own,
-                        "permanent DOI for " <> version <> ": " <> own,
-                      )
-                    Error(_) ->
-                      external("https://zenodo.org/doi/" <> doi, "all versions")
-                  },
+                  html.span([], [
+                    link(pdf(Original), "read the paper (PDF)"),
+                    html.text(" · "),
+                    case latest_version() {
+                      Ok(#(version, own)) ->
+                        external(
+                          "https://doi.org/" <> own,
+                          "permanent DOI for " <> version <> ": " <> own,
+                        )
+                      Error(_) ->
+                        external(
+                          "https://zenodo.org/doi/" <> doi,
+                          "all versions",
+                        )
+                    },
+                  ]),
                 ),
               ],
               list.map(content.works, fn(k: Work) {
@@ -479,6 +490,11 @@ pub fn repo_name() -> #(String, String) {
 fn github_pill() -> Element(msg) {
   let #(owner, name) = repo_name()
   html.p([attribute.class("gh-row")], [
+    // The paper itself comes first: the PDF built with this page.
+    html.a([attribute.class("gh gh-read"), attribute.href(pdf(Original))], [
+      html.span([attribute.class("gh-name")], [html.text("read the paper")]),
+      html.span([attribute.class("gh-version")], [html.text("PDF")]),
+    ]),
     html.a(
       [
         attribute.class("gh"),
@@ -641,6 +657,25 @@ fn read_section() -> Element(msg) {
         "Releases",
         "Each tagged release: the PDFs and the arXiv source bundle. Zenodo archives each one and gives it a permanent DOI.",
       ),
+    ]),
+    // A preview of the whole text, from the name that does not change (site/justfile).
+    html.iframe([
+      attribute.class("preview"),
+      attribute.src(paper),
+      attribute.title("Preview of the book (PDF)"),
+      attribute.attribute("loading", "lazy"),
+    ]),
+    html.p([attribute.class("sub")], [
+      html.text("The preview does not show on every phone. "),
+      link(paper, "Open the PDF"),
+      html.text(" or "),
+      html.a(
+        [attribute.href(paper), attribute.download(content.slug <> ".pdf")],
+        [
+          html.text("download the PDF"),
+        ],
+      ),
+      html.text("."),
     ]),
     html.div([attribute.class("stats")], [
       stat(content.pages, "pages"),

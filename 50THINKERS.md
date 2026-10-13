@@ -2,7 +2,7 @@
 title: "The 50 thinkers: two pages each"
 status: draft
 date: 2026-10-12
-related: [AGENTS.md, BOOKS.md, 500AUTHORS.md, papers/closed-source/refs.bib]
+related: [AGENTS.md, BOOKS.md, 500AUTHORS.md, papers/closed-source/refs.bib, 50THINKERS.easy.pt-BR.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 

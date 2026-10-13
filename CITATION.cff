@@ -16,9 +16,22 @@ abstract: >-
   citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper
   Fabric, the open pipeline in the Ouroboric style that produced it.
 
-  v0 is a preprint and has not been peer reviewed. This record holds the source of the paper at
-  the release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
+  This record is a book. It has not been peer reviewed. It holds the source of the book at the
+  release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
   attached to the GitHub release of the same tag.
+
+  Preview the full text as a PDF in the browser:
+  https://h0ffmann.github.io/closed-source/paper.pdf Download the PDF of the newest release:
+  https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf.
+
+  The writer develops in the open. His three other works each have a permanent DOI, and this
+  record cites all three: marola, an open, non-profit platform for sea conditions and
+  bathing-water quality, written with five other people (10.5281/zenodo.23224155); WW3 GPU Lab, a
+  bit-for-bit GPU port of WAVEWATCH III (10.5281/zenodo.23221351); and picasso, Nix flakes for
+  scientific and agentic toolchains, which builds this book (10.5281/zenodo.23311208). The book is
+  made in the Ouroboric style, and the Ouroboric ideas are Bruno Valério's
+  (https://github.com/ouroboric-dev/ouroboric); Ouroboric has no DOI yet, so this record cites it
+  by its address.
 authors:
   - family-names: "Hoffmann"
     given-names: "Matheus"
@@ -55,13 +68,13 @@ keywords:
   - "persistent identifiers"
   - "position paper"
 preferred-citation:
-  type: generic
+  type: book
   title: "Closed Source: The God that Failed"
   authors:
     - family-names: "Hoffmann"
       given-names: "Matheus"
       orcid: "https://orcid.org/0009-0009-1056-7661"
   year: 2026
-  medium: "preprint"
+  medium: "book"
   url: "https://github.com/h0ffmann/closed-source"
   doi: 10.5281/zenodo.23333656
