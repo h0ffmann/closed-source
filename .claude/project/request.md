@@ -848,3 +848,11 @@ download from the newest release. The site's "Read" has a download link beside t
 READMEs already had both. There is one PDF text today, the paper in three editions: the book of
 the 50 thinkers is a roster (`50THINKERS.md`) with no pages written and no PDF build, so there is
 no book PDF to link yet. Nothing was invented to stand for it.
+
+```text
+create, in the PR a 50THINKERS easy pt-BR version
+```
+
+Read as: `50THINKERS.easy.pt-BR.md` beside its source, made with the `easy-pt-br` skill: the
+header block, the whole table with its 50 rows in the same order, and a list of the hard words.
+No fact was added; names and titles stay as in the original.
