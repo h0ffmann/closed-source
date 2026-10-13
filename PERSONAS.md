@@ -25,6 +25,7 @@ line, or names a persona that is not in this table. To cite a new persona, add i
 | Mr. Nobody | pen name | The name on the book's cover and title page. It is Matheus Hoffmann. | — |
 | friend1 | person | A friend of the owner who gives notes for the book. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
 | friend2 | person | A friend of the owner who gives notes on the owner's work. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
+| friend3 | person | The scientist: a friend the owner thinks out loud to. A note whose source is "messages to friend3" holds the owner's words, not friend3's. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
 | Claude | agent | The Claude coding agent (Anthropic) that drafts, checks and builds here, under the owner's direction. | the `Co-Authored-By` trailer of its commits |
 
 The existing files were cited on 12 October 2026 as main author Claude, last author Matheus

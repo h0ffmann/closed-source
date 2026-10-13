@@ -39,6 +39,16 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 - [[202610130120-work-reads-as-japanese]]: friend2: the work reads as very Japanese, a compliment (fleeting, unverified)
 - [[202610130121-what-makes-the-work-japanese]]: what makes it read as Japanese: the open-source spirit (permanent, approved)
 
+## Thinking out loud to friend3
+
+- [[202610132127-private-code-and-private-science-lose-their-value]]: private code and private science lose their value (permanent, open question)
+- [[202610132128-not-against-property-copy-professionally]]: not against property: if you copy, copy professionally (permanent, open question)
+- [[202610132129-rhizome-ai-one-founder-on-documents]]: Rhizome AI: one founder, a product made from public documents (literature, partial)
+- [[202610132130-why-i-wrote-fast-from-preprint-to-book]]: why I wrote fast, and from preprint to book (fleeting, partial)
+
+Each of the four has an easy version in Portuguese in [`easy/`](easy/), made with the `easy-pt-br`
+skill.
+
 ## Being found
 
 - [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)
