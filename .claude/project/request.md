@@ -711,3 +711,17 @@ tiles' sentences already are; "repository" on the other tiles follows. And the c
 boxes (thinkers, pages, notes) gets a fourth box with the number of commits, which
 `tools/fabric content` counts with `git rev-list --count HEAD` at build time.
 
+```text
+also add 0.2.1 naming in this PR, do a minor bump, attach to the existing PR a github pill, like I did in marola-site (marola-dev) but with PICASSO STRYLING. This pill should be central in the page
+```
+
+Read as: the same pull request is named for the next release, v0.2.1. From v0.2.0 that is a
+patch bump in `scripts/release.sh`'s words; "a minor bump" is read as "a small one", because the
+number given is 0.2.1 and a minor bump would make 0.3.0. A release tags `main`, so it comes after
+the merge: `RELEASES.md` gets a "Next: v0.2.1 (not released yet)" section, and the title does not
+start with `feat`, so `just release` suggests the patch bump. The GitHub pill is after the one in
+marola-dev/marola-site's navigation (the mark, owner/name, a star): here it is centred on the
+cover under the boxes, with the latest release in it. "Picasso styling" is read as the round
+status pill of picasso's site and a star drawn with one line that crosses itself. GitHub's mark
+loads from GitHub and is not copied.
+

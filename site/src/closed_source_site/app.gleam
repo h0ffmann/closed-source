@@ -411,6 +411,7 @@ fn cover() -> Element(msg) {
             n -> figure(n, "commits", content.repo <> "/commits/main")
           },
         ]),
+        github_pill(),
         html.nav(
           [attribute.class("stamps"), attribute.aria_label("Projects")],
           list.map(content.logos, stamp),
@@ -458,6 +459,55 @@ fn stamp(logo: Logo) -> Element(msg) {
     ],
     [mark, html.span([], list.append(label, [html.text(logo.text)]))],
   )
+}
+
+// GitHub's own mark, loaded from GitHub and never copied here (TRADEMARKS.md).
+const github_icon = "https://github.githubassets.com/favicons/favicon.svg"
+
+/// "owner/name" of the repository, as #(owner, name).
+pub fn repo_name() -> #(String, String) {
+  case list.reverse(string.split(content.repo, "/")) {
+    [name, owner, ..] -> #(owner, name)
+    _ -> #("", content.repo)
+  }
+}
+
+/// One pill in the middle of the cover that opens the repository on GitHub: the mark, the
+/// repository's name, the latest release, and a star to ask for one. After the pill of
+/// marola-dev/marola-site's navigation; the round shape is picasso's site's, and the star is one
+/// line that crosses itself.
+fn github_pill() -> Element(msg) {
+  let #(owner, name) = repo_name()
+  html.p([attribute.class("gh-row")], [
+    html.a(
+      [
+        attribute.class("gh"),
+        attribute.href(content.repo),
+        attribute.rel("noopener"),
+        attribute.aria_label(
+          owner <> "/" <> name <> " on GitHub: star the repository",
+        ),
+      ],
+      [
+        html.img([
+          attribute.src(github_icon),
+          attribute.alt(""),
+          attribute.width(20),
+          attribute.height(20),
+        ]),
+        html.span([attribute.class("gh-name")], [
+          html.span([attribute.class("gh-owner")], [html.text(owner <> "/")]),
+          html.text(name),
+        ]),
+        case latest_version() {
+          Ok(#(version, _)) ->
+            html.span([attribute.class("gh-version")], [html.text(version)])
+          Error(_) -> element.none()
+        },
+        html.span([attribute.class("gh-star")], [html.text("star")]),
+      ],
+    ),
+  ])
 }
 
 fn figure(value: Int, label: String, href: String) -> Element(msg) {
