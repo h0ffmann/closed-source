@@ -7,7 +7,7 @@
 
   outputs = { paper, gleam-website, ... }: {
     # default: the PDF and arXiv toolchain, plus Gleam on Erlang for tools/ (the checks and the
-    # release tooling); site: the toolchain of site/. Gleam and Erlang come from the paper lab's
+    # release tooling); site: the toolchain of site/; md: the Markdown analysers. Gleam and Erlang come from the paper lab's
     # own nixpkgs, so the lock pins them with everything else.
     devShells = builtins.mapAttrs
       (system: shells:
@@ -17,6 +17,8 @@
             packages = [ pkgs.gleam pkgs.beamPackages.erlang pkgs.beamPackages.rebar3 ];
           };
           site = gleam-website.devShells.${system}.default;
+          # md: the three Markdown analysers of `just md-quality` (.github/workflows/md.yml).
+          md = pkgs.mkShell { packages = [ pkgs.markdownlint-cli2 pkgs.vale pkgs.lychee ]; };
         })
       paper.devShells;
   };

@@ -4,6 +4,11 @@ message: "If you use Closed Source: The God that Failed, please cite it using th
 type: software
 title: "Closed Source: The God that Failed"
 abstract: >-
+  The book as a PDF, in the shape it is printed: read it in the browser at
+  https://h0ffmann.github.io/closed-source/paper.pdf, or download it from the newest release at
+  https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf. The files
+  of this record are the source that builds that PDF.
+
   A position paper arguing that closed source has failed as a protection, for science first. Large
   language models now decompile binaries into re-executable source; black-box queries extract
   parts of production models; distillation copies capabilities at industrial scale; and the
@@ -19,10 +24,6 @@ abstract: >-
   This record is a book. It has not been peer reviewed. It holds the source of the book at the
   release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
   attached to the GitHub release of the same tag.
-
-  Preview the full text as a PDF in the browser:
-  https://h0ffmann.github.io/closed-source/paper.pdf Download the PDF of the newest release:
-  https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf.
 
   The writer develops in the open. His three other works each have a permanent DOI, and this
   record cites all three: marola, an open, non-profit platform for sea conditions and

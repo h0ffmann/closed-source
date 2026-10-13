@@ -19,7 +19,7 @@ row of a release is added in a pull request after it
 
 ## Next: v0.3.0 (not released yet)
 
-The next release's changes (#44 and #45):
+The next release's changes (#44, #45 and the pull request that adds `just md-quality`):
 
 - on Zenodo the record is a **book**, not a preprint (`publication_type` in `.zenodo.json`); the
   generated citations follow: CFF `type: book`, BibTeX `@book`, APA "[Book]";
@@ -27,7 +27,12 @@ The next release's changes (#44 and #45):
   preview of it in "Read"; the Zenodo record and the READMEs link to that preview;
 - the record's description names the writer's three other works with their DOIs (marola,
   WW3 GPU Lab, picasso) and says whose the Ouroboric ideas are;
-- the record's ties add `requires` picasso and `cites` nashkell (#44).
+- the record's ties add `requires` picasso and `cites` nashkell (#44), and `references` Hoppe's
+  *Democracy: The God That Failed* by its publisher's DOI;
+- the record's description starts with the book as a PDF: the link to read it and the link to
+  download it;
+- three analysers check the Markdown files (`just md-quality`), and a badge in the README says
+  if every link is alive; two more count the links to GitHub and to Zenodo.
 
 After the merge, the owner releases it: `just release minor`. When Zenodo has minted the DOI,
 this section becomes a row of the table below.

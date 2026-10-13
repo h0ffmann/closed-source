@@ -1,0 +1,30 @@
+# live links — lychee fetches every web link of the Markdown files and of the published website
+# (`just md-quality --online`). It passes only when 100% of the links answer, so its badge in
+# README.md is green only then. It runs after each push to main, each Monday, and by hand; not on
+# a pull request, because a site that is down for an hour must not block a merge.
+name: live links
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-links
+  cancel-in-progress: true
+
+jobs:
+  alive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - run: nix develop --no-update-lock-file .#md --command scripts/md-quality.sh --online
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
