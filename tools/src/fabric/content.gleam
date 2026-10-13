@@ -261,6 +261,28 @@ fn author(a: json.Json) -> String {
   <> ")"
 }
 
+/// One `logos:` entry of metadata.md as the site's stamp; a key the entry lacks is "".
+pub fn logo(l: json.Json) -> String {
+  let field = fn(key) { gleam_string(json.get_string(l, key)) }
+  "Logo(name: "
+  <> gleam_string(sys.stem(json.get_string(l, "file")))
+  <> ", svg: "
+  <> field("svg")
+  <> ", svg_dark: "
+  <> field("svg-dark")
+  <> ", href: "
+  <> field("href")
+  <> ", label: "
+  <> field("label")
+  <> ", text: "
+  <> field("text")
+  <> ", width: "
+  <> field("width")
+  <> ", height: "
+  <> field("height")
+  <> ")"
+}
+
 fn count(pattern: String, flags: List(re.Flag), text: String) -> Int {
   list.length(re.scan(re.compile(pattern, flags), text))
 }
@@ -299,14 +321,7 @@ fn render(slug: String) -> Result(String, String) {
     False -> result.unwrap(json.get(m, "writer"), json.Null)
     True -> result.unwrap(list.first(json.get_list(m, "author")), json.Null)
   }
-  let logos =
-    list.map(json.get_list(m, "logos"), fn(l) {
-      "#("
-      <> gleam_string(sys.stem(json.get_string(l, "file")))
-      <> ", "
-      <> gleam_string(json.get_string(l, "svg"))
-      <> ")"
-    })
+  let logos = list.map(json.get_list(m, "logos"), logo)
   use readme <- result.try(read("README.md"))
   use cites <- result.try(citations(readme))
   let cites =
@@ -368,6 +383,19 @@ fn render(slug: String) -> Result(String, String) {
 
 pub type Author {
   Author(name: String, orcid: String, affiliation: String)
+}
+
+pub type Logo {
+  Logo(
+    name: String,
+    svg: String,
+    svg_dark: String,
+    href: String,
+    label: String,
+    text: String,
+    width: String,
+    height: String,
+  )
 }
 
 pub type Thinker {

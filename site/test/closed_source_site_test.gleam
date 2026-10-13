@@ -37,3 +37,16 @@ pub fn front_page_shows_the_thinkers_and_the_notes_test() {
   assert string.contains(html, "Second brain")
   assert list.all(content.notes, fn(n) { string.contains(html, n.file) })
 }
+
+pub fn each_project_stamp_links_its_project_and_loads_its_logo_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert list.length(content.logos) == 2
+  assert list.all(content.logos, fn(l) {
+    string.contains(html, "data-logo=\"" <> l.name <> "\"")
+    && string.contains(html, "href=\"" <> l.href <> "\"")
+    && string.contains(html, "src=\"" <> l.svg <> "\"")
+    && string.contains(html, l.text)
+    && string.starts_with(l.svg, "https://raw.githubusercontent.com/")
+    && { l.svg_dark == "" || string.contains(html, l.svg_dark) }
+  })
+}

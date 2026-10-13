@@ -1,7 +1,9 @@
 //// The page as one Lustre application. `view(initial())` is also what `prerender` writes into
 //// `index.html`, so the page reads without JavaScript and the client takes it over in place.
 
-import closed_source_site/content.{type Author, type Note, type Thinker}
+import closed_source_site/content.{
+  type Author, type Logo, type Note, type Thinker,
+}
 import closed_source_site/ffi
 import gleam/int
 import gleam/list
@@ -169,16 +171,9 @@ fn cover() -> Element(msg) {
             "#notes",
           ),
         ]),
-        html.p(
-          [attribute.class("cover-logos")],
-          list.map(content.logos, fn(logo) {
-            let #(name, url) = logo
-            html.img([
-              attribute.src(url),
-              attribute.alt(string.capitalise(name) <> " logo"),
-              attribute.attribute("height", "28"),
-            ])
-          }),
+        html.nav(
+          [attribute.class("stamps"), attribute.aria_label("Projects")],
+          list.map(content.logos, stamp),
         ),
         html.p([attribute.class("status")], [
           html.text(content.version <> " · text CC BY 4.0, build AGPL-3.0"),
@@ -186,6 +181,43 @@ fn cover() -> Element(msg) {
       ]),
     ]),
   ])
+}
+
+/// A project's mark as a linked stamp, after the logo band of picasso's site. The dark SVG, when
+/// the project publishes one, follows the reader's colour scheme.
+fn stamp(logo: Logo) -> Element(msg) {
+  let name = string.capitalise(logo.name)
+  let img =
+    html.img([
+      attribute.src(logo.svg),
+      attribute.alt(name <> " logo"),
+      attribute.attribute("width", logo.width),
+      attribute.attribute("height", logo.height),
+    ])
+  let mark = case logo.svg_dark {
+    "" -> img
+    dark ->
+      html.picture([], [
+        html.source([
+          attribute.attribute("media", "(prefers-color-scheme: dark)"),
+          attribute.attribute("srcset", dark),
+        ]),
+        img,
+      ])
+  }
+  let label = case logo.label {
+    "" -> []
+    l -> [html.b([], [html.text(l)])]
+  }
+  html.a(
+    [
+      attribute.class("stamp"),
+      attribute.data("logo", logo.name),
+      attribute.href(logo.href),
+      attribute.rel("noopener"),
+    ],
+    [mark, html.span([], list.append(label, [html.text(logo.text)]))],
+  )
 }
 
 fn figure(value: Int, label: String, href: String) -> Element(msg) {

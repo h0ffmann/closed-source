@@ -78,6 +78,11 @@ Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs a
 pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
 GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
 
+The cover carries a stamp for Marola and one for Ouroboric, after the logo band of picasso's site:
+each links its project and loads the project's logo from its own repository, at the commit the
+paper's title page pins (`logos:` in the paper's `metadata.md`). No logo is copied here
+([`TRADEMARKS.md`](TRADEMARKS.md)).
+
 The front page opens with the 50 Thinkers and the second brain (`notes/`). The site is set like a
 book cover, after the colour scheme and type of the cover of
 

@@ -93,11 +93,22 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
 .figure b { font: 900 40px/1 var(--display); color: var(--red-text); }
 .figure span { font-size: 12px; }
 .figure:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
-.cover-logos { display: flex; gap: 28px; margin: 28px 0 0; }
-/* The logos are drawn for a light page; in dark mode they sit on a paper plate. */
-@media (prefers-color-scheme: dark) {
-  .cover-logos img { background: #F4EFE6; padding: 4px 8px; box-sizing: content-box; }
+/* The project stamps, after the logo band of picasso's site. Marola's mark carries its own white
+   disc and Ouroboric publishes a dark logo, so neither needs a plate in dark mode. */
+.stamps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;
+  margin: 28px 0 0;
 }
+.stamp {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding: 14px 18px;
+  background: var(--surface); border: 1px solid var(--rule); color: var(--ink);
+  transition: border-color .2s ease-out;
+}
+.stamp:hover { text-decoration: none; border-color: var(--red-text); }
+.stamp img { display: block; max-width: 100%; height: auto; }
+.stamp picture { flex: 0 1 auto; min-width: 0; }
+.stamp span { flex: 1 1 11em; font-size: 14px; line-height: 1.35; color: var(--muted); }
+.stamp b { display: block; font: 700 22px/1.1 var(--display); color: var(--ink); }
 .status { margin: 18px 0 0; font-size: 11px; color: var(--muted); }
 
 .jump {
