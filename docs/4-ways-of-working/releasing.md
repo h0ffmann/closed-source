@@ -27,8 +27,10 @@ The README's "Secrets and keys" table lists every token and key, where it lives 
 ## Each release
 
 1. Merge the release's pull request to `main`. Check that the `pdf` and `citation` workflows pass.
-2. Run `just release 0.1.0 --dry-run`, then `just release 0.1.0`. The tag is signed when
-   `git config user.signingkey` is set.
+2. Run `just release` to see what is unreleased and the suggested bump. Then run
+   `just release minor --dry-run` (or `patch`, `major`, or a version such as `0.1.0`), then the
+   same without `--dry-run`. The tag is signed when `git config user.signingkey` is set. The
+   script is the one picasso uses, with tag signing and the Zenodo draft added.
 3. Wait for the `release` workflow. It attaches the PDF to the GitHub release and creates a
    Zenodo draft.
 4. Open the draft on zenodo.org. Check the metadata, the authors and that the only file is the

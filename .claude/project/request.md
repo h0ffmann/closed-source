@@ -381,3 +381,14 @@ Add in the same PR Marcus Baffa, to be explained
 
 Read as: Marcus Baffa in the first open row of 50THINKERS.md, status chosen, reason "to be
 explained", area left for the owner; a row in 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:38 UTC, verbatim (relayed):
+
+```text
+check is just release is proper implemented, in the way is on picasso
+```
+
+Read as: compare `just release` and scripts/release.sh with picasso's (main at 2d6f8d8) and port
+what is missing: the no-argument summary with a suggested bump, patch/minor/major, the version
+must go up, the strict tag pattern, the citation check before tagging, `--self-test`, and
+`just releases`. Keep what closed-source does on purpose: the signed tag and the Zenodo draft.

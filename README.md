@@ -141,9 +141,15 @@ A release is a Git tag on `main`. One command makes it; CI does the rest; a pers
 
    ```sh
    git switch main && git pull
-   just release 0.1.0 --dry-run   # shows the tag it will make
-   just release 0.1.0             # tags v0.1.0 (signed if you set a signing key) and pushes it
+   just release                   # lists what is unreleased and suggests patch, minor or major
+   just release minor --dry-run   # shows the tag it will make (or name it: just release 0.1.0)
+   just release minor             # tags it (signed if you set a signing key) and pushes it
+   just releases                  # the release tags, newest first
    ```
+
+   The script refuses unless main is clean and level with `origin/main`, the version goes up, and
+   `CITATION.cff` matches `.zenodo.json`. A `feat` pull request suggests a minor bump, a breaking
+   change (`!`) a major bump (a minor bump before 1.0.0), anything else a patch.
 
 4. **CI** (the `release` workflow) builds both PDFs and the arXiv bundle, makes the GitHub release
    with `pdf/*.pdf` and `build/arxiv/*` attached and, when `ZENODO_TOKEN` is set, uploads the
