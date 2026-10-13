@@ -690,3 +690,15 @@ draft's slides and captions). "ALL references" is read as the references to the 
 v0.1.0 stays where it is history (the first release, its own DOI) and in the examples and tests
 of `scripts/release.sh` and `tools/`, which are not statements about the latest release.
 
+```text
+add a new big card, like the closed-source in the site, but for ouroboric profit (?) - ideas + friends
+```
+
+Read as: a second full-width tile in the site's DOIs section, for Ouroboric, with three tags in
+the owner's words: "profit (?)", "ideas" and "friends". The question mark stays on the tile, and
+the tile's sentence says what OUROBORIC.md records: a company whose charter says that making
+money is not a goal for now. Ouroboric is Bruno Valério's work, not the writer's, so it comes
+from a new `friends:` list in `metadata.md` and is not in the Author section. It has no DOI, so
+the tile opens github.com/ouroboric-dev, its DOI line says "none yet", and the heading counts
+"5 works, 4 DOIs". The background drawing is a new one-line snake that bites its tail.
+

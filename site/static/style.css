@@ -223,6 +223,11 @@ main section.shelf { padding-top: 48px; }
 .tile-marola { --tile: #0A4D7C; --drawing: url(drawings/fish.svg); }
 .tile-ww3-gpu { --tile: #0E4B43; --drawing: url(drawings/wave.svg); }
 .tile-picasso { --tile: #DCE7F7; --on: #16233F; --soft: rgba(22, 35, 63, .74); --chip: rgba(22, 35, 63, .1); --drawing: url(drawings/guitar.svg); }
+/* A friend's work: a wide tile like the paper's, in Ouroboric's orange. */
+.tile-friend { grid-column: 1 / -1; min-height: 280px; }
+.tile-ouroboric { --tile: #B8400A; --drawing: url(drawings/ouroboros.svg); }
+.tile-friend h3 { font-size: clamp(34px, 5vw, 60px); }
+.tile-friend::before { width: min(40%, 440px); right: 4%; bottom: -24px; opacity: .2; }
 /* One line drawing behind each tile's text, after the drawings on picasso's site
    (.claude/skills/card-style/SKILL.md). It is a mask, so it takes the tile's text colour. */
 .tile::before {
@@ -255,8 +260,8 @@ main section.shelf { padding-top: 48px; }
   content: ""; position: absolute; left: 13px; top: 14px; width: 10px; height: 10px;
   border-top: 2.5px solid var(--tile); border-right: 2.5px solid var(--tile); transform: rotate(45deg);
 }
-@media (max-width: 860px) { .tile { grid-column: span 3; } .tile-picasso { grid-column: 1 / -1; min-height: 260px; } }
-@media (max-width: 560px) { .tile, .tile-picasso { grid-column: 1 / -1; min-height: 0; padding: 24px 22px 22px; border-radius: 24px; } }
+@media (max-width: 860px) { .tile { grid-column: span 3; } .tile-picasso, .tile-friend { grid-column: 1 / -1; min-height: 260px; } }
+@media (max-width: 560px) { .tile, .tile-picasso, .tile-friend { grid-column: 1 / -1; min-height: 0; padding: 24px 22px 22px; border-radius: 24px; } }
 @media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
 
 /* Citation scores: one bar for each README, in the band's colour. */
