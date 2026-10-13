@@ -1,0 +1,32 @@
+[submodule "forks/rea"]
+	path = forks/rea
+	url = https://github.com/h0ffmann/rea.git
+	shallow = true
+[submodule "forks/ouroboric"]
+	path = forks/ouroboric
+	url = https://github.com/h0ffmann/ouroboric.git
+	shallow = true
+[submodule "forks/ouroboric-github"]
+	path = forks/ouroboric-github
+	url = https://github.com/h0ffmann/.github.git
+	shallow = true
+[submodule "forks/WW4"]
+	path = forks/WW4
+	url = https://github.com/h0ffmann/WW4.git
+	shallow = true
+[submodule "forks/picasso"]
+	path = forks/picasso
+	url = https://github.com/h0ffmann/picasso.git
+	shallow = true
+[submodule "forks/h0ffmann"]
+	path = forks/h0ffmann
+	url = https://github.com/h0ffmann/h0ffmann.git
+	shallow = true
+[submodule "forks/ww3-gpu"]
+	path = forks/ww3-gpu
+	url = https://github.com/h0ffmann/ww3-gpu.git
+	shallow = true
+[submodule "forks/marola"]
+	path = forks/marola
+	url = https://github.com/marola-dev/marola.git
+	shallow = true
