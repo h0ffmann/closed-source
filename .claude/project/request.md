@@ -351,3 +351,13 @@ add in the same pr George Orwell, Isaac Asimov, and Prof. Jian from PredictiveHi
 Read as: thinkers 37 to 39 on the Dante PR, status chosen, reasons left for the owner: George
 Orwell, Isaac Asimov, and Jiang Xueqin, who made the Predictive History channel in 2023 (name and
 date checked on Wikipedia).
+
+Hoffmann, 2026-10-13 02:33 UTC, verbatim:
+
+```text
+Luiz Felipe Pondé, Brazilian Philosopher, Mario Ferreira dos Santos, Brazilian Phiulosopher, Auhtor of Filosofia Concreta (Pitagórico)
+```
+
+Read as: thinkers 40 and 41, status chosen: Luiz Felipe Pondé, Brazilian philosopher (reason to
+come), and Mário Ferreira dos Santos, Filosofia Concreta (Logos, 1957) and Pitágoras e o Tema do
+Número (1956), both checked on Wikipedia; a row each in 500AUTHORS.md.

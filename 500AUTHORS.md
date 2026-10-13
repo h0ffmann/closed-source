@@ -108,3 +108,5 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 87 | George Orwell | — (the owner's choice) | 37 |
 | 88 | Isaac Asimov | — (the owner's choice) | 38 |
 | 89 | Jiang Xueqin | *Predictive History* (YouTube channel, 2023–) | 39 |
+| 90 | Luiz Felipe Pondé | — (the owner's choice) | 40 |
+| 91 | Mário Ferreira dos Santos | *Filosofia Concreta* (Logos, 1957); *Pitágoras e o Tema do Número* (1956) | 41 |
