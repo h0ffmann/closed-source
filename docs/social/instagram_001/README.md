@@ -48,7 +48,7 @@ identity, black and red with yellow letters, in place of picasso's blue.
 ## Caption (pt-BR)
 
 ```text
-Saiu a v0.2.0 de "Closed Source: The God that Failed", com DOI no Zenodo (10.5281/zenodo.23333656). Se qualquer pessoa consegue fazer engenharia reversa de qualquer coisa, o caminho honesto é citar o que você pega emprestado. O livro terá 100 páginas: 50 pensadores, duas páginas cada. Junto vai uma skill, citation-score, que mede quanto de um texto tem citação. Ela conta marcas de citação, não a verdade delas. As fontes estão nos slides. É um preprint, ainda sem revisão por pares. Site, artigo e código: link na bio.
+Saiu a v0.3.0 de "Closed Source: The God that Failed", com DOI no Zenodo (10.5281/zenodo.23333656). Se qualquer pessoa consegue fazer engenharia reversa de qualquer coisa, o caminho honesto é citar o que você pega emprestado. O livro terá 100 páginas: 50 pensadores, duas páginas cada. Junto vai uma skill, citation-score, que mede quanto de um texto tem citação. Ela conta marcas de citação, não a verdade delas. As fontes estão nos slides. É um preprint, ainda sem revisão por pares. Site, artigo e código: link na bio.
 
 #opensource #citation #doi #research #zenodo
 ```
@@ -56,7 +56,7 @@ Saiu a v0.2.0 de "Closed Source: The God that Failed", com DOI no Zenodo (10.528
 ## Caption (English)
 
 ```text
-"Closed Source: The God that Failed" v0.2.0 is out, with a Zenodo DOI (10.5281/zenodo.23333656). If anyone can reverse engineer anything, the honest course is to cite what you borrow. The book will be 100 pages: 50 thinkers, two pages each. It comes with a skill, citation-score, that measures how much of a text is cited. It counts citation marks, not whether they are right. Sources are on the slides. It is a preprint and has not been peer reviewed. Site, paper and code: link in bio.
+"Closed Source: The God that Failed" v0.3.0 is out, with a Zenodo DOI (10.5281/zenodo.23333656). If anyone can reverse engineer anything, the honest course is to cite what you borrow. The book will be 100 pages: 50 thinkers, two pages each. It comes with a skill, citation-score, that measures how much of a text is cited. It counts citation marks, not whether they are right. Sources are on the slides. It is a preprint and has not been peer reviewed. Site, paper and code: link in bio.
 
 #opensource #citation #doi #research #zenodo
 ```

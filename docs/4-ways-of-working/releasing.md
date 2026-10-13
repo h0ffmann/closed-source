@@ -22,6 +22,9 @@ release. arXiv receives the LaTeX source, because arXiv compiles submissions its
 PDFs made from TeX.
 
 <!-- minted:start -->
+The latest release is v0.3.0, with the version DOI
+[10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831). The concept DOI, which always resolves to the latest version, is
+[10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). [`RELEASES.md`](../../RELEASES.md) lists every release.
 <!-- minted:end -->
 
 ## Once per repository
@@ -57,14 +60,14 @@ one pull request that says "vX.Y.Z is live" and puts the new DOI wherever the la
 named. One command writes it, the same way each time, so nobody has to remember the places.
 
 ```sh
-just release 0.2.1          # 1. tag and push; the `release` workflow publishes the GitHub release
-git switch -c docs/v0.2.1-live
+just release X.Y.Z          # 1. tag and push; the `release` workflow publishes the GitHub release
+git switch -c docs/vX.Y.Z-live
 just minted --wait          # 2. wait until Zenodo has the DOI, then write it into the repository
 git diff                    # 3. read what it wrote
 just check                  # 4. the same gate as any pull request
-git add -u && git commit -m "docs(release): v0.2.1 is live"
-git push -u origin docs/v0.2.1-live
-scripts/minted.sh --pr-body | gh pr create --title "docs(release): v0.2.1 is live" --body-file -
+git add -u && git commit -m "docs(release): vX.Y.Z is live"
+git push -u origin docs/vX.Y.Z-live
+scripts/minted.sh --pr-body | gh pr create --title "docs(release): vX.Y.Z is live" --body-file -
 ```
 
 What `scripts/minted.sh` writes, and from where:

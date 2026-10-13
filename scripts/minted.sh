@@ -6,7 +6,8 @@
 # This script makes that pull request's changes, the same way each time:
 #   - RELEASES.md: the "is live" line and the table of every release, from the Git tags, Zenodo's
 #     version DOIs and the pull requests merged between the tags; the "Next: vX.Y.Z" section of a
-#     version that is now released is removed;
+#     version that is now released becomes its changelog, "vX.Y.Z: what changed", which the
+#     website shows;
 #   - README.md and README.easy.pt-BR.md: the version DOI badge, the status line, the row of the
 #     two-DOI table, then scripts/readme.sh --stamp (the same change went into both);
 #   - docs/4-ways-of-working/releasing.md: the paragraph that names the latest release;
@@ -44,11 +45,12 @@ changes() {
 # The concept DOI, from CITATION.cff (generated from tools/src/fabric/citation.gleam).
 concept() { grep -m1 -oE '^doi: 10\.5281/zenodo\.[0-9]+' CITATION.cff | cut -d' ' -f2; }
 
-# "<version>\t<doi>" for every Zenodo record of the concept DOI.
+# "<version>\t<doi>" for the newest Zenodo records of the concept DOI. 25 is the largest page
+# Zenodo gives a request with no token; a larger size is answered with 400.
 version_dois() {
   local c="$1"
   curl -fsS --max-time 120 -A paper-fabric -H 'Accept: application/json' \
-    "$zenodo/api/records?q=conceptrecid%3A${c##*zenodo.}&all_versions=true&sort=mostrecent&size=100" \
+    "$zenodo/api/records?q=conceptrecid%3A${c##*zenodo.}&all_versions=true&sort=mostrecent&size=25" \
     | pick_versions "$c"
 }
 
@@ -64,9 +66,11 @@ pick_versions() {
 # replace_once <file> <perl regex> <replacement text>: exactly one line must match, or it stops.
 replace_once() {
   local file="$1" n
-  n="$(RX="$2" perl -CSD -ne 'BEGIN { $n = 0 } $n++ if /$ENV{RX}/; END { print $n }' "$file")"
+  # The environment is bytes; the files are read as UTF-8, so the pattern is decoded too
+  # ("versão" would match nothing).
+  n="$(RX="$2" perl -CSD -ne 'BEGIN { $n = 0; utf8::decode($ENV{RX}) } $n++ if /$ENV{RX}/; END { print $n }' "$file")"
   [ "$n" = 1 ] || { echo "minted: $file: expected one line that matches /$2/, found $n; the page changed shape, so update scripts/minted.sh with it" >&2; exit 1; }
-  RX="$2" TO="$3" perl -CSD -i -pe 's/$ENV{RX}/$ENV{TO}/' "$file"
+  RX="$2" TO="$3" perl -CSD -i -pe 'BEGIN { utf8::decode($ENV{RX}); utf8::decode($ENV{TO}) } s/$ENV{RX}/$ENV{TO}/' "$file"
 }
 
 doi_link() { printf '[%s](https://doi.org/%s)' "$1" "$1"; }
@@ -79,6 +83,9 @@ case "${1:-}" in
     replace_once "$d/f" '\*\*status:\*\* v\S+ is live' '**status:** v0.2.0 is live'
     [ "$(sed -n 2p "$d/f")" = '**status:** v0.2.0 is live (x).' ] || fail "replace_once: $(sed -n 2p "$d/f")"
     if (replace_once "$d/f" 'no such line' x) 2>/dev/null; then fail "a missing line was accepted"; fi
+    printf 'a versão v0.1.0 está no ar\n' >"$d/p"
+    replace_once "$d/p" 'a versão v\S+ está no ar' 'a versão v0.2.0 está no ar'
+    [ "$(cat "$d/p")" = 'a versão v0.2.0 está no ar' ] || fail "replace_once with a letter outside ASCII: $(cat "$d/p")"
     printf 'x is live\nx is live\n' >"$d/g"
     if (replace_once "$d/g" 'is live' x) 2>/dev/null; then fail "two matching lines were accepted"; fi
     json='{"hits":{"hits":[{"doi":"10.5281/zenodo.9","conceptdoi":"10.5281/zenodo.8","metadata":{"version":"v0.1.1"}},{"doi":"10.5281/zenodo.7","conceptdoi":"10.5281/zenodo.6","metadata":{"version":"v9.9.9"}}]}}'
@@ -101,7 +108,7 @@ dois="$(mktemp)"; trap 'rm -f "$dois"' EXIT
 tries=1
 [ "${1:-}" = --wait ] && tries=40
 for i in $(seq "$tries"); do
-  version_dois "$c" >"$dois" || true
+  version_dois "$c" >"$dois" || echo "minted: Zenodo's API did not answer the question; see the error above" >&2
   grep -q "^$latest"$'\t' "$dois" && break
   if [ "$i" -lt "$tries" ]; then echo "minted: Zenodo has no DOI for $latest yet; waiting 30 s ($i of $tries)" >&2; sleep 30; fi
 done
@@ -118,6 +125,8 @@ if [ "${1:-}" = --pr-body ]; then
 The report that follows every release (\`docs/4-ways-of-working/releasing.md\`, step 6), written by \`just minted\`.
 
 **$latest is live.**
+
+$(awk -v h="## $latest: what changed" '$0 == h { on = 1; next } on && /^## / { exit } on' RELEASES.md)
 
 - Tag: \`$latest\` at \`$(git rev-parse --short "$latest")\`, $long_date.
 - GitHub release: $repo_url/releases/tag/$latest
@@ -163,7 +172,12 @@ $rows<!-- releases:end -->"
 grep -q '^<!-- releases:start -->$' RELEASES.md && grep -q '^<!-- releases:end -->$' RELEASES.md \
   || { echo "minted: RELEASES.md has no <!-- releases:start --> ... <!-- releases:end --> block" >&2; exit 1; }
 BLOCK="$block" perl -CSD -0777 -i -pe 's/<!-- releases:start -->.*?<!-- releases:end -->/$ENV{BLOCK}/s' RELEASES.md
-TAG="$latest" perl -CSD -0777 -i -pe 's/^## Next: \Q$ENV{TAG}\E\b.*?(?=^## |\z)//ms' RELEASES.md
+# The "Next" section of a version that is now released becomes its changelog: the heading changes
+# and the bullets stay. The website shows the newest "## vX.Y.Z: what changed" section
+# (tools/fabric content), so the heading's words are a contract.
+TAG="$latest" perl -CSD -i -pe 's/^## Next: \Q$ENV{TAG}\E\b.*$/## $ENV{TAG}: what changed/' RELEASES.md
+grep -q "^## $latest: what changed\$" RELEASES.md \
+  || echo "minted: RELEASES.md has no changelog for $latest (no \"## Next: $latest\" section was written before the release); the website will show the one before it" >&2
 
 # --- The pages that name the latest release.
 old="$(grep -oE '\*\*status:\*\* v[0-9]+\.[0-9]+\.[0-9]+ is live' README.md | grep -oE 'v[0-9.]+[0-9]' || true)"

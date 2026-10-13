@@ -1,7 +1,7 @@
 # .md — the quality of the Markdown files, with three analysers from the flake's `md` shell
 # (`just md-quality`, scripts/md-quality.sh): markdownlint-cli2 for the structure, Vale for the
 # prose rules of AGENTS.md, lychee for links to files and headings that do not exist. No network:
-# web links are the `live links` workflow's. Each analyser is first given a bad file and must
+# web links are the `live links` workflow's, which also runs on each pull request. Each analyser is first given a bad file and must
 # refuse it. docs/4-ways-of-working/md-quality.md has the rules.
 name: .md
 

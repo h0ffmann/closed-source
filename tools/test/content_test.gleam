@@ -89,3 +89,15 @@ pub fn scores_test() {
     ]
   assert content.scores("no table here") == []
 }
+
+pub fn changelog_is_the_newest_what_changed_section_test() {
+  assert content.changelog(
+      "# R\n\n## v0.2.0: what changed\n\nChanges since v0.1.0:\n\n- the **record** is a `book`\n  ([why](x.md));\n- two.\n\n## v0.1.0: what changed\n\n- old.\n",
+    )
+    == #("v0.2.0", ["the record is a book (why)", "two"])
+  // A version that is not released yet is not a changelog.
+  assert content.changelog(
+      "# R\n\n## Next: v0.3.0 (not released yet)\n\n- x.\n",
+    )
+    == #("", [])
+}

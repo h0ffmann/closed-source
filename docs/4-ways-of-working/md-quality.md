@@ -77,11 +77,22 @@ On 13 October 2026, before any fix, on `main` after #45:
 
 ## Live links
 
-The workflow `live links` runs `just md-quality --online` after each push to `main`, each Monday
-and by hand. lychee fetches every web link of the Markdown files and of
+The workflow `live links` runs `just md-quality --online` on each pull request, after each push
+to `main`, each Monday and by hand. lychee fetches every web link of the Markdown files and of
 <https://h0ffmann.github.io/closed-source/>. It passes only when every link answers, so its
-badge in `README.md` is green only at 100%. It does not run on a pull request: a site that is
-down for an hour must not block a merge.
+badge in `README.md` is green only at 100%.
+
+**The same checks on a pull request and on `main`.** At first this workflow ran only on `main`,
+so that a site that was down for an hour would not block a merge. The cost was worse: twice on
+13 October 2026 a link failed on `main` after its pull request was green (a publisher that
+answered 405, then a settings page that only the owner can open). So the rule is: a check that
+can fail on `main` runs on the pull request first. lychee tries a link five times; if one still fails, it runs once
+more after a minute and fetches only the links that failed. That takes care of the site that is
+busy for a moment (GitHub answered 503 to one link of 540 while this was written), and a dead
+link still fails.
+
+A link to a page that needs a login (a repository's settings) is written as code, not as a
+link: the check cannot open it.
 
 A 403, a 405 and a 429 count as an answer: some sites refuse a robot and serve a person. The
 first run on `main` (13 October 2026) failed on one link of 513: the DOI

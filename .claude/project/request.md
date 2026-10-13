@@ -957,3 +957,17 @@ Read as: the repository's social preview, `docs/social/github/social-preview.png
 and 117 kB, inside GitHub's limits. It is the website's cover made small. Every word is inside
 the middle square, because a small preview cuts the picture to its centre. The owner uploads it
 in the repository's settings; GitHub has no API for that.
+
+```text
+do a release now 0.3.0, minted on Zenodo, and Create the PR with all necessary updates to announce, with changelog (LATEST changelog should be visible in the site). Also fix the CI currently broken. FIX IT in the PR. I dont want to get errors directly on main again. CI should be consistent
+```
+
+Read as: `just release 0.3.0` (the owner names the release), then the report pull request.
+Zenodo minted 10.5281/zenodo.23349831, as a book. The report is written by `just minted`, which
+this pull request adds. The changelog is the "what changed" section of `RELEASES.md`: the
+"Next" section that was written before the release, with a new heading; `tools/fabric content`
+reads the newest one and the website shows it under "What changed in v0.3.0". The broken check
+was `live links`: it ran only on `main`, so a link could fail there after a green pull request
+(this time a settings page that only the owner can open). Now it runs on each pull request too,
+with retries; the rule is in AGENTS.md: a check that can fail on `main` runs on the pull
+request first.

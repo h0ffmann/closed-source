@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="adafe840cebf0ce89da3a78a51eed3737d844f8d85b6909c94d3d86cf764dfb1" -->
+<!-- easy: source="README.md"; sha256="1f43c33ee6721e80a119551808db0a6f62e9fcb3640774d8fcffb095ebf777ea" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -40,7 +40,7 @@ muda):
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) e
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**situação:** a versão v0.2.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
+**situação:** a versão v0.3.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
 ainda. a [avaliação de prontidão](docs/1-product/readiness/2026-10-12-ready-to-promote.md) diz o
 que falta para a v1.
 
@@ -192,7 +192,7 @@ trabalho tem dois tipos de DOI. cada um responde a uma pergunta.
 
 | | DOI mais recente | DOI permanente |
 |---|---|---|
-| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.2.0: [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204); v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.0: [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831); versões anteriores: [`RELEASES.md`](RELEASES.md) |
 | leva para | a versão mais nova, seja qual for no dia do clique | uma versão só, sempre o mesmo texto |
 | quantos existem | um para o trabalho inteiro | um para cada versão |
 | serve para | citar o trabalho | dizer exatamente qual texto você leu |

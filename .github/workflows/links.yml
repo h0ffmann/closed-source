@@ -1,10 +1,12 @@
 # live links — lychee fetches every web link of the Markdown files and of the published website
 # (`just md-quality --online`). It passes only when 100% of the links answer, so its badge in
-# README.md is green only then. It runs after each push to main, each Monday, and by hand; not on
-# a pull request, because a site that is down for an hour must not block a merge.
+# README.md is green only then. It runs on each pull request and each push to main, so main does
+# not fail on a link that a pull request passed; and each Monday and by hand, because a page on
+# the web can go away with no change here.
 name: live links
 
 on:
+  pull_request:
   push:
     branches: [main]
   schedule:
@@ -15,7 +17,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: live-links
+  group: live-links-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:

@@ -25,6 +25,8 @@ linked docs before you change what they cover.
   writes the release into it and into every page that names the latest release; never write a
   version DOI by hand.
 - Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
+- CI is the same on a pull request and on `main`: a check that can fail on `main` runs on the
+  pull request first (`.github/workflows/`; the reason is in `docs/4-ways-of-working/md-quality.md`).
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
   rules in `docs/4-ways-of-working/md-quality.md`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.

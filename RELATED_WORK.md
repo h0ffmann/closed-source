@@ -94,17 +94,23 @@ The paper itself cites 41 works (`papers/closed-source/refs.bib`, each with its 
 `REFERENCES.md`). Only these are in the record, because a record's ties are for the works the
 paper stands on most, not for its whole reference list.
 
-## Added for the next release
+## Added in v0.3.0
 
-The record of v0.2.0 is frozen. Two ties were added to `.zenodo.json` after it, so that the
-writer's other works are cited here in full. They show from v0.2.1 on.
+The record of v0.2.0 is frozen. Three ties were added to `.zenodo.json` after it. They are in the
+record of v0.3.0, [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831). Read on 13
+October 2026: Zenodo's record has 12 ties and the type "Book"; DataCite registered the DOI at
+19:17 UTC, holds 13 related identifiers (the 12 and the concept DOI) and counts 7 references,
+one more than for v0.2.0. The sections above are still the reading of v0.2.0; this section is
+what v0.3.0 added.
+
+Two ties are to the writer's own works, so that they are cited here in full:
 
 | Tie | To | Why |
 |---|---|---|
 | requires | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) (picasso) | This repository builds its PDFs and its website with picasso's `paper` and `gleam-website` labs, pinned in `flake.nix`. The paper already cites picasso; `requires` says the second thing, and it answers the `isRequiredBy` that picasso's record gets in return |
 | cites | <https://github.com/h0ffmann/nashkell> (nashkell) | The paper cites it three times (sections 6 and 9; `hoffmann2026nashkell` in `refs.bib`), and the record did not name it. It is the writer's work and has no DOI, so the tie is a URL: stored, and not counted |
 
-A third tie was added on 13 October 2026, to a work by another person:
+The third tie is to a work by another person:
 
 | Tie | To | Why |
 |---|---|---|

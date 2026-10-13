@@ -17,7 +17,7 @@
 [![github links](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh0ffmann.github.io%2Fclosed-source%2Flinks.json&query=%24.github&label=github%20links&style=flat-square&color=111111)](docs/4-ways-of-working/md-quality.md#the-link-counters)
 [![zenodo links](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh0ffmann.github.io%2Fclosed-source%2Flinks.json&query=%24.zenodo&label=zenodo%20links&style=flat-square&color=1682D4)](docs/4-ways-of-working/md-quality.md#the-link-counters)
 [![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
-[![v0.2.0 DOI](https://img.shields.io/badge/v0.2.0_DOI-10.5281%2Fzenodo.23335204-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23335204)
+[![v0.3.0 DOI](https://img.shields.io/badge/v0.3.0_DOI-10.5281%2Fzenodo.23349831-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23349831)
 [![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-111111?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
 [![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-111111?style=flat-square&logo=gnu&logoColor=white)](#licence)
 
@@ -45,7 +45,7 @@ other citable work by the writer, each with its latest DOI:
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) and
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**status:** v0.2.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
+**status:** v0.3.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
 
@@ -158,7 +158,7 @@ says more, with the other books behind this repository.
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
 | [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
-| [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.2.0 is the latest |
+| [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.3.0 is the latest |
 | [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | how a reader finds this work: the zenodo keywords, the works this one is tied to in zenodo and datacite, and the github topics, each with its counts and its date of record |
 | [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of five READMEs is cited (this one, marola, ouroboric-dev, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
@@ -250,7 +250,7 @@ and each answers a different question.
 
 | | latest DOI (concept DOI) | permanent DOI (version DOI) |
 |---|---|---|
-| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.2.0: [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204); v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.0: [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831); earlier versions: [`RELEASES.md`](RELEASES.md) |
 | resolves to | the newest release, whichever it is on the day you click | one release, the same bytes forever |
 | how many | one for the whole work | one for each release |
 | changes when a release is made | no; it starts to point at the new release | no; the new release gets its own |

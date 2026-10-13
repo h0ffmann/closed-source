@@ -148,7 +148,7 @@ pub fn the_paper_pdf_is_linked_from_the_cover_the_tile_and_read_test() {
 pub fn the_ci_card_shows_each_workflow_with_its_state_test() {
   let html = app.initial() |> app.view |> element.to_string
   assert string.contains(html, "what happens when the book changes")
-  assert list.length(app.checks) == 4
+  assert list.length(app.checks) == 5
   assert list.all(list.append(app.checks, app.after), fn(c: app.Check) {
     string.contains(
       html,
@@ -162,4 +162,17 @@ pub fn the_ci_card_shows_each_workflow_with_its_state_test() {
   // A release runs on a tag, so its badge does not ask for main.
   assert string.contains(html, "release.yml?label=release")
   assert string.contains(html, "href=\"#ci\"")
+}
+
+pub fn the_latest_changelog_is_on_the_page_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  // Empty before the first "## vX.Y.Z: what changed" section of RELEASES.md.
+  assert case content.changelog {
+    #("", _) -> True
+    #(version, changes) ->
+      string.contains(html, "What changed in " <> version)
+      && list.length(changes) > 0
+      && string.contains(html, "href=\"#changes\"")
+      && string.contains(html, "/releases/tag/" <> version)
+  }
 }

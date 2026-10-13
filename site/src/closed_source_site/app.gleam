@@ -78,6 +78,7 @@ pub fn view(model: Model) -> Element(Msg) {
     header(),
     html.main([attribute.class("wrap")], [
       shelf_section(),
+      changes_section(),
       thinkers_section(),
       notes_section(),
       read_section(),
@@ -338,6 +339,42 @@ fn shelf_section() -> Element(msg) {
   }
 }
 
+/// What the latest release changed: the newest changelog of RELEASES.md, which `just minted`
+/// writes after each release. Nothing when RELEASES.md has no changelog yet.
+fn changes_section() -> Element(msg) {
+  case content.changelog {
+    #("", _) | #(_, []) -> element.none()
+    #(version, changes) ->
+      html.section([attribute.aria_labelledby("changes")], [
+        section_head(
+          "changes",
+          "What changed in " <> version,
+          external(content.repo <> "/blob/main/RELEASES.md", "every release"),
+        ),
+        html.p([attribute.class("sub")], [
+          html.text("The latest release, "),
+          external(
+            content.repo <> "/releases/tag/" <> version,
+            version <> " on GitHub",
+          ),
+          case list.key_find(content.version_dois, version) {
+            Ok(doi) ->
+              html.span([], [
+                html.text(", with its permanent DOI "),
+                external("https://doi.org/" <> doi, doi),
+                html.text("."),
+              ])
+            Error(_) -> html.text(".")
+          },
+        ]),
+        html.ul(
+          [attribute.class("changes")],
+          list.map(changes, fn(c) { html.li([], [html.text(c)]) }),
+        ),
+      ])
+  }
+}
+
 fn section_head(
   id: String,
   title: String,
@@ -356,6 +393,7 @@ fn header() -> Element(msg) {
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
     link("#dois", "DOIs"),
+    link("#changes", "Changes"),
     link("#thinkers", "50 Thinkers"),
     link("#notes", "Second brain"),
     link("#read", "Read"),
@@ -892,6 +930,11 @@ pub const checks = [
     "md.yml",
     "three analysers read the markdown: structure, plain words, links to files.",
   ),
+  Check(
+    "live links",
+    "links.yml",
+    "every web link of the markdown and of this website is fetched. green means 100% answer.",
+  ),
 ]
 
 /// What runs after the merge, and at a release.
@@ -904,7 +947,7 @@ pub const after = [
   Check(
     "live links",
     "links.yml",
-    "then every web link of the website and the markdown is fetched. green means 100% answer.",
+    "the links are fetched again, and each Monday: a page on the web can go away with no change here.",
   ),
   Check(
     "release",
@@ -955,7 +998,8 @@ fn status(check: Check) -> Element(msg) {
 }
 
 /// What happens when the book changes: the checks before a merge and what runs after it, each
-/// with its state now. One card, after the tiles (.claude/skills/card-style/SKILL.md).
+/// with its state now. The same checks run on a pull request and on main, so main does not fail
+/// on something a pull request passed. One card, after the tiles (.claude/skills/card-style/SKILL.md).
 fn ci_section() -> Element(msg) {
   let stage = fn(title: String, text: String, rows: List(Check)) {
     html.li([attribute.class("ci-stage")], [
@@ -988,7 +1032,7 @@ fn ci_section() -> Element(msg) {
           [],
         ),
         stage(
-          "four checks read it",
+          "five checks read it",
           "each one reads the change before the merge. a red one is a reason not to merge.",
           checks,
         ),
