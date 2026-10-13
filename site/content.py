@@ -58,9 +58,10 @@ def citations(readme: str) -> list[tuple[str, str]]:
 
 
 def thinkers(roster: str) -> list[tuple[int, str, str, str]]:
-    """(number, thinker, why, status) for each row of 50THINKERS.md's table."""
-    rows = re.findall(r"^\|\s*(\d+)\s*\|([^|]*)\|([^|]*)\|([^|]*)\|\s*$", roster, re.M)
-    return [(int(n), t.strip(), w.strip(), st.strip()) for n, t, w, st in rows]
+    """(number, thinker, why, status) for each row of 50THINKERS.md's table (# | Thinker | Area | Why |
+    Cited | Status). The rows stay in the file's order, which is shuffled on purpose."""
+    rows = re.findall(r"^\|\s*(\d+)\s*\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|\s*$", roster, re.M)
+    return [(int(n), t.strip(), w.strip(), st.strip()) for n, t, _, w, _, st in rows]
 
 
 def notes(folder: Path) -> list[tuple[str, str, str, str]]:
@@ -175,7 +176,7 @@ def self_test() -> int:
     assert gleam_string('a"b\\c\nd') == '"a\\"b\\\\c\\nd"'
     readme = "x\n<!-- citation:start -->\n\nBibTeX:\n\n```bibtex\n@misc{k,\n}\n```\n\nAPA:\n\n> A. (2026). *T*.\n\n<!-- citation:end -->\n"
     assert citations(readme) == [("BibTeX", "@misc{k,\n}"), ("APA", "A. (2026). T.")], citations(readme)
-    roster = "| # | Thinker | Why | Status |\n|---:|---|---|---|\n| 1 | Linus Torvalds | Linux | proposed |\n| 2 | — | — | open |\n"
+    roster = "| # | Thinker | Area | Why | Cited | Status |\n|---:|---|---|---|:---:|---|\n| 1 | Linus Torvalds | software | Linux | ☑ | proposed |\n| 2 | — | — | — | — | open |\n"
     assert thinkers(roster) == [(1, "Linus Torvalds", "Linux", "proposed"), (2, "—", "—", "open")], thinkers(roster)
     print("content: self-test ok")
     return 0
