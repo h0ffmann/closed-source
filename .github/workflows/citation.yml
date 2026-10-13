@@ -1,14 +1,15 @@
 # citation — the metadata Zenodo and GitHub read: .zenodo.json valid against Zenodo's vocabularies,
-# CITATION.cff generated from it (scripts/citation.py, borrowed from h0ffmann/picasso and
-# marola-dev/marola), then the CFF checked by the Citation File Format project's own validator.
+# CITATION.cff generated from it (`tools/fabric citation`, ported to Gleam from the citation.py of
+# h0ffmann/picasso and marola-dev/marola), then the CFF checked by the Citation File Format
+# project's own validator. The tools run in the Nix toolchain (flake.nix).
 name: citation
 
 on:
   pull_request:
-    paths: [CITATION.cff, .zenodo.json, README.md, scripts/citation.py, scripts/zenodo_upload.py]
+    paths: [CITATION.cff, .zenodo.json, README.md, "tools/**"]
   push:
     branches: [main]
-    paths: [CITATION.cff, .zenodo.json, README.md, scripts/citation.py, scripts/zenodo_upload.py]
+    paths: [CITATION.cff, .zenodo.json, README.md, "tools/**"]
 
 permissions:
   contents: read
@@ -16,12 +17,13 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-      - run: python3 scripts/citation.py --self-test
-      - run: python3 scripts/citation.py --check
-      - run: python3 scripts/zenodo_upload.py --self-test
+      - uses: cachix/install-nix-action@v31
+      - run: nix develop --no-update-lock-file --command tools/fabric citation --self-test
+      - run: nix develop --no-update-lock-file --command tools/fabric citation --check
+      - run: nix develop --no-update-lock-file --command tools/fabric zenodo-upload --self-test
       - uses: citation-file-format/cffconvert-github-action@2.0.0
         with:
           args: --validate

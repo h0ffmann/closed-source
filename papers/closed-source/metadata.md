@@ -9,7 +9,7 @@ writer:
   name: Matheus Hoffmann
   orcid: 0009-0009-1056-7661
   affiliation: Escola Politécnica, Universidade Federal do Rio de Janeiro
-# Shown on the title page. Trademarks of their projects, not licensed here: scripts/logos.py
+# Shown on the title page. Trademarks of their projects, not licensed here: `tools/fabric logos`
 # fetches each SVG at a pinned commit, checks its hash and converts it; nothing is committed.
 logos:
   - file: logos/marola.pdf

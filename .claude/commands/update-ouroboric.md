@@ -34,5 +34,5 @@ for this run; still keep both files complete.
 8. Commit on a branch with a message that names the commits read, and open a pull request. Do
    not push to `main`.
 
-If the organisation publishes a new public repository, add it to `REPOS` in
-`scripts/ouroboric.py` in the same change.
+If the organisation publishes a new public repository, add it to `repos` in
+`tools/src/fabric/ouroboric.gleam` in the same change.

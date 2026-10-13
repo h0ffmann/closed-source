@@ -10,7 +10,7 @@ related: [50THINKERS.md, BOOKS.md, papers/closed-source/refs.bib]
 
 The long list: every person whose work this book reads, up to 500. The 50 thinkers
 ([50THINKERS.md](50THINKERS.md)) are chosen from it, so every named thinker must have a row here.
-`just check` (`scripts/book_check.py`) fails if the table has more than 500 rows, if the rows are
+`just check` (`tools/fabric book-check`) fails if the table has more than 500 rows, if the rows are
 not numbered from 1 in order, if a name appears twice, or if a thinker is missing.
 
 The first rows come from the people the paper cites (`refs.bib`, organisations left out) and from

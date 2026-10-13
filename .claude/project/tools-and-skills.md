@@ -26,7 +26,8 @@ The first pull request's initial commit came from one session. The ASD-STE100 pa
 sub-agents of that session, following picasso's two-pass method: two rewrote the paper in halves
 (pass 1), and one checked the whole text against the rules and the original and wrote the new
 section's STE text (pass 2). `scripts/ste_check.py` then checked mechanically that no citation,
-quotation, number or marker changed.
+quotation, number or marker changed. That script was later ported to Gleam: it is now
+`tools/fabric ste-check`.
 
 ## Commands
 

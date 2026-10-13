@@ -29,7 +29,7 @@ just paper     # the PDFs, in picasso's paper lab -> pdf/
 just book      # the PDFs and the book's checks (50 thinkers, cite lines, references, STE)
 ```
 
-The tools (pandoc 3.7, pandoc-crossref, XeLaTeX, pdfLaTeX, python, just, gh) come from the
+The tools (pandoc 3.7, pandoc-crossref, XeLaTeX, pdfLaTeX, Gleam, Erlang, just, gh) come from the
 `paper` lab of [h0ffmann/picasso](https://github.com/h0ffmann/picasso/tree/main/labs/paper),
 pinned by `flake.lock`. `just paper` and `just book` turn flakes on for themselves; the commands
 below need the `nix.conf` line above.
@@ -43,13 +43,19 @@ just arxiv             # arXiv source bundles, checked with pdfLaTeX, in build/a
 just --list            # every recipe
 ```
 
+**Tooling.** The checks and generators are one Gleam project (Erlang target) in `tools/`. Run
+them as `tools/fabric <command>` from the repository root, in `nix develop`. The commands are
+`arxiv`, `book-check`, `citation`, `cite-check`, `content`, `logos`, `notes-check`, `ouroboric`,
+`refs-check`, `ste-check` and `zenodo-upload`. `just` calls them for you. `cd tools && gleam test`
+runs their tests.
+
 Each paper builds twice: `pdf/<slug>.pdf` from `prose/`, and `pdf/<slug>-ste.pdf` from `prose-ste/`,
 the same paper in ASD-STE100 Simplified Technical English (after h0ffmann/picasso's
 `WHITEPAPER.md`). `/ste100` ([`.claude/commands/ste100.md`](.claude/commands/ste100.md)) makes the
-STE text; `scripts/ste_check.py`, run by `just check`, fails if it changes a citation, quotation,
+STE text; `tools/fabric ste-check`, run by `just check`, fails if it changes a citation, quotation,
 number or marker. The passes are logged in `papers/<slug>/STE100.md`. A paper with `prose-pt-BR/`
 also builds `pdf/<slug>-pt-BR.pdf`, the printed edition in Brazilian Portuguese; `just check` runs
-`scripts/ste_check.py --translation` on it, so it keeps every citation, number and quotation.
+`tools/fabric ste-check --translation` on it, so it keeps every citation, number and quotation.
 
 The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
 Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
@@ -60,7 +66,7 @@ and the Git revision stamped on every page.
 `site/` is the paper's website: a [Lustre](https://lustre.build) application in Gleam, in the
 style of [picasso's site](https://h0ffmann.github.io/picasso/). The title, abstract (original and
 ASD-STE100), authors, contents, counts and citations come from the paper and this README
-(`site/content.py`), so the site never repeats a fact by hand. The PDFs ship with it.
+(`tools/fabric content`), so the site never repeats a fact by hand. The PDFs ship with it.
 
 ```sh
 just site-build        # PDFs, then site/dist/; needs only Nix and just
@@ -93,8 +99,9 @@ says more, with the other books behind this repository.
 | [`papers/closed-source/`](papers/closed-source/) | the paper: `metadata.md`, `prose/NN-*.md`, `refs.bib`, and the reference log `REFERENCES.md` |
 | [`format/`](format/) | the LaTeX template and pandoc-crossref settings shared by every paper |
 | [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pins (picasso's `paper` and `gleam-website` labs) |
-| [`site/`](site/) | the website: Gleam + Lustre, `site/content.py` reads the paper |
-| [`scripts/`](scripts/) | reference check, STE check, arXiv bundle, citation metadata, release and Zenodo upload |
+| [`site/`](site/) | the website: Gleam + Lustre, `tools/fabric content` reads the paper |
+| [`tools/`](tools/) | the checks and generators, one Gleam project: reference check, STE check, arXiv bundle, citation metadata, site content and Zenodo upload |
+| [`scripts/`](scripts/) | `release.sh`, which tags a release |
 | [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
@@ -164,8 +171,8 @@ A release is a Git tag on `main`. One command makes it; CI does the rest; a pers
 5. **Publish on Zenodo**: open the draft on zenodo.org (Uploads). Check the title, the three
    authors with their ORCIDs, the licence, and that the files are only the PDFs. Press
    **Publish**. **Caution:** a DOI is permanent, and you cannot delete a published record yourself.
-6. **After the first publication only**: put the concept DOI in `scripts/citation.py`
-   (`CONCEPT_DOI`), run `just citation`, and set the `ZENODO_CONCEPT_RECID` variable. Open a pull
+6. **After the first publication only**: put the concept DOI in `tools/src/fabric/citation.gleam`
+   (`concept_doi`), run `just citation`, and set the `ZENODO_CONCEPT_RECID` variable. Open a pull
    request with the result.
 7. **arXiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
    GitHub release, or run `just arxiv` (`build/arxiv/`).

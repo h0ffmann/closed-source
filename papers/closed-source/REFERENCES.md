@@ -9,7 +9,7 @@ style: research
 # Reference log
 
 Every entry in [`refs.bib`](refs.bib) was fetched by the drafting agent on 2026-10-12. This log
-records what was checked and how, so a reviewer can repeat the check. `scripts/refs_check.py`
+records what was checked and how, so a reviewer can repeat the check. `tools/fabric refs-check`
 fails when a `refs.bib` key has no row here, or a row's key is not in `refs.bib`.
 
 Status values: `verified` (source fetched, details match), `partial` (source fetched, a detail

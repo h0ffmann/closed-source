@@ -18,7 +18,7 @@ The four files beside this one are copied **as is**, byte for byte, from the Our
 `REUSE.toml` at that commit). CC BY 4.0 requires the copyright notice of the licensor, so
 `REUSE.toml` here keeps Ouroboric's own line for these four files. No changes were made.
 
-**As is.** The files are not edited, so they carry no cite line (`scripts/cite_check.py` skips
+**As is.** The files are not edited, so they carry no cite line (`tools/fabric cite-check` skips
 the files that `verbatim` above lists) and their relative links point into Ouroboric's tree,
 not this one. Follow them in the original:
 [ouroboric-dev/ouroboric](https://github.com/ouroboric-dev/ouroboric/tree/b355b1d52d6906f80447fe84283f705403533d0b/docs).
