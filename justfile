@@ -63,6 +63,7 @@ self-test:
     python3 scripts/ouroboric.py --self-test
     python3 scripts/cite_check.py --self-test
     python3 scripts/notes_check.py --self-test
+    scripts/release.sh --self-test
 
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
@@ -81,10 +82,14 @@ clean:
 shell:
     nix develop
 
-# Tag a release on main: VERSION is MAJOR.MINOR.PATCH. CI then builds the PDFs, makes the GitHub
-# release with the arXiv bundles and, with ZENODO_TOKEN set, a Zenodo draft. Add --dry-run first.
-release version *flags:
-    scripts/release.sh {{version}} {{flags}}
+# Tag main and publish: `just release` lists what is unreleased and suggests a bump, then
+# `just release minor|patch|major|X.Y.Z [--dry-run]` (scripts/release.sh, as in picasso).
+release *args:
+    scripts/release.sh {{args}}
+
+# The release tags, newest first.
+releases:
+    git fetch -q --tags origin && git tag -l 'v*' --sort=-v:refname --format='%(refname:short)  %(creatordate:short)  %(subject)'
 
 # Upload pdf/*.pdf from this machine to a Zenodo draft (needs ZENODO_TOKEN; CI does this on a tag).
 zenodo-draft version: check
