@@ -323,3 +323,12 @@ A Beleza Salvará o Mundo - Gregory Wolfe
 
 Read as: Gregory Wolfe, Beauty Will Save the World (ISI Books, 2011, checked on PhilArchive), as
 thinker 31, status chosen, with a row in 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:24 UTC, verbatim:
+
+```text
+Add Cicero, Plato, Aristotle, Socrates, justify only by 'mathematics'
+```
+
+Read as: thinkers 32 to 35, status chosen, each with "mathematics" as the only reason, and a row
+each in 500AUTHORS.md.
