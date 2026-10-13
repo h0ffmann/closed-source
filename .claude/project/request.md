@@ -412,3 +412,17 @@ add h0ffmann/h0ffmann, add ww3-gpu, add marola-dev/marola
 
 Read as: three more shallow submodules in the same PR: h0ffmann/h0ffmann, h0ffmann/ww3-gpu and
 marola-dev/marola (the upstream, as named), each MIT.
+
+## Labels and the picasso Gleam issue
+
+Hoffmann, 2026-10-13 03:08 UTC, verbatim:
+
+```text
+create issue Port tooling (Gleam) to Picasso (with all proper labels). Create PR for ISSUE_ LABELS.md including relevant keyword for this repository for better outreach + de:ouroboric-dev-contato + para:ouroboric-dev-contato
+```
+
+Read as: (1) an issue "Port tooling (Gleam)" in h0ffmann/picasso, with the labels of picasso's
+LABEL.md (h0ffmann/picasso#120); (2) a PR here that adds ISSUE_LABELS.md: picasso's label shape,
+this repository's areas, `topic/*` labels from the `.zenodo.json` keywords for outreach, and the
+two A2A labels `de:ouroboric-dev-contato` and `para:ouroboric-dev-contato`. The labels are made on
+GitHub to match the file.
