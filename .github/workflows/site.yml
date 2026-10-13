@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
       - uses: cachix/install-nix-action@v31
       - name: content self-test
-        run: python3 site/content.py --self-test
+        run: nix develop --no-update-lock-file --command tools/fabric content --self-test
       - name: just site-build (PDFs, content, Gleam tests and bundle)
         run: nix develop --no-update-lock-file --command just site-build
       - uses: actions/upload-pages-artifact@v4
