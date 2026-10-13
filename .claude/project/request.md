@@ -405,3 +405,10 @@ also h0ffmann/picasso
 
 Read as: shallow submodules under forks/ for h0ffmann/rea, h0ffmann/ouroboric, h0ffmann/.github,
 h0ffmann/WW4 and h0ffmann/picasso, with forks/README.md naming each upstream and its licence.
+
+```text
+add h0ffmann/h0ffmann, add ww3-gpu, add marola-dev/marola
+```
+
+Read as: three more shallow submodules in the same PR: h0ffmann/h0ffmann, h0ffmann/ww3-gpu and
+marola-dev/marola (the upstream, as named), each MIT.

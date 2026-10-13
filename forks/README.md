@@ -7,7 +7,7 @@ related: [../.gitmodules, ../README.md]
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Forks
 
-The owner's forks that this book reads from, as shallow git submodules (Hoffmann, 13 October
+The owner's forks and the repositories around this book, as shallow git submodules (Hoffmann, 13 October
 2026). Each keeps its own licence; nothing here is relicensed, and REUSE does not lint submodules.
 Clone with `git submodule update --init --depth 1` when you need them; the build does not.
 
@@ -18,3 +18,6 @@ Clone with `git submodule update --init --depth 1` when you need them; the build
 | `ouroboric-github/` | [h0ffmann/.github](https://github.com/h0ffmann/.github) | [ouroboric-dev/.github](https://github.com/ouroboric-dev/.github) | MIT |
 | `WW4/` | [h0ffmann/WW4](https://github.com/h0ffmann/WW4) | [NOAA-EMC/WW4](https://github.com/NOAA-EMC/WW4), WAVEWATCH IV | LGPL-3.0 |
 | `picasso/` | [h0ffmann/picasso](https://github.com/h0ffmann/picasso) | the owner's own repository, whose labs build this book | AGPL-3.0 |
+| `h0ffmann/` | [h0ffmann/h0ffmann](https://github.com/h0ffmann/h0ffmann) | the owner's profile repository | MIT |
+| `ww3-gpu/` | [h0ffmann/ww3-gpu](https://github.com/h0ffmann/ww3-gpu) | the owner's own repository | MIT |
+| `marola/` | [marola-dev/marola](https://github.com/marola-dev/marola) | upstream itself, not a fork | MIT |

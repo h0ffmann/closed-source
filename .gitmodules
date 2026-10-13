@@ -18,3 +18,15 @@
 	path = forks/picasso
 	url = https://github.com/h0ffmann/picasso.git
 	shallow = true
+[submodule "forks/h0ffmann"]
+	path = forks/h0ffmann
+	url = https://github.com/h0ffmann/h0ffmann.git
+	shallow = true
+[submodule "forks/ww3-gpu"]
+	path = forks/ww3-gpu
+	url = https://github.com/h0ffmann/ww3-gpu.git
+	shallow = true
+[submodule "forks/marola"]
+	path = forks/marola
+	url = https://github.com/marola-dev/marola.git
+	shallow = true
