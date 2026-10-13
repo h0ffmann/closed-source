@@ -351,3 +351,33 @@ add in the same pr George Orwell, Isaac Asimov, and Prof. Jian from PredictiveHi
 Read as: thinkers 37 to 39 on the Dante PR, status chosen, reasons left for the owner: George
 Orwell, Isaac Asimov, and Jiang Xueqin, who made the Predictive History channel in 2023 (name and
 date checked on Wikipedia).
+
+Hoffmann, 2026-10-13 02:33 UTC, verbatim:
+
+```text
+Luiz Felipe Pondé, Brazilian Philosopher, Mario Ferreira dos Santos, Brazilian Phiulosopher, Auhtor of Filosofia Concreta (Pitagórico)
+```
+
+Read as: thinkers 40 and 41, status chosen: Luiz Felipe Pondé, Brazilian philosopher (reason to
+come), and Mário Ferreira dos Santos, Filosofia Concreta (Logos, 1957) and Pitágoras e o Tema do
+Número (1956), both checked on Wikipedia; a row each in 500AUTHORS.md.
+
+Hoffmann, 2026-10-13 02:34 UTC, verbatim:
+
+```text
+on the same pr add more layers to this file, first shuffle name order, on purpose, it's a essay structure this should be included in THINKERS.md disclaimer. Every thinker must have a checkbox if already cited, and area column
+```
+
+Read as: on the Pondé PR, 50THINKERS.md's rows shuffled once at random (seed 20261013), with a
+disclaimer that the order is an essay's and must not be sorted; new columns Area and Cited (☑ when
+the thinker is an author in refs.bib, ☐ when not); 500AUTHORS.md's Thinker numbers follow the new
+order; book_check and site/content.py read the six columns.
+
+Hoffmann, 2026-10-13 02:36 UTC, verbatim:
+
+```text
+Add in the same PR Marcus Baffa, to be explained
+```
+
+Read as: Marcus Baffa in the first open row of 50THINKERS.md, status chosen, reason "to be
+explained", area left for the owner; a row in 500AUTHORS.md.
