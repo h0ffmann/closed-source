@@ -423,3 +423,16 @@ add a footer mark in the website Made with Gleam (site-logo-icon) and Claude Cod
 
 Read as: a footer line "Made with [Gleam icon] Gleam and [Claude Code icon] Claude Code", each icon
 the project's own site icon, loaded from its owner and not copied here.
+## Labels and the picasso Gleam issue
+
+Hoffmann, 2026-10-13 03:08 UTC, verbatim:
+
+```text
+create issue Port tooling (Gleam) to Picasso (with all proper labels). Create PR for ISSUE_ LABELS.md including relevant keyword for this repository for better outreach + de:ouroboric-dev-contato + para:ouroboric-dev-contato
+```
+
+Read as: (1) an issue "Port tooling (Gleam)" in h0ffmann/picasso, with the labels of picasso's
+LABEL.md (h0ffmann/picasso#120); (2) a PR here that adds ISSUE_LABELS.md: picasso's label shape,
+this repository's areas, `topic/*` labels from the `.zenodo.json` keywords for outreach, and the
+two A2A labels `de:ouroboric-dev-contato` and `para:ouroboric-dev-contato`. The labels are made on
+GitHub to match the file.

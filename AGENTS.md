@@ -16,6 +16,7 @@ linked docs before you change what they cover.
 - Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.
 - Release and Zenodo: `docs/4-ways-of-working/releasing.md`.
 - Known gaps: `docs/1-product/readiness/`.
+- Issue and pull request labels: `ISSUE_LABELS.md`.
 
 ## Invariants
 
