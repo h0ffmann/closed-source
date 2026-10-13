@@ -262,3 +262,12 @@ create INDEX_REMISS.md ACRONYMOUS.md DESCRIPTION.md QUOTES.md NAGORI.md (ingest 
 
 Read as: five root files as skeletons, each with front matter, a cite line, its purpose and an
 empty table; the content comes with the ingest in a later request.
+
+Hoffmann, 2026-10-13 02:10 UTC, verbatim:
+
+```text
+add hardhule / ways-of-working NAGORI.md is never agent/automatic edited, add this a first remainder reading NAGORI.md
+```
+
+Read as: a hard rule in AGENTS.md and a ways-of-working page that no agent and no automation edits
+NAGORI.md, and the rule as the first thing NAGORI.md says, after its cite line.
