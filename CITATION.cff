@@ -33,21 +33,26 @@ identifiers:
     description: Concept DOI, resolves to the latest release
 license: CC-BY-4.0
 keywords:
-  - "open source"
-  - "closed source"
   - "reverse engineering"
   - "AI-assisted reverse engineering"
   - "decompilation"
+  - "binary analysis"
+  - "obfuscation"
+  - "code obfuscation"
   - "model extraction"
   - "knowledge distillation"
+  - "large language models"
+  - "AI coding agents"
   - "trade secrets"
+  - "proprietary software"
+  - "closed source"
+  - "open source"
+  - "security through obscurity"
+  - "Kerckhoffs's principle"
+  - "software security"
   - "software citation"
   - "research software"
-  - "FAIR"
   - "persistent identifiers"
-  - "AI coding agents"
-  - "Linux"
-  - "Git"
   - "position paper"
 preferred-citation:
   type: generic

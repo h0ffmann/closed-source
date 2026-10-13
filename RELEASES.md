@@ -25,7 +25,9 @@ this section):
 - the closed-source tile is in lower case, like the other tiles;
 - the cover has a fourth box, the number of commits, beside the pages and the notes;
 - a GitHub pill in the middle of the cover: the repository, the latest release and a star; and
-  the same pill at the top of `README.md`.
+  the same pill at the top of `README.md`;
+- new Zenodo keywords, chosen for reverse engineers ([`KEYWORDS.md`](KEYWORDS.md)): eight added,
+  three dropped.
 
 After the merge, the owner releases it by its name: `just release 0.2.1` (or `just release
 patch`). `just release` alone will suggest a minor bump, v0.3.0, because #41 was merged under a

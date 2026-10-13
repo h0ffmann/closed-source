@@ -145,6 +145,7 @@ says more, with the other books behind this repository.
 | [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
 | [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.2.0 is the latest |
+| [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | how a reader finds this work: the zenodo keywords, the works this one is tied to in zenodo and datacite, and the github topics, each with its counts and its date of record |
 | [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of five READMEs is cited (this one, marola, ouroboric-dev, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
@@ -252,6 +253,26 @@ after the tag ([release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)). so
 print its own permanent DOI; [zenodo's page for the latest DOI](https://zenodo.org/doi/10.5281/zenodo.23333656)
 lists every version with its DOI, and so does [`RELEASES.md`](RELEASES.md). the block below uses
 the latest DOI.
+
+### how a reader finds this work
+
+you only need to be seen by the right people
+([note](notes/202610130845-seen-by-the-right-people.md)). for this paper they are reverse
+engineers first, then the people who work on research software. three kinds of word lead a
+reader here. each has its own page, with the counts and the day they were read.
+
+| | what it is | where a reader meets it | page |
+|---|---|---|---|
+| keywords | 21 phrases on the zenodo record, such as "reverse engineering" and "decompilation" | on any zenodo record, a keyword is a link to every record with the same keyword | [`KEYWORDS.md`](KEYWORDS.md) |
+| related work | the works this one cites, by DOI: three by other people, three by the writer | zenodo's "related works" box; zenodo sends the ties to datacite, which counts them in both directions | [`RELATED_WORK.md`](RELATED_WORK.md) |
+| topics | 20 words on the github repository, such as `reverse-engineering` | github's topic pages and its search | [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) |
+
+- **a keyword must be written as the reader writes it.** zenodo has no fixed list, so "trade
+  secret" and "trade secrets" are two different rooms.
+- **a tie counts only when it is a DOI.** a link to a URL is kept, and not counted.
+- **both change only with a release.** a published version keeps the words and the ties it had.
+- **a word is kept when the right reader would type it and the paper is about it.** a word that
+  only brings more visitors is left out.
 
 <!-- citation:start -->
 

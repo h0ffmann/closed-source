@@ -16,6 +16,7 @@ where each kind of memory is. Read it after `AGENTS.md`.
 | Decisions and the changes that are open | [`docs/2-engineering/changes/`](docs/2-engineering/changes/) |
 | The people and their aliases | [`PERSONAS.md`](PERSONAS.md) |
 | The labels for issues and pull requests | [`ISSUE_LABELS.md`](ISSUE_LABELS.md) |
+| The Zenodo keywords, the related works as Zenodo and DataCite record them, and the GitHub topics, each with its date of record | [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) |
 | Each release, with its permanent DOI and what changed | [`RELEASES.md`](RELEASES.md) |
 | Citation scores of this README and four others, with the commit each was scored at | [`CITATION_SCORES.md`](CITATION_SCORES.md) |
 | Notes, one idea each | [`notes/`](notes/) and [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md) |

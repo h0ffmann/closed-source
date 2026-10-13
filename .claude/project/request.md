@@ -739,3 +739,49 @@ and also at the top of `README.md`, as a larger badge alone above the others. Be
 under its `feat` title, `just release` alone will suggest v0.3.0; `RELEASES.md` says to name
 v0.2.1.
 
+## Promotion and self promotion (essay)
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+Optimize Keywords for reverse engineers: I think someone got into my profile from my Zenodo Keywords. Create KEYWORDS.md and educate it on README.md. Create a PR for this
+```
+
+```text
+add note, with policy, in closed-source, you only need to be seen by the right people. Use closed-source pattern of citation
+```
+
+```text
+the name of this pr should be promotion and self promotion (essay)
+```
+
+```text
+remove the mark that it was unverified guess, please, people will read Zenodo anyways, my work has already related work indexed with other people, add this EXPLICITLY, educative and ouroboric way, with date-of-record (RELATED_WORK.md)
+```
+
+```text
+in this MD should explain how Zenodo indexes RELATED work, and current RELATED_WORK table complete (including the NATURE links)
+```
+
+```text
+in the same PR create the file GITHUB_REPO_TOPICS with better topics for better outreach with this paper and research
+```
+
+```text
+Check if all my other DOIs are properly linked in Zenodo. I want better outreach of my own work
+```
+
+Read as: one pull request with four things. `KEYWORDS.md`: the Zenodo keywords, chosen for
+reverse engineers by a written policy, with how many Zenodo records share each exact phrase; the
+list in `.zenodo.json` changes (eight added, three dropped) and reaches Zenodo with the next
+release. A note under SMART_NOTE_POLICY.md, "you only need to be seen by the right people", which
+is the policy. `RELATED_WORK.md`: how Zenodo indexes related work, every tie of the v0.2.0 record
+as DataCite holds it, with the publishers' pages (two are on nature.com), the date of record, and
+a check of the ties between the owner's four works: seven of twelve exist, and the five missing
+ones are lines in the other three repositories' `.zenodo.json`. `GITHUB_REPO_TOPICS.md`: twenty
+topics with GitHub's counts; topics are a repository setting, so the page gives the command and
+the owner runs it. The owner's guess that a visitor came from the Zenodo keywords is not in the
+note: it could not be checked, and the owner asked that the note not carry it as an unverified
+guess, so the note states only the two mechanisms that were seen. `RELATED_WORK.md` says plainly
+that every record that cites these works today is the owner's own.
+

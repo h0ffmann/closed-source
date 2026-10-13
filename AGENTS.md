@@ -18,6 +18,9 @@ linked docs before you change what they cover.
 - Release and Zenodo: `docs/4-ways-of-working/releasing.md`.
 - Known gaps: `docs/1-product/readiness/`.
 - Skills written for this repository, their lock and the hooks: `.claude/skills/README.md`.
+- How a reader finds this work: `KEYWORDS.md` (Zenodo keywords), `RELATED_WORK.md` (the ties in
+  Zenodo and DataCite) and `GITHUB_REPO_TOPICS.md`. Each has a date of record; never write a
+  count or a tie that was not read from the index that day.
 - Each release, its permanent DOI and what changed: `RELEASES.md`. Add a row after each release.
 - Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
 - Issue and pull request labels: `ISSUE_LABELS.md`.

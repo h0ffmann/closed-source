@@ -54,7 +54,9 @@ The README's "Secrets and keys" table lists every key, where it lives and how to
 6. Open a pull request that adds the release to [`RELEASES.md`](../../RELEASES.md) with its
    version DOI, and updates the places that name the latest release: the README's badge and its
    DOI table (and the easy version, with `scripts/readme.sh --stamp`), this page, and any open
-   draft in `docs/social/`. The website needs no change: its next build asks Zenodo for the
+   draft in `docs/social/`. Read the new record's ties and keywords back from DataCite and set
+   the date of record in [`RELATED_WORK.md`](../../RELATED_WORK.md) and
+   [`KEYWORDS.md`](../../KEYWORDS.md). The website needs no change: its next build asks Zenodo for the
    version DOIs.
 
 ## Rules the release keeps
