@@ -50,7 +50,9 @@ The snapshot states the commit it was taken from.
 The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October
 2026). Every release ships both editions, each with the same 50 thinkers and 100 pages. A change
 to one edition's facts goes into the other in the same pull request, as `prose/` and `prose-ste/`
-already do. The pt-BR edition does not exist yet.
+already do. The paper's printed pt-BR edition is `prose-pt-BR/`, built to
+`pdf/<slug>-pt-BR.pdf`; `scripts/ste_check.py --translation` fails when it loses a citation,
+number, quotation or marker of `prose/`. Quotations stay in English, with a translation after them.
 
 ## The opponent (hard rule)
 

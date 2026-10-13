@@ -31,7 +31,7 @@ $endif$
 \usepackage{titling}
 \usepackage{enumitem}
 \setlist{itemsep=2pt,topsep=4pt}
-\usepackage[english]{babel}
+\usepackage[$if(babel)$$babel$$else$english$endif$]{babel}
 \usepackage{csquotes}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt plus 2pt minus 1pt}
@@ -136,10 +136,10 @@ $endif$
 
 $if(abstract)$
 \begin{quote}
-\small\textbf{Abstract.} $abstract$
+\small\textbf{$if(abstract-title)$$abstract-title$$else$Abstract$endif$.} $abstract$
 
 $if(keywords)$
-\textbf{Keywords:} $for(keywords)$$keywords$$sep$; $endfor$.
+\textbf{$if(keywords-title)$$keywords-title$$else$Keywords$endif$:} $for(keywords)$$keywords$$sep$; $endfor$.
 $endif$
 \end{quote}
 $endif$

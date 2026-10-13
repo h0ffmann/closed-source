@@ -204,3 +204,12 @@ add NOTE with POLICY - Contextual Bandits for Weather Bench: The Marola forecast
 
 Read as: five notes under SMART_NOTE_POLICY.md, with the Operational WeatherBench methodology as a
 literature note and its citation.
+
+Hoffmann, 2026-10-13 00:15 UTC, verbatim:
+
+```text
+Add printed version PDF in pt-BR as well (pt-BR suffix)
+```
+
+Read as: the paper's printed edition in Brazilian Portuguese, `prose-pt-BR/`, built to
+`pdf/closed-source-pt-BR.pdf` next to the English PDF, with a check that it keeps the facts.
