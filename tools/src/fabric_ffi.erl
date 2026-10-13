@@ -150,9 +150,11 @@ http(Method, Url, Headers, Body) ->
                   {customize_hostname_check, [{match_fun, public_key:pkix_verify_hostname_match_fun(https)}]}]},
            {timeout, 120000}],
     M = list_to_atom(string:lowercase(binary_to_list(Method))),
-    Req = case M of
-              get -> {binary_to_list(Url), Hs};
-              delete -> {binary_to_list(Url), Hs};
+    %% A request without a body and without a Content-Type sends neither, as urllib does.
+    Req = case {M, Body, lists:keymember("Content-Type", 1, Hs)} of
+              {get, _, _} -> {binary_to_list(Url), Hs};
+              {delete, _, _} -> {binary_to_list(Url), Hs};
+              {_, <<>>, false} -> {binary_to_list(Url), Hs, "", Body};
               _ -> {binary_to_list(Url), Hs, content_type(Hs), Body}
           end,
     case httpc:request(M, Req, Ssl, [{body_format, binary}]) of
