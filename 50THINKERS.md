@@ -2,7 +2,7 @@
 title: "The 50 thinkers: two pages each"
 status: draft
 date: 2026-10-12
-related: [AGENTS.md, BOOKS.md, refs.bib]
+related: [AGENTS.md, BOOKS.md, 500AUTHORS.md, papers/closed-source/refs.bib]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
@@ -10,7 +10,8 @@ related: [AGENTS.md, BOOKS.md, refs.bib]
 
 The hard rule of the book (AGENTS.md): **100 pages, 50 authors, two pages per author.** Each
 thinker gets two first-person pages. The cover names Mr. Nobody. `just check` fails if this table
-does not have exactly 50 numbered rows, or if a name appears twice.
+does not have exactly 50 numbered rows, if a name appears twice, or if a thinker is missing from
+the long list in [500AUTHORS.md](500AUTHORS.md).
 
 The first 22 rows are a proposal, taken from the people the paper already cites (refs.bib) and
 from BOOKS.md. Rows 23 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a

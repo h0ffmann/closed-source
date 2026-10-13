@@ -31,3 +31,10 @@ path = ["docs/4-ways-of-working/ouroboric/README.md"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+# Adapted from ouroboric-dev/.github (MIT): its notice stays with the adapted files.
+[[annotations]]
+path = [".github/pull_request_template.md", ".github/ISSUE_TEMPLATE/**"]
+precedence = "closest"
+SPDX-FileCopyrightText = ["2026 Bruno Guilhermo de Barros Valério", "2026 Matheus Hoffmann"]
+SPDX-License-Identifier = "MIT"

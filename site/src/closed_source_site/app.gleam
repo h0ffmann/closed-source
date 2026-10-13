@@ -204,10 +204,7 @@ fn thinkers_section() -> Element(msg) {
       section_head(
         "thinkers",
         "The 50 Thinkers",
-        external(
-          content.repo <> "/blob/main/papers/" <> content.slug <> "/THINKERS.md",
-          "THINKERS.md",
-        ),
+        external(content.repo <> "/blob/main/50THINKERS.md", "50THINKERS.md"),
       ),
       html.p([attribute.class("sub")], [
         html.text(
