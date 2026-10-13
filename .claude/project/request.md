@@ -436,3 +436,16 @@ LABEL.md (h0ffmann/picasso#120); (2) a PR here that adds ISSUE_LABELS.md: picass
 this repository's areas, `topic/*` labels from the `.zenodo.json` keywords for outreach, and the
 two A2A labels `de:ouroboric-dev-contato` and `para:ouroboric-dev-contato`. The labels are made on
 GitHub to match the file.
+
+## MEMORY.md and graphify
+
+Hoffmann, 2026-10-13 03:19 UTC, verbatim:
+
+```text
+Add MEMORY.md in this repository, should link to Grafiphyy usage
+```
+
+Read as: a root MEMORY.md that says where this repository keeps what an agent must remember
+(project memory is off), with a section that links to how h0ffmann/picasso uses graphify (its
+AGENTS.md, `just graphify` recipe and `.graphifyignore`, pinned at 2d6f8d8). "Grafiphyy" is read
+as graphify.

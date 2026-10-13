@@ -17,6 +17,7 @@ linked docs before you change what they cover.
 - Release and Zenodo: `docs/4-ways-of-working/releasing.md`.
 - Known gaps: `docs/1-product/readiness/`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.
+- Where the memory of this repository is, and the code graph (graphify): `MEMORY.md`.
 
 ## Invariants
 
