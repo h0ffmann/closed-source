@@ -57,15 +57,15 @@ The same words as the commit subjects (`feat`, `fix`, `docs`, `chore`).
 
 ## topic: keywords for outreach
 
-These are the keywords of `.zenodo.json`, so that a GitHub search for a topic finds the issues and
+These are the keywords of `.zenodo.json` ([`KEYWORDS.md`](KEYWORDS.md)), in groups, so that a GitHub search for a topic finds the issues and
 pull requests about it. Use a `topic/*` label only when the item is about that topic. When a
 keyword changes in `.zenodo.json`, change its label here.
 
 | Label | Colour | Means |
 |---|---|---|
 | `topic/open-source` | `#7057FF` | Open source as practice, licence or argument |
-| `topic/closed-source` | `#7057FF` | Closed source: secrecy, proprietary code, the book's subject |
-| `topic/reverse-engineering` | `#7057FF` | Reverse engineering, decompilation and AI-assisted reverse engineering |
+| `topic/closed-source` | `#7057FF` | Closed source: secrecy, proprietary software, security through obscurity, the book's subject |
+| `topic/reverse-engineering` | `#7057FF` | Reverse engineering, decompilation, binary analysis, obfuscation and AI-assisted reverse engineering |
 | `topic/model-extraction` | `#7057FF` | Model extraction and knowledge distillation |
 | `topic/trade-secrets` | `#7057FF` | Trade secrets and the law around them |
 | `topic/ai-coding-agents` | `#7057FF` | AI coding agents, and the claims made about them |

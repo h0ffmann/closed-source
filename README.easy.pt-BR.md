@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="bc3e7b47490d36718795761a3fefe5e0dc39258ca76df8bb7442c3b5bb086073" -->
+<!-- easy: source="README.md"; sha256="de22f47d04d3b92a42f7ad2d50d184ea876534522c4f453c94908386f91a9a74" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -119,6 +119,7 @@ os lugares principais:
 | [`50THINKERS.md`](50THINKERS.md) | os 50 pensadores do livro: duas páginas para cada um, 100 páginas |
 | [`notes/`](notes/index.md) | as notas do livro, uma ideia em cada nota |
 | [`.claude/skills/`](.claude/skills/README.md) | as skills (instruções para os agentes) escritas para este repositório. uma delas, `citation-score`, mede quanto de um texto tem citação |
+| [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | como um leitor chega a este trabalho: palavras-chave, trabalhos relacionados e tópicos |
 | [`CITATION_SCORES.md`](CITATION_SCORES.md) | quanto de cinco READMEs tem citação: este, o da marola, o da ouroboric-dev, o do h0ffmann e o do picasso |
 | [`AGENTS.md`](AGENTS.md) | as regras que todo agente segue aqui |
 
@@ -199,6 +200,23 @@ trabalho tem dois tipos de DOI. cada um responde a uma pergunta.
 cada `just release` cria um DOI permanente novo. a
 [página do zenodo](https://zenodo.org/doi/10.5281/zenodo.23333656) e o arquivo
 [`RELEASES.md`](RELEASES.md) listam todas as versões.
+
+### como um leitor chega até este trabalho
+
+você só precisa ser visto pelas pessoas certas. para este artigo, elas são quem faz engenharia
+reversa e, depois, quem trabalha com programas de pesquisa. três tipos de palavra trazem um
+leitor até aqui:
+
+- **palavras-chave**, no zenodo. cada palavra-chave é um link para todos os registros com a mesma
+  palavra. a lista está em [`KEYWORDS.md`](KEYWORDS.md).
+- **trabalhos relacionados**: os trabalhos que este cita, cada um pelo seu DOI. o zenodo guarda
+  essas ligações e as envia ao datacite, o serviço que registra os DOIs. a lista está em
+  [`RELATED_WORK.md`](RELATED_WORK.md).
+- **tópicos**, no github: palavras na página do repositório. a lista está em
+  [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md).
+
+uma palavra só entra na lista se a pessoa certa a digitaria e se o artigo trata dela. as listas
+só mudam no zenodo quando sai uma versão nova.
 
 as citações prontas, nos formatos bibtex, APA e ABNT, estão na seção [cite](README.md#cite) do
 original. um programa gera esse bloco, então ele fica só lá.

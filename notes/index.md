@@ -39,6 +39,10 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 - [[202610130120-work-reads-as-japanese]]: friend2: the work reads as very Japanese, a compliment (fleeting, unverified)
 - [[202610130121-what-makes-the-work-japanese]]: what makes it read as Japanese: the open-source spirit (permanent, partial)
 
+## Being found
+
+- [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)
+
 ## Marola forecaster
 
 - [[202610122357-marola-forecaster-contextual-bandit]]: a contextual bandit over forecast models (permanent, open question)
