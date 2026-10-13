@@ -264,3 +264,21 @@ Read as: the roster moves to 50THINKERS.md; 500AUTHORS.md is the long list the 5
 (at most 500, every thinker listed, checked by book_check); and the most important Ouroboric
 patterns not yet here: guardrail invariants, PR and change-proposal templates, SECURITY.md,
 TRADEMARKS.md and change proposals.
+
+Hoffmann, 2026-10-13, verbatim:
+
+```text
+create INDEX_REMISS.md ACRONYMOUS.md DESCRIPTION.md QUOTES.md NAGORI.md (ingest to be discussed in the next prompt)
+```
+
+Read as: five root files as skeletons, each with front matter, a cite line, its purpose and an
+empty table; the content comes with the ingest in a later request.
+
+Hoffmann, 2026-10-13 02:10 UTC, verbatim:
+
+```text
+add hardhule / ways-of-working NAGORI.md is never agent/automatic edited, add this a first remainder reading NAGORI.md
+```
+
+Read as: a hard rule in AGENTS.md and a ways-of-working page that no agent and no automation edits
+NAGORI.md, and the rule as the first thing NAGORI.md says, after its cite line.
