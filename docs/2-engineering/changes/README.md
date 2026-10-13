@@ -26,3 +26,4 @@ Adapted from Yggdrasil's
 ## Open
 
 - [2026-10-13-port-python-tooling](2026-10-13-port-python-tooling/proposal.md): port the Python tooling to Go and V.
+- [2026-10-13-zenodo-webhook-release](2026-10-13-zenodo-webhook-release/proposal.md): release with Zenodo's webhook, as marola does.

@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 # SPDX-License-Identifier: AGPL-3.0-only
-# release: tag main as vMAJOR.MINOR.PATCH and push the tag. release.yml then builds the PDFs,
-# attaches them to a GitHub release and, when the ZENODO_TOKEN secret is set, uploads only the PDFs
-# to a Zenodo *draft*; a person publishes the draft, which mints the permanent DOI.
-# Shape from h0ffmann/picasso's scripts/release.sh (itself after marola-dev/marola and
-# h0ffmann/ww3-gpu). A DOI cannot be deleted, so this refuses anything but a clean main level with
-# origin, and a version that does not go up. What differs from picasso: the tag is signed when Git
-# has a signing key, and Zenodo gets a draft from release.yml, not a webhook archive.
+# release: tag main as vMAJOR.MINOR.PATCH and push the tag. release.yml then builds the PDFs and
+# publishes a GitHub release with them attached; Zenodo's webhook archives that release with
+# .zenodo.json and mints the version DOI a few minutes later. No secret is in the chain.
+# Shape from marola-dev/marola's scripts/release.sh at cf7bd4f (its MIP-0079), by way of
+# h0ffmann/picasso and h0ffmann/ww3-gpu. A DOI cannot be deleted, so this refuses anything but a
+# clean main level with origin, a version that does not go up, and a release whose only change is
+# a submodule pointer under forks/. What this adds to marola's: the bump words, and a tag that is
+# signed when Git has a signing key.
 #   just release                    # list what is unreleased and the bump it suggests; tags nothing
 #   just release patch|minor|major  # bump the latest tag
 #   just release 0.1.0 [--dry-run]
+#   scripts/release.sh --guard <ref>   # exit 1 if <ref> only moves pointers since the last tag
 #   scripts/release.sh --self-test
 set -euo pipefail
 
@@ -24,6 +26,27 @@ bump() {
     minor) echo "v$major.$((minor + 1)).0" ;;
     patch) echo "v$major.$minor.$((patch + 1))" ;;
   esac
+}
+
+# `git diff --raw` lines on stdin; prints those that are not a gitlink (mode 160000) on either side.
+content_lines() { awk '{ src = substr($1, 2) } src != "160000" && $2 != "160000"'; }
+
+# guard <ref>: the newest v* tag that is an ancestor of <ref> (other than <ref>'s own) is the base.
+# Hard rule from marola: a submodule pointer move never makes a Zenodo version. release.yml runs
+# the same guard, so a tag pushed by hand around this script still gets no release.
+guard() {
+  local ref="$1" base changes
+  base="$(git describe --tags --abbrev=0 --match 'v*' --exclude "$(git describe --tags --exact-match "$ref" 2>/dev/null || echo none)" "$ref" 2>/dev/null || true)"
+  if [ -z "$base" ]; then
+    echo "release: no earlier v* tag before $ref; nothing to compare" >&2
+    return 0
+  fi
+  changes="$(git diff --raw --no-renames "$base" "$ref" | content_lines)"
+  if [ -z "$changes" ]; then
+    echo "release: $base..$ref only moves submodule pointers; a pointer move never makes a Zenodo version" >&2
+    return 1
+  fi
+  echo "release: $(wc -l <<<"$changes") file(s) changed outside the submodule pointers since $base" >&2
 }
 
 # newer <a> <b>: true when version a sorts strictly after b
@@ -71,8 +94,19 @@ if [ "${1:-}" = --self-test ]; then
   [ "$(printf 'fix: y\nfeat(site): z (#3)\n' | suggest v0.1.0)" = minor ] || fail "feat -> minor"
   [ "$(printf 'feat(book)!: drop a section (#4)\n' | suggest v0.3.0)" = minor ] || fail "breaking before 1.0 -> minor"
   [ "$(printf 'feat(book)!: drop a section (#4)\n' | suggest v1.3.0)" = major ] || fail "breaking after 1.0 -> major"
+  pointers=$':160000 160000 c62001b 3912182 M\tforks/picasso\n:000000 160000 0000000 e0f5720 A\tforks/rea\n:160000 000000 e0f5720 0000000 D\tforks/old'
+  [ -z "$(content_lines <<<"$pointers")" ] || fail "pointer moves counted as content"
+  mixed="$pointers"$'\n:100644 100644 94edc98 fdccf0a M\tpapers/closed-source/prose/01-introduction.md'
+  [ "$(content_lines <<<"$mixed")" = $':100644 100644 94edc98 fdccf0a M\tpapers/closed-source/prose/01-introduction.md' ] \
+    || fail "a prose change was not counted"
   echo "release: self-test ok" >&2
   exit 0
+fi
+
+if [ "${1:-}" = --guard ]; then
+  [ -n "${2:-}" ] || { echo "release: usage: scripts/release.sh --guard <ref>" >&2; exit 1; }
+  guard "$2"
+  exit
 fi
 
 dry_run=0 want=""
@@ -89,7 +123,7 @@ prev="$(git tag -l 'v*' --sort=-v:refname | head -1)"
 base="${prev:-v0.0.0}"
 range="${prev:+$prev..}origin/main"
 subjects="$(titles "$range")"
-[ -n "$subjects" ] || { echo "release: nothing new on main since $prev; every release can become a permanent DOI, so none is cut" >&2; exit 1; }
+[ -n "$subjects" ] || { echo "release: nothing new on main since $prev; every release becomes a permanent DOI, so none is cut" >&2; exit 1; }
 
 if [ -z "$want" ]; then
   level="$(suggest "$base" <<<"$subjects")"
@@ -116,6 +150,7 @@ fi
   || { echo "release: the working tree is dirty; commit or stash first" >&2; exit 1; }
 [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ] \
   || { echo "release: main is not level with origin/main; pull or push first" >&2; exit 1; }
+guard HEAD
 # The human runs this on Ubuntu with only Nix (README's installer, flakes not enabled): the tools
 # come from the flake's toolchain.
 nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file \
@@ -131,4 +166,4 @@ if [ "$dry_run" -eq 1 ]; then
 fi
 git tag "$sign" "$tag" -m "closed-source $tag"
 git push origin "$tag"
-echo "release: pushed $tag. release.yml publishes it; review the Zenodo draft, then publish it there to mint the DOI." >&2
+echo "release: pushed $tag; release.yml publishes it and Zenodo mints the DOI a few minutes later." >&2

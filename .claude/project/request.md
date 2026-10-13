@@ -515,3 +515,25 @@ the note says so under "What complicates this": in 1775 Burke opposed the extens
 patent and backed the extension of Cookworthy's porcelain patent for Richard Champion of Bristol.
 The four notes cite main author Claude, because Claude wrote them from the sources; the titles
 and the thesis are the owner's. QUOTES.md and INDEX_REMISS.md stay skeletons until the ingest.
+
+## just release as in marola, with the Zenodo DOI
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+in parallel use just to create the first release with just release minor, give me the outputs of this operation
+```
+
+```text
+This doesnt look right, see how just release works in marola-dev/marola and copy the pattern REA to closed-source reality. Create PR in closed-source to create just release for first release, with Zenodo mint.
+```
+
+Read as: the first message named no repository; closed-source was the only one in `~/code` with
+a `release` recipe and no tag, so `just release minor` was run there and made v0.1.0. The second
+answers a wrong report that v0.1.0 had no DOI. "REA" is read as Ouroboric's Read, Evaluate, Adopt:
+read marola's `scripts/release.sh`, `release.yml` and `zenodo-release` skill at `cf7bd4f`,
+evaluate each part against this repository, adopt what fits. Zenodo's webhook was already on and
+had minted 10.5281/zenodo.23333657 for v0.1.0, so "first release, with Zenodo mint" exists; the
+pull request makes the rules, `release.yml` and the docs match it, as the change proposal
+`docs/2-engineering/changes/2026-10-13-zenodo-webhook-release/`. It changes AGENTS.md invariant 6,
+which is why it is a change proposal. It makes no new tag.

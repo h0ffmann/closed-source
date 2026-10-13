@@ -33,7 +33,8 @@ principles. In this product they mean:
 2. **Checks, not promises.** The build fails on an unresolved citation; the reference check fails
    on an unlogged reference.
 3. **Measure everything.** Each paper records its reference-check results and its readiness gaps.
-4. **Safe by default.** A Zenodo deposit is a draft until a person publishes it.
+4. **Safe by default.** A release mints a permanent DOI, so only the owner releases, and
+   `just release` refuses a `main` that is dirty, behind, or changed only in submodule pointers.
 5. **Learn in public.** The agent configuration that produced a paper ships with it.
 6. **Read before you borrow.** Borrow, cite, propagate ([AGENTS.md](../../AGENTS.md)).
 7. **Narrow first.** One paper, one repository, one toolchain, until the second paper shows what
@@ -55,7 +56,8 @@ principles. In this product they mean:
 
 ## Boundaries
 
-- **v0 releases only the rendered PDF on Zenodo.** Sources live on GitHub.
+- **Zenodo archives the source at each release tag.** The rendered PDFs are attached to the GitHub
+  release.
 - **Not peer review.** Paper Fabric prepares preprints; journals and reviewers judge them.
 - **Not a ghost-writer.** Agents never invent an author's experience or a reference.
 - **Focus.** The Ouroboric charter puts Yggdrasil and Asgard before any new factory. Paper Fabric

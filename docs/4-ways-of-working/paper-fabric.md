@@ -31,7 +31,7 @@ Each paper runs the same loop. The *who* column is the Ouroboric rule: humans st
 | Personal accounts | authors | the anecdote placeholders, filled |
 | Check: `just check` | CI | PDF; fails on unresolved citations or unlogged references |
 | Readiness: what blocks the next step | agent, then authors | `docs/1-product/readiness/` |
-| Release: tag, PDF to a Zenodo draft, arXiv bundle | authors | GitHub release; DOI after a human publishes; arXiv submission by hand |
+| Release: tag, GitHub release, Zenodo archive, arXiv bundle | authors | GitHub release with the PDFs; DOI minted by Zenodo's webhook; arXiv submission by hand |
 | Learn: what went wrong | agent, then authors | a journal entry; changes to this guide |
 
 ## 3. Rules that make the output credible
