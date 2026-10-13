@@ -14,7 +14,7 @@ It is a record, not a live config: Claude Code reads only `settings.json`, `comm
 | [`project/session.md`](project/session.md) | the session: environment, model, toolchain installed, repositories read |
 | [`project/tools-and-skills.md`](project/tools-and-skills.md) | the tools and skills used, and how |
 | [`settings.json`](settings.json) | Claude Code permissions for working in this repository, and the hooks that keep `README.easy.pt-BR.md` current |
-| [`skills/`](skills/README.md) | the skills written for this repository (`readme-style`, `easy-pt-br`, `card-style`), their sources and their lock |
+| [`skills/`](skills/README.md) | the skills written for this repository (`readme-style`, `easy-pt-br`, `card-style`, `citation-score`), their sources and their lock |
 | [`commands/ste100.md`](commands/ste100.md) | `/ste100`: rewrite prose to ASD-STE100 |
 | [`commands/note.md`](commands/note.md) | `/note`: make Zettelkasten notes in `notes/` (SMART_NOTE_POLICY.md) |
 | [`commands/update-ouroboric.md`](commands/update-ouroboric.md) | `/update-ouroboric`: refresh `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` from the ouroboric-dev repositories |

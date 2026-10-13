@@ -602,3 +602,13 @@ Sources section. "Cards in the interface" is read as the tiles of the site's DOI
 "picasso stylings" as one-line drawings in the manner of those on picasso's site: four new
 drawings, one behind each tile. No drawing by Pablo Picasso is copied.
 
+```text
+in the same README.md pr, create a skill citation-score, to score any Prhase, Text, Dump, URL. This skill should count (aprox.) How much of a text is cited. 100% cited - PERFECT. HIGHEST MATURITY LEVEL. 0% cited - POOR. 2 DIGIT IQ. citation-score skill should have coulored output, to give users idea of how 'original' their ideas are
+```
+
+Read as: a skill and its script, `scripts/citation-score.sh`. It counts the sentences that carry
+a citation mark over all sentences, for a phrase, a file, standard input or a URL, and prints a
+coloured bar with a verdict. The two ends of the scale are the owner's words; the four verdicts
+between them are the skill's. The uncited share is reported as "original, or unsupported",
+because a script cannot tell the two apart. It is a measure, not a check: nothing fails on it.
+

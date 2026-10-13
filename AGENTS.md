@@ -138,6 +138,8 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   `README.easy.pt-BR.md` is the same page in easy Brazilian Portuguese. It is always made from
   `README.md` with the `easy-pt-br` skill, then stamped with `scripts/readme.sh --stamp`; never
   edit it alone. `just check` runs `scripts/readme.sh --check`.
+- `scripts/citation-score.sh` counts how much of a text is cited (the `citation-score` skill). It
+  is a measure, not a gate: no check fails on a score.
 - A skill in `.claude/skills/` is written here and names its sources; do not copy a skill from
   another repository. After a change to one, run `scripts/readme.sh --lock`.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.

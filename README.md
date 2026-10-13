@@ -134,9 +134,9 @@ says more, with the other books behind this repository.
 | [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pins (picasso's `paper` and `gleam-website` labs) |
 | [`site/`](site/) | the website: gleam + lustre, `tools/fabric content` reads the paper |
 | [`tools/`](tools/) | the checks and generators, one gleam project: reference check, STE check, arxiv bundle, citation metadata, site content and zenodo upload |
-| [`scripts/`](scripts/) | `release.sh`, which tags a release, and `readme.sh`, which checks this page's style and its easy version |
+| [`scripts/`](scripts/) | `release.sh`, which tags a release, `readme.sh`, which checks this page's style and its easy version, and `citation-score.sh`, which scores how much of a text is cited |
 | [`README.easy.pt-BR.md`](README.easy.pt-BR.md) | this page in easy brazilian portuguese, made from it by the `easy-pt-br` skill; `scripts/readme.sh` checks that it is current |
-| [`.claude/skills/`](.claude/skills/README.md) | the agent skills written for this repository, pinned in `skills.lock`: `readme-style`, `easy-pt-br` and `card-style` |
+| [`.claude/skills/`](.claude/skills/README.md) | the agent skills written for this repository, pinned in `skills.lock`: `readme-style`, `easy-pt-br`, `card-style` and `citation-score` |
 | [`docs/`](docs/README.md) | paper fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported claude project configuration that produced this repository |
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |

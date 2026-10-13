@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="ce6054016e96506bdeed126f6b8e544d30ea5ad4a7d6eb3fe66a910dcd7ad897" -->
+<!-- easy: source="README.md"; sha256="a6f2e7eabfb0b6b799bd8752e632ed83ae866865469e692e6b0e0b1b85f85d77" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -118,7 +118,7 @@ os lugares principais:
 | [`docs/`](docs/README.md) | como o projeto trabalha: a carta, os modos de trabalho e o diário |
 | [`50THINKERS.md`](50THINKERS.md) | os 50 pensadores do livro: duas páginas para cada um, 100 páginas |
 | [`notes/`](notes/index.md) | as notas do livro, uma ideia em cada nota |
-| [`.claude/skills/`](.claude/skills/README.md) | as skills (instruções para os agentes) escritas para este repositório |
+| [`.claude/skills/`](.claude/skills/README.md) | as skills (instruções para os agentes) escritas para este repositório. uma delas, `citation-score`, mede quanto de um texto tem citação |
 | [`AGENTS.md`](AGENTS.md) | as regras que todo agente segue aqui |
 
 a lista completa está na seção [layout](README.md#layout) do original.
