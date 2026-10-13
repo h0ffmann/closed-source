@@ -117,3 +117,16 @@ pub fn the_paper_tile_is_in_lower_case_test() {
   assert string.contains(html, "permanent DOI for ")
     || string.contains(html, "all versions")
 }
+
+pub fn the_github_pill_names_the_repository_and_the_latest_release_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert app.repo_name() == #("h0ffmann", "closed-source")
+  assert string.contains(html, "class=\"gh\"")
+  assert string.contains(html, "href=\"" <> content.repo <> "\"")
+  assert string.contains(html, "gh-star")
+  // Empty when Zenodo was not reached at build time; then the pill shows no version.
+  assert case content.version_dois {
+    [#(version, _), ..] -> string.contains(html, ">" <> version <> "<")
+    [] -> True
+  }
+}
