@@ -72,12 +72,17 @@ Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs a
 pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
 GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
 
-The header's jacket sets the title after the title formula and book-jacket typography of
+The front page opens with the 50 Thinkers and the second brain (`notes/`). The site is set like a
+book cover, after the colour scheme and type of the cover of
 
 > Hoppe, Hans-Hermann. *Democracy—The God That Failed: The Economics and Politics of Monarchy,
 > Democracy, and Natural Order*. New Brunswick, NJ: Transaction Publishers, 2001. ISBN 0-7658-0088-8.
 
-The book is under copyright (© 2001), so the site copies no cover art and no text from it. Hoppe
+Its 2001 cover has a brown field, a white title, a red band and the rest of the title in black. The
+site's colours are estimates from that description, not samples. The book is under copyright
+(© 2001), so the site copies no cover art and no text from it. The motion follows Anthropic's
+[frontend-design skill](https://github.com/anthropics/skills) (Apache-2.0): one entrance, and
+nothing moves when the reader asks for reduced motion. Hoppe
 argues that ideas should not be property; the law still gives the copyright. [`BOOKS.md`](BOOKS.md)
 says more, with the other books behind this repository.
 
