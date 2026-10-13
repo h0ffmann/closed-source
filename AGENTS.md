@@ -45,6 +45,14 @@ October 2026), outside the 100-page count. nagori is a private repository: the o
 parts go in and at which commit, and an agent copies nothing from it that the owner did not name.
 The snapshot states the commit it was taken from.
 
+## NAGORI.md is written by hand (hard rule)
+
+No agent and no automation edits `NAGORI.md` (Hoffmann, 13 October 2026): no commit, no
+formatter, no generator, no script, no CI job, no find-and-replace across the repository. An
+agent may read it. If a task or a failing check seems to need a change to it, stop, say what you
+would change, and leave the edit to the owner. The file's first lines repeat this rule. A change
+to this rule is a change proposal that the owner approves.
+
 ## Two languages (hard rule)
 
 The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October

@@ -15,5 +15,5 @@ in its product-umbrella shape, with only the sections that have content yet.
 | Folder | What's there |
 |---|---|
 | [`1-product/`](1-product/charter.md) | the charter and the readiness assessments |
-| [`4-ways-of-working/`](4-ways-of-working/paper-fabric.md) | how a paper is made, the Ouroboric patterns used, how to release; [`ouroboric/`](4-ways-of-working/ouroboric/README.md) holds Ouroboric's own ways of working, copied as is (CC BY 4.0) |
+| [`4-ways-of-working/`](4-ways-of-working/paper-fabric.md) | how a paper is made, the Ouroboric patterns used, how to release, why [`NAGORI.md`](4-ways-of-working/nagori.md) is written by hand; [`ouroboric/`](4-ways-of-working/ouroboric/README.md) holds Ouroboric's own ways of working, copied as is (CC BY 4.0) |
 | [`6-journal/`](6-journal/README.md) | challenges, decisions and results, one entry each |
