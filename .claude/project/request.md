@@ -785,3 +785,19 @@ note: it could not be checked, and the owner asked that the note not carry it as
 guess, so the note states only the two mechanisms that were seen. `RELATED_WORK.md` says plainly
 that every record that cites these works today is the owner's own.
 
+```text
+Did you check if my other DOIs are properly indexed in the Zenodo record (marola, picasso, www3-gpu, ouroboric repos)
+```
+
+```text
+ok Create all the PRs needed, and make sure other works are properly cited IN CLOSED-SOURCE. Closed-source is main outreach
+```
+
+Read as: a pull request in each of marola, ww3-gpu and picasso that adds the ties its
+`.zenodo.json` was missing (marola-dev/marola#809, h0ffmann/ww3-gpu#106, h0ffmann/picasso#125),
+and a pull request here. Here the paper and the record already cited marola, ww3-gpu and picasso
+by DOI. Two ties were missing from the record and are added: `requires` picasso, because this
+repository builds with its labs, and `cites` nashkell, which the paper cites and the record did
+not name; nashkell has no DOI, so that tie is a URL. Ouroboric has no Zenodo record; it stays
+cited by URL, and issue #40 asks for its DOI.
+
