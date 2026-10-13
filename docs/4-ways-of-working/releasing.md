@@ -36,7 +36,8 @@ The README's "Secrets and keys" table lists every token and key, where it lives 
 4. Open the draft on zenodo.org. Check the metadata, the authors and that the only file is the
    PDF.
 5. Press Publish. **Caution:** a published DOI is permanent.
-6. After the first publication, put the concept DOI in `scripts/citation.py` (`CONCEPT_DOI`) and
+6. After the first publication, put the concept DOI in `tools/src/fabric/citation.gleam`
+   (`concept_doi`) and
    run `just citation`. Store the concept record id (the number in the concept DOI) as the
    repository variable `ZENODO_CONCEPT_RECID`, so later releases become new versions of the same
    record.

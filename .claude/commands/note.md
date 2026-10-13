@@ -16,6 +16,6 @@ Turn $ARGUMENTS into notes, following `SMART_NOTE_POLICY.md` exactly.
    only with the source cited in the note; otherwise `unverified` or `open-question`, and say what
    would verify it.
 5. Link each note to the closest existing notes, and add it to `notes/index.md`.
-6. Run `python3 scripts/notes_check.py` and `python3 scripts/cite_check.py`; fix what they report.
+6. Run `tools/fabric notes-check` and `tools/fabric cite-check`; fix what they report.
 7. Commit on a branch and open a pull request; do not push to `main`. Report the notes made,
    with their status.

@@ -2,7 +2,7 @@
 title: "Personas"
 status: draft
 date: 2026-10-12
-related: [AGENTS.md, scripts/cite_check.py]
+related: [AGENTS.md, tools/src/fabric/cite_check.gleam]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 

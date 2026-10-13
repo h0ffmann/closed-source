@@ -2,7 +2,7 @@
 title: "Smart note policy"
 status: draft
 date: 2026-10-12
-related: [AGENTS.md, PERSONAS.md, notes/index.md, .claude/commands/note.md, scripts/notes_check.py]
+related: [AGENTS.md, PERSONAS.md, notes/index.md, .claude/commands/note.md, tools/src/fabric/notes_check.gleam]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
@@ -50,4 +50,4 @@ reads when you open `notes/` as a vault. `/note` (`.claude/commands/note.md`) ma
 9. **Into the book.** A permanent note with status `verified` or `partial` can become text in a
    thinker's two pages. The page cites the note's sources, not the note.
 
-`just check` runs `scripts/notes_check.py`: front matter, unique ids and links that resolve.
+`just check` runs `tools/fabric notes-check`: front matter, unique ids and links that resolve.

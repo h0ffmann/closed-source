@@ -2,7 +2,7 @@
 title: "Ouroboric research index"
 status: draft
 date: 2026-10-12
-related: [AGENTS.md, .claude/commands/update-ouroboric.md, scripts/ouroboric.py]
+related: [AGENTS.md, .claude/commands/update-ouroboric.md, tools/src/fabric/ouroboric.gleam]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 

@@ -9,8 +9,9 @@ linked docs before you change what they cover.
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
 - Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
   `flake.lock`). Release and secrets: the README.
-- Website: `site/` (Gleam + Lustre). `just site-build`. `site/content.py` generates its content from
-  the paper; never write a fact into `site/src` by hand.
+- Website: `site/` (Gleam + Lustre). `just site-build`. `tools/fabric content` generates its content
+  from the paper; never write a fact into `site/src` by hand.
+- Tools: `tools/` is one Gleam project. Run `tools/fabric <command>`; `cd tools && gleam test`.
 - Charter and direction: `docs/1-product/charter.md`.
 - How a paper is made: `docs/4-ways-of-working/paper-fabric.md`.
 - Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.
@@ -31,7 +32,7 @@ linked docs before you change what they cover.
 6. Never publish a Zenodo deposit. Drafts only; a human publishes. A DOI is permanent.
 7. Never commit secrets, tokens or personal contact data.
 8. Never merge a pull request, and never push to `main`. Humans merge.
-9. Never weaken a guardrail to get green: a check in `scripts/`, a CI job, a hard rule above or
+9. Never weaken a guardrail to get green: a check in `tools/` or `scripts/`, a CI job, a hard rule above or
    below. A failing check says what to fix. A change to a hard rule is a change proposal
    (`docs/2-engineering/changes/`) that the owner approves.
 10. Work on a branch, stage files by path, and open a pull request for every change.
@@ -67,7 +68,7 @@ The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffma
 2026). Every release ships both editions, each with the same 50 thinkers and 100 pages. A change
 to one edition's facts goes into the other in the same pull request, as `prose/` and `prose-ste/`
 already do. The paper's printed pt-BR edition is `prose-pt-BR/`, built to
-`pdf/<slug>-pt-BR.pdf`; `scripts/ste_check.py --translation` fails when it loses a citation,
+`pdf/<slug>-pt-BR.pdf`; `tools/fabric ste-check --translation` fails when it loses a citation,
 number, quotation or marker of `prose/`. Quotations stay in English, with a translation after them.
 
 ## The opponent (hard rule)
@@ -97,7 +98,7 @@ Hoffmann" -->`. Both are personas in `PERSONAS.md`. A new file gets the line whe
 Notes go into `notes/` as a Zettelkasten that Obsidian reads, under `SMART_NOTE_POLICY.md`: one
 idea per note, a permanent id, links between notes, a status that is `unverified` until a source
 is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `just check` runs
-`scripts/notes_check.py`.
+`tools/fabric notes-check`.
 
 ## Borrow, cite, propagate
 
@@ -123,5 +124,5 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 ## Checks before a pull request
 
 1. `just check` passes with no pandoc warning.
-2. `python3 scripts/citation.py --check` passes.
+2. `tools/fabric citation --check` passes.
 3. New references have a `verified` or `partial` row in `REFERENCES.md`.
