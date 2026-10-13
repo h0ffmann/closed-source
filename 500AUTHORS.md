@@ -92,3 +92,8 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 71 | Fan Zhang | `tramer2016stealing` |  |
 | 72 | Yuqun Zhang | `tan2024llm4decompile` |  |
 | 73 | Yanuo Zhou | `hoffmann2024value` |  |
+| 74 | personX | — (the owner's choice) | 23 |
+| 75 | Olavo de Carvalho | *O Jardim das Aflições* (1995); *Símbolos e Mitos no Filme "O Silêncio dos Inocentes"* | 24 |
+| 76 | Theodore Dalrymple | — (works to be chosen) | 25 |
+| 77 | Michel de Montaigne | *Essais* (1580) | 26 |
+| 78 | Hideaki Anno | *Neon Genesis Evangelion* (1995) | 27 |

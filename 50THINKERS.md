@@ -14,7 +14,7 @@ does not have exactly 50 numbered rows, if a name appears twice, or if a thinker
 the long list in [500AUTHORS.md](500AUTHORS.md).
 
 The first 22 rows are a proposal, taken from the people the paper already cites (refs.bib) and
-from BOOKS.md. Rows 23 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
+from BOOKS.md. Rows 23 to 27 are the owner's choices of 13 October 2026, and row 28 is kept for a thinker the owner will name. Rows 29 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
 thinker here: they are the book's opponents (AGENTS.md).
 
 After the 100 pages comes a partial snapshot of the private `h0ffmann/nagori` repository, outside
@@ -46,12 +46,12 @@ Status: `open` (no thinker yet), `proposed`, `chosen`, `written` (the two pages 
 | 20 | Stephan Kinsella | Against Intellectual Property (BOOKS.md) | proposed |
 | 21 | Michele Boldrin | Against Intellectual Monopoly (BOOKS.md) | proposed |
 | 22 | David K. Levine | Against Intellectual Monopoly (BOOKS.md) | proposed |
-| 23 | — | — | open |
-| 24 | — | — | open |
-| 25 | — | — | open |
-| 26 | — | — | open |
-| 27 | — | — | open |
-| 28 | — | — | open |
+| 23 | personX | who shares, multiplies | chosen |
+| 24 | Olavo de Carvalho | *O Jardim das Aflições* (1995), and *Símbolos e Mitos no Filme "O Silêncio dos Inocentes"* | chosen |
+| 25 | Theodore Dalrymple | to be written later | chosen |
+| 26 | Michel de Montaigne | the *Essays*: why one writes at all | chosen |
+| 27 | Hideaki Anno | creator of *Neon Genesis Evangelion*, the most classical anime in history | chosen |
+| 28 | — | the foremost reverse-engineering thinker of 2026 (to be named) | open |
 | 29 | — | — | open |
 | 30 | — | — | open |
 | 31 | — | — | open |
