@@ -110,3 +110,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 89 | Jiang Xueqin | *Predictive History* (YouTube channel, 2023–) | 39 |
 | 90 | Luiz Felipe Pondé | — (the owner's choice) | 50 |
 | 91 | Mário Ferreira dos Santos | *Filosofia Concreta* (Logos, 1957); *Pitágoras e o Tema do Número* (1956) | 40 |
+| 92 | Marcus Baffa | — (the owner's choice) | 8 |

@@ -372,3 +372,12 @@ Read as: on the Pondé PR, 50THINKERS.md's rows shuffled once at random (seed 20
 disclaimer that the order is an essay's and must not be sorted; new columns Area and Cited (☑ when
 the thinker is an author in refs.bib, ☐ when not); 500AUTHORS.md's Thinker numbers follow the new
 order; book_check and site/content.py read the six columns.
+
+Hoffmann, 2026-10-13 02:36 UTC, verbatim:
+
+```text
+Add in the same PR Marcus Baffa, to be explained
+```
+
+Read as: Marcus Baffa in the first open row of 50THINKERS.md, status chosen, reason "to be
+explained", area left for the owner; a row in 500AUTHORS.md.

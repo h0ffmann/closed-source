@@ -39,7 +39,7 @@ work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, a
 | 5 | — | — | the foremost reverse-engineering thinker of 2026 (to be named) | — | open |
 | 6 | Austin Kleon | creativity | *Steal Like an Artist* (2012; *Roube como um Artista*, Rocco, 2013): creative work builds on the work of others | ☐ | chosen |
 | 7 | Isaac Asimov | literature, science fiction | reason to come | ☐ | chosen |
-| 8 | — | — | — | — | open |
+| 8 | Marcus Baffa | — | to be explained | ☐ | chosen |
 | 9 | Adi Shamir | cryptography | public-key cryptography: secrecy only of the key | ☑ | proposed |
 | 10 | Marc Stevens | cryptography | the first SHA-1 collision, why Git moved on | ☑ | proposed |
 | 11 | — | — | — | — | open |
