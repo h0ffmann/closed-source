@@ -997,3 +997,18 @@ book, and `SMART_NOTE_POLICY.md` now says so. The note keeps the sentence that f
 confirmed the reading: the approval is the owner's, of his own reading. The website shows the
 note's status from the file, so it now shows "approved", in the cover's black with yellow
 letters.
+
+```text
+https://github.com/h0ffmann/mdd-risk-analysis add this repository to story telling, with records. This was my first project using Scala language, at UFRJ, with 2 more friends, we did manual (real, I did this during the time) OCR of the MDD paper by IMPA/RJ, partial convertion from R to Scala, to enable spark processing. R Spark went wrong. I learned Scala. Scala was looking for Intern (6h) to work in the Risk Team (later named ML Team). This is a very special note because get me thinking of one of the 50THINKERS, who passed away, Marcus Baffa. Marcus Baffa was technical leader at Stone, he was praised by everyone. I will never forget my first contact with Marcus Baffa, who I missed so much over the years. The UFRJ course group was with [friend4] and [friend5], the name of discipline was 'Big Data' by prof. [prof1] DEL/UFRJ/GTA. When I met Baffa, I told him I was taking latin classes. During the time, no one understood why I was doing this, not even myself, but it was one best memories at UFRJ. When I told Baffa, in the last interview before my hiring, he laught at me, correction by Mr. Nobody. Over the time I realized Baffa was always with me, he was laghting WITH me. The preposition makes the difference. PREPOSITION (paper, essay, people with vs. for vs. from). Baffa loved Scala and Erlang. I will continue to write in Scala, and my second brain is based on erlang, Gleam. Explain Gleam principles and why I made a PR adding +6k lines, to change stach to pure Gleam. This is what I call a good usage of Claude Code. Writing Gleam. More Gleam Engineering to be added to this blog. add this. with SMART_NOTE_TAKING policy on h0ffmann/h0ffmann closed-source. Only let Marcus Baffa be named on this on PERSONAS.md other people should be named friendX ou profX.
+```
+
+Read as: four notes under `SMART_NOTE_POLICY.md`, one idea each: the 2017 repository, the memory
+of Marcus Baffa, the preposition, and Gleam with the port. This log is verbatim except for three
+names, which the request itself asks to keep out: they are written here as `[friend4]`,
+`[friend5]` and `[prof1]`. Marcus Baffa keeps his name, and `PERSONAS.md` and rule 8 of the
+policy say why. "Scala was looking for Intern" is read as "Stone was looking for an intern",
+because the next words name its Risk team; the owner should correct the note if that is wrong.
+"+6k lines" is read as pull request #27, which added 8,222 lines and removed 1,647. "This blog"
+is read as these notes, which the website shows. `50THINKERS.md` is not changed: row 46 still
+says "to be explained", and the owner decides its words. The same story goes on the timeline of
+h0ffmann/h0ffmann in a pull request there.
