@@ -38,8 +38,8 @@ style.
 
 | Rule | From | Level | What it finds |
 |---|---|---|---|
-| `fabric.PlainWords` | "No undefined jargon" | error | a long word where a plain one exists: "utilize" for "use", "in order to" for "to" |
-| `fabric.NumbersOverAdjectives` | "Numbers over adjectives" | error | a word that praises and measures nothing: "very", "seamless", "state-of-the-art" |
+| `fabric.PlainWords` | "No undefined jargon" | error | a long word where a plain one exists: `utilize` for `use`, `in order to` for `to` |
+| `fabric.NumbersOverAdjectives` | "Numbers over adjectives" | error | a word that praises and measures nothing: `very`, `seamless`, `state-of-the-art` |
 | `fabric.ShortSentences` | "Short sentences" | warning | a sentence of more than 35 words |
 | `fabric.ActiveVoice` | "Active voice" | suggestion | a verb that may be passive |
 
