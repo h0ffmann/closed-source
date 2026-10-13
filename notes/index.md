@@ -43,6 +43,10 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 
 - [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)
 
+## Quality
+
+- [[202610131752-what-is-metaquality]]: what is MetaQuality: how good is the thing that judges quality (permanent, open question)
+
 ## Marola forecaster
 
 - [[202610122357-marola-forecaster-contextual-bandit]]: a contextual bandit over forecast models (permanent, open question)

@@ -856,3 +856,13 @@ create, in the PR a 50THINKERS easy pt-BR version
 Read as: `50THINKERS.easy.pt-BR.md` beside its source, made with the `easy-pt-br` skill: the
 header block, the whole table with its 50 rows in the same order, and a list of the hard words.
 No fact was added; names and titles stay as in the original.
+
+```text
+in the same PR add a new content to the book (essay): What is MetaQuality
+```
+
+Read as: a note for the book, `notes/202610131752-what-is-metaquality.md`, as the two essays
+before it were notes. The owner has not defined the word, so the note gives one reading as a
+proposal (how good is the thing that judges quality) with examples from this repository, and its
+status is `open-question` until the owner says what he means. No source was invented for the
+word.
