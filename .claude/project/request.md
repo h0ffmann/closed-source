@@ -948,3 +948,12 @@ warnings from Vale, and one failed link of 513, a DOI whose publisher answered 4
 Read as: make that run pass, and split the three sentences shown. The link is alive (200 to a
 browser), so 405 now counts as an answer, as 403 and 429 do. The other long-sentence warnings
 stay; they are advice.
+
+```text
+attach in the same PR an image for me to using as github template (live cover), the one used as thumbnail when we link github links on whatsapp. It should sabe same design of the website entry (HHH style, same color of the website, proportion). Just be sure it will fit well in image limits, the github template is not fully displayed in the real thumbail AFAIK
+```
+
+Read as: the repository's social preview, `docs/social/github/social-preview.png`, 1280 by 640
+and 117 kB, inside GitHub's limits. It is the website's cover made small. Every word is inside
+the middle square, because a small preview cuts the picture to its centre. The owner uploads it
+in the repository's settings; GitHub has no API for that.

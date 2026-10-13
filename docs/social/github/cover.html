@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- The repository's social preview (GitHub: Settings, General, Social preview), drawn from the
+     website's cover: the same black field, yellow title, red band and paper. 1280 x 640.
+     Everything that must be read is inside the middle square (640 x 640), because a small link
+     preview (WhatsApp) crops the image to its centre. README.md beside this file has the rest. -->
+<html lang="en">
+<meta charset="utf-8">
+<title>closed-source: social preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Oswald:wght@400;600&display=block">
+<style>
+  :root { --paper: #F4EFE6; --ink: #141210; --muted: #5F5B56; --black: #0F0E0D; --yellow: #F2C230; --red: #A3201C; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1280px; height: 640px; overflow: hidden; background: var(--black); }
+  .cover { position: relative; width: 1280px; height: 640px; display: grid; grid-template-rows: 372px 56px 212px; }
+  /* The middle square: x from 320 to 960. The text column sits inside it with 24px to spare. */
+  .col { width: 592px; margin: 0 auto; }
+  .field { background: var(--black) radial-gradient(80rem 30rem at 20% 0%, rgba(255, 240, 220, .08), transparent 70%); color: var(--paper); padding-top: 62px; position: relative; }
+  .caps { font-family: 'Oswald', 'Arial Narrow', sans-serif; text-transform: uppercase; letter-spacing: .18em; }
+  .imprint { font-size: 15px; opacity: .8; margin-bottom: 16px; }
+  .head { font: 900 142px/.9 'Playfair Display', Didot, Georgia, serif; letter-spacing: -.01em; text-transform: uppercase; color: var(--yellow); }
+  .band { background: var(--red); color: #FFF5EE; display: flex; align-items: center; }
+  .band p { font-size: 15.5px; letter-spacing: .12em; white-space: nowrap; }
+  .paper { background: var(--paper); padding-top: 26px; }
+  .tail { font: 700 50px/1 'Playfair Display', Didot, Georgia, serif; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+  .byline { margin-top: 20px; font-size: 18px; color: var(--muted); text-transform: none; letter-spacing: .08em; }
+  /* Outside the middle square: decoration only. The site's open padlock, as on the paper's tile. */
+  .lock { position: absolute; right: 54px; top: 96px; width: 232px; aspect-ratio: 3 / 2; background: var(--paper); opacity: .24;
+    -webkit-mask: url(../../../site/static/drawings/padlock.svg) no-repeat center / contain; mask: url(../../../site/static/drawings/padlock.svg) no-repeat center / contain; }
+</style>
+<div class="cover">
+  <div class="field">
+    <div class="col">
+      <p class="caps imprint">Paper Fabric · open source</p>
+      <h1 class="head">Closed<br>Source</h1>
+    </div>
+    <div class="lock"></div>
+  </div>
+  <div class="band"><div class="col"><p class="caps">Reverse engineering · espionage · the ethics of citation</p></div></div>
+  <div class="paper">
+    <div class="col">
+      <p class="tail">The God that Failed</p>
+      <p class="caps byline">github.com/h0ffmann/closed-source</p>
+    </div>
+  </div>
+</div>
+</html>
