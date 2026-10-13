@@ -971,3 +971,18 @@ was `live links`: it ran only on `main`, so a link could fail there after a gree
 (this time a settings page that only the owner can open). Now it runs on each pull request too,
 with retries; the rule is in AGENTS.md: a check that can fail on `main` runs on the pull
 request first.
+
+```text
+In the same PR add a EASY PR-BT with Brazil flag, to explain the BOOK in a ELI5 way (more step by step, more words, to get real meaning of easy PTBR)
+```
+
+```text
+I was reffering to the website Abstract section, with STE etc, EASY-PTBR is another format
+```
+
+Read as: in the website's "Abstract", beside "Original" and "Simplified Technical English", a
+third button with the flag of Brazil: the abstract explained step by step in easy Brazilian
+Portuguese. Its text is `papers/closed-source/abstract.easy.pt-BR.md`, made with the
+`easy-pt-br` skill: every sentence of the abstract, in the same order, in twelve steps, with
+each hard word explained where it appears. It is about the author in the third person, because
+the abstract is his account and the easy version is not his writing. No fact was added.

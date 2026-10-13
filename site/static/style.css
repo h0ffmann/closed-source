@@ -391,3 +391,7 @@ main section.shelf { padding-top: 48px; }
 /* What changed in the latest release: a plain list, the red rule of the cover beside each line. */
 .changes { list-style: none; margin: 20px 0 0; padding: 0; max-width: 46em; display: grid; gap: 10px; }
 .changes li { padding-left: 16px; border-left: 3px solid var(--red); }
+
+/* The easy abstract: one step for each paragraph, with its lead in bold. */
+.prose.easy p { margin: 0 0 14px; }
+.prose.easy b { color: var(--red-text); }

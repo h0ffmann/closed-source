@@ -18,6 +18,8 @@ pub type Text {
   Original
   Ste
   PtBr
+  /// The abstract in easy Brazilian Portuguese, step by step. Its PDF is the pt-BR edition's.
+  EasyPtBr
 }
 
 pub type Model {
@@ -69,7 +71,7 @@ pub fn pdf(text: Text) -> String {
   case text {
     Original -> content.slug <> ".pdf"
     Ste -> content.slug <> "-ste.pdf"
-    PtBr -> content.slug <> "-pt-BR.pdf"
+    PtBr | EasyPtBr -> content.slug <> "-pt-BR.pdf"
   }
 }
 
@@ -741,30 +743,65 @@ fn pressed(on: Bool) -> Attribute(msg) {
   })
 }
 
+/// One paragraph of the easy abstract: "**lead.** text" becomes a bold lead and its text.
+fn easy_paragraph(p: String) -> Element(msg) {
+  case string.split(p, "**") {
+    ["", lead, rest] ->
+      html.p([], [html.b([], [html.text(lead)]), html.text(rest)])
+    _ -> html.p([], [html.text(string.replace(p, "*", ""))])
+  }
+}
+
 fn abstract_section(model: Model) -> Element(Msg) {
-  let text = case model.text {
-    Ste -> content.abstract_ste
-    _ -> content.abstract
+  let button = fn(text: Text, label: String) {
+    html.button([pressed(model.text == text), event.on_click(ShowText(text))], [
+      html.text(label),
+    ])
+  }
+  let paragraphs = fn(text: String) {
+    text
+    |> string.split("\n\n")
+    |> list.map(fn(p) { html.p([], [html.text(p)]) })
   }
   html.section([attribute.aria_labelledby("abstract")], [
     section_head("abstract", "Abstract", element.none()),
     html.div([attribute.class("filters")], [
-      html.button(
-        [pressed(model.text == Original), event.on_click(ShowText(Original))],
-        [
-          html.text("Original"),
-        ],
-      ),
-      html.button([pressed(model.text == Ste), event.on_click(ShowText(Ste))], [
-        html.text("Simplified Technical English"),
-      ]),
+      button(Original, "Original"),
+      button(Ste, "Simplified Technical English"),
+      case content.abstract_easy_pt_br {
+        "" -> element.none()
+        _ -> button(EasyPtBr, "🇧🇷 versão fácil, passo a passo")
+      },
     ]),
-    html.div(
-      [attribute.class("prose")],
-      text
-        |> string.split("\n\n")
-        |> list.map(fn(p) { html.p([], [html.text(p)]) }),
-    ),
+    case model.text {
+      EasyPtBr ->
+        html.div(
+          [attribute.class("prose easy"), attribute.attribute("lang", "pt-BR")],
+          list.flatten([
+            content.abstract_easy_pt_br
+              |> string.split("\n\n")
+              |> list.map(easy_paragraph),
+            [
+              html.p([attribute.class("sub")], [
+                html.text(
+                  "Vale o original, em inglês. Esta versão explica o resumo; ela não diz nada novo sobre o livro. ",
+                ),
+                external(
+                  content.repo
+                    <> "/blob/main/papers/"
+                    <> content.slug
+                    <> "/abstract.easy.pt-BR.md",
+                  "de onde ela vem",
+                ),
+                html.text("."),
+              ]),
+            ],
+          ]),
+        )
+      Ste ->
+        html.div([attribute.class("prose")], paragraphs(content.abstract_ste))
+      _ -> html.div([attribute.class("prose")], paragraphs(content.abstract))
+    },
     html.ul(
       [attribute.class("keywords")],
       list.map(content.keywords, fn(k) { html.li([], [html.text(k)]) }),

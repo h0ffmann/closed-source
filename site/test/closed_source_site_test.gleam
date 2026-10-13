@@ -171,8 +171,21 @@ pub fn the_latest_changelog_is_on_the_page_test() {
     #("", _) -> True
     #(version, changes) ->
       string.contains(html, "What changed in " <> version)
-      && list.length(changes) > 0
+      && changes != []
       && string.contains(html, "href=\"#changes\"")
       && string.contains(html, "/releases/tag/" <> version)
   }
+}
+
+pub fn the_abstract_has_an_easy_pt_br_version_test() {
+  assert content.abstract_easy_pt_br != ""
+  let html = app.initial() |> app.view |> element.to_string
+  assert string.contains(html, "versão fácil, passo a passo")
+  let #(model, _) = app.update(app.initial(), app.ShowText(app.EasyPtBr))
+  let easy = model |> app.view |> element.to_string
+  assert string.contains(easy, "lang=\"pt-BR\"")
+  assert string.contains(easy, "<b>1. O que é \"código fechado\".</b>")
+    || string.contains(easy, "<b>1. O que é &quot;código fechado&quot;.</b>")
+  assert string.contains(easy, "Vale o original")
+  assert app.pdf(app.EasyPtBr) == app.pdf(app.PtBr)
 }

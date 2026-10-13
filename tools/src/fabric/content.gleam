@@ -541,6 +541,20 @@ fn render(slug: String) -> Result(String, String) {
     True -> read("RELEASES.md") |> result.map(changelog)
     False -> Ok(#("", []))
   })
+  // The easy pt-BR abstract, written beside the paper by the easy-pt-br skill: the text between
+  // its two markers. Empty when the paper has none.
+  let easy_path = sys.join(paper, "abstract.easy.pt-BR.md")
+  use easy <- result.try(case sys.exists(easy_path) {
+    True ->
+      read(easy_path)
+      |> result.try(between(
+        _,
+        "<!-- easy-abstract:start -->",
+        "<!-- easy-abstract:end -->",
+      ))
+      |> result.map(strip)
+    False -> Ok("")
+  })
   let score_rows =
     list.map(board, fn(s) {
       "Score(name: "
@@ -686,6 +700,12 @@ pub const abstract = "
 
 pub const abstract_ste = "
     <> gleam_string(strip(json.get_string(ste, "abstract")))
+    <> "
+
+/// The abstract explained step by step in easy Brazilian Portuguese (abstract.easy.pt-BR.md,
+/// in Markdown: a paragraph may start with a bold lead). Empty when the paper has none.
+pub const abstract_easy_pt_br = "
+    <> gleam_string(easy)
     <> "
 
 pub const pages = "
