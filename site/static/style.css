@@ -354,3 +354,36 @@ main section.shelf { padding-top: 48px; }
 
 /* The preview of the book: the PDF in a frame, with the cover's rule above it. */
 .preview { display: block; width: 100%; height: min(80vh, 900px); margin: 28px 0 8px; border: 0; border-top: 3px solid var(--ink); background: var(--paper, #fff); }
+
+/* The CI card: what happens when the book changes, with the state of each check. One wide card in
+   the cover's red with a yellow name, after the tiles (.claude/skills/card-style/SKILL.md): one
+   flat colour, one line drawing as a mask, no motion. It is not one link: each badge opens its
+   workflow. */
+.ci-card {
+  --tile: #8E1B17; --on: #FFF5EE; --soft: rgba(255, 245, 238, .82); --chip: rgba(255, 245, 238, .16);
+  position: relative; padding: 28px 28px 26px; border-radius: 28px;
+  background: var(--tile); color: var(--on); overflow: hidden; isolation: isolate;
+}
+.ci-card::before {
+  content: ""; position: absolute; z-index: -1; right: 2%; top: -10px;
+  width: min(38%, 420px); aspect-ratio: 3 / 2; pointer-events: none;
+  background: var(--on); opacity: .14;
+  -webkit-mask: url(drawings/wheel.svg) no-repeat center / contain; mask: url(drawings/wheel.svg) no-repeat center / contain;
+}
+.shelf .ci-card h2 { margin: 22px 0 0; max-width: 12em; font-size: clamp(34px, 5vw, 60px); color: #F2C230; }
+.ci-card .tile-text { max-width: 36em; }
+.ci-stages { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1.5fr 1.5fr; gap: 14px; counter-reset: stage; }
+.ci-stage { counter-increment: stage; padding: 18px 18px 20px; border-radius: 18px; background: rgba(15, 14, 13, .28); }
+.ci-stage h4 { margin: 0; font: 700 20px/1.2 var(--sans); letter-spacing: -.01em; }
+.ci-stage h4::before { content: counter(stage) ". "; color: #F2C230; }
+.ci-stage > p { margin: 8px 0 0; font: 400 15px/1.4 var(--sans); color: var(--soft); }
+.ci-rows { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 12px; }
+.ci-rows li { display: grid; gap: 6px; }
+.ci-status { display: inline-flex; width: max-content; border-radius: 4px; }
+.ci-status img { display: block; height: 20px; }
+.ci-status:focus-visible { outline: 3px solid #F2C230; outline-offset: 3px; }
+.ci-does { font: 400 14px/1.4 var(--sans); color: var(--soft); }
+.ci-card .tile-more { margin-top: 22px; }
+.ci-card .tile-more a { color: var(--on); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 860px) { .ci-stages { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .ci-card { padding: 24px 22px 22px; border-radius: 24px; } .ci-card::before { width: 60%; opacity: .1; } }

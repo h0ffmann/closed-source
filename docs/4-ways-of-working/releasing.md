@@ -81,8 +81,8 @@ one for a version that the webhook already archived.
 ## arXiv
 
 **Caution:** since 31 October 2025, arXiv's computer-science category accepts review articles and
-position papers only after they pass peer review at a journal or conference, with the journal
-reference and DOI in the submission ([arXiv blog](https://blog.arxiv.org/?p=1740)). A v0 position
+position papers only after they pass peer review at a journal or conference. The submission must
+have the journal reference and the DOI ([arXiv blog](https://blog.arxiv.org/?p=1740)). A v0 position
 paper will be put on hold. Submit to arXiv after acceptance, or choose a non-CS category only if
 the paper genuinely belongs there.
 

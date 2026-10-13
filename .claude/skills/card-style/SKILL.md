@@ -29,6 +29,21 @@ always have a DOI. A friend's work comes from `friends:`, gets a wide card (`.ti
 is never listed as the writer's. When it has no DOI, the card opens the work's own page and its
 DOI line says "none yet"; never invent one.
 
+## The status card
+
+One card is not a work: the CI card (`ci_section`, `.ci-card`) says what happens when the book
+changes and shows the state of each workflow. It keeps the tiles' manner (one flat colour, the
+cover's red with a yellow name; chips; one drawing as a mask, a press wheel; no motion) and
+differs in three things:
+
+- **It is not one link.** Each badge opens its own workflow, so each badge is a stop for the
+  keyboard.
+- **Its state is not written here.** Each badge is an image that shields.io draws from GitHub's
+  data, the same badges as in `README.md`. The card names workflows by file (`checks` and `after`
+  in `app.gleam`); `just site-build` fails when a name is not a file in `.github/workflows/`.
+- **It says only what is true of the repository.** `main` is not a protected branch, so the card
+  does not say that a check must pass.
+
 ## The drawing
 
 Each card has one line drawing behind its text, in the corner away from the name.

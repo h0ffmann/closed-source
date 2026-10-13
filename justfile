@@ -143,6 +143,8 @@ site-build:
     nix develop --no-update-lock-file --command tools/fabric content
     nix develop --no-update-lock-file .#site --command bash -c 'cd site && just ci'
     scripts/md-quality.sh --count > site/dist/links.json
+    # The CI card names workflows: each one must be a file in .github/workflows/.
+    for f in $(grep -oE '"[a-z]+\.yml"' site/src/closed_source_site/app.gleam | tr -d '"' | sort -u); do [ -f ".github/workflows/$f" ] || { echo "site-build: the CI card names $f, which is not a workflow" >&2; exit 1; }; done
 
 # On any Ubuntu with only Nix and `apt install just`: render the paper's PDFs in picasso's paper lab.
 paper:
