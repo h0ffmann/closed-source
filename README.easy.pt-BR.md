@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="deb19b28801155ce12348f1b0b8b120c1c1653af1bb55f23181b79f62ab42ab8" -->
+<!-- easy: source="README.md"; sha256="545133682520b04086939522eade0eaaa2c9deb6c0cf352981dff6c2e212ba88" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -34,7 +34,7 @@ muda):
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) e
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**situação:** é a versão v0, um rascunho público (*preprint*). nenhuma revista revisou o texto
+**situação:** a versão v0.2.0 está no ar ([lista de versões](RELEASES.md)). é um rascunho público (*preprint*). nenhuma revista revisou o texto
 ainda. a [avaliação de prontidão](docs/1-product/readiness/2026-10-12-ready-to-promote.md) diz o
 que falta para a v1.
 
@@ -161,7 +161,8 @@ acontece sozinho.
 5. **o zenodo** guarda a versão alguns minutos depois e cria o DOI dela. o DOI de todas as
    versões juntas é [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
    **atenção:** um DOI é para sempre. você não consegue apagar uma versão publicada.
-6. **confira** a nova versão no zenodo.org: o título, os autores e a licença.
+6. **confira** a nova versão no zenodo.org: o título, os autores e a licença. depois, abra um
+   *pull request* que coloca a versão e o DOI dela em [`RELEASES.md`](RELEASES.md).
 7. **o arxiv** é manual, pelo navegador. desde 31 de outubro de 2025, o arxiv só aceita artigos
    de opinião da área de computação depois da revisão de uma revista ou conferência
    ([blog do arxiv](https://blog.arxiv.org/?p=1740)). então este artigo só vai para lá depois de
@@ -183,7 +184,7 @@ trabalho tem dois tipos de DOI. cada um responde a uma pergunta.
 
 | | DOI mais recente | DOI permanente |
 |---|---|---|
-| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.2.0: [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204); v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
 | leva para | a versão mais nova, seja qual for no dia do clique | uma versão só, sempre o mesmo texto |
 | quantos existem | um para o trabalho inteiro | um para cada versão |
 | serve para | citar o trabalho | dizer exatamente qual texto você leu |
@@ -196,7 +197,8 @@ trabalho tem dois tipos de DOI. cada um responde a uma pergunta.
   toma o lugar dela como a mais recente.
 
 cada `just release` cria um DOI permanente novo. a
-[página do zenodo](https://zenodo.org/doi/10.5281/zenodo.23333656) lista todas as versões.
+[página do zenodo](https://zenodo.org/doi/10.5281/zenodo.23333656) e o arquivo
+[`RELEASES.md`](RELEASES.md) listam todas as versões.
 
 as citações prontas, nos formatos bibtex, APA e ABNT, estão na seção [cite](README.md#cite) do
 original. um programa gera esse bloco, então ele fica só lá.

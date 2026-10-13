@@ -31,8 +31,8 @@ pub const start = "<!-- citation:start -->"
 
 pub const end = "<!-- citation:end -->"
 
-// The concept DOI resolves to the latest release. Zenodo minted it with v0.1.0, the first release
-// its webhook archived (docs/4-ways-of-working/releasing.md).
+// The concept DOI resolves to the latest release (v0.2.0 today; RELEASES.md lists them). Zenodo
+// minted it with v0.1.0, the first release its webhook archived (docs/4-ways-of-working/releasing.md).
 pub const concept_doi = "10.5281/zenodo.23333656"
 
 const name = "Closed Source: The God that Failed"

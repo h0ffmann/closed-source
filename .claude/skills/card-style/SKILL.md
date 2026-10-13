@@ -23,12 +23,18 @@ through `tools/fabric content`; never write a work, a tag or a DOI in `site/src`
    contrast of 4.5:1 or more. No gradient, and one shadow, on hover only.
 6. **A drawing in the background** (below).
 
+Two kinds of work have a card. The writer's own works come from `works:` in `metadata.md` and
+always have a DOI. A friend's work comes from `friends:`, gets a wide card (`.tile-friend`), and
+is never listed as the writer's. When it has no DOI, the card opens the work's own page and its
+DOI line says "none yet"; never invent one.
+
 ## The drawing
 
 Each card has one line drawing behind its text, in the corner away from the name.
 
 - **One motif for one work**, from the work's subject: an open padlock for closed-source, a fish
-  for marola, a breaking wave for ww3-gpu, a guitar for picasso.
+  for marola, a breaking wave for ww3-gpu, a guitar for picasso, a snake that bites its tail for
+  ouroboric.
 - **Drawn here, by hand, as SVG paths.** After the manner of the drawings on picasso's site: a
   few straight lines and curves, a broken frame around the figure, round caps and joins, no fill.
   The idea is borrowed; no path is copied. Do not trace or copy a drawing by Pablo Picasso: his

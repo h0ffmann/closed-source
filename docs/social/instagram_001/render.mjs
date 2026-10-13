@@ -74,7 +74,7 @@ const foot = (n) => `<div class="foot"><span>${icon}</span><span>h0ffmann.github
 // version, made with the easy-pt-br skill: shorter sentences, and each technical word explained.
 const T = {
   en: {
-    k1: 'v0.1.0 · first release on zenodo', p1: 'If anyone can reverse engineer anything,<br><span class="mark">cite what you borrow.</span>', s1: `doi:${DOI}`,
+    k1: 'v0.2.0 · live on zenodo', p1: 'If anyone can reverse engineer anything,<br><span class="mark">cite what you borrow.</span>', s1: `doi:${DOI}`,
     k2: 'the author', h2: 'Mr. Nobody on the cover.<br><span class="mark">A person behind it.</span>',
     p2: 'Written in the first person by Matheus Hoffmann, Escola Politécnica, UFRJ.', o2: 'His other work, each with a DOI you can cite:',
     k3: 'the skill', h3: 'How much of your text<br><span class="mark">is cited?</span>',
@@ -88,7 +88,7 @@ const T = {
     web: 'web', src: 'src',
   },
   'easy.pt-BR': {
-    k1: 'v0.1.0 · primeira versão no zenodo', p1: 'Hoje qualquer pessoa consegue desmontar um programa para ver como ele funciona.<br><span class="mark">Então cite o que você pega emprestado.</span>',
+    k1: 'v0.2.0 · no ar, no zenodo', p1: 'Hoje qualquer pessoa consegue desmontar um programa para ver como ele funciona.<br><span class="mark">Então cite o que você pega emprestado.</span>',
     s1: `doi:${DOI} · DOI é um endereço que não muda`,
     k2: 'o autor', h2: 'Na capa, Mr. Nobody.<br><span class="mark">Atrás dela, uma pessoa.</span>',
     p2: 'Quem escreve, em primeira pessoa, é Matheus Hoffmann, da Escola Politécnica da UFRJ.', o2: 'Outros trabalhos dele. Cada um tem um DOI, para você citar:',
