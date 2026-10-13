@@ -48,3 +48,25 @@ pub fn logo_test() {
   assert content.logo(entry)
     == "Logo(name: \"marola\", svg: \"https://x/logo.svg\", svg_dark: \"\", href: \"https://marola.dev\", label: \"\", text: \"\", width: \"56\", height: \"\")"
 }
+
+pub fn version_dois_keep_only_the_concept_test() {
+  let assert Ok(reply) =
+    json.decode(
+      "{\"hits\":{\"hits\":[{\"doi\":\"10.5281/zenodo.9\",\"conceptdoi\":\"10.5281/zenodo.8\",\"metadata\":{\"version\":\"v0.1.1\"}},{\"doi\":\"10.5281/zenodo.7\",\"conceptdoi\":\"10.5281/zenodo.6\",\"metadata\":{\"version\":\"v9.9.9\"}},{\"conceptdoi\":\"10.5281/zenodo.8\",\"metadata\":{}}]}}",
+    )
+  assert content.version_dois("10.5281/zenodo.8", reply)
+    == [#("v0.1.1", "10.5281/zenodo.9")]
+  assert content.version_dois("10.5281/zenodo.8", json.Object([])) == []
+  assert content.versions_url("10.5281/zenodo.8")
+    == "https://zenodo.org/api/records?q=conceptrecid%3A8&all_versions=true&sort=mostrecent&size=25"
+  assert content.versions_url("10.1000/x") == ""
+}
+
+pub fn work_test() {
+  let assert Ok(entry) =
+    json.decode(
+      "{\"name\":\"marola\",\"text\":\"sea\",\"doi\":\"10.5281/zenodo.1\",\"href\":\"https://x\"}",
+    )
+  assert content.work(entry)
+    == "Work(name: \"marola\", text: \"sea\", doi: \"10.5281/zenodo.1\", href: \"https://x\")"
+}

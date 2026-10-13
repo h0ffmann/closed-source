@@ -197,6 +197,25 @@ h3 { margin: 0; font: 400 19px/1.3 var(--serif); }
 .steps li { margin: 6px 0; }
 .steps li::marker { color: var(--red-text); font-family: var(--display); font-weight: 700; }
 .credit { margin-top: 16px; font-size: 16px; color: var(--muted); }
+/* A DOI as a two-part badge, after picasso's site. */
+.doi {
+  display: inline-flex; vertical-align: middle; margin: 2px 6px 2px 0;
+  border: 1px solid var(--ink); color: var(--ink); text-decoration: none;
+  font: 400 12px/1 var(--caps); letter-spacing: .08em;
+}
+.doi span { padding: 6px 9px; }
+.doi span:first-child { background: var(--red); color: #F4EFE6; letter-spacing: .14em; text-transform: uppercase; }
+.doi:hover { text-decoration: none; border-color: var(--red-text); }
+.doi-line { margin: 14px 0 0; }
+.dois { margin: 18px 0; }
+.dois dl { margin: 0; }
+.dois dt { margin-top: 14px; }
+.dois dd { margin: 4px 0 0; color: var(--muted); font-size: 16px; }
+.dois p { margin: 14px 0 0; font-size: 16px; color: var(--muted); }
+.works { list-style: none; padding: 0; margin: 6px 0 0; }
+.labs .works li { border-top: 0; padding-top: 8px; font-size: 16px; color: var(--muted); }
+.labs .works li > a { font: inherit; font-weight: 700; }
+.labs .works li > a.doi { font: 400 12px/1 var(--caps); }
 .cite { font-style: italic; }
 .citation {
   background: var(--surface); border-left: 3px solid var(--red); padding: 14px 16px;
@@ -212,7 +231,7 @@ h3 { margin: 0; font: 400 19px/1.3 var(--serif); }
   .cover-title .head { animation: settle .9s cubic-bezier(.2, .7, .2, 1) both; }
   .band { animation: draw .7s cubic-bezier(.65, 0, .35, 1) .35s both; }
   .band p, .tail { animation: rise .6s ease-out .8s both; }
-  .figures, .byline { animation: rise .6s ease-out 1s both; }
+  .figures, .byline, .doi-line { animation: rise .6s ease-out 1s both; }
   .thinker { animation: rise .45s ease-out both; animation-delay: calc(1.1s + var(--i, 0) * 18ms); }
   @supports (animation-timeline: view()) {
     main section:not(.feature) {

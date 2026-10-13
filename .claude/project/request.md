@@ -537,3 +537,21 @@ had minted 10.5281/zenodo.23333657 for v0.1.0, so "first release, with Zenodo mi
 pull request makes the rules, `release.yml` and the docs match it, as the change proposal
 `docs/2-engineering/changes/2026-10-13-zenodo-webhook-release/`. It changes AGENTS.md invariant 6,
 which is why it is a change proposal. It makes no new tag.
+
+```text
+add permaDOI latestDOI to project README.md as educational. Both DOIs should be used in the website, very explicitily, like h0ffmann/picasso did. Add a PR in h0ffmann/h0ffmann to Add this new DOI
+```
+
+```text
+Also bring all other DOIs from h0ffmann/h0ffmann, and bring them to the Author Section, with links to other DOIs
+```
+
+Read as: "latestDOI" is Zenodo's concept DOI, which resolves to the newest release, and "permaDOI"
+is a release's own version DOI. The README explains the two in a table (in the release pull
+request). The site shows both as badges on the cover and in Cite, with what each is for; as in
+picasso's `site/releases.py`, `tools/fabric content` asks Zenodo for the version DOIs at build
+time, because no commit can hold the DOI of its own release. The "Author Section" is the site's
+Author section and the README's Author paragraph: both list marola, ww3-gpu and picasso with
+their concept DOIs, from the `works:` list in `papers/closed-source/metadata.md`, whose source is
+the "DOI's" list of h0ffmann/h0ffmann (`me/ways-of-working.md` at `1a3a7e1`). h0ffmann/h0ffmann#51
+adds this paper's concept DOI to that list.
