@@ -104,3 +104,7 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 83 | Plato | — (the owner's choice: mathematics) | 33 |
 | 84 | Aristotle | — (the owner's choice: mathematics) | 34 |
 | 85 | Socrates | — (the owner's choice: mathematics) | 35 |
+| 86 | Dante Alighieri | — (the owner's choice) | 36 |
+| 87 | George Orwell | — (the owner's choice) | 37 |
+| 88 | Isaac Asimov | — (the owner's choice) | 38 |
+| 89 | Jiang Xueqin | *Predictive History* (YouTube channel, 2023–) | 39 |
