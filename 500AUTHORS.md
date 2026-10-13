@@ -98,3 +98,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 77 | Michel de Montaigne | *Essais* (1580) | 26 |
 | 78 | Hideaki Anno | *Neon Genesis Evangelion* (1995) | 27 |
 | 79 | Austin Kleon | *Steal Like an Artist* (Workman, 2012); pt-BR *Roube como um Artista* (Rocco, 2013) | 29 |
+| 80 | Julia Cameron | *The Artist's Way: A Spiritual Path to Higher Creativity* (Tarcher, 1992); pt-BR *O Caminho do Artista* | 30 |
