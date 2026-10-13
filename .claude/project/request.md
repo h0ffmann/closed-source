@@ -282,3 +282,16 @@ add hardhule / ways-of-working NAGORI.md is never agent/automatic edited, add th
 
 Read as: a hard rule in AGENTS.md and a ways-of-working page that no agent and no automation edits
 NAGORI.md, and the rule as the first thing NAGORI.md says, after its cite line.
+
+Hoffmann, 2026-10-13 02:18 UTC, verbatim:
+
+```text
+add personX as Why in this book 'who shares, multiplies' in Thinkers. add Olavo de Carvalho as Thinker due to his contributions in Garden of Afflictions book and the other book about Silence of Lambs (get name). Add Theodore Dalrymple, to be added later. Add Montaigne. The Essays (self-explainable, the reason for writting). Add NGE creator aka ``the most classical anime is history. Add the most reverse engineer thinker in 2026 as well
+```
+
+Read as: rows 23 to 28 of 50THINKERS.md, status chosen: personX ("who shares, multiplies"); Olavo
+de Carvalho for O Jardim das Aflições (1995) and Símbolos e Mitos no Filme "O Silêncio dos
+Inocentes" (title from olavodecarvalho.org's English biography); Theodore Dalrymple, reason later;
+Michel de Montaigne for the Essays; Hideaki Anno for Neon Genesis Evangelion; and row 28 kept open
+for the reverse-engineering thinker, whom the owner names. Each named thinker gets a row in
+500AUTHORS.md.
