@@ -392,3 +392,16 @@ Read as: compare `just release` and scripts/release.sh with picasso's (main at 2
 what is missing: the no-argument summary with a suggested bump, patch/minor/major, the version
 must go up, the strict tag pattern, the citation check before tagging, `--self-test`, and
 `just releases`. Keep what closed-source does on purpose: the signed tag and the Zenodo draft.
+
+Hoffmann, 2026-10-13 02:47 UTC, verbatim:
+
+```text
+I have created 2 ouroboric forks, 1 fork rea, I already have personal fork of WW4. Forget hermes. Add now my forks as submodules in this repository
+```
+
+```text
+also h0ffmann/picasso
+```
+
+Read as: shallow submodules under forks/ for h0ffmann/rea, h0ffmann/ouroboric, h0ffmann/.github,
+h0ffmann/WW4 and h0ffmann/picasso, with forks/README.md naming each upstream and its licence.
