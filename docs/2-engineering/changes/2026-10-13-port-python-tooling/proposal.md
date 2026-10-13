@@ -1,6 +1,6 @@
 ---
 title: "Port the Python tooling to Go, V or Gleam"
-status: proposed
+status: accepted
 date: 2026-10-13
 related: [../README.md, ../../../../justfile, ../../../../flake.nix]
 style: research
@@ -9,9 +9,8 @@ style: research
 
 # Port the Python tooling to Go, V or Gleam
 
-**Decided 2026-10-13:** option B (Go for everything), then paused the same minute: the owner asked
-first whether all of the Python can be ported to Gleam (option E below). `delta.md` and `tasks.md`
-follow the final choice.
+**Decided 2026-10-13:** option E, Gleam for everything, on the Erlang target. (Option B, Go, was
+chosen first and paused before any code landed, so that Gleam could be checked.)
 
 ## Why
 
