@@ -3,3 +3,5 @@ build/
 __pycache__/
 result
 result-*
+# graphify output; the graph belongs in ~/.cache/marola-graph/<repo> (MEMORY.md)
+graphify-out/

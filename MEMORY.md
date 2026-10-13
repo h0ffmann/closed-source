@@ -41,5 +41,21 @@ no model and no network, and with the graph outside the checkout.
 - graphify reads scripts and code, not prose. For the book and the paper, read
   `50THINKERS.md`, `papers/<slug>/` and `notes/` directly.
 
+What the graph covers, measured on 13 October 2026 with graphify 0.9.88:
+
+- The code graph is small: 14 nodes from 5 files (`scripts/release.sh`, `tools/fabric`,
+  `tools/src/fabric_ffi.erl` and the site's two `.mjs` files). graphify has no parser for Gleam,
+  so the 38 `.gleam` files of `tools/` and `site/` are not in it. For Gleam code, use `grep` and
+  the module list in `tools/src/fabric/cli.gleam`.
+- `fabric_ffi.erl` adds nothing until the lab installs graphify's `erlang` extra.
+- `.graphifyignore` also keeps out `CLAUDE_PROJECT.md` (the hard rule in AGENTS.md), the licence
+  texts, Ouroboric's docs copied as is, and the two renderings of `prose/`. With them, a document
+  pass reads 85 files and 50,000 words, not 118 files and 79,000 words.
+- One document pass was run with the `/graphify` skill at the owner's request, against the rule
+  above: 832 nodes, 62 communities, about 745,000 tokens. It is at
+  `~/.cache/marola-graph/closed-source-docs/` on the owner's machine. It showed that a concept
+  named in several files becomes one node for each file, so the three editions of the paper
+  tripled its concepts.
+
 graphify is in the code-graph routing part of [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md)
 (section 2.7), with its upstream, [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify).
