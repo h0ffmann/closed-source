@@ -449,3 +449,16 @@ Read as: a root MEMORY.md that says where this repository keeps what an agent mu
 (project memory is off), with a section that links to how h0ffmann/picasso uses graphify (its
 AGENTS.md, `just graphify` recipe and `.graphifyignore`, pinned at 2d6f8d8). "Grafiphyy" is read
 as graphify.
+
+## Export the project memory as CLAUDE_PROJECT.md
+
+Hoffmann, 2026-10-13 03:33 UTC, verbatim (relayed):
+
+```text
+EXPORT current memory as CLAUDE_PROJECT.md in a new PR, add hardrule to agents to not read this file.
+```
+
+Read as: a new PR with a root CLAUDE_PROJECT.md in the shape of picasso's: the "Paper Fabric"
+project's settings, and its memory. The memory store is empty (memory is off), so the export is
+what stands in for it: the book's facts, the hard rules, the decisions and the conventions
+recorded up to 2026-10-13. AGENTS.md gets a hard rule that no agent reads the file.
