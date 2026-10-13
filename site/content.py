@@ -58,7 +58,7 @@ def citations(readme: str) -> list[tuple[str, str]]:
 
 
 def thinkers(roster: str) -> list[tuple[int, str, str, str]]:
-    """(number, thinker, why, status) for each row of THINKERS.md's table."""
+    """(number, thinker, why, status) for each row of 50THINKERS.md's table."""
     rows = re.findall(r"^\|\s*(\d+)\s*\|([^|]*)\|([^|]*)\|([^|]*)\|\s*$", roster, re.M)
     return [(int(n), t.strip(), w.strip(), st.strip()) for n, t, w, st in rows]
 
@@ -109,7 +109,7 @@ def render(slug: str) -> str:
     cites = [f"#({gleam_string(l)}, {gleam_string(t)})" for l, t in citations((ROOT / "README.md").read_text())]
     keywords = [gleam_string(k) for k in m.get("keywords", [])]
     secs = [gleam_string(t) for t in sections(paper / "prose")]
-    roster = thinkers((paper / "THINKERS.md").read_text()) if (paper / "THINKERS.md").exists() else []
+    roster = thinkers((ROOT / "50THINKERS.md").read_text()) if (ROOT / "50THINKERS.md").exists() else []
     thinker_rows = [f"Thinker(n: {n}, name: {gleam_string(t)}, why: {gleam_string(w)}, status: {gleam_string(st)})" for n, t, w, st in roster]
     note_rows = [f"Note(file: {gleam_string(f)}, title: {gleam_string(t)}, kind: {gleam_string(k)}, status: {gleam_string(st)})" for f, t, k, st in notes(ROOT / "notes")]
     rev = subprocess.run(["git", "rev-parse", "--short", "HEAD"], capture_output=True, text=True, cwd=ROOT).stdout.strip()

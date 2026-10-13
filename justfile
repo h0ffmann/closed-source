@@ -45,7 +45,7 @@ check: build
     python3 scripts/refs_check.py papers/*/refs.bib
     for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
     for p in papers/*/prose-pt-BR; do p="${p#papers/}"; python3 scripts/ste_check.py --translation "${p%/prose-pt-BR}"; done
-    python3 scripts/book_check.py $(ls papers)
+    python3 scripts/book_check.py
     python3 scripts/cite_check.py
     python3 scripts/notes_check.py
 

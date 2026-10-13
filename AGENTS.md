@@ -30,13 +30,21 @@ linked docs before you change what they cover.
 5. Report allegations as allegations. Name the source and the status of any legal case.
 6. Never publish a Zenodo deposit. Drafts only; a human publishes. A DOI is permanent.
 7. Never commit secrets, tokens or personal contact data.
+8. Never merge a pull request, and never push to `main`. Humans merge.
+9. Never weaken a guardrail to get green: a check in `scripts/`, a CI job, a hard rule above or
+   below. A failing check says what to fix. A change to a hard rule is a change proposal
+   (`docs/2-engineering/changes/`) that the owner approves.
+10. Work on a branch, stage files by path, and open a pull request for every change.
+
+Invariants 8 to 10 follow Ouroboric's AGENTS.md (invariants 3, 5 and 8; ouroboric-dev/ouroboric at
+`b355b1d`, CC BY 4.0).
 
 ## The book (hard rule)
 
 *Closed Source: The God that Failed* has exactly 100 pages: 50 authors, two pages per author
 (Hoffmann, 12 October 2026; first 50 pages and one per author, changed the same evening). The 50
 authors are thinkers the book is about, and each gets two first-person pages; the cover names Mr.
-Nobody. `papers/closed-source/THINKERS.md` is the roster, and `just check` fails unless it has
+Nobody. `50THINKERS.md` is the roster, chosen from the long list in `500AUTHORS.md` (at most 500 authors, every thinker listed), and `just check` fails unless it has
 exactly 50 distinct thinkers. A change that breaks the 100-page count is wrong. The current
 11-section text is material for those pages; ask the owner before you restructure it.
 
