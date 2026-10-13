@@ -115,7 +115,6 @@ explanation of the 50 pages:
 hard rule of the book, 50 authors, 1 page per author
 ```
 
-
 On the decision card "Who are the 50 authors, one page each, in the book?", Hoffmann chose
 "50 thinkers" (20:56 UTC). Then, verbatim (20:57 UTC):
 
@@ -430,6 +429,7 @@ stop in fact check if ALL python code here can be ported to Gleam, check 100%
 
 Read as: stop the Go port (nothing was pushed) and check, capability by capability, whether every
 Python file can be written in Gleam; add the result to the change proposal.
+
 ## Footer: made with Gleam and Claude Code
 
 Hoffmann, 2026-10-13 03:02 UTC, verbatim:
@@ -440,6 +440,7 @@ add a footer mark in the website Made with Gleam (site-logo-icon) and Claude Cod
 
 Read as: a footer line "Made with [Gleam icon] Gleam and [Claude Code icon] Claude Code", each icon
 the project's own site icon, loaded from its owner and not copied here.
+
 ## Labels and the picasso Gleam issue
 
 Hoffmann, 2026-10-13 03:08 UTC, verbatim:
@@ -814,7 +815,6 @@ link on the closed-source tile, and in `.zenodo.json` a sentence with the link a
 `isVariantFormOf` tie to the PDF. The README and Zenodo links use the release's
 `latest/download` URL, which always serves the newest release's PDF.
 
-
 ```text
 adjust in this PR https://github.com/h0ffmann/closed-source/pull/45 in Zenodo I want to be indexed no as preprint, but as a book, with a existing paper.pdf attached to the website so they can have a preview of it.
 ```
@@ -866,3 +866,46 @@ before it were notes. The owner has not defined the word, so the note gives one 
 proposal (how good is the thing that judges quality) with examples from this repository, and its
 status is `open-question` until the owner says what he means. No source was invented for the
 word.
+
+```text
+There is any markdown analyzer tool that could be used in the .md files, to increase quality? Pirsig quality
+```
+
+```text
+Add all 3 markdown analyzers you mentioned in a PR, inclusing the prosing rules to Vale. create as MD Quality
+```
+
+```text
+or better .md / quality would fit better with existing CIs, post merge
+```
+
+Read as: markdownlint-cli2, Vale and lychee in a pinned shell of the flake (`md`), one script
+(`scripts/md-quality.sh`, `just md-quality`) and one workflow named `.md` with one job named
+`quality`, so the check reads ".md / quality" beside "pdf / build" and "site / build". Vale's
+rules are the four prose rules of AGENTS.md, written here. "post merge" is read as: after #45
+was merged, and the workflow also runs on each push to `main`, as the others do.
+
+```text
+Is it possible to add HHH Democracy work as related work on Zenodo? Check if there is a Zenodo record for this or to any austrian economics school related. Add to the same markdown quality pr
+```
+
+Read as: yes. Zenodo has no record of the book (searched that day), but a tie needs only a DOI,
+and Crossref holds the Routledge edition's: 10.4324/9780203793572. The record gains the tie
+`references`, because the paper takes its title formula from the book and does not cite it in
+its reference list. `RELATED_WORK.md` has the search and its date.
+
+```text
+in the same PR could you put in the Zenodo record this is the actual shape of the book? https://h0ffmann.github.io/closed-source/paper.pdf os at least link as paper so people can download or see in Zenodo UI
+```
+
+Read as: the record's description now starts with the book as a PDF: the link to read it in the
+browser and the link to download it. The PDF file itself is not in the record: Zenodo's webhook
+attaches only the source archive, and the hard rules forbid a deposit by hand or through the API.
+
+```text
+create a badge, in readme on live links in the website if 100%, show as green
+```
+
+Read as: a workflow, `live links`, in which lychee fetches every web link of the published
+website and of the Markdown files. It passes only when all of them answer, so its badge in
+`README.md` is green only at 100%.

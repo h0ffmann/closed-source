@@ -77,7 +77,7 @@ Other counts taken that day, for words that are not in the list: "trade secret" 
 
 | Keyword | Why |
 |---|---|
-| FAIR | 8,485 records: a very large room. The research-software reader is reached by "research software" and "software citation". Dropped from the next release |
+| FAIR | 8,485 records: a large room. The research-software reader is reached by "research software" and "software citation". Dropped from the next release |
 | Linux, Git | The paper uses them as evidence that openness scales; a reader who searches for them is not looking for this. 583 and 386 records. Dropped from the next release |
 | Ghidra | The paper names the tool in passing; it is not about it |
 | LLM | "large language models" is the same room, written out |

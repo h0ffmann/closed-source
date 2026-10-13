@@ -38,7 +38,7 @@ principles. In this product they mean:
 5. **Learn in public.** The agent configuration that produced a paper ships with it.
 6. **Read before you borrow.** Borrow, cite, propagate ([AGENTS.md](../../AGENTS.md)).
 7. **Narrow first.** One paper, one repository, one toolchain, until the second paper shows what
-   is truly shared.
+   is shared.
 
 ## What makes it ouroboric
 

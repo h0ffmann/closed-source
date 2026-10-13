@@ -66,6 +66,12 @@ self-test:
     scripts/readme.sh --self-test
     scripts/citation-score.sh --self-test
 
+# Three analysers over the Markdown files, in the flake's `md` shell: markdownlint-cli2 (structure),
+# Vale (the prose rules of AGENTS.md) and lychee (links). `just md-quality --online` also fetches
+# every web link and the website's; `just md-quality --self-test` gives each one a bad file.
+md-quality *args:
+    nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file .#md --command scripts/md-quality.sh {{args}}
+
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
 ouroboric-sources:

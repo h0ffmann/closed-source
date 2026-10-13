@@ -23,6 +23,8 @@ linked docs before you change what they cover.
   count or a tie that was not read from the index that day.
 - Each release, its permanent DOI and what changed: `RELEASES.md`. Add a row after each release.
 - Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
+- The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
+  rules in `docs/4-ways-of-working/md-quality.md`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.
 - Where the memory of this repository is, and the code graph (graphify): `MEMORY.md`.
 

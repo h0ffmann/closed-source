@@ -48,6 +48,7 @@ site calls a free online copy of it "unauthorized". So this repository and its w
 title formula and a typographic style from the book, credit it, and copy no cover art and no
 text from it.
 
+- DOI of the Routledge edition: [10.4324/9780203793572](https://doi.org/10.4324/9780203793572) (Crossref, read on 13 October 2026). This repository's Zenodo record names it as a work it `references`.
 - Author's page: [hanshoppe.com/democracy](https://www.hanshoppe.com/democracy/)
 - Overview: [Wikipedia](https://en.wikipedia.org/wiki/Democracy:_The_God_That_Failed)
 

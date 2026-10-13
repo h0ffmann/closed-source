@@ -31,7 +31,7 @@ Atlantic or Brazil region, and it scores the atmosphere, not ocean waves.
 
 **Citation.** The page asks for no citation and gives no DOI; it says the dashboard and its scores
 are CC BY 4.0, and third-party forecast data keep their own terms. Cite it as: Brightband,
-*Operational WeatherBench: Methodology*, https://owb.brightband.com/methodology (accessed
+*Operational WeatherBench: Methodology*, <https://owb.brightband.com/methodology> (accessed
 2026-10-12), CC BY 4.0. The page itself cites the WeatherBench 2 paper and the papers of each model.
 
 Used by [[202610122357-marola-forecaster-contextual-bandit]].

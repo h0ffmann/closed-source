@@ -1,5 +1,5 @@
 ---
-title: Reference log for "Closed Source: The God that Failed"
+title: 'Reference log for "Closed Source: The God that Failed"'
 status: draft
 date: 2026-10-12
 style: research

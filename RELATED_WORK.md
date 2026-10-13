@@ -104,6 +104,17 @@ writer's other works are cited here in full. They show from v0.2.1 on.
 | requires | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) (picasso) | This repository builds its PDFs and its website with picasso's `paper` and `gleam-website` labs, pinned in `flake.nix`. The paper already cites picasso; `requires` says the second thing, and it answers the `isRequiredBy` that picasso's record gets in return |
 | cites | <https://github.com/h0ffmann/nashkell> (nashkell) | The paper cites it three times (sections 6 and 9; `hoffmann2026nashkell` in `refs.bib`), and the record did not name it. It is the writer's work and has no DOI, so the tie is a URL: stored, and not counted |
 
+A third tie was added on 13 October 2026, to a work by another person:
+
+| Tie | To | Why |
+|---|---|---|
+| references | [10.4324/9780203793572](https://doi.org/10.4324/9780203793572): Hoppe, *Democracy: The God That Failed* (Routledge) | The paper's title takes its formula from this book, and the website's cover follows its type and colours ([`BOOKS.md`](BOOKS.md)). The paper's reference list does not cite it, so the tie is `references`, not `cites`. Crossref holds the DOI: type book, publisher Routledge, read on 13 October 2026 |
+
+The book has no record on Zenodo. Searched on 13 October 2026 in Zenodo's API: the title
+"Democracy: The God That Failed" and the creators Hoppe, Mises, Rothbard and Kinsella each gave 0
+records; the keyword "Austrian economics" gave 25 records, none of them a work this paper
+stands on. A tie does not need a Zenodo record: it needs a DOI, and the publisher's DOI is one.
+
 With these, every work of the writer that the paper cites is in the record: marola, ww3-gpu and
 picasso by DOI, and nashkell by URL. A DOI for nashkell would turn its tie into one that counts;
 that is a release of nashkell with Zenodo switched on, as for the others.

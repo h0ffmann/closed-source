@@ -12,6 +12,8 @@
 [![release](https://img.shields.io/github/v/tag/h0ffmann/closed-source?sort=semver&filter=v*&label=release&style=flat-square&color=A3201C)](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)
 [![pdf](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml)
 [![site](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml)
+[![.md quality](https://img.shields.io/github/actions/workflow/status/h0ffmann/closed-source/md.yml?branch=main&label=.md%20quality&style=flat-square)](docs/4-ways-of-working/md-quality.md)
+[![live links: green when 100% of the links of the website and the markdown files answer](https://img.shields.io/github/actions/workflow/status/h0ffmann/closed-source/links.yml?branch=main&label=live%20links&style=flat-square)](https://github.com/h0ffmann/closed-source/actions/workflows/links.yml)
 [![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
 [![v0.2.0 DOI](https://img.shields.io/badge/v0.2.0_DOI-10.5281%2Fzenodo.23335204-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23335204)
 [![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-111111?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
