@@ -71,8 +71,8 @@ its source.
 the record does: the record has one opposition, to one extension of one patent, with no text of
 a speech in the sources I read. Second, Bristol is on both sides of 1775. The mining interest
 near Bristol wanted Watt's engine free (Smiles), and a Bristol manufacturer wanted his own patent
-longer (Owen). So his vote against Watt may show the interests of his city as much as a
-principle, and no source here decides between them. Third, the two cases differ in one way that
+longer (Owen). So his opposition to Watt's bill may show the interests of his city as much as
+a principle, and no source here decides between them. Third, the two cases differ in one way that
 keeps the owner's word "machines" partly true: Burke opposed the patent on a machine and backed
 the patent on a material and its process. No source I read says that Burke made that
 distinction.
