@@ -14,7 +14,7 @@ does not have exactly 50 numbered rows, if a name appears twice, or if a thinker
 the long list in [500AUTHORS.md](500AUTHORS.md).
 
 The first 22 rows are a proposal, taken from the people the paper already cites (refs.bib) and
-from BOOKS.md. Rows 23 to 27, 29 and 30 are the owner's choices of 13 October 2026, and row 28 is kept for a thinker the owner will name. Rows 31 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
+from BOOKS.md. Rows 23 to 27 and 29 to 31 are the owner's choices of 13 October 2026, and row 28 is kept for a thinker the owner will name. Rows 32 to 50 are open. Change any row: the owner chooses the 50. No proclaimed AI guru is a
 thinker here: they are the book's opponents (AGENTS.md).
 
 After the 100 pages comes a partial snapshot of the private `h0ffmann/nagori` repository, outside
@@ -54,7 +54,7 @@ Status: `open` (no thinker yet), `proposed`, `chosen`, `written` (the two pages 
 | 28 | — | the foremost reverse-engineering thinker of 2026 (to be named) | open |
 | 29 | Austin Kleon | *Steal Like an Artist* (2012; *Roube como um Artista*, Rocco, 2013): creative work builds on the work of others | chosen |
 | 30 | Julia Cameron | *The Artist's Way* (1992; *O Caminho do Artista*): creativity as a daily practice | chosen |
-| 31 | — | — | open |
+| 31 | Gregory Wolfe | *Beauty Will Save the World* (2011; *A Beleza Salvará o Mundo*): recovering the human in an ideological age | chosen |
 | 32 | — | — | open |
 | 33 | — | — | open |
 | 34 | — | — | open |

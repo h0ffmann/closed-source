@@ -99,3 +99,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 78 | Hideaki Anno | *Neon Genesis Evangelion* (1995) | 27 |
 | 79 | Austin Kleon | *Steal Like an Artist* (Workman, 2012); pt-BR *Roube como um Artista* (Rocco, 2013) | 29 |
 | 80 | Julia Cameron | *The Artist's Way: A Spiritual Path to Higher Creativity* (Tarcher, 1992); pt-BR *O Caminho do Artista* | 30 |
+| 81 | Gregory Wolfe | *Beauty Will Save the World: Recovering the Human in an Ideological Age* (ISI Books, 2011); pt-BR *A Beleza Salvará o Mundo* | 31 |
