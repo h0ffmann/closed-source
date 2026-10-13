@@ -4,13 +4,14 @@
 # `nix develop` (flake.nix) or `just shell`. Runs with the just 1.21 of Ubuntu 24.04.
 #
 # A paper is papers/<slug>/ with metadata.md, prose/NN-*.md and refs.bib. A paper with a
-# prose-ste/ directory (its ASD-STE100 text) also builds pdf/<slug>-ste.pdf; prose-ste/00-metadata.md
-# overrides metadata.md keys such as the abstract.
+# prose-ste/ directory (its ASD-STE100 text) also builds pdf/<slug>-ste.pdf, and one with a
+# prose-pt-BR/ directory (the printed Brazilian Portuguese edition) builds pdf/<slug>-pt-BR.pdf; the
+# 00-metadata.md in either directory overrides metadata.md keys such as the abstract and the language.
 set shell := ["bash", "-euo", "pipefail", "-c"]
 
 pandoc_opts := "--from markdown+fancy_lists+raw_tex -F pandoc-crossref --citeproc --metadata link-citations=true --number-sections --top-level-division=section --fail-if-warnings -s --template format/tex/template.tex -t latex --metadata-file format/crossref.yaml"
 
-# Build every paper, or the papers named: pdf/<slug>.pdf (and pdf/<slug>-ste.pdf).
+# Build every paper, or the papers named: pdf/<slug>.pdf (and pdf/<slug>-ste.pdf, pdf/<slug>-pt-BR.pdf).
 build *slugs:
     #!/usr/bin/env bash
     set -euo pipefail
@@ -24,6 +25,7 @@ build *slugs:
       python3 scripts/logos.py "$p"
       just _pdf "$p" prose "$p"
       if [ -d "papers/$p/prose-ste" ]; then just _pdf "$p" prose-ste "$p-ste"; fi
+      if [ -d "papers/$p/prose-pt-BR" ]; then just _pdf "$p" prose-pt-BR "$p-pt-BR"; fi
     done
 
 # One PDF: papers/<slug>/<dir>/*.md -> build/tex/<out>.tex -> pdf/<out>.pdf (XeLaTeX twice).
@@ -37,10 +39,12 @@ _pdf slug dir out:
     cp build/{{out}}.pdf pdf/{{out}}.pdf
     @echo "build: pdf/{{out}}.pdf"
 
-# Build, then check the reference logs and that each STE text keeps its citations and numbers.
+# Build, then check the reference logs and that each STE text and translation keeps its citations
+# and numbers.
 check: build
     python3 scripts/refs_check.py papers/*/refs.bib
     for p in papers/*/prose-ste; do p="${p#papers/}"; python3 scripts/ste_check.py "${p%/prose-ste}"; done
+    for p in papers/*/prose-pt-BR; do p="${p#papers/}"; python3 scripts/ste_check.py --translation "${p%/prose-pt-BR}"; done
     python3 scripts/book_check.py $(ls papers)
     python3 scripts/cite_check.py
     python3 scripts/notes_check.py

@@ -204,3 +204,26 @@ add NOTE with POLICY - Contextual Bandits for Weather Bench: The Marola forecast
 
 Read as: five notes under SMART_NOTE_POLICY.md, with the Operational WeatherBench methodology as a
 literature note and its citation.
+
+Hoffmann, 2026-10-13 00:15 UTC, verbatim:
+
+```text
+Add printed version PDF in pt-BR as well (pt-BR suffix)
+```
+
+Read as: the paper's printed edition in Brazilian Portuguese, `prose-pt-BR/`, built to
+`pdf/closed-source-pt-BR.pdf` next to the English PDF, with a check that it keeps the facts.
+
+Hoffmann, 2026-10-13 00:17 and 00:18 UTC, verbatim:
+
+```text
+Also change visual of web-site, do agentic research to find top community skills for for adding more appleailing visuals, animations. This website does not match HHH Democracy book style. Use everything from the book Same aesthetic
+```
+
+```text
+50 Thinkers + 2nd brain should be very visible in front page
+```
+
+Read as: the site set as a book cover after the colours and type of Hoppe's 2001 cover (no cover
+art copied), motion after Anthropic's frontend-design skill, and the 50 Thinkers and the notes as
+the first two sections of the front page.

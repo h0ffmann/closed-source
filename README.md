@@ -36,7 +36,7 @@ below need the `nix.conf` line above.
 
 ```sh
 nix develop            # or `just shell`: every tool on PATH
-just                   # every paper -> pdf/<slug>.pdf and pdf/<slug>-ste.pdf
+just                   # every paper -> pdf/<slug>.pdf, pdf/<slug>-ste.pdf and pdf/<slug>-pt-BR.pdf
 just build closed-source
 just check             # build, then the reference-log and STE checks (what CI runs)
 just arxiv             # arXiv source bundles, checked with pdfLaTeX, in build/arxiv/
@@ -47,7 +47,9 @@ Each paper builds twice: `pdf/<slug>.pdf` from `prose/`, and `pdf/<slug>-ste.pdf
 the same paper in ASD-STE100 Simplified Technical English (after h0ffmann/picasso's
 `WHITEPAPER.md`). `/ste100` ([`.claude/commands/ste100.md`](.claude/commands/ste100.md)) makes the
 STE text; `scripts/ste_check.py`, run by `just check`, fails if it changes a citation, quotation,
-number or marker. The passes are logged in `papers/<slug>/STE100.md`.
+number or marker. The passes are logged in `papers/<slug>/STE100.md`. A paper with `prose-pt-BR/`
+also builds `pdf/<slug>-pt-BR.pdf`, the printed edition in Brazilian Portuguese; `just check` runs
+`scripts/ste_check.py --translation` on it, so it keeps every citation, number and quotation.
 
 The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
 Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
@@ -70,12 +72,17 @@ Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs a
 pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
 GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
 
-The header's jacket sets the title after the title formula and book-jacket typography of
+The front page opens with the 50 Thinkers and the second brain (`notes/`). The site is set like a
+book cover, after the colour scheme and type of the cover of
 
 > Hoppe, Hans-Hermann. *Democracy—The God That Failed: The Economics and Politics of Monarchy,
 > Democracy, and Natural Order*. New Brunswick, NJ: Transaction Publishers, 2001. ISBN 0-7658-0088-8.
 
-The book is under copyright (© 2001), so the site copies no cover art and no text from it. Hoppe
+Its 2001 cover has a brown field, a white title, a red band and the rest of the title in black. The
+site's colours are estimates from that description, not samples. The book is under copyright
+(© 2001), so the site copies no cover art and no text from it. The motion follows Anthropic's
+[frontend-design skill](https://github.com/anthropics/skills) (Apache-2.0): one entrance, and
+nothing moves when the reader asks for reduced motion. Hoppe
 argues that ideas should not be property; the law still gives the copyright. [`BOOKS.md`](BOOKS.md)
 says more, with the other books behind this repository.
 
