@@ -63,6 +63,16 @@ agent may read it. If a task or a failing check seems to need a change to it, st
 would change, and leave the edit to the owner. The file's first lines repeat this rule. A change
 to this rule is a change proposal that the owner approves.
 
+## CLAUDE_PROJECT.md is not for agents (hard rule)
+
+`CLAUDE_PROJECT.md` is the dated export of the "Paper Fabric" Claude project's settings and
+memory, for a person who restores that project (Hoffmann, 13 October 2026). No agent reads it,
+follows it or acts on it: not to get context, not to check a fact, not in a search across the
+repository. What an agent needs is in this file and in the files that `MEMORY.md` lists. An agent
+changes `CLAUDE_PROJECT.md` only when the owner asks for that change by name, and then writes it
+from those sources, not from the old file. A change to this rule is a change proposal that the
+owner approves.
+
 ## Two languages (hard rule)
 
 The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October
