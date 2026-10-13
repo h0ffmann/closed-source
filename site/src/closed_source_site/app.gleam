@@ -2,7 +2,7 @@
 //// `index.html`, so the page reads without JavaScript and the client takes it over in place.
 
 import closed_source_site/content.{
-  type Author, type Logo, type Note, type Thinker,
+  type Author, type Logo, type Note, type Thinker, type Work,
 }
 import closed_source_site/ffi
 import gleam/int
@@ -73,6 +73,7 @@ pub fn view(model: Model) -> Element(Msg) {
   html.div([], [
     header(),
     html.main([attribute.class("wrap")], [
+      shelf_section(),
       thinkers_section(),
       notes_section(),
       read_section(),
@@ -94,6 +95,179 @@ fn external(href: String, label: String) -> Element(msg) {
   html.a([attribute.href(href), attribute.rel("noopener")], [html.text(label)])
 }
 
+/// A DOI as a two-part badge that opens doi.org, after picasso's site.
+fn doi_link(label: String, doi: String) -> Element(msg) {
+  html.a(
+    [
+      attribute.class("doi"),
+      attribute.href("https://doi.org/" <> doi),
+      attribute.rel("noopener"),
+    ],
+    [html.span([], [html.text(label)]), html.span([], [html.text(doi)])],
+  )
+}
+
+/// The newest release and its own DOI, when Zenodo was reached at build time.
+fn latest_version() -> Result(#(String, String), Nil) {
+  list.first(content.version_dois)
+}
+
+/// The two DOIs side by side, for the cover: the latest and the newest release's own.
+fn doi_badges() -> Element(msg) {
+  case content.doi {
+    "" -> element.none()
+    doi ->
+      html.p([attribute.class("doi-line")], [
+        doi_link("Latest DOI", doi),
+        case latest_version() {
+          Ok(#(version, own)) -> doi_link("Permanent DOI · " <> version, own)
+          Error(_) -> element.none()
+        },
+      ])
+  }
+}
+
+/// The two DOIs with what each is for, and every release's own DOI.
+fn dois() -> Element(msg) {
+  case content.doi {
+    "" -> element.none()
+    doi ->
+      html.div([attribute.class("dois")], [
+        html.dl([], [
+          html.dt([], [doi_link("Latest DOI", doi)]),
+          html.dd([], [
+            html.text(
+              "One DOI for the whole work. It always resolves to the newest release. Cite this one.",
+            ),
+          ]),
+          ..case latest_version() {
+            Ok(#(version, own)) -> [
+              html.dt([], [doi_link("Permanent DOI · " <> version, own)]),
+              html.dd([], [
+                html.text(
+                  "One DOI for release "
+                  <> version
+                  <> " alone: the same text forever. Add it when the exact wording matters, as in a quotation or a review.",
+                ),
+              ]),
+            ]
+            Error(_) -> []
+          }
+        ]),
+        html.p([], [
+          html.text("Each release gets its own permanent DOI: "),
+          ..list.append(
+            list.map(content.version_dois, fn(v) {
+              html.span([attribute.class("version")], [
+                html.text(v.0 <> " "),
+                external("https://doi.org/" <> v.1, v.1),
+                html.text(" · "),
+              ])
+            }),
+            [
+              external(
+                "https://zenodo.org/doi/" <> doi,
+                "all versions on Zenodo",
+              ),
+            ],
+          )
+        ]),
+      ])
+  }
+}
+
+/// One work as one large tile. The whole tile opens the work's DOI; `more` holds the tile's
+/// second link, which stays clickable above it.
+fn tile(
+  kind: String,
+  tags: List(String),
+  name: String,
+  text: String,
+  doi: String,
+  more: Element(msg),
+) -> Element(msg) {
+  html.li([attribute.class("tile tile-" <> kind)], [
+    html.p(
+      [attribute.class("tile-tags")],
+      list.map(tags, fn(t) { html.span([], [html.text(t)]) }),
+    ),
+    html.h3([], [
+      html.a(
+        [
+          attribute.class("tile-link"),
+          attribute.href("https://doi.org/" <> doi),
+          attribute.rel("noopener"),
+        ],
+        [html.text(name)],
+      ),
+    ]),
+    html.p([attribute.class("tile-text")], [html.text(text)]),
+    html.p([attribute.class("tile-doi")], [
+      html.span([], [html.text("DOI")]),
+      html.text(" " <> doi),
+    ]),
+    html.p([attribute.class("tile-more")], [more]),
+    html.span([attribute.class("tile-go"), attribute.aria_hidden(True)], []),
+  ])
+}
+
+/// Every DOI of the writer's work, this paper's first: large tiles that open doi.org.
+fn shelf_section() -> Element(msg) {
+  case content.doi {
+    "" -> element.none()
+    doi ->
+      html.section(
+        [attribute.class("shelf"), attribute.aria_labelledby("dois")],
+        [
+          html.h2([attribute.id("dois")], [
+            html.text(case list.length(content.works) {
+              0 -> "One work, one DOI."
+              n ->
+                int.to_string(n + 1)
+                <> " works, "
+                <> int.to_string(n + 1)
+                <> " DOIs."
+            }),
+          ]),
+          html.p([attribute.class("shelf-lede")], [
+            html.text(
+              "Click a tile to open its DOI. A DOI still resolves after a repository moves, so cite the DOI, not the URL.",
+            ),
+          ]),
+          html.ul([attribute.class("tiles")], [
+            tile(
+              "paper",
+              content.tags,
+              content.slug,
+              content.title
+                <> ": the paper you are reading about. Its latest DOI always opens the newest release.",
+              doi,
+              case latest_version() {
+                Ok(#(version, own)) ->
+                  external(
+                    "https://doi.org/" <> own,
+                    "Permanent DOI for " <> version <> ": " <> own,
+                  )
+                Error(_) ->
+                  external("https://zenodo.org/doi/" <> doi, "All versions")
+              },
+            ),
+            ..list.map(content.works, fn(k: Work) {
+              tile(
+                k.name,
+                k.tags,
+                k.name,
+                k.text,
+                k.doi,
+                external(k.href, "Repository"),
+              )
+            })
+          ]),
+        ],
+      )
+  }
+}
+
 fn section_head(
   id: String,
   title: String,
@@ -111,6 +285,7 @@ fn header() -> Element(msg) {
 
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
+    link("#dois", "DOIs"),
     link("#thinkers", "50 Thinkers"),
     link("#notes", "Second brain"),
     link("#read", "Read"),
@@ -162,6 +337,7 @@ fn cover() -> Element(msg) {
           html.text(tail),
         ]),
         html.p([attribute.class("byline")], [html.text(author_names(" · "))]),
+        doi_badges(),
         html.div([attribute.class("figures")], [
           figure(50, "thinkers", "#thinkers"),
           figure(100, "pages, two each", "#thinkers"),
@@ -349,7 +525,7 @@ fn read_section() -> Element(msg) {
       card(
         content.repo <> "/releases",
         "Releases",
-        "Each tagged release: the PDFs, the arXiv source bundle, and the Zenodo DOI once published.",
+        "Each tagged release: the PDFs and the arXiv source bundle. Zenodo archives each one and gives it a permanent DOI.",
       ),
     ]),
     html.div([attribute.class("stats")], [
@@ -450,6 +626,25 @@ fn authors_section() -> Element(msg) {
           html.p([], [
             external("https://orcid.org/" <> w.orcid, "ORCID " <> w.orcid),
           ]),
+          case content.works {
+            [] -> element.none()
+            works ->
+              html.div([], [
+                html.p([], [
+                  html.text("Other citable work by " <> w.name <> ":"),
+                ]),
+                html.ul(
+                  [attribute.class("works")],
+                  list.map(works, fn(k: Work) {
+                    html.li([], [
+                      external(k.href, k.name),
+                      html.text(": " <> k.text <> " "),
+                      doi_link("DOI", k.doi),
+                    ])
+                  }),
+                ),
+              ])
+          },
           html.p([], [
             html.text("The ouroboric ideas are Bruno Valério's ("),
             external("https://github.com/ouroboric-dev/ouroboric", "Ouroboric"),
@@ -491,7 +686,7 @@ fn fabric_section() -> Element(msg) {
       ),
       step(
         "Release.",
-        "A tag makes a GitHub release with the PDFs and the arXiv source; a person publishes the Zenodo draft, which mints the DOI.",
+        "A tag makes a GitHub release with the PDFs and the arXiv source. Zenodo archives the release and mints its permanent DOI a few minutes later.",
       ),
     ]),
     html.div([attribute.class("credit")], [
@@ -525,6 +720,7 @@ fn cite_section(model: Model) -> Element(Msg) {
         "Professional citation is the paper's own argument. Cite it, and cite what you borrow.",
       ),
     ]),
+    dois(),
     html.div(
       [attribute.class("filters")],
       list.index_map(content.citations, fn(c, i) {

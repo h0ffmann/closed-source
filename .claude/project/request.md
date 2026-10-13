@@ -537,3 +537,44 @@ had minted 10.5281/zenodo.23333657 for v0.1.0, so "first release, with Zenodo mi
 pull request makes the rules, `release.yml` and the docs match it, as the change proposal
 `docs/2-engineering/changes/2026-10-13-zenodo-webhook-release/`. It changes AGENTS.md invariant 6,
 which is why it is a change proposal. It makes no new tag.
+
+```text
+add permaDOI latestDOI to project README.md as educational. Both DOIs should be used in the website, very explicitily, like h0ffmann/picasso did. Add a PR in h0ffmann/h0ffmann to Add this new DOI
+```
+
+```text
+Also bring all other DOIs from h0ffmann/h0ffmann, and bring them to the Author Section, with links to other DOIs
+```
+
+Read as: "latestDOI" is Zenodo's concept DOI, which resolves to the newest release, and "permaDOI"
+is a release's own version DOI. The README explains the two in a table (in the release pull
+request). The site shows both as badges on the cover and in Cite, with what each is for; as in
+picasso's `site/releases.py`, `tools/fabric content` asks Zenodo for the version DOIs at build
+time, because no commit can hold the DOI of its own release. The "Author Section" is the site's
+Author section and the README's Author paragraph: both list marola, ww3-gpu and picasso with
+their concept DOIs, from the `works:` list in `papers/closed-source/metadata.md`, whose source is
+the "DOI's" list of h0ffmann/h0ffmann (`me/ways-of-working.md` at `1a3a7e1`). h0ffmann/h0ffmann#51
+adds this paper's concept DOI to that list.
+
+## A DOIs section on the website
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+Create a Big PR in closed-source to add DOI properly to website (all 4, with slangs, marola, non-profit + water - ww3-gpu - non-profit + waves, picasso, profit + nix). this should be VISIBLE, CLICKABLE, APPLE
+```
+
+```text
+closed-source should self-refer here - non-profit + ideas
+```
+
+Read as: a DOIs section, first on the page and first in the navigation, with one large tile for
+each of the four works. "Slangs" is read as two short tags for each work, shown as chips: marola
+non-profit and water, ww3-gpu non-profit and waves, picasso profit and nix, closed-source
+non-profit and ideas. "Self-refer" is read as: this repository has its own tile beside the other
+three, under its repository name. "CLICKABLE" is read as: the whole tile opens the DOI at doi.org.
+"APPLE" is read as the look of the product tiles of apple.com: the system sans, large type, round
+corners, one colour for each tile. The tags are in `papers/closed-source/metadata.md` (`tags:`),
+and `tools/fabric content` generates them. This pull request carries the site work of #32, which
+it replaces.
+
