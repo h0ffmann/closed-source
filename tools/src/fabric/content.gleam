@@ -5,9 +5,11 @@
 ////     tools/fabric content              # from the repository root, after `just build`
 ////     tools/fabric content --self-test  # site.yml runs it
 
+import fabric/citation
 import fabric/json
 import fabric/re
 import fabric/sys
+import gleam/bit_array
 import gleam/int
 import gleam/io
 import gleam/list
@@ -261,6 +263,88 @@ fn author(a: json.Json) -> String {
   <> ")"
 }
 
+/// One `works:` entry of metadata.md: another citable work of the writer, with its concept DOI.
+pub fn work(w: json.Json) -> String {
+  let field = fn(key) { gleam_string(json.get_string(w, key)) }
+  "Work(name: "
+  <> field("name")
+  <> ", text: "
+  <> field("text")
+  <> ", doi: "
+  <> field("doi")
+  <> ", href: "
+  <> field("href")
+  <> ")"
+}
+
+/// The URL that lists every Zenodo version of a concept DOI, newest first; "" when the DOI is
+/// not a Zenodo one.
+pub fn versions_url(concept: String) -> String {
+  case string.split(concept, "zenodo.") {
+    [_, recid] ->
+      "https://zenodo.org/api/records?q=conceptrecid%3A"
+      <> recid
+      <> "&all_versions=true&sort=mostrecent&size=25"
+    _ -> ""
+  }
+}
+
+/// #(version, its own DOI) for each record of the concept DOI in Zenodo's reply, in its order.
+pub fn version_dois(
+  concept: String,
+  reply: json.Json,
+) -> List(#(String, String)) {
+  let hits = case json.get(reply, "hits") {
+    Ok(h) -> json.get_list(h, "hits")
+    Error(_) -> []
+  }
+  list.filter_map(hits, fn(h) {
+    let version = case json.get(h, "metadata") {
+      Ok(m) -> json.get_string(m, "version")
+      Error(_) -> ""
+    }
+    let doi = json.get_string(h, "doi")
+    case json.get_string(h, "conceptdoi") == concept, version, doi {
+      True, v, d if v != "" && d != "" -> Ok(#(v, d))
+      _, _, _ -> Error(Nil)
+    }
+  })
+}
+
+// Zenodo mints a version DOI some minutes after the tag, so no commit can hold its own. As
+// picasso's site does (site/releases.py), ask Zenodo at build time; when it cannot be reached
+// the site keeps the concept DOI and shows no version DOI.
+fn fetch_version_dois(concept: String) -> List(#(String, String)) {
+  let reply = case versions_url(concept) {
+    "" -> Error("no Zenodo concept DOI")
+    url ->
+      case
+        sys.http(
+          "GET",
+          url,
+          // Zenodo answers 403 to a request with no User-Agent.
+          [#("Accept", "application/json"), #("User-Agent", "paper-fabric")],
+          <<>>,
+        )
+      {
+        Ok(#(200, raw)) ->
+          case bit_array.to_string(raw) {
+            Ok(text) -> json.decode(text)
+            Error(_) -> Error("reply is not UTF-8")
+          }
+        Ok(#(status, _)) -> Error("HTTP " <> int.to_string(status))
+        Error(e) -> Error(e)
+      }
+  }
+  case reply {
+    Ok(j) -> version_dois(concept, j)
+    Error(e) -> {
+      sys.eprintln("content: no version DOIs, Zenodo not reached (" <> e <> ")")
+      []
+    }
+  }
+}
+
 /// One `logos:` entry of metadata.md as the site's stamp; a key the entry lacks is "".
 pub fn logo(l: json.Json) -> String {
   let field = fn(key) { gleam_string(json.get_string(l, key)) }
@@ -322,6 +406,16 @@ fn render(slug: String) -> Result(String, String) {
     True -> result.unwrap(list.first(json.get_list(m, "author")), json.Null)
   }
   let logos = list.map(json.get_list(m, "logos"), logo)
+  let works = list.map(json.get_list(m, "works"), work)
+  let doi = citation.concept_doi
+  let versions =
+    case doi {
+      "" -> []
+      d -> fetch_version_dois(d)
+    }
+    |> list.map(fn(v) {
+      "#(" <> gleam_string(v.0) <> ", " <> gleam_string(v.1) <> ")"
+    })
   use readme <- result.try(read("README.md"))
   use cites <- result.try(citations(readme))
   let cites =
@@ -398,6 +492,10 @@ pub type Logo {
   )
 }
 
+pub type Work {
+  Work(name: String, text: String, doi: String, href: String)
+}
+
 pub type Thinker {
   Thinker(n: Int, name: String, why: String, status: String)
 }
@@ -466,6 +564,22 @@ pub const writer = "
     <> author(writer)
     <> "
 
+pub const works = "
+    <> gleam_list(works)
+    <> "
+
+/// The concept DOI: one for the whole work, it resolves to the latest release. \"\" before the
+/// first release.
+pub const doi = "
+    <> gleam_string(doi)
+    <> "
+
+/// #(version, its own DOI), newest first: one permanent DOI for each release. Empty when Zenodo
+/// was not reached at build time.
+pub const version_dois: List(#(String, String)) = "
+    <> gleam_list(versions)
+    <> "
+
 pub const logos = "
     <> gleam_list(logos)
     <> "
@@ -499,8 +613,16 @@ fn self_test() -> Int {
     "x\n<!-- citation:start -->\n\nBibTeX:\n\n```bibtex\n@misc{k,\n}\n```\n\nAPA:\n\n> A. (2026). *T*.\n\n<!-- citation:end -->\n"
   let roster =
     "| # | Thinker | Area | Why | Cited | Status |\n|---:|---|---|---|:---:|---|\n| 1 | Linus Torvalds | software | Linux | ☑ | proposed |\n| 2 | — | — | — | — | open |\n"
+  let zenodo =
+    json.decode(
+      "{\"hits\":{\"hits\":[{\"doi\":\"10.5281/zenodo.9\",\"conceptdoi\":\"10.5281/zenodo.8\",\"metadata\":{\"version\":\"v0.1.1\"}},{\"doi\":\"10.5281/zenodo.7\",\"conceptdoi\":\"10.5281/zenodo.6\",\"metadata\":{\"version\":\"v9.9.9\"}}]}}",
+    )
   let ok =
     gleam_string("a\"b\\c\nd") == "\"a\\\"b\\\\c\\nd\""
+    && result.map(zenodo, version_dois("10.5281/zenodo.8", _))
+    == Ok([#("v0.1.1", "10.5281/zenodo.9")])
+    && string.contains(versions_url("10.5281/zenodo.8"), "conceptrecid%3A8&")
+    && versions_url("10.1000/x") == ""
     && citations(readme)
     == Ok([#("BibTeX", "@misc{k,\n}"), #("APA", "A. (2026). T.")])
     && thinkers(roster)
