@@ -12,10 +12,15 @@ style: reference
 Each release of this repository, newest first, with its permanent DOI. The latest DOI,
 [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656), always opens the newest one.
 A release cannot name its own DOI, because Zenodo mints it a few minutes after the tag. So the
-row of a release is added in a pull request after it
-([releasing](docs/4-ways-of-working/releasing.md)).
+row of a release is added in a pull request after it, by one command
+([releasing](docs/4-ways-of-working/releasing.md), "The report after a release").
 
-**v0.2.0 is live** (13 October 2026).
+<!-- releases:start -->
+<!-- releases:end -->
+
+The block above is written by `just minted` (`scripts/minted.sh`) after each release: the "is
+live" line and one row for each Git tag, with Zenodo's DOI for it and the pull requests merged
+since the version before. Do not edit it by hand. Notes that a script cannot write go below.
 
 ## Next: v0.3.0 (not released yet)
 
@@ -46,15 +51,12 @@ that release to Zenodo's webhook failed with a 500, so Zenodo made no record and
 for it. Read on 13 October 2026: Zenodo lists v0.2.0 and v0.1.0 only. v0.3.0 carries the same
 changes; if the owner redelivers the v0.2.1 delivery (Settings, Webhooks), it gets its own row.
 
-## Released
+## Notes
 
-| Version | Date | Permanent DOI | Release | What changed |
-|---|---|---|---|---|
-| v0.2.0 | 2026-10-13 | [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.2.0), [Zenodo](https://zenodo.org/records/23335204) | The release follows marola's chain: Zenodo's webhook mints the DOI (#31). The site has a DOIs section with a tile for each of the four works (#34), and a citation-scores section. `README.md` is in lower case with an easy pt-BR version, and four skills written here: `readme-style`, `easy-pt-br`, `card-style` and `citation-score` (#35). The identity is black and red with yellow letters. `.graphifyignore` keeps `CLAUDE_PROJECT.md` and the renderings out of a graph (#33) |
-| v0.1.0 | 2026-10-13 | [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.1.0), [Zenodo](https://zenodo.org/records/23333657) | The first release: the paper in three editions, Paper Fabric, the website, the 50 thinkers and the notes (#1 to #30) |
+- The paper's text did not change between v0.1.0 and v0.2.1: the three PDFs have the same prose.
+- Each record holds the source archive of its tag; the PDFs are on the GitHub releases.
+- v0.2.1 is the first record with the keywords chosen for reverse engineers
+  ([`KEYWORDS.md`](KEYWORDS.md)).
 
-The paper's text did not change between v0.1.0 and v0.2.0: the three PDFs have the same prose.
-Both records hold the source archive of their tag; the PDFs are on the GitHub releases.
-
-The v0.1.0 record on Zenodo still says that it holds only the rendered PDF. That was the policy
-when its metadata was written; the owner can correct it on zenodo.org.
+- The v0.1.0 record on Zenodo still says that it holds only the rendered PDF. That was the
+  policy when its metadata was written; the owner can correct it on zenodo.org.

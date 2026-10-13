@@ -37,6 +37,8 @@ const faces = named.map((t) => t.name).filter((n) => /^\p{Lu}/u.test(n)).slice(0
 const log = read('papers/closed-source/REFERENCES.md');
 const refs = { verified: (log.match(/\|\s*verified\s*\|/g) ?? []).length, partial: (log.match(/\|\s*partial\s*\|/g) ?? []).length };
 const DOI = read('CITATION.cff').match(/^doi: (\S+)$/m)[1];
+// The release the post announces: the newest Git tag, so a new release needs no edit here.
+const RELEASE = execFileSync('git', ['-C', root, 'tag', '-l', 'v*', '--sort=-v:refname'], { encoding: 'utf8' }).split('\n')[0] || 'v0';
 
 const C = { cream: '#F3EDE2', ink: '#141312', black: '#0F0E0D', red: '#A3201C', yellow: '#F2C230', muted: '#5F5B56', ok: '#2F6B2F', mid: '#E3A900' };
 const band = (p) => (p >= 75 ? C.ok : p >= 25 ? C.mid : C.red);
@@ -74,7 +76,7 @@ const foot = (n) => `<div class="foot"><span>${icon}</span><span>h0ffmann.github
 // version, made with the easy-pt-br skill: shorter sentences, and each technical word explained.
 const T = {
   en: {
-    k1: 'v0.2.0 · live on zenodo', p1: 'If anyone can reverse engineer anything,<br><span class="mark">cite what you borrow.</span>', s1: `doi:${DOI}`,
+    k1: `${RELEASE} · live on zenodo`, p1: 'If anyone can reverse engineer anything,<br><span class="mark">cite what you borrow.</span>', s1: `doi:${DOI}`,
     k2: 'the author', h2: 'Mr. Nobody on the cover.<br><span class="mark">A person behind it.</span>',
     p2: 'Written in the first person by Matheus Hoffmann, Escola Politécnica, UFRJ.', o2: 'His other work, each with a DOI you can cite:',
     k3: 'the skill', h3: 'How much of your text<br><span class="mark">is cited?</span>',
@@ -88,7 +90,7 @@ const T = {
     web: 'web', src: 'src',
   },
   'easy.pt-BR': {
-    k1: 'v0.2.0 · no ar, no zenodo', p1: 'Hoje qualquer pessoa consegue desmontar um programa para ver como ele funciona.<br><span class="mark">Então cite o que você pega emprestado.</span>',
+    k1: `${RELEASE} · no ar, no zenodo`, p1: 'Hoje qualquer pessoa consegue desmontar um programa para ver como ele funciona.<br><span class="mark">Então cite o que você pega emprestado.</span>',
     s1: `doi:${DOI} · DOI é um endereço que não muda`,
     k2: 'o autor', h2: 'Na capa, Mr. Nobody.<br><span class="mark">Atrás dela, uma pessoa.</span>',
     p2: 'Quem escreve, em primeira pessoa, é Matheus Hoffmann, da Escola Politécnica da UFRJ.', o2: 'Outros trabalhos dele. Cada um tem um DOI, para você citar:',

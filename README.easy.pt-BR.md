@@ -168,8 +168,9 @@ acontece sozinho.
 5. **o zenodo** guarda a versão alguns minutos depois e cria o DOI dela. o DOI de todas as
    versões juntas é [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
    **atenção:** um DOI é para sempre. você não consegue apagar uma versão publicada.
-6. **confira** a nova versão no zenodo.org: o título, os autores e a licença. depois, abra um
-   *pull request* que coloca a versão e o DOI dela em [`RELEASES.md`](RELEASES.md).
+6. **confira** a nova versão no zenodo.org: o título, os autores e a licença. depois, rode
+   `just minted --wait` e abra o *pull request*: o comando escreve a versão e o DOI novo em
+   [`RELEASES.md`](RELEASES.md) e nas páginas que citam a versão mais recente.
 7. **o arxiv** é manual, pelo navegador. desde 31 de outubro de 2025, o arxiv só aceita artigos
    de opinião da área de computação depois da revisão de uma revista ou conferência
    ([blog do arxiv](https://blog.arxiv.org/?p=1740)). então este artigo só vai para lá depois de

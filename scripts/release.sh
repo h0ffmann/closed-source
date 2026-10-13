@@ -166,4 +166,4 @@ if [ "$dry_run" -eq 1 ]; then
 fi
 git tag "$sign" "$tag" -m "closed-source $tag"
 git push origin "$tag"
-echo "release: pushed $tag; release.yml publishes it and Zenodo mints the DOI a few minutes later." >&2
+echo "release: pushed $tag; release.yml publishes it and Zenodo mints the DOI a few minutes later. Then: just minted --wait, and open its pull request." >&2

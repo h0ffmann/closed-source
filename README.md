@@ -222,8 +222,9 @@ no secret is in the chain, as in [marola](https://github.com/marola-dev/marola/b
    source tree at the tag; the PDFs are on the github release. **caution:** a DOI is permanent,
    and you cannot delete a published record yourself.
 6. **check** the new version on zenodo.org: the title, the authors with their ORCIDs and the
-   licence. then open a pull request that adds the release's row, with its DOI, to
-   [`RELEASES.md`](RELEASES.md) and updates this page's badge and table. an edit to `.zenodo.json` reaches zenodo only with the next release.
+   licence. then run `just minted --wait` and open its pull request: it writes the release and
+   its new DOI into [`RELEASES.md`](RELEASES.md), this page and the pages that name the latest
+   release ([releasing](docs/4-ways-of-working/releasing.md), "the report after a release"). an edit to `.zenodo.json` reaches zenodo only with the next release.
 7. **arxiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
    github release, or run `just arxiv` (`build/arxiv/`).
    - a **new paper**: arxiv.org → start new submission. licence CC BY 4.0, upload the tarball,
@@ -258,7 +259,7 @@ and each answers a different question.
 - **cite the latest DOI** in a reference list. a reader then gets the corrected text, and all
   citations count for one work.
 - **add the permanent DOI** when the exact wording matters: a quotation, a reproduction, a
-  review. version v0.2.0 will always be the source archive of its tag, and v0.1.0 of its own.
+  review. a version's DOI will always be the source archive of that version's tag.
 - neither can be deleted. a wrong release stays on zenodo; a new release replaces it only as the
   latest.
 

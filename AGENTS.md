@@ -21,7 +21,9 @@ linked docs before you change what they cover.
 - How a reader finds this work: `KEYWORDS.md` (Zenodo keywords), `RELATED_WORK.md` (the ties in
   Zenodo and DataCite) and `GITHUB_REPO_TOPICS.md`. Each has a date of record; never write a
   count or a tie that was not read from the index that day.
-- Each release, its permanent DOI and what changed: `RELEASES.md`. Add a row after each release.
+- Each release, its permanent DOI and what changed: `RELEASES.md`. After a release, `just minted`
+  writes the release into it and into every page that names the latest release; never write a
+  version DOI by hand.
 - Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
   rules in `docs/4-ways-of-working/md-quality.md`.
