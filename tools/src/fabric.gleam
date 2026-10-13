@@ -1,12 +1,13 @@
 //// Paper Fabric's tools, one subcommand per former Python script. Run through `tools/fabric`,
 //// which builds this project and starts it at the repository root.
 
+import fabric/citation
 import fabric/sys
 import gleam/list
 import gleam/string
 
 fn commands() -> List(#(String, fn(List(String)) -> Int)) {
-  []
+  [#("citation", citation.main)]
 }
 
 pub fn main() -> Nil {
