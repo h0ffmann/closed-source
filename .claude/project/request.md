@@ -612,3 +612,14 @@ coloured bar with a verdict. The two ends of the scale are the owner's words; th
 between them are the skill's. The uncited share is reported as "original, or unsupported",
 because a script cannot tell the two apart. It is a measure, not a check: nothing fails on it.
 
+```text
+In the same pr for citation-score, run the results on current state of README.md, compare marola-dev/marola/README.md, ouroboric-dev/.github, h0ffmann/h0ffmann, h0ffmann/picasso. This information should be clearly indexed in the repository, even in the website.
+```
+
+Read as: `CITATION_SCORES.md` at the root, written by `just citation-board` from a list of five
+READMEs, each scored at a named commit; "ouroboric-dev/.github" is read as its
+`profile/README.md`, the organisation's page. "Clearly indexed" is read as: a row in the README's
+layout table, in MEMORY.md and in the AGENTS.md map, and a "Citation scores" section on the
+website, generated from the same file. The page says that the verdicts are a scale for texts and
+not a judgement of the other projects.
+

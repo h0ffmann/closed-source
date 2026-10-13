@@ -34,6 +34,13 @@ It prints a bar of 20 blocks, the percentage, the verdict, the counts, and the f
 that have no citation mark. In a terminal the bar and the verdict are in colour; `NO_COLOR` or
 `--color=never` turns that off.
 
+## The board
+
+`just citation-board` scores the READMEs listed in `scripts/citation-board.tsv`, each at the
+commit its default branch has that day, and writes `CITATION_SCORES.md`. The website shows that
+table in its "Citation scores" section (`tools/fabric content` reads the file). To add a text to
+the board, add a line to the list and run the recipe; never edit the table by hand.
+
 ## Show the result
 
 A chat does not show terminal colours. When you report a score to a person, run the script with

@@ -12,14 +12,16 @@
 #   scripts/citation-score.sh https://example.org/page
 #   some-command | scripts/citation-score.sh -
 #   --color=always|never (default: colour on a terminal; NO_COLOR turns it off)   --list=N uncited sentences shown (default 5)
+#   --tsv: percent, cited, total and verdict on one line, tab-separated
 #   scripts/citation-score.sh --self-test
 set -euo pipefail
 
-color=auto list=5 input=""
+color=auto list=5 input="" format=text
 for a in "$@"; do
   case "$a" in
     --color=*) color="${a#--color=}" ;;
     --list=*) list="${a#--list=}" ;;
+    --tsv) format=tsv ;;
     --self-test) input=--self-test ;;
     *) input="$a" ;;
   esac
@@ -91,6 +93,18 @@ report() { # scored sentences on stdin
   fi
 }
 
+# --tsv: "percent<TAB>cited<TAB>total<TAB>verdict" and nothing else, for scripts/citation-board.sh.
+tsv() {
+  local scored total cited pct
+  scored="$(cat)"
+  total="$(grep -c . <<<"$scored" || true)"
+  cited="$(grep -c '^1' <<<"$scored" || true)"
+  [ "$total" -gt 0 ] || { echo "citation-score: no sentence of three words or more to score" >&2; exit 1; }
+  pct=$(( (cited * 100 + total / 2) / total ))
+  printf '%s\t%s\t%s\t%s\n' "$pct" "$cited" "$total" "$(verdict "$pct" | cut -f2)"
+}
+if [ "$format" = tsv ]; then report() { tsv; }; fi
+
 case "$input" in
   --self-test)
     fail() { echo "citation-score: self-test: $*" >&2; exit 1; }
@@ -106,6 +120,7 @@ case "$input" in
     [ "$(verdict 0 | cut -f2)" = "POOR. 2 DIGIT IQ." ] || fail "0"
     out="$(printf 'One cited sentence here [@a2020]. One sentence of my own.' | sentences | color=never report)"
     grep -q '50% cited' <<<"$out" || fail "report: $out"
+    [ "$(printf 'One cited sentence here [@a2020]. One sentence of my own.' | sentences | tsv | cut -f1-3)" = $'50\t1\t2' ] || fail "tsv"
     echo "citation-score: self-test ok" >&2
     ;;
   "") echo "citation-score: usage: scripts/citation-score.sh [--color=always|never] [--list=N] <text | file | URL | ->" >&2; exit 1 ;;

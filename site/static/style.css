@@ -257,6 +257,19 @@ main section.shelf { padding-top: 48px; }
 @media (max-width: 560px) { .tile, .tile-picasso { grid-column: 1 / -1; min-height: 0; padding: 24px 22px 22px; border-radius: 24px; } }
 @media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile:hover { transform: none; } }
 
+/* Citation scores: one bar for each README, in the band's colour. */
+.scores { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 18px; }
+.score { --band: var(--warn); border-top: 1px solid var(--rule); padding-top: 12px; }
+.score.is-high { --band: var(--ok); }
+.score.is-low { --band: var(--red-text); }
+.score-name { margin: 0; }
+.score-name a { font: 700 22px/1.2 var(--display); }
+.score-name span { font-size: 15px; color: var(--muted); }
+.score-bar { margin: 8px 0 6px; height: 12px; background: var(--surface); border: 1px solid var(--rule); }
+.score-bar span { display: block; height: 100%; background: var(--band); }
+.score-figure { margin: 0; font-size: 16px; color: var(--muted); }
+.score-figure b { color: var(--band); }
+
 /* A DOI as a two-part badge, after picasso's site. */
 .doi {
   display: inline-flex; vertical-align: middle; margin: 2px 6px 2px 0;

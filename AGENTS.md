@@ -18,6 +18,7 @@ linked docs before you change what they cover.
 - Release and Zenodo: `docs/4-ways-of-working/releasing.md`.
 - Known gaps: `docs/1-product/readiness/`.
 - Skills written for this repository, their lock and the hooks: `.claude/skills/README.md`.
+- Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
 - Issue and pull request labels: `ISSUE_LABELS.md`.
 - Where the memory of this repository is, and the code graph (graphify): `MEMORY.md`.
 

@@ -70,3 +70,22 @@ pub fn work_test() {
   assert content.work(entry)
     == "Work(name: \"marola\", text: \"sea\", doi: \"10.5281/zenodo.1\", href: \"https://x\", tags: [\"non-profit\", \"water\"])"
 }
+
+pub fn scores_test() {
+  let board =
+    "| README | File | At commit | Cited sentences | Sentences | Score | Verdict |\n|---|---|---|---:|---:|---:|---|\n| marola | [marola-dev/marola `README.md`](https://github.com/marola-dev/marola/blob/cf7bd4f/README.md) | `cf7bd4f` | 57 | 120 | 48% | THIN. Most of it is yours, or unsupported. |\n"
+  assert content.scores(board)
+    == [
+      content.Score(
+        "marola",
+        "marola-dev/marola README.md",
+        "https://github.com/marola-dev/marola/blob/cf7bd4f/README.md",
+        "cf7bd4f",
+        57,
+        120,
+        48,
+        "THIN. Most of it is yours, or unsupported.",
+      ),
+    ]
+  assert content.scores("no table here") == []
+}

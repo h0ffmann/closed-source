@@ -2,7 +2,7 @@
 //// `index.html`, so the page reads without JavaScript and the client takes it over in place.
 
 import closed_source_site/content.{
-  type Author, type Logo, type Note, type Thinker, type Work,
+  type Author, type Logo, type Note, type Score, type Thinker, type Work,
 }
 import closed_source_site/ffi
 import gleam/int
@@ -81,6 +81,7 @@ pub fn view(model: Model) -> Element(Msg) {
       contents_section(),
       authors_section(),
       fabric_section(),
+      scores_section(),
       cite_section(model),
     ]),
     footer(),
@@ -293,6 +294,7 @@ fn jump() -> Element(msg) {
     link("#contents", "Contents"),
     link("#authors", "Author"),
     link("#fabric", "How it is made"),
+    link("#scores", "Scores"),
     link("#cite", "Cite"),
   ])
 }
@@ -709,6 +711,89 @@ fn fabric_section() -> Element(msg) {
       ]),
     ]),
   ])
+}
+
+/// The band of a citation score, as the script's colours: 75 and up, 25 and up, below.
+pub fn band(percent: Int) -> String {
+  case percent {
+    p if p >= 75 -> "high"
+    p if p >= 25 -> "mid"
+    _ -> "low"
+  }
+}
+
+/// CITATION_SCORES.md on the page: how much of each README is cited.
+fn scores_section() -> Element(msg) {
+  case content.scores {
+    [] -> element.none()
+    scores ->
+      html.section([attribute.aria_labelledby("scores")], [
+        section_head(
+          "scores",
+          "Citation scores",
+          external(
+            content.repo <> "/blob/main/CITATION_SCORES.md",
+            "CITATION_SCORES.md",
+          ),
+        ),
+        html.p([attribute.class("sub")], [
+          html.text(
+            "How much of each README is cited: the share of its sentences that carry a link, a DOI or another citation mark. A README is not a paper, and a low score is not a fault; it says how much of a text points at something else.",
+          ),
+        ]),
+        html.ul(
+          [attribute.class("scores")],
+          list.map(scores, fn(s: Score) {
+            let href = case string.starts_with(s.href, "http") {
+              True -> s.href
+              False -> content.repo <> "/blob/main/" <> s.href
+            }
+            html.li([attribute.class("score is-" <> band(s.percent))], [
+              html.p([attribute.class("score-name")], [
+                external(href, s.name),
+                html.span([], [html.text(" " <> s.file <> ", " <> s.at)]),
+              ]),
+              html.div(
+                [
+                  attribute.class("score-bar"),
+                  attribute.role("img"),
+                  attribute.aria_label(int.to_string(s.percent) <> "% cited"),
+                ],
+                [
+                  html.span(
+                    [
+                      attribute.style("width", int.to_string(s.percent) <> "%"),
+                    ],
+                    [],
+                  ),
+                ],
+              ),
+              html.p([attribute.class("score-figure")], [
+                html.b([], [html.text(int.to_string(s.percent) <> "% cited")]),
+                html.text(
+                  " "
+                  <> int.to_string(s.cited)
+                  <> " of "
+                  <> int.to_string(s.total)
+                  <> " sentences. "
+                  <> s.verdict,
+                ),
+              ]),
+            ])
+          }),
+        ),
+        html.p([attribute.class("sub")], [
+          html.text("Measured with "),
+          external(
+            content.repo <> "/blob/main/scripts/citation-score.sh",
+            "scripts/citation-score.sh",
+          ),
+          html.text(
+            ", which counts marks and cannot tell if a citation is right. Each row names the commit that was scored.",
+          ),
+        ]),
+      ])
+  }
 }
 
 fn cite_section(model: Model) -> Element(Msg) {

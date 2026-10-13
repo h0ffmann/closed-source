@@ -142,6 +142,7 @@ says more, with the other books behind this repository.
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
 | [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
+| [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of five READMEs is cited (this one, marola, ouroboric-dev, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
 | [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), [`notes/`](notes/index.md) | the slip box: zettelkasten notes for the book, obsidian readable; `/note` makes one |

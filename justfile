@@ -94,6 +94,11 @@ readme-check:
 citation-score *args:
     scripts/citation-score.sh {{args}}
 
+# Score the READMEs in scripts/citation-board.tsv and write CITATION_SCORES.md (needs the network).
+# The website reads that file through `tools/fabric content`.
+citation-board:
+    scripts/citation-board.sh
+
 # Turn on the Git hooks in .githooks/ for this clone (pre-commit: the README checks).
 hooks:
     git config core.hooksPath .githooks
