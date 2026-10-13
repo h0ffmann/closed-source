@@ -74,6 +74,13 @@ Hoffmann" -->`. Both are personas in `PERSONAS.md`. A new file gets the line whe
 `flake.nix`; nothing else may need to be installed on the machine. A recipe must parse with just
 1.21 (Ubuntu 24.04). CI's `ubuntu-just` job runs `just book` this way.
 
+## Notes
+
+Notes go into `notes/` as a Zettelkasten that Obsidian reads, under `SMART_NOTE_POLICY.md`: one
+idea per note, a permanent id, links between notes, a status that is `unverified` until a source
+is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `just check` runs
+`scripts/notes_check.py`.
+
 ## Borrow, cite, propagate
 
 1. **Borrow** only what the licence allows. Read the licence first and record it. Keep the

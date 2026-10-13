@@ -90,6 +90,7 @@ says more, with the other books behind this repository.
 | [`papers/closed-source/THINKERS.md`](papers/closed-source/THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: Pirsig, Hoppe, Kinsella, Boldrin and Levine |
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
+| [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), [`notes/`](notes/index.md) | the slip box: Zettelkasten notes for the book, Obsidian readable; `/note` makes one |
 | [`PERSONAS.md`](PERSONAS.md) | the personas that every Markdown file cites as its main and last author (hard rule) |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
