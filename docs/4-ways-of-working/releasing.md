@@ -21,12 +21,11 @@ The Zenodo record holds the source tree at the tag. The rendered PDFs are attach
 release. arXiv receives the LaTeX source, because arXiv compiles submissions itself and refuses
 PDFs made from TeX.
 
-The latest release is v0.2.0, with the version DOI
-[10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204). The first, v0.1.0, has
-[10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657). The concept DOI, which always
-resolves to the latest version, is
-[10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
-[`RELEASES.md`](../../RELEASES.md) lists every release.
+<!-- minted:start -->
+The latest release is v0.3.0, with the version DOI
+[10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831). The concept DOI, which always resolves to the latest version, is
+[10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). [`RELEASES.md`](../../RELEASES.md) lists every release.
+<!-- minted:end -->
 
 ## Once per repository
 
@@ -51,13 +50,49 @@ The README's "Secrets and keys" table lists every key, where it lives and how to
 5. Open the new version on zenodo.org and check the metadata. An edit to `.zenodo.json` reaches
    Zenodo only with the next release; a wrong field on a published version is corrected by hand
    on zenodo.org.
-6. Open a pull request that adds the release to [`RELEASES.md`](../../RELEASES.md) with its
-   version DOI, and updates the places that name the latest release: the README's badge and its
-   DOI table (and the easy version, with `scripts/readme.sh --stamp`), this page, and any open
-   draft in `docs/social/`. Read the new record's ties and keywords back from DataCite and set
-   the date of record in [`RELATED_WORK.md`](../../RELATED_WORK.md) and
-   [`KEYWORDS.md`](../../KEYWORDS.md). The website needs no change: its next build asks Zenodo for the
-   version DOIs.
+6. Write the report: `just minted --wait`, then open its pull request. The next section says
+   what that does.
+
+## The report after a release
+
+A release cannot name its own DOI: Zenodo mints it after the tag. So each release is followed by
+one pull request that says "vX.Y.Z is live" and puts the new DOI wherever the latest release is
+named. One command writes it, the same way each time, so nobody has to remember the places.
+
+```sh
+just release X.Y.Z          # 1. tag and push; the `release` workflow publishes the GitHub release
+git switch -c docs/vX.Y.Z-live
+just minted --wait          # 2. wait until Zenodo has the DOI, then write it into the repository
+git diff                    # 3. read what it wrote
+just check                  # 4. the same gate as any pull request
+git add -u && git commit -m "docs(release): vX.Y.Z is live"
+git push -u origin docs/vX.Y.Z-live
+scripts/minted.sh --pr-body | gh pr create --title "docs(release): vX.Y.Z is live" --body-file -
+```
+
+What `scripts/minted.sh` writes, and from where:
+
+| It writes | From |
+|---|---|
+| `RELEASES.md`: the "is live" line and one row for each release | the Git tags, Zenodo's version DOIs, the pull requests merged between tags |
+| `RELEASES.md`: removes "Next: vX.Y.Z" when that version is released | the latest tag |
+| `README.md`: the version DOI badge, the status line, the two-DOI table's row | the latest tag and its DOI |
+| `README.easy.pt-BR.md`: the same two places, then the stamp | the same |
+| this page: the paragraph that names the latest release | the same |
+| drafts in `docs/social/`: the version they announce | the previous and the latest tag |
+
+What it does not write, because a person or an agent must read an index first: the date of
+record in [`RELATED_WORK.md`](../../RELATED_WORK.md) and [`KEYWORDS.md`](../../KEYWORDS.md). The
+website needs no change: its next build asks Zenodo for the version DOIs.
+
+It stops, and changes nothing more, when a line it expects is not there. That means a page
+changed shape: fix the pattern in the script in the same pull request.
+
+**The loop is not closed yet.** A person still runs step 2 and opens the pull request. The
+`release` workflow could do it: wait for Zenodo, run the script, open the pull request. Two
+things stand in the way, and both are the owner's to decide: the repository's setting "Allow
+GitHub Actions to create and approve pull requests" is off, and a pull request opened by a
+workflow would be one that no person asked for.
 
 ## Rules the release keeps
 

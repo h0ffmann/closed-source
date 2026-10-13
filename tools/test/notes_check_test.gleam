@@ -37,7 +37,7 @@ pub fn front_matter_test() {
       "x: front matter has no source",
       "x: front matter has no created",
       "x: type 'odd' is not one of ['fleeting', 'literature', 'permanent']",
-      "x: status 'done' is not one of ['open-question', 'partial', 'unverified', 'verified']",
+      "x: status 'done' is not one of ['approved', 'open-question', 'partial', 'unverified', 'verified']",
       "x: links to no other note",
     ]
   assert notes_check.front("---\na: 1\na: 2\n b: 3\n---\n") == Ok([#("a", "2")])

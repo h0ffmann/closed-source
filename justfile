@@ -65,6 +65,7 @@ self-test:
     scripts/release.sh --self-test
     scripts/readme.sh --self-test
     scripts/citation-score.sh --self-test
+    scripts/minted.sh --self-test
 
 # Three analysers over the Markdown files, in the flake's `md` shell: markdownlint-cli2 (structure),
 # Vale (the prose rules of AGENTS.md) and lychee (links). `just md-quality --online` also fetches
@@ -114,6 +115,11 @@ hooks:
 # release.yml publishes the GitHub release and Zenodo's webhook mints its DOI.
 release *args:
     scripts/release.sh {{args}}
+
+# After a release: write it into the repository (RELEASES.md, the README's badge and DOI table,
+# the easy version, releasing.md, the social drafts). `just minted --wait` waits for Zenodo's DOI.
+minted *args:
+    scripts/minted.sh {{args}}
 
 # The release tags, newest first.
 releases:

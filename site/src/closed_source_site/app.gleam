@@ -18,6 +18,8 @@ pub type Text {
   Original
   Ste
   PtBr
+  /// The abstract in easy Brazilian Portuguese, step by step. Its PDF is the pt-BR edition's.
+  EasyPtBr
 }
 
 pub type Model {
@@ -69,7 +71,7 @@ pub fn pdf(text: Text) -> String {
   case text {
     Original -> content.slug <> ".pdf"
     Ste -> content.slug <> "-ste.pdf"
-    PtBr -> content.slug <> "-pt-BR.pdf"
+    PtBr | EasyPtBr -> content.slug <> "-pt-BR.pdf"
   }
 }
 
@@ -78,6 +80,7 @@ pub fn view(model: Model) -> Element(Msg) {
     header(),
     html.main([attribute.class("wrap")], [
       shelf_section(),
+      changes_section(),
       thinkers_section(),
       notes_section(),
       read_section(),
@@ -338,6 +341,42 @@ fn shelf_section() -> Element(msg) {
   }
 }
 
+/// What the latest release changed: the newest changelog of RELEASES.md, which `just minted`
+/// writes after each release. Nothing when RELEASES.md has no changelog yet.
+fn changes_section() -> Element(msg) {
+  case content.changelog {
+    #("", _) | #(_, []) -> element.none()
+    #(version, changes) ->
+      html.section([attribute.aria_labelledby("changes")], [
+        section_head(
+          "changes",
+          "What changed in " <> version,
+          external(content.repo <> "/blob/main/RELEASES.md", "every release"),
+        ),
+        html.p([attribute.class("sub")], [
+          html.text("The latest release, "),
+          external(
+            content.repo <> "/releases/tag/" <> version,
+            version <> " on GitHub",
+          ),
+          case list.key_find(content.version_dois, version) {
+            Ok(doi) ->
+              html.span([], [
+                html.text(", with its permanent DOI "),
+                external("https://doi.org/" <> doi, doi),
+                html.text("."),
+              ])
+            Error(_) -> html.text(".")
+          },
+        ]),
+        html.ul(
+          [attribute.class("changes")],
+          list.map(changes, fn(c) { html.li([], [html.text(c)]) }),
+        ),
+      ])
+  }
+}
+
 fn section_head(
   id: String,
   title: String,
@@ -356,6 +395,7 @@ fn header() -> Element(msg) {
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
     link("#dois", "DOIs"),
+    link("#changes", "Changes"),
     link("#thinkers", "50 Thinkers"),
     link("#notes", "Second brain"),
     link("#read", "Read"),
@@ -598,7 +638,7 @@ fn notes_section() -> Element(msg) {
       ),
       html.p([attribute.class("sub")], [
         html.text(
-          "A Zettelkasten that Obsidian opens: one idea per note, linked, each with its verification status. The book is written from it.",
+          "A Zettelkasten that Obsidian opens: one idea per note, linked, each with its verification status. The book is written from it. A note marked approved is one the owner approved for the book.",
         ),
       ]),
       html.ul(
@@ -703,30 +743,65 @@ fn pressed(on: Bool) -> Attribute(msg) {
   })
 }
 
+/// One paragraph of the easy abstract: "**lead.** text" becomes a bold lead and its text.
+fn easy_paragraph(p: String) -> Element(msg) {
+  case string.split(p, "**") {
+    ["", lead, rest] ->
+      html.p([], [html.b([], [html.text(lead)]), html.text(rest)])
+    _ -> html.p([], [html.text(string.replace(p, "*", ""))])
+  }
+}
+
 fn abstract_section(model: Model) -> Element(Msg) {
-  let text = case model.text {
-    Ste -> content.abstract_ste
-    _ -> content.abstract
+  let button = fn(text: Text, label: String) {
+    html.button([pressed(model.text == text), event.on_click(ShowText(text))], [
+      html.text(label),
+    ])
+  }
+  let paragraphs = fn(text: String) {
+    text
+    |> string.split("\n\n")
+    |> list.map(fn(p) { html.p([], [html.text(p)]) })
   }
   html.section([attribute.aria_labelledby("abstract")], [
     section_head("abstract", "Abstract", element.none()),
     html.div([attribute.class("filters")], [
-      html.button(
-        [pressed(model.text == Original), event.on_click(ShowText(Original))],
-        [
-          html.text("Original"),
-        ],
-      ),
-      html.button([pressed(model.text == Ste), event.on_click(ShowText(Ste))], [
-        html.text("Simplified Technical English"),
-      ]),
+      button(Original, "Original"),
+      button(Ste, "Simplified Technical English"),
+      case content.abstract_easy_pt_br {
+        "" -> element.none()
+        _ -> button(EasyPtBr, "🇧🇷 versão fácil, passo a passo")
+      },
     ]),
-    html.div(
-      [attribute.class("prose")],
-      text
-        |> string.split("\n\n")
-        |> list.map(fn(p) { html.p([], [html.text(p)]) }),
-    ),
+    case model.text {
+      EasyPtBr ->
+        html.div(
+          [attribute.class("prose easy"), attribute.attribute("lang", "pt-BR")],
+          list.flatten([
+            content.abstract_easy_pt_br
+              |> string.split("\n\n")
+              |> list.map(easy_paragraph),
+            [
+              html.p([attribute.class("sub")], [
+                html.text(
+                  "Vale o original, em inglês. Esta versão explica o resumo; ela não diz nada novo sobre o livro. ",
+                ),
+                external(
+                  content.repo
+                    <> "/blob/main/papers/"
+                    <> content.slug
+                    <> "/abstract.easy.pt-BR.md",
+                  "de onde ela vem",
+                ),
+                html.text("."),
+              ]),
+            ],
+          ]),
+        )
+      Ste ->
+        html.div([attribute.class("prose")], paragraphs(content.abstract_ste))
+      _ -> html.div([attribute.class("prose")], paragraphs(content.abstract))
+    },
     html.ul(
       [attribute.class("keywords")],
       list.map(content.keywords, fn(k) { html.li([], [html.text(k)]) }),
@@ -892,6 +967,11 @@ pub const checks = [
     "md.yml",
     "three analysers read the markdown: structure, plain words, links to files.",
   ),
+  Check(
+    "live links",
+    "links.yml",
+    "every web link of the markdown and of this website is fetched. green means 100% answer.",
+  ),
 ]
 
 /// What runs after the merge, and at a release.
@@ -904,7 +984,7 @@ pub const after = [
   Check(
     "live links",
     "links.yml",
-    "then every web link of the website and the markdown is fetched. green means 100% answer.",
+    "the links are fetched again, and each Monday: a page on the web can go away with no change here.",
   ),
   Check(
     "release",
@@ -955,7 +1035,8 @@ fn status(check: Check) -> Element(msg) {
 }
 
 /// What happens when the book changes: the checks before a merge and what runs after it, each
-/// with its state now. One card, after the tiles (.claude/skills/card-style/SKILL.md).
+/// with its state now. The same checks run on a pull request and on main, so main does not fail
+/// on something a pull request passed. One card, after the tiles (.claude/skills/card-style/SKILL.md).
 fn ci_section() -> Element(msg) {
   let stage = fn(title: String, text: String, rows: List(Check)) {
     html.li([attribute.class("ci-stage")], [
@@ -988,7 +1069,7 @@ fn ci_section() -> Element(msg) {
           [],
         ),
         stage(
-          "four checks read it",
+          "five checks read it",
           "each one reads the change before the merge. a red one is a reason not to merge.",
           checks,
         ),

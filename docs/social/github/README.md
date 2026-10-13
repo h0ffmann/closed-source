@@ -21,7 +21,9 @@ type are those of `site/static/style.css`.
 
 Only the owner can, and only by hand: GitHub has no API for it.
 
-1. Open <https://github.com/h0ffmann/closed-source/settings>.
+1. Open the repository's settings: `https://github.com/h0ffmann/closed-source/settings`. The
+   address is written as code and not as a link, because only the owner can open it: to anyone
+   else, and to the link check, it answers 404.
 2. In "General", go down to "Social preview".
 3. Choose "Edit", then "Upload an image", and give it `social-preview.png`.
 

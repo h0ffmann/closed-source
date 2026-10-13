@@ -5,3 +5,5 @@ result
 result-*
 # graphify output; the graph belongs in ~/.cache/marola-graph/<repo> (MEMORY.md)
 graphify-out/
+# lychee's answers during `just md-quality --online`
+.lycheecache

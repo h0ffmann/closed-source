@@ -387,3 +387,14 @@ main section.shelf { padding-top: 48px; }
 .ci-card .tile-more a { color: var(--on); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 860px) { .ci-stages { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .ci-card { padding: 24px 22px 22px; border-radius: 24px; } .ci-card::before { width: 60%; opacity: .1; } }
+
+/* What changed in the latest release: a plain list, the red rule of the cover beside each line. */
+.changes { list-style: none; margin: 20px 0 0; padding: 0; max-width: 46em; display: grid; gap: 10px; }
+.changes li { padding-left: 16px; border-left: 3px solid var(--red); }
+
+/* The easy abstract: one step for each paragraph, with its lead in bold. */
+.prose.easy p { margin: 0 0 14px; }
+.prose.easy b { color: var(--red-text); }
+
+/* A note the owner approved for the book: the cover's black with yellow letters. */
+.tag.is-approved { border-color: var(--black); background: var(--black); color: var(--yellow); }

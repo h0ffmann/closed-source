@@ -234,6 +234,45 @@ pub fn scores(board: String) -> List(Score) {
   })
 }
 
+/// The newest "## vX.Y.Z: what changed" section of RELEASES.md: the version and its bullets, as
+/// plain text (no bold, no code marks, a link becomes its words). `just minted` writes that
+/// heading when a version is released. #("", []) when there is none.
+pub fn changelog(releases: String) -> #(String, List(String)) {
+  let heading = re.compile("^## (v\\d+\\.\\d+\\.\\d+): what changed\\s*$", [])
+  let plain = fn(s: String) {
+    re.sub(re.compile("\\[([^\\]]+)\\]\\([^)]*\\)", []), s, "\\1")
+    |> string.replace("**", "")
+    |> string.replace("`", "")
+    |> string.replace("*", "")
+    |> strip
+    // A bullet of a list ends with ";" or "."; on the website each one stands alone.
+    |> re.sub(re.compile("[;.]\\z", []), _, "")
+  }
+  // #(version, bullets newest last, in the section, done)
+  let #(version, bullets, _, _) =
+    list.fold(splitlines(releases), #("", [], False, False), fn(acc, line) {
+      let #(version, bullets, inside, done) = acc
+      case done, inside, re.first(heading, line) {
+        True, _, _ -> acc
+        False, False, Ok([_, v, ..]) -> #(v, [], True, False)
+        False, False, _ -> acc
+        False, True, _ ->
+          case line, bullets {
+            "## " <> _, _ -> #(version, bullets, False, True)
+            "- " <> text, _ -> #(version, [text, ..bullets], True, False)
+            "  " <> more, [last, ..rest] -> #(
+              version,
+              [last <> " " <> strip(more), ..rest],
+              True,
+              False,
+            )
+            _, _ -> acc
+          }
+      }
+    })
+  #(version, list.reverse(bullets) |> list.map(plain))
+}
+
 /// (file stem, title, type, status) for each note in notes/, newest first.
 fn notes(
   folder: String,
@@ -498,6 +537,24 @@ fn render(slug: String) -> Result(String, String) {
     True -> read("CITATION_SCORES.md") |> result.map(scores)
     False -> Ok([])
   })
+  use changes <- result.try(case sys.exists("RELEASES.md") {
+    True -> read("RELEASES.md") |> result.map(changelog)
+    False -> Ok(#("", []))
+  })
+  // The easy pt-BR abstract, written beside the paper by the easy-pt-br skill: the text between
+  // its two markers. Empty when the paper has none.
+  let easy_path = sys.join(paper, "abstract.easy.pt-BR.md")
+  use easy <- result.try(case sys.exists(easy_path) {
+    True ->
+      read(easy_path)
+      |> result.try(between(
+        _,
+        "<!-- easy-abstract:start -->",
+        "<!-- easy-abstract:end -->",
+      ))
+      |> result.map(strip)
+    False -> Ok("")
+  })
   let score_rows =
     list.map(board, fn(s) {
       "Score(name: "
@@ -645,6 +702,12 @@ pub const abstract_ste = "
     <> gleam_string(strip(json.get_string(ste, "abstract")))
     <> "
 
+/// The abstract explained step by step in easy Brazilian Portuguese (abstract.easy.pt-BR.md,
+/// in Markdown: a paragraph may start with a bold lead). Empty when the paper has none.
+pub const abstract_easy_pt_br = "
+    <> gleam_string(easy)
+    <> "
+
 pub const pages = "
     <> int.to_string(pages("pdf/" <> slug <> ".pdf"))
     <> "
@@ -720,6 +783,14 @@ pub const notes = "
     <> gleam_list(note_rows)
     <> "
 
+/// The newest release with a changelog in RELEASES.md, and what changed in it. The version is
+/// empty when RELEASES.md has no changelog section yet.
+pub const changelog: #(String, List(String)) = #("
+    <> gleam_string(changes.0)
+    <> ", "
+    <> gleam_list(list.map(changes.1, gleam_string))
+    <> ")
+
 /// CITATION_SCORES.md's table: how much of each README is cited (scripts/citation-score.sh).
 pub const scores: List(Score) = "
     <> gleam_list(score_rows)
@@ -746,6 +817,12 @@ fn self_test() -> Int {
     && versions_url("10.1000/x") == ""
     && citations(readme)
     == Ok([#("BibTeX", "@misc{k,\n}"), #("APA", "A. (2026). T.")])
+    && changelog(
+      "# R\n\n## v0.2.0: what changed\n\nChanges since v0.1.0:\n\n- the **record** is a `book`\n  ([why](x.md));\n- two.\n\n## v0.1.0: what changed\n\n- old.\n",
+    )
+    == #("v0.2.0", ["the record is a book (why)", "two"])
+    && changelog("# R\n\n## Next: v0.3.0 (not released yet)\n\n- x.\n")
+    == #("", [])
     && thinkers(roster)
     == [
       Thinker(1, "Linus Torvalds", "Linux", "proposed"),

@@ -84,7 +84,16 @@ vale --no-wrap --output=line "${prose[@]}" >&2 || bad=1
 # behind a DOI does this), or asks it to slow down. A person with a browser gets the page.
 if [ "$online" = 1 ]; then
   echo "md-quality: links: lychee on ${#all[@]} files and $site, web links too" >&2
-  lychee --no-progress --include-fragments --max-concurrency 8 --accept 200,403,405,429 "${all[@]}" "$site" >&2 || bad=1
+  # A site that is busy for a moment (a 503 from GitHub) must not fail a pull request, and a dead
+  # link must. So: each link is tried five times; the answers are kept (`--cache`); and if a link
+  # still fails, lychee runs once more after a minute, which fetches only the links that failed.
+  web() {
+    lychee --no-progress --include-fragments --max-concurrency 6 --max-retries 4 --retry-wait-time 5 \
+      --timeout 30 --cache --max-cache-age 1h --accept 200,403,405,429 "${all[@]}" "$site" >&2
+  }
+  rm -f .lycheecache
+  web || { echo "md-quality: links: a link did not answer; the second and last try in 60 s" >&2; sleep 60; web || bad=1; }
+  rm -f .lycheecache
 else
   echo "md-quality: links: lychee on ${#all[@]} files, local links (run --online for the web)" >&2
   lychee --offline --no-progress --include-fragments "${all[@]}" >&2 || bad=1

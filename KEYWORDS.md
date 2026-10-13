@@ -85,7 +85,8 @@ Other counts taken that day, for words that are not in the list: "trade secret" 
 | software reverse engineering, software obfuscation | No record on Zenodo uses these exact words |
 
 Dropping a word does not change a published version: v0.1.0 and v0.2.0 keep "FAIR", "Linux" and
-"Git".
+"Git". v0.3.0 is the first record with the new list (21 subjects in DataCite, read on 13 October
+2026).
 
 ## Where the words live
 

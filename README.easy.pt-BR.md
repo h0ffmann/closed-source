@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="adafe840cebf0ce89da3a78a51eed3737d844f8d85b6909c94d3d86cf764dfb1" -->
+<!-- easy: source="README.md"; sha256="1f43c33ee6721e80a119551808db0a6f62e9fcb3640774d8fcffb095ebf777ea" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -40,7 +40,7 @@ muda):
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) e
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
 
-**situação:** a versão v0.2.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
+**situação:** a versão v0.3.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
 ainda. a [avaliação de prontidão](docs/1-product/readiness/2026-10-12-ready-to-promote.md) diz o
 que falta para a v1.
 
@@ -168,8 +168,9 @@ acontece sozinho.
 5. **o zenodo** guarda a versão alguns minutos depois e cria o DOI dela. o DOI de todas as
    versões juntas é [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
    **atenção:** um DOI é para sempre. você não consegue apagar uma versão publicada.
-6. **confira** a nova versão no zenodo.org: o título, os autores e a licença. depois, abra um
-   *pull request* que coloca a versão e o DOI dela em [`RELEASES.md`](RELEASES.md).
+6. **confira** a nova versão no zenodo.org: o título, os autores e a licença. depois, rode
+   `just minted --wait` e abra o *pull request*: o comando escreve a versão e o DOI novo em
+   [`RELEASES.md`](RELEASES.md) e nas páginas que citam a versão mais recente.
 7. **o arxiv** é manual, pelo navegador. desde 31 de outubro de 2025, o arxiv só aceita artigos
    de opinião da área de computação depois da revisão de uma revista ou conferência
    ([blog do arxiv](https://blog.arxiv.org/?p=1740)). então este artigo só vai para lá depois de
@@ -191,7 +192,7 @@ trabalho tem dois tipos de DOI. cada um responde a uma pergunta.
 
 | | DOI mais recente | DOI permanente |
 |---|---|---|
-| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.2.0: [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204); v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.0: [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831); versões anteriores: [`RELEASES.md`](RELEASES.md) |
 | leva para | a versão mais nova, seja qual for no dia do clique | uma versão só, sempre o mesmo texto |
 | quantos existem | um para o trabalho inteiro | um para cada versão |
 | serve para | citar o trabalho | dizer exatamente qual texto você leu |

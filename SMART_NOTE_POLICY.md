@@ -27,7 +27,7 @@ reads when you open `notes/` as a vault. `/note` (`.claude/commands/note.md`) ma
    id: "202610122236"
    title: "Katib's UI and Vertex AI's UI"
    type: fleeting | literature | permanent
-   status: unverified | partial | verified | open-question
+   status: unverified | partial | verified | open-question | approved
    source: "friend1, conversation, 2026-10-12"   # who or what the idea came from
    tags: [open-source, cloud]
    created: 2026-10-12
@@ -37,6 +37,11 @@ reads when you open `notes/` as a vault. `/note` (`.claude/commands/note.md`) ma
    - *fleeting*: a raw idea from a person, as it came.
    - *literature*: what one source says, with its link or DOI.
    - *permanent*: my own claim, built from other notes, ready for the book.
+
+   `approved` is the owner's word, not a check of the facts: the owner read the note and
+   approved it for the book. It is for a note that holds his own reading or position, where
+   there is no outside source to fetch. Only the owner gives it, and the note says when. A
+   factual claim inside an approved note still follows rule 7.
 5. **The cite line** follows the front matter, as in every Markdown file here (PERSONAS.md):
    main author = whose thinking the note records; last author = who filed it and answers for it.
 6. **Links.** Every note links to at least one other note with `[[<id>-<slug>]]`, and
@@ -47,7 +52,7 @@ reads when you open `notes/` as a vault. `/note` (`.claude/commands/note.md`) ma
 8. **People.** A friend who gives notes appears under an alias (`friend1`, `friend2`, ...) that
    PERSONAS.md lists; the real name stays out of the repository. A proclaimed AI guru is quoted
    only for a public, cited claim (AGENTS.md).
-9. **Into the book.** A permanent note with status `verified` or `partial` can become text in a
+9. **Into the book.** A permanent note with status `verified`, `partial` or `approved` can become text in a
    thinker's two pages. The page cites the note's sources, not the note.
 
 `just check` runs `tools/fabric notes-check`: front matter, unique ids and links that resolve.
