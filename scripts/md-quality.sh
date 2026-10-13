@@ -80,9 +80,11 @@ rm -f "${TMPDIR:-/tmp}/md-quality.$$"
 echo "md-quality: prose: Vale on ${#prose[@]} files (an error fails; a warning is advice)" >&2
 vale --no-wrap --output=line "${prose[@]}" >&2 || bad=1
 
+# 403, 405 and 429 count as an answer: the site is there and refuses a robot (a publisher's page
+# behind a DOI does this), or asks it to slow down. A person with a browser gets the page.
 if [ "$online" = 1 ]; then
   echo "md-quality: links: lychee on ${#all[@]} files and $site, web links too" >&2
-  lychee --no-progress --include-fragments --max-concurrency 8 --accept 200,403,429 "${all[@]}" "$site" >&2 || bad=1
+  lychee --no-progress --include-fragments --max-concurrency 8 --accept 200,403,405,429 "${all[@]}" "$site" >&2 || bad=1
 else
   echo "md-quality: links: lychee on ${#all[@]} files, local links (run --online for the web)" >&2
   lychee --offline --no-progress --include-fragments "${all[@]}" >&2 || bad=1

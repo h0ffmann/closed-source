@@ -938,3 +938,13 @@ in the same PR do a new shuffle of Thinkers, Cicero, Aristotle, Plato are all si
 Read as: the 50 rows of `50THINKERS.md` drawn at random again, and redrawn until no two
 neighbours share an area, so the three cannot land together again by chance. The easy pt-BR
 version has the same new order. No thinker, area, reason or status changed; only the numbers.
+
+```text
+also fix this in the same pr
+```
+
+With it, the owner pasted the end of the first `live links` run on `main`: three long-sentence
+warnings from Vale, and one failed link of 513, a DOI whose publisher answered 405 to lychee.
+Read as: make that run pass, and split the three sentences shown. The link is alive (200 to a
+browser), so 405 now counts as an answer, as 403 and 429 do. The other long-sentence warnings
+stay; they are advice.

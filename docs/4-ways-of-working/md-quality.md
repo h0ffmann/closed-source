@@ -83,7 +83,10 @@ and by hand. lychee fetches every web link of the Markdown files and of
 badge in `README.md` is green only at 100%. It does not run on a pull request: a site that is
 down for an hour must not block a merge.
 
-A 403 and a 429 count as an answer: some sites refuse a robot and serve a person.
+A 403, a 405 and a 429 count as an answer: some sites refuse a robot and serve a person. The
+first run on `main` (13 October 2026) failed on one link of 513: the DOI
+[10.4337/qmjip.2016.03.06](https://doi.org/10.4337/qmjip.2016.03.06) resolved, and the
+publisher's page answered 405 to lychee and 200 to a browser. So 405 was added to the list.
 
 ## The link counters
 
