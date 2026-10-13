@@ -253,3 +253,12 @@ add this https://github.com/ouroboric-dev/ouroboric/tree/main/docs/4-ways-of-wor
 
 Read as: the four files of that folder copied byte for byte into docs/4-ways-of-working/ouroboric/,
 with a README that cites Ouroboric at the commit, and the licensor's CC BY 4.0 notice in REUSE.toml.
+
+Hoffmann, 2026-10-13, verbatim:
+
+```text
+create INDEX_REMISS.md ACRONYMOUS.md DESCRIPTION.md QUOTES.md NAGORI.md (ingest to be discussed in the next prompt)
+```
+
+Read as: five root files as skeletons, each with front matter, a cite line, its purpose and an
+empty table; the content comes with the ingest in a later request.
