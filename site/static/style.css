@@ -191,6 +191,7 @@ h3 { margin: 0; font: 400 19px/1.3 var(--serif); }
   background: var(--surface); border-left: 3px solid var(--red); padding: 14px 16px;
   overflow-x: auto; white-space: pre-wrap; word-break: break-word;
 }
+.foot .made-with img { vertical-align: -3px; }
 .foot { margin-top: 64px; padding-top: 18px; padding-bottom: 40px; border-top: 3px double var(--rule); font-size: 14px; color: var(--muted); }
 
 :focus-visible { outline: 2px solid var(--red-text); outline-offset: 3px; }

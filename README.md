@@ -215,5 +215,7 @@ ABNT (NBR 6023):
 - LaTeX template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
 - Ouroboric's names and logos are not licensed here; see Ouroboric's
   [trademark policy](https://github.com/ouroboric-dev/ouroboric/blob/main/TRADEMARKS.md).
+- The website's footer shows Gleam's Lucy ([gleam-lang/branding](https://github.com/gleam-lang/branding)) and
+  the Claude Code icon. Both load from their owners' sites, and neither is licensed here.
 
 Each file's licence is recorded in [`REUSE.toml`](REUSE.toml).
