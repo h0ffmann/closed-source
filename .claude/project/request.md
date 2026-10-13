@@ -412,3 +412,14 @@ add h0ffmann/h0ffmann, add ww3-gpu, add marola-dev/marola
 
 Read as: three more shallow submodules in the same PR: h0ffmann/h0ffmann, h0ffmann/ww3-gpu and
 marola-dev/marola (the upstream, as named), each MIT.
+
+## Footer: made with Gleam and Claude Code
+
+Hoffmann, 2026-10-13 03:02 UTC, verbatim:
+
+```text
+add a footer mark in the website Made with Gleam (site-logo-icon) and Claude Code (site-logo-icon)
+```
+
+Read as: a footer line "Made with [Gleam icon] Gleam and [Claude Code icon] Claude Code", each icon
+the project's own site icon, loaded from its owner and not copied here.
