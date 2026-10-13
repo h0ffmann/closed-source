@@ -19,16 +19,18 @@ row of a release is added in a pull request after it
 
 ## Next: v0.2.1 (not released yet)
 
-The pull request that adds this section carries the next release's changes, all on the website:
+The next release's changes, all on the website and the README (#41 and the pull request that adds
+this section):
 
 - the closed-source tile is in lower case, like the other tiles;
 - the cover has a fourth box, the number of commits, beside the pages and the notes;
-- a GitHub pill in the middle of the cover: the repository, the latest release and a star.
+- a GitHub pill in the middle of the cover: the repository, the latest release and a star; and
+  the same pill at the top of `README.md`.
 
-After the merge, the owner releases it with `just release patch` (v0.2.0 → v0.2.1), or names it:
-`just release 0.2.1`. The pull request's title does not start with `feat`, so `just release`
-alone suggests the patch bump. When Zenodo has minted the DOI, this section becomes a row of the
-table below.
+After the merge, the owner releases it by its name: `just release 0.2.1` (or `just release
+patch`). `just release` alone will suggest a minor bump, v0.3.0, because #41 was merged under a
+`feat` title; the owner's number is 0.2.1. When Zenodo has minted the DOI, this section becomes a
+row of the table below.
 
 ## Released
 

@@ -725,3 +725,17 @@ cover under the boxes, with the latest release in it. "Picasso styling" is read 
 status pill of picasso's site and a star drawn with one line that crosses itself. GitHub's mark
 loads from GitHub and is not copied.
 
+```text
+add to contents (both .md and site) - sorry I merged
+```
+
+```text
+https://github.com/h0ffmann/closed-source/pull/41 - I merged this one
+```
+
+Read as: #41 was merged before the pill was pushed to it, so the pill and the v0.2.1 section go
+in a new pull request. "Both .md and site" is read as: the GitHub pill is on the website's cover
+and also at the top of `README.md`, as a larger badge alone above the others. Because #41 went in
+under its `feat` title, `just release` alone will suggest v0.3.0; `RELEASES.md` says to name
+v0.2.1.
+

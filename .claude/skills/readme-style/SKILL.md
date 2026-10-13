@@ -21,6 +21,8 @@ description: "Write or edit this repository's README.md in its house style: a ce
 4. **The header** is one centred `<div align="center">`, in this order: the icon, the `#` title,
    one `<sub>` line of links to the site and to the page's own sections, the badges, and one
    paragraph that says what the repository is. Badges use shields.io with `style=flat-square`.
+   One badge is larger and stands alone above them: the GitHub pill (`style=for-the-badge`), with
+   the repository's name and its stars. The website's cover has the same pill.
 5. **Sentences stay short and plain**, as AGENTS.md says under Writing. Lower case is the look;
    it does not excuse a long sentence.
 6. **A fact changes in one place.** The citation block comes from `.zenodo.json`. The DOIs are in

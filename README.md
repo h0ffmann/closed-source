@@ -7,6 +7,8 @@
 
 <sub>since 2026 · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
 
+[![h0ffmann/closed-source on github: star the repository](https://img.shields.io/github/stars/h0ffmann/closed-source?style=for-the-badge&logo=github&logoColor=white&label=h0ffmann%2Fclosed-source&labelColor=111111&color=A3201C)](https://github.com/h0ffmann/closed-source)
+
 [![release](https://img.shields.io/github/v/tag/h0ffmann/closed-source?sort=semver&filter=v*&label=release&style=flat-square&color=A3201C)](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)
 [![pdf](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml)
 [![site](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml)
