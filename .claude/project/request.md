@@ -227,3 +227,12 @@ Also change visual of web-site, do agentic research to find top community skills
 Read as: the site set as a book cover after the colours and type of Hoppe's 2001 cover (no cover
 art copied), motion after Anthropic's frontend-design skill, and the 50 Thinkers and the notes as
 the first two sections of the front page.
+
+Hoffmann, 2026-10-13 01:20 UTC, verbatim:
+
+```text
+add friend2, use SMART_POLICY, in the same way you added friend1. The note from conversation from friend2 should be that his of my work was very japanese, compliment
+```
+
+Read as: friend2 in PERSONAS.md, and friend2's remark filed as a fleeting note, with an open
+question note for the reason behind it.

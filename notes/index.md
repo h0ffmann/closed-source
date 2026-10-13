@@ -24,6 +24,11 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 
 - [[202610122240-jackson-and-public-executions]]: Jackson's argument against summary executions (fleeting, open question)
 
+## Feedback on the work
+
+- [[202610130120-work-reads-as-japanese]]: friend2: the work reads as very Japanese, a compliment (fleeting, unverified)
+- [[202610130121-what-makes-the-work-japanese]]: what makes the work read as Japanese? (permanent, open question)
+
 ## Marola forecaster
 
 - [[202610122357-marola-forecaster-contextual-bandit]]: a contextual bandit over forecast models (permanent, open question)
