@@ -8,6 +8,7 @@
 # prose-pt-BR/ directory (the printed Brazilian Portuguese edition) builds pdf/<slug>-pt-BR.pdf; the
 # 00-metadata.md in either directory overrides metadata.md keys such as the abstract and the language.
 set shell := ["bash", "-euo", "pipefail", "-c"]
+set positional-arguments
 
 pandoc_opts := "--from markdown+fancy_lists+raw_tex -F pandoc-crossref --citeproc --metadata link-citations=true --number-sections --top-level-division=section --fail-if-warnings -s --template format/tex/template.tex -t latex --metadata-file format/crossref.yaml"
 
@@ -123,3 +124,13 @@ book:
 # Build the website and serve it on http://localhost:8000
 site-serve: site-build
     nix develop --no-update-lock-file .#site --command python3 -m http.server -d site/dist 8000
+
+# The code graph of this repository with picasso's viz lab (graphify: code only, no key, no model),
+# from the forks/picasso submodule: `just viz` builds it and prints the path of graph.html, then
+# `just viz query "<q>"`, `just viz path <a> <b>`, `just viz explain <x>`. MEMORY.md has the rules.
+viz *args:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    lab=forks/picasso/labs/viz
+    [ -f "$lab/flake.nix" ] || git submodule update --init --depth 1 forks/picasso
+    nix --extra-experimental-features 'nix-command flakes' run "path:$PWD/$lab" -- "$@"

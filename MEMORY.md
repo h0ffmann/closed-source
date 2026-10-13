@@ -23,7 +23,10 @@ same pull request. Do not write it only in a chat.
 
 ## Code graph: graphify
 
-To find "where is X" in the code, use graphify, as h0ffmann/picasso does. graphify builds a graph
+To find "where is X" in the code, use graphify, as h0ffmann/picasso does. Run it with
+`just viz` (build the graph and print the path of `graph.html`), then `just viz query "<q>"`,
+`just viz path <a> <b>` or `just viz explain <x>`. The recipe runs picasso's `viz` lab from the
+`forks/picasso` submodule, and `.graphifyignore` keeps the forks and the build outputs out of the graph. graphify builds a graph
 of the code and answers questions about it. Use it in the picasso way: code only, with no API key,
 no model and no network, and with the graph outside the checkout.
 
