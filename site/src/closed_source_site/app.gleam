@@ -638,7 +638,7 @@ fn notes_section() -> Element(msg) {
       ),
       html.p([attribute.class("sub")], [
         html.text(
-          "A Zettelkasten that Obsidian opens: one idea per note, linked, each with its verification status. The book is written from it.",
+          "A Zettelkasten that Obsidian opens: one idea per note, linked, each with its verification status. The book is written from it. A note marked approved is one the owner approved for the book.",
         ),
       ]),
       html.ul(

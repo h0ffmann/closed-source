@@ -395,3 +395,6 @@ main section.shelf { padding-top: 48px; }
 /* The easy abstract: one step for each paragraph, with its lead in bold. */
 .prose.easy p { margin: 0 0 14px; }
 .prose.easy b { color: var(--red-text); }
+
+/* A note the owner approved for the book: the cover's black with yellow letters. */
+.tag.is-approved { border-color: var(--black); background: var(--black); color: var(--yellow); }

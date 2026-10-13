@@ -19,9 +19,16 @@ const types = ["fleeting", "literature", "permanent"]
 
 const types_sorted = "['fleeting', 'literature', 'permanent']"
 
-const statuses = ["unverified", "partial", "verified", "open-question"]
+const statuses = [
+  "unverified",
+  "partial",
+  "verified",
+  "open-question",
+  "approved",
+]
 
-const statuses_sorted = "['open-question', 'partial', 'unverified', 'verified']"
+const statuses_sorted =
+  "['approved', 'open-question', 'partial', 'unverified', 'verified']"
 
 const fields = ["id", "title", "type", "status", "source", "created"]
 

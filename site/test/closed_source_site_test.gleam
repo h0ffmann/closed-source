@@ -189,3 +189,9 @@ pub fn the_abstract_has_an_easy_pt_br_version_test() {
   assert string.contains(easy, "Vale o original")
   assert app.pdf(app.EasyPtBr) == app.pdf(app.PtBr)
 }
+
+pub fn an_approved_note_shows_as_approved_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert list.any(content.notes, fn(n) { n.status == "approved" })
+  assert string.contains(html, "class=\"tag is-approved\">approved<")
+}

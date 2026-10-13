@@ -986,3 +986,14 @@ Portuguese. Its text is `papers/closed-source/abstract.easy.pt-BR.md`, made with
 `easy-pt-br` skill: every sentence of the abstract, in the same order, in twelve steps, with
 each hard word explained where it appears. It is about the author in the third person, because
 the abstract is his account and the easy version is not his writing. No fact was added.
+
+```text
+in the same pr  move this to approved, and reflect in the website https://github.com/h0ffmann/closed-source/blob/main/notes/202610130121-what-makes-the-work-japanese.md
+```
+
+Read as: the note's status goes from `partial` to `approved`, a new status. The four statuses
+before it were about verification; `approved` is the owner's word that the note goes into the
+book, and `SMART_NOTE_POLICY.md` now says so. The note keeps the sentence that friend2 has not
+confirmed the reading: the approval is the owner's, of his own reading. The website shows the
+note's status from the file, so it now shows "approved", in the cover's black with yellow
+letters.
