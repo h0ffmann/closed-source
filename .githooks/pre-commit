@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# SPDX-License-Identifier: AGPL-3.0-only
+# pre-commit: when a README or a skill is staged, run the README checks. Turn on with `just hooks`.
+# The contract (fast checks at commit, the full gate in CI) is marola-devkit's .githooks.
+set -euo pipefail
+if git diff --cached --name-only | grep -qE '^(README\.md|README\.easy\.pt-BR\.md|\.claude/skills/)'; then
+  scripts/readme.sh --check
+fi

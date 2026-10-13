@@ -578,3 +578,27 @@ corners, one colour for each tile. The tags are in `papers/closed-source/metadat
 and `tools/fabric content` generates them. This pull request carries the site work of #32, which
 it replaces.
 
+## A lower-case README, an easy pt-BR version, and skills written here
+
+Hoffmann, 2026-10-13, verbatim (in a Claude Code session on his machine):
+
+```text
+Create PR to - Create Stylistic README.md like picasso does, FULL lower case except by UFRJ, IFS etc in closed-source, also create a easy.pt-BR with a hook with some tooling to always translate from README.md using VENDORED skills. Dont copy raw skills from other repos, CITE.
+```
+
+```text
+in the same pr add a VENDORED CITED skill to improve cards in the interface, adding picasso style (add some picasso stylings in the background of each card)
+```
+
+Read as: `README.md` gets picasso's header (a centred block, a line of links, flat badges) and is
+all in lower case; "UFRJ, IFS etc" is read as "acronyms keep their capitals". "easy.pt-BR" is
+`README.easy.pt-BR.md`, after marola's `MIP-0091.easy.pt-BR.md`. "A hook with some tooling" is
+`scripts/readme.sh`: it checks the style, a sha256 stamp that ties the easy version to the
+`README.md` it was made from, and the skills' lock; a Claude Code hook and a Git pre-commit hook
+call it, and `just check` runs it in CI. A script cannot translate, so the hook tells the agent
+to use the skill and the stamp proves it was done. "VENDORED skills" is read with "don't copy
+raw": the skills live in `.claude/skills/`, pinned by `skills.lock`, written here, each with a
+Sources section. "Cards in the interface" is read as the tiles of the site's DOIs section, and
+"picasso stylings" as one-line drawings in the manner of those on picasso's site: four new
+drawings, one behind each tile. No drawing by Pablo Picasso is copied.
+

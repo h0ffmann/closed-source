@@ -1,31 +1,52 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-# Closed Source: The God that Failed
+<div align="center">
 
-The first paper made with **Paper Fabric**, an open, self-improving pipeline for technical papers
-in the [Ouroboric](https://github.com/ouroboric-dev/ouroboric) style. Markdown in, PDF out, every
+<img alt="the site's icon: an open letter c with a dot, on a dark square" src="site/static/icons/favicon.svg" width="96"/>
+
+# closed source: the god that failed
+
+<sub>since 2026 · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
+
+[![release](https://img.shields.io/github/v/tag/h0ffmann/closed-source?sort=semver&filter=v*&label=release&style=flat-square&color=A3201C)](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)
+[![pdf](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/pdf.yml)
+[![site](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml/badge.svg)](https://github.com/h0ffmann/closed-source/actions/workflows/site.yml)
+[![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
+[![v0.1.0 DOI](https://img.shields.io/badge/v0.1.0_DOI-10.5281%2Fzenodo.23333657-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23333657)
+[![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-5A3A22?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
+[![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-5A3A22?style=flat-square&logo=gnu&logoColor=white)](#licence)
+
+the first paper made with **paper fabric**, an open, self-improving pipeline for technical papers
+in the [ouroboric](https://github.com/ouroboric-dev/ouroboric) style. markdown in, PDF out, every
 reference checked, every release citable.
 
-> Closed source asked researchers to trust that secrecy would protect their work. Between 2024 and
-> 2026 that trust failed in public. If anyone can reverse engineer anything, the honest course is
+</div>
+
+> closed source asked researchers to trust that secrecy would protect their work. between 2024 and
+> 2026 that trust failed in public. if anyone can reverse engineer anything, the honest course is
 > to publish the method, mint an identifier, and cite whatever you use, and to require the same
 > of the agents that now do much of the reading and writing.
 
-[![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
-[![v0.1.0 DOI](https://img.shields.io/badge/v0.1.0_DOI-10.5281%2Fzenodo.23333657-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23333657)
-
-**Author:** Mr. Nobody on the cover; written in the first person by Matheus Hoffmann. The ouroboric
-ideas are Bruno Valério's ([Ouroboric](https://github.com/ouroboric-dev/ouroboric)).
-Other citable work by the writer, each with its latest DOI:
+**author:** mr. nobody on the cover; written in the first person by matheus hoffmann, of the
+escola politécnica of UFRJ. the ouroboric ideas are bruno valério's
+([ouroboric](https://github.com/ouroboric-dev/ouroboric)).
+other citable work by the writer, each with its latest DOI:
 [marola](https://github.com/marola-dev/marola) ([10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)),
 [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) and
 [picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
-**Status:** v0 preprint, not peer reviewed. See the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
+
+**status:** v0 preprint, not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`
 organisation.
 
-## Build the PDF
+**style.** this page is in lower case, except acronyms such as UFRJ, DOI and PDF, code, and the
+generated citation block. the layout follows [picasso's README](https://github.com/h0ffmann/picasso/blob/29eb385/README.md).
+[`README.easy.pt-BR.md`](README.easy.pt-BR.md) is the same page in easy brazilian portuguese; it
+is made from this file with the [`easy-pt-br`](.claude/skills/easy-pt-br/SKILL.md) skill, and
+`just check` fails when it is older than this file.
 
-On any Ubuntu, you need only Nix and just. Nothing else is installed on the machine. Nix comes
+## build the PDF
+
+on any ubuntu, you need only nix and just. nothing else is installed on the machine. nix comes
 from the official installer at [nixos.org](https://nixos.org/download/):
 
 ```sh
@@ -36,7 +57,7 @@ just paper     # the PDFs, in picasso's paper lab -> pdf/
 just book      # the PDFs and the book's checks (50 thinkers, cite lines, references, STE)
 ```
 
-The tools (pandoc 3.7, pandoc-crossref, XeLaTeX, pdfLaTeX, Gleam, Erlang, just, gh) come from the
+the tools (pandoc 3.7, pandoc-crossref, xelatex, pdflatex, gleam, erlang, just, gh) come from the
 `paper` lab of [h0ffmann/picasso](https://github.com/h0ffmann/picasso/tree/main/labs/paper),
 pinned by `flake.lock`. `just paper` and `just book` turn flakes on for themselves; the commands
 below need the `nix.conf` line above.
@@ -50,113 +71,115 @@ just arxiv             # arXiv source bundles, checked with pdfLaTeX, in build/a
 just --list            # every recipe
 ```
 
-**Tooling.** The checks and generators are one Gleam project (Erlang target) in `tools/`. Run
-them as `tools/fabric <command>` from the repository root, in `nix develop`. The commands are
+**tooling.** the checks and generators are one gleam project (erlang target) in `tools/`. run
+them as `tools/fabric <command>` from the repository root, in `nix develop`. the commands are
 `arxiv`, `book-check`, `citation`, `cite-check`, `content`, `logos`, `notes-check`, `ouroboric`,
 `refs-check`, `ste-check` and `zenodo-upload`. `just` calls them for you. `cd tools && gleam test`
 runs their tests.
 
-Each paper builds twice: `pdf/<slug>.pdf` from `prose/`, and `pdf/<slug>-ste.pdf` from `prose-ste/`,
-the same paper in ASD-STE100 Simplified Technical English (after h0ffmann/picasso's
+each paper builds twice: `pdf/<slug>.pdf` from `prose/`, and `pdf/<slug>-ste.pdf` from `prose-ste/`,
+the same paper in ASD-STE100 simplified technical english (after h0ffmann/picasso's
 `WHITEPAPER.md`). `/ste100` ([`.claude/commands/ste100.md`](.claude/commands/ste100.md)) makes the
 STE text; `tools/fabric ste-check`, run by `just check`, fails if it changes a citation, quotation,
-number or marker. The passes are logged in `papers/<slug>/STE100.md`. A paper with `prose-pt-BR/`
-also builds `pdf/<slug>-pt-BR.pdf`, the printed edition in Brazilian Portuguese; `just check` runs
+number or marker. the passes are logged in `papers/<slug>/STE100.md`. a paper with `prose-pt-BR/`
+also builds `pdf/<slug>-pt-BR.pdf`, the printed edition in brazilian portuguese; `just check` runs
 `tools/fabric ste-check --translation` on it, so it keeps every citation, number and quotation.
 
-The toolchain follows Sandy Maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
-Markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written LaTeX template, XeLaTeX,
-and the Git revision stamped on every page.
+the toolchain follows sandy maguire's books ([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)):
+markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written latex template, xelatex,
+and the git revision stamped on every page.
 
-## Website
+## website
 
-`site/` is the paper's website: a [Lustre](https://lustre.build) application in Gleam, in the
-style of [picasso's site](https://h0ffmann.github.io/picasso/). The title, abstract (original and
+`site/` is the paper's website: a [lustre](https://lustre.build) application in gleam, in the
+style of [picasso's site](https://h0ffmann.github.io/picasso/). the title, abstract (original and
 ASD-STE100), authors, contents, counts and citations come from the paper and this README
-(`tools/fabric content`), so the site never repeats a fact by hand. The PDFs ship with it.
+(`tools/fabric content`), so the site never repeats a fact by hand. the PDFs ship with it.
 
 ```sh
 just site-build        # PDFs, then site/dist/; needs only Nix and just
 just site-serve        # the same, served on http://localhost:8000
 ```
 
-Each half runs in its own toolchain from picasso: the `paper` lab for the PDFs and the
-`gleam-website` lab for the site (`nix develop .#site`). The `site` workflow builds it on every
-pull request and publishes `site/dist` to GitHub Pages from `main`. Turn that on once in
-GitHub → Settings → Pages → Source: **GitHub Actions**. Pages needs no secret.
+each half runs in its own toolchain from picasso: the `paper` lab for the PDFs and the
+`gleam-website` lab for the site (`nix develop .#site`). the `site` workflow builds it on every
+pull request and publishes `site/dist` to github pages from `main`. turn that on once in
+github → settings → pages → source: **github actions**. pages needs no secret.
 
-The cover carries a stamp for Marola and one for Ouroboric, after the logo band of picasso's site:
+the cover carries a stamp for marola and one for ouroboric, after the logo band of picasso's site:
 each links its project and loads the project's logo from its own repository, at the commit the
-paper's title page pins (`logos:` in the paper's `metadata.md`). No logo is copied here
+paper's title page pins (`logos:` in the paper's `metadata.md`). no logo is copied here
 ([`TRADEMARKS.md`](TRADEMARKS.md)).
 
-The front page opens with the 50 Thinkers and the second brain (`notes/`). The site is set like a
+the front page opens with the 50 thinkers and the second brain (`notes/`). the site is set like a
 book cover, after the colour scheme and type of the cover of
 
-> Hoppe, Hans-Hermann. *Democracy—The God That Failed: The Economics and Politics of Monarchy,
-> Democracy, and Natural Order*. New Brunswick, NJ: Transaction Publishers, 2001. ISBN 0-7658-0088-8.
+> hoppe, hans-hermann. *democracy—the god that failed: the economics and politics of monarchy,
+> democracy, and natural order*. new brunswick, NJ: transaction publishers, 2001. ISBN 0-7658-0088-8.
 
-Its 2001 cover has a brown field, a white title, a red band and the rest of the title in black. The
-site's colours are estimates from that description, not samples. The book is under copyright
-(© 2001), so the site copies no cover art and no text from it. The motion follows Anthropic's
-[frontend-design skill](https://github.com/anthropics/skills) (Apache-2.0): one entrance, and
-nothing moves when the reader asks for reduced motion. Hoppe
+its 2001 cover has a brown field, a white title, a red band and the rest of the title in black. the
+site's colours are estimates from that description, not samples. the book is under copyright
+(© 2001), so the site copies no cover art and no text from it. the motion follows anthropic's
+[frontend-design skill](https://github.com/anthropics/skills) (apache-2.0): one entrance, and
+nothing moves when the reader asks for reduced motion. hoppe
 argues that ideas should not be property; the law still gives the copyright. [`BOOKS.md`](BOOKS.md)
 says more, with the other books behind this repository.
 
-## Layout
+## layout
 
-| Path | What's there |
+| path | what's there |
 |---|---|
 | [`papers/closed-source/`](papers/closed-source/) | the paper: `metadata.md`, `prose/NN-*.md`, `refs.bib`, and the reference log `REFERENCES.md` |
-| [`format/`](format/) | the LaTeX template and pandoc-crossref settings shared by every paper |
+| [`format/`](format/) | the latex template and pandoc-crossref settings shared by every paper |
 | [`justfile`](justfile), [`flake.nix`](flake.nix) | the build recipes, and the toolchain pins (picasso's `paper` and `gleam-website` labs) |
-| [`site/`](site/) | the website: Gleam + Lustre, `tools/fabric content` reads the paper |
-| [`tools/`](tools/) | the checks and generators, one Gleam project: reference check, STE check, arXiv bundle, citation metadata, site content and Zenodo upload |
-| [`scripts/`](scripts/) | `release.sh`, which tags a release |
-| [`docs/`](docs/README.md) | Paper Fabric's charter, ways of working, journal and readiness |
-| [`.claude/`](.claude/README.md) | the exported Claude project configuration that produced this repository |
+| [`site/`](site/) | the website: gleam + lustre, `tools/fabric content` reads the paper |
+| [`tools/`](tools/) | the checks and generators, one gleam project: reference check, STE check, arxiv bundle, citation metadata, site content and zenodo upload |
+| [`scripts/`](scripts/) | `release.sh`, which tags a release, and `readme.sh`, which checks this page's style and its easy version |
+| [`README.easy.pt-BR.md`](README.easy.pt-BR.md) | this page in easy brazilian portuguese, made from it by the `easy-pt-br` skill; `scripts/readme.sh` checks that it is current |
+| [`.claude/skills/`](.claude/skills/README.md) | the agent skills written for this repository, pinned in `skills.lock`: `readme-style`, `easy-pt-br` and `card-style` |
+| [`docs/`](docs/README.md) | paper fabric's charter, ways of working, journal and readiness |
+| [`.claude/`](.claude/README.md) | the exported claude project configuration that produced this repository |
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
 | [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
-| [`BOOKS.md`](BOOKS.md) | the books behind the paper: Pirsig, Hoppe, Kinsella, Boldrin and Levine |
+| [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
-| [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), [`notes/`](notes/index.md) | the slip box: Zettelkasten notes for the book, Obsidian readable; `/note` makes one |
+| [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), [`notes/`](notes/index.md) | the slip box: zettelkasten notes for the book, obsidian readable; `/note` makes one |
 | [`DESCRIPTION.md`](DESCRIPTION.md), [`QUOTES.md`](QUOTES.md), [`ACRONYMOUS.md`](ACRONYMOUS.md), [`INDEX_REMISS.md`](INDEX_REMISS.md) | the one-paragraph description, the quotations with their sources, the acronyms, and the index of cross-references; skeletons until the ingest |
 | [`NAGORI.md`](NAGORI.md) | the partial snapshot of the private `h0ffmann/nagori` after the 100 pages; written by the owner by hand, never by an agent or automation (hard rule) |
 | [`forks/`](forks/README.md) | the owner's forks as shallow git submodules: rea, ouroboric, ouroboric-dev/.github, WW4, picasso, h0ffmann, ww3-gpu and marola |
-| [`PERSONAS.md`](PERSONAS.md) | the personas that every Markdown file cites as its main and last author (hard rule) |
+| [`PERSONAS.md`](PERSONAS.md) | the personas that every markdown file cites as its main and last author (hard rule) |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
-## Secrets and keys
+## secrets and keys
 
-Nothing secret is in this repository. A release needs these, and only these:
+nothing secret is in this repository. a release needs these, and only these:
 
-| What | Where it lives | Needed for | How to get it |
+| what | where it lives | needed for | how to get it |
 |---|---|---|---|
-| GitHub account with **2FA** on | you | pushing, `just release` | github.com → Settings → Password and authentication |
-| SSH key (or `gh auth login`) that can push to this repository | your machine | `just release` pushes a tag | `ssh-keygen -t ed25519-sk` makes a key that stays on a FIDO security key; add it in GitHub → Settings → SSH and GPG keys |
-| Signing key (optional, recommended) | your machine, `git config user.signingkey` | `just release` signs the tag when it is set | the same SSH key: `git config gpg.format ssh`, `git config user.signingkey ~/.ssh/id_ed25519_sk.pub`, and add it again in GitHub as a **Signing key** |
-| Zenodo account linked to GitHub, with this repository switched on | zenodo.org → your account menu → GitHub | the DOI that Zenodo mints for each release | log in to zenodo.org with GitHub, then flip the switch beside `h0ffmann/closed-source`; no token is stored anywhere |
-| `ZENODO_SANDBOX_TOKEN` (optional) | your shell, never in a file in the repository | `just zenodo-sandbox`, a rehearsal of a hand-made deposit | sandbox.zenodo.org, a separate account → Applications → Personal access tokens |
-| arXiv account, with an endorsement for `cs.CY` | arxiv.org | the arXiv submission | arxiv.org → Register; a first submission to a category needs an endorsement |
+| github account with **2FA** on | you | pushing, `just release` | github.com → settings → password and authentication |
+| SSH key (or `gh auth login`) that can push to this repository | your machine | `just release` pushes a tag | `ssh-keygen -t ed25519-sk` makes a key that stays on a FIDO security key; add it in github → settings → SSH and GPG keys |
+| signing key (optional, recommended) | your machine, `git config user.signingkey` | `just release` signs the tag when it is set | the same SSH key: `git config gpg.format ssh`, `git config user.signingkey ~/.ssh/id_ed25519_sk.pub`, and add it again in github as a **signing key** |
+| zenodo account linked to github, with this repository switched on | zenodo.org → your account menu → github | the DOI that zenodo mints for each release | log in to zenodo.org with github, then flip the switch beside `h0ffmann/closed-source`; no token is stored anywhere |
+| `ZENODO_SANDBOX_TOKEN` (optional) | your shell, never in a file in the repository | `just zenodo-sandbox`, a rehearsal of a hand-made deposit | sandbox.zenodo.org, a separate account → applications → personal access tokens |
+| arxiv account, with an endorsement for `cs.CY` | arxiv.org | the arxiv submission | arxiv.org → register; a first submission to a category needs an endorsement |
 
-The `release` workflow also uses `GITHUB_TOKEN`, which GitHub gives every run; you do not set it.
-**Never** commit a token, paste it in an issue or pull request, or put it in `.zenodo.json`. If a
-token leaks, delete it on zenodo.org at once and make a new one.
+the `release` workflow also uses `GITHUB_TOKEN`, which github gives every run; you do not set it.
+**never** commit a token, paste it in an issue or pull request, or put it in `.zenodo.json`. if a
+token leaks, delete it where it was made at once and make a new one.
 
-Once per repository: on zenodo.org → GitHub, keep the switch for this repository **off**. The
-Zenodo GitHub integration archives the source tree, not the PDF.
+once per repository: on zenodo.org → github, turn the switch for this repository **on**. zenodo
+then archives each release and mints its DOI ([release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)).
 
-## Release: a new Zenodo version and a new arXiv PDF
+## release: a new zenodo version and a new arxiv PDF
 
-A release is a Git tag on `main`. One command makes it; CI publishes it; Zenodo mints its DOI.
-No secret is in the chain, as in [marola](https://github.com/marola-dev/marola/blob/cf7bd4f/scripts/release.sh).
+a release is a git tag on `main`. one command makes it; CI publishes it; zenodo mints its DOI.
+no secret is in the chain, as in [marola](https://github.com/marola-dev/marola/blob/cf7bd4f/scripts/release.sh).
 
-1. **Merge** the pull request. Check that the `pdf` and `citation` workflows pass on `main`.
-2. **Rehearse**: `just release minor --dry-run` runs every check and tags nothing. There are no
+1. **merge** the pull request. check that the `pdf` and `citation` workflows pass on `main`.
+2. **rehearse**: `just release minor --dry-run` runs every check and tags nothing. there are no
    `-rc` tags: each release is a permanent DOI.
-3. **Tag**:
+3. **tag**:
 
    ```sh
    git switch main && git pull
@@ -166,63 +189,63 @@ No secret is in the chain, as in [marola](https://github.com/marola-dev/marola/b
    just releases                  # the release tags, newest first
    ```
 
-   The script refuses unless main is clean and level with `origin/main`, the version goes up,
+   the script refuses unless main is clean and level with `origin/main`, the version goes up,
    `CITATION.cff` matches `.zenodo.json`, and something changed outside the `forks/` submodule
-   pointers since the last tag. A `feat` pull request suggests a minor bump, a breaking
+   pointers since the last tag. a `feat` pull request suggests a minor bump, a breaking
    change (`!`) a major bump (a minor bump before 1.0.0), anything else a patch.
 
-4. **CI** (the `release` workflow) reruns the checks, builds the PDFs and the arXiv bundle, and
-   publishes the GitHub release with `pdf/*.pdf` and `build/arxiv/*` attached.
-5. **Zenodo** archives the published release a few minutes later, through its GitHub webhook
-   (switched on once at zenodo.org → your account menu → GitHub). It reads `.zenodo.json` from the
+4. **CI** (the `release` workflow) reruns the checks, builds the PDFs and the arxiv bundle, and
+   publishes the github release with `pdf/*.pdf` and `build/arxiv/*` attached.
+5. **zenodo** archives the published release a few minutes later, through its github webhook
+   (switched on once at zenodo.org → your account menu → github). it reads `.zenodo.json` from the
    tagged commit and mints a version DOI under the concept DOI,
-   [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). The record holds the
-   source tree at the tag; the PDFs are on the GitHub release. **Caution:** a DOI is permanent,
+   [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). the record holds the
+   source tree at the tag; the PDFs are on the github release. **caution:** a DOI is permanent,
    and you cannot delete a published record yourself.
-6. **Check** the new version on zenodo.org: the title, the authors with their ORCIDs and the
-   licence. An edit to `.zenodo.json` reaches Zenodo only with the next release.
-7. **arXiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
-   GitHub release, or run `just arxiv` (`build/arxiv/`).
-   - A **new paper**: arxiv.org → Start new submission. Licence CC BY 4.0, upload the tarball,
+6. **check** the new version on zenodo.org: the title, the authors with their ORCIDs and the
+   licence. an edit to `.zenodo.json` reaches zenodo only with the next release.
+7. **arxiv** (manual, in the browser): download `<slug>.tar.gz` and `<slug>.txt` from the
+   github release, or run `just arxiv` (`build/arxiv/`).
+   - a **new paper**: arxiv.org → start new submission. licence CC BY 4.0, upload the tarball,
      paste the title, authors, abstract, comments and categories from the `.txt` file.
-   - A **new version** of a paper already on arXiv: open it in your arXiv user page →
-     **Replace**, and upload the new tarball. arXiv makes it `v2`, `v3`, ….
-   - Check arXiv's compiled preview against `pdf/<slug>.pdf` before you submit.
-   - After the announcement, add `https://arxiv.org/abs/<id>` to `.zenodo.json` as a related
+   - a **new version** of a paper already on arxiv: open it in your arxiv user page →
+     **replace**, and upload the new tarball. arxiv makes it `v2`, `v3`, ….
+   - check arxiv's compiled preview against `pdf/<slug>.pdf` before you submit.
+   - after the announcement, add `https://arxiv.org/abs/<id>` to `.zenodo.json` as a related
      identifier (relation `isVariantFormOf`, scheme `url`), run `just citation`, and open a
      pull request.
 
-**Caution, arXiv:** since 31 October 2025, arXiv's computer-science categories accept review
+**caution, arxiv:** since 31 october 2025, arxiv's computer-science categories accept review
 articles and position papers only after peer review at a journal or conference
-([arXiv blog](https://blog.arxiv.org/?p=1740)). arXiv will hold this v0 position paper. Submit
-it after a venue accepts it. Details: [releasing](docs/4-ways-of-working/releasing.md).
+([arxiv blog](https://blog.arxiv.org/?p=1740)). arxiv will hold this v0 position paper. submit
+it after a venue accepts it. details: [releasing](docs/4-ways-of-working/releasing.md).
 
-## Cite
+## cite
 
-### Two DOIs: the latest and the permanent
+### two DOIs: the latest and the permanent
 
-A DOI is an identifier that keeps resolving when a URL moves. Zenodo gives this work two kinds,
+a DOI is an identifier that keeps resolving when a URL moves. zenodo gives this work two kinds,
 and each answers a different question.
 
-| | Latest DOI (concept DOI) | Permanent DOI (version DOI) |
+| | latest DOI (concept DOI) | permanent DOI (version DOI) |
 |---|---|---|
-| This work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
-| Resolves to | the newest release, whichever it is on the day you click | one release, the same bytes forever |
-| How many | one for the whole work | one for each release |
-| Changes when a release is made | no; it starts to point at the new release | no; the new release gets its own |
-| Use it to | cite the work: "Closed Source: The God that Failed" | say exactly which text you read, quoted or reproduced |
+| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.1.0: [10.5281/zenodo.23333657](https://doi.org/10.5281/zenodo.23333657) |
+| resolves to | the newest release, whichever it is on the day you click | one release, the same bytes forever |
+| how many | one for the whole work | one for each release |
+| changes when a release is made | no; it starts to point at the new release | no; the new release gets its own |
+| use it to | cite the work: "closed source: the god that failed" | say exactly which text you read, quoted or reproduced |
 
-- **Cite the latest DOI** in a reference list. A reader then gets the corrected text, and all
+- **cite the latest DOI** in a reference list. a reader then gets the corrected text, and all
   citations count for one work.
-- **Add the permanent DOI** when the exact wording matters: a quotation, a reproduction, a
-  review. Version v0.1.0 will always be the source archive of 13 October 2026.
-- Neither can be deleted. A wrong release stays on Zenodo; a new release replaces it only as the
+- **add the permanent DOI** when the exact wording matters: a quotation, a reproduction, a
+  review. version v0.1.0 will always be the source archive of 13 october 2026.
+- neither can be deleted. a wrong release stays on zenodo; a new release replaces it only as the
   latest.
 
-`just release` makes a new permanent DOI: Zenodo archives the release and mints it a few minutes
-after the tag ([Release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)). So a release cannot
-print its own permanent DOI; [Zenodo's page for the latest DOI](https://zenodo.org/doi/10.5281/zenodo.23333656)
-lists every version with its DOI. The block below uses the latest DOI.
+`just release` makes a new permanent DOI: zenodo archives the release and mints it a few minutes
+after the tag ([release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)). so a release cannot
+print its own permanent DOI; [zenodo's page for the latest DOI](https://zenodo.org/doi/10.5281/zenodo.23333656)
+lists every version with its DOI. the block below uses the latest DOI.
 
 <!-- citation:start -->
 
@@ -249,14 +272,14 @@ ABNT (NBR 6023):
 
 <!-- citation:end -->
 
-## Licence
+## licence
 
-- Paper text, docs and figures: [CC BY 4.0](LICENSE).
-- Scripts, workflows, build files and the website (`scripts/`, `.github/`, `justfile`, `flake.nix`, `site/`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
-- LaTeX template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
-- Ouroboric's names and logos are not licensed here; see Ouroboric's
+- paper text, docs and figures: [CC BY 4.0](LICENSE).
+- scripts, workflows, build files and the website (`scripts/`, `.github/`, `justfile`, `flake.nix`, `site/`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
+- latex template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
+- ouroboric's names and logos are not licensed here; see ouroboric's
   [trademark policy](https://github.com/ouroboric-dev/ouroboric/blob/main/TRADEMARKS.md).
-- The website's footer shows Gleam's Lucy ([gleam-lang/branding](https://github.com/gleam-lang/branding)) and
-  the Claude Code icon. Both load from their owners' sites, and neither is licensed here.
+- the website's footer shows gleam's lucy ([gleam-lang/branding](https://github.com/gleam-lang/branding)) and
+  the claude code icon. both load from their owners' sites, and neither is licensed here.
 
-Each file's licence is recorded in [`REUSE.toml`](REUSE.toml).
+each file's licence is recorded in [`REUSE.toml`](REUSE.toml).
