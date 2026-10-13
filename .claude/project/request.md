@@ -430,3 +430,52 @@ stop in fact check if ALL python code here can be ported to Gleam, check 100%
 
 Read as: stop the Go port (nothing was pushed) and check, capability by capability, whether every
 Python file can be written in Gleam; add the result to the change proposal.
+## Footer: made with Gleam and Claude Code
+
+Hoffmann, 2026-10-13 03:02 UTC, verbatim:
+
+```text
+add a footer mark in the website Made with Gleam (site-logo-icon) and Claude Code (site-logo-icon)
+```
+
+Read as: a footer line "Made with [Gleam icon] Gleam and [Claude Code icon] Claude Code", each icon
+the project's own site icon, loaded from its owner and not copied here.
+## Labels and the picasso Gleam issue
+
+Hoffmann, 2026-10-13 03:08 UTC, verbatim:
+
+```text
+create issue Port tooling (Gleam) to Picasso (with all proper labels). Create PR for ISSUE_ LABELS.md including relevant keyword for this repository for better outreach + de:ouroboric-dev-contato + para:ouroboric-dev-contato
+```
+
+Read as: (1) an issue "Port tooling (Gleam)" in h0ffmann/picasso, with the labels of picasso's
+LABEL.md (h0ffmann/picasso#120); (2) a PR here that adds ISSUE_LABELS.md: picasso's label shape,
+this repository's areas, `topic/*` labels from the `.zenodo.json` keywords for outreach, and the
+two A2A labels `de:ouroboric-dev-contato` and `para:ouroboric-dev-contato`. The labels are made on
+GitHub to match the file.
+
+## MEMORY.md and graphify
+
+Hoffmann, 2026-10-13 03:19 UTC, verbatim:
+
+```text
+Add MEMORY.md in this repository, should link to Grafiphyy usage
+```
+
+Read as: a root MEMORY.md that says where this repository keeps what an agent must remember
+(project memory is off), with a section that links to how h0ffmann/picasso uses graphify (its
+AGENTS.md, `just graphify` recipe and `.graphifyignore`, pinned at 2d6f8d8). "Grafiphyy" is read
+as graphify.
+
+## Export the project memory as CLAUDE_PROJECT.md
+
+Hoffmann, 2026-10-13 03:33 UTC, verbatim (relayed):
+
+```text
+EXPORT current memory as CLAUDE_PROJECT.md in a new PR, add hardrule to agents to not read this file.
+```
+
+Read as: a new PR with a root CLAUDE_PROJECT.md in the shape of picasso's: the "Paper Fabric"
+project's settings, and its memory. The memory store is empty (memory is off), so the export is
+what stands in for it: the book's facts, the hard rules, the decisions and the conventions
+recorded up to 2026-10-13. AGENTS.md gets a hard rule that no agent reads the file.

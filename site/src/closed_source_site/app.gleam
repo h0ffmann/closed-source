@@ -511,6 +511,26 @@ fn cite_section(model: Model) -> Element(Msg) {
   ])
 }
 
+// Each project's own site icon, loaded from where the project publishes it and never copied
+// here: the names and icons are their owners' marks, not licensed with this repository.
+const gleam_icon =
+  "https://raw.githubusercontent.com/gleam-lang/branding/01ae432a99a83216c23c34dfe666ea4c4e651582/lucy/lucy-circle.svg"
+
+const claude_code_icon =
+  "https://code.claude.com/docs/_mintlify/favicons/claude-code/pLsy-mRpNksna2sx/_generated/favicon/favicon-32x32.png"
+
+fn made_with(name: String, icon: String, href: String) -> Element(msg) {
+  html.a([attribute.href(href), attribute.rel("noopener")], [
+    html.img([
+      attribute.src(icon),
+      attribute.alt(""),
+      attribute.width(16),
+      attribute.height(16),
+    ]),
+    html.text(" " <> name),
+  ])
+}
+
 fn footer() -> Element(msg) {
   html.footer([attribute.class("foot wrap")], [
     html.p([], [
@@ -522,9 +542,20 @@ fn footer() -> Element(msg) {
       external(content.repo, "Source"),
       html.text("."),
     ]),
+    html.p([attribute.class("made-with")], [
+      html.text("Made with "),
+      made_with("Gleam", gleam_icon, "https://gleam.run"),
+      html.text(" and "),
+      made_with(
+        "Claude Code",
+        claude_code_icon,
+        "https://claude.com/claude-code",
+      ),
+      html.text("."),
+    ]),
     html.p([], [
       html.text(
-        "The cover after the type and colours of the cover of Hoppe's Democracy: The God That Failed (2001); no cover art is reproduced. Marola's and Ouroboric's names and logos are not licensed here; the logos load from their own repositories.",
+        "The cover after the type and colours of the cover of Hoppe's Democracy: The God That Failed (2001); no cover art is reproduced. Marola's, Ouroboric's, Gleam's and Claude Code's names and logos are not licensed here; the logos load from their owners' sites.",
       ),
     ]),
   ])
