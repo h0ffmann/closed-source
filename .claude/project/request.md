@@ -702,3 +702,12 @@ from a new `friends:` list in `metadata.md` and is not in the Author section. It
 the tile opens github.com/ouroboric-dev, its DOI line says "none yet", and the heading counts
 "5 works, 4 DOIs". The background drawing is a new one-line snake that bites its tail.
 
+```text
+add lowercase to closed-source card please, commits should display in a box, side by side with pages and note counter
+```
+
+Read as: the closed-source tile's sentence and its second link are in lower case, as the other
+tiles' sentences already are; "repository" on the other tiles follows. And the cover's row of
+boxes (thinkers, pages, notes) gets a fourth box with the number of commits, which
+`tools/fabric content` counts with `git rev-list --count HEAD` at build time.
+

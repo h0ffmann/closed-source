@@ -248,7 +248,7 @@ fn friend_tile(k: Work) -> Element(msg) {
         k.name,
         k.text,
         doi,
-        external(k.href, "Repository"),
+        external(k.href, "repository"),
       )
   }
 }
@@ -294,17 +294,17 @@ fn shelf_section() -> Element(msg) {
                   "paper",
                   content.tags,
                   content.slug,
-                  content.title
-                    <> ": the paper you are reading about. Its latest DOI always opens the newest release.",
+                  string.lowercase(content.title)
+                    <> ": the paper you are reading about. its latest DOI always opens the newest release.",
                   doi,
                   case latest_version() {
                     Ok(#(version, own)) ->
                       external(
                         "https://doi.org/" <> own,
-                        "Permanent DOI for " <> version <> ": " <> own,
+                        "permanent DOI for " <> version <> ": " <> own,
                       )
                     Error(_) ->
-                      external("https://zenodo.org/doi/" <> doi, "All versions")
+                      external("https://zenodo.org/doi/" <> doi, "all versions")
                   },
                 ),
               ],
@@ -315,7 +315,7 @@ fn shelf_section() -> Element(msg) {
                   k.name,
                   k.text,
                   k.doi,
-                  external(k.href, "Repository"),
+                  external(k.href, "repository"),
                 )
               }),
               list.map(content.friends, friend_tile),
@@ -405,6 +405,11 @@ fn cover() -> Element(msg) {
             "notes in the second brain",
             "#notes",
           ),
+          // The commits behind the built revision; left out when the build had no history.
+          case content.commits {
+            0 -> element.none()
+            n -> figure(n, "commits", content.repo <> "/commits/main")
+          },
         ]),
         html.nav(
           [attribute.class("stamps"), attribute.aria_label("Projects")],
