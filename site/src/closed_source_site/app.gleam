@@ -668,6 +668,13 @@ fn read_section() -> Element(msg) {
     html.p([attribute.class("sub")], [
       html.text("The preview does not show on every phone. "),
       link(paper, "Open the PDF"),
+      html.text(" or "),
+      html.a(
+        [attribute.href(paper), attribute.download(content.slug <> ".pdf")],
+        [
+          html.text("download the PDF"),
+        ],
+      ),
       html.text("."),
     ]),
     html.div([attribute.class("stats")], [

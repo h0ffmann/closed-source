@@ -21,7 +21,8 @@ abstract: >-
   attached to the GitHub release of the same tag.
 
   Preview the full text as a PDF in the browser:
-  https://h0ffmann.github.io/closed-source/paper.pdf.
+  https://h0ffmann.github.io/closed-source/paper.pdf Download the PDF of the newest release:
+  https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf.
 
   The writer develops in the open. His three other works each have a permanent DOI, and this
   record cites all three: marola, an open, non-profit platform for sea conditions and

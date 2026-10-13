@@ -837,3 +837,14 @@ Read as: the record already tied itself to marola, ww3-gpu and picasso by DOI an
 URL (`related_identifiers`), but its description did not say so. A paragraph in the description
 now names the three works with their DOIs and says the book is made in the Ouroboric style, whose
 ideas are Bruno Valério's. It reaches Zenodo with the next release.
+
+```text
+Now that zenodo record will be book, make sure latest version of PDF (white) and latest version of the book PDF, they SHOULD be downloaded easily
+```
+
+Read as: the white paper's newest PDF must be one click to download from the record, the site and
+the READMEs. The record's description now has two links: the preview on the site and the
+download from the newest release. The site's "Read" has a download link beside the preview. The
+READMEs already had both. There is one PDF text today, the paper in three editions: the book of
+the 50 thinkers is a roster (`50THINKERS.md`) with no pages written and no PDF build, so there is
+no book PDF to link yet. Nothing was invented to stand for it.

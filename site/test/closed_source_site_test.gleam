@@ -142,4 +142,5 @@ pub fn the_paper_pdf_is_linked_from_the_cover_the_tile_and_read_test() {
   assert app.paper == "paper.pdf"
   assert string.contains(html, "<iframe class=\"preview\"")
   assert string.contains(html, "src=\"paper.pdf\"")
+  assert string.contains(html, "download=\"closed-source.pdf\"")
 }
