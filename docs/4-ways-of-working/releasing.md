@@ -53,6 +53,28 @@ The README's "Secrets and keys" table lists every key, where it lives and how to
 6. Write the report: `just minted --wait`, then open its pull request. The next section says
    what that does.
 
+## The daily release (`perma-doi.yml`)
+
+The owner asked for it on 14 October 2026: every day at 18:00 in Brasília (21:00 UTC), the
+`perma-doi` workflow runs `just release patch` (`scripts/release.sh`) from GitHub Actions, when
+`main` moved more than 1 000 lines since the latest `v*` tag. Every release is a permanent DOI, so
+a day under the line makes no release, and its lines carry over to the next day.
+
+- **The 1 000-line rule** (the owner, 14 October 2026): `scripts/release.sh --moved HEAD 1000`
+  counts the lines added plus the lines deleted, of any file type, between the latest tag and
+  `main`. It counts the net change, not the commits: work that was undone cancels, a change of
+  whitespace or blank lines does not count, a renamed file counts only what its move changed, a
+  submodule pointer counts nothing, and a binary file has no lines. Run it by hand to see where
+  `main` stands. The workflow's `min_lines` input changes the line for one run.
+
+- A tag pushed with `GITHUB_TOKEN` starts no workflow, so `perma-doi.yml` calls `release.yml`
+  itself (`workflow_call`, with the tag). `release.yml` runs its checks, builds the PDFs and
+  publishes the release; Zenodo's webhook mints the DOI, as it did for v0.1.0, which
+  `release.yml` published with `GITHUB_TOKEN`.
+- "Run workflow" in the Actions tab runs it on demand. Its `dry_run` box is ticked by default: it
+  runs every check and prints the tag it would cut, without tagging.
+- After a daily release, `just minted` still writes it into the repository, in a pull request.
+
 ## The report after a release
 
 A release cannot name its own DOI: Zenodo mints it after the tag. So each release is followed by
