@@ -1078,3 +1078,18 @@ concept DOI 10.5281/zenodo.23356739. The book already cites nashkell in Section 
 as a work it cites, into the site's tiles of works (`metadata.md`, `works`), and into the README
 and its easy version. `RELATED_WORK.md` is not changed: it records the ties as the index holds
 them on a date, and DataCite will hold this one only after the next release of this book.
+
+## Art is dead. The age of copy. (featured note)
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+Add a new note in closed-source Art is dead. The age of copy. featured with Gregore Wolfe and Beauty essays
+```
+
+Read as: one permanent note, featured in the index, with the owner's thesis as its title, set
+against Gregory Wolfe's essays *Beauty Will Save the World* (ISI Books, 2011), "Gregore" read as
+Gregory. Wolfe's words come from Jonathan Master's review in The Englewood Review of Books
+(fetched 2026-10-14); the book's own record on PhilArchive answered 403, so the note says it was
+not verified at the source. The note adds no argument the owner did not give beyond a marked
+reading that ties the two, and leaves the question open.
