@@ -72,7 +72,7 @@ work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, a
 | 36 | Adi Shamir | cryptography | public-key cryptography: secrecy only of the key | ☑ | proposed |
 | 37 | Theodore Dalrymple | essays | to be written later | ☐ | chosen |
 | 38 | Mark D. Wilkinson | research data | the FAIR principles (Section 6) | ☑ | proposed |
-| 39 | — | — | — | — | open |
+| 39 | Stanley Kubrick | cinema | "the peer reviewer destroyer" (the owner): *Eyes Wide Shut* (1999), his last film, a work on secrets (`notes/202610140034-peer-reviewing-the-god-that-failed.md`) | ☐ | chosen |
 | 40 | Isaac Asimov | literature, science fiction | reason to come | ☐ | chosen |
 | 41 | personX | — | who shares, multiplies | ☐ | chosen |
 | 42 | Plato | mathematics | mathematics | ☐ | chosen |

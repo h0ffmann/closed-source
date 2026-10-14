@@ -112,3 +112,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 91 | Mário Ferreira dos Santos | *Filosofia Concreta* (Logos, 1957); *Pitágoras e o Tema do Número* (1956) | 40 |
 | 92 | Marcus Baffa | — (the owner's choice) | 8 |
 | 93 | Edmund Burke | — (the owner's choice; no work of his read yet; `notes/202610130526-burke-and-the-watt-patent-1775.md`) | 11 |
+| 94 | Stanley Kubrick | *Eyes Wide Shut* (film, Warner Bros., 1999) | 39 |

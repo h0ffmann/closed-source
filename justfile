@@ -52,6 +52,11 @@ check: build
     scripts/readme.sh --check
     for e in essays/*.md; do [ "$e" = essays/index.md ] || scripts/essay-montaigne.sh "$e"; done
 
+# Print an essay as a page of the book: a PDF whose text cannot be selected (PRINTING.md).
+# `just print essays/<name>.md`, or `just print --all`. The PDFs go to pdf/essays/.
+print *args:
+    scripts/print.sh {{args}}
+
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
     for p in $(ls papers); do tools/fabric arxiv "$p"; done

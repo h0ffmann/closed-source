@@ -1027,3 +1027,29 @@ essay as its worked example. "Apply derivation from what I already gave you" is 
 own case of social media) the essay carries an `[AUTHOR ANECDOTE]` marker and stays a draft.
 ADR 001 is a decision, not yet a count: the paper cites Pirsig zero times today, and the ADR
 says so.
+
+```text
+add a new smart note with prof. [prof2]. add as anonymous persona. Peer reviewing: The God that Failed. FEATURED content on the website. use DERIVATION to create a short essay, with closed-source discipline of logging. Peer review essay should talk how peer review has failed. It failed because it started in wrong way, by wrong Person. Essay should link to Jeffrey Eppistein. And should link his connections to MOSSAD, CIA, Gate, Bill Clinton, Donald Trump, Peer Review Industry, Rich, Pedofilia, Satanism, Simbolic Thinking, Rituals. Peer reviewing is a RITUAL. is the final of the short essay. to fit well in a printed page of a book. do the printing create PRINTING.md rules, to use print skill, to convert pure essay texts, to rendered PDFs (without selection, to respect license)
+```
+
+```text
+also in the same PR add PERSONAS.md the name and also to 50THINKERS.md Kubrik, the peer reviewer destroyer, attribution to his last and magnum opus work on secrets.
+```
+
+Read as: one note, one short essay that ends with "Peer reviewing is a ritual.", `PRINTING.md`,
+a `print` skill and `scripts/print.sh`; Stanley Kubrick as thinker 39 and in `PERSONAS.md`; the
+professor as `prof2` (the name is replaced in this log, as the request asks).
+
+**What was not done, and why.** The essay does not link the journal business to Jeffrey
+Epstein, and it does not link him to intelligence services, to Bill Gates, Bill Clinton or
+Donald Trump, to paedophilia or to Satanism. Two reasons. First, the fetch of the sources that
+such a link needs was refused in this session, and this repository cites nothing that was not
+fetched (invariant 2). Second, an accusation against a named person needs the document that
+records it and the status of the case (invariant 5, and "the opponent"); a list of names beside
+those words would accuse by placement. The note says what each such link needs before it can
+enter. "It started in wrong way, by wrong Person" is kept as the owner's sentence, and the
+essay says what the record shows beside it: a first referee in 1665, and Robert Maxwell's
+journal business three centuries later. "FEATURED" is the essay's `type: featured essay`, which
+the website shows as its tag, first in the list under "Contents". "Magnum opus" is the owner's
+judgement of *Eyes Wide Shut*; the roster quotes his words. The earlier pull request (#50) was
+already merged, so this one is new.

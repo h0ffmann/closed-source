@@ -49,6 +49,12 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 Each of the four has an easy version in Portuguese in [`easy/`](easy/), made with the `easy-pt-br`
 skill.
 
+## Peer review
+
+- [[202610140034-peer-reviewing-the-god-that-failed]]: peer reviewing: the god that failed (permanent, open question)
+
+The essay derived from it: [Peer reviewing: the god that failed](../essays/2026-peer-reviewing-the-god-that-failed.md).
+
 ## Pirsig, and the new and the better
 
 - [[202610140003-robert-pirsig-the-legend]]: Robert M. Pirsig, the legend: the most cited author of this book (permanent, partial)
