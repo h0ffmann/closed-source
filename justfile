@@ -50,6 +50,7 @@ check: build
     tools/fabric cite-check
     tools/fabric notes-check
     scripts/readme.sh --check
+    for e in essays/*.md; do [ "$e" = essays/index.md ] || scripts/essay-montaigne.sh "$e"; done
 
 # Build, then write the arXiv source bundles (checked with pdfLaTeX) to build/arxiv/.
 arxiv: build
@@ -66,6 +67,7 @@ self-test:
     scripts/readme.sh --self-test
     scripts/citation-score.sh --self-test
     scripts/minted.sh --self-test
+    scripts/essay-montaigne.sh --self-test
 
 # Three analysers over the Markdown files, in the flake's `md` shell: markdownlint-cli2 (structure),
 # Vale (the prose rules of AGENTS.md) and lychee (links). `just md-quality --online` also fetches

@@ -49,6 +49,20 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 Each of the four has an easy version in Portuguese in [`easy/`](easy/), made with the `easy-pt-br`
 skill.
 
+## Pirsig, and the new and the better
+
+- [[202610140003-robert-pirsig-the-legend]]: Robert M. Pirsig, the legend: the most cited author of this book (permanent, partial)
+- [[202610140004-whats-new-and-what-is-best]]: the Chautauquas: "What's new?" and "What is best?" (literature, partial)
+
+The essay derived from them, and from eight more notes: [New vs. better, 2026](../essays/2026-new-vs-better.md).
+
+## The first Scala, and Marcus Baffa
+
+- [[202610132352-the-first-scala-a-risk-project-at-ufrj]]: the first Scala: a risk project at UFRJ, 2017 (fleeting, partial)
+- [[202610132353-marcus-baffa-laughed-with-me]]: Marcus Baffa laughed with me (fleeting, unverified)
+- [[202610132354-the-preposition-makes-the-difference]]: the preposition makes the difference (permanent, open question)
+- [[202610132355-gleam-principles-and-the-port-to-pure-gleam]]: Gleam's principles, and why the tools here became pure Gleam (literature, partial)
+
 ## Being found
 
 - [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)

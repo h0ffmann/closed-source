@@ -26,6 +26,10 @@ line, or names a persona that is not in this table. To cite a new persona, add i
 | friend1 | person | A friend of the owner who gives notes for the book. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
 | friend2 | person | A friend of the owner who gives notes on the owner's work. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
 | friend3 | person | The scientist: a friend the owner thinks out loud to. A note whose source is "messages to friend3" holds the owner's words, not friend3's. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
+| friend4 | person | A friend of the owner from UFRJ, one of the three of the 2017 course project (notes, "the first Scala"). The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
+| friend5 | person | A friend of the owner from UFRJ, one of the three of the 2017 course project. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
+| prof1 | person | A professor of the owner at UFRJ, who gave the course of the 2017 project. The real name stays out of the repository (SMART_NOTE_POLICY.md). | — |
+| Marcus Baffa | person | A technical leader at Stone, who has passed away; thinker 46 of `50THINKERS.md`. The one person of the notes who is written with his real name: the owner asked for it by name (13 October 2026). He wrote nothing here, so no file names him as an author. | — |
 | Claude | agent | The Claude coding agent (Anthropic) that drafts, checks and builds here, under the owner's direction. | the `Co-Authored-By` trailer of its commits |
 
 The existing files were cited on 12 October 2026 as main author Claude, last author Matheus

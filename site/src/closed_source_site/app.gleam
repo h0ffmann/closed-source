@@ -825,6 +825,34 @@ fn contents_section() -> Element(msg) {
         ])
       }),
     ),
+    html.h3([attribute.class("essays-head")], [html.text("Essays")]),
+    html.p([attribute.class("sub")], [
+      html.text(
+        "Each essay is derived from notes of the second brain and checked against what Montaigne asked of an essay. A draft says that it is a draft.",
+      ),
+    ]),
+    html.ul(
+      [attribute.class("notes")],
+      list.map(content.essays, fn(e: Note) {
+        html.li([attribute.class("note")], [
+          html.a(
+            [
+              attribute.href(
+                content.repo <> "/blob/main/essays/" <> e.file <> ".md",
+              ),
+              attribute.rel("noopener"),
+            ],
+            [html.text(e.title)],
+          ),
+          html.span([attribute.class("tags")], [
+            html.span([attribute.class("tag")], [html.text(e.kind)]),
+            html.span([attribute.class("tag is-" <> e.status)], [
+              html.text(string.replace(e.status, "-", " ")),
+            ]),
+          ]),
+        ])
+      }),
+    ),
   ])
 }
 

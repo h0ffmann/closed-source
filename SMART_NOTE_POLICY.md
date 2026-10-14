@@ -49,8 +49,10 @@ reads when you open `notes/` as a vault. `/note` (`.claude/commands/note.md`) ma
    exists.
 7. **Truth.** A factual claim is `unverified` until a source is fetched and cited in the note. Never
    invent a source, a quotation or a number. A note may say "I could not verify this".
-8. **People.** A friend who gives notes appears under an alias (`friend1`, `friend2`, ...) that
-   PERSONAS.md lists; the real name stays out of the repository. A proclaimed AI guru is quoted
+8. **People.** A friend who gives notes, or who is in one, appears under an alias (`friend1`,
+   `friend2`, ...) that PERSONAS.md lists, and a teacher under `prof1`, `prof2`, ...; the real
+   name stays out of the repository. A person of a note is written with a real name only when
+   the owner asks for that person by name, and PERSONAS.md then says so in the person's row. A proclaimed AI guru is quoted
    only for a public, cited claim (AGENTS.md).
 9. **Into the book.** A permanent note with status `verified`, `partial` or `approved` can become text in a
    thinker's two pages. The page cites the note's sources, not the note.

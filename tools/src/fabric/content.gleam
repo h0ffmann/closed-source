@@ -600,6 +600,19 @@ fn render(slug: String) -> Result(String, String) {
       <> gleam_string(n.3)
       <> ")"
     })
+  use essay_list <- result.try(notes("essays"))
+  let essay_rows =
+    list.map(essay_list, fn(n) {
+      "Note(file: "
+      <> gleam_string(n.0)
+      <> ", title: "
+      <> gleam_string(n.1)
+      <> ", kind: "
+      <> gleam_string(n.2)
+      <> ", status: "
+      <> gleam_string(n.3)
+      <> ")"
+    })
   let rev = case quiet("git", ["rev-parse", "--short", "HEAD"], "") {
     Ok(run) -> strip(run.stdout)
     Error(_) -> ""
@@ -781,6 +794,12 @@ pub const thinkers = "
 
 pub const notes = "
     <> gleam_list(note_rows)
+    <> "
+
+/// The essays of essays/, newest first: derived from notes (DERIVATION.md). The site lists
+/// them under Contents.
+pub const essays = "
+    <> gleam_list(essay_rows)
     <> "
 
 /// The newest release with a changelog in RELEASES.md, and what changed in it. The version is
