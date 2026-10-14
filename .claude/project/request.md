@@ -1066,3 +1066,15 @@ the request, and the note and the essay say so and do not write them as true: an
 company was profitable in 2019, so "first" does not hold; and picasso runs on Determinate Nix,
 so "beat" has no test as the two stand. The plan is written as the REA loop with what it still
 lacks: an axis, a measurement, a buyer.
+
+```text
+nash way was merged, can you mint the DOI already? and create DOI update PR in h0ffmann nashkell and closed-source
+```
+
+Read as: the DOI of nashkell's open book goes where this repository names the writer's other
+works. nashkell v0.1.0 was released on 14 October 2026 at the owner's word, and Zenodo minted
+concept DOI 10.5281/zenodo.23356739. The book already cites nashkell in Section 5a
+(`hoffmann2026nashkell`), so the DOI goes into that reference and its row, into `.zenodo.json`
+as a work it cites, into the site's tiles of works (`metadata.md`, `works`), and into the README
+and its easy version. `RELATED_WORK.md` is not changed: it records the ties as the index holds
+them on a date, and DataCite will hold this one only after the next release of this book.

@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="1f43c33ee6721e80a119551808db0a6f62e9fcb3640774d8fcffb095ebf777ea" -->
+<!-- easy: source="README.md"; sha256="70d217f7be458e0c3bf555944f77101566050f41312b58c5e5dd17e85aa64dcd" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -37,8 +37,9 @@ escola politécnica da UFRJ. as ideias ouroboric são de bruno valério.
 outros trabalhos do autor que você pode citar, cada um com seu DOI (um identificador que não
 muda):
 [marola](https://github.com/marola-dev/marola) ([10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)),
-[ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) e
-[picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
+[ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)),
+[picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)) e
+[nashkell](https://h0ffmann.github.io/nashkell/) ([10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)), um livro aberto.
 
 **situação:** a versão v0.3.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
 ainda. a [avaliação de prontidão](docs/1-product/readiness/2026-10-12-ready-to-promote.md) diz o
