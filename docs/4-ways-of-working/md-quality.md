@@ -91,6 +91,11 @@ more after a minute and fetches only the links that failed. That takes care of t
 busy for a moment (GitHub answered 503 to one link of 540 while this was written), and a dead
 link still fails.
 
+It asks one host for two links at a time, half a second apart. github.com answers 500 and 503 to
+a checker that asks faster: on 14 October 2026 two runs failed here that way, on links that
+were alive, and one of them was on a pull request that was then merged. The pace changes how
+fast the check asks. It changes no rule of what passes.
+
 A link to a page that needs a login (a repository's settings) is written as code, not as a
 link: the check cannot open it.
 

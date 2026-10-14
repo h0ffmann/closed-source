@@ -88,7 +88,11 @@ if [ "$online" = 1 ]; then
   # link must. So: each link is tried five times; the answers are kept (`--cache`); and if a link
   # still fails, lychee runs once more after a minute, which fetches only the links that failed.
   web() {
+    # Two requests at a time to one host, half a second apart: github.com answers 500 and 503 to
+    # a checker that asks too fast. On 14 October 2026 it failed two runs here that way, on
+    # links that were alive (docs/4-ways-of-working/md-quality.md).
     lychee --no-progress --include-fragments --max-concurrency 6 --max-retries 4 --retry-wait-time 5 \
+      --host-concurrency 2 --host-request-interval 500ms \
       --timeout 30 --cache --max-cache-age 1h --accept 200,403,405,429 "${all[@]}" "$site" >&2
   }
   rm -f .lycheecache
