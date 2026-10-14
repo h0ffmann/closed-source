@@ -60,7 +60,7 @@ pub fn both_dois_and_the_other_works_are_on_the_page_test() {
   assert list.all(content.version_dois, fn(v) {
     string.contains(html, "https://doi.org/" <> v.1)
   })
-  assert list.length(content.works) == 3
+  assert list.length(content.works) == 4
   assert list.all(content.works, fn(w) {
     string.contains(html, "https://doi.org/" <> w.doi)
   })
@@ -69,9 +69,9 @@ pub fn both_dois_and_the_other_works_are_on_the_page_test() {
 pub fn the_dois_section_has_a_tile_for_each_work_test() {
   let html = app.initial() |> app.view |> element.to_string
   assert string.contains(html, "id=\"dois\"")
-  assert string.contains(html, "5 works, 4 DOIs.")
-  assert app.shelf_works() == 5
-  assert app.shelf_dois() == 4
+  assert string.contains(html, "6 works, 5 DOIs.")
+  assert app.shelf_works() == 6
+  assert app.shelf_dois() == 5
   assert list.all(content.friends, fn(w) {
     string.contains(html, "tile-" <> w.name <> " tile-friend")
     && w.doi == ""
