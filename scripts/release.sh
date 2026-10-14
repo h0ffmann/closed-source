@@ -12,6 +12,7 @@
 #   just release patch|minor|major  # bump the latest tag
 #   just release 0.1.0 [--dry-run]
 #   scripts/release.sh --guard <ref>   # exit 1 if <ref> only moves pointers since the last tag
+#   scripts/release.sh --moved <ref> [min]  # exit 1 unless <ref> moved more than min lines (1000)
 #   scripts/release.sh --self-test
 set -euo pipefail
 
@@ -47,6 +48,34 @@ guard() {
     return 1
   fi
   echo "release: $(wc -l <<<"$changes") file(s) changed outside the submodule pointers since $base" >&2
+}
+
+# moved_lines: `git diff --numstat` lines on stdin; prints the lines added plus the lines
+# deleted, every file type counted. A binary file has no lines and adds nothing; a submodule
+# pointer is not a file of this repository and adds nothing.
+moved_lines() { awk -F'\t' '$1 ~ /^[0-9]+$/ && $2 ~ /^[0-9]+$/ { n += $1 + $2 } END { print n + 0 }'; }
+
+# moved <ref> <min>: the perma-doi rule (owner, 2026-10-14): a scheduled release is cut only when
+# the repository moved more than <min> lines since the newest v* tag at or before <ref>. What counts is
+# the net change, measured smartly, so that noise does not make a DOI:
+#   - the diff of the two trees, not the sum of the commits: work that was undone cancels;
+#   - whitespace and blank lines ignored (-w --ignore-blank-lines): a reflow is not a change;
+#   - renames and copies found (-M -C): a moved file counts only what its move changed;
+#   - submodule pointers left out (--ignore-submodules), as guard does.
+moved() {
+  local ref="$1" min="$2" base n
+  # The newest v* tag reachable from <ref>, its own included: a tagged commit moved nothing.
+  base="$(git describe --tags --abbrev=0 --match 'v*' "$ref" 2>/dev/null || true)"
+  if [ -z "$base" ]; then
+    echo "release: no v* tag before $ref; nothing to compare" >&2
+    return 0
+  fi
+  n="$(git diff --numstat -w --ignore-blank-lines -M -C --ignore-submodules "$base" "$ref" | moved_lines)"
+  if [ "$n" -le "$min" ]; then
+    echo "release: $base..$ref moved $n lines, not more than $min; no release (a DOI is permanent)" >&2
+    return 1
+  fi
+  echo "release: $base..$ref moved $n lines, more than $min" >&2
 }
 
 # newer <a> <b>: true when version a sorts strictly after b
@@ -99,8 +128,17 @@ if [ "${1:-}" = --self-test ]; then
   mixed="$pointers"$'\n:100644 100644 94edc98 fdccf0a M\tpapers/closed-source/prose/01-introduction.md'
   [ "$(content_lines <<<"$mixed")" = $':100644 100644 94edc98 fdccf0a M\tpapers/closed-source/prose/01-introduction.md' ] \
     || fail "a prose change was not counted"
+  numstat=$'10\t5\tpapers/a.md\n-\t-\tlogo.png\n0\t0\tnotes/{old.md => new.md}\n3\t0\tscripts/x.sh'
+  [ "$(moved_lines <<<"$numstat")" = 18 ] || fail "moved_lines: added + deleted, binary and pure renames as 0"
+  [ "$(moved_lines </dev/null)" = 0 ] || fail "moved_lines: nothing moved is 0"
   echo "release: self-test ok" >&2
   exit 0
+fi
+
+if [ "${1:-}" = --moved ]; then
+  [ -n "${2:-}" ] || { echo "release: usage: scripts/release.sh --moved <ref> [min]" >&2; exit 1; }
+  moved "$2" "${3:-1000}"
+  exit
 fi
 
 if [ "${1:-}" = --guard ]; then
