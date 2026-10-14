@@ -1086,3 +1086,18 @@ repository does not see it. "notes about akita later" is read as: no note about 
 pull request. The plugin is not enabled in `.claude/settings.json` by this pull request: the
 agent was not allowed to enable a third-party plugin whose hooks run outside the sandbox, so the
 lines are in the proposal's `delta.md` for the owner.
+
+```text
+now create a READNINESS list for closed-source for ai-memory full adoption, including manual setup I need to do or reindex my LTM, LTM now is pure github, it should be moved in the ai-memory pr in closed-source
+```
+
+Read as: a readiness list in the same pull request,
+[`docs/1-product/readiness/2026-10-14-ai-memory-full-adoption.md`](../../docs/1-product/readiness/2026-10-14-ai-memory-full-adoption.md),
+in the shape of the earlier readiness assessment. It has six blocking items in order: the
+plugin, the install, the scope and exclusions, the paths that send data out, the reindex of the
+long-term memory that is on GitHub today (a backfill of the earlier sessions, then one pinned
+page for each memory file, pointing to the file), and the checks. It also has five non-blocking
+items, among them a private git remote for the wiki. "LTM now is pure github" is written into
+`MEMORY.md`: until the list is done, the files on GitHub are the long-term memory. The install
+is pinned to 3.0.0 with `AI_MEMORY_VERSION`, because the script installs the latest release
+without it.

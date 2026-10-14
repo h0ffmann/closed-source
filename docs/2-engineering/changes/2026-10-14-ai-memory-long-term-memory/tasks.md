@@ -9,6 +9,9 @@ style: procedure
 
 # Tasks
 
+The full list, with the manual setup and the reindex of the memory that is on GitHub, is
+[the readiness list](../../../1-product/readiness/2026-10-14-ai-memory-full-adoption.md).
+
 1. This pull request: `MEMORY.md`, `AGENTS.md` and this proposal, as in [delta.md](delta.md).
 2. The owner: add the marketplace and the plugin to `.claude/settings.json`, with the lines in
    [delta.md](delta.md), in this pull request or the next one. The agent was not allowed to

@@ -2,8 +2,10 @@
 # MEMORY.md
 
 The memory of this repository. Project memory in Claude is off for this project. The long-term
-memory is ai-memory (below), and what a reader or an agent must know is in files in the
-repository. This file tells you where each kind of memory is. Read it after `AGENTS.md`.
+memory is moving to ai-memory (below). Until
+[its readiness list](docs/1-product/readiness/2026-10-14-ai-memory-full-adoption.md) is done, the
+long-term memory is still the files on GitHub that the table lists. After it, they stay the
+record: what a reader or an agent must know is in files in the repository. This file tells you where each kind of memory is. Read it after `AGENTS.md`.
 
 ## Where the memory is
 
@@ -27,8 +29,10 @@ same pull request. Do not write it only in a chat.
 ## Long-term memory: ai-memory
 
 The long-term memory of closed-source is
-[ai-memory](https://github.com/akitaonrails/ai-memory) (Fabio Akita, MIT), adopted on 14
-October 2026. The owner's request, and why, are in
+[ai-memory](https://github.com/akitaonrails/ai-memory) (Fabio Akita, MIT), chosen on 14
+October 2026. It is not in use yet: the manual setup, the reindex of the memory that is on
+GitHub, and the checks are in
+[the readiness list](docs/1-product/readiness/2026-10-14-ai-memory-full-adoption.md). The owner's request, and why, are in
 [the change proposal](docs/2-engineering/changes/2026-10-14-ai-memory-long-term-memory/proposal.md).
 
 - **What it holds.** What each session did, what failed, what is open, and a handoff to the
@@ -42,10 +46,11 @@ October 2026. The owner's request, and why, are in
   `.claude/settings.json` (the change proposal's `delta.md` has the lines). Without the
   ai-memory binary, the plugin captures nothing: it says so once when the session starts and
   does not block the session. A new version is a change to the pin, in a pull request.
-- **The install, once for each machine, by the owner** (ai-memory's `README.md`, "Quick start"):
+- **The install, once for each machine, by the owner** (ai-memory's `README.md`, "Quick start",
+  pinned to the plugin's version):
 
   ```bash
-  curl -fsSL https://github.com/akitaonrails/ai-memory/releases/latest/download/install.sh | sh
+  curl -fsSL https://github.com/akitaonrails/ai-memory/releases/download/v3.0.0/install.sh | AI_MEMORY_VERSION=3.0.0 sh
   ai-memory setup --agent claude-code
   ```
 
