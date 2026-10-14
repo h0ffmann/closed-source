@@ -49,6 +49,13 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 Each of the four has an easy version in Portuguese in [`easy/`](easy/), made with the `easy-pt-br`
 skill.
 
+## Pirsig, and the new and the better
+
+- [[202610140003-robert-pirsig-the-legend]]: Robert M. Pirsig, the legend: the most cited author of this book (permanent, partial)
+- [[202610140004-whats-new-and-what-is-best]]: the Chautauquas: "What's new?" and "What is best?" (literature, partial)
+
+The essay derived from them, and from eight more notes: [New vs. better, 2026](../essays/2026-new-vs-better.md).
+
 ## The first Scala, and Marcus Baffa
 
 - [[202610132352-the-first-scala-a-risk-project-at-ufrj]]: the first Scala: a risk project at UFRJ, 2017 (fleeting, partial)

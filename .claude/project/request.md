@@ -1012,3 +1012,18 @@ because the next words name its Risk team; the owner should correct the note if 
 is read as these notes, which the website shows. `50THINKERS.md` is not changed: row 46 still
 says "to be explained", and the owner decides its words. The same story goes on the timeline of
 h0ffmann/h0ffmann in a pull request there.
+
+```text
+Add another note in the same PR on h0ffmann/closed-source regarging Robert M. Pirsig. The lengend. Since it will be the more cited author in this book (ADR 001). Bring a simplified biography as BIO_ROBERT_PIRSIG.md. I want as well all the context about chautaquas about the new vs the better. I want a essay (listed on contents website)New vs. Better 2026 ..... idea is create analogy for 2026 terms .... with AI, ElNino, social media, Bitcoin, privacy topics to be required to met this essay good e2e. Also add in this pr an skill called essay-montaigne checker. to check if a produced essay met requirements by the original Essays of Montaigne. You can apply derivation now from what I already gave you. create a DERIVATION.md to explain efficient way to derive NOTE -> ESSAY
+```
+
+Read as: a note on Pirsig; the decision recorded as the repository's first ADR
+(`docs/2-engineering/adr/001-...`); `BIO_ROBERT_PIRSIG.md` from one fetched source; a literature
+note on the Chautauquas and the two questions, where Pirsig's word is "best" and the owner's is
+"better"; an essay in a new folder `essays/`, which the website lists under "Contents"; a skill
+`essay-montaigne` with a script for the rules that can be counted; and `DERIVATION.md`, with the
+essay as its worked example. "Apply derivation from what I already gave you" is read as: every
+"I" of the essay stands on a note the owner gave, and where no note exists (Bitcoin, the owner's
+own case of social media) the essay carries an `[AUTHOR ANECDOTE]` marker and stays a draft.
+ADR 001 is a decision, not yet a count: the paper cites Pirsig zero times today, and the ADR
+says so.

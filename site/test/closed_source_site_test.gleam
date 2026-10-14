@@ -195,3 +195,10 @@ pub fn an_approved_note_shows_as_approved_test() {
   assert list.any(content.notes, fn(n) { n.status == "approved" })
   assert string.contains(html, "class=\"tag is-approved\">approved<")
 }
+
+pub fn the_contents_list_the_essays_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert content.essays != []
+  assert list.all(content.essays, fn(e) { string.contains(html, e.file) })
+  assert string.contains(html, ">Essays<")
+}
