@@ -1142,3 +1142,16 @@ Brasília), that runs `just release patch` when `main` has changed since the lat
 calls `release.yml` with the tag, because a tag pushed with `GITHUB_TOKEN` starts no workflow.
 `release.yml` gains `workflow_call`. A day with nothing new makes no release: each release is a
 permanent DOI, and `scripts/release.sh` refuses an empty one.
+
+Hoffmann, 2026-10-14, verbatim, on pull request #59:
+
+```text
+Create a rule based on latest release, only publish if closed-source moved more than 1,000 of lines of any type. It should skip with smart change detection
+```
+
+Read as: the scheduled release is cut only when the net diff from the latest `v*` tag to `main`
+adds plus deletes more than 1 000 lines, every file type counted (`scripts/release.sh --moved`).
+"Smart" is read as: the diff of the two trees, not the sum of the commits; whitespace and blank
+lines ignored; renames and copies found; submodule pointers and binary files count nothing. A
+skipped day leaves a notice in the run and carries its lines over. A release by hand
+(`just release`) keeps its own rules and has no line minimum.

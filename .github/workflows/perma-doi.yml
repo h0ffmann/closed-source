@@ -7,8 +7,11 @@
 # GITHUB_TOKEN, and Zenodo minted 10.5281/zenodo.23333657 (docs/2-engineering/changes/
 # 2026-10-13-zenodo-webhook-release/proposal.md).
 #
-# A day with nothing new makes no release: every release is a permanent DOI, and release.sh
-# refuses an empty one. "Run workflow" in the Actions tab runs it on demand; its dry_run box,
+# The owner's rule (2026-10-14): publish only when closed-source moved more than 1 000 lines, of
+# any file type, since the latest release (`scripts/release.sh --moved`). The count is the net
+# diff of the two trees, with whitespace, blank lines, renames and submodule pointers left out,
+# so undone work and reflows do not make a DOI. A day under the line skips, and the lines carry
+# over to the next day: the base is always the latest tag. Every release is a permanent DOI. "Run workflow" in the Actions tab runs it on demand; its dry_run box,
 # ticked by default, runs every check and prints the tag it would cut, without tagging.
 #
 # The owner asked for this release by name (2026-10-14), so it is not an agent's release
@@ -26,6 +29,10 @@ on:
         description: Run every check and print the tag, without tagging or releasing
         type: boolean
         default: true
+      min_lines:
+        description: Publish only when main moved more than this many lines since the latest tag
+        type: number
+        default: 1000
 
 permissions: {}
 
@@ -47,12 +54,15 @@ jobs:
           ref: main
           fetch-depth: 0
       - id: check
-        name: anything new since the latest tag?
+        name: more than 1 000 lines moved since the latest tag?
+        env:
+          MIN_LINES: ${{ inputs.min_lines || 1000 }}
         run: |
-          prev="$(git tag -l 'v*' --sort=-v:refname | head -1)"
-          if [ -n "$prev" ] && [ "$(git rev-list --count "$prev..HEAD")" -eq 0 ]; then
-            echo "::notice::Nothing new on main since $prev; no release today (a DOI is permanent)."
+          if ! out="$(scripts/release.sh --moved HEAD "$MIN_LINES" 2>&1)"; then
+            echo "::notice::${out#release: }"
             echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "$out"
           fi
       - if: steps.check.outputs.skip != 'true'
         uses: cachix/install-nix-action@v31
