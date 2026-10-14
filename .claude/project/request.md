@@ -1168,3 +1168,18 @@ Read as: the website's "Second brain" section shows two counters, notes and essa
 `notes/` and `essays/` by `tools/fabric content`; the "Essays" list under "Contents" is taken off
 the site for now. The essays stay in `essays/` and in the generated content, which the counter
 reads.
+
+## Art is dead. The age of copy. (featured note)
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+Add a new note in closed-source Art is dead. The age of copy. featured with Gregore Wolfe and Beauty essays
+```
+
+Read as: one permanent note, featured in the index, with the owner's thesis as its title, set
+against Gregory Wolfe's essays *Beauty Will Save the World* (ISI Books, 2011), "Gregore" read as
+Gregory. Wolfe's words come from Jonathan Master's review in The Englewood Review of Books
+(fetched 2026-10-14); the book's own record on PhilArchive answered 403, so the note says it was
+not verified at the source. The note adds no argument the owner did not give beyond a marked
+reading that ties the two, and leaves the question open.

@@ -12,6 +12,7 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 
 ## Featured
 
+- [[202610141844-art-is-dead-the-age-of-copy]]: Art is dead. The age of copy. (permanent, open question), with Gregory Wolfe's *Beauty Will Save the World* essays
 - [[202610130529-the-man-who-warned-edmund-burke]]: The Man Who Warned (Edmund Burke) (permanent, partial)
 
 ## Authors' rights and patents
