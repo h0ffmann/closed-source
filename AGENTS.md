@@ -30,7 +30,8 @@ linked docs before you change what they cover.
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
   rules in `docs/4-ways-of-working/md-quality.md`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.
-- Where the memory of this repository is, and the code graph (graphify): `MEMORY.md`.
+- Where the memory of this repository is, the long-term memory (ai-memory) and the code
+  graph (graphify): `MEMORY.md`.
 
 ## Invariants
 
