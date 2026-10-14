@@ -91,6 +91,25 @@ the essay is a draft, and it says so in its first lines.
 the two markers are exactly the topics that no note covered: the gaps of the essay are the gaps
 of the slip box. The next note to write is the owner's on Bitcoin.
 
+## The second derivation: a short essay for one page
+
+[Peer reviewing: the god that failed](essays/2026-peer-reviewing-the-god-that-failed.md), 14
+October 2026. The log of it, step by step:
+
+| Step | What was done |
+|---|---|
+| 1. the question | the owner's sentence: peer review has failed, and it is a ritual ([the note](notes/202610140034-peer-reviewing-the-god-that-failed.md)) |
+| 2, 3. the notes | the case: [why I wrote fast](notes/202610132130-why-i-wrote-fast-from-preprint-to-book.md) (a book with no review). The trial: [what is MetaQuality](notes/202610131752-what-is-metaquality.md) (a check that nobody can open) |
+| 4. the gaps, closed by a fetch | the history of peer review (one encyclopedia page); the journal business (one article of *The Guardian*); Kubrick's last film (one encyclopedia page). All three are quoted in the note first |
+| 4. the gaps, left open | the links that the owner asked for from this business to Jeffrey Epstein and from him to named people, services and crimes. No source was fetched, so none is in the note and none is in the essay |
+| 5. written | 309 words. Three sentences of the first draft were removed because no note and no fetched source held them: two details of the film, and "I have never been a referee" |
+| 5. where the record changed the essay | the owner's sentence was "it started in the wrong way, by the wrong person". The record names a first referee in 1665 and a businessman in the 1950s. The essay says both, in the first person, and says that it cannot join them |
+| 6. checked | `scripts/essay-montaigne.sh`: the eight countable rules hold, no open marker |
+| 7. printed | `just print`: one A5 page, no text that can be selected ([`PRINTING.md`](PRINTING.md)) |
+
+**What the second derivation showed.** A short essay has room for one case, one borrowing, one
+image and one doubt. A fifth thing does not fit the page, and the page is the check.
+
 ## Sources
 
 - The slip box and the three kinds of note: [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), after

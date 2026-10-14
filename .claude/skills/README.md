@@ -20,6 +20,7 @@ names the file and the commit it was read from (AGENTS.md, "Borrow, cite, propag
 | [`citation-score`](citation-score/SKILL.md) | score how much of a phrase, a text, a dump, a file or a URL is cited, with a coloured verdict (`scripts/citation-score.sh`) | Hyland and Jiang (2019), doi:10.1093/applin/amx012; Liu, Zhang and Liang (2023), arXiv:2304.09848 |
 | [`card-style`](card-style/SKILL.md) | style the site's cards, with a one-line drawing behind each | h0ffmann/picasso `site/static/drawings/` at `29eb385`; Anthropic's `frontend-design` skill (Apache-2.0) |
 | [`essay-montaigne`](essay-montaigne/SKILL.md) | check that an essay keeps what Montaigne asked of an essay: eight countable rules (`scripts/essay-montaigne.sh`) and five that need a reader | Montaigne, *Essays*, Cotton's translation, Project Gutenberg eBook 3600 (public domain) |
+| [`print`](print/SKILL.md) | print an essay as one page, as a PDF whose text cannot be selected (`scripts/print.sh`, `PRINTING.md`) | written for this repository |
 
 ## The lock
 

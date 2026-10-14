@@ -111,7 +111,7 @@ Os nomes das pessoas e os títulos das obras ficam como no original. "Seção 2"
 | 36 | Adi Shamir | criptografia | criptografia de chave pública: o segredo é só a chave | ☑ | proposed |
 | 37 | Theodore Dalrymple | ensaios | a escrever mais tarde | ☐ | chosen |
 | 38 | Mark D. Wilkinson | dados de pesquisa | os princípios FAIR (Seção 6) | ☑ | proposed |
-| 39 | — | — | — | — | open |
+| 39 | Stanley Kubrick | cinema | "o destruidor do revisor por pares" (palavras do dono): *De Olhos Bem Fechados* (1999), seu último filme, uma obra sobre segredos | ☐ | chosen |
 | 40 | Isaac Asimov | literatura, ficção científica | motivo a escrever | ☐ | chosen |
 | 41 | personX | — | quem compartilha, multiplica | ☐ | chosen |
 | 42 | Plato | matemática | matemática | ☐ | chosen |

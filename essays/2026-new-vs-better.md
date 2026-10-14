@@ -4,6 +4,7 @@ type: essay
 status: draft
 date: 2026-10-14
 topics: "AI,El Niño,social media,Bitcoin,privacy"
+pages: 2
 related: [../DERIVATION.md, ../BIO_ROBERT_PIRSIG.md, ../QUOTES.md, ../notes/202610140004-whats-new-and-what-is-best.md, ../.claude/skills/essay-montaigne/SKILL.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
