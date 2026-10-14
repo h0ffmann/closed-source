@@ -1078,3 +1078,18 @@ concept DOI 10.5281/zenodo.23356739. The book already cites nashkell in Section 
 as a work it cites, into the site's tiles of works (`metadata.md`, `works`), and into the README
 and its easy version. `RELATED_WORK.md` is not changed: it records the ties as the index holds
 them on a date, and DataCite will hold this one only after the next release of this book.
+
+## A game-theory note: TV audience as competition
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+add a game theory note in both nashkell and closed-source. When I got the idea of estimate TV viewership, not only using past X employeer viewership em channel Y,Z,K .... but a very good way of measuring power is understanding competition. When it comes to TV audience, its competition. I was just a contractor so who gives a fuck. The idea still sounds good. The game theory came later ... only at the end. At least now I'm pretty sure I really think in Game Theory terms
+```
+
+Read as: one fleeting note here,
+[`notes/202610141830-tv-audience-is-competition.md`](../../notes/202610141830-tv-audience-is-competition.md),
+under a new "Game theory" heading of the index, and one in h0ffmann/nashkell's notes. The
+broadcaster is not named, as the request does not name it ("X employer"). The status is
+`open-question`: it records the owner's reasoning, with no number or model to check, and only the
+owner gives `approved`.
