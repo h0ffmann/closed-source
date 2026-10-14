@@ -15,6 +15,7 @@ website lists every file of this folder under "Contents".
 | Essay | Status | Derived from |
 |---|---|---|
 | [Peer reviewing: the god that failed](2026-peer-reviewing-the-god-that-failed.md) | draft, **featured** on the website; one printed page | four notes; one conversation with prof2 |
+| [picasso, and the long run](2026-picasso-and-the-long-run.md) | draft; two printed pages | [one note](../notes/202610140142-picasso-determinism-and-the-long-run.md), which holds a study |
 | [New vs. better, 2026](2026-new-vs-better.md) | draft: two markers wait for the owner | ten notes; Pirsig's two questions |
 
 "What is MetaQuality" is still a note

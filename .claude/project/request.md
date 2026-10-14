@@ -1053,3 +1053,16 @@ journal business three centuries later. "FEATURED" is the essay's `type: feature
 the website shows as its tag, first in the list under "Contents". "Magnum opus" is the owner's
 judgement of *Eyes Wide Shut*; the roster quotes his words. The earlier pull request (#50) was
 already merged, so this one is new.
+
+```text
+add an essay on how picasso may be first profitable open-source. The long term run. add note first, derive to essay. Explain derivation process. The argue of picasso is determinism. Link this to security CVE attacks found recently on JS and Python build systems, pen code delivered, pen code not being checked, and automatically distributed, a mess. picasso can add determinism to the 21st centure, if applied e distributed right. Add studies with FableHigh, to the note summarized on picasso vs nix-config vs determinate-systems/nix and the plan to make picasso the self-improving app that can beat determinate-systems/nix by using ouroboric ethic REA pattern, reverse citing.
+```
+
+Read as: one note, then one essay derived from it, and the third log in `DERIVATION.md`.
+"FableHigh" is read as a study by an agent on the Fable model at high effort; its report is
+summarised in the note and is not committed. "pen code" is read as "open code". "nix-config" is
+read as gvolpe/nix-config, which picasso's README names. The study contradicts two parts of
+the request, and the note and the essay say so and do not write them as true: an open-source
+company was profitable in 2019, so "first" does not hold; and picasso runs on Determinate Nix,
+so "beat" has no test as the two stand. The plan is written as the REA loop with what it still
+lacks: an axis, a measurement, a buyer.
