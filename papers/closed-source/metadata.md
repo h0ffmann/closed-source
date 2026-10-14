@@ -32,6 +32,11 @@ works:
     doi: 10.5281/zenodo.23311208
     tags: [profit, nix]
     href: https://github.com/h0ffmann/picasso
+  - name: nashkell
+    text: "an open book in progress, in the voice of Nash: game theory, pictures that are equations, and the mask of Latin that Section 5 studies"
+    doi: 10.5281/zenodo.23356739
+    tags: [book, game theory]
+    href: https://h0ffmann.github.io/nashkell/
 # Work by friends that this paper stands on, for a wide tile in the site's DOIs section. It is not
 # the writer's work, so it is not in `works` and not in the Author section. `tags` are the owner's
 # words (Hoffmann, 13 October 2026); the question mark is his. `text` is from OUROBORIC.md, section

@@ -42,8 +42,9 @@ escola politécnica of UFRJ. the ouroboric ideas are bruno valério's
 ([ouroboric](https://github.com/ouroboric-dev/ouroboric)).
 other citable work by the writer, each with its latest DOI:
 [marola](https://github.com/marola-dev/marola) ([10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)),
-[ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)) and
-[picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)).
+[ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)),
+[picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)) and
+[nashkell](https://h0ffmann.github.io/nashkell/) ([10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)), an open book.
 
 **status:** v0.3.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
 for what must change before v1 and before this repository moves to the `ouroboric-dev`

@@ -50,7 +50,7 @@ could not be confirmed), `unverified` (not fetched; must not be cited).
 | branwen2012nash | partial | gwern.net transcription | Nash's "exponentially" quote taken from this transcription (the transcriber marks one word as uncertain); NSA declassification in 2012 stated here |
 | rivest2012nash | verified | iacr.org rump-session page | chosen-plaintext polynomial, known-plaintext subexponential; "a much better game theorist than a cryptographer" |
 | barak2012impossibility | verified | Crossref; author's PDF abstract | JACM 59(2):1–48; virtual black box definition |
-| hoffmann2026nashkell | verified | git clone of h0ffmann/nashkell | README and README-latinizer: filter design and stated limitations, quotes checked |
+| hoffmann2026nashkell | verified | git clone of h0ffmann/nashkell; its record on Zenodo (concept DOI 10.5281/zenodo.23356739, a book, CC BY 4.0), read from Zenodo's API on 14 October 2026 | README and README-latinizer: filter design and stated limitations, quotes checked; the DOI added on 14 October 2026 |
 | chacon2014signing | verified | git-scm.com Pro Git chapter | GnuPG signing, merge --verify-signatures |
 | git2021relnotes234 | verified | git/git RelNotes 2.34.0 | ssh keys can sign |
 | git2020relnotes229 | verified | git/git RelNotes 2.29.0 | SHA-256 marked experimental |
