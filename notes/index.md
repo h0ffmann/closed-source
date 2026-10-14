@@ -49,6 +49,12 @@ The slip box of this repository (SMART_NOTE_POLICY.md). Open `notes/` in Obsidia
 Each of the four has an easy version in Portuguese in [`easy/`](easy/), made with the `easy-pt-br`
 skill.
 
+## picasso and determinism
+
+- [[202610140142-picasso-determinism-and-the-long-run]]: picasso: determinism, and the long run to profit (permanent, partial)
+
+The essay derived from it: [picasso, and the long run](../essays/2026-picasso-and-the-long-run.md).
+
 ## Peer review
 
 - [[202610140034-peer-reviewing-the-god-that-failed]]: peer reviewing: the god that failed (permanent, open question)

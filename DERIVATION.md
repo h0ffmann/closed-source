@@ -110,6 +110,27 @@ October 2026. The log of it, step by step:
 **What the second derivation showed.** A short essay has room for one case, one borrowing, one
 image and one doubt. A fifth thing does not fit the page, and the page is the check.
 
+## The third derivation: the note first, with a study inside it
+
+[picasso, and the long run](essays/2026-picasso-and-the-long-run.md), 14 October 2026. The owner
+asked for the note first and the essay from it, and for the process to be explained.
+
+| Step | What was done |
+|---|---|
+| 0. the study | the owner's thesis had facts in it that no note held. An agent (Claude, the Fable model, high effort, as the owner asked) read picasso, gvolpe/nix-config and Determinate's repositories at their commits, fetched the incident reports and the Nix manual, and wrote a report. The report is not in this repository |
+| 0. the check of the study | a report by an agent is a claim, not a source. Six of its quotations were fetched again by the agent that filed the note: PyPI's three, Red Hat's two, the limit of Nix, the CVE's advisory, and two facts of picasso's files. All held. What was not checked again is marked in the note |
+| 1. the question | the owner's sentence: "picasso may be the first profitable open source" |
+| 2, 3. the note | **one** note, [picasso: determinism, and the long run to profit](notes/202610140142-picasso-determinism-and-the-long-run.md), holds everything: the mess, the limit, the three projects, the two claims against the record, the plan as REA. The essay stands on this note alone |
+| 4. the gaps | "first" and "beat": the record contradicts the first and gives no test for the second. They were not closed. They became the essay's matter |
+| 5. written | the essay tries the owner's sentence a word at a time and takes out the words that do not hold. A guess of the first draft ("the star may be mine") was cut: no note held it |
+| 5. what the derivation found | picasso's CI calls its installer by a tag, the same weakness as the attack that the note quotes. It came from reading the owner's own files with the essay's question |
+| 6. checked | `scripts/essay-montaigne.sh`: the eight countable rules hold |
+| 7. printed | `just print`: two pages, declared in the front matter |
+
+**What the third derivation showed.** When a thesis is contradicted by the record, the essay
+does not hide it and does not drop the thesis: an essay is a trial, and a trial may fail in
+part. The note keeps the verdicts; the essay keeps the "I".
+
 ## Sources
 
 - The slip box and the three kinds of note: [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), after
