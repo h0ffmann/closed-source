@@ -11,6 +11,14 @@ name: release
 on:
   push:
     tags: ["v*"]
+  # perma-doi.yml calls this after it pushes a tag: a tag pushed with GITHUB_TOKEN starts no
+  # workflow by itself, so the daily release would otherwise never be published or minted.
+  workflow_call:
+    inputs:
+      tag:
+        description: The v* tag to publish (already pushed)
+        type: string
+        required: true
 
 permissions: {}
 
@@ -20,15 +28,19 @@ jobs:
     timeout-minutes: 20
     permissions:
       contents: write
+    env:
+      # A pushed tag names itself; a call from perma-doi.yml passes it.
+      TAG: ${{ inputs.tag || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ inputs.tag || github.ref }}
       - name: the tag is MAJOR.MINOR.PATCH and on main
         run: |
-          [[ "$GITHUB_REF_NAME" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
-          git merge-base --is-ancestor "$GITHUB_SHA" origin/main
-      - run: scripts/release.sh --guard "$GITHUB_REF_NAME"
+          [[ "$TAG" =~ ^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]
+          git merge-base --is-ancestor "$(git rev-parse "$TAG^{commit}")" origin/main
+      - run: scripts/release.sh --guard "$TAG"
       - uses: cachix/install-nix-action@v31
       - run: nix develop --no-update-lock-file --command tools/fabric citation --check
       - run: nix develop --no-update-lock-file --command just check
@@ -36,5 +48,5 @@ jobs:
       - env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" pdf/*.pdf build/arxiv/* --repo "$GITHUB_REPOSITORY" --verify-tag \
-            --generate-notes --title "closed-source $GITHUB_REF_NAME"
+          gh release create "$TAG" pdf/*.pdf build/arxiv/* --repo "$GITHUB_REPOSITORY" --verify-tag \
+            --generate-notes --title "closed-source $TAG"

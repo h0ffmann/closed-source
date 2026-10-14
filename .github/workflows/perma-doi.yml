@@ -1,0 +1,89 @@
+# perma-doi — every day at 18:00 in Brasília (21:00 UTC; Brazil has no daylight saving time since
+# 2019), cut the next patch release with `just release patch` (scripts/release.sh) when main has
+# changed since the latest v* tag. The release is published by release.yml, called from here,
+# because a tag pushed with GITHUB_TOKEN starts no workflow on its own; Zenodo's webhook then
+# archives the published release with .zenodo.json and mints its version DOI under the concept
+# DOI 10.5281/zenodo.23333656. That path was proven by v0.1.0: release.yml published it with
+# GITHUB_TOKEN, and Zenodo minted 10.5281/zenodo.23333657 (docs/2-engineering/changes/
+# 2026-10-13-zenodo-webhook-release/proposal.md).
+#
+# The owner's rule (2026-10-14): publish only when closed-source moved more than 1 000 lines, of
+# any file type, since the latest release (`scripts/release.sh --moved`). The count is the net
+# diff of the two trees, with whitespace, blank lines, renames and submodule pointers left out,
+# so undone work and reflows do not make a DOI. A day under the line skips, and the lines carry
+# over to the next day: the base is always the latest tag. Every release is a permanent DOI. "Run workflow" in the Actions tab runs it on demand; its dry_run box,
+# ticked by default, runs every check and prints the tag it would cut, without tagging.
+#
+# The owner asked for this release by name (2026-10-14), so it is not an agent's release
+# (AGENTS.md invariant 6). After a release, `just minted` writes it into the repository by hand.
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+name: perma-doi
+
+on:
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Run every check and print the tag, without tagging or releasing
+        type: boolean
+        default: true
+      min_lines:
+        description: Publish only when main moved more than this many lines since the latest tag
+        type: number
+        default: 1000
+
+permissions: {}
+
+concurrency:
+  group: perma-doi
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.release.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - id: check
+        name: more than 1 000 lines moved since the latest tag?
+        env:
+          MIN_LINES: ${{ inputs.min_lines || 1000 }}
+        run: |
+          if ! out="$(scripts/release.sh --moved HEAD "$MIN_LINES" 2>&1)"; then
+            echo "::notice::${out#release: }"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "$out"
+          fi
+      - if: steps.check.outputs.skip != 'true'
+        uses: cachix/install-nix-action@v31
+      - id: release
+        if: steps.check.outputs.skip != 'true'
+        name: just release patch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898283+github-actions[bot]@users.noreply.github.com'
+          if [ "${{ inputs.dry_run }}" = true ]; then
+            scripts/release.sh patch --dry-run
+            exit 0
+          fi
+          scripts/release.sh patch
+          echo "tag=$(git tag -l 'v*' --sort=-v:refname | head -1)" >> "$GITHUB_OUTPUT"
+
+  publish:
+    needs: tag
+    if: needs.tag.outputs.tag != ''
+    permissions:
+      contents: write
+    uses: ./.github/workflows/release.yml
+    with:
+      tag: ${{ needs.tag.outputs.tag }}
