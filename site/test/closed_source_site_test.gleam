@@ -1,5 +1,6 @@
 import closed_source_site/app
 import closed_source_site/content
+import gleam/int
 import gleam/list
 import gleam/string
 import gleeunit
@@ -196,9 +197,25 @@ pub fn an_approved_note_shows_as_approved_test() {
   assert string.contains(html, "class=\"tag is-approved\">approved<")
 }
 
-pub fn the_contents_list_the_essays_test() {
+// The essays are retired from the website's listing for now (the owner, 2026-10-14): the second
+// brain counts them, and no essay is linked from the page.
+pub fn the_essays_are_counted_not_listed_test() {
   let html = app.initial() |> app.view |> element.to_string
   assert content.essays != []
-  assert list.all(content.essays, fn(e) { string.contains(html, e.file) })
-  assert string.contains(html, ">Essays<")
+  assert !list.any(content.essays, fn(e) {
+    string.contains(html, "/essays/" <> e.file)
+  })
+  assert !string.contains(html, ">Essays<")
+  assert string.contains(
+    html,
+    "<b>"
+      <> int.to_string(list.length(content.essays))
+      <> "</b><span>essays</span>",
+  )
+  assert string.contains(
+    html,
+    "<b>"
+      <> int.to_string(list.length(content.notes))
+      <> "</b><span>notes</span>",
+  )
 }

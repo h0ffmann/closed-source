@@ -641,6 +641,12 @@ fn notes_section() -> Element(msg) {
           "A Zettelkasten that Obsidian opens: one idea per note, linked, each with its verification status. The book is written from it. A note marked approved is one the owner approved for the book.",
         ),
       ]),
+      // The counts come from notes/ and essays/ through tools/fabric content. The essays are
+      // counted here and not listed on the site for now (the owner, 2026-10-14).
+      html.div([attribute.class("stats")], [
+        stat(list.length(content.notes), "notes"),
+        stat(list.length(content.essays), "essays"),
+      ]),
       html.ul(
         [attribute.class("notes")],
         list.map(content.notes, fn(n: Note) {
@@ -825,34 +831,8 @@ fn contents_section() -> Element(msg) {
         ])
       }),
     ),
-    html.h3([attribute.class("essays-head")], [html.text("Essays")]),
-    html.p([attribute.class("sub")], [
-      html.text(
-        "Each essay is derived from notes of the second brain and checked against what Montaigne asked of an essay. A draft says that it is a draft.",
-      ),
-    ]),
-    html.ul(
-      [attribute.class("notes")],
-      list.map(content.essays, fn(e: Note) {
-        html.li([attribute.class("note")], [
-          html.a(
-            [
-              attribute.href(
-                content.repo <> "/blob/main/essays/" <> e.file <> ".md",
-              ),
-              attribute.rel("noopener"),
-            ],
-            [html.text(e.title)],
-          ),
-          html.span([attribute.class("tags")], [
-            html.span([attribute.class("tag")], [html.text(e.kind)]),
-            html.span([attribute.class("tag is-" <> e.status)], [
-              html.text(string.replace(e.status, "-", " ")),
-            ]),
-          ]),
-        ])
-      }),
-    ),
+    // The essays' listing is retired from the website for now (the owner, 2026-10-14): they
+  // stay in essays/ and are counted in the second brain.
   ])
 }
 

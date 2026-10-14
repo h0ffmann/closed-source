@@ -1155,3 +1155,16 @@ adds plus deletes more than 1 000 lines, every file type counted (`scripts/relea
 lines ignored; renames and copies found; submodule pointers and binary files count nothing. A
 skipped day leaves a notice in the run and carries its lines over. A release by hand
 (`just release`) keeps its own rules and has no line minimum.
+
+## Essay temporary retirement from website
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+add notes and essay counter to second brain session, Hide essays from website listing for now, name of the pr essay temporary retirement from website
+```
+
+Read as: the website's "Second brain" section shows two counters, notes and essays, read from
+`notes/` and `essays/` by `tools/fabric content`; the "Essays" list under "Contents" is taken off
+the site for now. The essays stay in `essays/` and in the generated content, which the counter
+reads.
