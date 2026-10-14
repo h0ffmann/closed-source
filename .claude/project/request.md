@@ -1079,6 +1079,56 @@ as a work it cites, into the site's tiles of works (`metadata.md`, `works`), and
 and its easy version. `RELATED_WORK.md` is not changed: it records the ties as the index holds
 them on a date, and DataCite will hold this one only after the next release of this book.
 
+## A game-theory note: TV audience as competition
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+add a game theory note in both nashkell and closed-source. When I got the idea of estimate TV viewership, not only using past X employeer viewership em channel Y,Z,K .... but a very good way of measuring power is understanding competition. When it comes to TV audience, its competition. I was just a contractor so who gives a fuck. The idea still sounds good. The game theory came later ... only at the end. At least now I'm pretty sure I really think in Game Theory terms
+```
+
+Read as: one fleeting note here,
+[`notes/202610141830-tv-audience-is-competition.md`](../../notes/202610141830-tv-audience-is-competition.md),
+under a new "Game theory" heading of the index, and one in h0ffmann/nashkell's notes. The
+broadcaster is not named, as the request does not name it ("X employer"). The status is
+`open-question`: it records the owner's reasoning, with no number or model to check, and only the
+owner gives `approved`.
+
+## ai-memory as the long-term memory
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+create a PR in closed-source, adopting this https://github.com/akitaonrails/ai-memory notes about akita later, but this will be the long-term memory for closed-source
+```
+
+Read as: a change proposal, because `MEMORY.md` said that the memory of this repository is
+files in the repository
+([2026-10-14-ai-memory-long-term-memory](../../docs/2-engineering/changes/2026-10-14-ai-memory-long-term-memory/proposal.md)).
+ai-memory (Fabio Akita, MIT) was read at commit `705aba7` and its Claude Code plugin at tag
+`v3.0.0`. `MEMORY.md` gets a section that says what the long-term memory holds, how to install
+it and how to keep the capture on the machine; `AGENTS.md` names it in its map. The files stay
+the record, because the wiki of ai-memory is on the owner's machine and a reader of this
+repository does not see it. "notes about akita later" is read as: no note about Akita in this
+pull request. The plugin is not enabled in `.claude/settings.json` by this pull request: the
+agent was not allowed to enable a third-party plugin whose hooks run outside the sandbox, so the
+lines are in the proposal's `delta.md` for the owner.
+
+```text
+now create a READNINESS list for closed-source for ai-memory full adoption, including manual setup I need to do or reindex my LTM, LTM now is pure github, it should be moved in the ai-memory pr in closed-source
+```
+
+Read as: a readiness list in the same pull request,
+[`docs/1-product/readiness/2026-10-14-ai-memory-full-adoption.md`](../../docs/1-product/readiness/2026-10-14-ai-memory-full-adoption.md),
+in the shape of the earlier readiness assessment. It has six blocking items in order: the
+plugin, the install, the scope and exclusions, the paths that send data out, the reindex of the
+long-term memory that is on GitHub today (a backfill of the earlier sessions, then one pinned
+page for each memory file, pointing to the file), and the checks. It also has five non-blocking
+items, among them a private git remote for the wiki. "LTM now is pure github" is written into
+`MEMORY.md`: until the list is done, the files on GitHub are the long-term memory. The install
+is pinned to 3.0.0 with `AI_MEMORY_VERSION`, because the script installs the latest release
+without it.
+
 ## Art is dead. The age of copy. (featured note)
 
 Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):

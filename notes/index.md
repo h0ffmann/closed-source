@@ -76,6 +76,10 @@ The essay derived from them, and from eight more notes: [New vs. better, 2026](.
 - [[202610132354-the-preposition-makes-the-difference]]: the preposition makes the difference (permanent, open question)
 - [[202610132355-gleam-principles-and-the-port-to-pure-gleam]]: Gleam's principles, and why the tools here became pure Gleam (literature, partial)
 
+## Game theory
+
+- [[202610141830-tv-audience-is-competition]]: a TV audience is a competition, and I think in game theory (fleeting, open question)
+
 ## Being found
 
 - [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)
