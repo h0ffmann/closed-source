@@ -1093,3 +1093,16 @@ under a new "Game theory" heading of the index, and one in h0ffmann/nashkell's n
 broadcaster is not named, as the request does not name it ("X employer"). The status is
 `open-question`: it records the owner's reasoning, with no number or model to check, and only the
 owner gives `approved`.
+
+## Essay temporary retirement from website
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+add notes and essay counter to second brain session, Hide essays from website listing for now, name of the pr essay temporary retirement from website
+```
+
+Read as: the website's "Second brain" section shows two counters, notes and essays, read from
+`notes/` and `essays/` by `tools/fabric content`; the "Essays" list under "Contents" is taken off
+the site for now. The essays stay in `essays/` and in the generated content, which the counter
+reads.
