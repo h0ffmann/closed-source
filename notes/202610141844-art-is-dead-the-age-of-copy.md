@@ -15,7 +15,8 @@ created: 2026-10-14
 
 **What I set it against.** Gregory Wolfe's essays, *Beauty Will Save the World: Recovering the
 Human in an Ideological Age* (ISI Books, 2011). The title comes from Dostoevsky's *The Idiot*,
-by way of Solzhenitsyn's Nobel lecture, where Wolfe found the phrase. In the book's opening
+by way of Solzhenitsyn's Nobel lecture, where Wolfe found the phrase (as reviews of the book
+say; not read in the book). In the book's opening
 chapter he calls beauty the "necessary agent for making the claims of truth and goodness
 meaningful". I read that line in Jonathan Master's review of the book (The Englewood Review of
 Books, 29 July 2011), not in the book itself, so the note is not verified at the source.
