@@ -1066,3 +1066,23 @@ the request, and the note and the essay say so and do not write them as true: an
 company was profitable in 2019, so "first" does not hold; and picasso runs on Determinate Nix,
 so "beat" has no test as the two stand. The plan is written as the REA loop with what it still
 lacks: an axis, a measurement, a buyer.
+
+## ai-memory as the long-term memory
+
+Hoffmann, 2026-10-14, verbatim (in a Claude Code session on the owner's machine):
+
+```text
+create a PR in closed-source, adopting this https://github.com/akitaonrails/ai-memory notes about akita later, but this will be the long-term memory for closed-source
+```
+
+Read as: a change proposal, because `MEMORY.md` said that the memory of this repository is
+files in the repository
+([2026-10-14-ai-memory-long-term-memory](../../docs/2-engineering/changes/2026-10-14-ai-memory-long-term-memory/proposal.md)).
+ai-memory (Fabio Akita, MIT) was read at commit `705aba7` and its Claude Code plugin at tag
+`v3.0.0`. `MEMORY.md` gets a section that says what the long-term memory holds, how to install
+it and how to keep the capture on the machine; `AGENTS.md` names it in its map. The files stay
+the record, because the wiki of ai-memory is on the owner's machine and a reader of this
+repository does not see it. "notes about akita later" is read as: no note about Akita in this
+pull request. The plugin is not enabled in `.claude/settings.json` by this pull request: the
+agent was not allowed to enable a third-party plugin whose hooks run outside the sandbox, so the
+lines are in the proposal's `delta.md` for the owner.
