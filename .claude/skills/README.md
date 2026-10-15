@@ -43,3 +43,12 @@ you changed a skill on purpose, run `scripts/readme.sh --lock` and commit the lo
 | after an edit of `README.md`, and before the session ends | `.claude/settings.json` → `scripts/readme.sh --hook` | tells the agent to use `easy-pt-br` while the easy version is older than `README.md` |
 | before a commit | `.githooks/pre-commit` (turn on with `just hooks`) | runs `scripts/readme.sh --check` when a README or a skill is staged |
 | in CI | `just check` | the same check, for every pull request |
+
+## Plugins
+
+`.claude/settings.json` turns on these Claude Code plugins for everyone who opens this
+repository. Claude Code asks each reader to trust and install them once.
+
+| Plugin | From |
+|---|---|
+| `mattpocock-skills` | the `claude-plugins-official` marketplace |
