@@ -5,6 +5,7 @@ type: permanent
 status: partial
 source: "Matheus Hoffmann, project chat, 2026-10-12; Ouroboric's REA pattern (Read, Evaluate, Adopt)"
 tags: [marola, ouroboric, rea]
+cssclasses: [ouroboric]
 created: 2026-10-13
 ---
 <!-- cite: main="Matheus Hoffmann"; last="Matheus Hoffmann" -->

@@ -79,7 +79,7 @@ Os nomes das pessoas e os títulos das obras ficam como no original. "Seção 2"
 | 4 | Gregory Wolfe | literatura, cultura | *Beauty Will Save the World* (2011; *A Beleza Salvará o Mundo*): recuperar o humano numa época ideológica | ☐ | chosen |
 | 5 | Edmund Burke | política, filosofia | mais tarde chamado de fundador do conservadorismo; em 1775 ele foi contra estender a patente da máquina a vapor de Watt, e a favor de estender uma patente de porcelana (notes/202610130526) | ☐ | chosen |
 | 6 | Linus Torvalds | engenharia de software | Linux e Git: abertura que cresce bem (Seção 2) | ☑ | proposed |
-| 7 | — | — | — | — | open |
+| 7 | Carl Jung | psicologia | teoria dos sonhos: sonhos e mitos como a língua do inconsciente; arquétipos e o inconsciente coletivo; o Ouroboros como arquétipo (*Obras Completas* 14) | ☐ | chosen |
 | 8 | Boaz Barak | criptografia | não pode existir um ofuscador geral (Seção 5a) | ☑ | proposed |
 | 9 | Julia Cameron | criatividade | *The Artist's Way* (1992; *O Caminho do Artista*): criatividade como prática diária | ☐ | chosen |
 | 10 | Dante Alighieri | literatura | motivo a escrever | ☐ | chosen |

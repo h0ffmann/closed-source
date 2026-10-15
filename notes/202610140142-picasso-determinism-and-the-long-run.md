@@ -5,6 +5,7 @@ type: permanent
 status: partial
 source: "Matheus Hoffmann, message, 2026-10-14: the thesis is his; a study of 14 October 2026 by an agent (Claude, the Fable model, high effort), six of whose quotations were checked again by the agent that filed this note"
 tags: [picasso, nix, determinism, supply-chain, rea, ouroboric, essay]
+cssclasses: [ouroboric]
 created: 2026-10-14
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->

@@ -1,0 +1,16 @@
+/* Ouroboric notes (tag ouroboric, cssclasses: [ouroboric]) get an orange highlight. */
+.ouroboric {
+  --ouroboric-orange: #f28c28;
+}
+.ouroboric .inline-title,
+.ouroboric h1 {
+  color: var(--ouroboric-orange);
+}
+.ouroboric .markdown-preview-view,
+.ouroboric .markdown-source-view {
+  border-left: 4px solid var(--ouroboric-orange);
+}
+.tag[href="#ouroboric"] {
+  background-color: rgba(242, 140, 40, 0.2);
+  color: #f28c28;
+}
