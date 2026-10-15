@@ -6,6 +6,7 @@ import fabric/book_check
 import fabric/citation
 import fabric/cite_check
 import fabric/content
+import fabric/drawings
 import fabric/logos
 import fabric/notes_check
 import fabric/ouroboric
@@ -24,6 +25,7 @@ fn commands() -> List(#(String, fn(List(String)) -> Int)) {
     #("citation", citation.main),
     #("cite-check", cite_check.main),
     #("content", content.main),
+    #("drawings", drawings.main),
     #("logos", logos.main),
     #("notes-check", notes_check.main),
     #("ouroboric", ouroboric.main),
