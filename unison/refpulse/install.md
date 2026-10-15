@@ -8,6 +8,7 @@ A UCM transcript (`just unison-install`): it makes the `refpulse` project in the
 
 ```ucm
 scratch/main> project.create-empty refpulse
+refpulse/main> lib.install @unison/base
 refpulse/main> lib.install @unison/cloud
 refpulse/main> lib.install @unison/routes
 refpulse/main> load unison/refpulse/refpulse.u

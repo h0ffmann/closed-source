@@ -713,10 +713,11 @@ fn timeline() -> Element(Msg) {
   }
 }
 
-/// The refpulse service's URL on Unison Cloud, printed by `just unison-deploy`. Empty until it is
-/// deployed: then the button says so, unless the page is opened with `?refpulse=<url>` (a local
-/// `just unison-serve`, for example).
-pub const refpulse_url = ""
+/// The refpulse service's URL on Unison Cloud, printed by `just unison-deploy`. A page opened with
+/// `?refpulse=<url>` asks that URL instead (a local `just unison-serve`, for example).
+/// shortcut: the hash URL, because naming the service failed (401); use .../s/refpulse once it is named.
+pub const refpulse_url =
+  "https://h0ffmann.unison-services.cloud/h/uidn3rn5oag2ww53c5h4tltjlje76o3nlm44ct7tyjarcn24j2eq"
 
 /// The book's own DOIs: the concept DOI, then each version's.
 pub fn book_dois() -> List(String) {
@@ -760,6 +761,11 @@ fn live_section(model: Model) -> Element(Msg) {
     html.p([attribute.class("sub")], [
       html.text(
         "This page is static, on GitHub Pages. The button asks a Unison service, refpulse, to check now that each of the book's DOIs resolves at doi.org, and shows its answer here. A live answer, not a fact of the book.",
+      ),
+    ]),
+    html.p([attribute.class("sub")], [
+      html.text(
+        "Unison gives each piece of code a fingerprint, a hash of the code itself. So refpulse was not installed on a server: its code was sent to Unison Cloud, which runs it, and the long part of its address is that fingerprint. The click itself is an ordinary web request. Checking the DOIs on many machines at once is the next step.",
       ),
     ]),
     html.button(
