@@ -1,0 +1,35 @@
+{
+  "skill_name": "ouro-get",
+  "evals": [
+    {
+      "id": 1,
+      "name": "dream-ridiculous-man",
+      "prompt": "Use ouro-get: get Fyodor Dostoevsky's The Dream of a Ridiculous Man. He wrote it more than 100 years ago, so it's public domain. Get the work, paste it as is, with the licensing mark if possible, and index it properly in closed-source.",
+      "expected_output": "Project Gutenberg eBook #40745 copied byte for byte to works/; works/index.md names the lines of the story, the sha256, the translator question (Constance Garnett, d. 1946, or not named) and the licence reasoning for the US and Brazil; REUSE.toml marks the file; 500AUTHORS.md row for Dostoevsky points to it; just check passes.",
+      "files": [],
+      "assertions": [
+        {"id": "copied-as-is", "text": "A file under works/ holds the story's text byte for byte as Project Gutenberg publishes it"},
+        {"id": "line-range", "text": "The index gives the line range of the story inside the file"},
+        {"id": "sha256", "text": "The index records the file's sha256"},
+        {"id": "translator", "text": "The index addresses the translator (Garnett, or that the file does not name one)"},
+        {"id": "us-and-brazil", "text": "The licence reasoning covers both the United States and Brazil"},
+        {"id": "reuse-mark", "text": "REUSE.toml marks the copied file with a licence"},
+        {"id": "authors-row", "text": "500AUTHORS.md's Dostoevsky row points to the copied work"},
+        {"id": "check-passes", "text": "just check passes after the change"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "modern-translation",
+      "prompt": "ouro-get the full text of The Dream of a Ridiculous Man in the Richard Pevear and Larissa Volokhonsky translation, it's Dostoevsky so it's old, paste it as is into closed-source and index it.",
+      "expected_output": "No full text is copied: the Pevear and Volokhonsky translation is under copyright (both translators are alive or died after 1955; published after 1930). The refusal and the citation are recorded in works/index.md 'Not copied', and a public domain translation (Garnett, Project Gutenberg #40745) is offered.",
+      "files": [],
+      "assertions": [
+        {"id": "no-copy", "text": "No full text of the Pevear and Volokhonsky translation is added to the repository"},
+        {"id": "recorded", "text": "The refusal is recorded in the repository with a citation of the translation"},
+        {"id": "translation-reason", "text": "The reason given is that the translation has its own, unexpired copyright"},
+        {"id": "alternative", "text": "A public domain translation is offered instead"}
+      ]
+    }
+  ]
+}

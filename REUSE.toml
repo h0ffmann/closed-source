@@ -38,3 +38,11 @@ path = [".github/pull_request_template.md", ".github/ISSUE_TEMPLATE/**"]
 precedence = "closest"
 SPDX-FileCopyrightText = ["2026 Bruno Guilhermo de Barros Valério", "2026 Matheus Hoffmann"]
 SPDX-License-Identifier = "MIT"
+
+# Full texts copied as is under works/ (the ouro-get skill): public domain, each file's reasoning
+# in works/index.md.
+[[annotations]]
+path = ["works/**/*.txt"]
+precedence = "closest"
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "LicenseRef-PublicDomain"

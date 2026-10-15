@@ -152,6 +152,8 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   edit it alone. `just check` runs `scripts/readme.sh --check`.
 - `scripts/citation-score.sh` counts how much of a text is cited (the `citation-score` skill). It
   is a measure, not a gate: no check fails on a score.
+- `works/` holds full texts copied as is, only when free to copy in the US and Brazil, indexed in
+  `works/index.md`. The `ouro-get` skill gets them; never trim or edit a file there.
 - A skill in `.claude/skills/` is written here and names its sources; do not copy a skill from
   another repository. After a change to one, run `scripts/readme.sh --lock`.
 - The book's colours are black and red, with yellow letters for the title, after Hoppe's
