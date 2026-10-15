@@ -45,7 +45,7 @@ work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, a
 | 9 | Julia Cameron | creativity | *The Artist's Way* (1992; *O Caminho do Artista*): creativity as a daily practice | ☐ | chosen |
 | 10 | Dante Alighieri | literature | reason to come | ☐ | chosen |
 | 11 | Nicholas Carlini | machine learning security | stealing part of a production language model (Section 4) | ☑ | proposed |
-| 12 | — | — | — | — | open |
+| 12 | Fyodor Dostoevsky | literature | "The Dream of a Ridiculous Man" (1877); notes to come | ☐ | chosen |
 | 13 | Hans-Hermann Hoppe | economics, philosophy | the title formula; ideas cannot be property (BOOKS.md) | ☐ | proposed |
 | 14 | Marc Stevens | cryptography | the first SHA-1 collision, why Git moved on | ☑ | proposed |
 | 15 | Florian Tramèr | machine learning security | model extraction through prediction APIs (Section 4) | ☑ | proposed |
