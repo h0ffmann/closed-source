@@ -92,11 +92,12 @@ call `localhost`, after the prompt. A tunnel's public HTTPS address does not nee
   in headless Chrome. The click went out, the answer came back, and the page drew "1 of 1 DOIs
   resolve · 302". With the service down, it showed "refpulse did not answer". With no URL, it
   showed "refpulse is not deployed yet".
-- **Not yet checked: `refpulse.u` itself.** It was written against the names and types that
-  Unison Share's API gives for `@unison/cloud` 27.3.1, `@unison/routes` 7.0.2, `@unison/http`
-  16.1.0, `@unison/json` 1.4.2 and `@unison/base` 7.20.0. It was not compiled, because the agent's
-  sandbox could not download the libraries (`lib.install` stopped with `IncompleteHeaders`).
-  `just unison-install` compiles it; `install.output.md` shows any error.
+- **Checked (15 October 2026): `refpulse.u` itself.** `just unison-install` compiles it against
+  `@unison/base` 7.20.0, `@unison/cloud` 27.3.1 and `@unison/routes` 7.0.2. `just unison-serve`
+  ran it in the local runtime: `GET /health` gave 200, and `GET /check` gave 302 for the book's
+  DOI and 404 for a made-up one, with `Access-Control-Allow-Origin: *`.
+- **Not yet done: the deploy.** `just unison-deploy` needs the owner's Unison Cloud login. Its
+  printed URL then goes into `refpulse_url` in `site/src/closed_source_site/app.gleam`.
 - **Next.** The checks run one after another, which takes about 0.5 s per DOI. `Remote.fork` and
   `Remote.await` could run them at the same time, on many machines, if the forked task may call
   `Http`. That is the "distributed" step, after this one compiles.

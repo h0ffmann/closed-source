@@ -50,7 +50,7 @@ refpulse.routes = do
         , ("results", Json.array results)
         ])
     refpulse.cors()
-  health <|> check
+  (health <|> check)()
 
 -- On this machine: the Cloud runtime, locally. It prints the service's URL and serves until Enter.
 refpulse.deploy.local : '{IO, Exception} ()
