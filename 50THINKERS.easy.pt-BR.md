@@ -84,7 +84,7 @@ Os nomes das pessoas e os títulos das obras ficam como no original. "Seção 2"
 | 9 | Julia Cameron | criatividade | *The Artist's Way* (1992; *O Caminho do Artista*): criatividade como prática diária | ☐ | chosen |
 | 10 | Dante Alighieri | literatura | motivo a escrever | ☐ | chosen |
 | 11 | Nicholas Carlini | segurança de aprendizado de máquina | roubo de parte de um modelo de linguagem em produção (Seção 4) | ☑ | proposed |
-| 12 | — | — | — | — | open |
+| 12 | Fiódor Dostoiévski | literatura | "O Sonho de um Homem Ridículo" (1877); notas depois | ☐ | chosen |
 | 13 | Hans-Hermann Hoppe | economia, filosofia | a fórmula do título; ideias não podem ser propriedade (BOOKS.md) | ☐ | proposed |
 | 14 | Marc Stevens | criptografia | a primeira colisão de SHA-1, o motivo de o Git seguir adiante | ☑ | proposed |
 | 15 | Florian Tramèr | segurança de aprendizado de máquina | extração de modelos por meio de APIs de previsão (Seção 4) | ☑ | proposed |

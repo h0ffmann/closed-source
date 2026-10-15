@@ -114,3 +114,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 93 | Edmund Burke | — (the owner's choice; no work of his read yet; `notes/202610130526-burke-and-the-watt-patent-1775.md`) | 11 |
 | 94 | Stanley Kubrick | *Eyes Wide Shut* (film, Warner Bros., 1999) | 39 |
 | 95 | Carl Jung | *Collected Works* 8 and 14 (as cited in `notes/202610150201-why-jung-used-dreams-and-myths.md`) | 7 |
+| 96 | Fyodor Dostoevsky | "The Dream of a Ridiculous Man" (1877); notes to come | 12 |
