@@ -69,6 +69,14 @@ fora da contagem. O dono escolhe o que entra nele (`AGENTS.md`).
 Os nomes das pessoas e os títulos das obras ficam como no original. "Seção 2" quer dizer a seção
 2 do artigo.
 
+## A linha do tempo
+
+A vida de cada pensador, numa linha do tempo ([timeline/thinkers.svg](timeline/thinkers.svg)). Onde
+há um corte (≈), a linha pula muitos anos sem nenhum pensador. A escala é a mesma em todo o
+desenho.
+
+![A vida dos 50 pensadores, de 470 a.C. até hoje](timeline/thinkers.svg)
+
 ## A tabela
 
 | # | Pensador | Área | Por que está no livro | Citado | Situação |

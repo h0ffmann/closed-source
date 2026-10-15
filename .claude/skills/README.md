@@ -21,6 +21,7 @@ names the file and the commit it was read from (AGENTS.md, "Borrow, cite, propag
 | [`card-style`](card-style/SKILL.md) | style the site's cards, with a one-line drawing behind each | h0ffmann/picasso `site/static/drawings/` at `29eb385`; Anthropic's `frontend-design` skill (Apache-2.0) |
 | [`essay-montaigne`](essay-montaigne/SKILL.md) | check that an essay keeps what Montaigne asked of an essay: eight countable rules (`scripts/essay-montaigne.sh`) and five that need a reader | Montaigne, *Essays*, Cotton's translation, Project Gutenberg eBook 3600 (public domain) |
 | [`ouro-get`](ouro-get/SKILL.md) | get the full text of a work that is free to copy, as is, into `works/`, with its licence marked and indexed (`scripts/ouro-get.sh`, `works/index.md`); a citation only when it is not free | Lei 9.610/98 (planalto.gov.br); Cornell's public domain chart; the Project Gutenberg License |
+| [`ouro-timeline`](ouro-timeline/SKILL.md) | draw the thinkers' lives on one timeline, one scale everywhere, empty centuries cut out (`tools/fabric timeline`, `timeline/`) | the site's tokens (`site/static/style.css`); h0ffmann/picasso `site/static/drawings/` at `29eb385`; Wikidata |
 | [`print`](print/SKILL.md) | print an essay as one page, as a PDF whose text cannot be selected (`scripts/print.sh`, `PRINTING.md`) | written for this repository |
 
 ## The lock
