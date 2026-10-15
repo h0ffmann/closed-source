@@ -29,6 +29,16 @@ is. So the drawing keeps **one scale everywhere** and **cuts out the empty years
 6. **No life without a source.** A thinker with no dates is listed under the drawing ("Not
    drawn, no dates found"), never placed by a guess.
 
+7. **It answers the pointer and the keyboard.** Each life is a focusable group (`tabindex="0"`,
+   an `aria-label` with its years). On hover, focus or a tap, dashed red lines drop from its
+   birth and death to the axis with the years, the line grows bold, and the others fade.
+8. **It lives inline on the site.** `tools/fabric content` puts the SVG in `content.timeline`;
+   the site's "50 Thinkers" section shows it in a scroll region that takes focus (the arrow keys
+   scroll it), with "Earlier" and "Later" buttons (44 px high) and a caption that says how to
+   read it. Every class in the SVG starts with `tl-` and every rule with `#tl`, so the drawing
+   and the page never style each other. The title band is hidden there: the section's heading
+   names it.
+
 The code is `tools/src/fabric/timeline.gleam`; its tests (`tools/test/timeline_test.gleam`) hold
 rules 1 to 3.
 
@@ -56,8 +66,11 @@ rules 1 to 3.
    not drawn is there.
 4. **Check:** `just check` runs `tools/fabric timeline --check`, which fails when the SVG is not
    what the data draws. Commit `lives.tsv` and `thinkers.svg` together.
-5. **Show it.** Put the drawing in the pull request description (the SVG on the branch, by its
-   raw URL), so the owner sees the result without running anything.
+5. **On the site:** `just site-build`, then look at the "50 Thinkers" section at 1280 px and at
+   500 px wide (Chrome's headless window is never narrower): the buttons and the scroll region
+   stay inside the column, a life shows its years on hover and on Tab.
+6. **Show it.** Put the drawing and a screenshot of the site in the pull request description,
+   so the owner sees the result without running anything.
 
 ## Sources
 

@@ -31,6 +31,8 @@ pub type Msg {
   ShowCite(Int)
   Copy
   Copied(Bool)
+  /// Scroll the timeline of the thinkers' lives sideways, by this many pixels.
+  ScrollTimeline(Int)
 }
 
 pub fn initial() -> Model {
@@ -50,6 +52,10 @@ pub fn update(model: Model, msg: Msg) -> #(Model, Effect(Msg)) {
       ffi.copy(citation(model.cite).1, fn(ok) { dispatch(Copied(ok)) })
     })
     Copied(ok) -> #(Model(..model, copied: ok), effect.none())
+    ScrollTimeline(dx) -> #(model, {
+      use _ <- effect.from
+      ffi.scroll_by(timeline_id, dx)
+    })
   }
 }
 
@@ -575,7 +581,7 @@ fn figure(value: Int, label: String, href: String) -> Element(msg) {
   ])
 }
 
-fn thinkers_section() -> Element(msg) {
+fn thinkers_section() -> Element(Msg) {
   let named =
     list.filter(content.thinkers, fn(t: Thinker) { t.status != "open" })
   html.section(
@@ -595,6 +601,7 @@ fn thinkers_section() -> Element(msg) {
           <> " places are still open.",
         ),
       ]),
+      timeline(),
       html.ol(
         [attribute.class("thinkers")],
         list.map(content.thinkers, fn(t: Thinker) {
@@ -625,6 +632,61 @@ fn thinkers_section() -> Element(msg) {
       ),
     ],
   )
+}
+
+const timeline_id = "timeline"
+
+/// The thinkers' lives (timeline/thinkers.svg), inline so each life answers the pointer and the
+/// keyboard with its years. It is far wider than a screen: it scrolls sideways in a region that
+/// takes focus (the arrow keys scroll it), with two buttons for a mouse without a sideways wheel.
+fn timeline() -> Element(Msg) {
+  case content.timeline {
+    "" -> element.none()
+    svg ->
+      html.figure([attribute.class("timeline")], [
+        html.div([attribute.class("timeline-bar")], [
+          html.button(
+            [
+              attribute.class("timeline-step"),
+              attribute.aria_controls(timeline_id),
+              event.on_click(ScrollTimeline(-600)),
+            ],
+            [html.text("← Earlier")],
+          ),
+          html.button(
+            [
+              attribute.class("timeline-step"),
+              attribute.aria_controls(timeline_id),
+              event.on_click(ScrollTimeline(600)),
+            ],
+            [html.text("Later →")],
+          ),
+        ]),
+        element.unsafe_raw_html(
+          "",
+          "div",
+          [
+            attribute.id(timeline_id),
+            attribute.class("timeline-scroll"),
+            attribute.role("region"),
+            attribute.aria_label(
+              "The thinkers' lives, from 470 BCE to today. Scroll sideways.",
+            ),
+            attribute.tabindex(0),
+          ],
+          svg,
+        ),
+        html.figcaption([], [
+          html.text(
+            "Scroll sideways, or focus the drawing and use the arrow keys. Point at a life, or Tab to it, to see its years. One scale everywhere: a cut (≈) hides centuries with no thinker alive. ",
+          ),
+          external(
+            content.repo <> "/blob/main/timeline/thinkers.svg",
+            "The full drawing",
+          ),
+        ]),
+      ])
+  }
 }
 
 fn notes_section() -> Element(msg) {

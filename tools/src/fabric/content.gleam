@@ -533,6 +533,12 @@ fn render(slug: String) -> Result(String, String) {
     True -> read("50THINKERS.md") |> result.map(thinkers)
     False -> Ok([])
   })
+  // The thinkers' lives, drawn by `tools/fabric timeline`; the site inlines it so its points
+  // answer the pointer and the keyboard. Empty when it was not drawn.
+  use timeline <- result.try(case sys.exists("timeline/thinkers.svg") {
+    True -> read("timeline/thinkers.svg") |> result.map(strip)
+    False -> Ok("")
+  })
   use board <- result.try(case sys.exists("CITATION_SCORES.md") {
     True -> read("CITATION_SCORES.md") |> result.map(scores)
     False -> Ok([])
@@ -790,6 +796,11 @@ pub const citations = "
 
 pub const thinkers = "
     <> gleam_list(thinker_rows)
+    <> "
+
+/// timeline/thinkers.svg, inlined by the site (the ouro-timeline skill).
+pub const timeline = "
+    <> gleam_string(timeline)
     <> "
 
 pub const notes = "

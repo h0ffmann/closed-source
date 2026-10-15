@@ -195,7 +195,7 @@ fn ticks(e: Era) -> List(Int) {
 fn broken_frame(x: Int, y: Int, w: Int, h: Int) -> String {
   let g = 14
   let line = fn(x1, y1, x2, y2) {
-    "<path class=\"frame\" d=\"M"
+    "<path class=\"tl-frame\" d=\"M"
     <> n(x1)
     <> " "
     <> n(y1)
@@ -231,7 +231,7 @@ pub fn draw(
   let era_svg =
     list.map(eras, fn(e) {
       let x1 = e.x + { e.end - e.start } * px_per_year
-      "<path class=\"axis\" d=\"M"
+      "<path class=\"tl-axis\" d=\"M"
       <> n(e.x)
       <> " "
       <> n(axis_y)
@@ -243,7 +243,7 @@ pub fn draw(
       <> string.concat(
         list.map(ticks(e), fn(y) {
           let x = x_of(eras, y)
-          "<path class=\"tick\" d=\"M"
+          "<path class=\"tl-tick\" d=\"M"
           <> n(x)
           <> " "
           <> n(top - 8)
@@ -251,7 +251,7 @@ pub fn draw(
           <> n(x)
           <> " "
           <> n(axis_y + 6)
-          <> "\"/><text class=\"year\" x=\""
+          <> "\"/><text class=\"tl-year\" x=\""
           <> n(x)
           <> "\" y=\""
           <> n(axis_y + 24)
@@ -269,7 +269,7 @@ pub fn draw(
       let x = a.x + { a.end - a.start } * px_per_year + break_w / 2
       let hidden = b.start + pad - { a.end - pad }
       let zig = fn(dx) {
-        "<path class=\"break\" d=\"M"
+        "<path class=\"tl-break\" d=\"M"
         <> n(x + dx - 6)
         <> " "
         <> n(axis_y + 9)
@@ -281,7 +281,7 @@ pub fn draw(
       }
       zig(-5)
       <> zig(5)
-      <> "<path class=\"gap\" d=\"M"
+      <> "<path class=\"tl-gap\" d=\"M"
       <> n(x)
       <> " "
       <> n(top - 8)
@@ -289,7 +289,7 @@ pub fn draw(
       <> n(x)
       <> " "
       <> n(axis_y - 16)
-      <> "\"/><text class=\"gaptext\" x=\""
+      <> "\"/><text class=\"tl-gaptext\" x=\""
       <> n(x)
       <> "\" y=\""
       <> n(axis_y + 48)
@@ -305,8 +305,8 @@ pub fn draw(
       let x0 = x_of(eras, l.born)
       let x1 = x_of(eras, end(l, now))
       let class = case list.contains(cited, l.name) {
-        True -> "life cited"
-        False -> "life"
+        True -> "tl-life tl-cited"
+        False -> "tl-life"
       }
       let tail = case l.died {
         Ok(_) ->
@@ -342,7 +342,42 @@ pub fn draw(
         Ok(d) -> year_label(l.born) <> "–" <> year_label(d)
         Error(_) -> "born " <> year_label(l.born)
       }
-      "<g><title>"
+      let mark = fn(x, label) {
+        "<path class=\"tl-drop\" d=\"M"
+        <> n(x)
+        <> " "
+        <> n(y + 6)
+        <> " L"
+        <> n(x)
+        <> " "
+        <> n(axis_y)
+        <> "\"/><text class=\"tl-when\" x=\""
+        <> n(x)
+        <> "\" y=\""
+        <> n(axis_y - 8)
+        <> "\">"
+        <> label
+        <> "</text>"
+      }
+      let marks = case l.died {
+        Ok(d) -> mark(x0, year_label(l.born)) <> mark(x1, year_label(d))
+        Error(_) -> mark(x0, year_label(l.born))
+      }
+      "<g class=\"tl-who\" tabindex=\"0\" aria-label=\""
+      <> esc(l.name)
+      <> ", "
+      <> span
+      <> "\"><g class=\"tl-mark\">"
+      <> marks
+      <> "</g><path class=\"tl-hit\" d=\"M"
+      <> n(x0)
+      <> " "
+      <> n(y - 6)
+      <> " L"
+      <> n(int.max(x1, x0 + label_w(l.name)))
+      <> " "
+      <> n(y - 6)
+      <> "\"/><title>"
       <> n(l.number)
       <> ". "
       <> esc(l.name)
@@ -366,7 +401,7 @@ pub fn draw(
       <> n(y)
       <> "\"/>"
       <> tail
-      <> "<text class=\"name\" x=\""
+      <> "<text class=\"tl-name\" x=\""
       <> n(x0)
       <> "\" y=\""
       <> n(y - 8)
@@ -378,7 +413,7 @@ pub fn draw(
   let missing = case unknown {
     [] -> ""
     _ ->
-      "<text class=\"note\" x=\""
+      "<text class=\"tl-note\" x=\""
       <> n(left)
       <> "\" y=\""
       <> n(axis_y + 112)
@@ -404,42 +439,56 @@ pub fn draw(
   <> n(width)
   <> "\" height=\""
   <> n(height)
-  <> "\" role=\"img\" aria-label=\""
+  <> "\" id=\"tl\" role=\"group\" aria-label=\""
   <> title
   <> "\"><title>"
   <> title
   <> "</title><style>"
-  <> ":root{--paper:#F4EFE6;--ink:#141210;--muted:#5F5B56;--rule:#CFC8BC;--red:#A3201C;--black:#0F0E0D;--yellow:#F2C230}"
-  <> "@media (prefers-color-scheme:dark){:root{--paper:#121110;--ink:#F1EADF;--muted:#B4AEA6;--rule:#3A3734;--red:#E0675F;--black:#050505}}"
-  <> "svg{background:var(--paper)}"
-  <> "text{font-family:'EB Garamond',Garamond,Georgia,serif;fill:var(--ink)}"
-  <> ".band{fill:var(--black)}"
-  <> ".head{font-family:Oswald,'Arial Narrow',sans-serif;font-size:34px;letter-spacing:.06em;fill:var(--yellow)}"
-  <> ".sub{font-size:16px;fill:#F4EFE6;font-style:italic}"
-  <> ".frame,.axis,.tick,.break,.gap,.life{fill:none;stroke-linecap:round;stroke-linejoin:round}"
-  <> ".frame{stroke:var(--ink);stroke-width:3.2}"
-  <> ".axis{stroke:var(--ink);stroke-width:2.4}"
-  <> ".tick{stroke:var(--rule);stroke-width:1}"
-  <> ".gap{stroke:var(--red);stroke-width:1;stroke-dasharray:2 6}"
-  <> ".break{stroke:var(--red);stroke-width:2.4}"
-  <> ".life{stroke:var(--ink);stroke-width:3.2}"
-  <> "circle.life{fill:var(--paper)}"
-  <> ".cited{stroke:var(--red)}"
-  <> ".name{font-size:13px}"
-  <> ".year{font-family:Oswald,'Arial Narrow',sans-serif;font-size:12px;fill:var(--muted);text-anchor:middle}"
-  <> ".gaptext{font-size:14px;font-style:italic;fill:var(--red);text-anchor:middle}"
-  <> ".note{font-size:14px;fill:var(--muted)}"
-  <> "</style><rect class=\"band\" x=\"0\" y=\"0\" width=\""
+  <> "#tl{--paper:#F4EFE6;--ink:#141210;--muted:#5F5B56;--rule:#CFC8BC;--red:#A3201C;--black:#0F0E0D;--yellow:#F2C230;background:var(--paper)}"
+  <> "@media (prefers-color-scheme:dark){:root:not([data-theme=light]) #tl{--paper:#121110;--ink:#F1EADF;--muted:#B4AEA6;--rule:#3A3734;--red:#E0675F;--black:#050505}}"
+  <> ":root[data-theme=dark] #tl{--paper:#121110;--ink:#F1EADF;--muted:#B4AEA6;--rule:#3A3734;--red:#E0675F;--black:#050505}"
+  <> "#tl .tl-bg{fill:var(--paper)}"
+  <> "#tl text{font-family:'EB Garamond',Garamond,Georgia,serif;fill:var(--ink)}"
+  <> "#tl .tl-band{fill:var(--black)}"
+  <> "#tl .tl-head{font-family:Oswald,'Arial Narrow',sans-serif;font-size:34px;letter-spacing:.06em;fill:var(--yellow)}"
+  <> "#tl .tl-sub{font-size:16px;fill:#F4EFE6;font-style:italic}"
+  <> "#tl .tl-frame,#tl .tl-axis,#tl .tl-tick,#tl .tl-break,#tl .tl-gap,#tl .tl-life,#tl .tl-drop,#tl .tl-hit{fill:none;stroke-linecap:round;stroke-linejoin:round}"
+  <> "#tl .tl-frame{stroke:var(--ink);stroke-width:3.2}"
+  <> "#tl .tl-axis{stroke:var(--ink);stroke-width:2.4}"
+  <> "#tl .tl-tick{stroke:var(--rule);stroke-width:1}"
+  <> "#tl .tl-gap{stroke:var(--red);stroke-width:1;stroke-dasharray:2 6}"
+  <> "#tl .tl-break{stroke:var(--red);stroke-width:2.4}"
+  <> "#tl .tl-life{stroke:var(--ink);stroke-width:3.2}"
+  <> "#tl circle.tl-life{fill:var(--paper)}"
+  <> "#tl .tl-cited{stroke:var(--red)}"
+  <> "#tl .tl-name{font-size:13px}"
+  <> "#tl .tl-year{font-family:Oswald,'Arial Narrow',sans-serif;font-size:12px;fill:var(--muted);text-anchor:middle}"
+  <> "#tl .tl-gaptext{font-size:14px;font-style:italic;fill:var(--red);text-anchor:middle}"
+  <> "#tl .tl-note{font-size:14px;fill:var(--muted)}"
+  <> "#tl .tl-hit{stroke:transparent;stroke-width:26;pointer-events:stroke}"
+  <> "#tl .tl-who{cursor:pointer;outline:none}"
+  <> "#tl .tl-mark{visibility:hidden}"
+  <> "#tl .tl-drop{stroke:var(--red);stroke-width:1.2;stroke-dasharray:3 4}"
+  <> "#tl .tl-when{font-family:Oswald,'Arial Narrow',sans-serif;font-size:14px;font-weight:600;fill:var(--red);text-anchor:middle;paint-order:stroke;stroke:var(--paper);stroke-width:5px}"
+  <> "#tl .tl-who:hover .tl-mark,#tl .tl-who:focus .tl-mark{visibility:visible}"
+  <> "#tl .tl-who:hover .tl-life,#tl .tl-who:focus .tl-life{stroke-width:5}"
+  <> "#tl .tl-who:focus-visible .tl-name{text-decoration:underline;text-decoration-color:var(--red)}"
+  <> "#tl:has(.tl-who:hover,.tl-who:focus) .tl-who:not(:hover):not(:focus){opacity:.3}"
+  <> "</style><rect class=\"tl-bg\" x=\"0\" y=\"0\" width=\""
   <> n(width)
-  <> "\" height=\"96\"/><text class=\"head\" x=\""
+  <> "\" height=\""
+  <> n(height)
+  <> "\"/><g class=\"tl-title\"><rect class=\"tl-band\" x=\"0\" y=\"0\" width=\""
+  <> n(width)
+  <> "\" height=\"96\"/><text class=\"tl-head\" x=\""
   <> n(left)
-  <> "\" y=\"52\">THE 50 THINKERS, THEIR LIVES</text><text class=\"sub\" x=\""
+  <> "\" y=\"52\">THE 50 THINKERS, THEIR LIVES</text><text class=\"tl-sub\" x=\""
   <> n(left)
   <> "\" y=\"80\">"
   <> n(px_per_year)
   <> " px a year in every era; a cut (≈) hides a stretch of more than "
   <> n(max_gap)
-  <> " empty years. Red: cited by the paper. ▸ still living.</text>"
+  <> " empty years. Red: cited by the paper. ▸ still living. Point at a life for its years.</text></g>"
   <> broken_frame(left / 2, top - 30, width - left, axis_y + 96 - top)
   <> era_svg
   <> breaks
