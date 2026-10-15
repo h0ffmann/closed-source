@@ -89,6 +89,10 @@ The essay derived from them, and from eight more notes: [New vs. better, 2026](.
 - [[202610150201-why-jung-used-dreams-and-myths]]: why did Jung use dreams and myths? (permanent, open question)
 - [[202610150202-is-religion-like-a-virus-is-ouroboros-seeding-viral]]: amendment: is religion like a virus (Rust Cohle), and is Ouroboros seeding viral? (permanent, open question)
 
+## Distillation and the masses
+
+- [[202610151812-what-is-distillation]]: what is distillation: the massification of computation, toward Ortega y Gasset (permanent, open question)
+
 ## Being found
 
 - [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)

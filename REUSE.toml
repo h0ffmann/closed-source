@@ -46,3 +46,10 @@ path = ["works/**/*.txt"]
 precedence = "closest"
 SPDX-FileCopyrightText = "NONE"
 SPDX-License-Identifier = "LicenseRef-PublicDomain"
+
+# Copied as is from openai/math (works/index.md): Apache-2.0, the licence of that repository.
+[[annotations]]
+path = ["works/openai/**"]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 OpenAI"
+SPDX-License-Identifier = "Apache-2.0"

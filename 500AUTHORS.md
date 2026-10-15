@@ -115,3 +115,4 @@ proclaimed AI guru is listed as an author to learn from: they are the book's opp
 | 94 | Stanley Kubrick | *Eyes Wide Shut* (film, Warner Bros., 1999) | 39 |
 | 95 | Carl Jung | *Collected Works* 8 and 14 (as cited in `notes/202610150201-why-jung-used-dreams-and-myths.md`) | 7 |
 | 96 | Fyodor Dostoevsky | *The Dream of a Ridiculous Man* (1877; Constance Garnett, tr.), [`works/dostoevsky/pg40745.txt`](works/dostoevsky/pg40745.txt), lines 7986–8683 | 12 |
+| 97 | José Ortega y Gasset | *La rebelión de las masas* (1930), for his theory of the masses; `notes/202610151812-what-is-distillation.md` |  |

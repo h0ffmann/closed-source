@@ -42,6 +42,23 @@ A work that is not free to copy gets a row in [Not copied](#not-copied): its cit
   it sure. If the translator were not Garnett, the edition is still a reprint of a pre-1931
   translation, but the Brazilian test would need that translator's death year.
 
+### Integer multiplication below n log n, OpenAI (2026)
+
+- **Files:** [`works/openai/integer-multiplication-below-n-log-n/`](openai/integer-multiplication-below-n-log-n/):
+  `paper.pdf`, and `build/`, its LaTeX source (`main.tex`, 12 sections, `references.bib`, and the
+  two figures, drawn in TikZ). 17 files, unchanged.
+- **Source:** openai/math, `preprints/Integer-multiplication-below-n-log-n-September-23-2026/`,
+  <https://github.com/openai/math/tree/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Integer-multiplication-below-n-log-n-September-23-2026>,
+  commit `1581d4c`, fetched 2026-10-15; `paper.pdf` sha256
+  `834f644c3ce67932b9f7357d3615fb8fea4a7ff198d90e4f6883a15ba9df7129`
+- **Edition:** the preprint dated 23 September 2026, author "OpenAI", in OpenAI's mathematics
+  release of 6 October 2026 (the repository's first commit).
+- **Translator:** none
+- **Licence:** Apache-2.0, not public domain. The repository's `LICENSE` is Apache-2.0, and the
+  preprint folder has no licence of its own. Apache-2.0 lets anyone copy and share the work if the
+  licence goes with it: its text is [`LICENSES/Apache-2.0.txt`](../LICENSES/Apache-2.0.txt),
+  copied from that `LICENSE`, and `REUSE.toml` marks the folder.
+
 ## Not copied
 
 | Work | Author, translator | Why not | Where to read it |
