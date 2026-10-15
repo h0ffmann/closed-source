@@ -80,6 +80,14 @@ The essay derived from them, and from eight more notes: [New vs. better, 2026](.
 
 - [[202610141830-tv-audience-is-competition]]: a TV audience is a competition, and I think in game theory (fleeting, open question)
 
+## Myth: Ouroboros, reptilians and the eternal cycle
+
+- [[202610150157-policy-ouroboric-ideas-reptilians-eternal-cycle]]: policy: Ouroboric ideas, reptilians and the eternal cycle (permanent, open question)
+- [[202610150158-ouroboros-the-myth]]: the Ouroboros, the myth (literature, partial)
+- [[202610150159-reptilians-from-occultism-to-conspiracy]]: reptilians, from occultism to conspiracy theory (literature, partial)
+- [[202610150200-the-eternal-cycle]]: the eternal cycle, from Pythagoras to Nietzsche (literature, partial)
+- [[202610150201-why-jung-used-dreams-and-myths]]: why did Jung use dreams and myths? (permanent, open question)
+
 ## Being found
 
 - [[202610130845-seen-by-the-right-people]]: you only need to be seen by the right people (permanent, verified)
