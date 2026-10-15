@@ -40,7 +40,7 @@ work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, a
 | 4 | Gregory Wolfe | literature, culture | *Beauty Will Save the World* (2011; *A Beleza Salvará o Mundo*): recovering the human in an ideological age | ☐ | chosen |
 | 5 | Edmund Burke | politics, philosophy | later named the founder of conservatism; in 1775 he opposed the extension of Watt's steam-engine patent, and backed the extension of a porcelain patent (notes/202610130526) | ☐ | chosen |
 | 6 | Linus Torvalds | software engineering | Linux and Git: openness that scales (Section 2) | ☑ | proposed |
-| 7 | — | — | — | — | open |
+| 7 | Carl Jung | psychology | dream theory: dreams and myths as the language of the unconscious; archetypes and the collective unconscious; the Ouroboros as an archetype (*Collected Works* 14) | ☐ | chosen |
 | 8 | Boaz Barak | cryptography | no general obfuscator can exist (Section 5a) | ☑ | proposed |
 | 9 | Julia Cameron | creativity | *The Artist's Way* (1992; *O Caminho do Artista*): creativity as a daily practice | ☐ | chosen |
 | 10 | Dante Alighieri | literature | reason to come | ☐ | chosen |
