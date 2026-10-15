@@ -7,6 +7,7 @@ import closed_source_site/content.{
 import closed_source_site/ffi
 import gleam/int
 import gleam/list
+import gleam/result
 import gleam/string
 import lustre/attribute.{type Attribute}
 import lustre/effect.{type Effect}
@@ -23,7 +24,16 @@ pub type Text {
 }
 
 pub type Model {
-  Model(text: Text, cite: Int, copied: Bool)
+  Model(text: Text, cite: Int, copied: Bool, pulse: Pulse)
+}
+
+/// The live DOI check: a request to the refpulse service on Unison Cloud (unison/refpulse/).
+pub type Pulse {
+  Idle
+  Running
+  /// The service answered: where, in how many milliseconds, and #(doi, status, ok) per DOI.
+  Done(endpoint: String, ms: Int, results: List(#(String, Int, Bool)))
+  Failed(String)
 }
 
 pub type Msg {
@@ -31,12 +41,15 @@ pub type Msg {
   ShowCite(Int)
   Copy
   Copied(Bool)
+  /// Ask the refpulse service about the book's DOIs.
+  CheckDois
+  Pulsed(Result(String, String))
   /// Scroll the timeline of the thinkers' lives sideways, by this many pixels.
   ScrollTimeline(Int)
 }
 
 pub fn initial() -> Model {
-  Model(text: Original, cite: 0, copied: False)
+  Model(text: Original, cite: 0, copied: False, pulse: Idle)
 }
 
 pub fn init(_: Nil) -> #(Model, Effect(Msg)) {
@@ -52,6 +65,15 @@ pub fn update(model: Model, msg: Msg) -> #(Model, Effect(Msg)) {
       ffi.copy(citation(model.cite).1, fn(ok) { dispatch(Copied(ok)) })
     })
     Copied(ok) -> #(Model(..model, copied: ok), effect.none())
+    CheckDois -> #(Model(..model, pulse: Running), {
+      use dispatch <- effect.from
+      ffi.refpulse(refpulse_url, book_dois(), fn(r) { dispatch(Pulsed(r)) })
+    })
+    Pulsed(Ok(text)) -> #(
+      Model(..model, pulse: parse_pulse(text)),
+      effect.none(),
+    )
+    Pulsed(Error(e)) -> #(Model(..model, pulse: Failed(e)), effect.none())
     ScrollTimeline(dx) -> #(model, {
       use _ <- effect.from
       ffi.scroll_by(timeline_id, dx)
@@ -95,6 +117,7 @@ pub fn view(model: Model) -> Element(Msg) {
       authors_section(),
       fabric_section(),
       ci_section(),
+      live_section(model),
       scores_section(),
       cite_section(model),
     ]),
@@ -410,6 +433,7 @@ fn jump() -> Element(msg) {
     link("#authors", "Author"),
     link("#fabric", "How it is made"),
     link("#ci", "CI"),
+    link("#live", "Live"),
     link("#scores", "Scores"),
     link("#cite", "Cite"),
   ])
@@ -686,6 +710,127 @@ fn timeline() -> Element(Msg) {
           ),
         ]),
       ])
+  }
+}
+
+/// The refpulse service's URL on Unison Cloud, printed by `just unison-deploy`. Empty until it is
+/// deployed: then the button says so, unless the page is opened with `?refpulse=<url>` (a local
+/// `just unison-serve`, for example).
+pub const refpulse_url = ""
+
+/// The book's own DOIs: the concept DOI, then each version's.
+pub fn book_dois() -> List(String) {
+  [content.doi, ..list.map(content.version_dois, fn(v) { v.1 })]
+  |> list.unique
+}
+
+/// The FFI's answer: "ms\tendpoint", then one "doi\tstatus\tok" line per DOI.
+pub fn parse_pulse(text: String) -> Pulse {
+  case string.split(text, "\n") {
+    [head, ..rows] ->
+      case string.split(head, "\t") {
+        [ms, endpoint] ->
+          Done(
+            endpoint,
+            result.unwrap(int.parse(ms), 0),
+            list.filter_map(rows, fn(row) {
+              case string.split(row, "\t") {
+                [doi, status, ok] ->
+                  Ok(#(doi, result.unwrap(int.parse(status), 0), ok == "true"))
+                _ -> Error(Nil)
+              }
+            }),
+          )
+        _ -> Failed("the service's answer could not be read")
+      }
+    [] -> Failed("the service gave an empty answer")
+  }
+}
+
+fn live_section(model: Model) -> Element(Msg) {
+  html.section([attribute.aria_labelledby("live")], [
+    section_head(
+      "live",
+      "Live",
+      external(
+        content.repo <> "/blob/main/unison/refpulse/README.md",
+        "refpulse on Unison",
+      ),
+    ),
+    html.p([attribute.class("sub")], [
+      html.text(
+        "This page is static, on GitHub Pages. The button asks a Unison service, refpulse, to check now that each of the book's DOIs resolves at doi.org, and shows its answer here. A live answer, not a fact of the book.",
+      ),
+    ]),
+    html.button(
+      [
+        attribute.class("pulse-button"),
+        attribute.disabled(model.pulse == Running),
+        event.on_click(CheckDois),
+      ],
+      [
+        html.text(case model.pulse {
+          Running -> "Checking…"
+          _ -> "Check the DOIs now"
+        }),
+      ],
+    ),
+    html.div(
+      [attribute.class("pulse"), attribute.attribute("aria-live", "polite")],
+      [pulse_view(model.pulse)],
+    ),
+  ])
+}
+
+fn pulse_view(pulse: Pulse) -> Element(msg) {
+  case pulse {
+    Idle -> element.none()
+    Running -> html.p([], [html.text("Asking refpulse…")])
+    Failed(e) -> html.p([attribute.class("pulse-failed")], [html.text(e)])
+    Done(endpoint, ms, results) -> {
+      let ok = list.count(results, fn(r) { r.2 })
+      html.div([], [
+        html.p([], [
+          html.b([], [
+            html.text(
+              int.to_string(ok)
+              <> " of "
+              <> int.to_string(list.length(results))
+              <> " DOIs resolve",
+            ),
+          ]),
+          html.text(
+            " · answered by "
+            <> endpoint
+            <> " in "
+            <> int.to_string(ms)
+            <> " ms",
+          ),
+        ]),
+        html.ul(
+          [attribute.class("pulse-results")],
+          list.map(results, fn(r) {
+            let #(doi, status, good) = r
+            html.li(
+              [
+                attribute.class(case good {
+                  True -> "is-ok"
+                  False -> "is-dead"
+                }),
+              ],
+              [
+                html.text(case good {
+                  True -> "✓ "
+                  False -> "✗ "
+                }),
+                external("https://doi.org/" <> doi, doi),
+                html.text(" · " <> int.to_string(status)),
+              ],
+            )
+          }),
+        ),
+      ])
+    }
   }
 }
 

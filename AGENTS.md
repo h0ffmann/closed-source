@@ -154,6 +154,8 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   is a measure, not a gate: no check fails on a score.
 - `works/` holds full texts copied as is, only when free to copy in the US and Brazil, indexed in
   `works/index.md`. The `ouro-get` skill gets them; never trim or edit a file there.
+- `unison/refpulse/` is a Unison service the site's Live button calls (`just unison-*`). What it
+  answers is live, never a fact of the book; the site works when it is down.
 - A skill in `.claude/skills/` is written here and names its sources; do not copy a skill from
   another repository. After a change to one, run `scripts/readme.sh --lock`.
 - The book's colours are black and red, with yellow letters for the title, after Hoppe's

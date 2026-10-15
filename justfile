@@ -81,6 +81,20 @@ self-test:
 md-quality *args:
     nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file .#md --command scripts/md-quality.sh {{args}}
 
+# Unison (unison/refpulse/README.md): make the refpulse project in unison/.codebase/, with its
+# libraries from Unison Share. Run it again after a change to refpulse.u.
+unison-install:
+    rm -rf unison/.codebase unison/refpulse/install.output.md
+    nix develop --no-update-lock-file .#unison --command ucm -C unison/.codebase transcript.in-place unison/refpulse/install.md
+
+# Serve refpulse on this machine, in Unison Cloud's local runtime; it prints its URL. Enter stops it.
+unison-serve:
+    nix develop --no-update-lock-file .#unison --command ucm -c unison/.codebase run refpulse/main:.refpulse.deploy.local
+
+# Deploy refpulse to Unison Cloud. Log in once first: `ucm -c unison/.codebase`, then `auth.login`.
+unison-deploy:
+    nix develop --no-update-lock-file .#unison --command ucm -c unison/.codebase run refpulse/main:.refpulse.deploy.cloud
+
 # Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
 # OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
 ouroboric-sources:

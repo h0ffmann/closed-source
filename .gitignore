@@ -7,3 +7,6 @@ result-*
 graphify-out/
 # lychee's answers during `just md-quality --online`
 .lycheecache
+# The Unison codebase of `just unison-install` (unison/refpulse/README.md)
+unison/.codebase/
+unison/refpulse/install.output.md

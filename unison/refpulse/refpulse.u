@@ -1,0 +1,67 @@
+-- SPDX-License-Identifier: AGPL-3.0-only
+-- refpulse: a Unison HTTP service that checks DOIs at doi.org, for the closed-source site's
+-- "Check the DOIs now" button (unison/refpulse/README.md). Public and read-only: it takes DOIs
+-- in the query, asks doi.org about each, and answers JSON that any page may read (CORS *).
+--
+--   GET /health                     {"ok":true,"service":"refpulse"}
+--   GET /check?doi=10.x/y&doi=...   {"checked":n,"ran":"unison","results":[{"doi","status","ok"}]}
+
+-- At most this many DOIs per request, so a public button cannot make it fetch the web for long.
+refpulse.maxDois : Nat
+refpulse.maxDois = 8
+
+-- doi.org answers a registered DOI with a redirect (302) and an unknown one with 404. Any
+-- failure to reach doi.org is status 0, not ok.
+refpulse.checkDoi : Text ->{Http} Json
+refpulse.checkDoi doi =
+  use Text ++
+  result = catch do
+    uri = IO.net.URI.parse ("https://doi.org/" ++ doi)
+    response = client.Http.request (HttpRequest.get uri)
+    HttpResponse.Status.code (HttpResponse.status response)
+  code = match result with
+    Right c -> c
+    Left _ -> 0
+  Json.object
+    [ ("doi", Json.text doi)
+    , ("status", Json.nat code)
+    , ("ok", Json.boolean (code > 0 && code < 400))
+    ]
+
+-- Any origin may read the answer: it is public data, and no request carries a credential.
+refpulse.cors : '{Route} ()
+refpulse.cors = do Route.response.headers.add "Access-Control-Allow-Origin" "*"
+
+refpulse.routes : '{Route, Http} ()
+refpulse.routes = do
+  use Parser /
+  health = do
+    noCapture GET (s "health")
+    ok.json (Json.object [("ok", Json.boolean true), ("service", Json.text "refpulse")])
+    refpulse.cors()
+  check = do
+    noCapture GET (s "check")
+    dois = List.take refpulse.maxDois (Route.request.queryParameter "doi")
+    results = List.map refpulse.checkDoi dois
+    ok.json
+      (Json.object
+        [ ("checked", Json.nat (List.size results))
+        , ("ran", Json.text "unison")
+        , ("results", Json.array results)
+        ])
+    refpulse.cors()
+  health <|> check
+
+-- On this machine: the Cloud runtime, locally. It prints the service's URL and serves until Enter.
+refpulse.deploy.local : '{IO, Exception} ()
+refpulse.deploy.local = Cloud.main.local.serve do
+  service = deployHttp Environment.default() (Route.run refpulse.routes)
+  uri = ServiceName.assign (ServiceName.named "refpulse") service
+  printLine ("refpulse: " ++ IO.net.URI.toText uri)
+
+-- On Unison Cloud (after `auth.login`): prints the service's public URL.
+refpulse.deploy.cloud : '{IO, Exception} ()
+refpulse.deploy.cloud = Cloud.main do
+  service = deployHttp Environment.default() (Route.run refpulse.routes)
+  uri = ServiceName.assign (ServiceName.named "refpulse") service
+  printLine ("refpulse: " ++ IO.net.URI.toText uri)

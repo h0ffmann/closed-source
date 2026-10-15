@@ -228,3 +228,21 @@ pub fn the_timeline_scrolls_and_each_life_takes_focus_test() {
   assert string.contains(html, "id=\"tl\"")
   assert string.contains(html, "<g class=\"tl-who\" tabindex=\"0\"")
 }
+
+pub fn the_live_check_reads_the_services_answer_test() {
+  assert app.parse_pulse(
+      "120\thttps://x.unison.cloud/s/refpulse\n10.5281/zenodo.1\t302\ttrue\n10.9/none\t404\tfalse",
+    )
+    == app.Done("https://x.unison.cloud/s/refpulse", 120, [
+      #("10.5281/zenodo.1", 302, True),
+      #("10.9/none", 404, False),
+    ])
+  assert app.parse_pulse("garbage") != app.Idle
+}
+
+pub fn the_live_check_asks_about_the_books_own_dois_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert list.first(app.book_dois()) == Ok(content.doi)
+  assert string.contains(html, "Check the DOIs now")
+  assert string.contains(html, "id=\"live\"")
+}
