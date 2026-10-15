@@ -10,3 +10,4 @@ graphify-out/
 # The Unison codebase of `just unison-install` (unison/refpulse/README.md)
 unison/.codebase/
 unison/refpulse/install.output.md
+.unisonHistory

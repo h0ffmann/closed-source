@@ -96,8 +96,12 @@ call `localhost`, after the prompt. A tunnel's public HTTPS address does not nee
   `@unison/base` 7.20.0, `@unison/cloud` 27.3.1 and `@unison/routes` 7.0.2. `just unison-serve`
   ran it in the local runtime: `GET /health` gave 200, and `GET /check` gave 302 for the book's
   DOI and 404 for a made-up one, with `Access-Control-Allow-Origin: *`.
-- **Not yet done: the deploy.** `just unison-deploy` needs the owner's Unison Cloud login. Its
-  printed URL then goes into `refpulse_url` in `site/src/closed_source_site/app.gleam`.
+- **Deployed (15 October 2026).** `just unison-deploy` put refpulse on Unison Cloud at
+  `https://h0ffmann.unison-services.cloud/h/uidn3rn5oag2ww53c5h4tltjlje76o3nlm44ct7tyjarcn24j2eq`.
+  It answered `/health` 200, and `/check` 302 and 404, with the CORS header. The site's
+  `refpulse_url` is this address. The step after it, `ServiceName.assign` (the stable name
+  `/s/refpulse`), failed with 401 Unauthorized. When the name works, put `/s/refpulse` in
+  `refpulse_url`: a name stays the same when the code changes, and a hash does not.
 - **Next.** The checks run one after another, which takes about 0.5 s per DOI. `Remote.fork` and
   `Remote.await` could run them at the same time, on many machines, if the forked task may call
   `Http`. That is the "distributed" step, after this one compiles.
