@@ -4,7 +4,8 @@ title: "The eternal cycle: eternal return from Pythagoras to Nietzsche"
 type: literature
 status: partial
 source: "https://en.wikipedia.org/wiki/Eternal_return, read 2026-10-15"
-tags: [eternal-return, nietzsche, stoics, cycle, myth]
+tags: [eternal-return, nietzsche, stoics, cycle, myth, ouroboric]
+cssclasses: [ouroboric]
 created: 2026-10-15
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->

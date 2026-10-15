@@ -5,6 +5,7 @@ type: permanent
 status: open-question
 source: "Matheus Hoffmann, message to Claude Code, 2026-10-15"
 tags: [policy, ouroboric, ouroboros, myth, reptilians, eternal-return, occultism]
+cssclasses: [ouroboric]
 created: 2026-10-15
 ---
 <!-- cite: main="Matheus Hoffmann"; last="Matheus Hoffmann" -->
@@ -24,7 +25,10 @@ The owner's word, as it came: **the Ouroboros is a myth.** From that, a policy f
    [[202610150200-the-eternal-cycle]].
 4. **Myth is data about the mind.** Why people tell the same myth again and again is a fair
    question; the book asks it with Jung, see [[202610150201-why-jung-used-dreams-and-myths]].
-5. Every factual claim about these myths follows rule 7 of SMART_NOTE_POLICY.md.
+5. **Amendment (2026-10-15): is a myth viral?** Religion as a virus of the mind, after Rust
+   Cohle and Dawkins, and whether seeding Ouroboric ideas spreads the same way. See
+   [[202610150202-is-religion-like-a-virus-is-ouroboros-seeding-viral]].
+6. Every factual claim about these myths follows rule 7 of SMART_NOTE_POLICY.md.
 
 **Status: open question.** The policy is the owner's position, so it needs his `approved`, not a
 source. Related: [[202610130000-rea-for-forecast-models]] (an Ouroboric pattern used here).

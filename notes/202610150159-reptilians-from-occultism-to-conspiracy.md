@@ -4,7 +4,8 @@ title: "Reptilians: from occultism and pulp fiction to conspiracy theory"
 type: literature
 status: partial
 source: "https://en.wikipedia.org/wiki/Reptilian_conspiracy_theory, read 2026-10-15"
-tags: [reptilians, occultism, conspiracy-theory, theosophy]
+tags: [reptilians, occultism, conspiracy-theory, theosophy, ouroboric]
+cssclasses: [ouroboric]
 created: 2026-10-15
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->

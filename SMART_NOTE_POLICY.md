@@ -57,4 +57,9 @@ reads when you open `notes/` as a vault. `/note` (`.claude/commands/note.md`) ma
 9. **Into the book.** A permanent note with status `verified`, `partial` or `approved` can become text in a
    thinker's two pages. The page cites the note's sources, not the note.
 
+10. **Ouroboric notes.** A note about Ouroboric or the Ouroboros has the tag `ouroboric` and
+    `cssclasses: [ouroboric]` in its front matter. The vault's snippet
+    (`notes/.obsidian/snippets/ouroboric.css`) gives it an orange highlight, and the graph view
+    colours it orange.
+
 `just check` runs `tools/fabric notes-check`: front matter, unique ids and links that resolve.

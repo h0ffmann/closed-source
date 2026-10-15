@@ -4,7 +4,8 @@ title: "The Ouroboros: the myth of the serpent that eats its tail"
 type: literature
 status: partial
 source: "https://en.wikipedia.org/wiki/Ouroboros, read 2026-10-15"
-tags: [ouroboros, myth, egypt, alchemy, gnosticism, norse, jung]
+tags: [ouroboros, myth, egypt, alchemy, gnosticism, norse, jung, ouroboric]
+cssclasses: [ouroboric]
 created: 2026-10-15
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->

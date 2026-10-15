@@ -87,6 +87,7 @@ The essay derived from them, and from eight more notes: [New vs. better, 2026](.
 - [[202610150159-reptilians-from-occultism-to-conspiracy]]: reptilians, from occultism to conspiracy theory (literature, partial)
 - [[202610150200-the-eternal-cycle]]: the eternal cycle, from Pythagoras to Nietzsche (literature, partial)
 - [[202610150201-why-jung-used-dreams-and-myths]]: why did Jung use dreams and myths? (permanent, open question)
+- [[202610150202-is-religion-like-a-virus-is-ouroboros-seeding-viral]]: amendment: is religion like a virus (Rust Cohle), and is Ouroboros seeding viral? (permanent, open question)
 
 ## Being found
 

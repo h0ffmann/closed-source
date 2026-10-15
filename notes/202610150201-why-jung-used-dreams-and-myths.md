@@ -4,7 +4,8 @@ title: "Why did Jung use dreams and myths to explain human psychology?"
 type: permanent
 status: open-question
 source: "Matheus Hoffmann, message to Claude Code, 2026-10-15; https://en.wikipedia.org/wiki/Collective_unconscious, read 2026-10-15"
-tags: [jung, psychology, myth, dreams, archetypes, question]
+tags: [jung, psychology, myth, dreams, archetypes, question, ouroboric]
+cssclasses: [ouroboric]
 created: 2026-10-15
 ---
 <!-- cite: main="Matheus Hoffmann"; last="Matheus Hoffmann" -->
@@ -25,5 +26,6 @@ The objection: Ray Scott Percival (1993) says the strong claims cannot be falsif
 world (day and night, families, animals) explains shared images without an inherited layer.
 
 **Open question.** Is a myth such as the Ouroboros ([[202610150158-ouroboros-the-myth]]) evidence
-about the mind, or only a story told often? Policy:
+about the mind, or only a story told often, and copied like a virus
+([[202610150202-is-religion-like-a-virus-is-ouroboros-seeding-viral]])? Policy:
 [[202610150157-policy-ouroboric-ideas-reptilians-eternal-cycle]].
