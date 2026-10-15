@@ -763,6 +763,11 @@ fn live_section(model: Model) -> Element(Msg) {
         "This page is static, on GitHub Pages. The button asks a Unison service, refpulse, to check now that each of the book's DOIs resolves at doi.org, and shows its answer here. A live answer, not a fact of the book.",
       ),
     ]),
+    html.p([attribute.class("sub")], [
+      html.text(
+        "Unison gives each piece of code a fingerprint, a hash of the code itself. So refpulse was not installed on a server: its code was sent to Unison Cloud, which runs it, and the long part of its address is that fingerprint. The click itself is an ordinary web request. Checking the DOIs on many machines at once is the next step.",
+      ),
+    ]),
     html.button(
       [
         attribute.class("pulse-button"),

@@ -19,6 +19,35 @@ browser (h0ffmann.github.io)              refpulse (Unison)                 doi.
   draw  ◄── 200 JSON, CORS: *       ◄──  {"checked","ran","results":[…]}
 ```
 
+## In plain words
+
+**What is Unison?** A programming language in which each piece of code has a fingerprint. The
+fingerprint is a hash of the code itself: "Each Unison definition is identified by a hash of its
+syntax tree" (*The big idea*). Two computers that agree on a fingerprint agree on the code, to
+the last letter. So a computer can send code to another computer, and the other computer asks
+only for the parts that it does not have yet. Unison's own words: "arbitrary computations can
+just be moved from one location to another, with missing dependencies deployed on the fly".
+
+**Like you are five.** Most web services are a shop: someone builds a kitchen (a server, a
+container, a build), and you phone in an order. With Unison, you post the recipe itself, and the
+cloud cooks it. The recipe has a fingerprint, so nobody can mix it up with another recipe.
+
+**Is the button a remote computation, or a simple API call?** Both, at two different steps.
+
+1. **The deploy is a remote computation.** `just unison-deploy` does not upload a program to a
+   server that we keep. It sends the function `Route.run refpulse.routes` to Unison Cloud, and
+   Unison Cloud runs it. Nothing is built: no container, no virtual machine, no YAML. Unison
+   Cloud says: "The hash is created from the code being deployed; it uniquely identifies the
+   service deployment". That hash is the long part of refpulse's address,
+   `/h/uidn3rn5…j2eq`. The address names the code, not a machine.
+2. **The click is an API call.** The page sends `GET /check?doi=…` and receives JSON, as with any
+   web service. The browser does not know that Unison is at the other end.
+
+**What is not done yet.** refpulse checks the DOIs one after another, on one machine. Unison can
+also move a computation to other machines while it runs (`Remote.fork`; "the functions are
+'moved to the data'", *Spark-like distributed datasets*). With that step, refpulse would check
+all the DOIs at the same time, on different machines. It is the "Next" item below.
+
 ## The contract
 
 | Request | Answer |
@@ -94,8 +123,8 @@ call `localhost`, after the prompt. A tunnel's public HTTPS address does not nee
   showed "refpulse is not deployed yet".
 - **Checked (15 October 2026): `refpulse.u` itself.** `just unison-install` compiles it against
   `@unison/base` 7.20.0, `@unison/cloud` 27.3.1 and `@unison/routes` 7.0.2. `just unison-serve`
-  ran it in the local runtime: `GET /health` gave 200, and `GET /check` gave 302 for the book's
-  DOI and 404 for a made-up one, with `Access-Control-Allow-Origin: *`.
+  ran it in the local runtime. `GET /health` gave 200. `GET /check` gave 302 for the book's DOI
+  and 404 for a made-up one, with `Access-Control-Allow-Origin: *`.
 - **Deployed (15 October 2026).** `just unison-deploy` put refpulse on Unison Cloud at
   `https://h0ffmann.unison-services.cloud/h/uidn3rn5oag2ww53c5h4tltjlje76o3nlm44ct7tyjarcn24j2eq`.
   It answered `/health` 200, and `/check` 302 and 404, with the CORS header. The site's
@@ -104,7 +133,7 @@ call `localhost`, after the prompt. A tunnel's public HTTPS address does not nee
   `refpulse_url`: a name stays the same when the code changes, and a hash does not.
 - **Next.** The checks run one after another, which takes about 0.5 s per DOI. `Remote.fork` and
   `Remote.await` could run them at the same time, on many machines, if the forked task may call
-  `Http`. That is the "distributed" step, after this one compiles.
+  `Http`. That is the "distributed" step.
 
 ## Sources
 
@@ -115,3 +144,10 @@ call `localhost`, after the prompt. A tunnel's public HTTPS address does not nee
   `response.headers.add`, the CORS middleware example.
 - `@unison/cloud` 27.3.1 README, <https://share.unison-lang.org/@unison/cloud>, read the same
   way: `deployHttp`, `ServiceName.assign`, `parMap`, `Remote`.
+- Unison, "The big idea", <https://www.unison-lang.org/docs/the-big-idea/>, read 15 October
+  2026: definitions identified by a hash; computations moved with their dependencies.
+- Unison Cloud, home page, <https://www.unison.cloud/>, read 15 October 2026: deployments get
+  "a unique content-addressed hash"; no containers, VMs or YAML.
+- Unison, "Spark-like distributed datasets in under 100 lines of Unison",
+  <https://www.unison-lang.org/articles/distributed-datasets/>, read 15 October 2026: functions
+  "moved to the data".
