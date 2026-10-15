@@ -12,6 +12,7 @@ import fabric/ouroboric
 import fabric/refs_check
 import fabric/ste_check
 import fabric/sys
+import fabric/timeline
 import fabric/zenodo_upload
 import gleam/list
 import gleam/string
@@ -28,6 +29,7 @@ fn commands() -> List(#(String, fn(List(String)) -> Int)) {
     #("ouroboric", ouroboric.main),
     #("refs-check", refs_check.main),
     #("ste-check", ste_check.main),
+    #("timeline", timeline.main),
     #("zenodo-upload", zenodo_upload.main),
   ]
 }

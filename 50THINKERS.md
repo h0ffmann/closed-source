@@ -28,6 +28,11 @@ proclaimed AI guru is a thinker here: they are the book's opponents (AGENTS.md).
 After the 100 pages comes a partial snapshot of the private `h0ffmann/nagori` repository, outside
 the count; the owner chooses what it holds (AGENTS.md).
 
+Their lives, on one line of time ([timeline/thinkers.svg](timeline/thinkers.svg), drawn by
+`tools/fabric timeline` from [timeline/lives.tsv](timeline/lives.tsv), the `ouro-timeline` skill):
+
+![The lives of the 50 thinkers, from 470 BCE to today](timeline/thinkers.svg)
+
 Columns: **Area** is the thinker's field. **Cited** is ☑ when the paper already cites the thinker's
 work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, and — on an open row.
 **Status** is `open` (no thinker yet), `proposed`, `chosen` or `written` (the two pages exist).

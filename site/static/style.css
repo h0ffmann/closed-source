@@ -177,6 +177,28 @@ main section { padding: 56px 0 8px; }
 .thinker.is-open b { font-weight: 400; font-style: italic; color: var(--muted); font-family: var(--serif); }
 .thinker.is-open { background: repeating-linear-gradient(135deg, var(--paper) 0 10px, var(--surface) 10px 11px); }
 
+/* The thinkers' lives: a drawing wider than the screen, in a region that scrolls sideways */
+.timeline { margin: 24px 0 0; min-width: 0; max-width: 100%; }
+.timeline-bar { display: flex; justify-content: flex-end; gap: 8px; margin-bottom: 8px; }
+.timeline-step {
+  font: 600 14px/1 var(--caps); letter-spacing: .04em; text-transform: uppercase;
+  color: var(--ink); background: var(--paper); border: 1.5px solid var(--ink);
+  padding: 9px 14px; min-height: 44px; cursor: pointer;
+}
+.timeline-step:hover { background: var(--ink); color: var(--paper); }
+.timeline-scroll {
+  max-width: 100%; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain;
+  border: 1px solid var(--rule); background: var(--paper);
+  scrollbar-color: var(--red-text) var(--surface); scrollbar-width: auto;
+}
+.timeline-scroll::-webkit-scrollbar { height: 14px; }
+.timeline-scroll::-webkit-scrollbar-track { background: var(--surface); }
+.timeline-scroll::-webkit-scrollbar-thumb { background: var(--red-text); border: 3px solid var(--surface); }
+.timeline-scroll svg { display: block; max-width: none; height: auto; margin-top: -100px; }
+/* The section's heading names the drawing, so its own title band stays in the file only. */
+.timeline-scroll #tl .tl-title { display: none; }
+.timeline figcaption { margin-top: 8px; font-size: 15px; color: var(--muted); max-width: 52em; }
+
 /* Second brain */
 .notes { list-style: none; padding: 0; margin: 20px 0 0; border-top: 1px solid var(--rule); }
 .note {

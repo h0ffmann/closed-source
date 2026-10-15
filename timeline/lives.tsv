@@ -1,0 +1,50 @@
+# The lives of the thinkers of 50THINKERS.md, for `tools/fabric timeline` (the ouro-timeline skill).
+# Columns: number, name (as in 50THINKERS.md), born, died, Wikidata item. A year before the
+# common era is negative (-470 is 470 BCE). An empty "died" is a living person; an empty "born"
+# is a life not drawn, because no source gave its dates. Years read from Wikidata on 2026-10-15.
+now	2026
+1	Mário Ferreira dos Santos	1907	1968	Q672004
+2	Austin Kleon	1983		Q16730920
+3	Socrates	-470	-399	Q913
+4	Gregory Wolfe			
+5	Edmund Burke	1729	1797	Q165792
+6	Linus Torvalds	1969		Q34253
+7	Carl Jung	1875	1961	Q41532
+8	Boaz Barak			Q59661842
+9	Julia Cameron	1948		Q4412539
+10	Dante Alighieri	1265	1321	Q1067
+11	Nicholas Carlini	1990		Q50219388
+12	Fyodor Dostoevsky	1821	1881	Q991
+13	Hans-Hermann Hoppe	1949		Q76688
+14	Marc Stevens	1981		Q28421940
+15	Florian Tramèr	1991		Q116626597
+16	Michele Boldrin	1956		Q775348
+17	Arfon M. Smith			
+18	Olavo de Carvalho	1947	2022	Q729048
+19	David K. Levine	1955		Q5235801
+20	John F. Nash	1928	2015	Q128736
+21	Geoffrey Hinton	1947		Q92894
+22	Stephan Kinsella	1965		Q7608141
+23	Ronald L. Rivest	1947		Q578036
+25	Luiz Felipe Pondé	1959		Q10320719
+26	Auguste Kerckhoffs	1835	1903	Q737013
+28	Cicero	-106	-43	Q1541
+30	Robert M. Pirsig	1928	2017	Q366575
+31	Gwern Branwen			Q108133995
+33	Jiang Xueqin	1976		Q136345643
+34	Hideaki Anno	1960		Q23261
+35	Sandy Maguire			
+36	Adi Shamir	1952		Q320624
+37	Theodore Dalrymple	1949		Q1354751
+38	Mark D. Wilkinson			Q37392357
+39	Stanley Kubrick	1928	1999	Q2001
+40	Isaac Asimov	1920	1992	Q34981
+41	personX			
+42	Plato	-427	-347	Q859
+43	Pamela Samuelson			Q7129255
+44	Eric S. Raymond	1957		Q188954
+46	Marcus Baffa			
+47	George Orwell	1903	1950	Q3335
+48	Aristotle	-384	-322	Q868
+49	Suzanne Scotchmer	1950	2014	Q7650954
+50	Michel de Montaigne	1533	1592	Q41568

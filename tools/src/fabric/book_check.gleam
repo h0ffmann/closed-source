@@ -156,6 +156,13 @@ pub fn named(text: String) -> List(String) {
   |> list.filter(fn(n) { !list.contains(open, n) })
 }
 
+/// The thinkers whose work the paper already cites (☑).
+pub fn cited_names(text: String) -> List(String) {
+  rows(thinker_re(), text)
+  |> list.filter(fn(r) { at(r, 4) == "☑" })
+  |> list.map(at(_, 1))
+}
+
 pub fn main(_args: List(String)) -> Int {
   case pystr.read_text("50THINKERS.md") {
     Error(e) -> {

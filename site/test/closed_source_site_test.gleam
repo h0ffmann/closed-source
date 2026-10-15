@@ -219,3 +219,12 @@ pub fn the_essays_are_counted_not_listed_test() {
       <> "</b><span>notes</span>",
   )
 }
+
+pub fn the_timeline_scrolls_and_each_life_takes_focus_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert content.timeline != ""
+  assert string.contains(html, "class=\"timeline-scroll\"")
+  assert string.contains(html, "role=\"region\"")
+  assert string.contains(html, "id=\"tl\"")
+  assert string.contains(html, "<g class=\"tl-who\" tabindex=\"0\"")
+}

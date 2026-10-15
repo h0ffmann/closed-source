@@ -49,6 +49,7 @@ check: build
     tools/fabric book-check
     tools/fabric cite-check
     tools/fabric notes-check
+    tools/fabric timeline --check
     scripts/readme.sh --check
     for e in essays/*.md; do [ "$e" = essays/index.md ] || scripts/essay-montaigne.sh "$e"; done
 
