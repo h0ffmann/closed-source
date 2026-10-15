@@ -420,3 +420,17 @@ main section.shelf { padding-top: 48px; }
 
 /* A note the owner approved for the book: the cover's black with yellow letters. */
 .tag.is-approved { border-color: var(--black); background: var(--black); color: var(--yellow); }
+
+/* Live: the refpulse button (unison/refpulse/) */
+.pulse-button {
+  font: 600 14px/1 var(--caps); letter-spacing: .04em; text-transform: uppercase;
+  color: var(--paper); background: var(--red-text); border: 0; padding: 12px 18px; min-height: 44px;
+  cursor: pointer; margin-top: 16px;
+}
+.pulse-button:hover { background: var(--ink); }
+.pulse-button[disabled] { opacity: .6; cursor: progress; }
+.pulse { margin-top: 12px; font-size: 16px; }
+.pulse-results { list-style: none; padding: 0; margin: 8px 0 0; }
+.pulse-results li { padding: 4px 0; border-bottom: 1px solid var(--rule); }
+.pulse-results .is-ok { color: var(--ok); }
+.pulse-results .is-dead, .pulse-failed { color: var(--red-text); }

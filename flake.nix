@@ -19,6 +19,8 @@
           site = gleam-website.devShells.${system}.default;
           # md: the three Markdown analysers of `just md-quality` (.github/workflows/md.yml).
           md = pkgs.mkShell { packages = [ pkgs.markdownlint-cli2 pkgs.vale pkgs.lychee ]; };
+          # unison: the Unison Codebase Manager for unison/ (the refpulse prototype, `just unison-*`).
+          unison = pkgs.mkShell { packages = [ pkgs.unison-ucm ]; };
         })
       paper.devShells;
   };

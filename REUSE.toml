@@ -7,7 +7,7 @@ SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["scripts/**", "tools/**", ".github/**", "justfile", "flake.nix", "flake.lock", "site/**"]
+path = ["scripts/**", "tools/**", ".github/**", "justfile", "flake.nix", "flake.lock", "site/**", "unison/**/*.u"]
 precedence = "closest"
 SPDX-FileCopyrightText = "2026 Matheus Hoffmann"
 SPDX-License-Identifier = "AGPL-3.0-only"
