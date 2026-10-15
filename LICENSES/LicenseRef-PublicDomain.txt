@@ -1,0 +1,5 @@
+This file is in the public domain where it is used: its term of copyright has ended, in the
+United States (published before 1 January 1931, 17 U.S.C. § 304) and in Brazil (author and
+translator died before 1 January 1956, Lei 9.610/98, art. 41). works/index.md gives, for each
+file, the reasoning and the source it was copied from. A Project Gutenberg file keeps the
+Project Gutenberg License inside it, as that licence asks when the file is copied as is.
