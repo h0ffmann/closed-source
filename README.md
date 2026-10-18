@@ -5,7 +5,7 @@
 
 # closed source: the god that failed
 
-<sub>since 2026 · <a href="https://h0ffmann.github.io/closed-source/paper.pdf">read the paper (PDF)</a> · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
+<sub>since 2026 · <a href="https://h0ffmann.github.io/closed-source/paper.pdf">read the paper (PDF)</a> · <a href="https://h0ffmann.github.io/closed-source/">the site</a> · <a href="#where-to-start">start</a> · <a href="#build-the-pdf">build</a> · <a href="#release-a-new-zenodo-version-and-a-new-arxiv-pdf">release</a> · <a href="#cite">cite</a> · <a href="#licence">licence</a> · <a href="README.easy.pt-BR.md">🇧🇷 versão fácil</a></sub>
 
 [![h0ffmann/closed-source on github: star the repository](https://img.shields.io/github/stars/h0ffmann/closed-source?style=for-the-badge&logo=github&logoColor=white&label=h0ffmann%2Fclosed-source&labelColor=111111&color=A3201C)](https://github.com/h0ffmann/closed-source)
 
@@ -18,12 +18,15 @@
 [![zenodo links](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh0ffmann.github.io%2Fclosed-source%2Flinks.json&query=%24.zenodo&label=zenodo%20links&style=flat-square&color=1682D4)](docs/4-ways-of-working/md-quality.md#the-link-counters)
 [![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
 [![v0.3.0 DOI](https://img.shields.io/badge/v0.3.0_DOI-10.5281%2Fzenodo.23349831-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23349831)
+[![versão fácil em português: click to read this page in easy brazilian portuguese](https://img.shields.io/badge/%F0%9F%87%A7%F0%9F%87%B7_vers%C3%A3o_f%C3%A1cil-em_portugu%C3%AAs-FFD400?style=flat-square&labelColor=111111)](README.easy.pt-BR.md)
 [![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-111111?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
 [![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-111111?style=flat-square&logo=gnu&logoColor=white)](#licence)
 
-the first paper made with **paper fabric**, an open, self-improving pipeline for technical papers
-in the [ouroboric](https://github.com/ouroboric-dev/ouroboric) style. markdown in, PDF out, every
-reference checked, every release citable.
+a book on why closed source failed as a protection, for science first, and on what to do
+instead: publish the method, mint an identifier, cite what you use. it stands on robert m.
+pirsig's *zen and the art of motorcycle maintenance* (1974). it is the first book made with
+**paper fabric**, an open pipeline in the [ouroboric](https://github.com/ouroboric-dev/ouroboric)
+style: markdown in, PDF out, every reference checked, every release citable.
 
 **read the paper:** [preview the PDF in the browser](https://h0ffmann.github.io/closed-source/paper.pdf) ·
 download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
@@ -32,36 +35,130 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
 
 </div>
 
-> closed source asked researchers to trust that secrecy would protect their work. between 2024 and
-> 2026 that trust failed in public. if anyone can reverse engineer anything, the honest course is
-> to publish the method, mint an identifier, and cite whatever you use, and to require the same
-> of the agents that now do much of the reading and writing.
+## in one minute
 
-**author:** mr. nobody on the cover; written in the first person by matheus hoffmann, of the
-escola politécnica of UFRJ. the ouroboric ideas are bruno valério's
-([ouroboric](https://github.com/ouroboric-dev/ouroboric)).
-other citable work by the writer, each with its latest DOI:
-[marola](https://github.com/marola-dev/marola) ([10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)),
-[ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)),
-[picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)) and
-[nashkell](https://h0ffmann.github.io/nashkell/) ([10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)), an open book.
+- **the claim.** closed source asked researchers to trust that secrecy would protect their work.
+  between 2024 and 2026 that trust failed in public: agents decompile binaries, queries extract
+  models, distillation copies them. if anyone can reverse engineer anything, the honest course is
+  to publish the method, mint an identifier and cite whatever you use, and to ask the same of
+  the agents that now do much of the reading and writing.
+- **the root.** pirsig wrote that "the number of rational hypotheses that can explain any given
+  phenomenon is infinite" ([the note](notes/202610181353-pirsig-infinite-hypotheses-science-does-not-close.md)).
+  so science never closes, and a method that only its owner can open is one that nobody else
+  can test. that is why the book puts open source first for science.
+- **the shape.** 100 pages: 50 thinkers, two first-person pages each ([`50THINKERS.md`](50THINKERS.md)),
+  in english and in brazilian portuguese. the cover names mr. nobody; the writer is matheus
+  hoffmann, of the escola politécnica of UFRJ. the ouroboric ideas are bruno valério's.
+- **the state.** v0.3.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer
+  reviewed. what must change before v1: the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
 
-**status:** v0.3.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer reviewed. see the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md)
-for what must change before v1 and before this repository moves to the `ouroboric-dev`
-organisation.
+## where to start
 
-**where the PDF is.** the three links above always open the PDFs of the latest release, from
-its github release. the DOI opens the zenodo record, which holds the source archive and links
-back to the PDF. the [site](https://h0ffmann.github.io/closed-source/) has the PDFs built from
-`main`.
+| if you want to | go to |
+|---|---|
+| read the book | [the PDF in the browser](https://h0ffmann.github.io/closed-source/paper.pdf), or [the site](https://h0ffmann.github.io/closed-source/) |
+| read this page in easy brazilian portuguese | [`README.easy.pt-BR.md`](README.easy.pt-BR.md) |
+| know why the book exists | [history and intent](#the-book-history-and-intent) |
+| see what it stands on | [the big references](#the-big-references), [`BOOKS.md`](BOOKS.md) |
+| know what may be copied here, and why | [licence research](#licence-research) |
+| see the writer's other open works | [other works by the writer](#other-works-by-the-writer) |
+| read the notes and the essays | [`notes/`](notes/index.md), [`essays/`](essays/index.md) |
+| build the PDF yourself | [build the PDF](#build-the-pdf) |
+| work here with a coding agent | [`AGENTS.md`](AGENTS.md), then [the engineering loop](#the-engineering-loop) |
+| cite it | [cite](#cite) |
 
-**style.** this page is in lower case, except acronyms such as UFRJ, DOI and PDF, code, and the
-generated citation block. the layout follows [picasso's README](https://github.com/h0ffmann/picasso/blob/29eb385/README.md).
-[`README.easy.pt-BR.md`](README.easy.pt-BR.md) is the same page in easy brazilian portuguese; it
-is made from this file with the [`easy-pt-br`](.claude/skills/easy-pt-br/SKILL.md) skill, and
-`just check` fails when it is older than this file.
+## the book: history and intent
+
+the repository and the first draft were made on 12 october 2026, as a v0 preprint. the next day
+it had three releases, and v0.3.0 became a book on zenodo
+([note](notes/202610132130-why-i-wrote-fast-from-preprint-to-book.md)). the rules of the book
+came from the owner in those days and are in [`AGENTS.md`](AGENTS.md): 100 pages, 50 thinkers,
+two languages, the proclaimed AI gurus as the opponent, and a cite line on every file.
+
+<details><summary>the title, the intent and what the book is not</summary>
+
+- **the title** borrows *the god that failed*, the 1949 book of six writers who left the
+  communist movement, for a smaller faith: that secret code, models and methods stay valuable.
+  the colours, black and red with a yellow title, are after the cover of hans-hermann hoppe's
+  *democracy: the god that failed* (2001).
+- **the intent** is to replace secrecy with professional citation: persistent identifiers,
+  machine-readable metadata, and agents that borrow, cite and propagate credit by default. the
+  book is written that way itself, in public, with agents, and every claim has a source or an
+  `[ANALYSIS]` mark.
+- **why fast.** everybody talked about reverse engineering with agents in october 2026, and the
+  writer wanted the book out while the question was open (the same note).
+- **what it is not.** it is not peer reviewed, and it argues against claims, not persons.
+
+</details>
+
+## the big references
+
+| work | what the book takes from it | where |
+|---|---|---|
+| robert m. pirsig, *zen and the art of motorcycle maintenance* (ZAMM), 1974 | the book it stands on: quality, the rider who can open the engine, and the infinite hypotheses of chapter 10. named in the abstract, cited in the introduction (`pirsig1974zen`), and a `references` tie by ISBN in `.zenodo.json`, which zenodo shows from the next release | [`BOOKS.md`](BOOKS.md), [ADR 001](docs/2-engineering/adr/001-pirsig-is-the-most-cited-author.md), [biography](BIO_ROBERT_PIRSIG.md), [essay](essays/2026-the-hypotheses-have-no-end.md) |
+| hans-hermann hoppe, *democracy: the god that failed*, 2001 | the title's second half and the colours; no art or text is copied | [`BOOKS.md`](BOOKS.md) |
+| stephan kinsella; michele boldrin and david k. levine | the case against intellectual property, beside hoppe's | [`BOOKS.md`](BOOKS.md) |
+| michel de montaigne, *essays* | what an essay must be: the rules that check each essay | [`essay-montaigne`](.claude/skills/essay-montaigne/SKILL.md) |
+
+## licence research
+
+before anything is copied here, its licence is read and recorded (AGENTS.md, "borrow, cite,
+propagate").
+
+<details><summary>what may be copied, what may only be quoted, and how each file says it</summary>
+
+- **full texts** go into [`works/`](works/index.md) only when they are free to copy in the
+  united states and in brazil: in the US, published before 1931; in brazil, 70 years after the
+  author's death (lei 9.610/98, art. 41). the [`ouro-get`](.claude/skills/ouro-get/SKILL.md)
+  skill does the check, and a work that fails it gets a citation and the reason, never the text.
+- **ZAMM is under copyright**, so it is quoted briefly, with its page, and never copied
+  ([`QUOTES.md`](QUOTES.md)). the same holds for hoppe's book and its cover.
+- **borrowed code and skills** keep their SPDX line, and [`REUSE.toml`](REUSE.toml) records the
+  licence of each file. names and logos of other projects are not licensed here
+  ([`TRADEMARKS.md`](TRADEMARKS.md)).
+- **a work by openai** in `works/openai/` was copied under its apache-2.0 licence
+  ([`works/index.md`](works/index.md)).
+
+</details>
+
+## other works by the writer
+
+each is open, and each has a DOI that opens its latest version. this book cites all of them.
+
+| work | what it is | DOI |
+|---|---|---|
+| [marola](https://github.com/marola-dev/marola) | an open, non-profit platform for sea conditions and bathing-water quality at brazilian beaches | [10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155) |
+| [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) | the WW3 GPU lab: WAVEWATCH III kernels on GPUs without changing the answer | [10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351) |
+| [picasso](https://github.com/h0ffmann/picasso) | self-contained nix flakes for scientific and agentic toolchains; it builds this book | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) |
+| [nashkell](https://h0ffmann.github.io/nashkell/) | an open book in progress, in the voice of nash | [10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739) |
+
+## the engineering loop
+
+tools, checks and the site are built with coding agents, in two tools adopted after
+[ww3-gpu](https://github.com/h0ffmann/ww3-gpu): compound engineering and archify.
+
+<details><summary>compound engineering: plan, work, review, compound; archify: drawings of a flow</summary>
+
+- **compound engineering** ([everyinc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin),
+  MIT) is a claude code plugin, pinned to `compound-engineering-v3.30.3` in
+  [`.claude/settings.json`](.claude/settings.json). each problem solved leaves a short lesson in
+  [`docs/compound/`](docs/compound/README.md), and the next plan reads it first. a small change
+  is work, `just check` and a pull request; a medium one is `/ce-plan`, `/ce-work`,
+  `/ce-code-review` and `/ce-compound`. the rules that win over a step are in
+  [`AGENTS.md`](AGENTS.md#engineering-work-the-compound-loop). if `/ce-plan` is not offered, run
+  `/plugin` and install `compound-engineering` from that marketplace.
+- **archify** ([tt-a1i/archify](https://github.com/tt-a1i/archify), MIT) draws a flow as an
+  explorable HTML page with inline SVG. it is not copied: it is the submodule `vendor/archify`,
+  pinned at v3.0.1 (`2ab3cae`), and `.claude/skills/archify` links to it. `just archify init`
+  once, then `just archify render`, `pdf`, `check` or `refresh` ([`docs/archify/`](docs/archify/README.md)).
+
+</details>
 
 ## build the PDF
+
+on any ubuntu with only nix and just: `just paper`, or `just book` for the book's checks too.
+
+<details><summary>the commands, the toolchain and the three editions</summary>
 
 on any ubuntu, you need only nix and just. nothing else is installed on the machine. nix comes
 from the official installer at [nixos.org](https://nixos.org/download/):
@@ -106,7 +203,13 @@ the toolchain follows sandy maguire's books ([isovector/thinking-with-types](htt
 markdown prose, pandoc with pandoc-crossref and citeproc, a hand-written latex template, xelatex,
 and the git revision stamped on every page.
 
+</details>
+
 ## website
+
+`site/` is the book's website, in gleam and lustre: `just site-build`, `just site-serve`.
+
+<details><summary>how the site is built, and where its look comes from</summary>
 
 `site/` is the paper's website: a [lustre](https://lustre.build) application in gleam, in the
 style of [picasso's site](https://h0ffmann.github.io/picasso/). the title, abstract (original and
@@ -142,7 +245,11 @@ nothing moves when the reader asks for reduced motion. hoppe
 argues that ideas should not be property; the law still gives the copyright. [`BOOKS.md`](BOOKS.md)
 says more, with the other books behind this repository.
 
+</details>
+
 ## layout
+
+<details><summary>every directory and the main files</summary>
 
 | path | what's there |
 |---|---|
@@ -171,7 +278,13 @@ says more, with the other books behind this repository.
 | [`PERSONAS.md`](PERSONAS.md) | the personas that every markdown file cites as its main and last author (hard rule) |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
+</details>
+
 ## secrets and keys
+
+nothing secret is in this repository.
+
+<details><summary>what a release needs, and where each key lives</summary>
 
 nothing secret is in this repository. a release needs these, and only these:
 
@@ -191,7 +304,14 @@ token leaks, delete it where it was made at once and make a new one.
 once per repository: on zenodo.org → github, turn the switch for this repository **on**. zenodo
 then archives each release and mints its DOI ([release](#release-a-new-zenodo-version-and-a-new-arxiv-pdf)).
 
+</details>
+
 ## release: a new zenodo version and a new arxiv PDF
+
+a release is a git tag on `main`; `just release` makes it, CI publishes it, zenodo mints its DOI.
+humans release; agents only prepare the pull request.
+
+<details><summary>the steps, from the merge to arxiv</summary>
 
 a release is a git tag on `main`. one command makes it; CI publishes it; zenodo mints its DOI.
 no secret is in the chain, as in [marola](https://github.com/marola-dev/marola/blob/cf7bd4f/scripts/release.sh).
@@ -242,7 +362,14 @@ articles and position papers only after peer review at a journal or conference
 ([arxiv blog](https://blog.arxiv.org/?p=1740)). arxiv will hold this v0 position paper. submit
 it after a venue accepts it. details: [releasing](docs/4-ways-of-working/releasing.md).
 
+</details>
+
 ## cite
+
+cite the latest DOI, [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656); add
+the version's DOI when the exact wording matters.
+
+<details><summary>the two DOIs, and how a reader finds this work</summary>
 
 ### two DOIs: the latest and the permanent
 
@@ -289,6 +416,8 @@ reader here. each has its own page, with the counts and the day they were read.
 - **both change only with a release.** a published version keeps the words and the ties it had.
 - **a word is kept when the right reader would type it and the paper is about it.** a word that
   only brings more visitors is left out.
+
+</details>
 
 <!-- citation:start -->
 

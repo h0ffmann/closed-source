@@ -9,4 +9,4 @@ Reports about the current `main` branch are welcome. Responses are best effort w
 is maintained by one person.
 
 Adapted from Ouroboric's
-[SECURITY.md](https://github.com/ouroboric-dev/.github/blob/b799793319aaf4138e9733bcdda63b7a31cd7eb4/SECURITY.md) (MIT).
+[SECURITY.md](https://github.com/ouroboric-dev/.github/blob/6380a2dbfcf084ce559b0887a8ce1f3ef4197af5/SECURITY.md) (MIT).

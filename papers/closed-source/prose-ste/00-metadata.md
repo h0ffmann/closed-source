@@ -3,7 +3,10 @@
 version: "v0, ASD-STE100 text (preprint, not peer reviewed)"
 abstract: |
   For thirty years, closed source promised that secrecy protects value. I argue that this promise
-  failed, and that it failed for science first. Three trends from 2024 to 2026 support this
+  failed, and that it failed for science first. I examine the case with the book that this book
+  stands on: Robert M. Pirsig's *Zen and the Art of Motorcycle Maintenance* (1974). Pirsig wrote
+  that the number of rational hypotheses that can explain a phenomenon is infinite. Thus science
+  does not end, and only the owner of a closed method can test it. Three trends from 2024 to 2026 support this
   argument. Large language models now decompile binaries into re-executable source code. Black-box
   queries extract parts of production models. Distillation copies capabilities at industrial scale.
 

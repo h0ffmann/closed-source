@@ -69,6 +69,13 @@ The essay derived from it: [Peer reviewing: the god that failed](../essays/2026-
 
 The essay derived from them, and from eight more notes: [New vs. better, 2026](../essays/2026-new-vs-better.md).
 
+## Pirsig, science and closed source
+
+- [[202610181353-pirsig-infinite-hypotheses-science-does-not-close]]: Pirsig: the hypotheses are infinite, so science does not close (literature, partial)
+- [[202610181354-open-source-first-for-science-after-pirsig]]: open source first for science, after Pirsig (permanent, open question)
+
+The essay derived from them: [The hypotheses have no end, 2026](../essays/2026-the-hypotheses-have-no-end.md).
+
 ## The first Scala, and Marcus Baffa
 
 - [[202610132352-the-first-scala-a-risk-project-at-ufrj]]: the first Scala: a risk project at UFRJ, 2017 (fleeting, partial)

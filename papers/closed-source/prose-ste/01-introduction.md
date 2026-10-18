@@ -31,6 +31,15 @@ result, nobody can reproduce it [@ince2012case]. If nobody can find code, nobody
 estimate says that the open source that firms use would cost about 8.8 trillion US dollars to build
 again [@hoffmann2024value].
 
+Robert M. Pirsig wrote the book that this book stands on. In *Zen and the Art of Motorcycle
+Maintenance*, he gives the problem of science in one sentence: "The number of rational hypotheses
+that can explain any given phenomenon is infinite" [@pirsig1974zen, p. 107].
+
+**[ANALYSIS]** If the number of hypotheses has no end, science has no end. No single laboratory
+can test all the hypotheses. Only its owner can open a closed method, thus no other person can
+test it. For this reason, I think that openness is necessary for science first, and for business
+after.
+
 If anyone can reverse engineer anything, the useful question is no longer *how do I hide my work*?
 The useful question is now *how do I make sure that people credit my work when they use it*? My
 answer is professional citation. It has these parts: persistent identifiers, machine-readable

@@ -235,7 +235,18 @@ pub fn validate(meta: Json) -> List(String) {
             True -> []
             False -> [where <> ": " <> repr(ident) <> " is not an https URL"]
           }
-        _ -> [where <> ": scheme must be doi or url"]
+        // A book with no DOI, such as Pirsig's 1974 Zen and the Art of Motorcycle Maintenance.
+        Ok(json.String("isbn")) ->
+          case re.search(re.compile("^(97[89])?\\d{9}[\\dX]$", []), ident_s) {
+            True -> []
+            False -> [
+              where
+              <> ": "
+              <> repr(ident)
+              <> " is not an ISBN of 10 or 13 digits, without hyphens",
+            ]
+          }
+        _ -> [where <> ": scheme must be doi, url or isbn"]
       }
       list.append(rel_errs, scheme_errs)
     })

@@ -29,6 +29,17 @@ não pode ser creditado [@smith2016software]. Toda uma economia funciona hoje so
 escolheu abrir: uma estimativa situa o custo de reconstruir o código aberto que as empresas usam em
 cerca de 8,8 trilhões de dólares americanos [@hoffmann2024value].
 
+Robert M. Pirsig escreveu o livro em que este se apoia. Em *Zen and the Art of Motorcycle
+Maintenance* (*Zen e a arte da manutenção de motocicletas*), ele resume o problema da ciência numa
+frase: "The number of rational hypotheses that can explain any given phenomenon is infinite" (em
+tradução livre: o número de hipóteses racionais que podem explicar qualquer fenômeno dado é
+infinito) [@pirsig1974zen, p. 107].
+
+**[ANÁLISE]** Se as hipóteses não têm fim, a ciência não tem fim, e nenhum laboratório sozinho
+consegue testá-las todas. Um método que só o dono pode abrir é um método que mais ninguém pode
+testar. Por isso sustento que a abertura vem primeiro para a ciência, antes de vir para os
+negócios.
+
 Se qualquer pessoa pode fazer engenharia reversa de qualquer coisa, a pergunta útil deixa de ser
 *como escondo meu trabalho?* e passa a ser *como garanto que meu trabalho seja creditado quando for
 usado?* Minha resposta é a citação profissional: identificadores persistentes, metadados legíveis por

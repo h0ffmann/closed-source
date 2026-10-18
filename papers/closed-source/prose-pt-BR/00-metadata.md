@@ -23,7 +23,10 @@ keywords:
   - agentes de programação
 abstract: |
   Por trinta anos, o código fechado prometeu que o segredo protege valor. Eu argumento que essa
-  promessa falhou, e falhou primeiro para a ciência. Três tendências de 2024 a 2026 sustentam o
+  promessa falhou, e falhou primeiro para a ciência. Leio o caso com o livro em que esta obra se
+  apoia, *Zen and the Art of Motorcycle Maintenance* (1974), de Robert M. Pirsig: o número de
+  hipóteses racionais que podem explicar um fenômeno é infinito, então a ciência nunca se fecha,
+  e um método que só o dono pode abrir é um método que mais ninguém pode testar. Três tendências de 2024 a 2026 sustentam o
   argumento. Grandes modelos de linguagem agora descompilam binários em código-fonte que volta a
   executar. Consultas de caixa-preta extraem partes de modelos em produção, e a destilação copia
   capacidades em escala industrial. A maior disputa de segredo industrial de 2026 em inteligência

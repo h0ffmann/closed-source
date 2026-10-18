@@ -30,3 +30,7 @@
 	path = forks/marola
 	url = https://github.com/marola-dev/marola.git
 	shallow = true
+[submodule "vendor/archify"]
+	path = vendor/archify
+	url = https://github.com/tt-a1i/archify.git
+	shallow = true

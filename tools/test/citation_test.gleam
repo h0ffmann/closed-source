@@ -34,6 +34,33 @@ pub fn validate_errors_test() {
     ]
 }
 
+pub fn isbn_scheme_test() {
+  let with = fn(id) {
+    citation.sample()
+    |> json.set(
+      "related_identifiers",
+      json.Array([
+        json.Object([
+          #("identifier", json.String("https://github.com/x/y")),
+          #("relation", json.String("isSupplementTo")),
+          #("scheme", json.String("url")),
+        ]),
+        json.Object([
+          #("identifier", json.String(id)),
+          #("relation", json.String("references")),
+          #("scheme", json.String("isbn")),
+        ]),
+      ]),
+    )
+  }
+  assert citation.validate(with("0688002307")) == []
+  assert citation.validate(with("9780688002305")) == []
+  assert citation.validate(with("0-688-00230-7"))
+    == [
+      "related_identifiers[1]: '0-688-00230-7' is not an ISBN of 10 or 13 digits, without hyphens",
+    ]
+}
+
 pub fn orcid_test() {
   assert citation.orcid_ok("0000-0002-1825-0097")
   assert !citation.orcid_ok("0000-0002-1825-0098")
