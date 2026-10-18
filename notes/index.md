@@ -56,6 +56,10 @@ skill.
 
 The essay derived from it: [picasso, and the long run](../essays/2026-picasso-and-the-long-run.md).
 
+## Quotes and who said them
+
+- [[202610181434-the-magic-is-in-the-work-you-avoid]]: "the magic you're looking for is in the work you're avoiding": who said it first (literature, partial)
+
 ## Peer review
 
 - [[202610140034-peer-reviewing-the-god-that-failed]]: peer reviewing: the god that failed (permanent, open question)
