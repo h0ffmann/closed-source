@@ -14,7 +14,7 @@ routing and docs checks work the same everywhere.
 ## 1. Umbrella template
 
 A node is one of three kinds: **company umbrellas** (for example, `ouroboric`, or a company that
-Asgard kickstarted), **product umbrellas** (for example, `yggdrasil`, `asgard`, a client gallery) and
+the Asgard realm kickstarted), **product umbrellas** (for example, `yggdrasil`, a client gallery) and
 **leaves**. Company
 umbrellas use `1-company/` (charter, roadmap, legal, readiness) instead of `1-product/`, and hold the
 standards their products inherit. Every umbrella otherwise uses this layout:
@@ -75,7 +75,7 @@ Direction, journal and branding live in the umbrella above the leaf.
 |---|---|---|---|
 | `README.md` | required | required | required |
 | `1-company/charter.md`, `roadmap.md` | required | — | — |
-| `1-company/readiness/` | required (readiness assessments, from Asgard's checklist) | — | — |
+| `1-company/readiness/` | required (readiness assessments, from the Asgard realm's checklist) | — | — |
 | `1-company/legal/` | required before going public (licence, contribution terms, trademarks) | — | — |
 | `1-product/charter.md`, `roadmap.md`, `design/` | — | required | — |
 | `1-product/legal/` | — | optional while in development; **required before `deploy-prod`** | — |
@@ -164,23 +164,43 @@ names or code, no client data, no raw transcripts or ledger excerpts from privat
 
 ## 9. Repository setup
 
-Every `ouroboric-dev` repo must pass [`scripts/check-repos.sh`](../../scripts/check-repos.sh). It checks
-the repo settings (public, squash merges only, no issues or wiki), secret scanning with push
-protection, private vulnerability reporting, the `protect-main` ruleset, `reuse lint`, the
-`AGENTS.md` structure and the pinned `gitleaks` pre-commit hook. Run one check with
-`--check <name>`, or name repos to check only those.
+Every public `ouroboric-dev` repo must pass [`scripts/check-repos.sh`](../../scripts/check-repos.sh). It
+checks:
+- the repo settings: public, squash merges only, no wiki, and issues on for the factories
+  (`yggdrasil`, `asgard`) and off for every other repo;
+- secret scanning with push protection, and private vulnerability reporting;
+- the `protect-main` ruleset;
+- `reuse lint`;
+- the `AGENTS.md` structure;
+- the pinned `gitleaks` pre-commit hook;
+- that the pr-bot can reach the repo.
 
+Run one check with `--check <name>`, or name repos to check only those.
+
+- **Hidden repos are the one exception.** `huldra` holds the hidden benchmark suite. It is private,
+  and the pr-bot must never be installed on it, so agents can't read it. The pr-bot is installed on
+  selected repos only, and `check-repos.sh`'s `bot` check fails if the pr-bot can reach a hidden
+  repo.
 - **The founder creates repos** with
-  [`scripts/create-repo.sh <repo> "<description>"…`](../../scripts/create-repo.sh), using a
-  short-lived admin token (Administration and Contents read and write). Each new repo gets a first
-  commit with only the licence files, then the setup below, so agents only ever see a protected
-  repo. If any named repo already exists, nothing is created.
+  [`scripts/create-repo.sh [--private] <repo> "<description>"…`](../../scripts/create-repo.sh),
+  using a short-lived admin token (Administration and Contents read and write). Each new repo gets
+  a first commit with only the licence files, then the setup below, so agents only ever see a
+  protected repo. If any named repo already exists, nothing is created. Then the founder adds each
+  public repo to the pr-bot's installation, as the script's output says. `--private` makes a hidden
+  repo, which is never added.
 - **The founder sets up existing repos** with
   [`scripts/setup-repo.sh <repo>`](../../scripts/setup-repo.sh), using the same kind of token. It is
   safe to run twice and fixes drift, such as an extra ruleset rule.
 - **Agents never create repos or change their settings.** They reach GitHub only as
   `ouroboric-pr-bot`, through [`scripts/as-bot.sh`](../../scripts/as-bot.sh), which can't; run the
   checks with `scripts/as-bot.sh --read all scripts/check-repos.sh`.
-- **These scripts move into Yggdrasil.** Its `github` remote will create and protect repos behind a
-  hard approval point, and then these scripts are removed (Yggdrasil change
-  `2026-10-12-remote-creates-repos`).
+- **Agents scaffold a new Yggdrasil component** with
+  [`scripts/scaffold-component.sh <repo> "<job>" <clone>`](../../scripts/scaffold-component.sh), in
+  a clone of a repo `create-repo.sh` made. It writes the files from `scripts/templates/go-component/`
+  and leaves the architecture doc's responsibilities for a person to write. The result goes through
+  a PR.
+- **Reusable tooling lives here until it has a better home.** Any script that could run again goes
+  in `scripts/`, with a test in `scripts/tests/`. When it should move, the Yggdrasil v0 plan's
+  "Carried beyond v0" table says where and when. The repo scripts move into Yggdrasil's `github`
+  remote, behind a hard approval point (change `2026-10-12-remote-creates-repos`), and the scaffold
+  moves into Odin's `init`.

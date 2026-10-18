@@ -81,7 +81,10 @@ keywords:
   - coding agents
 abstract: |
   For thirty years, closed source has promised that secrecy protects value. I argue that the
-  promise has failed, for science first. Three trends from 2024 to 2026 make the case. Large
+  promise has failed, for science first. I read the case through Robert M. Pirsig's *Zen and
+  the Art of Motorcycle Maintenance* (1974), the book this work stands on: the number of rational
+  hypotheses that can explain a phenomenon is infinite, so science never closes, and a method
+  that only its owner can open is one that nobody else can test. Three trends from 2024 to 2026 make the case. Large
   language models now decompile binaries into re-executable source. Black-box queries extract
   parts of production models, and distillation copies capabilities at industrial scale. The
   largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI,

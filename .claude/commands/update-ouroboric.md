@@ -25,7 +25,7 @@ for this run; still keep both files complete.
    line what it is, and names the notable works or tools that the file lists, with only the URLs
    that the file gives.
 5. In the header table of both files, record each repository at its new full commit hash and the
-   date read. `ouroboric-dev/contact` is private; say so, and do not guess its contents.
+   date read. A private repository (`huldra`, and `ouroboric-dev/contact` if it still exists) is named as private; do not guess its contents.
 6. Never invent a fact, a quotation or a URL. If a source is unclear, say that it is unclear.
    Ouroboric's names and logos are trademarks and are not licensed here: describe them, do not copy
    logo files into this repository.

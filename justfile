@@ -195,3 +195,8 @@ viz *args:
     lab=forks/picasso/labs/viz
     [ -f "$lab/flake.nix" ] || git submodule update --init --depth 1 forks/picasso
     nix --extra-experimental-features 'nix-command flakes' run "path:$PWD/$lab" -- "$@"
+
+# Archify, a pinned submodule (vendor/archify), after ww3-gpu: `just archify init` checks it out,
+# `render` draws docs/archify/*.html, `pdf` prints them, `check`/`refresh` find and redraw the stale ones.
+archify *args:
+    bash scripts/archify.sh {{args}}

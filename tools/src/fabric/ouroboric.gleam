@@ -6,8 +6,8 @@
 //// repository into build/ouroboric/<repo>, then prints, per repository, the recorded commit, the
 //// current one and the files that changed between them, so the agent reads only what is new.
 ////
-//// ouroboric-dev/contact is private, so it is not in `repos`. Add a repository here when the
-//// organisation publishes a new one.
+//// ouroboric-dev/huldra (and ouroboric-dev/contact, if it exists) is private, so it is not in
+//// `repos`. Add a repository here when the organisation publishes a new one.
 
 import fabric/re
 import fabric/sys
@@ -17,7 +17,9 @@ import gleam/result
 import gleam/string
 
 pub const repos = [
-  "ouroboric", "yggdrasil", "asgard", ".github", "ouroboric-packages",
+  "ouroboric", "yggdrasil", "asgard", ".github", "ouroboric-packages", "odin",
+  "midgard-react", "helheim-go", "gleipnir", "havamal", "gungnir", "jormungandr",
+  "mimir",
 ]
 
 fn row_re() -> re.Regex {

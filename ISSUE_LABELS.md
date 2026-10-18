@@ -74,7 +74,7 @@ keyword changes in `.zenodo.json`, change its label here.
 ## A2A: messages to and from ouroboric-dev
 
 Issues that carry a message between this project and the ouroboric-dev project, through
-`ouroboric-dev/contact` (Portuguese: *contato*). This follows the A2A pattern of picasso's
+`ouroboric-dev/contact` (Portuguese: *contato*). On 18 October 2026 that repository did not answer (GitHub: 404, and not in the organisation's list): it was removed, renamed or closed to this account; ask the owner before you open an issue there. This follows the A2A pattern of picasso's
 AGENTS.md, "Messages between Claude projects". The label tells whose turn it is. An issue has one
 of the two labels, never the two.
 

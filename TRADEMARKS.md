@@ -22,4 +22,4 @@ are not licensed by this repository; the logos load from their own repositories 
 A fork is welcome under the licences; it needs its own name.
 
 Adapted from Ouroboric's
-[TRADEMARKS.md](https://github.com/ouroboric-dev/ouroboric/blob/b355b1d52d6906f80447fe84283f705403533d0b/TRADEMARKS.md) (CC BY 4.0).
+[TRADEMARKS.md](https://github.com/ouroboric-dev/ouroboric/blob/35e6d331f9455c0ef07cf0c37ff1a61b8f5d0be5/TRADEMARKS.md) (CC BY 4.0).

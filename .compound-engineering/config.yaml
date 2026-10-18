@@ -1,0 +1,16 @@
+# Compound Engineering defaults for closed-source (AGENTS.md, "Engineering work: the compound loop").
+# After h0ffmann/ww3-gpu's .compound-engineering/config.yaml at 60189b0. AGENTS.md wins where it is stricter.
+
+# docs/ holds the charter, the ways of working and the change proposals; the loop gets its own folder.
+docs_root: docs/compound
+
+# Plans and brainstorms in Markdown, so the .md quality checks read them.
+brainstorm_output: md
+plan_output: md
+
+# The cross-model review pass would send the diff to a second provider; the owner asks per run.
+cross_model_review_mode: "off"
+
+# No standing PR watch; humans merge (AGENTS.md, invariant 8).
+pr_teaching_section: false
+auto_babysit: false

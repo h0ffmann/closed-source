@@ -99,6 +99,14 @@ fast the check asks. It changes no rule of what passes.
 A link to a page that needs a login (a repository's settings) is written as code, not as a
 link: the check cannot open it.
 
+The same goes for a host that does not answer outside its country. planalto.gov.br, the
+Brazilian government's site for its laws, did not answer GitHub's runners on 15 October 2026:
+15 runs on `main` and on pull requests failed on that link, and so did a test from outside
+Brazil on 18 October 2026. Its address is written as code, and the link beside it
+goes to a copy of the same text that the check can open (the Câmara dos Deputados' collection).
+A 408 or a 503 from Zenodo or GitHub in one run is not this case: it is a busy server, and the
+retries take care of it.
+
 A 403, a 405 and a 429 count as an answer: some sites refuse a robot and serve a person. The
 first run on `main` (13 October 2026) failed on one link of 513: the DOI
 [10.4337/qmjip.2016.03.06](https://doi.org/10.4337/qmjip.2016.03.06) resolved, and the

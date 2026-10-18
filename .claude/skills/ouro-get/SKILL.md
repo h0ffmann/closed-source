@@ -95,8 +95,10 @@ skill. Report: the file, its lines, the licence reasoning, and anything you were
 
 ## Sources
 
-- Lei 9.610/98, arts. 7 XI, 41, 43, 46 III, read at
-  <https://www.planalto.gov.br/ccivil_03/leis/l9610.htm> on 15 October 2026.
+- Lei 9.610/98, arts. 7 XI, 41, 43, 46 III, read at `https://www.planalto.gov.br/ccivil_03/leis/l9610.htm`
+  on 15 October 2026. That host does not answer outside Brazil, so the live-links check cannot
+  open it; the same law in the Câmara dos Deputados' collection:
+  <https://www2.camara.leg.br/legin/fed/lei/1998/lei-9610-19-fevereiro-1998-365399-publicacaooriginal-1-pl.html>.
 - Cornell University Library, "Copyright Term and the Public Domain in the United States", read
   at <https://guides.library.cornell.edu/copyright/publicdomain> on 15 October 2026: works
   published before 1931 are in the public domain.

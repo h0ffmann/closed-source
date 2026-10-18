@@ -2,7 +2,8 @@
 # Books
 
 Three books are behind this repository, and a fourth is the economic case beside the third. They
-are background reading. The paper does not cite them, so they are not in `refs.bib`. If a later
+are background reading. Since 18 October 2026 the paper cites the first one, *Zen and the Art of
+Motorcycle Maintenance* (`pirsig1974zen` in `refs.bib`); it does not cite the others. If a later
 version of the paper uses one of them, add the entry to `refs.bib` and log it in
 `papers/closed-source/REFERENCES.md`, as AGENTS.md says.
 

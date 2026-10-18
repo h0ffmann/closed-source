@@ -220,3 +220,13 @@ Then change the date of record at the top and the rows that differ. Rules:
 - A row here is what an index showed on the date of record. Never write a tie or a count that
   was not read from the index that day.
 - A citing record by another person gets its DOI, its authors and the date it was first seen.
+
+## Waiting for the next release
+
+One tie was added to `.zenodo.json` on 18 October 2026, after v0.3.0. It is not in any record
+yet: Zenodo shows it from the next release on, and this page gets its row in the table when it
+is read from that record.
+
+| Relation | Identifier | What it is | Whose |
+|---|---|---|---|
+| references | ISBN 0688002307 (scheme `isbn`) | Robert M. Pirsig, *Zen and the Art of Motorcycle Maintenance: An Inquiry into Values*, William Morrow, New York, 1974 (edition read on [Open Library](https://openlibrary.org/isbn/0688002307), 18 October 2026) | another person: Robert M. Pirsig. The book this work stands on ([ADR 001](docs/2-engineering/adr/001-pirsig-is-the-most-cited-author.md)); it has no DOI, so the tie is by ISBN, and DataCite will store it and not count it |

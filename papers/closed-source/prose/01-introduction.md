@@ -29,6 +29,14 @@ inspected cannot be reproduced [@ince2012case], and code that cannot be found ca
 puts the cost of rebuilding the open source that firms use at about 8.8 trillion US dollars
 [@hoffmann2024value].
 
+Robert M. Pirsig wrote the book that this one stands on. In *Zen and the Art of Motorcycle
+Maintenance* he puts the trouble of science in one sentence: "The number of rational hypotheses
+that can explain any given phenomenon is infinite" [@pirsig1974zen, p. 107].
+
+**[ANALYSIS]** If the hypotheses have no end, science has no end, and no single laboratory can
+test them all. A method that only its owner can open is a method that nobody else can test. That
+is why I hold that openness comes first for science, before it comes for business.
+
 If anyone can reverse engineer anything, the useful question is no longer *how do I hide my
 work?* It is *how do I make sure my work is credited when it is used?* My answer is professional
 citation: persistent identifiers, machine-readable metadata and, increasingly, agents that cite

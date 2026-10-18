@@ -30,6 +30,7 @@ linked docs before you change what they cover.
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
   rules in `docs/4-ways-of-working/md-quality.md`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.
+- Engineering work: the compound loop (below), `docs/compound/`; drawings: `docs/archify/`.
 - Where the memory of this repository is, the long-term memory (ai-memory) and the code
   graph (graphify): `MEMORY.md`.
 
@@ -56,7 +57,7 @@ linked docs before you change what they cover.
 10. Work on a branch, stage files by path, and open a pull request for every change.
 
 Invariants 8 to 10 follow Ouroboric's AGENTS.md (invariants 3, 5 and 8; ouroboric-dev/ouroboric at
-`b355b1d`, CC BY 4.0).
+`35e6d33`, read on 18 October 2026, CC BY 4.0).
 
 ## The book (hard rule)
 
@@ -157,13 +158,44 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 - `unison/refpulse/` is a Unison service the site's Live button calls (`just unison-*`). What it
   answers is live, never a fact of the book; the site works when it is down.
 - A skill in `.claude/skills/` is written here and names its sources; do not copy a skill from
-  another repository. After a change to one, run `scripts/readme.sh --lock`.
+  another repository. After a change to one, run `scripts/readme.sh --lock`. A vendored skill
+  is the one exception: a pinned submodule under `vendor/`, linked (a symbolic link) from
+  `.claude/skills/<name>`, never copied, and not in the lock. The owner approved this for
+  `archify` (`vendor/archify`, tt-a1i, MIT) on 18 October 2026 (`docs/archify/README.md`).
 - The book's colours are black and red, with yellow letters for the title, after Hoppe's
   *Democracy: The God That Failed* (Hoffmann, 13 October 2026). No brown: not on the site, the
   slides or a badge.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.
+
+## Engineering work: the compound loop
+
+The owner, 18 October 2026, as in ww3-gpu: when the owner guides engineering work (a tool, a
+check, a script, the site), agents follow Compound Engineering's loop. The plugin
+(`compound-engineering@compound-engineering-plugin`, EveryInc, MIT) is enabled in
+`.claude/settings.json`, pinned to `compound-engineering-v3.30.3`. The book's text is not
+engineering work: notes, essays and prose follow their own rules above.
+
+| Size | Example | Steps |
+|---|---|---|
+| Small | a fix in one file, a doc, a flag | work, `just check`, a pull request |
+| Medium | a tool, a check, a recipe | `/ce-plan`, `/ce-work`, `/ce-code-review`, `/ce-compound` when the lesson is not obvious from the diff |
+| Large | a new tool family, a change to the build | `/ce-brainstorm` first, then the medium loop |
+
+Where a step's default clashes with a rule of this file, the rule wins:
+
+- Plans go to `docs/compound/plans/`, learnings to `docs/compound/solutions/`
+  (`.compound-engineering/config.yaml`).
+- `/ce-work` works on a branch and opens a pull request; it never merges, tags or releases
+  (invariants 6 and 8).
+- `/ce-code-review` reports and does not rewrite. Its cross-model pass is off, because it would
+  send the diff to another provider; the owner can ask for it in a run.
+- `/ce-compound` never edits this file or `CLAUDE.md` unless the owner agrees in that session.
+- `/lfg` (the whole pipeline unattended) runs only when the owner asks for it.
+
+Drawings of a flow use the `archify` skill; their sources and PDFs live in `docs/archify/`
+(`just archify`).
 
 ## Checks before a pull request
 

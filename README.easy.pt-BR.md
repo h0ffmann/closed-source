@@ -1,241 +1,192 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="70d217f7be458e0c3bf555944f77101566050f41312b58c5e5dd17e85aa64dcd" -->
+<!-- easy: source="README.md"; sha256="4fef77e5148e74ab11de6892b57c166ce866106dc2375bec58ecc2dc098fb5d8" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
 >
 > - **vale o original.** se este texto e o original discordarem, vale o original, em inglês.
-> - **feita a partir de:** a versão do original de 13 de outubro de 2026.
+> - **feita a partir de:** a versão do original de 18 de outubro de 2026.
 > - **para quem é:** quem quer entender o projeto sem ser da área.
-> - **o que ficou de fora:** a lista completa de arquivos, a tabela de chaves e os detalhes do
->   envio ao arxiv. cada parte encurtada aponta para a seção do original.
+> - **o que ficou de fora:** os comandos de cada seção que no original ficam fechados (clique
+>   para abrir), a lista completa de arquivos, a tabela de chaves e os passos do envio ao arxiv.
+>   cada parte encurtada aponta para a seção do original.
 > - **escrita por:** claude, com a skill [`easy-pt-br`](.claude/skills/easy-pt-br/SKILL.md);
 >   revisão de matheus hoffmann.
 
-este repositório guarda um artigo e a ferramenta que o produz. o artigo se chama *closed source:
-the god that failed* ("código fechado: o deus que falhou"). a ferramenta se chama **paper
-fabric**. ela recebe texto em markdown e entrega um PDF. ela confere cada referência e dá a cada
-versão um identificador para citação. o estilo de trabalho é o da
+este repositório guarda um livro e a ferramenta que o produz. o livro se chama *closed source:
+the god that failed* ("código fechado: o deus que falhou"). ele diz por que o código fechado
+falhou como proteção, primeiro para a ciência, e o que fazer no lugar: publicar o método, dar a
+ele um identificador e citar o que se usa. o livro se apoia em *zen and the art of motorcycle
+maintenance* (1974), de robert m. pirsig. a ferramenta se chama **paper fabric**: ela recebe
+texto em markdown, entrega um PDF e confere cada referência. o estilo é o da
 [ouroboric](https://github.com/ouroboric-dev/ouroboric).
 
-**leia o artigo:** [veja o PDF no navegador, sem baixar](https://h0ffmann.github.io/closed-source/paper.pdf) ·
+**leia o livro:** [veja o PDF no navegador, sem baixar](https://h0ffmann.github.io/closed-source/paper.pdf) ·
 para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
 [em inglês técnico simplificado](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-ste.pdf) ·
-[em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf). os links de baixar trazem sempre os PDFs da versão mais
-recente.
+[em português](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source-pt-BR.pdf).
 
-a ideia do artigo, em poucas palavras:
+## em um minuto
 
-> o código fechado pediu aos pesquisadores que confiassem no segredo. entre 2024 e 2026, essa
-> confiança falhou em público. se qualquer pessoa consegue desmontar qualquer programa para ver
-> como ele funciona, o caminho honesto é outro: publicar o método, registrar um identificador e
-> citar tudo o que você usa. o mesmo vale para os agentes de inteligência artificial, que hoje
-> leem e escrevem boa parte do trabalho.
+- **a tese.** o código fechado pediu aos pesquisadores que confiassem no segredo. entre 2024 e
+  2026, essa confiança falhou em público. agentes de inteligência artificial desmontam
+  programas, e perguntas bastam para copiar modelos. então o caminho honesto é publicar o
+  método, dar a ele um identificador e citar o que se usa.
+- **a raiz.** pirsig escreveu: "the number of rational hypotheses that can explain any given
+  phenomenon is infinite" (o número de hipóteses racionais que podem explicar qualquer fenômeno
+  é infinito; [a nota](notes/202610181353-pirsig-infinite-hypotheses-science-does-not-close.md)).
+  então a ciência nunca se fecha. e um método que só o dono abre, ninguém mais consegue testar.
+  por isso o livro põe o código aberto em primeiro lugar para a ciência.
+- **a forma.** 100 páginas: 50 pensadores, duas páginas para cada um
+  ([`50THINKERS.md`](50THINKERS.md)), em inglês e em português. a capa diz mr. nobody (senhor
+  ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. as ideias da
+  ouroboric são de bruno valério.
+- **o estado.** a versão v0.3.0 está publicada ([versões](RELEASES.md)). no zenodo, ela é um
+  livro. ninguém revisou o livro ainda (não tem revisão por pares). o que falta para a v1 está
+  na [avaliação](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
 
-**autor:** a capa traz o nome mr. nobody. quem escreve, em primeira pessoa, é matheus hoffmann, da
-escola politécnica da UFRJ. as ideias ouroboric são de bruno valério.
-outros trabalhos do autor que você pode citar, cada um com seu DOI (um identificador que não
-muda):
-[marola](https://github.com/marola-dev/marola) ([10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)),
-[ww3-gpu](https://github.com/h0ffmann/ww3-gpu) ([10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)),
-[picasso](https://github.com/h0ffmann/picasso) ([10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)) e
-[nashkell](https://h0ffmann.github.io/nashkell/) ([10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)), um livro aberto.
+## por onde começar
 
-**situação:** a versão v0.3.0 está no ar ([lista de versões](RELEASES.md)). no zenodo ele está registrado como livro. nenhuma revista revisou o texto
-ainda. a [avaliação de prontidão](docs/1-product/readiness/2026-10-12-ready-to-promote.md) diz o
-que falta para a v1.
-
-**estilo.** o original é escrito em letras minúsculas, e esta versão também. só as siglas, como
-UFRJ, DOI e PDF, ficam em maiúsculas. `just check` falha quando esta versão está mais velha que
-o original.
-
-## como gerar o PDF
-
-você precisa de um computador com ubuntu e de dois programas: nix e just. o nix instala todas as
-outras ferramentas sozinho, sempre nas mesmas versões. por isso o PDF sai igual em qualquer
-máquina.
-
-```sh
-curl -fsSL https://nixos.org/nix/install | sh -s -- --daemon        # nix, uma vez; depois abra um novo terminal
-echo 'experimental-features = nix-command flakes' | sudo tee -a /etc/nix/nix.conf   # liga os flakes, uma vez
-sudo apt install just                                               # just 1.21 no 24.04
-just paper     # os PDFs, no laboratório paper do picasso -> pdf/
-just book      # os PDFs e as conferências do livro (50 pensadores, linhas de autoria, referências, STE)
-```
-
-as ferramentas vêm do laboratório `paper` do
-[h0ffmann/picasso](https://github.com/h0ffmann/picasso/tree/main/labs/paper). o arquivo
-`flake.lock` fixa a versão de cada uma.
-
-os comandos do dia a dia:
-
-```sh
-nix develop            # ou `just shell`: todas as ferramentas no PATH
-just                   # cada artigo -> pdf/<slug>.pdf, pdf/<slug>-ste.pdf e pdf/<slug>-pt-BR.pdf
-just build closed-source
-just check             # gera, depois confere as referências e o STE (o que o CI roda)
-just arxiv             # pacotes de código-fonte para o arxiv, conferidos com pdfLaTeX, em build/arxiv/
-just --list            # todas as receitas
-```
-
-**as conferências.** os programas que conferem e geram arquivos ficam em `tools/`. eles são
-escritos na linguagem gleam. você os chama com `tools/fabric <comando>`, e o `just` faz isso por
-você.
-
-cada artigo sai em três PDFs:
-
-- o texto original, em inglês;
-- o mesmo texto em inglês técnico simplificado (ASD-STE100), feito com o comando `/ste100`;
-- a edição em português do brasil.
-
-`just check` confere que as três versões têm as mesmas citações, os mesmos números e as mesmas
-frases entre aspas.
-
-o modo de montar o livro segue os livros de sandy maguire
-([isovector/thinking-with-types](https://github.com/isovector/thinking-with-types)).
-
-## site
-
-a pasta `site/` é o site do artigo. o título, o resumo, os autores e as citações do site vêm do
-artigo e do README. ninguém copia esses dados à mão, então o site não fica diferente do artigo.
-
-```sh
-just site-build        # os PDFs, depois site/dist/; precisa só de nix e just
-just site-serve        # o mesmo, servido em http://localhost:8000
-```
-
-o github publica o site a cada mudança aceita no ramo `main`. para ligar isso, uma vez: no github,
-em settings → pages → source, escolha **github actions**.
-
-a aparência do site imita a capa de um livro: *democracy: the god that failed*, de hans-hermann
-hoppe (2001). o site usa as cores e o tipo de letra dessa capa, de memória. ele não copia a arte
-nem o texto do livro, que têm direito autoral. os logotipos da marola e da ouroboric são
-carregados dos repositórios de cada projeto e não são copiados para cá
-([`TRADEMARKS.md`](TRADEMARKS.md)). [`BOOKS.md`](BOOKS.md) fala dos livros por trás do projeto.
-
-## o que há em cada pasta
-
-os lugares principais:
-
-| caminho | o que tem |
+| se você quer | vá para |
 |---|---|
-| [`papers/closed-source/`](papers/closed-source/) | o artigo: o texto, as referências e o registro de como cada referência foi conferida |
-| [`site/`](site/) | o site |
-| [`tools/`](tools/) e [`scripts/`](scripts/) | os programas que conferem, geram e publicam |
-| [`docs/`](docs/README.md) | como o projeto trabalha: a carta, os modos de trabalho e o diário |
-| [`50THINKERS.md`](50THINKERS.md) | os 50 pensadores do livro: duas páginas para cada um, 100 páginas |
-| [`notes/`](notes/index.md) | as notas do livro, uma ideia em cada nota |
-| [`.claude/skills/`](.claude/skills/README.md) | as skills (instruções para os agentes) escritas para este repositório. uma delas, `citation-score`, mede quanto de um texto tem citação |
-| [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | como um leitor chega a este trabalho: palavras-chave, trabalhos relacionados e tópicos |
-| [`CITATION_SCORES.md`](CITATION_SCORES.md) | quanto de cinco READMEs tem citação: este, o da marola, o da ouroboric-dev, o do h0ffmann e o do picasso |
-| [`AGENTS.md`](AGENTS.md) | as regras que todo agente segue aqui |
+| ler o livro | [o PDF no navegador](https://h0ffmann.github.io/closed-source/paper.pdf), ou [o site](https://h0ffmann.github.io/closed-source/) |
+| ler a página original, em inglês | [`README.md`](README.md) |
+| saber por que o livro existe | [a história e a intenção](#o-livro-a-história-e-a-intenção) |
+| ver em que ele se apoia | [as grandes referências](#as-grandes-referências) |
+| saber o que pode ser copiado aqui | [a pesquisa de licenças](#a-pesquisa-de-licenças) |
+| ver os outros trabalhos do autor | [outros trabalhos do autor](#outros-trabalhos-do-autor) |
+| ler as notas e os ensaios | [`notes/`](notes/index.md), [`essays/`](essays/index.md) |
+| gerar o PDF você mesmo | [gerar o PDF](#gerar-o-pdf) |
+| trabalhar aqui com um agente | [`AGENTS.md`](AGENTS.md), depois [o ciclo de engenharia](#o-ciclo-de-engenharia) |
+| citar o livro | [citar](#citar) |
 
-a lista completa está na seção [layout](README.md#layout) do original.
+## o livro: a história e a intenção
 
-## senhas e chaves
+o repositório e o primeiro rascunho nasceram em 12 de outubro de 2026, como um preprint (um
+texto antes da revisão). no dia seguinte vieram três versões, e a v0.3.0 virou um livro no
+zenodo ([a nota](notes/202610132130-why-i-wrote-fast-from-preprint-to-book.md)). as regras do
+livro estão em [`AGENTS.md`](AGENTS.md): 100 páginas, 50 pensadores, duas línguas, os
+"gurus de IA" como adversários, e o nome dos autores em cada arquivo.
 
-não há nenhum segredo neste repositório. para publicar uma versão, você precisa de:
+- **o título** vem de *the god that failed*, um livro de 1949 de seis escritores que deixaram o
+  comunismo. aqui a fé que falhou é menor: a crença de que código, modelos e métodos secretos
+  continuam valiosos. as cores (preto, vermelho e o título em amarelo) vêm da capa de
+  *democracy: the god that failed* (2001), de hans-hermann hoppe.
+- **a intenção** é trocar o segredo pela citação profissional: identificadores que não mudam,
+  dados que uma máquina lê, e agentes que citam e passam o crédito adiante. o próprio livro é
+  feito assim, em público, com agentes.
+- **o que ele não é.** ele não foi revisado por pares. ele discute ideias, não pessoas.
 
-- uma conta no github com verificação em duas etapas (2FA);
-- uma chave SSH que possa enviar para este repositório;
-- uma conta no zenodo ligada ao github, com este repositório ligado. o zenodo é o arquivo público
-  que guarda cada versão e cria o DOI. nenhuma senha fica guardada;
-- uma conta no arxiv, se você for enviar o artigo para lá.
+## as grandes referências
 
-**nunca** coloque uma senha ou um *token* em um arquivo, em uma *issue* ou em um *pull request*.
-se um deles vazar, apague-o na hora e crie outro.
+- **robert m. pirsig, *zen and the art of motorcycle maintenance* (ZAMM), 1974.** é o livro em
+  que este se apoia: a qualidade, o motociclista que sabe abrir o motor, e as hipóteses
+  infinitas do capítulo 10. ele está no resumo e na introdução. no `.zenodo.json`, ele entra
+  pelo ISBN (o número do livro). o zenodo vai mostrar essa ligação a partir da próxima versão.
+  veja [`BOOKS.md`](BOOKS.md), a [decisão ADR 001](docs/2-engineering/adr/001-pirsig-is-the-most-cited-author.md),
+  a [biografia](BIO_ROBERT_PIRSIG.md) e o [ensaio](essays/2026-the-hypotheses-have-no-end.md).
+- **hans-hermann hoppe, *democracy: the god that failed*, 2001.** dá a segunda metade do título e
+  as cores. nada da capa nem do texto é copiado.
+- **stephan kinsella; michele boldrin e david k. levine.** os argumentos contra a propriedade
+  intelectual, ao lado do de hoppe.
+- **michel de montaigne, *essays*.** o que um ensaio precisa ter. as regras dele conferem cada
+  ensaio daqui ([`essay-montaigne`](.claude/skills/essay-montaigne/SKILL.md)).
 
-a tabela completa, com o passo a passo de cada item, está na seção
-[secrets and keys](README.md#secrets-and-keys) do original.
+## a pesquisa de licenças
 
-## publicar uma versão
+antes de copiar qualquer coisa, a licença é lida e anotada. uma licença diz o que se pode fazer
+com uma obra.
 
-uma versão é uma etiqueta (*tag*) do git no ramo `main`. um comando cria a etiqueta. o resto
-acontece sozinho.
+- **textos inteiros** só entram em [`works/`](works/index.md) quando são livres para copiar nos
+  estados unidos e no brasil. nos estados unidos: publicados antes de 1931. no brasil: 70 anos
+  depois da morte do autor (lei 9.610/98, art. 41). a skill
+  [`ouro-get`](.claude/skills/ouro-get/SKILL.md) faz essa conta.
+- **o ZAMM tem direitos autorais.** por isso ele só é citado em trechos curtos, com a página, e
+  nunca copiado ([`QUOTES.md`](QUOTES.md)). o mesmo vale para o livro de hoppe e a capa dele.
+- **código e skills emprestados** mantêm a linha de licença original.
+  [`REUSE.toml`](REUSE.toml) guarda a licença de cada arquivo. nomes e logos de outros projetos
+  não são licenciados aqui ([`TRADEMARKS.md`](TRADEMARKS.md)).
+- **um trabalho da openai**, em `works/openai/`, foi copiado com a licença apache-2.0 dele
+  ([`works/index.md`](works/index.md)).
 
-1. **aceite** o *pull request*. confira que as conferências passaram no `main`.
-2. **ensaie**: `just release minor --dry-run` roda todas as conferências e não cria nada.
-3. **crie a etiqueta**:
+## outros trabalhos do autor
 
-   ```sh
-   git switch main && git pull
-   just release                   # lista o que ainda não foi publicado e sugere patch, minor ou major
-   just release minor --dry-run   # mostra a etiqueta que será criada (ou diga o número: just release 0.2.0)
-   just release minor             # cria a etiqueta (assinada, se você tiver uma chave de assinatura) e a envia
-   just releases                  # as etiquetas de versão, da mais nova para a mais velha
-   ```
+cada um é aberto e tem um DOI (um identificador que não muda) que abre a versão mais recente.
+este livro cita todos eles.
 
-4. **o CI** gera os PDFs e publica a versão no github, com os PDFs anexados.
-5. **o zenodo** guarda a versão alguns minutos depois e cria o DOI dela. o DOI de todas as
-   versões juntas é [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656).
-   **atenção:** um DOI é para sempre. você não consegue apagar uma versão publicada.
-6. **confira** a nova versão no zenodo.org: o título, os autores e a licença. depois, rode
-   `just minted --wait` e abra o *pull request*: o comando escreve a versão e o DOI novo em
-   [`RELEASES.md`](RELEASES.md) e nas páginas que citam a versão mais recente.
-7. **o arxiv** é manual, pelo navegador. desde 31 de outubro de 2025, o arxiv só aceita artigos
-   de opinião da área de computação depois da revisão de uma revista ou conferência
-   ([blog do arxiv](https://blog.arxiv.org/?p=1740)). então este artigo só vai para lá depois de
-   aceito.
+- [marola](https://github.com/marola-dev/marola): uma plataforma aberta, sem fins lucrativos,
+  sobre o mar e a qualidade da água das praias do brasil.
+  [10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)
+- [ww3-gpu](https://github.com/h0ffmann/ww3-gpu): o modelo de ondas WAVEWATCH III rodando em
+  placas de vídeo (GPUs), sem mudar a resposta.
+  [10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)
+- [picasso](https://github.com/h0ffmann/picasso): ambientes nix para ciência e para agentes. ele
+  monta este livro. [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)
+- [nashkell](https://h0ffmann.github.io/nashkell/): um livro aberto, ainda em andamento, na voz
+  de nash. [10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)
 
-o comando recusa a publicação se o `main` tiver mudanças não salvas, se o número da versão não
-subir ou se nada tiver mudado além dos ponteiros das pastas em `forks/`.
+## o ciclo de engenharia
 
-o passo a passo completo, com o envio ao arxiv, está na seção
-[release](README.md#release-a-new-zenodo-version-and-a-new-arxiv-pdf) do original e em
-[releasing](docs/4-ways-of-working/releasing.md).
+as ferramentas, as conferências e o site são feitos com agentes. aqui se usam duas ferramentas,
+do mesmo jeito que no [ww3-gpu](https://github.com/h0ffmann/ww3-gpu).
 
-## como citar
+- **compound engineering** é um plugin do claude code. cada problema resolvido deixa uma lição
+  curta em [`docs/compound/`](docs/compound/README.md), e o próximo plano lê essa lição antes.
+  as regras que valem mais que o plugin estão em [`AGENTS.md`](AGENTS.md#engineering-work-the-compound-loop).
+- **archify** desenha um fluxo como uma página que você pode explorar. ele não é copiado: fica
+  em `vendor/archify`, numa versão fixa. veja [`docs/archify/`](docs/archify/README.md).
 
-### dois DOIs: o mais recente e o permanente
+## gerar o PDF
 
-um DOI é um identificador que continua funcionando mesmo quando o endereço da página muda. este
-trabalho tem dois tipos de DOI. cada um responde a uma pergunta.
+você precisa só de nix e just, em qualquer ubuntu. nada mais é instalado na máquina.
 
-| | DOI mais recente | DOI permanente |
-|---|---|---|
-| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.0: [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831); versões anteriores: [`RELEASES.md`](RELEASES.md) |
-| leva para | a versão mais nova, seja qual for no dia do clique | uma versão só, sempre o mesmo texto |
-| quantos existem | um para o trabalho inteiro | um para cada versão |
-| serve para | citar o trabalho | dizer exatamente qual texto você leu |
+```sh
+just paper     # os PDFs -> pdf/
+just book      # os PDFs e as conferências do livro
+```
 
-- **cite o DOI mais recente** na sua lista de referências. assim o leitor chega ao texto
-  corrigido, e todas as citações contam para um só trabalho.
-- **junte o DOI permanente** quando as palavras exatas importam: uma frase entre aspas, uma
-  reprodução, uma revisão.
-- nenhum dos dois pode ser apagado. uma versão errada continua no zenodo; uma versão nova só
-  toma o lugar dela como a mais recente.
+os detalhes ficam na seção [build the PDF](README.md#build-the-pdf) do original.
 
-cada `just release` cria um DOI permanente novo. a
-[página do zenodo](https://zenodo.org/doi/10.5281/zenodo.23333656) e o arquivo
-[`RELEASES.md`](RELEASES.md) listam todas as versões.
+## o site
 
-### como um leitor chega até este trabalho
+a pasta `site/` é o site do livro, feito em gleam e lustre. o texto do site vem do próprio livro,
+então nada é repetido à mão.
 
-você só precisa ser visto pelas pessoas certas. para este artigo, elas são quem faz engenharia
-reversa e, depois, quem trabalha com programas de pesquisa. três tipos de palavra trazem um
-leitor até aqui:
+```sh
+just site-build        # gera o site em site/dist/
+just site-serve        # o mesmo, em http://localhost:8000
+```
 
-- **palavras-chave**, no zenodo. cada palavra-chave é um link para todos os registros com a mesma
-  palavra. a lista está em [`KEYWORDS.md`](KEYWORDS.md).
-- **trabalhos relacionados**: os trabalhos que este cita, cada um pelo seu DOI. o zenodo guarda
-  essas ligações e as envia ao datacite, o serviço que registra os DOIs. a lista está em
-  [`RELATED_WORK.md`](RELATED_WORK.md).
-- **tópicos**, no github: palavras na página do repositório. a lista está em
-  [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md).
+## os arquivos
 
-uma palavra só entra na lista se a pessoa certa a digitaria e se o artigo trata dela. as listas
-só mudam no zenodo quando sai uma versão nova.
+a lista de pastas e arquivos está na seção [layout](README.md#layout) do original.
 
-as citações prontas, nos formatos bibtex, APA e ABNT, estão na seção [cite](README.md#cite) do
-original. um programa gera esse bloco, então ele fica só lá.
+## segredos e chaves
+
+nada secreto fica neste repositório. o que uma versão nova precisa (conta no github com 2FA,
+chave SSH, conta no zenodo) está na seção [secrets and keys](README.md#secrets-and-keys) do
+original. nunca publique uma senha ou um token.
+
+## publicar uma versão nova
+
+uma versão nova é uma marca (tag) no git. um comando faz a marca, o CI publica, e o zenodo dá um
+DOI novo para ela. só uma pessoa publica: os agentes só preparam o pedido de mudança. um DOI é
+para sempre, ninguém apaga. os passos estão na seção
+[release](README.md#release-a-new-zenodo-version-and-a-new-arxiv-pdf) do original.
+
+## citar
+
+para citar o livro, use o DOI mais recente,
+[10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). ele sempre abre a versão
+mais nova. quando a frase exata importa, cite também o DOI da versão que você leu. a v0.3.0 é
+[10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831). as referências prontas
+(bibtex, APA e ABNT) estão na seção [cite](README.md#cite) do original.
 
 ## licença
 
-- o texto do artigo, os documentos e as figuras: [CC BY 4.0](LICENSE). você pode copiar e
-  adaptar, desde que cite o autor.
-- os programas, as receitas e o site: [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt). quem usar e
-  mudar o código precisa publicar as mudanças com a mesma licença.
-- o modelo latex em `format/`, que outros artigos copiam: [MIT](LICENSES/MIT.txt).
-- os nomes e os logotipos da ouroboric, do gleam e do claude code não são licenciados aqui.
+- o texto do livro, os documentos e as figuras: [CC BY 4.0](LICENSE).
+- os scripts, os fluxos do CI e o site: [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
+- o modelo de latex (`format/`): [MIT](LICENSES/MIT.txt).
+- os nomes e logos da ouroboric não são licenciados aqui.
 
 a licença de cada arquivo está em [`REUSE.toml`](REUSE.toml).

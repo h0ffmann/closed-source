@@ -9,11 +9,14 @@ abstract: >-
   https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf. The files
   of this record are the source that builds that PDF.
 
-  A position paper arguing that closed source has failed as a protection, for science first. Large
-  language models now decompile binaries into re-executable source; black-box queries extract
-  parts of production models; distillation copies capabilities at industrial scale; and the
-  largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI, turns
-  on people, laptops and recruiting rather than on code that stayed secret.
+  A position paper arguing that closed source has failed as a protection, for science first. It
+  reads the case through Robert M. Pirsig's Zen and the Art of Motorcycle Maintenance (1974), the
+  book it stands on: the number of rational hypotheses that can explain a phenomenon is infinite,
+  so science never closes, and a method that only its owner can open is one that nobody else can
+  test. Large language models now decompile binaries into re-executable source; black-box queries
+  extract parts of production models; distillation copies capabilities at industrial scale; and
+  the largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI,
+  turns on people, laptops and recruiting rather than on code that stayed secret.
 
   Against this background the paper revisits Linus Torvalds' Linux and Git as evidence that
   openness scales, and the author's closed undergraduate thesis as evidence of what secrecy costs

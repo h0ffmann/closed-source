@@ -11,3 +11,9 @@ graphify-out/
 unison/.codebase/
 unison/refpulse/install.output.md
 .unisonHistory
+# Archify: pages are rendered from docs/archify/*.json (scripts/archify.sh render); receipts are run evidence
+.archify/
+docs/archify/*.html
+docs/archify/*.finalize*.json
+docs/archify/*.delivery*.json
+docs/archify/*.browser-check.json

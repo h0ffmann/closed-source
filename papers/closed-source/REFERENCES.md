@@ -58,6 +58,7 @@ could not be confirmed), `unverified` (not fetched; must not be cited).
 | hanley2022twofactor | verified | github.blog | 4 May 2022; 2FA for code contributors by end of 2023 |
 | newman2022sigstore | verified | Crossref; abstract via sos-vo.org | CCS '22 pp. 2353–2367; ephemeral keys, OIDC identity, transparency logs |
 | stevens2017first | verified | link.springer.com | CRYPTO 2017, LNCS 10401 |
+| pirsig1974zen | partial | openlibrary.org/isbn/0688002307 (edition); todayinsci.com, Pirsig quotations (sentence and page) | read 18 Oct 2026: Morrow, New York, 1974, 418 pp., ISBN 0688002307. The sentence on p. 107 matches a second online copy of chapter 10; not yet read in a printed copy |
 
 ## Not used
 
