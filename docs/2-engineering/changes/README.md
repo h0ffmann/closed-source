@@ -28,3 +28,4 @@ Adapted from Yggdrasil's
 - [2026-10-13-port-python-tooling](2026-10-13-port-python-tooling/proposal.md): port the Python tooling to Go and V.
 - [2026-10-13-zenodo-webhook-release](2026-10-13-zenodo-webhook-release/proposal.md): release with Zenodo's webhook, as marola does.
 - [2026-10-14-ai-memory-long-term-memory](2026-10-14-ai-memory-long-term-memory/proposal.md): ai-memory as the long-term memory of this repository.
+- [2026-10-25-skip-live-links](2026-10-25-skip-live-links/proposal.md): skip the live link check on one pull request, by the label `ci/skip-live-links`. Decided.

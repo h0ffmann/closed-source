@@ -2,11 +2,14 @@
 # (`just md-quality --online`). It passes only when 100% of the links answer, so its badge in
 # README.md is green only then. It runs on each pull request and each push to main, so main does
 # not fail on a link that a pull request passed; and each Monday and by hand, because a page on
-# the web can go away with no change here.
+# the web can go away with no change here. A pull request with the label `ci/skip-live-links` skips
+# it (the owner's choice, 2026-10-25: docs/2-engineering/changes/2026-10-25-skip-live-links/);
+# push to main, the Monday run and a run by hand never skip.
 name: live links
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   push:
     branches: [main]
   schedule:
@@ -22,6 +25,7 @@ concurrency:
 
 jobs:
   alive:
+    if: github.event_name != 'pull_request' || !contains(github.event.pull_request.labels.*.name, 'ci/skip-live-links')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
