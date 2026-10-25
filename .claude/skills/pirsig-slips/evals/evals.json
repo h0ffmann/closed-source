@@ -1,0 +1,34 @@
+{
+  "skill_name": "pirsig-slips",
+  "evals": [
+    {
+      "id": 1,
+      "name": "magic-in-the-work-you-avoid",
+      "prompt": "Use pirsig-slips: make slips I can copy by hand from this: \"People romanticize their plans but dread the execution. The magic you're looking for is in the work you're avoiding.\" I want it in my trays.",
+      "expected_output": "Two slips, one idea each, given in the reply and not committed: the plans-versus-execution idea, and the line itself, quoted exactly. The quoted slip names its source as notes/202610181434-the-magic-is-in-the-work-you-avoid.md allows: posted by Nazanin Mandi on Instagram in 2019, author unknown; never 'Nazanin Mandi said'. Each slip has one suggested pile or topic in capitals, is at most about 40 words, and carries no number and no order. No file is added to the repository.",
+      "files": [],
+      "assertions": [
+        {"id": "one-idea-each", "text": "The text becomes two slips, one idea each, not one slip that holds both sentences"},
+        {"id": "exact-quote", "text": "The line \"The magic you're looking for is in the work you're avoiding\" is quoted word for word"},
+        {"id": "honest-source", "text": "The quoted slip gives its source as posted by Nazanin Mandi in 2019, author unknown, and nowhere says that Nazanin Mandi said or wrote it"},
+        {"id": "pile-in-capitals", "text": "Each slip carries one suggested pile or topic in capitals, marked as a suggestion"},
+        {"id": "fits-a-slip", "text": "Each slip is at most about 40 words"},
+        {"id": "no-order", "text": "The slips are not numbered and not put in an order"},
+        {"id": "paper-is-master", "text": "No file is added or changed in the repository: the slips are in the reply, for the owner to copy by hand"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "file-the-avoided-work-slip",
+      "prompt": "pirsig-slips: file my slip as a note. The slip, behind the topic card WORK, says: \"The magic you're looking for is in the work you're avoiding.\"",
+      "expected_output": "The agent looks in notes/ before it makes a note, finds notes/202610181434-the-magic-is-in-the-work-you-avoid.md, and does not make a second note of the same line. It says so, and offers to add the paper slip (topic card WORK, today's date) to that note's sources in a pull request. The slip on paper is not given an id.",
+      "files": [],
+      "assertions": [
+        {"id": "finds-existing", "text": "The agent finds the existing note 202610181434-the-magic-is-in-the-work-you-avoid"},
+        {"id": "no-duplicate", "text": "No second note of the same line is created in notes/"},
+        {"id": "offers-source", "text": "The agent offers to record the paper slip, behind the topic card WORK, as a source of the existing note"},
+        {"id": "slip-keeps-place", "text": "The reply does not give the paper slip an id or move it out of its topic"}
+      ]
+    }
+  ]
+}

@@ -96,7 +96,9 @@ piles. Say why in a few words. A slip that fits nothing is `TOUGH`, not forced i
 
 ### 5. File a slip as a note
 
-Only when the owner names the slip. Use `/note` (`.claude/commands/note.md`) and
+Only when the owner names the slip. First look in `notes/` for a note of the same idea. If one
+exists, do not make a second: offer to add the slip to that note's `source` instead. Otherwise
+use `/note` (`.claude/commands/note.md`) and
 `SMART_NOTE_POLICY.md` as for any note: a `fleeting` note, the slip's words in the body, and
 `source: "Matheus Hoffmann, paper slip, <pile or topic>, <date>"`. The note gets an id; the slip
 on paper stays where it is. A factual claim on the slip is `unverified` until a source is
@@ -129,3 +131,7 @@ Written for this repository on 25 October 2026. Nothing here is copied from anot
   partial. Check each quotation against a printed copy before it goes into the book.
 - Pirsig's life and the year of *Lila*: [`BIO_ROBERT_PIRSIG.md`](../../../BIO_ROBERT_PIRSIG.md).
 - The Luhmann slip box this method is set against: [`SMART_NOTE_POLICY.md`](../../../SMART_NOTE_POLICY.md).
+- The evals (`evals/evals.json`) use the owner's line "the magic you're looking for is in the
+  work you're avoiding" and its sources, as
+  [`notes/202610181434-the-magic-is-in-the-work-you-avoid.md`](../../../notes/202610181434-the-magic-is-in-the-work-you-avoid.md)
+  records them. Their shape is that of `ouro-get/evals/evals.json`, in this repository.
