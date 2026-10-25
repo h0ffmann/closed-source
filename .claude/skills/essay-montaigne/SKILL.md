@@ -74,8 +74,8 @@ Three more rules are this repository's, not his:
 |---|---|---|
 | **11. What is borrowed is named**, in a `## Sources` section | Montaigne often left his borrowings unnamed. AGENTS.md does not: cite at the point of use | script: `sources` |
 | **12. The brief is met**: each topic that was asked for is in the text | an essay that was asked for five things and treats four is not finished | script: `topics` |
-| **14. A case before a claim.** It opens on something the writer saw or did, and the general idea comes after the case | Montaigne's rule 2, as Theodore Dalrymple practised it: "The Frivolity of Evil" opens on released prisoners and, a few lines on, a woman of 21 who "consulted me" the day before; he writes from "14 years of my hospital and prison work" | Dalrymple, *City Journal*, Autumn 2004 | reader; `case-first` counts the "I" |
-| **15. A translation says the same thing.** An essay in two languages has the same markers and the same numbers in both | AGENTS.md, "Two languages": a change to one edition goes into the other in the same pull request | `translation:` in the front matter | script: `translation` |
+| **14. A case before a claim.** It opens on something the writer saw or did, and the general idea comes after the case | Montaigne's rule 2, as Theodore Dalrymple practised it in "The Frivolity of Evil" (*City Journal*, Autumn 2004): it opens on released prisoners and, a few lines on, a woman of 21 who "consulted me" the day before; he writes from "14 years of my hospital and prison work" | reader; `case-first` counts the "I" |
+| **15. A translation says the same thing.** An essay in two languages has the same markers and the same numbers in both | AGENTS.md, "Two languages": a change to one edition goes into the other in the same pull request; the front matter names the other file in `translation:` | script: `translation` |
 | **13. The writer's experience is the writer's** | AGENTS.md, invariant 3: never invent an author's experience. A gap is a `**[AUTHOR ANECDOTE: ...]**` marker, and an essay with an open marker stays `draft` | script: `anecdotes` |
 
 ## The reader's part
