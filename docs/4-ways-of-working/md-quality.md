@@ -99,6 +99,12 @@ fast the check asks. It changes no rule of what passes.
 A link to a page that needs a login (a repository's settings) is written as code, not as a
 link: the check cannot open it.
 
+**Skipping it on one pull request.** The label `ci/skip-live-links` turns the workflow off for the
+pull request that carries it (the owner, 25 October 2026, for pull request 72, whose only red
+check was a link to a private repository that is red on `main` too). It is the owner's to apply.
+It skips the web links only: the `.md` workflow still checks every link to a file and a heading,
+and the next push to `main` runs the live check in full.
+
 The same goes for a host that does not answer outside its country. planalto.gov.br, the
 Brazilian government's site for its laws, did not answer GitHub's runners on 15 October 2026:
 15 runs on `main` and on pull requests failed on that link, and so did a test from outside

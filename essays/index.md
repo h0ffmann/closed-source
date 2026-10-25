@@ -18,6 +18,7 @@ website lists every file of this folder under "Contents".
 | [picasso, and the long run](2026-picasso-and-the-long-run.md) | draft; two printed pages | [one note](../notes/202610140142-picasso-determinism-and-the-long-run.md), which holds a study |
 | [New vs. better, 2026](2026-new-vs-better.md) | draft: two markers wait for the owner | ten notes; Pirsig's two questions |
 | [The hypotheses have no end, 2026](2026-the-hypotheses-have-no-end.md) | draft: one marker waits for the owner; one printed page | four notes; Pirsig's infinite hypotheses (ZAMM, chapter 10) |
+| [Why I write, 2026](2026-why-i-write.md) · [Por que escrevo, 2026](2026-why-i-write.pt-BR.md) | draft: Chautauqua nº 01, in English and pt-BR; five markers wait for the owner, the first one the childhood intuition | the README of nagori (two quotations, named by the owner); the Instagram posts of [`docs/social/`](../docs/social/README.md); two notes; sources fetched on 2026-10-25 |
 
 "What is MetaQuality" is still a note
 ([202610131752](../notes/202610131752-what-is-metaquality.md)). It becomes an essay when it is

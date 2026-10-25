@@ -53,6 +53,15 @@ check: build
     scripts/readme.sh --check
     for e in essays/*.md; do [ "$e" = essays/index.md ] || scripts/essay-montaigne.sh "$e"; done
 
+# Check essays against Montaigne's rules (the essay-montaigne skill): `just essay-check` checks
+# every essay of essays/, `just essay-check essays/<name>.md` one or more. English or pt-BR.
+essay-check *files:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    files="{{files}}"
+    [ -n "$files" ] || files="$(ls essays/*.md | grep -v '^essays/index.md$')"
+    for e in $files; do scripts/essay-montaigne.sh "$e"; done
+
 # Print an essay as a page of the book: a PDF whose text cannot be selected (PRINTING.md).
 # `just print essays/<name>.md`, or `just print --all`. The PDFs go to pdf/essays/.
 print *args:
