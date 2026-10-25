@@ -2,11 +2,11 @@
   "version": 1,
   "note": "every skill here was written for this repository; none is a copy. SOURCES in each SKILL.md and in README.md say what each one read. sha256 of each file, checked by scripts/readme.sh --check.",
   "files": {
-    "README.md": "8962974bddb031bd14a580f4eb4e763d8c147e0ae55de91c5a013c636507f7c8",
+    "README.md": "c1e02dbda5990ac170ed873ddacdea3741839fb8bda0a1b3bc7bc22ab3591f39",
     "card-style/SKILL.md": "42755313375b690efb8f47fd3fd73f29eba21e07c04612c980cd2abbdfd70941",
     "citation-score/SKILL.md": "7f58cb381bc9dc0d0a6536e5b56f3bd826b61c057c80ada2f95349a0abba0a24",
     "easy-pt-br/SKILL.md": "5d7d5383721c3cd38694a425d9b449f8f70ad064ffd4179636bcbeb24eada7ba",
-    "essay-montaigne/SKILL.md": "f90df85e089a3b7d3b30977cd12b579879fb95b9ca4d568413102d408042ab02",
+    "essay-montaigne/SKILL.md": "1759a59956e01b8772b9f12ef42dc1d2d1e35a3ed2b6921b391df58e678e0f85",
     "ouro-get/SKILL.md": "6d2dc8f2f7a63090762fc6b89818fae636e37ca8a53b764698ad1713580b1340",
     "ouro-get/evals/evals.json": "7c964b1e7abd65c3e7aec13ef14fd8e5f9cd493e5b1a6765c84cc7be228cbd7e",
     "ouro-timeline/SKILL.md": "476bbc55f384a8400e6654c7cf5633a7eb93a0a32e2a343685f34b81fd3d4133",

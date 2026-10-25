@@ -18,4 +18,4 @@ in its product-umbrella shape, with only the sections that have content yet.
 | [`2-engineering/changes/`](2-engineering/changes/README.md) | change proposals: changes the owner decides, one dated folder each |
 | [`4-ways-of-working/`](4-ways-of-working/paper-fabric.md) | how a paper is made, the Ouroboric patterns used, how to release, why [`NAGORI.md`](4-ways-of-working/nagori.md) is written by hand; [`ouroboric/`](4-ways-of-working/ouroboric/README.md) holds Ouroboric's own ways of working, copied as is (CC BY 4.0) |
 | [`6-journal/`](6-journal/README.md) | challenges, decisions and results, one entry each |
-| [`social/`](social/instagram_001/README.md) | posts for social media, one folder each, with their slides, sources, captions and alt text; none is posted by an agent |
+| [`social/`](social/README.md) | posts for social media, one folder each, with their slides, sources, captions and alt text; none is posted by an agent |
