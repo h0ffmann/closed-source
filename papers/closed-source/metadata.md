@@ -16,6 +16,10 @@ tags: [non-profit, ideas]
 # owner's two words for each work (Hoffmann, 13 October 2026). Each `doi` is the concept DOI,
 # which resolves to the latest version. Source: the "DOI's" list of h0ffmann/h0ffmann,
 # me/ways-of-working.md at 1a3a7e1; the same three DOIs are `cites` entries in .zenodo.json.
+# The full index of the writer's works, on his three accounts, is WORKS.md (read on 11 November
+# 2026); gramatico, of piabrota, was added from it. It is not a tie in .zenodo.json: the book does
+# not cite it. Its `tags` are proposed, not yet the owner's words: "FOSS" from the piabrota
+# profile ("Every project is FOSS", piabrota/.github at 481e94f) and "portuguese" from its subject.
 works:
   - name: marola
     text: "an open, non-profit platform for sea conditions and bathing-water quality at Brazilian beaches"
@@ -37,6 +41,11 @@ works:
     doi: 10.5281/zenodo.23356739
     tags: [book, game theory]
     href: https://h0ffmann.github.io/nashkell/
+  - name: gramatico
+    text: "controlled technical Brazilian Portuguese for people and agents: a Claude Code plugin, by piabrota, that rewrites technical text so it reads once"
+    doi: 10.5281/zenodo.23554531
+    tags: [FOSS, portuguese]
+    href: https://github.com/piabrota/gramatico
 # Work by friends that this paper stands on, for a wide tile in the site's DOIs section. It is not
 # the writer's work, so it is not in `works` and not in the Author section. `tags` are the owner's
 # words (Hoffmann, 13 October 2026); the question mark is his. `text` is from OUROBORIC.md, section
