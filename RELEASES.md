@@ -16,10 +16,14 @@ row of a release is added in a pull request after it, by one command
 ([releasing](docs/4-ways-of-working/releasing.md), "The report after a release").
 
 <!-- releases:start -->
-**v0.3.0 is live** (13 October 2026).
+**v0.3.4 is live** (25 October 2026).
 
 | Version | Date | Permanent DOI | Release | Pull requests merged since the version before |
 |---|---|---|---|---|
+| v0.3.4 | 2026-10-25 | [10.5281/zenodo.23679470](https://doi.org/10.5281/zenodo.23679470) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.4), [Zenodo](https://zenodo.org/records/23679470) | Chautauqua no. 01 "Why I write" in en and pt-BR, essay check in two languages, five Instagram posts (#72); Add the pirsig-slips skill: Pirsig's paper slips from Lila (#71) |
+| v0.3.3 | 2026-10-18 | [10.5281/zenodo.23460477](https://doi.org/10.5281/zenodo.23460477) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.3), [Zenodo](https://zenodo.org/records/23460477) | notes: the magic you're looking for is in the work you're avoiding (#70); Pirsig and ZAMM in the abstract and on Zenodo; live links fixed; README in one screen; archify and compound; ouroboric refreshed (#69) |
+| v0.3.2 | 2026-10-15 | not minted | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.2) | notes: what is distillation; Ortega y Gasset; OpenAI's integer multiplication preprint (#68); unison: refpulse, the live DOI check behind the site's button (#67); unison: refpulse, a Unison service behind the site's Live button (#66); tools: svg_path, and four experimental one-line drawings (#65); skills: ouro-timeline, the thinkers' lives on one timeline (#63); skills: ouro-get, full texts that are free to copy (#62); and 2 more |
+| v0.3.1 | 2026-10-14 | [10.5281/zenodo.23381675](https://doi.org/10.5281/zenodo.23381675) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.1), [Zenodo](https://zenodo.org/records/23381675) | notes: Art is dead. The age of copy. (featured, with Gregory Wolfe's Beauty essays) (#57); essay temporary retirement from website (#58); ci: perma-doi, a daily release at 18:00 in Brasília, minted by Zenodo (#59); ai-memory as the long-term memory of closed-source: change proposal and readiness list (#55); notes: a TV audience is a competition, and I think in game theory (#56); docs: nashkell's open book has a DOI, 10.5281/zenodo.23356739 (#54); and 6 more |
 | v0.3.0 | 2026-10-13 | [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.0), [Zenodo](https://zenodo.org/records/23349831) | feat(site): a CI card with the state of each check, and the thinkers drawn again (#47); ci(md): .md / quality: three Markdown analysers, link badges, and the record names Hoppe's book (#46); feat(release): v0.3.0: the record is a book, with a PDF preview and the writer's open works (#45); docs(release): the record names every work of the writer that the paper cites (#44) |
 | v0.2.1 | 2026-10-13 | not minted | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.2.1) | promotion and self promotion (essay) (#43); v0.2.1: a GitHub pill on the site's cover and at the top of the README (#42); feat(site): the closed-source tile in lower case; a commits box beside the pages and the notes (#41); docs(release): v0.2.0 is live; RELEASES.md; and the Ouroboric tile on the site (#38) |
 | v0.2.0 | 2026-10-13 | [10.5281/zenodo.23335204](https://doi.org/10.5281/zenodo.23335204) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.2.0), [Zenodo](https://zenodo.org/records/23335204) | essays: citation (#35); chore(viz): keep CLAUDE_PROJECT.md, copies and renderings out of the graph; what the graph covers (#33); feat(site): a DOIs section with a large clickable tile for each of the four works (#34); feat(release): Zenodo's webhook mints the DOI, as in marola; the two DOIs in the README (#31) |
@@ -77,3 +81,10 @@ redelivers the v0.2.1 delivery (Settings, Webhooks), v0.2.1 gets its DOI too.
 
 - The v0.1.0 record on Zenodo still says that it holds only the rendered PDF. That was the
   policy when its metadata was written; the owner can correct it on zenodo.org.
+
+- v0.3.1 to v0.3.4 were tagged and released on GitHub between 14 and 27 October 2026, and their
+  rows were written on 11 November 2026. Zenodo's API was not reachable from the session that
+  wrote them, so `scripts/minted.sh` read the version DOIs from DataCite's index of the concept DOI
+  instead, that day ([10.5281/zenodo.23679470](https://zenodo.org/records/23679470) is v0.3.4).
+  DataCite had no record for v0.3.2, so its row says "not minted"; if the owner finds that
+  Zenodo has one, run `just minted` again.

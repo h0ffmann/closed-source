@@ -17,7 +17,7 @@
 [![github links](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh0ffmann.github.io%2Fclosed-source%2Flinks.json&query=%24.github&label=github%20links&style=flat-square&color=111111)](docs/4-ways-of-working/md-quality.md#the-link-counters)
 [![zenodo links](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fh0ffmann.github.io%2Fclosed-source%2Flinks.json&query=%24.zenodo&label=zenodo%20links&style=flat-square&color=1682D4)](docs/4-ways-of-working/md-quality.md#the-link-counters)
 [![latest DOI](https://img.shields.io/badge/latest_DOI-10.5281%2Fzenodo.23333656-1682D4?style=flat-square)](https://doi.org/10.5281/zenodo.23333656)
-[![v0.3.0 DOI](https://img.shields.io/badge/v0.3.0_DOI-10.5281%2Fzenodo.23349831-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23349831)
+[![v0.3.4 DOI](https://img.shields.io/badge/v0.3.4_DOI-10.5281%2Fzenodo.23679470-555555?style=flat-square)](https://doi.org/10.5281/zenodo.23679470)
 [![versão fácil em português: click to read this page in easy brazilian portuguese](https://img.shields.io/badge/%F0%9F%87%A7%F0%9F%87%B7_vers%C3%A3o_f%C3%A1cil-em_portugu%C3%AAs-FFD400?style=flat-square&labelColor=111111)](README.easy.pt-BR.md)
 [![text: CC BY 4.0](https://img.shields.io/badge/text-CC%20BY%204.0-111111?style=flat-square&logo=creativecommons&logoColor=white)](#licence)
 [![code: AGPL-3.0](https://img.shields.io/badge/code-AGPL--3.0-111111?style=flat-square&logo=gnu&logoColor=white)](#licence)
@@ -49,7 +49,7 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
 - **the shape.** 100 pages: 50 thinkers, two first-person pages each ([`50THINKERS.md`](50THINKERS.md)),
   in english and in brazilian portuguese. the cover names mr. nobody; the writer is matheus
   hoffmann, of the escola politécnica of UFRJ. the ouroboric ideas are bruno valério's.
-- **the state.** v0.3.0 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer
+- **status:** v0.3.4 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer
   reviewed. what must change before v1: the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
 
 ## where to start
@@ -61,7 +61,7 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
 | know why the book exists | [history and intent](#the-book-history-and-intent) |
 | see what it stands on | [the big references](#the-big-references), [`BOOKS.md`](BOOKS.md) |
 | know what may be copied here, and why | [licence research](#licence-research) |
-| see the writer's other open works | [other works by the writer](#other-works-by-the-writer) |
+| see every open work of the writer, on his three accounts | [the writer's works](#the-writers-works), [`WORKS.md`](WORKS.md) |
 | read the notes and the essays | [`notes/`](notes/index.md), [`essays/`](essays/index.md) |
 | build the PDF yourself | [build the PDF](#build-the-pdf) |
 | work here with a coding agent | [`AGENTS.md`](AGENTS.md), then [the engineering loop](#the-engineering-loop) |
@@ -121,16 +121,32 @@ propagate").
 
 </details>
 
-## other works by the writer
+## the writer's works
 
-each is open, and each has a DOI that opens its latest version. this book cites all of them.
+the writer works in the open on three github accounts: [`h0ffmann`](https://github.com/h0ffmann),
+his own; [`marola-dev`](https://github.com/marola-dev), for marola and water; and
+[`piabrota`](https://github.com/piabrota), an open software fabric made in rio de janeiro. the
+full index, with the licence and the commit of each work, read on 11 november 2026, is
+[`WORKS.md`](WORKS.md).
 
-| work | what it is | DOI |
-|---|---|---|
-| [marola](https://github.com/marola-dev/marola) | an open, non-profit platform for sea conditions and bathing-water quality at brazilian beaches | [10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155) |
-| [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) | the WW3 GPU lab: WAVEWATCH III kernels on GPUs without changing the answer | [10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351) |
-| [picasso](https://github.com/h0ffmann/picasso) | self-contained nix flakes for scientific and agentic toolchains; it builds this book | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) |
-| [nashkell](https://h0ffmann.github.io/nashkell/) | an open book in progress, in the voice of nash | [10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739) |
+each of these has a DOI that opens its latest version. the site shows the first five as tiles.
+
+| work | account | what it is | DOI |
+|---|---|---|---|
+| [marola](https://github.com/marola-dev/marola) | marola-dev | an open, non-profit platform for sea conditions and bathing-water quality at brazilian beaches | [10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155) |
+| [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) | h0ffmann | the WW3 GPU lab: WAVEWATCH III kernels on GPUs without changing the answer | [10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351) |
+| [picasso](https://github.com/h0ffmann/picasso) | h0ffmann | self-contained nix flakes for scientific and agentic toolchains; it builds this book | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) |
+| [nashkell](https://h0ffmann.github.io/nashkell/) | h0ffmann | an open book in progress, in the voice of nash | [10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739) |
+| [gramatico](https://github.com/piabrota/gramatico) | piabrota | controlled technical brazilian portuguese for people and agents | [10.5281/zenodo.23554531](https://doi.org/10.5281/zenodo.23554531) |
+| [marola-bench](https://github.com/marola-dev/marola-research) | marola-dev | a weatherbench for brazil: a proposal, in marola-research | [10.5281/zenodo.23352633](https://doi.org/10.5281/zenodo.23352633) |
+
+the book's record cites the first four. the rest of the index, with no DOI yet:
+
+- **h0ffmann:** ww3-dia-gpu-v2, chaceon, proof, smart-notes, montaigne, awesome-neurosymbolic-ai,
+  two astrbot alert extensions for the south of brazil, and chemo-rx.
+- **marola-dev:** marola-research, marola-site, marola-app, marola-oods, marola-corpus, marola-ml,
+  marola-skills, marola-devkit and awesome-ocean-sciences.
+- **piabrota:** pirsig, alerts, rax, room, skills, nix-os, agents, mu and dojo.
 
 ## the engineering loop
 
@@ -266,7 +282,8 @@ says more, with the other books behind this repository.
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
 | [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
-| [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.3.0 is the latest |
+| [`WORKS.md`](WORKS.md) | the index of the writer's open works on h0ffmann, marola-dev and piabrota, with DOIs, licences and commits, and its date of record |
+| [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.3.4 is the latest |
 | [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | how a reader finds this work: the zenodo keywords, the works this one is tied to in zenodo and datacite, and the github topics, each with its counts and its date of record |
 | [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of five READMEs is cited (this one, marola, ouroboric-dev, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
@@ -378,7 +395,7 @@ and each answers a different question.
 
 | | latest DOI (concept DOI) | permanent DOI (version DOI) |
 |---|---|---|
-| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.0: [10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831); earlier versions: [`RELEASES.md`](RELEASES.md) |
+| this work | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.4: [10.5281/zenodo.23679470](https://doi.org/10.5281/zenodo.23679470); earlier versions: [`RELEASES.md`](RELEASES.md) |
 | resolves to | the newest release, whichever it is on the day you click | one release, the same bytes forever |
 | how many | one for the whole work | one for each release |
 | changes when a release is made | no; it starts to point at the new release | no; the new release gets its own |

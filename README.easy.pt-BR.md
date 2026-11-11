@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="4fef77e5148e74ab11de6892b57c166ce866106dc2375bec58ecc2dc098fb5d8" -->
+<!-- easy: source="README.md"; sha256="1d0de93206ba7f2c1b89815a0d5371a6f084cad3ddf72c725b6747de666c07a9" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -41,7 +41,7 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
   ([`50THINKERS.md`](50THINKERS.md)), em inglês e em português. a capa diz mr. nobody (senhor
   ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. as ideias da
   ouroboric são de bruno valério.
-- **o estado.** a versão v0.3.0 está publicada ([versões](RELEASES.md)). no zenodo, ela é um
+- **o estado.** a versão v0.3.4 está no ar ([versões](RELEASES.md)). no zenodo, ela é um
   livro. ninguém revisou o livro ainda (não tem revisão por pares). o que falta para a v1 está
   na [avaliação](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
 
@@ -54,7 +54,7 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
 | saber por que o livro existe | [a história e a intenção](#o-livro-a-história-e-a-intenção) |
 | ver em que ele se apoia | [as grandes referências](#as-grandes-referências) |
 | saber o que pode ser copiado aqui | [a pesquisa de licenças](#a-pesquisa-de-licenças) |
-| ver os outros trabalhos do autor | [outros trabalhos do autor](#outros-trabalhos-do-autor) |
+| ver todos os trabalhos abertos do autor, nas três contas dele | [os trabalhos do autor](#os-trabalhos-do-autor), [`WORKS.md`](WORKS.md) |
 | ler as notas e os ensaios | [`notes/`](notes/index.md), [`essays/`](essays/index.md) |
 | gerar o PDF você mesmo | [gerar o PDF](#gerar-o-pdf) |
 | trabalhar aqui com um agente | [`AGENTS.md`](AGENTS.md), depois [o ciclo de engenharia](#o-ciclo-de-engenharia) |
@@ -109,21 +109,39 @@ com uma obra.
 - **um trabalho da openai**, em `works/openai/`, foi copiado com a licença apache-2.0 dele
   ([`works/index.md`](works/index.md)).
 
-## outros trabalhos do autor
+## os trabalhos do autor
 
-cada um é aberto e tem um DOI (um identificador que não muda) que abre a versão mais recente.
-este livro cita todos eles.
+o autor trabalha aberto em três contas do github: [`h0ffmann`](https://github.com/h0ffmann), a
+conta dele; [`marola-dev`](https://github.com/marola-dev), da marola e da água; e
+[`piabrota`](https://github.com/piabrota), uma fábrica de software aberto feita no rio de
+janeiro. a lista completa, com a licença e o commit de cada trabalho, lida em 11 de novembro de
+2026, está em [`WORKS.md`](WORKS.md).
 
-- [marola](https://github.com/marola-dev/marola): uma plataforma aberta, sem fins lucrativos,
-  sobre o mar e a qualidade da água das praias do brasil.
+cada trabalho abaixo tem um DOI (um identificador que não muda) que abre a versão mais recente. o
+site mostra os cinco primeiros como cartões.
+
+- [marola](https://github.com/marola-dev/marola) (marola-dev): uma plataforma aberta, sem fins
+  lucrativos, sobre o mar e a qualidade da água das praias do brasil.
   [10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155)
-- [ww3-gpu](https://github.com/h0ffmann/ww3-gpu): o modelo de ondas WAVEWATCH III rodando em
-  placas de vídeo (GPUs), sem mudar a resposta.
+- [ww3-gpu](https://github.com/h0ffmann/ww3-gpu) (h0ffmann): o modelo de ondas WAVEWATCH III
+  rodando em placas de vídeo (GPUs), sem mudar a resposta.
   [10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351)
-- [picasso](https://github.com/h0ffmann/picasso): ambientes nix para ciência e para agentes. ele
-  monta este livro. [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)
-- [nashkell](https://h0ffmann.github.io/nashkell/): um livro aberto, ainda em andamento, na voz
-  de nash. [10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)
+- [picasso](https://github.com/h0ffmann/picasso) (h0ffmann): ambientes nix para ciência e para
+  agentes. ele monta este livro. [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208)
+- [nashkell](https://h0ffmann.github.io/nashkell/) (h0ffmann): um livro aberto, ainda em
+  andamento, na voz de nash. [10.5281/zenodo.23356739](https://doi.org/10.5281/zenodo.23356739)
+- [gramatico](https://github.com/piabrota/gramatico) (piabrota): português técnico controlado,
+  para pessoas e para agentes. [10.5281/zenodo.23554531](https://doi.org/10.5281/zenodo.23554531)
+- [marola-bench](https://github.com/marola-dev/marola-research) (marola-dev): uma proposta de
+  weatherbench para o brasil. [10.5281/zenodo.23352633](https://doi.org/10.5281/zenodo.23352633)
+
+o registro do livro cita os quatro primeiros. os outros trabalhos, ainda sem DOI:
+
+- **h0ffmann:** ww3-dia-gpu-v2, chaceon, proof, smart-notes, montaigne, awesome-neurosymbolic-ai,
+  duas extensões de alerta do astrbot para o sul do brasil, e chemo-rx.
+- **marola-dev:** marola-research, marola-site, marola-app, marola-oods, marola-corpus,
+  marola-ml, marola-skills, marola-devkit e awesome-ocean-sciences.
+- **piabrota:** pirsig, alerts, rax, room, skills, nix-os, agents, mu e dojo.
 
 ## o ciclo de engenharia
 
@@ -178,9 +196,13 @@ para sempre, ninguém apaga. os passos estão na seção
 
 para citar o livro, use o DOI mais recente,
 [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). ele sempre abre a versão
-mais nova. quando a frase exata importa, cite também o DOI da versão que você leu. a v0.3.0 é
-[10.5281/zenodo.23349831](https://doi.org/10.5281/zenodo.23349831). as referências prontas
-(bibtex, APA e ABNT) estão na seção [cite](README.md#cite) do original.
+mais nova. quando a frase exata importa, cite também o DOI da versão que você leu:
+
+| | o DOI mais recente | o DOI da versão |
+|---|---|---|
+| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.4: [10.5281/zenodo.23679470](https://doi.org/10.5281/zenodo.23679470); versões anteriores: [`RELEASES.md`](RELEASES.md) |
+
+as referências prontas (bibtex, APA e ABNT) estão na seção [cite](README.md#cite) do original.
 
 ## licença
 

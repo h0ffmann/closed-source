@@ -223,9 +223,10 @@ Then change the date of record at the top and the rows that differ. Rules:
 
 ## Waiting for the next release
 
-One tie was added to `.zenodo.json` on 18 October 2026, after v0.3.0. It is not in any record
-yet: Zenodo shows it from the next release on, and this page gets its row in the table when it
-is read from that record.
+One tie was added to `.zenodo.json` on 18 October 2026, after v0.3.0. On 11 November 2026 the
+Zenodo page of v0.3.4, [10.5281/zenodo.23679470](https://zenodo.org/records/23679470), showed it
+under "References" as ISBN 978-0-688-00230-5. Its row moves into the table when the table is
+read again from DataCite.
 
 | Relation | Identifier | What it is | Whose |
 |---|---|---|---|
