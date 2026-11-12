@@ -1197,3 +1197,16 @@ two pages each as before. The owner named no rows, so the cut keeps every row th
 the open reverse-engineering row, Pirsig and Hoppe, and the 7 proposed thinkers the paper cites
 most; the 17 cut rows and the rule are in
 `docs/2-engineering/changes/2026-11-12-33-thinkers/proposal.md`.
+
+## A Wikipedia link on every thinker
+
+Hoffmann, 2026-11-12, verbatim (in the "Closed Source" Claude project):
+
+```text
+in a new PR there should be a wikipedia link on every thinker
+```
+
+Read as: in `50THINKERS.md` and its easy pt-BR version, each thinker's name links to the
+thinker's English Wikipedia page, each page opened before it was linked. A thinker with no page
+gets no link, and the roster says so. `book-check` reads the name without the link and fails on
+a link that is not a Wikipedia page; the site links each name. Stacked on the cut to 33.

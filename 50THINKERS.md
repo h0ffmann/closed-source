@@ -35,42 +35,46 @@ Their lives, on one line of time ([timeline/thinkers.svg](timeline/thinkers.svg)
 
 ![The lives of the 33 thinkers, from 470 BCE to today](timeline/thinkers.svg)
 
-Columns: **Area** is the thinker's field. **Cited** is ☑ when the paper already cites the thinker's
+Columns: **Thinker** links to the thinker's page on the English Wikipedia; each page was opened
+and read on 12 November 2026 before it was linked. Three thinkers have no page there, so their
+names have no link: Gregory Wolfe (the page "Gregory Wolfe" is about a diplomat, Gregory Baker
+Wolfe), Florian Tramèr and Arfon M. Smith. personX and Marcus Baffa have none either. **Area** is
+the thinker's field. **Cited** is ☑ when the paper already cites the thinker's
 work (an author in `papers/closed-source/refs.bib`), ☐ when it does not yet, and — on an open row.
 **Status** is `open` (no thinker yet), `proposed`, `chosen` or `written` (the two pages exist).
 
 | # | Thinker | Area | Why in this book | Cited | Status |
 |---:|---|---|---|:---:|---|
-| 1 | Mário Ferreira dos Santos | philosophy | Brazilian philosopher, *Filosofia Concreta* (1957); Pythagorean (*Pitágoras e o Tema do Número*, 1956) | ☐ | chosen |
-| 2 | Austin Kleon | creativity | *Steal Like an Artist* (2012; *Roube como um Artista*, Rocco, 2013): creative work builds on the work of others | ☐ | chosen |
-| 3 | Socrates | mathematics | mathematics | ☐ | chosen |
+| 1 | [Mário Ferreira dos Santos](https://en.wikipedia.org/wiki/Mário_Ferreira_dos_Santos) | philosophy | Brazilian philosopher, *Filosofia Concreta* (1957); Pythagorean (*Pitágoras e o Tema do Número*, 1956) | ☐ | chosen |
+| 2 | [Austin Kleon](https://en.wikipedia.org/wiki/Austin_Kleon) | creativity | *Steal Like an Artist* (2012; *Roube como um Artista*, Rocco, 2013): creative work builds on the work of others | ☐ | chosen |
+| 3 | [Socrates](https://en.wikipedia.org/wiki/Socrates) | mathematics | mathematics | ☐ | chosen |
 | 4 | Gregory Wolfe | literature, culture | *Beauty Will Save the World* (2011; *A Beleza Salvará o Mundo*): recovering the human in an ideological age | ☐ | chosen |
-| 5 | Edmund Burke | politics, philosophy | later named the founder of conservatism; in 1775 he opposed the extension of Watt's steam-engine patent, and backed the extension of a porcelain patent (notes/202610130526) | ☐ | chosen |
-| 6 | Carl Jung | psychology | dream theory: dreams and myths as the language of the unconscious; archetypes and the collective unconscious; the Ouroboros as an archetype (*Collected Works* 14) | ☐ | chosen |
-| 7 | Julia Cameron | creativity | *The Artist's Way* (1992; *O Caminho do Artista*): creativity as a daily practice | ☐ | chosen |
-| 8 | Dante Alighieri | literature | reason to come | ☐ | chosen |
-| 9 | Nicholas Carlini | machine learning security | stealing part of a production language model (Section 4) | ☑ | proposed |
-| 10 | Fyodor Dostoevsky | literature | "The Dream of a Ridiculous Man" (1877); notes to come | ☐ | chosen |
-| 11 | Hans-Hermann Hoppe | economics, philosophy | the title formula; ideas cannot be property (BOOKS.md) | ☐ | proposed |
+| 5 | [Edmund Burke](https://en.wikipedia.org/wiki/Edmund_Burke) | politics, philosophy | later named the founder of conservatism; in 1775 he opposed the extension of Watt's steam-engine patent, and backed the extension of a porcelain patent (notes/202610130526) | ☐ | chosen |
+| 6 | [Carl Jung](https://en.wikipedia.org/wiki/Carl_Jung) | psychology | dream theory: dreams and myths as the language of the unconscious; archetypes and the collective unconscious; the Ouroboros as an archetype (*Collected Works* 14) | ☐ | chosen |
+| 7 | [Julia Cameron](https://en.wikipedia.org/wiki/Julia_Cameron) | creativity | *The Artist's Way* (1992; *O Caminho do Artista*): creativity as a daily practice | ☐ | chosen |
+| 8 | [Dante Alighieri](https://en.wikipedia.org/wiki/Dante_Alighieri) | literature | reason to come | ☐ | chosen |
+| 9 | [Nicholas Carlini](https://en.wikipedia.org/wiki/Nicholas_Carlini) | machine learning security | stealing part of a production language model (Section 4) | ☑ | proposed |
+| 10 | [Fyodor Dostoevsky](https://en.wikipedia.org/wiki/Fyodor_Dostoevsky) | literature | "The Dream of a Ridiculous Man" (1877); notes to come | ☐ | chosen |
+| 11 | [Hans-Hermann Hoppe](https://en.wikipedia.org/wiki/Hans-Hermann_Hoppe) | economics, philosophy | the title formula; ideas cannot be property (BOOKS.md) | ☐ | proposed |
 | 12 | Florian Tramèr | machine learning security | model extraction through prediction APIs (Section 4) | ☑ | proposed |
 | 13 | Arfon M. Smith | research software | software citation principles (Section 6) | ☑ | proposed |
-| 14 | Olavo de Carvalho | philosophy | *O Jardim das Aflições* (1995), and *Símbolos e Mitos no Filme "O Silêncio dos Inocentes"* | ☐ | chosen |
-| 15 | John F. Nash | mathematics | security from computational cost, the 1955 letters (Section 5a) | ☑ | proposed |
-| 16 | Luiz Felipe Pondé | philosophy | Brazilian philosopher; reason to come | ☐ | chosen |
-| 17 | Cicero | mathematics | mathematics | ☐ | chosen |
-| 18 | Robert M. Pirsig | philosophy | Quality, and maintaining your own machine (BOOKS.md) | ☐ | proposed |
+| 14 | [Olavo de Carvalho](https://en.wikipedia.org/wiki/Olavo_de_Carvalho) | philosophy | *O Jardim das Aflições* (1995), and *Símbolos e Mitos no Filme "O Silêncio dos Inocentes"* | ☐ | chosen |
+| 15 | [John F. Nash](https://en.wikipedia.org/wiki/John_Forbes_Nash_Jr.) | mathematics | security from computational cost, the 1955 letters (Section 5a) | ☑ | proposed |
+| 16 | [Luiz Felipe Pondé](https://en.wikipedia.org/wiki/Luiz_Felipe_Pondé) | philosophy | Brazilian philosopher; reason to come | ☐ | chosen |
+| 17 | [Cicero](https://en.wikipedia.org/wiki/Cicero) | mathematics | mathematics | ☐ | chosen |
+| 18 | [Robert M. Pirsig](https://en.wikipedia.org/wiki/Robert_M._Pirsig) | philosophy | Quality, and maintaining your own machine (BOOKS.md) | ☐ | proposed |
 | 19 | — | — | the foremost reverse-engineering thinker of 2026 (to be named) | — | open |
-| 20 | Jiang Xueqin | history | the Predictive History lectures (YouTube, since 2023); reason to come | ☐ | chosen |
-| 21 | Hideaki Anno | animation | creator of *Neon Genesis Evangelion*, the most classical anime in history | ☐ | chosen |
-| 22 | Theodore Dalrymple | essays | to be written later | ☐ | chosen |
-| 23 | Stanley Kubrick | cinema | "the peer reviewer destroyer" (the owner): *Eyes Wide Shut* (1999), his last film, a work on secrets (`notes/202610140034-peer-reviewing-the-god-that-failed.md`) | ☐ | chosen |
-| 24 | Isaac Asimov | literature, science fiction | reason to come | ☐ | chosen |
+| 20 | [Jiang Xueqin](https://en.wikipedia.org/wiki/Jiang_Xueqin) | history | the Predictive History lectures (YouTube, since 2023); reason to come | ☐ | chosen |
+| 21 | [Hideaki Anno](https://en.wikipedia.org/wiki/Hideaki_Anno) | animation | creator of *Neon Genesis Evangelion*, the most classical anime in history | ☐ | chosen |
+| 22 | [Theodore Dalrymple](https://en.wikipedia.org/wiki/Theodore_Dalrymple) | essays | to be written later | ☐ | chosen |
+| 23 | [Stanley Kubrick](https://en.wikipedia.org/wiki/Stanley_Kubrick) | cinema | "the peer reviewer destroyer" (the owner): *Eyes Wide Shut* (1999), his last film, a work on secrets (`notes/202610140034-peer-reviewing-the-god-that-failed.md`) | ☐ | chosen |
+| 24 | [Isaac Asimov](https://en.wikipedia.org/wiki/Isaac_Asimov) | literature, science fiction | reason to come | ☐ | chosen |
 | 25 | personX | — | who shares, multiplies | ☐ | chosen |
-| 26 | Plato | mathematics | mathematics | ☐ | chosen |
-| 27 | Pamela Samuelson | law | law and economics of reverse engineering | ☑ | proposed |
-| 28 | Eric S. Raymond | software engineering | the cathedral and the bazaar (Section 2, related work) | ☑ | proposed |
+| 26 | [Plato](https://en.wikipedia.org/wiki/Plato) | mathematics | mathematics | ☐ | chosen |
+| 27 | [Pamela Samuelson](https://en.wikipedia.org/wiki/Pamela_Samuelson) | law | law and economics of reverse engineering | ☑ | proposed |
+| 28 | [Eric S. Raymond](https://en.wikipedia.org/wiki/Eric_S._Raymond) | software engineering | the cathedral and the bazaar (Section 2, related work) | ☑ | proposed |
 | 29 | Marcus Baffa | — | to be explained | ☐ | chosen |
-| 30 | George Orwell | literature | reason to come | ☐ | chosen |
-| 31 | Aristotle | mathematics | mathematics | ☐ | chosen |
-| 32 | Suzanne Scotchmer | economics | law and economics of reverse engineering | ☑ | proposed |
-| 33 | Michel de Montaigne | essays, philosophy | the *Essays*: why one writes at all | ☐ | chosen |
+| 30 | [George Orwell](https://en.wikipedia.org/wiki/George_Orwell) | literature | reason to come | ☐ | chosen |
+| 31 | [Aristotle](https://en.wikipedia.org/wiki/Aristotle) | mathematics | mathematics | ☐ | chosen |
+| 32 | [Suzanne Scotchmer](https://en.wikipedia.org/wiki/Suzanne_Scotchmer) | economics | law and economics of reverse engineering | ☑ | proposed |
+| 33 | [Michel de Montaigne](https://en.wikipedia.org/wiki/Michel_de_Montaigne) | essays, philosophy | the *Essays*: why one writes at all | ☐ | chosen |

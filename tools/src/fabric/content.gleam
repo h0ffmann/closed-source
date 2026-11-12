@@ -5,6 +5,7 @@
 ////     tools/fabric content              # from the repository root, after `just build`
 ////     tools/fabric content --self-test  # site.yml runs it
 
+import fabric/book_check
 import fabric/citation
 import fabric/json
 import fabric/re
@@ -172,11 +173,12 @@ pub fn citations(readme: String) -> Result(List(#(String, String)), String) {
 }
 
 pub type Thinker {
-  Thinker(n: Int, name: String, why: String, status: String)
+  Thinker(n: Int, name: String, wiki: String, why: String, status: String)
 }
 
 /// One row of 50THINKERS.md's table (# | Thinker | Area | Why | Cited | Status). The rows stay
-/// in the file's order, which is shuffled on purpose.
+/// in the file's order, which is shuffled on purpose. `wiki` is the thinker's Wikipedia page, from
+/// a name written as `[Name](url)`, or "" when the row has none.
 pub fn thinkers(roster: String) -> List(Thinker) {
   re.scan(
     re.compile(
@@ -188,7 +190,14 @@ pub fn thinkers(roster: String) -> List(Thinker) {
   |> list.map(fn(m) {
     let assert [_, n, t, _, w, _, st, ..] = m
     let assert Ok(n) = int.parse(n)
-    Thinker(n, strip(t), strip(w), strip(st))
+    let t = strip(t)
+    Thinker(
+      n,
+      book_check.name_of(t),
+      book_check.link_of(t),
+      strip(w),
+      strip(st),
+    )
   })
 }
 
@@ -587,6 +596,8 @@ fn render(slug: String) -> Result(String, String) {
       <> int.to_string(t.n)
       <> ", name: "
       <> gleam_string(t.name)
+      <> ", wiki: "
+      <> gleam_string(t.wiki)
       <> ", why: "
       <> gleam_string(t.why)
       <> ", status: "
@@ -660,7 +671,7 @@ pub type Work {
 }
 
 pub type Thinker {
-  Thinker(n: Int, name: String, why: String, status: String)
+  Thinker(n: Int, name: String, wiki: String, why: String, status: String)
 }
 
 pub type Note {
@@ -834,7 +845,7 @@ fn self_test() -> Int {
   let readme =
     "x\n<!-- citation:start -->\n\nBibTeX:\n\n```bibtex\n@misc{k,\n}\n```\n\nAPA:\n\n> A. (2026). *T*.\n\n<!-- citation:end -->\n"
   let roster =
-    "| # | Thinker | Area | Why | Cited | Status |\n|---:|---|---|---|:---:|---|\n| 1 | Linus Torvalds | software | Linux | ☑ | proposed |\n| 2 | — | — | — | — | open |\n"
+    "| # | Thinker | Area | Why | Cited | Status |\n|---:|---|---|---|:---:|---|\n| 1 | [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) | software | Linux | ☑ | proposed |\n| 2 | — | — | — | — | open |\n"
   let zenodo =
     json.decode(
       "{\"hits\":{\"hits\":[{\"doi\":\"10.5281/zenodo.9\",\"conceptdoi\":\"10.5281/zenodo.8\",\"metadata\":{\"version\":\"v0.1.1\"}},{\"doi\":\"10.5281/zenodo.7\",\"conceptdoi\":\"10.5281/zenodo.6\",\"metadata\":{\"version\":\"v9.9.9\"}}]}}",
@@ -855,8 +866,14 @@ fn self_test() -> Int {
     == #("", [])
     && thinkers(roster)
     == [
-      Thinker(1, "Linus Torvalds", "Linux", "proposed"),
-      Thinker(2, "—", "—", "open"),
+      Thinker(
+        1,
+        "Linus Torvalds",
+        "https://en.wikipedia.org/wiki/Linus_Torvalds",
+        "Linux",
+        "proposed",
+      ),
+      Thinker(2, "—", "", "—", "open"),
     ]
   case ok {
     True -> {

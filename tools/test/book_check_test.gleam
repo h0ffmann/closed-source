@@ -41,6 +41,32 @@ pub fn open_row_test() {
     == #([], 1)
 }
 
+pub fn wikipedia_link_test() {
+  let text =
+    string.replace(
+      table(),
+      "| T2 |",
+      "| [T2](https://en.wikipedia.org/wiki/T2) |",
+    )
+  assert book_check.check(text) == #([], 0)
+  assert book_check.named(text) |> list.contains("T2")
+  assert book_check.name_of("[A B](https://pt.wikipedia.org/wiki/A_B)") == "A B"
+  assert book_check.link_of("[A B](https://pt.wikipedia.org/wiki/A_B)")
+    == "https://pt.wikipedia.org/wiki/A_B"
+  assert book_check.link_of("A B") == ""
+}
+
+pub fn link_not_wikipedia_test() {
+  let #(errs, _) =
+    book_check.check(string.replace(
+      table(),
+      "| T2 |",
+      "| [T2](https://example.org/T2) |",
+    ))
+  assert errs
+    == ["row 2: the link https://example.org/T2 is not a Wikipedia page"]
+}
+
 pub fn bad_cited_and_status_test() {
   let text =
     table()

@@ -497,10 +497,11 @@ fn thinkers_section() -> Element(Msg) {
             [
               html.span([attribute.class("n")], [html.text(int.to_string(t.n))]),
               html.b([], [
-                html.text(case open {
-                  True -> "Open"
-                  False -> t.name
-                }),
+                case open, t.wiki {
+                  True, _ -> html.text("Open")
+                  False, "" -> html.text(t.name)
+                  False, wiki -> external(wiki, t.name)
+                },
               ]),
               case open {
                 True -> element.none()

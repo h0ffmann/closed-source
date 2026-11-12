@@ -4,8 +4,10 @@
 //// 33 in order, no thinker named twice, a known status, and Cited is ☑ or ☐ on a named row. The
 //// order of the names is shuffled on purpose (an essay, not a ranking), so it is not checked.
 //// Open rows (thinker "—") are allowed while the roster is a draft; the check says how many are
-//// left. Checks 500AUTHORS.md, the long list the thinkers come from: at most 500 rows numbered
-//// from 1 in order, no author named twice, and every named thinker listed.
+//// left. A thinker's name may be a link to the thinker's Wikipedia page,
+//// `[Name](https://en.wikipedia.org/wiki/Name)`: the name is read without the link, and a link
+//// must point at a Wikipedia page. Checks 500AUTHORS.md, the long list the thinkers come from: at
+//// most 500 rows numbered from 1 in order, no author named twice, and every named thinker listed.
 ////
 ////     tools/fabric book-check
 
@@ -42,6 +44,34 @@ fn thinker_re() -> re.Regex {
       <> "\\s*$",
     [],
   )
+}
+
+fn link_re() -> re.Regex {
+  re.compile("^\\[([^\\]]+)\\]\\(([^)\\s]+)\\)$", [])
+}
+
+/// A Thinker cell's name: `[Name](url)` gives Name; a bare name is itself.
+pub fn name_of(cell: String) -> String {
+  case re.first(link_re(), cell) {
+    Ok([_, name, ..]) -> name
+    _ -> cell
+  }
+}
+
+/// A Thinker cell's link: `[Name](url)` gives url; a bare name gives "".
+pub fn link_of(cell: String) -> String {
+  case re.first(link_re(), cell) {
+    Ok([_, _, url, ..]) -> url
+    _ -> ""
+  }
+}
+
+/// A link that is a Wikipedia article, in any language.
+fn wikipedia(url: String) -> Bool {
+  case string.split_once(url, ".wikipedia.org/wiki/") {
+    Ok(#("https://" <> lang, page)) -> lang != "" && page != ""
+    _ -> False
+  }
 }
 
 /// Each line's groups, for the lines the pattern matches.
@@ -81,7 +111,23 @@ pub fn check(text: String) -> #(List(String), Int) {
     ]
   }
   let names =
-    list.map(rows, at(_, 1)) |> list.filter(fn(n) { !list.contains(open, n) })
+    list.map(rows, fn(r) { name_of(at(r, 1)) })
+    |> list.filter(fn(n) { !list.contains(open, n) })
+  let links =
+    list.filter_map(rows, fn(r) {
+      let url = link_of(at(r, 1))
+      case url == "" || wikipedia(url) {
+        True -> Error(Nil)
+        False ->
+          Ok(
+            "row "
+            <> at(r, 0)
+            <> ": the link "
+            <> url
+            <> " is not a Wikipedia page",
+          )
+      }
+    })
   let twice =
     list.map(pystr.duplicates(names), fn(n) { n <> " is named twice" })
   let status =
@@ -114,7 +160,7 @@ pub fn check(text: String) -> #(List(String), Int) {
       }
     })
   #(
-    list.flatten([numbering, twice, status, cites]),
+    list.flatten([numbering, twice, links, status, cites]),
     thinkers - list.length(names),
   )
 }
@@ -152,7 +198,7 @@ pub fn check_authors(text: String, named: List(String)) -> List(String) {
 /// The thinkers named in 50THINKERS.md, open rows left out.
 pub fn named(text: String) -> List(String) {
   rows(thinker_re(), text)
-  |> list.map(at(_, 1))
+  |> list.map(fn(r) { name_of(at(r, 1)) })
   |> list.filter(fn(n) { !list.contains(open, n) })
 }
 
@@ -160,7 +206,7 @@ pub fn named(text: String) -> List(String) {
 pub fn cited_names(text: String) -> List(String) {
   rows(thinker_re(), text)
   |> list.filter(fn(r) { at(r, 4) == "☑" })
-  |> list.map(at(_, 1))
+  |> list.map(fn(r) { name_of(at(r, 1)) })
 }
 
 pub fn main(_args: List(String)) -> Int {
