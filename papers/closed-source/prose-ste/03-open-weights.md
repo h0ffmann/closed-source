@@ -66,6 +66,7 @@ themselves no longer think that secrecy is the thing that keeps these artefacts 
 **[ANALYSIS]** None of the three events is charity, and my argument does not need charity. Each
 event is a bet that value comes from use, study and citation more than from secrecy. The definition
 says what openness requires. The *Nature* paper shows that a frontier method can go into the
-scientific record. The open-weight release shows that even the most closed laboratory sees a return
-in publication. The remaining sections of this paper ask what this means for one researcher. The
-work of one researcher has much less to hide, and much more to gain when people find it.
+scientific record. The open-weight release shows that even a laboratory known for closed models sees
+a return in publication. The remaining sections of this paper ask what this means for one
+researcher. The work of one researcher has much less to hide, and much more to gain when people find
+it.

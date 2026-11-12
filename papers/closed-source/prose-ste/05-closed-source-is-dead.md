@@ -10,7 +10,7 @@ engineering, security, research practice and economics. I chose them for credibi
 peer reviewed, a primary legal or official source, or a working paper from a research university
 that many people cite.
 
-Table: Seven references on why secrecy fails as a protection. {#tbl:five}
+Table: Seven references on why secrecy fails as a protection. {#tbl:seven}
 
 | # | Reference | Field | What it shows |
 |--|----------------------|----------------|------------------------------------------------------------|
@@ -45,8 +45,8 @@ guarantee: reverse engineering was slow and expensive. Section [-@sec:law] exami
 **4. For binaries and full applications, it is going.** Open decompilation models recover executable
 source code from compiled code [@tan2024llm4decompile]. These models use an open reverse-engineering
 framework from a signals-intelligence agency [@nsa2019ghidra]. In 2026, an open tool put the full
-chain behind one agent [@morluto2026rea]. After a few weeks, clean-room rebuilds of a professional
-image editor were available [@storytold2026photocraft].
+chain behind one agent [@morluto2026rea]. In the same autumn, a clean-room rebuild of a professional
+image editor became available [@storytold2026photocraft].
 
 **5. Secrets also leak from inside.** A former Google engineer uploaded AI trade secrets to a
 personal cloud account, and a jury convicted him [@doj2026ding]. A trade-secret lawsuit is about

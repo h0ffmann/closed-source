@@ -6,7 +6,7 @@ itself, without access to its design documents: decompiling a binary, inferring 
 outputs, or rebuilding a product from its parts. In earlier versions of this paper I wrote REA, in
 my project's shorthand, for reverse engineering, assisted. In 2026 the same three letters became
 the name of an open tool, *Reverse Engineer Anything*, and its case is told below. This section
-reviews seven developments. Several of them are lawsuits or accusations, and their facts are
+reviews eight developments. Several of them are lawsuits or accusations, and their facts are
 allegations; I report them as such.
 
 ## Apple v. OpenAI: secrets walk out on two legs
@@ -20,7 +20,7 @@ against each of the four defendants, and breach of contract against the two indi
 Apple systems through an authentication bug from a colleague's Apple-issued computer; OpenAI's
 chief hardware officer, a former Apple executive, asked job candidates to bring Apple parts,
 design files and prototypes to interviews; and new hires received guidance on avoiding Apple's exit
-process [@perez2026allegations]. The complaint itself states: "With over four hundred former Apple
+process [@perez2026allegations]. The complaint itself counts "over four hundred former Apple
 employees now working at OpenAI" [@apple2026complaint]. OpenAI said publicly that it has "no
 interest in other companies' trade secrets" [@perez2026allegations]. In August it moved to
 dismiss, arguing that Apple let employees use personal cloud accounts for work, did not revoke
@@ -51,14 +51,14 @@ the judge [@mekelburg2026court]. The docket on PACER was still not read directly
 
 ## United States v. Ding: the secret in a personal cloud account
 
-A criminal case about AI secrets ended earlier in the year. On 29 January 2026 a federal jury in San Francisco convicted Linwei Ding, a former Google
-software engineer, of seven counts of economic espionage and seven counts of theft of trade
-secrets [@doj2026ding]. According to the Department of Justice, he "stole more than two thousand
-pages of confidential information containing Google's AI trade secrets" about the company's
-supercomputing infrastructure for AI, its custom chips and the software that coordinates them. The
-method was simple: between about May 2022 and April 2023 he "uploaded them to his personal Google
-Cloud account" [@doj2026ding]. On 1 September 2026 Judge Vince Chhabria sentenced him to just
-under one year in prison [@debenedetti2026ding].
+A criminal case about AI secrets was decided earlier in the year. On 29 January 2026 a federal jury
+in San Francisco convicted Linwei Ding, a former Google software engineer, of seven counts of
+economic espionage and seven counts of theft of trade secrets [@doj2026ding]. According to the
+Department of Justice, he "stole more than two thousand pages of confidential information containing
+Google's AI trade secrets" about the company's supercomputing infrastructure for AI, its custom
+chips and the software that coordinates them. The method was simple: between about May 2022 and
+April 2023 he "uploaded them to his personal Google Cloud account" [@doj2026ding]. On 1 September
+2026 Judge Vince Chhabria sentenced him to just under one year in prison [@debenedetti2026ding].
 
 **[ANALYSIS]** This is a proven case, not an allegation, and it points the same way as Apple's. The
 secret did not fall to a clever adversary who read what was hidden. It left through an insider's

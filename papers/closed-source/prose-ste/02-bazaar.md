@@ -27,7 +27,7 @@ started on 3 April 2005, and on 7 April Git managed its own source code. The fir
 merge followed on 18 April, and on 26 July he gave maintenance to Junio Hamano [@wikipedia2026git].
 
 The first commit in the Git repository is still readable today. Its title is "Initial revision of
-"git", the information manager from hell" [@torvalds2005git].
+'git', the information manager from hell" [@torvalds2005git].
 
 **[ANALYSIS]** The BitKeeper episode is a small parable for this paper. The kernel community
 accepted a closed tool for convenience, and was exposed when the owner withdrew it. When Torvalds

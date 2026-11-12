@@ -8,8 +8,8 @@ results.
   experiment. Its claims about the cost of reverse engineering rest on the studies cited, not on
   my own measurements.
 - **Allegations, not findings.** The Apple v. OpenAI dispute and the distillation accusations,
-  including the advisory of three US agencies, are allegations. No court had ruled on them at the
-  time of writing. The Ding case is the exception: it ended in a conviction.
+  including the advisory of three US agencies, are allegations. No court had ruled on their merits
+  at the time of writing. The Ding case is the exception: it ended in a conviction.
 - **Secondary sources for 2026 events.** I relied on news reports for most 2026 events. The Apple
   complaint was read in a copy published by a news service, not from PACER. The joint advisory
   AA26-251A was read through two reports, not from CISA. Reports of later hearings may describe

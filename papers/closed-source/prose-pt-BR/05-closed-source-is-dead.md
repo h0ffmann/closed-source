@@ -9,7 +9,7 @@ de máquina, da engenharia de software, da segurança, da prática de pesquisa e
 essa tese. Escolhi-as pela credibilidade: cada uma é revisada por pares, uma fonte jurídica ou
 oficial primária, ou um texto de trabalho amplamente citado de uma universidade de pesquisa.
 
-Table: Sete referências sobre por que o segredo falha como proteção. {#tbl:five}
+Table: Sete referências sobre por que o segredo falha como proteção. {#tbl:seven}
 
 | # | Referência | Área | O que mostra |
 |--|----------------------|----------------|------------------------------------------------------------|
@@ -45,8 +45,8 @@ prática: a engenharia reversa era lenta e cara. A Seção [-@sec:law] lê as le
 construídos sobre um framework aberto de engenharia reversa liberado por uma agência de inteligência
 de sinais [@nsa2019ghidra], recuperam código executável a partir de código compilado
 [@tan2024llm4decompile]. Em 2026, uma ferramenta aberta pôs a cadeia inteira atrás de um agente
-[@morluto2026rea], e reconstruções em sala limpa de um editor de imagens profissional apareceram em
-semanas [@storytold2026photocraft].
+[@morluto2026rea], e uma reconstrução em sala limpa de um editor de imagens profissional apareceu no
+mesmo outono [@storytold2026photocraft].
 
 **5. Segredos vazam por dentro de qualquer jeito.** A condenação de um ex-engenheiro do Google por
 enviar segredos comerciais de IA para uma conta pessoal na nuvem [@doj2026ding], o processo de

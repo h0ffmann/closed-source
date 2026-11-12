@@ -65,9 +65,9 @@ gives credit to work that does not exist. The second does not give credit to wor
 Both pass peer review, because reviewers read for the argument, not for the source. Both increase
 with the tools that write text.
 
-**[ANALYSIS]** The most selective conferences in the field of these tools let one paper in a
-hundred through with invented sources. Thus we cannot leave the check to reviewers. The check must
-be part of how people and agents make the text.
+**[ANALYSIS]** Machine learning is the field that builds these tools. One of its most selective
+conferences lets approximately one paper in a hundred through with invented sources. Thus we cannot
+leave the check to reviewers. The check must be part of how people and agents make the text.
 
 ## Citation for agents: borrow, cite, propagate
 
@@ -93,7 +93,7 @@ repositories.
 
 **[ANALYSIS]** The rules do not ask for an unusual thing: a careful graduate student does the same.
 The differences are scale and verifiability. A person who forgets a citation forgets one, but an
-agent that forgets forgets thousands. An agent that invents references poisons the record. Thus,
+agent that forgets can forget thousands. An agent that invents references poisons the record. Thus,
 Paper Fabric enforces the rule 2 prohibition of invented references mechanically, with a reference
 log that records how each entry was checked.
 

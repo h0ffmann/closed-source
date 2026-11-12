@@ -7,19 +7,18 @@ obfuscation. It also examines the different answer that cryptography gives.
 
 ## Nash's letters: security from computation, not concealment
 
-In early 1955, John Nash wrote to the US National Security Agency to propose an enciphering
-machine [@nash1955letters]. Nash is the author of the equilibrium concept for non-cooperative games
+In early 1955, John Nash wrote to the US National Security Agency to propose an enciphering machine
+[@nash1955letters]. Nash is the author of the equilibrium concept for non-cooperative games
 [@nash1950equilibrium]. The NSA declassified the correspondence in 2012 [@branwen2012nash]. In it,
 Nash argued that, for sufficiently complex ciphers, "the mean key computation length increases
-exponentially with the length of the key" [@branwen2012nash]. The idea is that security should
-come from the cost of computation, not from a hidden design. Rivest, Shamir and their students read
-the letters as an anticipation of complexity theory and modern cryptography [@rivest2012nash].
+exponentially with the length of the key" [@branwen2012nash]. The idea is that security should come
+from the cost of computation, not from a hidden design. Ronald Rivest, Adi Shamir and their students
+read the letters as an anticipation of complexity theory and modern cryptography [@rivest2012nash].
 
 The machine of Nash himself had less success. The NSA decided that it "affords only limited
-security" [@nash1955letters]. In 2012, Ronald Rivest, Adi Shamir and their students analysed the
-machine. They found a polynomial-time chosen-plaintext attack and a subexponential known-plaintext
-attack. They concluded that Nash was "a much better game theorist than a cryptographer"
-[@rivest2012nash].
+security" [@nash1955letters]. In 2012, Rivest, Shamir and their students analysed the machine. They
+found a polynomial-time chosen-plaintext attack and a subexponential known-plaintext attack. They
+concluded that Nash was "a much better game theorist than a cryptographer" [@rivest2012nash].
 
 **[ANALYSIS]** Both parts of the story support Kerckhoffs. Modern cryptography kept the principle
 of Nash: security that comes from the work that an attacker must do. After Nash's design was
@@ -92,8 +91,8 @@ they could write it. In 2026, this means four layers, and each layer has public,
    the signing key.
 3. **Require two-factor authentication on the forge.** In 2022, GitHub made a commitment about
    two-factor authentication. By the end of 2023, each user who contributes code on GitHub.com
-   must enable it [@hanley2022twofactor]. A person who takes control of an account can push code
-   in the name of its owner.
+   must enable it [@hanley2022twofactor]. Without it, a person who takes control of an account can
+   push code in the name of its owner.
 4. **Make signatures verifiable by everyone.** Sigstore lets developers sign with ephemeral keys
    that are bound to an existing identity through OpenID Connect. Sigstore records signatures in
    transparency logs. This removes most of the burden and risk of key management

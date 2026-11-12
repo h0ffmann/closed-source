@@ -59,8 +59,9 @@ three to five experts [@ansari2026compound].
 **[ANALYSIS]** A fabricated reference is the mirror image of an uncredited borrowing. One gives
 credit to work that does not exist; the other withholds credit from work that does. Both pass
 peer review because reviewers read for argument, not for provenance, and both scale with the
-tools that write text. If the most selective venues in the field of the tools themselves let one
-paper in a hundred through with invented sources, the check cannot be left to reviewers. It must
+tools that write text. If one of the most selective venues of machine learning, the field that
+builds these tools, lets about one paper in a hundred through with invented sources, the check
+cannot be left to reviewers. It must
 be part of how the text is made.
 
 ## Citation for agents: borrow, cite, propagate
@@ -85,7 +86,7 @@ Fabric's `AGENTS.md` makes binding for any agent that works in its repositories.
 
 **[ANALYSIS]** The rules ask nothing exotic. They are what a careful graduate student does. The
 difference is scale and verifiability: a person who forgets a citation forgets one; an agent that
-forgets forgets thousands, and an agent that invents references poisons the record. Rule 2's
+forgets can forget thousands, and an agent that invents references poisons the record. Rule 2's
 prohibition on invented references is therefore enforced mechanically in Paper Fabric, by a
 reference log that records how each entry was checked.
 

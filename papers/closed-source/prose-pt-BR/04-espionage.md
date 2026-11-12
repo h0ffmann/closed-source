@@ -6,7 +6,7 @@ próprio artefato, sem acesso aos seus documentos de projeto: descompilar um bin
 modelo a partir das suas saídas ou reconstruir um produto a partir das suas peças. Em versões
 anteriores deste artigo, eu escrevia REA, na abreviação do meu projeto, para *reverse engineering,
 assisted*. Em 2026, as mesmas três letras viraram o nome de uma ferramenta aberta, *Reverse Engineer
-Anything*, cujo caso é contado abaixo. Esta seção examina sete desenvolvimentos. Vários deles são
+Anything*, cujo caso é contado abaixo. Esta seção examina oito desenvolvimentos. Vários deles são
 processos ou acusações, e os seus fatos são alegações; eu os relato como tais.
 
 ## Apple v. OpenAI: segredos saem andando com duas pernas
@@ -17,15 +17,15 @@ Norte da Califórnia, Divisão de San Jose, como *Apple Inc. v. Chang Liu et al.
 5:26-cv-07078 [@apple2026complaint]. As seis acusações são de apropriação indevida de segredo
 comercial sob o Defend Trade Secrets Act de 2016, contra cada um dos quatro réus, e de quebra de
 contrato contra as duas pessoas físicas [@apple2026complaint]. Segundo a petição, tal como relatada,
-um ex-engenheiro da Apple acessou sistemas da Apple por meio de uma falha de autenticação a partir do
-computador corporativo de um colega; o diretor de hardware da OpenAI, um ex-executivo da Apple, pediu
-a candidatos que levassem peças, arquivos de projeto e protótipos da Apple às entrevistas; e novos
-contratados receberam orientação para contornar o processo de desligamento da Apple
-[@perez2026allegations]. A própria petição afirma: "With over four hundred former Apple employees
-now working at OpenAI" (em tradução livre: com mais de quatrocentos ex-funcionários da Apple
-trabalhando agora na OpenAI) [@apple2026complaint]. A OpenAI disse publicamente que não tem "no
-interest in other companies' trade secrets" (nenhum interesse nos segredos comerciais de outras
-empresas) [@perez2026allegations]. Em agosto, pediu o arquivamento, argumentando que a Apple deixava
+um ex-engenheiro da Apple acessou sistemas da Apple por meio de uma falha de autenticação a partir
+do computador corporativo de um colega; o diretor de hardware da OpenAI, um ex-executivo da Apple,
+pediu a candidatos que levassem peças, arquivos de projeto e protótipos da Apple às entrevistas; e
+novos contratados receberam orientação para contornar o processo de desligamento da Apple
+[@perez2026allegations]. A própria petição contabiliza "over four hundred former Apple employees now
+working at OpenAI" (em tradução livre: mais de quatrocentos ex-funcionários da Apple trabalhando
+agora na OpenAI) [@apple2026complaint]. A OpenAI disse publicamente que não tem "no interest in
+other companies' trade secrets" (nenhum interesse nos segredos comerciais de outras empresas)
+[@perez2026allegations]. Em agosto, pediu o arquivamento, argumentando que a Apple deixava
 funcionários usarem contas pessoais na nuvem para trabalho, não revogou acessos corretamente e não
 identificou quais segredos foram levados [@perez2026motion].
 
@@ -55,8 +55,8 @@ Ele agora é lido no próprio cabeçalho da petição [@apple2026complaint], e o
 
 ## Estados Unidos v. Ding: o segredo numa conta pessoal na nuvem
 
-Um processo criminal sobre segredos de IA terminou mais cedo no ano. Em 29 de janeiro de 2026, um
-júri federal em San Francisco condenou Linwei Ding, ex-engenheiro de software do Google, por sete
+Um processo criminal sobre segredos de IA foi decidido mais cedo no ano. Em 29 de janeiro de 2026,
+um júri federal em San Francisco condenou Linwei Ding, ex-engenheiro de software do Google, por sete
 acusações de espionagem econômica e sete de furto de segredos comerciais [@doj2026ding]. Segundo o
 Departamento de Justiça, ele "stole more than two thousand pages of confidential information
 containing Google's AI trade secrets" (em tradução livre: furtou mais de duas mil páginas de

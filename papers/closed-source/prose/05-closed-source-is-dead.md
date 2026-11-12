@@ -8,7 +8,7 @@ references, from cryptography, law, machine learning, software engineering, secu
 practice and economics, support that claim. I chose them for credibility: each is peer reviewed, a
 primary legal or official source, or a widely cited working paper from a research university.
 
-Table: Seven references on why secrecy fails as a protection. {#tbl:five}
+Table: Seven references on why secrecy fails as a protection. {#tbl:seven}
 
 | # | Reference | Field | What it shows |
 |--|----------------------|----------------|------------------------------------------------------------|
@@ -42,8 +42,8 @@ engineering was slow and expensive. Section [-@sec:law] reads the statutes.
 **4. It is going for binaries and whole applications.** Open decompilation models, built on an
 open reverse-engineering framework released by a signals-intelligence agency [@nsa2019ghidra],
 recover executable source from compiled code [@tan2024llm4decompile]. In 2026 an open tool put
-the whole chain behind one agent [@morluto2026rea], and clean-room rebuilds of a professional image
-editor appeared within weeks [@storytold2026photocraft].
+the whole chain behind one agent [@morluto2026rea], and a clean-room rebuild of a professional
+image editor appeared the same autumn [@storytold2026photocraft].
 
 **5. Secrets leak from inside anyway.** The conviction of a former Google engineer for uploading
 AI trade secrets to a personal cloud account [@doj2026ding], the trade-secret suit that turns on

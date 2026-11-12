@@ -52,7 +52,8 @@ being hidden, and companies notice.
 
 ## What the history shows
 
-**[ANALYSIS]** Fifty years separate the open letter from the REA explosion. In that time the faith
+**[ANALYSIS]** Fifty years separate the open letter from the reverse-engineering explosion of 2026
+(Section [-@sec:espionage]). In that time the faith
 in closed source was founded on a real cost, contested on ethical grounds, and abandoned piece by
 piece by firms that did the arithmetic again. The 2024 to 2026 evidence does not start the story.
 It removes the last premise on which the faith rested, that what is compiled or served stays

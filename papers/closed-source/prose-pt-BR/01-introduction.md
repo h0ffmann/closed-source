@@ -14,16 +14,16 @@ quando um laboratório, uma empresa ou um estudante guarda o próprio trabalho p
 os dois artigos fracassaram, e que o fracasso se tornou evidente entre 2024 e 2026.
 
 O primeiro artigo fracassou porque a engenharia reversa deixou de ser rara. A engenharia reversa
-sempre foi lícita e comum [@samuelson2002law]. O que mudou foi o seu custo. Modelos de linguagem hoje
-transformam binários compilados em código-fonte que compila e passa nos testes [@tan2024llm4decompile].
-Alguns milhares de consultas a uma API recuperam partes de um modelo de linguagem em produção
-[@carlini2024stealing]. Dezenas de milhares de contas conseguem destilar o comportamento de um modelo
-de fronteira no de um concorrente [@anthropic2026distillation; @reuters2026deepseek], e em setembro
-de 2026 três agências dos EUA descreveram essas campanhas como "industrial scale" (escala industrial)
-[@lakshmanan2026agencies]. E quando uma das empresas mais valiosas do mundo processou um dos
-laboratórios mais valiosos por segredos comerciais em julho de 2026, sua petição tratava de pessoas,
-laptops e recrutamento, e não de código-fonte que tivesse permanecido em segredo e a salvo
-[@apple2026complaint; @perez2026allegations].
+sempre foi lícita e comum [@samuelson2002law]. O que mudou foi o seu custo. Modelos de linguagem
+hoje conseguem transformar binários compilados em código-fonte que compila e passa nos testes
+[@tan2024llm4decompile]. Consultas que custam menos de 20 dólares americanos recuperam parte de um
+modelo de linguagem em produção [@carlini2024stealing]. Dezenas de milhares de contas conseguem
+destilar o comportamento de um modelo de fronteira no de um concorrente [@anthropic2026distillation;
+@reuters2026deepseek], e em setembro de 2026 três agências dos EUA descreveram essas campanhas como
+"industrial scale" (escala industrial) [@lakshmanan2026agencies]. E quando uma das empresas mais
+valiosas do mundo processou um dos laboratórios mais valiosos por segredos comerciais em julho de
+2026, sua petição tratava de pessoas, laptops e recrutamento, e não de código-fonte que tivesse
+permanecido em segredo e a salvo [@apple2026complaint; @perez2026allegations].
 
 O primeiro artigo também fracassou na direção oposta: segredos vazam sem engenharia reversa
 nenhuma. Em janeiro de 2026, um júri condenou um ex-engenheiro do Google por levar mais de duas mil
@@ -77,16 +77,20 @@ Este artigo faz cinco contribuições.
 
 ## Organização
 
-A Seção [-@sec:bazaar] revisita o Linux e o Git como evidência de que a abertura escala, e olha com
-honestidade para duas falhas do código aberto. A Seção [-@sec:openweights] examina como os próprios
-laboratórios fechados começaram a publicar pesos e métodos. A Seção [-@sec:espionage] examina a
-ciência e a espionagem em 2026 e a explosão da engenharia reversa assistida por IA. A Seção
-[-@sec:dead] reúne sete linhas de evidência de que o código fechado está morto como forma de
-proteção. A Seção [-@sec:law] lê a lei. A Seção [-@sec:securing] trata da ofuscação, das cartas de
-John Nash sobre criptografia e de como proteger código-fonte em 2026. A Seção [-@sec:citing] defende
-a citação profissional e estabelece regras para agentes. A Seção [-@sec:objections] responde a seis
-objeções. A Seção [-@sec:fabric] descreve o Paper Fabric. A Seção [-@sec:related] lista meus
-trabalhos relacionados, e a Seção [-@sec:limits] expõe os limites do meu argumento.
+A Seção [-@sec:history] lê três documentos, de 1976, 1983 e 1998, em que a fé foi fundada,
+contestada e abandonada pela primeira vez. A Seção [-@sec:bazaar] revisita o Linux e o Git como
+evidência de que a abertura escala, e olha com honestidade para duas falhas do código aberto. A
+Seção [-@sec:openweights] examina como os próprios laboratórios fechados começaram a publicar pesos
+e métodos. A Seção [-@sec:espionage] examina a ciência e a espionagem em 2026 e a explosão da
+engenharia reversa assistida por IA. A Seção [-@sec:dead] reúne sete linhas de evidência de que o
+código fechado está morto como forma de proteção. A Seção [-@sec:law] lê a lei. A Seção
+[-@sec:securing] trata da ofuscação, das cartas de John Nash sobre criptografia e de como proteger
+código-fonte em 2026. A Seção [-@sec:citing] defende a citação profissional e estabelece regras para
+agentes. A Seção [-@sec:objections] responde a seis objeções, e a Seção [-@sec:checklist] transforma
+o argumento numa lista de verificação. A Seção [-@sec:fabric] descreve o Paper Fabric. A Seção
+[-@sec:related] lista meus trabalhos relacionados. A Seção [-@sec:evidence] classifica as evidências
+de 2026 pelo tipo de fonte, a Seção [-@sec:limits] expõe os limites do meu argumento e a Seção
+[-@sec:conclusion] conclui.
 
 Uma nota sobre o método. Este é um artigo de posição, escrito no estilo *research* do padrão de
 documentação Ouroboric: toda afirmação factual traz uma citação, e as passagens de interpretação vêm
