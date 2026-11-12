@@ -42,7 +42,7 @@ pub fn front_page_shows_the_thinkers_and_the_notes_test() {
 
 pub fn each_project_stamp_links_its_project_and_loads_its_logo_test() {
   let html = app.initial() |> app.view |> element.to_string
-  assert list.length(content.logos) == 2
+  assert list.length(content.logos) == 1
   assert list.all(content.logos, fn(l) {
     string.contains(html, "data-logo=\"" <> l.name <> "\"")
     && string.contains(html, "href=\"" <> l.href <> "\"")
@@ -50,6 +50,15 @@ pub fn each_project_stamp_links_its_project_and_loads_its_logo_test() {
     && string.contains(html, l.text)
     && string.starts_with(l.svg, "https://raw.githubusercontent.com/")
     && { l.svg_dark == "" || string.contains(html, l.svg_dark) }
+  })
+}
+
+pub fn the_partners_are_on_the_page_test() {
+  let html = app.initial() |> app.view |> element.to_string
+  assert list.map(content.partners, fn(p) { p.name })
+    == ["piabrota", "marola-dev"]
+  assert list.all(content.partners, fn(p) {
+    string.contains(html, "href=\"" <> p.href <> "\"")
   })
 }
 
@@ -80,7 +89,7 @@ pub fn the_top_projects_close_the_page_test() {
 
 pub fn the_citation_scores_are_on_the_page_test() {
   let html = app.initial() |> app.view |> element.to_string
-  assert list.length(content.scores) == 5
+  assert list.length(content.scores) == 4
   assert string.contains(html, "id=\"scores\"")
   assert list.all(content.scores, fn(s) {
     string.contains(html, s.name) && string.contains(html, s.verdict)
