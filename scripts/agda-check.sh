@@ -28,12 +28,13 @@ echo "agda-check: self-test ok: Agda refused each file of agda/SelfTest/" >&2
 
 # Vale and Agda agree.
 rules=agda/ClosedSource/STE/Rules.agda
-vmax() { sed -nE 's/^max: ([0-9]+)$/\1/p' ".vale/styles/ste/$1.yml"; }
+# The scripts compare with a number: `words(...) > 25`, `n > 6`.
+vmax() { sed -nE 's/.*(words\(b\[start:e\]\)|n) > ([0-9]+) \{.*/\2/p' ".vale/styles/ste/$1.yml"; }
 [ "$(vmax SentenceLength)" = "$(sed -nE 's/^limit descriptive = ([0-9]+)$/\1/p' "$rules")" ] \
   || fail "the sentence limit of SentenceLength.yml is not 'limit descriptive' of $rules"
 [ "$(vmax ParagraphLength)" = "$(sed -nE 's/^maxSentences = ([0-9]+)$/\1/p' "$rules")" ] \
   || fail "the paragraph limit of ParagraphLength.yml is not 'maxSentences' of $rules"
-yaml_swaps() { sed -nE 's/^  ([a-z ]+): ([a-z ]+)$/\1 -> \2/p' .vale/styles/ste/PhrasalVerbs.yml | sort; }
+yaml_swaps() { sed -nE 's/^ +\["([a-z ]+)", "([a-z ]+)"\][],]?$/\1 -> \2/p' .vale/styles/ste/PhrasalVerbs.yml | sort; }
 agda_swaps() { grep -oE '\("[a-z ]+" , "[a-z ]+"\)' agda/ClosedSource/STE/PhrasalVerbs.agda \
   | sed -E 's/\("([a-z ]+)" , "([a-z ]+)"\)/\1 -> \2/' | sort; }
 diff <(yaml_swaps) <(agda_swaps) >&2 \
