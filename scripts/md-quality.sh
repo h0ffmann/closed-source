@@ -55,7 +55,7 @@ self_test() {
   ! vale --no-wrap "$s/prose-ste/phrasal.md" >/dev/null 2>&1 \
     || fail "Vale (ste) passed the phrasal verb 'set up'"
   printf '# A page\n\nHe wrote "%s" [@key].\n' "$(printf 'word %.0s' $(seq 30))" > "$s/prose-ste/quote.md"
-  vale --no-wrap "$s/prose-ste/quote.md" >/dev/null 2>&1 \
+  vale --no-wrap --output=line "$s/prose-ste/quote.md" >&2 \
     || fail "Vale (ste) counted the words of a quotation"
   printf '# A page\n\n[a file that is not there](not-there.md)\n' > "$d/link.md"
   ! lychee --offline --no-progress "$d/link.md" >/dev/null 2>&1 \
