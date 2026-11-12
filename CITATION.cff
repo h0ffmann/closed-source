@@ -32,8 +32,8 @@ abstract: >-
   record cites all three: marola, an open, non-profit platform for sea conditions and
   bathing-water quality, written with five other people (10.5281/zenodo.23224155); WW3 GPU Lab, a
   bit-for-bit GPU port of WAVEWATCH III (10.5281/zenodo.23221351); and picasso, Nix flakes for
-  scientific and agentic toolchains, which builds this book (10.5281/zenodo.23311208). The idea
-  of a self-improving factory in the book is Bruno Valério's. The writer's partners are piabrota
+  scientific and agentic toolchains, which builds this book (10.5281/zenodo.23311208). The idea of
+  a self-improving factory in the book is Bruno Valério's. The writer's partners are piabrota
   (https://github.com/piabrota) and marola-dev (https://github.com/marola-dev).
 authors:
   - family-names: "Hoffmann"
