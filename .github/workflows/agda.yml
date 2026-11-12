@@ -1,0 +1,22 @@
+# agda — the Agda of this repository (agda/): every module checks under --safe, each file of
+# agda/SelfTest/ is refused, and the limits and table of Vale's `ste` style are the ones the Agda
+# model proves things about (scripts/agda-check.sh, `just agda`). docs/4-ways-of-working/agda.md
+# says which claim of the paper and the notes each module backs.
+name: agda
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - run: nix develop --no-update-lock-file .#agda --command scripts/agda-check.sh

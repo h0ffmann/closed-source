@@ -17,3 +17,5 @@ docs/archify/*.html
 docs/archify/*.finalize*.json
 docs/archify/*.delivery*.json
 docs/archify/*.browser-check.json
+# Agda interface files of `just agda` (agda/)
+agda/_build/

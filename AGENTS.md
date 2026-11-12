@@ -9,6 +9,8 @@ linked docs before you change what they cover.
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
 - Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
   `flake.lock`). Release and secrets: the README.
+- Agda: `agda/`, the proofs behind claims of mathematics and types, and of the ASD-STE100 rules.
+  `just agda`; `docs/4-ways-of-working/agda.md`.
 - Website: `site/` (Gleam + Lustre). `just site-build`. `tools/fabric content` generates its content
   from the paper; never write a fact into `site/src` by hand.
 - Tools: `tools/` is one Gleam project. Run `tools/fabric <command>`; `cd tools && gleam test`.
@@ -170,6 +172,9 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   slides or a badge.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
+- A claim of mathematics or types (in a paper, a note or a doc) follows an Agda module in
+  `agda/` that checks under `--safe` (the owner, 12 November 2026). Add the module and its row
+  in `docs/4-ways-of-working/agda.md` in the same pull request; `just agda` checks it.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.
 
 ## Engineering work: the compound loop
