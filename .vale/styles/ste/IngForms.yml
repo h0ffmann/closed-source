@@ -1,0 +1,55 @@
+# ASD-STE100, issue 9: "Use the -ing form of a verb only as a technical noun or as a modifier in a
+# technical noun" (Wikipedia, "Simplified Technical English", read 12 November 2026). Vale cannot
+# tell a verb from a technical noun, so this is a warning; the exceptions are the fixed terms that
+# papers/closed-source/STE100.md keeps ("Kept outside the rules"), and words that only end in -ing.
+extends: existence
+message: "'%s' may be an -ing verb form (ASD-STE100). Use a simple tense, or keep it if it is a technical noun."
+level: warning
+ignorecase: true
+tokens:
+  - '\b\w{3,}ing\b'
+exceptions:
+  - '(?i)according'
+  - '(?i)coding'
+  - '(?i)packaging'
+  - '(?i)warning'
+  - '(?i)supercomputing'
+  - Proebsting
+  - '(?i)pending'
+  - '(?i)working paper'
+  - '(?i)embedding'
+  - '(?i)embeddings'
+  - '(?i)machine learning'
+  - '(?i)software engineering'
+  - '(?i)reverse engineering'
+  - '(?i)engineering'
+  - '(?i)signing key'
+  - '(?i)signing keys'
+  - '(?i)competing interests'
+  - '(?i)string'
+  - '(?i)strings'
+  - '(?i)thing'
+  - '(?i)things'
+  - '(?i)nothing'
+  - '(?i)something'
+  - '(?i)anything'
+  - '(?i)everything'
+  - '(?i)bring'
+  - '(?i)during'
+  - '(?i)meaning'
+  - '(?i)meanings'
+  - '(?i)building'
+  - '(?i)buildings'
+  - '(?i)funding'
+  - '(?i)finding'
+  - '(?i)findings'
+  - '(?i)ruling'
+  - '(?i)rulings'
+  - '(?i)hearing'
+  - '(?i)filing'
+  - '(?i)training'
+  - '(?i)licensing'
+  - '(?i)computing'
+  - '(?i)Beijing'
+  - '(?i)Turing'
+  - '(?i)Boeing'

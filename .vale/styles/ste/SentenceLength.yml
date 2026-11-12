@@ -1,0 +1,11 @@
+# ASD-STE100, issue 9: "no more than 20 words in instructions (procedures) and 25 words in
+# descriptive texts" (Wikipedia, "Simplified Technical English", read 12 November 2026; the
+# specification itself is ASD's, free on request from asd-ste100.org, and is not copied here).
+# A paper is descriptive text, so the limit is 25. Quotations are not counted: .vale.ini hides
+# them (TokenIgnores), because an STE pass never rewrites a quotation (papers/*/STE100.md).
+extends: occurrence
+message: "A sentence of more than 25 words (ASD-STE100: 25 in descriptive text). Split it."
+level: error
+scope: sentence
+max: 25
+token: \b(\w+)\b

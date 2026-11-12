@@ -4,10 +4,12 @@
 Rule 2 of Section [-@sec:citing] asks that a citation say how someone checked it. The reference log
 of the repository does this for each entry. This section gives the reader the short form for the
 claims that are the most important and the most recent. Thus the reader can weigh each claim by the
-type of its source. *Primary* means the document itself: a court filing, a law, a press release by
-the party, a repository or a paper. *Report* means a news or analysis article about the document.
-*Allegation* means a claim that a court did not test yet. I fetched each source on 12 November 2026,
-unless the reference log gives a different date.
+type of its source.
+
+*Primary* means the document itself: a court filing, a law, a press release by the party, a
+repository or a paper. *Report* means a news or analysis article about the document. *Allegation*
+means a claim that a court did not test yet. I fetched each source on 12 November 2026, unless the
+reference log gives a different date.
 
 Table: The 2026 evidence by type of source and status. {#tbl:evidence}
 

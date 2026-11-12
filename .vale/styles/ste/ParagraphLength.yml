@@ -1,0 +1,10 @@
+# ASD-STE100, issue 9: "Do not write more than six sentences in each paragraph" (Wikipedia,
+# "Simplified Technical English", read 12 November 2026). A sentence ends with ".", "!" or "?"
+# before a space or the end; an initial ("M.") and a short abbreviation ("e.g.", "No.") do not
+# end one.
+extends: occurrence
+message: "A paragraph of more than six sentences (ASD-STE100). Split it by topic."
+level: error
+scope: paragraph
+max: 6
+token: '(?<!\b[A-Z]|\b(?:e\.g|i\.e|etc|No|Art|vs|Inc|Ltd|Co|Mr|Ms|Dr|St|U\.S|al|v))[.!?](?=\s|$)'

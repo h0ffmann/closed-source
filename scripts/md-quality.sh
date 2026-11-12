@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # md-quality: three analysers over the Markdown files, each for one kind of fault.
 #   - markdownlint-cli2: the structure (.markdownlint-cli2.jsonc)
-#   - Vale: the prose rules of AGENTS.md (.vale.ini, .vale/styles/fabric/)
+#   - Vale: the prose rules of AGENTS.md (.vale.ini, .vale/styles/fabric/), and ASD-STE100 on a
+#     paper's STE text, papers/*/prose-ste/ (.vale/styles/ste/, docs/4-ways-of-working/ste100.md)
 #   - lychee: links to files and headings that do not exist; with --online, dead web links too
 # The tools come from the flake's `md` shell (`just md-quality` enters it), pinned by flake.lock.
 # docs/4-ways-of-working/md-quality.md says what each rule is, where it comes from and what the
@@ -26,6 +27,8 @@ paper='^papers/[^/]+/(prose[^/]*/|metadata\.md$)'
 not_prose='(pt-BR|^\.claude/project/request\.md$|^notes/)'
 
 files() { git ls-files '*.md' | grep -Ev "$skip" | grep -Ev "$paper"; }
+# A paper's ASD-STE100 text: Vale's style `ste` (.vale.ini gives it to these files only).
+ste_files() { git ls-files 'papers/*/prose-ste/*.md'; }
 
 self_test() {
   local d; d="$(mktemp -d)"; trap 'rm -rf "$d"' RETURN
@@ -38,12 +41,29 @@ self_test() {
     || fail "Vale passed 'utilize' and 'very'"
   printf '# A page\n\nA plain sentence with a number: 3 tools.\n' > "$d/good.md"
   vale --config .vale.ini --no-wrap "$d/good.md" >/dev/null 2>&1 || fail "Vale refused a plain sentence"
+  # .vale.ini gives the style `ste` by path, so its test files must be at a path of that form,
+  # in the work tree; the trap removes them.
+  local s; s="$(mktemp -d papers/ste-self-test.XXXXXX)"; mkdir "$s/prose-ste"
+  trap 'rm -rf "$d" "$s"' RETURN
+  printf '# A page\n\nThis sentence has twenty-six words, because a writer put one more idea and then one more idea into it, and the reader must hold all of them.\n' > "$s/prose-ste/long.md"
+  ! vale --no-wrap "$s/prose-ste/long.md" >/dev/null 2>&1 \
+    || fail "Vale (ste) passed a sentence of more than 25 words"
+  printf '# A page\n\nOne. Two. Three. Four. Five. Six. Seven.\n' > "$s/prose-ste/para.md"
+  ! vale --no-wrap "$s/prose-ste/para.md" >/dev/null 2>&1 \
+    || fail "Vale (ste) passed a paragraph of seven sentences"
+  printf '# A page\n\nWe set up the tool.\n' > "$s/prose-ste/phrasal.md"
+  ! vale --no-wrap "$s/prose-ste/phrasal.md" >/dev/null 2>&1 \
+    || fail "Vale (ste) passed the phrasal verb 'set up'"
+  printf '# A page\n\nHe wrote "%s" [@key].\n' "$(printf 'word %.0s' $(seq 30))" > "$s/prose-ste/quote.md"
+  vale --no-wrap "$s/prose-ste/quote.md" >/dev/null 2>&1 \
+    || fail "Vale (ste) counted the words of a quotation"
   printf '# A page\n\n[a file that is not there](not-there.md)\n' > "$d/link.md"
   ! lychee --offline --no-progress "$d/link.md" >/dev/null 2>&1 \
     || fail "lychee passed a link to a file that does not exist"
   count | grep -qE '^\{"files": [0-9]+, "links": [0-9]+, "github": [0-9]+, "zenodo": [0-9]+\}$' \
     || fail "--count did not print its four numbers"
   echo "md-quality: self-test ok: each of the three refused a bad file" >&2
+  echo "md-quality: self-test ok: Vale (ste) refused a long sentence, a long paragraph and a phrasal verb, and passed a long quotation" >&2
 }
 
 # The website, as published: `--online` also checks every link on its page.
@@ -79,6 +99,10 @@ rm -f "${TMPDIR:-/tmp}/md-quality.$$"
 
 echo "md-quality: prose: Vale on ${#prose[@]} files (an error fails; a warning is advice)" >&2
 vale --no-wrap --output=line "${prose[@]}" >&2 || bad=1
+
+mapfile -t ste < <(ste_files)
+echo "md-quality: ASD-STE100: Vale (fabric and ste) on ${#ste[@]} files (an error fails; a warning is advice)" >&2
+vale --no-wrap --output=line "${ste[@]}" >&2 || bad=1
 
 # 403, 405 and 429 count as an answer: the site is there and refuses a robot (a publisher's page
 # behind a DOI does this), or asks it to slow down. A person with a browser gets the page.

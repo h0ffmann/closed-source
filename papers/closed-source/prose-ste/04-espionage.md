@@ -3,20 +3,22 @@
 
 In this paper, *reverse engineering* is each process that finds how an artefact works from the
 artefact itself, without access to its design documents. Examples are to decompile a binary, to
-infer a model from its outputs, and to build a product again from its parts. In earlier versions
-of this paper, I wrote REA, the shorthand of my project for *reverse engineering, assisted*. In
-2026, the same three letters became the name of an open tool, *Reverse Engineer Anything*. Its
-case is below. This section reviews seven developments. Some of them are lawsuits or accusations.
-Their facts are allegations, and I report them as allegations.
+infer a model from its outputs, and to build a product again from its parts. In earlier versions of
+this paper, I wrote REA, the shorthand of my project for *reverse engineering, assisted*. In 2026,
+the same three letters became the name of an open tool, *Reverse Engineer Anything*. Its case is
+below.
+
+This section reviews seven developments. Some of them are lawsuits or accusations. Their facts are
+allegations, and I report them as allegations.
 
 ## Apple v. OpenAI: secrets leave on two legs
 
 On 10 July 2026, Apple sued OpenAI, the device company io that OpenAI bought, and two former Apple
 employees. Apple sued in the United States District Court for the Northern District of California,
-San Jose Division, as *Apple Inc. v. Chang Liu et al.*, Case No. 5:26-cv-07078
-[@apple2026complaint]. There are six counts. Four counts are trade-secret misappropriation under
-the Defend Trade Secrets Act of 2016, one against each of the four defendants. Two counts are breach
-of contract against the two persons [@apple2026complaint].
+San Jose Division. The case is *Apple Inc. v. Chang Liu et al.*, Case No. 5:26-cv-07078
+[@apple2026complaint]. There are six counts. Four counts are trade-secret misappropriation under the
+Defend Trade Secrets Act of 2016, one against each of the four defendants. Two counts are breach of
+contract against the two persons [@apple2026complaint].
 
 The reports of the complaint say these things. A former Apple engineer got access to Apple systems
 through an authentication bug, from the Apple computer of a colleague. The chief hardware officer
@@ -27,8 +29,8 @@ employees now working at OpenAI" [@apple2026complaint].
 
 OpenAI said in public that it has "no interest in other companies' trade secrets"
 [@perez2026allegations]. In August, it asked the court to dismiss the lawsuit. It said that Apple
-let employees use personal cloud accounts for work, did not remove access correctly, and did not
-identify the secrets that were taken [@perez2026motion].
+let employees use personal cloud accounts for work and did not remove access correctly. It also said
+that Apple did not identify the secrets that were taken [@perez2026motion].
 
 The case moved quickly in the autumn. On 13 October 2026, Judge Edward Davila gave Apple fast
 access to the records of OpenAI interviews with former Apple employees. He also approved
@@ -39,8 +41,8 @@ secrets" [@mekelburg2026court].
 At that hearing, the reports say that OpenAI agreed not to use the information that Apple says was
 taken. OpenAI also agreed to collect forensic images of the devices of 14 employees. The judge said
 that he was "highly likely" to grant the injunction [@mendes2026agrees]. On 28 October, the court
-set the trial for 19 July 2027 [@mendes2026trial]. On 12 November 2026, when I wrote this paper, I
-found no report that the court made a decision on the request to dismiss or on the merits.
+set the trial for 19 July 2027 [@mendes2026trial]. I wrote this paper on 12 November 2026. On that
+day, I found no report of a court decision on the request to dismiss or on the merits.
 
 **[ANALYSIS]** The result of the dispute is not known. But the dispute teaches something, because
 of what it is *not* about. It is not about source code that an adversary did not read because the
@@ -109,12 +111,12 @@ three laboratories were DeepSeek, Moonshot AI and MiniMax. They used about 24,00
 accounts and more than 16 million exchanges with the Claude models [@anthropic2026distillation].
 
 In September, the accusation became official. On 8 September 2026, the NSA, CISA and the FBI
-published a joint advisory, AA26-251A, about distillation campaigns by China-based AI companies
-against US companies [@csa2026distillation]. The reports say that it names DeepSeek, Moonshot AI,
-Alibaba, MiniMax, StepFun and Z.AI. It describes "aggressive, malicious, and targeted distillation
-activities at an industrial scale" against models of Anthropic, OpenAI and Google. The reports say
-that these activities extracted billions of tokens over millions of exchanges since at least late
-2024 [@lakshmanan2026agencies].
+published the joint advisory AA26-251A. It is about distillation campaigns by China-based AI
+companies against US companies [@csa2026distillation]. The reports say that it names DeepSeek,
+Moonshot AI, Alibaba, MiniMax, StepFun and Z.AI. It describes "aggressive, malicious, and targeted
+distillation activities at an industrial scale" against models of Anthropic, OpenAI and Google. The
+reports say that these activities extracted billions of tokens over millions of exchanges since at
+least late 2024 [@lakshmanan2026agencies].
 
 The Cloud Security Alliance quotes one sentence of the agencies: "this activity forms the critical
 core, not merely a supplement" of the development strategy of the named companies
@@ -145,10 +147,10 @@ it.
 
 ## Decompilation: the end of the opaque binary
 
-Reverse engineering of compiled software was routine for a long time. For some purposes, for
-example interoperability, it is lawful [@samuelson2002law]. On 5 March 2019, at the RSA Conference,
-the US National Security Agency released its own reverse-engineering framework, Ghidra, as open
-source [@uchill2019ghidra] under the Apache-2.0 licence [@nsa2019ghidra].
+Reverse engineering of compiled software was routine for a long time. For some purposes, for example
+interoperability, it is lawful [@samuelson2002law]. On 5 March 2019, at the RSA Conference, the US
+National Security Agency released its own reverse-engineering framework, Ghidra, as open source
+[@uchill2019ghidra]. The licence is Apache-2.0 [@nsa2019ghidra].
 
 Then language models removed the remaining barrier, which was skill. LLM4Decompile is a family of
 open models for decompilation. It produces source code that compiles again and passes the original

@@ -1,0 +1,36 @@
+# ASD-STE100 asks for one word for one meaning and simple verbs; a phrasal verb is two words for
+# one verb. The pairs are this repository's (the first two are from .claude/commands/ste100.md);
+# none is copied from the ASD-STE100 dictionary, which is ASD's copyright.
+extends: substitution
+message: "Use '%s', not the phrasal verb '%s' (ASD-STE100: one word, one meaning)."
+level: error
+ignorecase: true
+swap:
+  set up: configure
+  sets up: configures
+  find out: find
+  finds out: finds
+  found out: found
+  carry out: do
+  carries out: does
+  carried out: did
+  point out: show
+  points out: shows
+  pointed out: showed
+  figure out: find
+  figured out: found
+  give up: stop
+  gave up: stopped
+  look into: examine
+  looked into: examined
+  make up: make
+  made up of: made of
+  turn out: become
+  turned out: became
+  come up with: make
+  came up with: made
+  get rid of: remove
+  got rid of: removed
+  put off: delay
+  went on: continued
+  goes on: continues

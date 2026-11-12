@@ -1,0 +1,9 @@
+# ASD-STE100: one term for one meaning, the same term each time. These are the terms that the
+# first STE pass of this paper chose (papers/closed-source/STE100.md, "Pass 1: rewrite").
+extends: substitution
+message: "Use '%s', not '%s': the STE text uses one term for one meaning (papers/closed-source/STE100.md)."
+level: error
+ignorecase: true
+swap:
+  proprietary: closed source
+  PID: persistent identifier

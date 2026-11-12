@@ -24,10 +24,11 @@ can cite exactly what they used.
 
 A fourth element is now standard. A DOI names a release that someone chose to archive. A Software
 Hash Identifier names each artefact of source code by its content. Since April 2025, it is the
-international standard ISO/IEC 18670 [@swh2026swhid]. The two identifiers do different work. The
-DOI carries the metadata of credit: authors, title and version. The SWHID proves that the code that
-a reader has is the code that the citation names. If a citation has both, anyone can check it, and
-nobody must trust the archive.
+international standard ISO/IEC 18670 [@swh2026swhid].
+
+The two identifiers do different work. The DOI carries the metadata of credit: authors, title and
+version. The SWHID proves that the code that a reader has is the code that the citation names. If a
+citation has both, anyone can check it, and nobody must trust the archive.
 
 This repository uses this method, and Section [-@sec:fabric] gives the details. Each item of the
 related work in Section [-@sec:related] also uses this method and has a concept DOI.
@@ -71,12 +72,12 @@ be part of how people and agents make the text.
 
 ## Citation for agents: borrow, cite, propagate
 
-Coding and research agents now write a large part of new code and text, which includes the drafts
-of this paper (see the AI-use statement). Agents read much more than any person, and they copy
-easily. If agents do not cite, the REA explosion becomes a machine that launders work. Code and
-ideas enter with their authors and exit without them. Thus, I propose three rules for agents.
-Paper Fabric's `AGENTS.md` makes these rules mandatory for each agent that works in its
-repositories.
+Coding and research agents now write a large part of new code and text. This includes the drafts of
+this paper (see the AI-use statement). Agents read much more than any person, and they copy easily.
+
+If agents do not cite, the REA explosion becomes a machine that launders work. Code and ideas enter
+with their authors and exit without them. Thus, I propose three rules for agents. Paper Fabric's
+`AGENTS.md` makes these rules mandatory for each agent that works in its repositories.
 
 1. **Borrow only what the licence allows.** Before you reuse code, text, figures or data, read
    the licence. Then record the licence. If the licence does not permit the reuse, it is not

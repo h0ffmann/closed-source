@@ -33,8 +33,10 @@ attacks it.
 and Scotchmer write that reverse engineering "has a long history as an accepted practice"
 [@samuelson2002law]. Trade-secret law protects against improper means, for example theft and breach
 of confidence. It does not protect against a person who studies a product that they obtained
-lawfully. Thus closed source never had a legal guarantee against understanding. It had a practical
-guarantee: reverse engineering was slow and expensive. Section [-@sec:law] examines the laws.
+lawfully.
+
+Thus closed source never had a legal guarantee against understanding. It had a practical guarantee:
+reverse engineering was slow and expensive. Section [-@sec:law] examines the laws.
 
 **3. For models, that practical guarantee is gone.** Extraction attacks on prediction APIs
 [@tramer2016stealing] developed into attacks on production language models
@@ -51,8 +53,10 @@ image editor were available [@storytold2026photocraft].
 **5. Secrets also leak from inside.** A former Google engineer uploaded AI trade secrets to a
 personal cloud account, and a jury convicted him [@doj2026ding]. A trade-secret lawsuit is about
 recruitment and devices [@apple2026complaint]. A packaging error published the source of a
-commercial agent [@franzen2026claudecode]. These are three different failures, with one lesson.
-Secrecy is a property of people and processes, and people and processes leak.
+commercial agent [@franzen2026claudecode].
+
+These are three different failures, with one lesson. Secrecy is a property of people and processes,
+and people and processes leak.
 
 **6. Secrecy costs science, and there are measurements of the cost.** Collberg and Proebsting tried
 to get and build the code of 601 papers from eight ACM conferences and five journals. Only 27% of

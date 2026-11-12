@@ -51,9 +51,9 @@ the owner of a closed artefact a right that nobody understands it.
 partial citation of a program is lawful when the text identifies the program and its owner. That is
 the rule of this paper, in a law of 1998.
 
-**[ANALYSIS]** The same line goes through the cases of 2026 in Section [-@sec:espionage]. The lawsuit
-of Apple and the conviction of Ding are about the improper side of the line: devices, uploads,
-recruitment and breach of duty [@apple2026complaint; @doj2026ding]. The Craft projects put
+**[ANALYSIS]** The same line goes through the cases of 2026 in Section [-@sec:espionage]. The
+lawsuit of Apple and the conviction of Ding are about the improper side of the line: devices,
+uploads, recruitment and breach of duty [@apple2026complaint; @doj2026ding]. The Craft projects put
 themselves on the other side. They call their work clean-room reimplementations from "public specs
 and observed behaviour only" [@storytold2026photocraft].
 
@@ -64,7 +64,9 @@ understanding, which the law always permitted.
 
 **[ANALYSIS]** Two limits keep this reading honest. First, copyright, patents and contracts still
 apply. A clean-room rebuild can copy behaviour, but not protected expression. A licence can forbid
-reverse engineering by contract where the local law permits such a clause. Second, a person can use
-a lawful method for an unlawful purpose. If a tool is lawful, that does not make each use of it
-lawful. The point is narrower: the law never promised that nobody would read a closed artefact.
-Thus closed source never had the guarantee that its faith assumed.
+reverse engineering by contract where the local law permits such a clause.
+
+**[ANALYSIS]** Second, a person can use a lawful method for an unlawful purpose. If a tool is
+lawful, that does not make each use of it lawful. The point is narrower: the law never promised that
+nobody would read a closed artefact. Thus closed source never had the guarantee that its faith
+assumed.

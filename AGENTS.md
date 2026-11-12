@@ -143,7 +143,8 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 
 - A paper's ASD-STE100 text is `papers/<slug>/prose-ste/`. If you change a fact in `prose/`,
   change it in `prose-ste/` in the same pull request. Use `/ste100` and log the pass in
-  `papers/<slug>/STE100.md`.
+  `papers/<slug>/STE100.md`. Vale's style `ste` checks the rules in CI
+  (`docs/4-ways-of-working/ste100.md`).
 
 - `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` digest the public ouroboric-dev repositories. Refresh
   them with `just ouroboric-sources` and `/update-ouroboric`. Each fact in them has a source line;
