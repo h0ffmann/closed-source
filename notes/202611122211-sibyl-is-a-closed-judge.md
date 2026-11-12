@@ -26,9 +26,9 @@ currently kept secret out of consideration for public opinion" (Psycho-Pass Wiki
 World*, 22 March 2013).
 
 **Who judges the judges.** The members are the people the system cannot read: the criminally
-asymptomatic. Sibyl's own line, as one review quotes it: "We can entrust management of the system
-to those who deviate from the system. That is the most logical conclusion" (Angry Anime Bitches,
-episode 20 review, March 2013).
+asymptomatic, "individuals" like Makishima (Wikipedia, *Psycho-Pass season 1*, episode 17). The
+fan wiki puts it the same way: "a hive mind made up of people who, like Shogo Makishima, are
+criminally asymptomatic" (Psycho-Pass Wiki, *Sibyl System*).
 
 Why this matters to the paper: [[202611122212-sibyl-survives-only-while-closed]].
 
@@ -38,5 +38,3 @@ Why this matters to the paper: [[202611122212-sibyl-survives-only-while-closed]]
 - Psycho-Pass Wiki, "0116 The Gates of Judgment": <https://psychopass.fandom.com/wiki/0116_The_Gates_of_Judgment>
 - Psycho-Pass Wiki, "0122 Perfect World": <https://psychopass.fandom.com/wiki/0122_Perfect_World>
 - Psycho-Pass Wiki, "Sibyl System": <https://psychopass.fandom.com/wiki/Sibyl_System>
-- Angry Anime Bitches, "Psycho-Pass Episode 20: Where Justice Lies":
-  <https://angryanimebitches.com/2013/03/psycho-pass-episode-20-where-justice-lies>
