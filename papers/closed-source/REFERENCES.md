@@ -67,7 +67,7 @@ Rows added on 2026-11-12, for the expansion to 33 pages; every source was fetche
 | apple2026complaint | verified | courthousenews.com copy of the complaint (Document 1) | caption, Case No. 5:26-cv-07078, N.D. Cal. San Jose, filed 10 Jul 2026, six counts; quote of para. 53 checked |
 | perez2026hiring | verified | techcrunch.com article | 13 Oct 2026; Judge Davila; expedited access to hiring records, three depositions |
 | mekelburg2026court | verified | claimsjournal.com (Bloomberg News) | 14 Oct 2026; case 5:26-cv-07078, Apple v. Liu; OpenAI quote checked |
-| mendes2026agrees | verified | 9to5mac.com article | 14 Oct 2026; stipulation, 14 employees' devices, "highly likely" |
+| mendes2026agrees | verified | 9to5mac.com article | 14 Oct 2026; stipulation, 14 employees' devices |
 | mendes2026trial | verified | 9to5mac.com article | 28 Oct 2026; trial 19 Jul 2027; motion to dismiss not mentioned |
 | doj2026ding | verified | justice.gov press release | 30 Jan 2026; verdict the day before; 7 + 7 counts; quotes checked |
 | debenedetti2026ding | verified | kqed.org article | 1 Sep 2026; Judge Chhabria; just under one year |
