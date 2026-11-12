@@ -22,14 +22,14 @@ encontrem os bugs que poucos encontrariam [@raymond1998cathedral]. Raymond contr
 mostrou que o bazar era capaz de construir o tipo mais difícil de software que existe.
 
 A segunda conquista de Torvalds nasceu de um fracasso do código fechado. A partir de 2002, o kernel
-usou o BitKeeper, um sistema de controle de versão proprietário oferecido sem custo. Em abril de 2005,
-esse acesso gratuito acabou. Nenhum sistema livre atendia às necessidades do projeto, então Torvalds
-escreveu o seu próprio. Ele começou em 3 de abril de 2005; em 7 de abril, o Git já gerenciava o seu
-próprio código-fonte; o primeiro merge de múltiplos branches veio em 18 de abril; e em 26 de julho ele
-passou a manutenção a Junio Hamano [@wikipedia2026git]. O primeiro commit do repositório do Git, ainda
-legível hoje, tem o título "Initial revision of "git", the
-information manager from hell" (em tradução livre: revisão inicial do git, o gerenciador de informação
-do inferno) [@torvalds2005git].
+usou o BitKeeper, um sistema de controle de versão proprietário oferecido sem custo. Em abril de
+2005, esse acesso gratuito acabou. Nenhum sistema livre atendia às necessidades do projeto, então
+Torvalds escreveu o seu próprio. Ele começou em 3 de abril de 2005; em 7 de abril, o Git já
+gerenciava o seu próprio código-fonte; o primeiro merge de múltiplos branches veio em 18 de abril; e
+em 26 de julho ele passou a manutenção a Junio Hamano [@wikipedia2026git]. O primeiro commit do
+repositório do Git, ainda legível hoje, tem o título "Initial revision of 'git', the information
+manager from hell" (em tradução livre: revisão inicial do git, o gerenciador de informação do
+inferno) [@torvalds2005git].
 
 **[ANÁLISE]** O episódio do BitKeeper é uma pequena parábola para este artigo. A comunidade do kernel
 havia aceitado uma ferramenta fechada por conveniência. Quando o dono a retirou, a comunidade ficou

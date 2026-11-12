@@ -14,9 +14,11 @@ correspondência em 2012 [@branwen2012nash]. Nela, Nash argumentava que, para ci
 complexas, "the mean key computation length increases exponentially with the length of the key"
 (em tradução livre: o comprimento médio da computação da chave cresce exponencialmente com o
 comprimento da chave) [@branwen2012nash]. A ideia é que a segurança deve repousar sobre o custo da
-computação, e não sobre a ocultação do projeto. Rivest, Shamir e seus alunos leram as cartas como
-uma antecipação da teoria da complexidade e da criptografia moderna [@rivest2012nash]. A máquina do próprio Nash não teve a mesma sorte. A NSA julgou que ela "affords only limited security" (em tradução livre: oferece apenas segurança limitada)
-[@nash1955letters], e, quando Ronald Rivest, Adi Shamir e seus alunos a analisaram em 2012,
+computação, e não sobre a ocultação do projeto. Ronald Rivest, Adi Shamir e seus alunos leram as
+cartas como uma antecipação da teoria da complexidade e da criptografia moderna [@rivest2012nash].
+A máquina do próprio Nash não teve a mesma sorte. A NSA julgou que ela "affords only limited
+security" (em tradução livre: oferece apenas segurança limitada) [@nash1955letters], e, quando
+Rivest, Shamir e seus alunos a analisaram em 2012,
 encontraram um ataque de texto claro escolhido em tempo polinomial e um ataque de texto claro
 conhecido em tempo subexponencial, e concluíram que Nash era "a much better game theorist
 than a cryptographer" (em tradução livre: um teórico dos jogos muito melhor do que criptógrafo)
@@ -55,14 +57,15 @@ A própria documentação do projeto lista os limites, e eles são gerais
   mão.
 
 A teoria diz que esses limites não são uma questão de esforço. Barak e colegas provaram que não pode
-existir um ofuscador geral de "virtual black box" (caixa-preta virtual). Tal ofuscador não permitiria
-a ninguém computar, a partir do programa ofuscado, nada que não pudesse ser computado apenas com
-acesso de entrada e saída. Os autores construíram uma família de programas que podem ser obtidos
-por engenharia reversa a partir de qualquer programa equivalente, embora o acesso de caixa-preta
-não revele nada de seu código [@barak2012impossibility]. O resultado deixa espaço para noções mais
-fracas de ofuscação, mas não para um método geral que torne o código-fonte secreto. **[ANÁLISE]** E,
-diante dos modelos de linguagem da Seção [-@sec:espionage], que já recuperam código-fonte a partir
-de binários, renomear identificadores para o latim é apenas um quebra-molas.
+existir um ofuscador geral de "virtual black box" (caixa-preta virtual). Tal ofuscador não
+permitiria a ninguém computar, a partir do programa ofuscado, nada que não pudesse ser computado
+apenas com acesso de entrada e saída. Os autores construíram uma família de programas que podem ser
+obtidos por engenharia reversa a partir de qualquer programa equivalente, embora o acesso de
+caixa-preta não revele nada de seu código [@barak2012impossibility]. O resultado deixa espaço para
+noções mais fracas de ofuscação, mas não para um método geral que torne o código-fonte secreto.
+
+**[ANÁLISE]** Diante dos modelos de linguagem da Seção [-@sec:espionage], que já recuperam
+código-fonte a partir de binários, renomear identificadores para o latim é apenas um quebra-molas.
 
 O ofuscador mais recente diz o mesmo de si. O Blind LLM Agents, noticiado em 10 de novembro de 2026,
 reforça o código distribuído contra a análise por agentes de programação com renomeação, cifragem de
@@ -93,8 +96,8 @@ uma com ferramentas públicas e maduras.
    deixa de significar uma chave de assinatura roubada.
 3. **Exija autenticação de dois fatores na forja.** Em 2022, o GitHub se comprometeu a exigir que
    todo usuário que contribui com código no GitHub.com ativasse a autenticação de dois fatores até o
-   fim de 2023 [@hanley2022twofactor]. Uma pessoa que se apodera de uma conta pode enviar código em
-   nome de seu dono.
+   fim de 2023 [@hanley2022twofactor]. Sem isso, uma pessoa que se apodera de uma conta pode enviar
+   código em nome de seu dono.
 4. **Torne as assinaturas verificáveis por todos.** O Sigstore permite que desenvolvedores assinem
    com chaves efêmeras vinculadas a uma identidade existente por meio do OpenID Connect, e registra
    as assinaturas em logs de transparência, o que elimina a maior parte do ônus e do risco da gestão

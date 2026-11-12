@@ -1,7 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # What to do now: a checklist for a researcher in 2026 {#sec:checklist}
 
-The argument of this paper ends in practice. I end the argument with a checklist. Any researcher,
+The argument of this paper ends in practice. Thus I end with a checklist. Any researcher,
 research group or small laboratory can do it in one week. Each item names the section that gives
 its reason. Nothing in it needs permission from anyone.
 

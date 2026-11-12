@@ -5,17 +5,18 @@ Closed source asked researchers to trust secrecy to protect their work. Between 
 trust failed in public. Language models decompiled binaries, and production models were read through
 their own answers. Capability was copied through the front door.
 
-The biggest trade-secret dispute in the field was about laptops and job interviews. A build step
-published the source of a commercial agent. In a few weeks, an agent built a professional image
-editor again from its behaviour. Linux and Git showed long ago that the alternative works at scale,
-and the closed laboratories themselves started to publish weights and methods.
+A trade-secret dispute between two of the most valuable companies in the field was about laptops
+and job interviews. A build step published the source of a commercial agent. In a few weeks, an
+agent built a part of a professional image editor again from its behaviour. Linux and Git showed
+long ago that the alternative works at scale, and the closed laboratories themselves started to
+publish weights and methods.
 
-The law did not promise a different result. In the United States, the European Union and Brazil,
-it is a lawful means to study a product that you hold lawfully. Only theft, bribery and breach of
-duty are not lawful. Cryptography did not promise a different result. Since Kerckhoffs, and in the
-letters of Nash, the method is public and only the key is secret. In 2026, we can protect
-integrity and identity, with signed commits, keys in hardware, and content hashes that are also
-citations.
+The law did not promise a different result. In the United States, the European Union and Brazil, it
+is a lawful means to study a product that you hold lawfully. Improper means, for example theft,
+bribery and breach of duty, are not lawful. Cryptography did not promise a different result. Since
+Kerckhoffs, and in the letters of Nash, the method is public and only the key is secret. In 2026, we
+can protect integrity and identity, with signed commits, keys in hardware, and content hashes that
+are also citations.
 
 What remains is a question of manners, and machines make it urgent. If anyone can reverse engineer
 anything, the honest course is this: publish the method, mint an identifier, and cite all that you
@@ -29,8 +30,8 @@ source fails in the same way. It promised that what was hidden would stay hidden
 
 **[ANALYSIS]** Between 2024 and 2026, the record shows a model that read a binary, and a model that
 people read through its answers. It shows a commercial agent that its own build published, and an
-application that people built again from its behaviour. It also shows secrets that trusted people
-took away.
+application that people partly built again from its behaviour. It also shows secrets that trusted
+people took away.
 
 **[ANALYSIS]** The faith also promised that the cost of secrecy fell on nobody. The record shows
 code that nobody can find, methods that nobody can run, and references that nobody can check.
@@ -63,7 +64,7 @@ The reference log of the repository records these checks. The agent configuratio
 the `.claude/` directory of the repository. I am responsible for the content.
 
 **Competing interests.** I maintain the open-source projects that Section
-[-@sec:related] cites. Section [-@sec:espionage] cites a report by Anthropic. Anthropic also makes
+[-@sec:related] cites. Section [-@sec:espionage] cites reports by Anthropic. Anthropic also makes
 the model that drafted this paper. I declare no other competing interests.
 
 **Availability.** Source, build pipeline and agent configuration:

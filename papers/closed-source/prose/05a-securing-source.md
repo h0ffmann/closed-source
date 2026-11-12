@@ -8,17 +8,16 @@ the answer that cryptography gives instead.
 ## Nash's letters: security from computation, not concealment
 
 In early 1955 John Nash, the author of the equilibrium concept for non-cooperative games
-[@nash1950equilibrium], wrote to the US National Security Agency to propose an enciphering
-machine [@nash1955letters]. The NSA declassified the
-correspondence in 2012 [@branwen2012nash]. In it Nash argued that, for sufficiently complex
-ciphers, "the mean key computation length increases exponentially with the length of the key"
-[@branwen2012nash]. The idea is that security should rest on the cost of computation rather than on
-hiding the design. Rivest, Shamir and their students read the letters as an anticipation of
-complexity theory and modern cryptography [@rivest2012nash]. Nash's own machine fared less well. The NSA judged that it "affords only limited security"
-[@nash1955letters], and when Ronald Rivest, Adi Shamir and their students analysed it in 2012
-they found a polynomial-time chosen-plaintext attack and a subexponential known-plaintext attack,
-and concluded that Nash was "a much better game theorist
-than a cryptographer" [@rivest2012nash].
+[@nash1950equilibrium], wrote to the US National Security Agency to propose an enciphering machine
+[@nash1955letters]. The NSA declassified the correspondence in 2012 [@branwen2012nash]. In it Nash
+argued that, for sufficiently complex ciphers, "the mean key computation length increases
+exponentially with the length of the key" [@branwen2012nash]. The idea is that security should rest
+on the cost of computation rather than on hiding the design. Ronald Rivest, Adi Shamir and their
+students read the letters as an anticipation of complexity theory and modern cryptography
+[@rivest2012nash]. Nash's own machine fared less well. The NSA judged that it "affords only limited
+security" [@nash1955letters], and when Rivest, Shamir and their students analysed it in 2012 they
+found a polynomial-time chosen-plaintext attack and a subexponential known-plaintext attack, and
+concluded that Nash was "a much better game theorist than a cryptographer" [@rivest2012nash].
 
 **[ANALYSIS]** Both halves of the story support Kerckhoffs. Nash's principle, security from the
 work an attacker must do, is the one modern cryptography kept. His design, once published, was
@@ -53,10 +52,11 @@ Theory says these limits are not a matter of effort. Barak and colleagues proved
 "virtual black box" obfuscator cannot exist. Such an obfuscator would let no one compute from the
 obfuscated program anything they could not compute from input-output access alone. The authors
 built a family of programs that can be reverse engineered from any equivalent program, although
-black-box access reveals nothing of their code [@barak2012impossibility]. The result leaves room for weaker notions of obfuscation, but
-not for a general method that makes source code secret. **[ANALYSIS]** And against the language
-models of Section [-@sec:espionage], which already recover source from binaries, renaming
-identifiers into Latin is a speed bump.
+black-box access reveals nothing of their code [@barak2012impossibility]. The result leaves room
+for weaker notions of obfuscation, but not for a general method that makes source code secret.
+
+**[ANALYSIS]** Against the language models of Section [-@sec:espionage], which already recover
+source from binaries, renaming identifiers into Latin is a speed bump.
 
 The newest obfuscator says the same of itself. Blind LLM Agents, reported on 10 November 2026,
 hardens shipped code against analysis by coding agents with renaming, string encryption, decoy
@@ -84,7 +84,8 @@ only they could have written it. In 2026 that means four layers, each with publi
    signing key.
 3. **Require two-factor authentication on the forge.** GitHub committed in 2022 to require every
    user who contributes code on GitHub.com to enable two-factor authentication by the end of 2023
-   [@hanley2022twofactor]. A person who takes over an account can push code in its owner's name.
+   [@hanley2022twofactor]. Without it, a person who takes over an account can push code in its
+   owner's name.
 4. **Make signatures verifiable by everyone.** Sigstore lets developers sign with ephemeral keys
    bound to an existing identity through OpenID Connect, and records signatures in transparency
    logs, which removes most of the burden and risk of key management [@newman2022sigstore].
@@ -104,12 +105,12 @@ also serve citation. Since April 2025 the Software Hash Identifier, SWHID, which
 artefact of source code by its cryptographic hash, from a single file to a full snapshot of a
 repository, is the international standard ISO/IEC 18670 [@swh2026swhid].
 
-**[ANALYSIS]** A hash that
-proves integrity and an identifier that gives credit are, in this standard, the same string.
+**[ANALYSIS]** A hash that proves integrity and an identifier that gives credit are, in this
+standard, the same string.
 
 What stays secret under this model is small and explicit: private keys, credentials, and data that
-is personal or under agreement. Those deserve encryption and access
-control. The source code itself is better published, signed and cited.
+is personal or under agreement. Those deserve encryption and access control. The source code itself
+is better published, signed and cited.
 
 **[ANALYSIS]** In Nash's own vocabulary, this is a change of strategy in a game whose payoffs have
 moved. When reverse engineering was expensive, secrecy could be a sensible strategy for an

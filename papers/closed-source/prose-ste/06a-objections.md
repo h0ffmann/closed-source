@@ -51,10 +51,11 @@ Patents, copyright, contracts and the lead time of the first company all protect
 of them needs the product to stay unread. The argument of Samuelson and Scotchmer for lawful
 reverse engineering depends on the lead time that it leaves [@samuelson2002law].
 
-**[ANALYSIS]** The laboratories with the largest investments released weights and methods in 2025,
-because they saw a return when people use and cite them [@openai2025gptoss; @guo2025deepseekr1].
-Firms already use open source that would cost about 8.8 trillion US dollars to replace
-[@hoffmann2024value]. People built it without the reason that the objection says is necessary. For
+**[ANALYSIS]** Laboratories with some of the largest investments released weights and methods in
+2025. One of them gave its reason: open models "complement our hosted models" [@openai2025gptoss;
+@guo2025deepseekr1]. Firms already use open source that would cost about 8.8 trillion US dollars
+to replace [@hoffmann2024value]. People built it without the secrecy that the objection says is
+necessary. For
 science, the objection does not apply: the return of a researcher is citation, and citation needs
 readers.
 

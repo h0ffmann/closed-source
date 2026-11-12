@@ -59,11 +59,11 @@ artigos publicados, "approx. 1% of all accepted papers" (cerca de um por cento d
 aceitos), cada um deles revisado por três a cinco especialistas [@ansari2026compound].
 
 **[ANÁLISE]** Uma referência fabricada é a imagem espelhada de um empréstimo sem crédito. Uma dá
-crédito a um trabalho que não existe; a outra nega crédito a um trabalho que existe. Ambas passam pela
-revisão por pares porque os revisores leem o argumento, não a procedência, e ambas crescem com as
-ferramentas que escrevem texto. Se os veículos mais seletivos do campo das próprias ferramentas
-deixam passar um artigo em cem com fontes inventadas, a verificação não pode ficar a cargo dos
-revisores. Ela precisa fazer parte de como o texto é feito.
+crédito a um trabalho que não existe; a outra nega crédito a um trabalho que existe. Ambas passam
+pela revisão por pares porque os revisores leem o argumento, não a procedência, e ambas crescem com
+as ferramentas que escrevem texto. Se um dos veículos mais seletivos do aprendizado de máquina, o
+campo que constrói essas ferramentas, deixa passar cerca de um artigo em cem com fontes inventadas,
+a verificação não pode ficar a cargo dos revisores. Ela precisa fazer parte de como o texto é feito.
 
 ## Citação para agentes: tomar emprestado, citar, propagar
 

@@ -7,9 +7,9 @@ results.
 - **Position, not measurement.** This paper uses cited evidence for its argument. It does not
   report a new experiment. Its claims about the cost of reverse engineering come from the cited
   studies, not from my own measurements.
-- **Allegations, not findings.** The Apple v. OpenAI dispute and the distillation accusations,
-  which include the advisory of three US agencies, are allegations. When I wrote this paper, no
-  court had made a decision about them. The Ding case is different: it ended in a conviction.
+- **Allegations, not findings.** The Apple v. OpenAI dispute and the distillation accusations, which
+  include the advisory of three US agencies, are allegations. When I wrote this paper, no court had
+  made a decision about their merits. The Ding case is different: it ended in a conviction.
 - **Secondary sources for 2026 events.** For most 2026 events, my sources are news reports. I read
   the Apple complaint in a copy that a news service published, not from PACER. I read the joint
   advisory AA26-251A through two reports, not from CISA. Reports of later hearings can use words

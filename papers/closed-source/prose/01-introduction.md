@@ -14,15 +14,15 @@ when one lab, one company or one student keeps their work to themselves. I argue
 articles failed, and that the failure became obvious between 2024 and 2026.
 
 The first article failed because reverse engineering stopped being rare. Reverse engineering has
-always been lawful and common [@samuelson2002law]. What changed is its cost. Language models now
-turn compiled binaries into source that compiles and passes tests [@tan2024llm4decompile]. A few
-thousand API queries recover parts of a production language model [@carlini2024stealing]. Tens
-of thousands of accounts can distil a frontier model's behaviour into a competitor's
+always been lawful and common [@samuelson2002law]. What changed is its cost. Language models can now
+turn compiled binaries into source that compiles and passes tests [@tan2024llm4decompile]. Queries
+that cost under 20 US dollars recover part of a production language model [@carlini2024stealing].
+Tens of thousands of accounts can distil a frontier model's behaviour into a competitor's
 [@anthropic2026distillation; @reuters2026deepseek], and in September 2026 three US agencies
 described such campaigns as "industrial scale" [@lakshmanan2026agencies]. And when one of the most
 valuable companies in the world sued one of the most valuable laboratories over trade secrets in
-July 2026, its complaint was about people, laptops and recruiting, not about source code that
-stayed safely secret [@apple2026complaint; @perez2026allegations].
+July 2026, its complaint was about people, laptops and recruiting, not about source code that stayed
+safely secret [@apple2026complaint; @perez2026allegations].
 
 The first article also failed in the other direction: secrets leak without any reverse
 engineering at all. In January 2026 a jury convicted a former Google engineer of taking more than
@@ -73,16 +73,19 @@ This paper makes five contributions.
 
 ## Organisation
 
-Section [-@sec:bazaar] revisits Linux and Git as evidence that openness scales, and looks honestly
-at two failures of open source. Section [-@sec:openweights] reviews how the closed laboratories
-themselves began to publish weights and methods. Section [-@sec:espionage] reviews science and
-espionage in 2026 and the explosion of AI-assisted reverse engineering. Section [-@sec:dead]
-gathers seven lines of evidence that closed source is dead as a protection. Section [-@sec:law]
-reads the law. Section [-@sec:securing] turns to obfuscation, John Nash's letters on cryptography
-and how to secure source code in 2026. Section [-@sec:citing] argues for professional citation
-and states rules for agents. Section [-@sec:objections] answers six objections. Section
-[-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists my related work, and Section
-[-@sec:limits] states the limits of my argument.
+Section [-@sec:history] reads three documents, from 1976, 1983 and 1998, in which the faith was
+founded, contested and first abandoned. Section [-@sec:bazaar] revisits Linux and Git as evidence
+that openness scales, and looks honestly at two failures of open source. Section [-@sec:openweights]
+reviews how the closed laboratories themselves began to publish weights and methods. Section
+[-@sec:espionage] reviews science and espionage in 2026 and the explosion of AI-assisted reverse
+engineering. Section [-@sec:dead] gathers seven lines of evidence that closed source is dead as a
+protection. Section [-@sec:law] reads the law. Section [-@sec:securing] turns to obfuscation, John
+Nash's letters on cryptography and how to secure source code in 2026. Section [-@sec:citing] argues
+for professional citation and states rules for agents. Section [-@sec:objections] answers six
+objections, and Section [-@sec:checklist] turns the argument into a checklist. Section
+[-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists my related work. Section
+[-@sec:evidence] grades the 2026 evidence by its kind of source, Section [-@sec:limits] states the
+limits of my argument, and Section [-@sec:conclusion] concludes.
 
 A note on method. This is a position paper, written in the *research* style of the Ouroboric
 documentation standard: every factual claim carries a citation, and passages of interpretation are

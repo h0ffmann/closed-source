@@ -57,7 +57,8 @@ escondido, e as empresas percebem.
 
 ## O que a história mostra
 
-**[ANÁLISE]** Cinquenta anos separam a carta aberta da explosão do REA. Nesse tempo, a fé no código
+**[ANÁLISE]** Cinquenta anos separam a carta aberta da explosão da engenharia reversa de 2026
+(Seção [-@sec:espionage]). Nesse tempo, a fé no código
 fechado foi fundada sobre um custo real, contestada por razões éticas e abandonada aos poucos por
 empresas que refizeram a conta. As evidências de 2024 a 2026 não iniciam a história. Elas removem a
 última premissa em que a fé se apoiava: a de que o que é compilado ou servido continua sem ser lido.

@@ -40,15 +40,17 @@ do código fechado.
 *Se um rival consegue reconstruir um produto em semanas, ninguém vai passar anos construindo-o.
 Segredos comerciais existem porque financiam a inovação.*
 
-**[ANÁLISE]** A objeção confunde a proteção do investimento com a proteção da legibilidade. Patentes,
-direitos autorais, contratos e a vantagem de tempo de quem chega primeiro protegem o investimento sem
-exigir que o produto fique sem ser lido; a defesa de Samuelson e Scotchmer da engenharia reversa
-lícita se apoia justamente na vantagem de tempo que ela deixa [@samuelson2002law]. Os laboratórios
-com os maiores investimentos liberaram pesos e métodos em 2025 porque viram retorno em serem usados e
-citados [@openai2025gptoss; @guo2025deepseekr1]. E o código aberto de que as empresas já dependem,
-avaliado em cerca de 8,8 trilhões de dólares americanos para ser substituído [@hoffmann2024value], foi
-construído sem o incentivo que a objeção diz ser necessário. Para a ciência, a objeção nem se coloca:
-o retorno de um pesquisador é a citação, e a citação exige ser lido.
+**[ANÁLISE]** A objeção confunde a proteção do investimento com a proteção da legibilidade.
+Patentes, direitos autorais, contratos e a vantagem de tempo de quem chega primeiro protegem o
+investimento sem exigir que o produto fique sem ser lido; a defesa de Samuelson e Scotchmer da
+engenharia reversa lícita se apoia justamente na vantagem de tempo que ela deixa
+[@samuelson2002law]. Laboratórios com alguns dos maiores investimentos liberaram pesos e métodos em
+2025, e um deles disse por quê: modelos abertos "complement our hosted models" (em tradução livre:
+complementam nossos modelos hospedados) [@openai2025gptoss; @guo2025deepseekr1]. E o código aberto
+de que as empresas já dependem, avaliado em cerca de 8,8 trilhões de dólares americanos para ser
+substituído [@hoffmann2024value], foi construído sem o segredo que a objeção diz ser necessário.
+Para a ciência, a objeção nem se coloca: o retorno de um pesquisador é a citação, e a citação exige
+ser lido.
 
 ## Objeção 4: a citação é uma cortesia vazia que as máquinas vão ignorar
 

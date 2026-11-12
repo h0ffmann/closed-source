@@ -25,7 +25,7 @@ BitKeeper, a proprietary version-control system offered at no cost. In April 200
 ended. No free system met the project's needs, so Torvalds wrote his own. He began on 3 April
 2005; on 7 April Git was managing its own source code; the first multi-branch merge followed on
 18 April; and on 26 July he handed maintenance to Junio Hamano [@wikipedia2026git]. The first
-commit in the Git repository, still readable today, is titled "Initial revision of "git", the
+commit in the Git repository, still readable today, is titled "Initial revision of 'git', the
 information manager from hell" [@torvalds2005git].
 
 **[ANALYSIS]** The BitKeeper episode is a small parable for this paper. The kernel community had

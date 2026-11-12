@@ -4,13 +4,15 @@
 Closed source asked researchers to trust that secrecy would protect their work. Between 2024 and
 2026 that trust failed in public: binaries decompiled by language models, production models read
 through their own answers, capability copied through the front door, a commercial agent's source
-published by a build step, a professional image editor rebuilt from its behaviour in weeks, and
-the biggest trade-secret fight in the field fought over laptops and job interviews. Linux and Git
+published by a build step, a professional image editor partly rebuilt from its behaviour in weeks,
+and a trade-secret fight between two of the field's most valuable companies fought over laptops
+and job interviews. Linux and Git
 showed long ago that the alternative works at scale, and the closed laboratories themselves began
 to publish weights and methods.
 
 The law did not promise otherwise. In the United States, the European Union and Brazil, studying a
-product one lawfully holds is a lawful means; only theft, bribery and breach of duty are not.
+product one lawfully holds is a lawful means; improper means, such as theft, bribery and breach of
+duty, are not.
 Cryptography did not promise otherwise either: since Kerckhoffs, and in Nash's letters, the method
 is public and only the key is secret. What can be protected in 2026 is integrity and identity,
 with signed commits, keys in hardware and content hashes that double as citations.
@@ -25,8 +27,8 @@ configuration and its known defects are published with this paper.
 left because what they had been promised did not match what they saw [@crossman1949god]. The
 faith in closed source fails in the same way. It promised that what was hidden would stay
 hidden, and between 2024 and 2026 the record shows a binary read by a model, a model read through
-its answers, a commercial agent published by its own build, an application rebuilt from its
-behaviour, and secrets carried out by the people trusted with them. It promised that the cost of
+its answers, a commercial agent published by its own build, an application partly rebuilt from
+its behaviour, and secrets carried out by the people trusted with them. It promised that the cost of
 secrecy fell on nobody, and the record shows code that cannot be found, methods that cannot be
 run, and references that cannot be checked.
 
@@ -57,7 +59,7 @@ configuration is published in the repository's `.claude/` directory. I am respon
 for the content.
 
 **Competing interests.** I maintain the open-source projects cited in Section
-[-@sec:related]. Anthropic, whose report is cited in Section [-@sec:espionage], also makes the
+[-@sec:related]. Anthropic, whose reports are cited in Section [-@sec:espionage], also makes the
 model that drafted this paper. I declare no other competing interests.
 
 **Availability.** Source, build pipeline and agent configuration:

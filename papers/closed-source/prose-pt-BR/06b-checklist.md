@@ -1,7 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # O que fazer agora: uma lista de verificação para um pesquisador em 2026 {#sec:checklist}
 
-O argumento deste artigo termina na prática. Fecho o argumento com uma lista que qualquer
+O argumento deste artigo termina na prática, por isso fecho com uma lista que qualquer
 pesquisador, grupo de pesquisa ou laboratório pequeno pode seguir em uma semana. Cada item nomeia a
 seção onde está a sua razão. Nada disso exige a permissão de ninguém.
 

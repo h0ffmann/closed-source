@@ -8,7 +8,7 @@ this paper, I wrote REA, the shorthand of my project for *reverse engineering, a
 the same three letters became the name of an open tool, *Reverse Engineer Anything*. Its case is
 below.
 
-This section reviews seven developments. Some of them are lawsuits or accusations. Their facts are
+This section reviews eight developments. Some of them are lawsuits or accusations. Their facts are
 allegations, and I report them as allegations.
 
 ## Apple v. OpenAI: secrets leave on two legs
@@ -24,7 +24,7 @@ The reports of the complaint say these things. A former Apple engineer got acces
 through an authentication bug, from the Apple computer of a colleague. The chief hardware officer
 of OpenAI, a former Apple executive, asked job candidates to bring Apple parts, design files and
 prototypes to interviews. New employees received guidance about how to avoid the exit process of
-Apple [@perez2026allegations]. The complaint itself states: "With over four hundred former Apple
+Apple [@perez2026allegations]. The complaint itself counts "over four hundred former Apple
 employees now working at OpenAI" [@apple2026complaint].
 
 OpenAI said in public that it has "no interest in other companies' trade secrets"
@@ -60,12 +60,12 @@ judge [@mekelburg2026court]. I did not read the docket on PACER directly.
 
 ## United States v. Ding: the secret in a personal cloud account
 
-A criminal case about AI secrets ended earlier in the year. On 29 January 2026, a federal jury in
-San Francisco convicted Linwei Ding, a former Google software engineer. The conviction is on seven
-counts of economic espionage and seven counts of theft of trade secrets [@doj2026ding]. The
+A court decided a criminal case about AI secrets earlier in the year. On 29 January 2026, a federal
+jury in San Francisco convicted Linwei Ding, a former Google software engineer. The conviction is on
+seven counts of economic espionage and seven counts of theft of trade secrets [@doj2026ding]. The
 Department of Justice says that he "stole more than two thousand pages of confidential information
-containing Google's AI trade secrets". These secrets were about the AI supercomputing
-infrastructure of the company, its custom chips and the software that controls them.
+containing Google's AI trade secrets". These secrets were about the AI supercomputing infrastructure
+of the company, its custom chips and the software that controls them.
 
 The method was simple. Between about May 2022 and April 2023, he "uploaded them to his personal
 Google Cloud account" [@doj2026ding]. On 1 September 2026, Judge Vince Chhabria sentenced him to

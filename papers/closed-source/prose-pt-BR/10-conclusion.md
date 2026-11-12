@@ -1,20 +1,21 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Conclusão {#sec:conclusion}
 
-O código fechado pedia aos pesquisadores que confiassem que o sigilo protegeria o seu trabalho. Entre
-2024 e 2026, essa confiança falhou publicamente: binários descompilados por modelos de linguagem,
-modelos em produção lidos por meio das suas próprias respostas, capacidades copiadas pela porta da
-frente, o código de um agente comercial publicado por uma etapa de build, um editor de imagens
-profissional reconstruído a partir do seu comportamento em semanas, e a maior disputa de segredo
-industrial da área travada em torno de laptops e entrevistas de emprego. Linux e Git mostraram há
-muito tempo que a alternativa funciona em escala, e os próprios laboratórios fechados começaram a
-publicar pesos e métodos.
+O código fechado pedia aos pesquisadores que confiassem que o sigilo protegeria o seu trabalho.
+Entre 2024 e 2026, essa confiança falhou publicamente: binários descompilados por modelos de
+linguagem, modelos em produção lidos por meio das suas próprias respostas, capacidades copiadas pela
+porta da frente, o código de um agente comercial publicado por uma etapa de build, um editor de
+imagens profissional reconstruído em parte a partir do seu comportamento em semanas, e uma disputa
+de segredo industrial entre duas das empresas mais valiosas da área travada em torno de laptops e
+entrevistas de emprego. Linux e Git mostraram há muito tempo que a alternativa funciona em escala, e
+os próprios laboratórios fechados começaram a publicar pesos e métodos.
 
-A lei não prometeu outra coisa. Nos Estados Unidos, na União Europeia e no Brasil, estudar um produto
-que se possui licitamente é um meio lícito; só o furto, o suborno e a quebra de dever não são. A
-criptografia também não prometeu outra coisa: desde Kerckhoffs, e nas cartas de Nash, o método é
-público e só a chave é secreta. O que se pode proteger em 2026 é a integridade e a identidade, com
-commits assinados, chaves em hardware e hashes de conteúdo que também servem de citação.
+A lei não prometeu outra coisa. Nos Estados Unidos, na União Europeia e no Brasil, estudar um
+produto que se possui licitamente é um meio lícito; os meios impróprios, como o furto, o suborno e a
+quebra de dever, não são. A criptografia também não prometeu outra coisa: desde Kerckhoffs, e nas
+cartas de Nash, o método é público e só a chave é secreta. O que se pode proteger em 2026 é a
+integridade e a identidade, com commits assinados, chaves em hardware e hashes de conteúdo que
+também servem de citação.
 
 O que resta é uma questão de boas maneiras, tornada urgente pelas máquinas. Se qualquer pessoa pode fazer engenharia reversa de
 qualquer coisa, o caminho honesto é publicar o método, emitir um identificador e citar tudo o que se
@@ -26,10 +27,10 @@ agentes e seus defeitos conhecidos são publicados junto com este artigo.
 abandonaram porque o que lhes foi prometido não batia com o que viam [@crossman1949god]. A fé no
 código fechado falha do mesmo modo. Ela prometia que o que estava escondido continuaria escondido, e
 entre 2024 e 2026 o registro mostra um binário lido por um modelo, um modelo lido pelas suas
-respostas, um agente comercial publicado pelo seu próprio build, um aplicativo reconstruído a partir
-do seu comportamento e segredos levados pelas pessoas em quem se confiava. Ela prometia que o custo do
-segredo não recaía sobre ninguém, e o registro mostra código que não se encontra, métodos que não
-rodam e referências que não se verificam.
+respostas, um agente comercial publicado pelo seu próprio build, um aplicativo reconstruído em parte
+a partir do seu comportamento e segredos levados pelas pessoas em quem se confiava. Ela prometia que
+o custo do segredo não recaía sobre ninguém, e o registro mostra código que não se encontra, métodos
+que não rodam e referências que não se verificam.
 
 **[ANÁLISE]** A frase de Pirsig dá a razão pela qual a alternativa importa mais para a ciência. Se as
 hipóteses que podem explicar um fenômeno não têm fim [@pirsig1974zen, p. 107], nenhum dono consegue
@@ -57,9 +58,9 @@ momento da redação; as verificações estão registradas no log de referência
 agente está publicada no diretório `.claude/` do repositório. Sou responsável
 pelo conteúdo.
 
-**Conflitos de interesse.** Mantenho os projetos de código aberto citados na Seção
-[-@sec:related]. A Anthropic, cujo relatório é citado na Seção [-@sec:espionage], também produz o
-modelo que redigiu este artigo. Não declaro nenhum outro conflito de interesse.
+**Conflitos de interesse.** Mantenho os projetos de código aberto citados na Seção [-@sec:related].
+A Anthropic, cujos relatórios são citados na Seção [-@sec:espionage], também produz o modelo que
+redigiu este artigo. Não declaro nenhum outro conflito de interesse.
 
 **Disponibilidade.** Código-fonte, pipeline de build e configuração do agente:
 <https://github.com/h0ffmann/closed-source>. Licença: texto CC BY 4.0; scripts de build AGPL-3.0-only;

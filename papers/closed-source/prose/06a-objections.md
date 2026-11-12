@@ -43,11 +43,12 @@ exist because they fund innovation.*
 **[ANALYSIS]** The objection confuses the protection of investment with the protection of
 readability. Patents, copyright, contracts and the lead time of the first mover all protect
 investment without requiring that a product stay unread; Samuelson and Scotchmer's case for
-lawful reverse engineering rests precisely on the lead time it leaves [@samuelson2002law]. The
-laboratories with the largest investments released weights and methods in 2025 because they saw a
-return in being used and cited [@openai2025gptoss; @guo2025deepseekr1]. And the open source that
-firms already rely on, worth an estimated 8.8 trillion US dollars to replace
-[@hoffmann2024value], was built without the incentive the objection says is necessary. For
+lawful reverse engineering rests precisely on the lead time it leaves [@samuelson2002law].
+Laboratories with some of the largest investments released weights and methods in 2025, and one
+of them said why: open models "complement our hosted models" [@openai2025gptoss;
+@guo2025deepseekr1]. And the open source that firms already rely on, worth an estimated 8.8
+trillion US dollars to replace [@hoffmann2024value], was built without the secrecy that the
+objection says is necessary. For
 science, the objection does not arise: a researcher's return is citation, and citation requires
 being read.
 

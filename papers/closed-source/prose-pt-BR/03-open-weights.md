@@ -65,9 +65,9 @@ que o segredo é o que os mantém valiosos deixa de ser a visão dos próprios d
 
 ## O que os três eventos têm em comum
 
-**[ANÁLISE]** Nenhum dos três eventos é altruísmo, e não preciso que seja. Cada um é uma aposta de que
-o valor vem de ser usado, estudado e citado, mais do que de ficar escondido. A definição diz o que a
-abertura exige; o artigo na *Nature* mostra que um método de fronteira pode entrar no registro
-científico; a liberação de pesos abertos mostra que até o laboratório mais fechado vê retorno na
-publicação. O restante deste artigo pergunta o que isso significa para um único pesquisador, cujo
-trabalho tem muito menos a esconder e muito mais a ganhar ao ser encontrado.
+**[ANÁLISE]** Nenhum dos três eventos é altruísmo, e não preciso que seja. Cada um é uma aposta de
+que o valor vem de ser usado, estudado e citado, mais do que de ficar escondido. A definição diz o
+que a abertura exige; o artigo na *Nature* mostra que um método de fronteira pode entrar no registro
+científico; a liberação de pesos abertos mostra que até um laboratório conhecido por modelos
+fechados vê retorno na publicação. O restante deste artigo pergunta o que isso significa para um
+único pesquisador, cujo trabalho tem muito menos a esconder e muito mais a ganhar ao ser encontrado.

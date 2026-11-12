@@ -61,9 +61,9 @@ view.
 
 ## What the three events share
 
-**[ANALYSIS]** None of the three events is altruism, and I do not need it to be. Each is a bet
-that value comes from being used, studied and cited, more than from being hidden. The definition
-says what openness requires; the *Nature* paper shows that a frontier method can enter the
-scientific record; the open-weight release shows that even the most closed laboratory sees a
-return in publication. The rest of this paper asks what follows for a single researcher, whose
-work has far less to hide and far more to gain from being found.
+**[ANALYSIS]** None of the three events is altruism, and I do not need it to be. Each is a bet that
+value comes from being used, studied and cited, more than from being hidden. The definition says
+what openness requires; the *Nature* paper shows that a frontier method can enter the scientific
+record; the open-weight release shows that even a laboratory known for closed models sees a return
+in publication. The rest of this paper asks what follows for a single researcher, whose work has far
+less to hide and far more to gain from being found.

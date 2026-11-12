@@ -17,13 +17,13 @@ little. I argue that both articles failed. I also argue that this failure became
 The first article failed because reverse engineering is no longer rare. Reverse engineering was
 always lawful and common [@samuelson2002law]. The change is in its cost.
 
-Language models now change compiled binaries into source code that compiles and passes tests
-[@tan2024llm4decompile]. A few thousand API queries recover parts of a production language model
-[@carlini2024stealing]. Tens of thousands of accounts can distil the behaviour of a frontier model
-into the model of a competitor [@anthropic2026distillation; @reuters2026deepseek]. In September
-2026, three US agencies said that such campaigns occur at "industrial scale"
-[@lakshmanan2026agencies]. In July 2026, one of the most valuable companies in the world sued one
-of the most valuable laboratories about trade secrets. Its complaint was about people, laptops and
+Language models can now change compiled binaries into source code that compiles and passes tests
+[@tan2024llm4decompile]. Queries that cost less than 20 US dollars recover a part of a production
+language model [@carlini2024stealing]. Tens of thousands of accounts can distil the behaviour of a
+frontier model into the model of a competitor [@anthropic2026distillation; @reuters2026deepseek]. In
+September 2026, three US agencies said that such campaigns occur at "industrial scale"
+[@lakshmanan2026agencies]. In July 2026, one of the most valuable companies in the world sued one of
+the most valuable laboratories about trade secrets. Its complaint was about people, laptops and
 recruitment, not about source code that stayed safely secret [@apple2026complaint;
 @perez2026allegations].
 
@@ -81,18 +81,24 @@ This paper has five contributions.
 
 ## Structure
 
-Section [-@sec:bazaar] examines Linux and Git again as evidence that openness works at a large
-scale. It also examines two failures of open source. Section [-@sec:openweights] reviews how the
-closed laboratories started to publish weights and methods. Section [-@sec:espionage] reviews
-science and espionage in 2026, and the explosion of AI-assisted reverse engineering. Section
-[-@sec:dead] gives seven lines of evidence that closed source is dead as a protection. Section
-[-@sec:law] examines the law.
+Section [-@sec:history] examines three documents, from 1976, 1983 and 1998. In these documents,
+the faith started, people argued against it, and a company left it for the first time. Section
+[-@sec:bazaar] examines Linux and Git again as evidence that openness works at a large scale. It
+also examines two failures of open source.
+
+Section [-@sec:openweights] reviews how the closed laboratories started to publish weights and
+methods. Section [-@sec:espionage] reviews science and espionage in 2026, and the explosion of
+AI-assisted reverse engineering. Section [-@sec:dead] gives seven lines of evidence that closed
+source is dead as a protection. Section [-@sec:law] examines the law.
 
 Section [-@sec:securing] examines obfuscation, John Nash's letters on cryptography, and how to
 secure source code in 2026. Section [-@sec:citing] argues for professional citation and gives rules
-for agents. Section [-@sec:objections] answers six objections. Section [-@sec:fabric] describes
-Paper Fabric. Section [-@sec:related] lists my related work. Section [-@sec:limits] gives the
-limits of my argument.
+for agents. Section [-@sec:objections] answers six objections. Section [-@sec:checklist] changes
+the argument into a checklist.
+
+Section [-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists my related work.
+Section [-@sec:evidence] puts the 2026 evidence into groups by the type of source. Section
+[-@sec:limits] gives the limits of my argument. Section [-@sec:conclusion] gives the conclusion.
 
 This paragraph is about my method. This is a position paper. It uses the *research* style of the
 Ouroboric documentation standard. In this style, each factual claim has a citation, and the mark
