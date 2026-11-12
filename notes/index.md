@@ -113,6 +113,15 @@ The essay derived from them: [The hypotheses have no end, 2026](../essays/2026-t
 
 - [[202610131752-what-is-metaquality]]: what is MetaQuality: how good is the thing that judges quality (permanent, open question)
 
+## Psycho-Pass: the closed judge
+
+- [[202611122210-psycho-pass-and-the-sibyl-system]]: Psycho-Pass and the Sibyl System (literature, verified)
+- [[202611122211-sibyl-is-a-closed-judge]]: Sibyl is a closed judge: brains in a tower, kept secret (literature, verified)
+- [[202611122212-sibyl-survives-only-while-closed]]: Sibyl survives only while it is closed (permanent, open question)
+- [[202611122213-akane-reads-the-source-and-keeps-it-closed]]: Akane reads the source and keeps it closed (permanent, open question)
+- [[202611122214-the-dominator-the-human-is-only-the-trigger]]: the Dominator: the human is only the trigger (permanent, open question)
+- [[202611122215-makishimas-library]]: Makishima's library: the reader the system cannot read (literature, partial)
+
 ## Marola forecaster
 
 - [[202610122357-marola-forecaster-contextual-bandit]]: a contextual bandit over forecast models (permanent, open question)
