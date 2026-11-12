@@ -2,7 +2,7 @@
 # Edição impressa em português do Brasil. Keys here override metadata.md for the pt-BR build only.
 title: "Código Fechado: O Deus que Falhou"
 subtitle: "Engenharia reversa, espionagem e a ética da citação na era dos agentes de programação"
-date: "Outubro de 2026"
+date: "Novembro de 2026"
 version: "v0, edição em português do Brasil (preprint, sem revisão por pares)"
 lang: pt-BR
 babel: brazilian
@@ -26,21 +26,27 @@ abstract: |
   promessa falhou, e falhou primeiro para a ciência. Leio o caso com o livro em que esta obra se
   apoia, *Zen and the Art of Motorcycle Maintenance* (1974), de Robert M. Pirsig: o número de
   hipóteses racionais que podem explicar um fenômeno é infinito, então a ciência nunca se fecha,
-  e um método que só o dono pode abrir é um método que mais ninguém pode testar. Três tendências de 2024 a 2026 sustentam o
-  argumento. Grandes modelos de linguagem agora descompilam binários em código-fonte que volta a
-  executar. Consultas de caixa-preta extraem partes de modelos em produção, e a destilação copia
-  capacidades em escala industrial. A maior disputa de segredo industrial de 2026 em inteligência
-  artificial, o processo da Apple contra a OpenAI, gira em torno de pessoas, notebooks e
-  recrutamento, não de código que permaneceu secreto. Com esse pano de fundo, revisito o Linux e o
-  Git de Linus Torvalds como evidência de que a abertura escala, e o meu trabalho de conclusão de
-  curso fechado como evidência do que o segredo custa a um pesquisador. Examino a ofuscação,
-  inclusive a minha, e por que ela não consegue esconder código, e a contraponho à ideia de John
-  Nash, de 1955, de segurança pelo custo computacional: commits assinados, chaves guardadas em
-  hardware e autenticação de dois fatores protegem o que o segredo não protege. Em seguida,
-  argumento que a resposta ética à engenharia reversa universal é a citação profissional:
-  identificadores persistentes, metadados de citação legíveis por máquina e agentes que pegam
-  emprestado, citam e propagam o crédito por padrão. Descrevo o Paper Fabric, um pipeline aberto
-  que melhora a si mesmo, no estilo Ouroboric, que produziu este preprint, e listo as suas próprias
-  limitações conhecidas.
+  e um método que só o dono pode abrir é um método que mais ninguém pode testar. Evidências de
+  2024 a 12 de novembro de 2026 sustentam o argumento. Grandes modelos de linguagem agora
+  descompilam binários em código-fonte que volta a executar, e uma ferramenta aberta, o REA
+  (Reverse Engineer Anything), põe a cadeia inteira atrás de um único agente; reconstruções em
+  sala limpa de aplicativos profissionais vieram semanas depois. Consultas de caixa-preta extraem
+  partes de modelos em produção, e a destilação copia capacidades numa escala que três agências
+  dos EUA chamaram de industrial. Segredos também vazam por dentro: a maior disputa de segredo
+  industrial de 2026 em inteligência artificial, o processo da Apple contra a OpenAI, gira em torno
+  de pessoas, notebooks e recrutamento; um ex-engenheiro do Google foi condenado por levar segredos
+  de IA por uma conta pessoal na nuvem; e um erro de empacotamento publicou o código de um agente
+  comercial. Enquanto isso, os laboratórios fechados começaram a publicar pesos e métodos. Revisito
+  o Linux e o Git de Linus Torvalds como evidência de que a abertura escala, e o Heartbleed e o
+  backdoor do xz como evidência de que falhas abertas podem ser encontradas. Leio a lei dos Estados
+  Unidos, da União Europeia e do Brasil, que tratam como lícita a engenharia reversa de um produto
+  obtido licitamente. Examino a ofuscação, inclusive a minha, e por que ela não consegue esconder
+  código, e a contraponho à ideia de John Nash, de 1955, de segurança pelo custo computacional:
+  commits assinados, chaves guardadas em hardware e autenticação de dois fatores protegem o que o
+  segredo não protege. Em seguida, argumento que a resposta ética à engenharia reversa universal é
+  a citação profissional: identificadores persistentes, metadados de citação legíveis por máquina
+  e agentes que pegam emprestado, citam e propagam o crédito por padrão. Descrevo o Paper Fabric,
+  um pipeline aberto que melhora a si mesmo, no estilo Ouroboric, que produziu este preprint,
+  respondo a seis objeções e listo as limitações conhecidas do artigo.
 ---
 <!-- cite: main="Matheus Hoffmann"; last="Claude" -->

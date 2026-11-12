@@ -30,8 +30,8 @@ método é aberto, e somente a chave é secreta.
 ## Ofuscação: o que ela oferece e o que não pode oferecer
 
 A ofuscação transforma um programa de modo que ele faça a mesma coisa, mas seja mais difícil de
-ler. Um dos
-Eu construí um exemplo pequeno e honesto. *nashkell*, um pipeline em Haskell que executa OCR sobre
+ler. Ela renomeia identificadores, cifra strings, achata o fluxo de controle ou insere código que
+não faz nada. Para ver o que ela oferece, construí um exemplo pequeno e honesto. *nashkell*, um pipeline em Haskell que executa OCR sobre
 as cartas desclassificadas de Nash e pede a um modelo de linguagem que as anote e as confronte entre
 si, armazena seu código-fonte no Git com os identificadores traduzidos para o latim
 [@hoffmann2026nashkell]. Um filtro `clean` do Git traduz identificadores do inglês para o latim no
@@ -64,6 +64,19 @@ fracas de ofuscação, mas não para um método geral que torne o código-fonte 
 diante dos modelos de linguagem da Seção [-@sec:espionage], que já recuperam código-fonte a partir
 de binários, renomear identificadores para o latim é apenas um quebra-molas.
 
+O ofuscador mais recente diz o mesmo de si. O Blind LLM Agents, noticiado em 10 de novembro de 2026,
+reforça o código distribuído contra a análise por agentes de programação com renomeação, cifragem de
+strings, código-isca e verificações de integridade. Seu autor o testou contra o REA e escreveu, sobre
+o que ele alcança: "We raise the cost — we don't claim it is unbreakable" (em tradução livre: nós
+aumentamos o custo, não dizemos que é inquebrável) [@claburn2026blinding]. Segundo o relato, ele
+também não protege contra as ferramentas clássicas, Ghidra e Frida [@claburn2026blinding].
+
+**[ANÁLISE]** Leio isso como confirmação, não como refutação. Um ofuscador cujo autor declara os seus
+limites é uma ferramenta honesta, e aumentar o custo de um atacante é um objetivo legítimo para um
+produto que precisa ser distribuído como binário. Mas um custo que um modelo mais forte ou uma pessoa
+paciente pode pagar é um atraso, não um segredo. Para a ciência, cujo objetivo é ser lida, a
+ofuscação não compra nada.
+
 ## O que proteger em vez disso: integridade, identidade e chaves
 
 **[ANÁLISE]** A lição de Nash e da ofuscação é parar de proteger a *legibilidade* do código e
@@ -87,10 +100,25 @@ uma com ferramentas públicas e maduras.
    as assinaturas em logs de transparência, o que elimina a maior parte do ônus e do risco da gestão
    de chaves [@newman2022sigstore].
 
+O backdoor do xz da Seção [-@sec:bazaar] mostra o limite dessas quatro camadas [@freund2024xz]. O
+atacante tinha conquistado direito de commit, então as assinaturas, sozinhas, teriam certificado o
+código do atacante. Ferramentas de integridade provam *quem* escreveu uma mudança; não provam que
+quem escreveu merecia confiança. O que pegou o backdoor foi um leitor com o código-fonte e um motivo
+para olhar.
+
+**[ANÁLISE]** As camadas são, portanto, necessárias e não suficientes: tornam a autoria verificável, e
+a abertura torna o conteúdo verificável. Nenhuma funciona sem a outra.
+
 As funções de hash também importam. Em 2017, Stevens e colegas produziram a primeira colisão para o
 SHA-1 completo [@stevens2017first], o hash sobre o qual os nomes de objetos do Git foram
 construídos. O Git oferece um formato de objetos SHA-256 desde a versão 2.29, inicialmente marcado
-como experimental [@git2020relnotes229].
+como experimental [@git2020relnotes229]. Hashes também servem à citação. Desde abril de 2025, o Software Hash
+Identifier, SWHID, que nomeia qualquer artefato de código-fonte pelo seu hash criptográfico, de um
+único arquivo a um snapshot completo de um repositório, é a norma internacional ISO/IEC 18670
+[@swh2026swhid].
+
+**[ANÁLISE]** Nessa norma, o hash que prova a integridade e o identificador que dá o crédito são a
+mesma string.
 
 O que permanece secreto sob esse modelo é pouco e explícito: chaves privadas, credenciais e dados
 pessoais ou sujeitos a acordo. Esses merecem criptografia e controle

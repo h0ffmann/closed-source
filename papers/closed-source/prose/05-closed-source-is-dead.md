@@ -1,14 +1,14 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-# Why closed source is dead: five lines of evidence {#sec:dead}
+# Why closed source is dead: seven lines of evidence {#sec:dead}
 
 "Dead" is a strong word, and I should say what I mean. Closed-source software will be sold for
 a long time. What is dead is closed source *as a protection*: the idea that keeping an artefact
-unreadable keeps its value safe, and that this protection is worth what it costs science. Five
-references, from cryptography, law, machine learning, software engineering and economics,
-support that claim. I chose them for credibility: each is peer reviewed, a primary legal or
-historical source, or a widely cited working paper from a research university.
+unreadable keeps its value safe, and that this protection is worth what it costs science. Seven
+references, from cryptography, law, machine learning, software engineering, security, research
+practice and economics, support that claim. I chose them for credibility: each is peer reviewed, a
+primary legal or official source, or a widely cited working paper from a research university.
 
-Table: Five references on why secrecy fails as a protection. {#tbl:five}
+Table: Seven references on why secrecy fails as a protection. {#tbl:five}
 
 | # | Reference | Field | What it shows |
 |--|----------------------|----------------|------------------------------------------------------------|
@@ -16,7 +16,9 @@ Table: Five references on why secrecy fails as a protection. {#tbl:five}
 | 2 | @samuelson2002law | law and economics | Reverse engineering is an old, lawful and economically useful practice. |
 | 3 | @carlini2024stealing | machine learning | Parts of a production model behind an API can be extracted for under 20 US dollars. |
 | 4 | @tan2024llm4decompile | software engineering | Language models decompile binaries into source that recompiles and passes tests. |
-| 5 | @ince2012case | science policy | Results computed by unpublished code cannot be properly checked or reproduced. |
+| 5 | @doj2026ding | security | Secrets leave through insiders: more than two thousand pages through one cloud account. |
+| 6 | @collberg2016repeatability | research practice | Only 27% of 601 computer-systems papers had code that was publicly available. |
+| 7 | @ince2012case | science policy | Results computed by unpublished code cannot be properly checked or reproduced. |
 
 **1. Security by obscurity was refuted in 1883.** Auguste Kerckhoffs' second principle for
 military ciphers says the system "must not require secrecy and can be stolen by the enemy without
@@ -29,25 +31,47 @@ with the observation that reverse engineering "has a long history as an accepted
 [@samuelson2002law]. Trade-secret law protects against improper means, such as theft and breach
 of confidence, not against someone who studies a product they lawfully obtained. Closed source
 therefore never had a legal guarantee against being understood. It had a practical one: reverse
-engineering was slow and expensive.
+engineering was slow and expensive. Section [-@sec:law] reads the statutes.
 
 **3. That practical guarantee is gone for models.** Extraction attacks on prediction APIs
 [@tramer2016stealing] matured into attacks on production language models
 [@carlini2024stealing], and distillation at scale is now alleged by the providers themselves
-[@anthropic2026distillation; @reuters2026deepseek].
+[@anthropic2026distillation; @reuters2026deepseek] and by three US agencies
+[@csa2026distillation].
 
-**4. It is going for binaries.** Open decompilation models, built on an open reverse-engineering
-framework released by a signals-intelligence agency [@nsa2019ghidra], recover executable source
-from compiled code [@tan2024llm4decompile].
+**4. It is going for binaries and whole applications.** Open decompilation models, built on an
+open reverse-engineering framework released by a signals-intelligence agency [@nsa2019ghidra],
+recover executable source from compiled code [@tan2024llm4decompile]. In 2026 an open tool put
+the whole chain behind one agent [@morluto2026rea], and clean-room rebuilds of a professional image
+editor appeared within weeks [@storytold2026photocraft].
 
-**5. Meanwhile, secrecy costs science.** Ince and colleagues argued in *Nature* that, with
+**5. Secrets leak from inside anyway.** The conviction of a former Google engineer for uploading
+AI trade secrets to a personal cloud account [@doj2026ding], the trade-secret suit that turns on
+recruiting and devices [@apple2026complaint], and the publication of a commercial agent's source
+by a packaging error [@franzen2026claudecode] are three different failures with one lesson.
+Secrecy is a property of people and processes, and people and processes leak.
+
+**6. Secrecy costs science, and the cost is measured.** When Collberg and Proebsting tried to
+obtain and build the code behind 601 papers from eight ACM conferences and five journals, only 27%
+of the papers had code that was publicly available, and 32% could be built by the team within 30
+minutes [@collberg2016repeatability]. Even published code decays when its environment is not
+recorded: in a study of research code deposited in the Harvard Dataverse, 74% of R files failed to
+complete without error when first run, and 56% still failed after automatic code cleaning
+[@trisovic2022code].
+
+**7. Science policy has said so for years.** Ince and colleagues argued in *Nature* that, with
 few exceptions, "anything less than the release of source programs is intolerable for results
 that depend on computation" [@ince2012case]. The economic weight of the alternative is now
 measurable: the open source that firms use would cost an estimated 4.15 billion US dollars to
 write once, and about 8.8 trillion US dollars if each firm had to replace it on its own
 [@hoffmann2024value].
 
-**[ANALYSIS]** Lines 1 to 4 say that secrecy no longer protects; line 5 says that it never came
-free. Together they leave a researcher with a choice that is no longer between *hidden* and
-*exposed*. It is between *exposed and uncredited* and *exposed and credited*. The next section is
-about choosing the second.
+**[ANALYSIS]** Lines 1 to 5 say that secrecy no longer protects; lines 6 and 7 say that it never
+came free. Together they leave a researcher with a choice that is no longer between *hidden* and
+*exposed*. It is between *exposed and uncredited* and *exposed and credited*. The rest of this
+paper is about choosing the second.
+
+**[ANALYSIS]** The evidence has one weakness that I should name. Lines 3 to 5 rest partly on 2026
+events whose facts are still contested in court or reported by interested parties. Remove them
+all, and lines 1, 2, 6 and 7, each a peer-reviewed or primary source more than two years old,
+still carry the argument. The 2026 events change the speed of the argument, not its direction.

@@ -41,3 +41,36 @@ I praise Torvalds here without reservation for these two gifts, and for three de
 maintenance of the first gift. I also note what this praise does not require. It does not require
 that others copy the technical style of one person, or that open source is free of conflict. The
 claim is narrower and stronger. At the largest scale that anyone ever tried, openness worked.
+
+## Where the bazaar failed, and what it did after
+
+An honest account must also count the failures. Two of them are famous.
+
+The first failure is Heartbleed. Developers added the OpenSSL heartbeat extension to the code on
+31 December 2011. It was in version 1.0.1 on 14 March 2012. The extension did not check a bound.
+Thus any client could read the memory of a server, which includes private keys. Public disclosure
+started on 7 April 2014. A measurement study estimated that "between 24–55% of HTTPS-enabled
+servers in the Alexa Top 1 Million were initially vulnerable" [@durumeric2014heartbleed]. For more
+than two years, the code was open, and the many eyes did not see the error.
+
+The second failure is the xz backdoor. On 29 March 2024, Andres Freund reported to the oss-security
+list that "The upstream xz repository and the xz tarballs have been backdoored" [@freund2024xz]. A
+contributor got the trust of the project over a long time. Then this contributor hid code that
+compromised SSH servers through the liblzma library. Freund found it because a small thing looked
+wrong. Before, a failed SSH login took about 0.299 seconds. Then it took about 0.807 seconds, and
+valgrind reported errors [@freund2024xz].
+
+**[ANALYSIS]** Both failures make the slogan "many eyes make all bugs shallow" weaker. They do not
+make the argument for openness weaker. In each example, the code that failed was readable. Thus
+people outside the project could find the failure, measure it and publish it. The Heartbleed study
+is itself a public dataset of who patched and when [@durumeric2014heartbleed].
+
+**[ANALYSIS]** A reader found the xz backdoor. He could trace and rebuild what he ran, and he
+published his report on a public list [@freund2024xz]. A closed library with the same error would
+have the same number of attackers and fewer defenders. Openness does not prevent failure. It makes
+failure visible. People can correct and cite a visible failure.
+
+**[ANALYSIS]** The xz example also moves the question from *reading* to *trust*. The attacker did
+not need to hide the code. The attacker needed people to believe him. Section [-@sec:securing]
+comes back to this point. Secrecy does not protect open code. Integrity and identity protect it,
+and cryptography makes them possible to check.

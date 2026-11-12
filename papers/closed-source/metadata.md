@@ -87,7 +87,7 @@ logos:
     text: "open factories that improve themselves"
     width: "224"
     height: "44"
-date: "October 2026"
+date: "November 2026"
 version: "v0 (preprint, not peer reviewed)"
 keywords:
   - open source
@@ -101,28 +101,31 @@ keywords:
   - coding agents
 abstract: |
   For thirty years, closed source has promised that secrecy protects value. I argue that the
-  promise has failed, for science first. I read the case through Robert M. Pirsig's *Zen and
-  the Art of Motorcycle Maintenance* (1974), the book this work stands on: the number of rational
-  hypotheses that can explain a phenomenon is infinite, so science never closes, and a method
-  that only its owner can open is one that nobody else can test. Three trends from 2024 to 2026 make the case. Large
-  language models now decompile binaries into re-executable source. Black-box queries extract
-  parts of production models, and distillation copies capabilities at industrial scale. The
-  largest 2026 trade-secret dispute in artificial intelligence, Apple's suit against OpenAI,
-  turns on people, laptops and recruiting, not on code that stayed secret. Against this
-  background I revisit Linus Torvalds' Linux and Git as evidence that openness scales, and my
-  closed undergraduate thesis as evidence of what secrecy costs a researcher. I review
-  obfuscation, including my own, and why it cannot hide code, and I contrast it with
-  John Nash's 1955 idea of security from computational cost: signed commits, keys held in
-  hardware and two-factor authentication protect what secrecy cannot. I then
-  argue that the ethical answer to universal reverse engineering is professional citation:
-  persistent identifiers, machine-readable citation metadata and agents that borrow, cite and
-  propagate credit by default. I describe Paper Fabric, an open, self-improving pipeline in
-  the Ouroboric style that produced this preprint, and list its own known limitations.
+  promise has failed, for science first. I read the case through Robert M. Pirsig's *Zen and the
+  Art of Motorcycle Maintenance* (1974), the book this work stands on: rational hypotheses are
+  infinite, so science never closes, and a method only its owner can open cannot be tested.
+  Evidence from 2024 to 12 November 2026 makes the case. Large language models now decompile
+  binaries into re-executable source, and an open tool, REA (Reverse Engineer Anything), puts
+  the whole chain behind one agent; clean-room rebuilds of professional applications followed
+  within weeks. Black-box queries extract parts of production models, and three US agencies
+  called distillation industrial. Secrets also leak from inside: Apple's 2026 suit against
+  OpenAI turns on people, laptops and recruiting, a former Google engineer was convicted of
+  taking AI secrets, and a packaging error published a commercial agent's source. Meanwhile the
+  closed laboratories began to publish weights and methods. Linus Torvalds' Linux and Git show
+  that openness scales; Heartbleed and the xz backdoor show that open failures get found. I read
+  the law of the United States, the European Union and Brazil, which all treat reverse
+  engineering of a lawfully held product as lawful. I show why obfuscation, including my own,
+  cannot hide code, and contrast it with John Nash's 1955 idea of security from computational
+  cost: signed commits, keys held in hardware and two-factor authentication protect what secrecy
+  cannot. I argue that the ethical answer to universal reverse engineering is professional
+  citation: persistent identifiers, machine-readable citation metadata and agents that borrow,
+  cite and propagate credit by default. I describe Paper Fabric, an open, self-improving
+  pipeline in the Ouroboric style that produced this preprint, and answer six objections.
 arxiv:
   primary: cs.CY
   cross-list: [cs.SE, cs.CR, cs.DL]
   license: http://creativecommons.org/licenses/by/4.0/
-  comments: "v0 preprint, not peer reviewed. 1 table. Source, build and agent configuration: https://github.com/h0ffmann/closed-source"
+  comments: "v0 preprint, not peer reviewed. 2 tables. Source, build and agent configuration: https://github.com/h0ffmann/closed-source"
 lang: en-US
 papersize: a4
 fontsize: 11pt

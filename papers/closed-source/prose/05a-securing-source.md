@@ -27,8 +27,9 @@ and only the key is secret.
 
 ## Obfuscation: what it buys and what it cannot
 
-Obfuscation transforms a program so that it does the same thing but is harder to read. One of the
-I built a small, honest example. *nashkell*, a Haskell pipeline that runs OCR on Nash's
+Obfuscation transforms a program so that it does the same thing but is harder to read. It renames
+identifiers, encrypts strings, flattens control flow or inserts code that does nothing. To see
+what it buys, I built a small, honest example. *nashkell*, a Haskell pipeline that runs OCR on Nash's
 declassified letters and asks a language model to annotate and cross-check them, stores its source
 in Git with identifiers translated into Latin [@hoffmann2026nashkell]. A Git `clean` filter
 translates English identifiers to Latin on commit, and a `smudge` filter translates them back on
@@ -57,6 +58,17 @@ not for a general method that makes source code secret. **[ANALYSIS]** And again
 models of Section [-@sec:espionage], which already recover source from binaries, renaming
 identifiers into Latin is a speed bump.
 
+The newest obfuscator says the same of itself. Blind LLM Agents, reported on 10 November 2026,
+hardens shipped code against analysis by coding agents with renaming, string encryption, decoy
+code and integrity checks. Its author tested it against REA and wrote, of what it achieves: "We
+raise the cost — we don't claim it is unbreakable" [@claburn2026blinding]. As reported, it also
+does not protect against the classic tools, Ghidra and Frida [@claburn2026blinding].
+
+**[ANALYSIS]** I read this as confirmation, not as a rebuttal. An obfuscator whose author states
+its limits is an honest tool, and raising an attacker's cost is a legitimate goal for a product
+that must ship as a binary. But a cost that a stronger model or a patient person can pay is a
+delay, not a secret. For science, where the goal is to be read, obfuscation buys nothing at all.
+
 ## What to secure instead: integrity, identity and keys
 
 **[ANALYSIS]** The lesson of Nash and of obfuscation is to stop protecting the *readability* of
@@ -77,9 +89,23 @@ only they could have written it. In 2026 that means four layers, each with publi
    bound to an existing identity through OpenID Connect, and records signatures in transparency
    logs, which removes most of the burden and risk of key management [@newman2022sigstore].
 
+The xz backdoor of Section [-@sec:bazaar] shows the limit of these four layers
+[@freund2024xz]. The attacker had earned commit rights, so signatures alone would have certified
+the attacker's code. Integrity tools prove *who* wrote a change; they do not prove that the writer
+deserved trust. What caught the backdoor was a reader with the source and a reason to look.
+
+**[ANALYSIS]** The layers are therefore necessary and not sufficient: they make
+authorship checkable, and openness makes the content checkable. Neither works without the other.
+
 Hash functions matter too. In 2017 Stevens and colleagues produced the first collision for full
 SHA-1 [@stevens2017first], the hash on which Git's object names were built. Git has offered a
-SHA-256 object format since version 2.29, first marked experimental [@git2020relnotes229].
+SHA-256 object format since version 2.29, first marked experimental [@git2020relnotes229]. Hashes
+also serve citation. Since April 2025 the Software Hash Identifier, SWHID, which names any
+artefact of source code by its cryptographic hash, from a single file to a full snapshot of a
+repository, is the international standard ISO/IEC 18670 [@swh2026swhid].
+
+**[ANALYSIS]** A hash that
+proves integrity and an identifier that gives credit are, in this standard, the same string.
 
 What stays secret under this model is small and explicit: private keys, credentials, and data that
 is personal or under agreement. Those deserve encryption and access
