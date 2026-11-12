@@ -2,13 +2,13 @@
 title: "Os 33 pensadores, versão fácil: duas páginas para cada um"
 status: draft
 date: 2026-10-13
-related: [50THINKERS.md, AGENTS.md, BOOKS.md, 500AUTHORS.md, .claude/skills/easy-pt-br/SKILL.md]
+related: [33THINKERS.md, AGENTS.md, BOOKS.md, 500AUTHORS.md, .claude/skills/easy-pt-br/SKILL.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Versão fácil: os 33 pensadores
 
-> **Esta é a versão fácil, em português, de [50THINKERS.md](50THINKERS.md).**
+> **Esta é a versão fácil, em português, de [33THINKERS.md](33THINKERS.md).**
 >
 > - **Vale o original.** Se este texto e o original discordarem, vale o original, em inglês.
 > - **Feita a partir de:** a versão do original de 12 de novembro de 2026.

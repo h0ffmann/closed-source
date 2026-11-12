@@ -29,7 +29,7 @@ const icon = read('site/static/icons/favicon.svg');
 const scores = [...read('CITATION_SCORES.md').matchAll(/^\|\s*([^|]+?)\s*\|[^|]*\|[^|]*\|\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)%\s*\|/gm)]
   .map(([, name, cited, total, pct]) => ({ name, cited: +cited, total: +total, pct: +pct }));
 const scored = read('CITATION_SCORES.md').match(/^date: (\S+)$/m)[1];
-const roster = [...read('50THINKERS.md').matchAll(/^\|\s*(\d+)\s*\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|\s*$/gm)]
+const roster = [...read('33THINKERS.md').matchAll(/^\|\s*(\d+)\s*\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|([^|]*)\|\s*$/gm)]
   .map(([, n, name, , , , status]) => ({ n: +n, name: name.trim(), status: status.trim() }));
 const named = roster.filter((t) => t.status !== 'open');
 // People a reader will know by name; an alias from PERSONAS.md (lower case) is not shown.
@@ -147,7 +147,7 @@ const slidesFor = (t) => [
     <div style="display:flex;gap:56px;margin-top:44px">
       <div style="flex:1"><div class="num">${roster.length * 2}</div>
         <p style="margin-top:12px;font-size:30px">${t.pages(named.length, roster.length - named.length)}</p>
-        <div class="src">50THINKERS.md</div></div>
+        <div class="src">33THINKERS.md</div></div>
       <div style="flex:1"><div class="num">${refs.verified + refs.partial}</div>
         <p style="margin-top:12px;font-size:30px">${t.refs}</p>
         <div class="src">papers/closed-source/REFERENCES.md</div></div>

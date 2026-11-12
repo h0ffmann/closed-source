@@ -237,7 +237,7 @@ have been there.
 
 One of those DOIs belongs to this repository. It holds a book I am writing, *Closed Source: The
 God that Failed*. The book will have 100 pages: 50 thinkers, two pages each. The list of the 50 is
-in `50THINKERS.md`. Montaigne is number 50, and his line says: "the *Essays*: why one writes at
+in `33THINKERS.md`. Montaigne is number 50, and his line says: "the *Essays*: why one writes at
 all". I have not written those two pages yet. Perhaps this essay is their draft. Theodore
 Dalrymple is on the list too, as number 37, and his line still says "to be written later".
 
@@ -558,7 +558,7 @@ fragment.
 - The six DOIs (marola, ww3-gpu, picasso, closed source, marola-bench, nashkell): the caption of
   the post "meus temas", [`docs/social/instagram_004/README.md`](../docs/social/instagram_004/README.md).
 - The book, the 50 thinkers, Montaigne as number 50 and Dalrymple as number 37:
-  [`50THINKERS.md`](../50THINKERS.md) and `AGENTS.md`, "The book".
+  [`33THINKERS.md`](../33THINKERS.md) and `AGENTS.md`, "The book".
 - Anthony Daniels (Theodore Dalrymple), 1949, psychiatrist and prison doctor at City Hospital and
   Winson Green Prison, Birmingham; retired in 2005; contributor to *City Journal*: Wikipedia,
   "Theodore Dalrymple", read on 2026-10-25. Status: partial.

@@ -79,7 +79,7 @@ no model and no network, and with the graph outside the checkout.
 - Do not use the `/graphify` skill or `graphify install`. Their LLM pass over the documents costs
   about 0.6M tokens, and they install a second copy with `pip` or `uv`.
 - graphify reads scripts and code, not prose. For the book and the paper, read
-  `50THINKERS.md`, `papers/<slug>/` and `notes/` directly.
+  `33THINKERS.md`, `papers/<slug>/` and `notes/` directly.
 
 What the graph covers, measured on 13 October 2026 with graphify 0.9.88:
 

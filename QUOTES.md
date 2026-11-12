@@ -2,7 +2,7 @@
 title: Quotes
 status: draft
 date: 2026-10-13
-related: [50THINKERS.md, papers/closed-source/REFERENCES.md]
+related: [33THINKERS.md, papers/closed-source/REFERENCES.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Quotes

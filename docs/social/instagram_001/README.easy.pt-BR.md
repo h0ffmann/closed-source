@@ -33,7 +33,7 @@ fonte escrita embaixo dele.
 | [slide-1.easy.pt-BR.png](slide-1.easy.pt-BR.png) | o livro: a capa em preto, vermelho e letras amarelas; a frase "cite o que você pega emprestado"; o DOI | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) |
 | [slide-2.easy.pt-BR.png](slide-2.easy.pt-BR.png) | o autor: na capa está Mr. Nobody; quem escreve é Matheus Hoffmann; três outros trabalhos dele | [`metadata.md`](../../../papers/closed-source/metadata.md) |
 | [slide-3.easy.pt-BR.png](slide-3.easy.pt-BR.png) | a ferramenta `citation-score` e a nota de cinco páginas de projeto | [`CITATION_SCORES.md`](../../../CITATION_SCORES.md) |
-| [slide-4.easy.pt-BR.png](slide-4.easy.pt-BR.png) | os 50 pensadores do livro e as 41 referências do artigo | [`50THINKERS.md`](../../../50THINKERS.md), [`REFERENCES.md`](../../../papers/closed-source/REFERENCES.md) |
+| [slide-4.easy.pt-BR.png](slide-4.easy.pt-BR.png) | os 50 pensadores do livro e as 41 referências do artigo | [`33THINKERS.md`](../../../33THINKERS.md), [`REFERENCES.md`](../../../papers/closed-source/REFERENCES.md) |
 | [slide-5.easy.pt-BR.png](slide-5.easy.pt-BR.png) | o convite: publique, registre, cite; onde ler | a citação gerada no [README](../../../README.md#cite) |
 
 ## As palavras difíceis

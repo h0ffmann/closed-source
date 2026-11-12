@@ -66,7 +66,7 @@ Invariants 8 to 10 follow Ouroboric's AGENTS.md (invariants 3, 5 and 8; ourobori
 and 50 authors until Hoffmann cut the roster to 33 on 12 November 2026,
 `docs/2-engineering/changes/2026-11-12-33-thinkers/proposal.md`). The 33
 authors are thinkers the book is about, and each gets two first-person pages; the cover names Mr.
-Nobody. `50THINKERS.md` is the roster, chosen from the long list in `500AUTHORS.md` (at most 500 authors, every thinker listed), and `just check` fails unless it has
+Nobody. `33THINKERS.md` is the roster, chosen from the long list in `500AUTHORS.md` (at most 500 authors, every thinker listed), and `just check` fails unless it has
 exactly 33 distinct thinkers. A change that breaks the 66-page count is wrong. The current
 11-section text is material for those pages; ask the owner before you restructure it.
 

@@ -85,7 +85,7 @@ Add one section under "Copied" in `works/index.md`:
 Then:
 
 - In `500AUTHORS.md`, put the work and its path in the author's "Read in" cell.
-- In `50THINKERS.md` and its easy pt-BR version, do not change the row: a thinker's row says why
+- In `33THINKERS.md` and its easy pt-BR version, do not change the row: a thinker's row says why
   the thinker is in the book, not where the text is.
 
 ## 6. Check

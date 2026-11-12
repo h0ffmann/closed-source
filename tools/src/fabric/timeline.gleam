@@ -1,4 +1,4 @@
-//// timeline: draw the lives of the thinkers of 50THINKERS.md as one SVG (the ouro-timeline skill).
+//// timeline: draw the lives of the thinkers of 33THINKERS.md as one SVG (the ouro-timeline skill).
 ////
 //// Lives overlap, so each one gets the first lane where it fits, its name included. The scale is
 //// the same everywhere (`px_per_year`); a stretch of empty years longer than `max_gap` is cut out
@@ -499,7 +499,7 @@ pub fn draw(
 
 /// The svg from the repository's files, and the named thinkers that lives.tsv lacks.
 fn build() -> Result(#(String, List(String)), String) {
-  case pystr.read_text(lives_path), pystr.read_text("50THINKERS.md") {
+  case pystr.read_text(lives_path), pystr.read_text("33THINKERS.md") {
     Ok(tsv), Ok(roster) -> {
       let #(now, lives, unknown) = parse(tsv)
       let listed = list.append(list.map(lives, fn(l) { l.name }), unknown)
