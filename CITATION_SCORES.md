@@ -1,5 +1,5 @@
 ---
-title: "Citation scores of five READMEs"
+title: "Citation scores of four READMEs"
 status: draft
 date: 2026-10-13
 related: [.claude/skills/citation-score/SKILL.md, scripts/citation-score.sh, scripts/citation-board.sh]
@@ -20,7 +20,6 @@ hand. The website shows the same table.
 |---|---|---|---:|---:|---:|---|
 | closed-source | [h0ffmann/closed-source `README.md`](README.md) | working tree | 35 | 115 | 30% | THIN. Most of it is yours, or unsupported. |
 | marola | [marola-dev/marola `README.md`](https://github.com/marola-dev/marola/blob/cf7bd4f/README.md) | `cf7bd4f` | 57 | 120 | 48% | THIN. Most of it is yours, or unsupported. |
-| ouroboric-dev | [ouroboric-dev/.github `profile/README.md`](https://github.com/ouroboric-dev/.github/blob/b799793/profile/README.md) | `b799793` | 2 | 4 | 50% | FAIR. Half of it stands on a source; the rest is yours, or unsupported. |
 | h0ffmann | [h0ffmann/h0ffmann `README.md`](https://github.com/h0ffmann/h0ffmann/blob/5d81ea1/README.md) | `5d81ea1` | 22 | 30 | 73% | FAIR. Half of it stands on a source; the rest is yours, or unsupported. |
 | picasso | [h0ffmann/picasso `README.md`](https://github.com/h0ffmann/picasso/blob/29eb385/README.md) | `29eb385` | 60 | 142 | 42% | THIN. Most of it is yours, or unsupported. |
 <!-- citation-board:end -->

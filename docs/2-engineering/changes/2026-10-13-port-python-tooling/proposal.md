@@ -15,7 +15,7 @@ chosen first and paused before any code landed, so that Gleam could be checked.)
 ## Why
 
 The owner asked for options to move this repository's Python tooling to Go, with the Go patterns
-of ouroboric-dev, and to V (vlang) where a script is only scripting (Hoffmann, 13 October 2026).
+of Bruno Valério's projects, and to V (vlang) where a script is only scripting (Hoffmann, 13 October 2026).
 
 ## What there is today
 
@@ -34,14 +34,14 @@ comes from picasso's `paper` lab.
 | `scripts/zenodo_upload.py` | 129 | PDFs to a Zenodo draft | tool (HTTP API, token) |
 | `scripts/arxiv.py` | 179 | arXiv source bundle and form fields | tool (tar, subprocess) |
 | `scripts/logos.py` | 79 | fetch and convert the title-page logos | tool (HTTP, SHA-256, rsvg-convert) |
-| `scripts/ouroboric.py` | 87 | fetch ouroboric-dev repositories, list changes | tool (git) |
+| `scripts/digest.py` | 87 | fetch a friend's repositories, list changes | tool (git) |
 | `site/content.py` | 195 | write `content.gleam` from the papers | generator |
 
 Every file has a `--self-test`; `just self-test` runs them all.
 
-## The Go patterns of ouroboric-dev
+## The Go patterns of Bruno Valério's projects
 
-ouroboric-dev has no Go code published yet: Yggdrasil v0 is "in design". The patterns are in its
+Those projects have no Go code published yet: Yggdrasil v0 is "in design". The patterns are in its
 spec and plan (yggdrasil `ffedea7`, `docs/2-engineering/specs/2026-10-11-yggdrasil-v0-spec.md` and
 `plans/2026-10-12-yggdrasil-v0/tasks.md`):
 
@@ -61,7 +61,7 @@ and standard library can change between releases.
 
 ### A. Go for the tools, V for the checks (as asked)
 
-- **Go:** `citation`, `zenodo_upload`, `arxiv`, `logos`, `ouroboric`, `content` as subcommands of
+- **Go:** `citation`, `zenodo_upload`, `arxiv`, `logos`, `digest`, `content` as subcommands of
   one binary, `cmd/fabric/`, with packages under `internal/`. Standard library only (`net/http`,
   `archive/tar`, `encoding/json`, `os/exec`); `CITATION.cff` is written as text, so no YAML
   dependency.
@@ -114,7 +114,7 @@ versions are the latest on Hex on 13 October 2026.
 | `pathlib` read, write, glob, mkdir | all | `simplifile` 2.7.0 (both targets) |
 | `re` | all | `gleam_regexp` 1.1.1; see the regex notes below |
 | `json` | citation, zenodo_upload, logos, arxiv, content | `gleam_json` 3.1.0 with `gleam/dynamic/decode` |
-| `subprocess` (git, pandoc, pdfinfo, pdflatex, rsvg-convert) | cite_check, ouroboric, arxiv, logos, content | `shellout` 1.8.0; the same external programs as today |
+| `subprocess` (git, pandoc, pdfinfo, pdflatex, rsvg-convert) | cite_check, digest, arxiv, logos, content | `shellout` 1.8.0; the same external programs as today |
 | `urllib.request` (GET, POST, PUT, DELETE, bearer token, binary body) | zenodo_upload, logos | Erlang: `gleam_httpc` 5.0.0 with `gleam_http` 4.5.0, synchronous. JavaScript: `gleam_fetch` 1.4.1, asynchronous (promises) |
 | `hashlib.sha256` | logos | `gleam_crypto` 1.6.0 (both targets) |
 | `tarfile` (write and extract `.tar.gz`) | arxiv | Erlang: OTP's `erl_tar` through a one-line FFI. JavaScript: node has no tar, so run `tar` with `shellout` |

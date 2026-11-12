@@ -29,9 +29,9 @@ names the file and the commit it was read from (AGENTS.md, "Borrow, cite, propag
 ## The lock
 
 `skills.lock` holds the sha256 of every file in this folder, after the `skills.lock` of
-marola-dev/marola (`.claude/skills/skills.lock` at `cf7bd4f`) and Ouroboric's rule that skills are
+marola-dev/marola (`.claude/skills/skills.lock` at `cf7bd4f`) and the rule that skills are
 vendored and pinned, never fetched live
-(`docs/4-ways-of-working/ouroboric-patterns.md`, "Agents and skills"). marola's lock names an
+(`docs/4-ways-of-working/patterns.md`, "Agents and skills"). marola's lock names an
 upstream and a commit for each skill, because its skills are copies. These are not, so this lock
 has no upstream: it pins the files, and the sources are in each skill.
 

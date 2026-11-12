@@ -20,8 +20,8 @@ com um DOI de conceito e traz metadados de citação legíveis por máquina.
   com OCR e um modelo de linguagem, e armazena seus identificadores em latim por meio de um filtro do Git;
   a Seção [-@sec:securing] o discute como exemplo de ofuscação e de seus limites.
 
-Uma influência não é obra minha. As ideias ouroboric deste artigo são de Bruno Valério: Ouroboric
-[@ouroboric2026], fábricas abertas que se aprimoram a si mesmas, para software e para empresas. Seu
+Uma influência não é obra minha. A ideia de uma fábrica autoaperfeiçoável deste artigo é de Bruno Valério:
+fábricas abertas que se aprimoram a si mesmas, para software e para empresas. Seu
 padrão de documentação, seus estilos de escrita e sua lista de verificação de prontidão moldaram o Paper Fabric.
 
 **[RELATO DO AUTOR: por que o autor trabalha abertamente há anos, nas próprias palavras do autor.

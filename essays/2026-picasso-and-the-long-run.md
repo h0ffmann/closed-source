@@ -63,5 +63,5 @@ Every fact and every quotation is in
   GHSA-mrrh-fwg8-r2c3 (CVE-2025-30066); the Nix manual and reproducible.nixos.org.
 - picasso at commit `52c5772`: its commits and star, its locks, the tag in its workflow, and
   the sentence of its own study.
-- The loop: Ouroboric's REA, in [REA for forecast models](../notes/202610130000-rea-for-forecast-models.md).
+- The loop: REA, in [REA for forecast models](../notes/202610130000-rea-for-forecast-models.md).
 - "What do I know?": Montaigne, *Essays*, "Apology for Raimond Sebond".

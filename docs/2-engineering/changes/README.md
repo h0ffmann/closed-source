@@ -18,10 +18,8 @@ The owner's answer goes at the top of `proposal.md` as `**Decided YYYY-MM-DD:** 
 proposal can start as a GitHub issue (the *Change proposal* template) and become a folder when the
 work begins. A decided proposal moves to `archive/` once its delta is in the files it changes.
 
-Adapted from Yggdrasil's
-[change proposals](https://github.com/ouroboric-dev/yggdrasil/blob/ffedea7c476d10c04498d5db74596a72a5ab0cbb/docs/2-engineering/changes/README.md)
-(CC BY 4.0), which follows Ouroboric's spec-driven development
-(`docs/4-ways-of-working/ouroboric/spec-driven-development.md`).
+Adapted from Bruno Valério's change proposals in Yggdrasil, at commit `ffedea7` (CC BY 4.0),
+which follow his spec-driven development.
 
 ## Open
 

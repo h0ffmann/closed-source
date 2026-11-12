@@ -150,7 +150,7 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
 .figure span { font-size: 12px; }
 .figure:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 /* The project stamps, after the logo band of picasso's site. Marola's mark carries its own white
-   disc and Ouroboric publishes a dark logo, so neither needs a plate in dark mode. */
+   disc, so it needs no plate in dark mode. */
 .stamps {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;
   margin: 28px 0 0;
@@ -302,11 +302,6 @@ main section.shelf { padding-top: 48px; }
 .tile-gramatico { --tile: #0B5E36; --drawing: url(drawings/letter-g.svg); }
 .tile-marola-bench { --tile: #23356B; --drawing: url(drawings/bars.svg); }
 .tile-picasso { --tile: #DCE7F7; --on: #16233F; --soft: rgba(22, 35, 63, .74); --chip: rgba(22, 35, 63, .1); --drawing: url(drawings/guitar.svg); }
-/* A friend's work: a wide tile like the paper's, in Ouroboric's orange. */
-.tile-friend { grid-column: 1 / -1; min-height: 280px; }
-.tile-ouroboric { --tile: #B8400A; --drawing: url(drawings/ouroboros.svg); }
-.tile-friend h3 { font-size: clamp(34px, 5vw, 60px); }
-.tile-friend::before { width: min(40%, 440px); right: 4%; bottom: -24px; opacity: .2; }
 /* One line drawing behind each tile's text, after the drawings on picasso's site
    (.claude/skills/card-style/SKILL.md). It is a mask, so it takes the tile's text colour. */
 .tile::before {

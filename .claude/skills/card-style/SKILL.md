@@ -49,8 +49,7 @@ differs in three things:
 Each card has one line drawing behind its text, in the corner away from the name.
 
 - **One motif for one work**, from the work's subject: an open padlock for closed-source, a fish
-  for marola, a breaking wave for ww3-gpu, a guitar for picasso, a snake that bites its tail for
-  ouroboric.
+  for marola, a breaking wave for ww3-gpu, a guitar for picasso.
 - **Drawn here, by hand, as SVG paths.** After the manner of the drawings on picasso's site: a
   few straight lines and curves, a broken frame around the figure, round caps and joins, no fill.
   The idea is borrowed; no path is copied. Do not trace or copy a drawing by Pablo Picasso: his

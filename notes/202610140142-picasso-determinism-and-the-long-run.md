@@ -4,8 +4,7 @@ title: "picasso: determinism, and the long run to profit"
 type: permanent
 status: partial
 source: "Matheus Hoffmann, message, 2026-10-14: the thesis is his; a study of 14 October 2026 by an agent (Claude, the Fable model, high effort), six of whose quotations were checked again by the agent that filed this note"
-tags: [picasso, nix, determinism, supply-chain, rea, ouroboric, essay]
-cssclasses: [ouroboric]
+tags: [picasso, nix, determinism, supply-chain, rea, essay]
 created: 2026-10-14
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
@@ -16,7 +15,7 @@ created: 2026-10-14
 argument is determinism. JavaScript and Python build systems deliver open code that nobody
 checked, automatically: "a mess". picasso can add determinism to the 21st century, if it is
 applied and distributed in the right way. The plan: make picasso a self-improving app that
-beats Determinate Systems' Nix, by Ouroboric's REA pattern and reverse citing.
+beats Determinate Systems' Nix, by the REA pattern and reverse citing.
 
 This note sets the record beside each part. The study read picasso at
 [`52c5772`](https://github.com/h0ffmann/picasso/tree/52c5772a292e38ac3966a0b7b4d3d337ee1ce1f0),
@@ -91,7 +90,7 @@ All of it is the study's reading on 14 October 2026.
 
 ## The plan, as REA with reverse citing
 
-REA is Ouroboric's pattern: Read, Evaluate, Adopt ([[202610130000-rea-for-forecast-models]]).
+REA is the pattern Read, Evaluate, Adopt ([[202610130000-rea-for-forecast-models]]).
 Written for this case, each step with what would make it checkable:
 
 1. **Read** Determinate's public repositories at a commit, with their licence (LGPL-2.1), as

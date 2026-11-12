@@ -16,7 +16,7 @@ linked docs before you change what they cover.
 - Tools: `tools/` is one Gleam project. Run `tools/fabric <command>`; `cd tools && gleam test`.
 - Charter and direction: `docs/1-product/charter.md`.
 - How a paper is made: `docs/4-ways-of-working/paper-fabric.md`.
-- Ouroboric conventions used here: `docs/4-ways-of-working/ouroboric-patterns.md`.
+- Conventions used here: `docs/4-ways-of-working/patterns.md`.
 - Release and Zenodo: `docs/4-ways-of-working/releasing.md`.
 - Known gaps: `docs/1-product/readiness/`.
 - Skills written for this repository, their lock and the hooks: `.claude/skills/README.md`.
@@ -26,7 +26,7 @@ linked docs before you change what they cover.
 - Each release, its permanent DOI and what changed: `RELEASES.md`. After a release, `just minted`
   writes the release into it and into every page that names the latest release; never write a
   version DOI by hand.
-- Citation scores of this README and four others: `CITATION_SCORES.md` (`just citation-board`).
+- Citation scores of this README and three others: `CITATION_SCORES.md` (`just citation-board`).
 - CI is the same on a pull request and on `main`: a check that can fail on `main` runs on the
   pull request first (`.github/workflows/`; the reason is in `docs/4-ways-of-working/md-quality.md`).
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
@@ -58,8 +58,8 @@ linked docs before you change what they cover.
    (`docs/2-engineering/changes/`) that the owner approves.
 10. Work on a branch, stage files by path, and open a pull request for every change.
 
-Invariants 8 to 10 follow Ouroboric's AGENTS.md (invariants 3, 5 and 8; ouroboric-dev/ouroboric at
-`35e6d33`, read on 18 October 2026, CC BY 4.0).
+Invariants 8 to 10 follow an AGENTS.md by Bruno Valério (its invariants 3, 5 and 8, at `35e6d33`,
+read on 18 October 2026, CC BY 4.0).
 
 ## The book (hard rule)
 
@@ -148,9 +148,6 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   `papers/<slug>/STE100.md`. Vale's style `ste` checks the rules in CI
   (`docs/4-ways-of-working/ste100.md`).
 
-- `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` digest the public ouroboric-dev repositories. Refresh
-  them with `just ouroboric-sources` and `/update-ouroboric`. Each fact in them has a source line;
-  do not add one without its source.
 - `README.md` is in lower case, except acronyms (UFRJ, DOI, PDF), code and the generated
   citation block (Hoffmann, 13 October 2026); use the `readme-style` skill.
   `README.easy.pt-BR.md` is the same page in easy Brazilian Portuguese. It is always made from
@@ -170,7 +167,7 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 - The book's colours are black and red, with yellow letters for the title, after Hoppe's
   *Democracy: The God That Failed* (Hoffmann, 13 October 2026). No brown: not on the site, the
   slides or a badge.
-- Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
+- Style: `research` for papers, `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - A claim of mathematics or types (in a paper, a note or a doc) follows an Agda module in
   `agda/` that checks under `--safe` (the owner, 12 November 2026). Add the module and its row

@@ -2,8 +2,8 @@
   "version": 1,
   "note": "every skill here was written for this repository; none is a copy. SOURCES in each SKILL.md and in README.md say what each one read. sha256 of each file, checked by scripts/readme.sh --check.",
   "files": {
-    "README.md": "c1e02dbda5990ac170ed873ddacdea3741839fb8bda0a1b3bc7bc22ab3591f39",
-    "card-style/SKILL.md": "42755313375b690efb8f47fd3fd73f29eba21e07c04612c980cd2abbdfd70941",
+    "README.md": "b3fff54c63c9cf8758800d6034ff90a45ff24344b09c73fad3ad2861949bed41",
+    "card-style/SKILL.md": "6d6f3b5a09cebdd33216f9d86333fe167fd4b08cd1a957e7a928a24884faa9eb",
     "citation-score/SKILL.md": "7f58cb381bc9dc0d0a6536e5b56f3bd826b61c057c80ada2f95349a0abba0a24",
     "easy-pt-br/SKILL.md": "5d7d5383721c3cd38694a425d9b449f8f70ad064ffd4179636bcbeb24eada7ba",
     "essay-montaigne/SKILL.md": "c1fc5801b5f9b44ff571155c2361c35377c5e6d7e7ceb4cda25294e226faf839",

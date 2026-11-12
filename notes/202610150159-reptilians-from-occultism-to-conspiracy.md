@@ -4,8 +4,8 @@ title: "Reptilians: from occultism and pulp fiction to conspiracy theory"
 type: literature
 status: partial
 source: "https://en.wikipedia.org/wiki/Reptilian_conspiracy_theory, read 2026-10-15"
-tags: [reptilians, occultism, conspiracy-theory, theosophy, ouroboric]
-cssclasses: [ouroboric]
+tags: [reptilians, occultism, conspiracy-theory, theosophy, ouroboros]
+cssclasses: [ouroboros]
 created: 2026-10-15
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
@@ -26,4 +26,4 @@ The occult serpent here is the opposite of the Ouroboros: not a symbol of wholen
 enemy ([[202610150158-ouroboros-the-myth]]).
 
 **Status: partial.** From Wikipedia's summary; Barkun's *A Culture of Conspiracy* (2003) is the
-scholarly source to fetch. Policy: [[202610150157-policy-ouroboric-ideas-reptilians-eternal-cycle]].
+scholarly source to fetch. Policy: [[202610150157-policy-ouroboros-myth-reptilians-eternal-cycle]].

@@ -110,11 +110,6 @@ unison-serve:
 unison-deploy:
     nix develop --no-update-lock-file .#unison --command ucm -c unison/.codebase run refpulse/main:.refpulse.deploy.cloud
 
-# Fetch the public ouroboric-dev repositories into build/ouroboric/ and list what changed since
-# OUROBORIC.md recorded them. `/update-ouroboric` (a Claude Code command) then updates the digests.
-ouroboric-sources:
-    tools/fabric ouroboric
-
 # Regenerate CITATION.cff and the README citation block from .zenodo.json.
 citation:
     tools/fabric citation
