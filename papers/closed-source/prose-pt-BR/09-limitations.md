@@ -1,7 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Limitações {#sec:limits}
 
-Declaro os limites do meu argumento com franqueza, em consonância com o valor Ouroboric da honestidade quanto aos
+Declaro os limites do meu argumento com franqueza, em consonância com o valor da honestidade quanto aos
 resultados.
 
 - **Posição, não medição.** Este artigo argumenta a partir de evidências citadas; não relata nenhum

@@ -90,8 +90,8 @@ for agents. Section [-@sec:objections] answers six objections. Section [-@sec:fa
 Paper Fabric. Section [-@sec:related] lists my related work. Section [-@sec:limits] gives the
 limits of my argument.
 
-This paragraph is about my method. This is a position paper. It uses the *research* style of the
-Ouroboric documentation standard. In this style, each factual claim has a citation, and the mark
+This paragraph is about my method. This is a position paper. It uses a *research* style. In
+this style, each factual claim has a citation, and the mark
 **[ANALYSIS]** shows each passage of interpretation. I report allegations as allegations, with the
 source and the status of the case. I fetched each source before I cited it. I fetched the sources
 about events after June 2026 on 12 November 2026. This paper is a v0 preprint, and it is not peer

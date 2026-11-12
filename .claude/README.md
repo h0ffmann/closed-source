@@ -17,7 +17,6 @@ It is a record, not a live config: Claude Code reads only `settings.json`, `comm
 | [`skills/`](skills/README.md) | the skills written for this repository (`readme-style`, `easy-pt-br`, `card-style`, `citation-score`), their sources and their lock |
 | [`commands/ste100.md`](commands/ste100.md) | `/ste100`: rewrite prose to ASD-STE100 |
 | [`commands/note.md`](commands/note.md) | `/note`: make Zettelkasten notes in `notes/` (SMART_NOTE_POLICY.md) |
-| [`commands/update-ouroboric.md`](commands/update-ouroboric.md) | `/update-ouroboric`: refresh `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` from the ouroboric-dev repositories |
 
 Nothing here is secret. Tokens, e-mail addresses and the harness's own system prompt are left
 out; the session summary describes the harness instead of quoting it.

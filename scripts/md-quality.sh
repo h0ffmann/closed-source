@@ -18,7 +18,7 @@ cd "$(git rev-parse --show-toplevel)"
 
 # Not checked by any of the three: other people's text, generated files, and the two files with
 # their own hard rule (no agent reads CLAUDE_PROJECT.md; only the owner writes NAGORI.md).
-skip='^(forks/|LICENSES/|docs/4-ways-of-working/ouroboric/|CLAUDE_PROJECT\.md$|NAGORI\.md$|OUROBORIC(_RESEARCH)?\.md$)'
+skip='^(forks/|LICENSES/|CLAUDE_PROJECT\.md$|NAGORI\.md$)'
 # The paper's sources are pandoc's Markdown, and `tools/fabric ste-check` is their check.
 paper='^papers/[^/]+/(prose[^/]*/|metadata\.md$)'
 # Vale's rules are for English that this repository writes. Not for Portuguese, not for the

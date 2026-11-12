@@ -22,7 +22,7 @@ abstract: >-
   openness scales, and the author's closed undergraduate thesis as evidence of what secrecy costs
   a researcher. It argues that the ethical answer to universal reverse engineering is professional
   citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper
-  Fabric, the open pipeline in the Ouroboric style that produced it.
+  Fabric, the open, self-improving pipeline that produced it.
 
   This record is a book. It has not been peer reviewed. It holds the source of the book at the
   release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
@@ -32,10 +32,9 @@ abstract: >-
   record cites all three: marola, an open, non-profit platform for sea conditions and
   bathing-water quality, written with five other people (10.5281/zenodo.23224155); WW3 GPU Lab, a
   bit-for-bit GPU port of WAVEWATCH III (10.5281/zenodo.23221351); and picasso, Nix flakes for
-  scientific and agentic toolchains, which builds this book (10.5281/zenodo.23311208). The book is
-  made in the Ouroboric style, and the Ouroboric ideas are Bruno Valério's
-  (https://github.com/ouroboric-dev/ouroboric); Ouroboric has no DOI yet, so this record cites it
-  by its address.
+  scientific and agentic toolchains, which builds this book (10.5281/zenodo.23311208). The idea
+  of a self-improving factory in the book is Bruno Valério's. The writer's partners are piabrota
+  (https://github.com/piabrota) and marola-dev (https://github.com/marola-dev).
 authors:
   - family-names: "Hoffmann"
     given-names: "Matheus"

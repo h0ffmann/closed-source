@@ -1,5 +1,5 @@
 ---
-title: Ouroboric patterns used in Paper Fabric
+title: Patterns used in Paper Fabric
 status: draft
 date: 2026-10-12
 related: [paper-fabric.md, ../1-product/charter.md]
@@ -7,19 +7,17 @@ style: guide
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
-# Ouroboric patterns used in Paper Fabric
+# Patterns used in Paper Fabric
 
-The project chat that started this repository asked to record the `ouroboric-dev` patterns in
-project memory. Project memory was off, so they are recorded here instead, where every agent and
-person reads them. Source: the [ouroboric](https://github.com/ouroboric-dev/ouroboric),
-[asgard](https://github.com/ouroboric-dev/asgard) and [.github](https://github.com/ouroboric-dev/.github)
-repositories, read on 2026-10-12.
+The project chat that started this repository asked to record these patterns in project memory.
+Project memory was off, so they are recorded here instead, where every agent and person reads
+them. The patterns are Bruno Valério's, read in his repositories on 2026-10-12.
 
 ## Direction
 
-- **Charter shape:** vision, mission, what "ouroboric" means, principles, values, portfolio,
+- **Charter shape:** vision, mission, what "self-improving" means, principles, values, portfolio,
   north-star measures, boundaries. Product charters must conform to the company charter.
-- **Ouroboric means three things:** the product improves itself through its own loop, documents
+- **Self-improving means three things:** the product improves itself through its own loop, documents
   itself as it documents its output, and never weakens its own guardrails.
 - **Seven principles:** humans steer, agents build; checks, not promises; measure everything;
   safe by default; learn in public; read before you borrow; narrow first.

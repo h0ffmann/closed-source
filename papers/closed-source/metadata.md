@@ -55,17 +55,15 @@ works:
     doi: 10.5281/zenodo.23352633
     tags: [non-profit, benchmark]
     href: https://github.com/marola-dev/marola-research
-# Work by friends that this paper stands on, for a wide tile in the site's DOIs section. It is not
-# the writer's work, so it is not in `works` and not in the Author section. `tags` are the owner's
-# words (Hoffmann, 13 October 2026); the question mark is his. `text` is from OUROBORIC.md, section
-# 2 (the charter: "Making money is not a goal for Ouroboric for now"). No `doi`: none exists yet.
-# The yggdrasil and asgard clause is from those repositories' GitHub descriptions, read on
-# 12 November 2026 (ouroboric-dev/yggdrasil at a77e5d2; ouroboric-dev/asgard at dc16824).
-friends:
-  - name: ouroboric
-    text: "open factories that improve themselves, by Bruno Valério: yggdrasil, an open software factory where agents build and humans steer, and asgard, the company factory on it, both in design. a company whose charter says that making money is not a goal for now. the ouroboric ideas in this paper are his."
-    href: https://github.com/ouroboric-dev
-    tags: ["profit (?)", ideas, friends]
+# The writer's partners (Hoffmann, 12 November 2026: "Partners are piabrota and marola-dev"). The
+# texts follow README.md, "the writer's works". `tools/fabric content` writes them for the site.
+partners:
+  - name: piabrota
+    text: "an open software fabric made in rio de janeiro"
+    href: https://github.com/piabrota
+  - name: marola-dev
+    text: "marola and water: open ocean science"
+    href: https://github.com/marola-dev
 # Shown on the title page. Trademarks of their projects, not licensed here: `tools/fabric logos`
 # fetches each SVG at a pinned commit, checks its hash and converts it; nothing is committed.
 # The website shows the same marks as linked stamps, after picasso's site, and reads the keys from
@@ -79,14 +77,6 @@ logos:
     text: "open ocean science, live at marola.dev"
     width: "56"
     height: "54"
-  - file: logos/ouroboric.pdf
-    svg: https://raw.githubusercontent.com/ouroboric-dev/ouroboric/4ab80ed2486a5e0ab0ade13e5089c2a4acdb4216/docs/7-branding/identity/logo/ouroboric-logo-horizontal.svg
-    sha256: 935eb9acf636f5da8651bdee14e6b53670e216d6a1667b46c48d62ec6f26f59d
-    href: https://github.com/ouroboric-dev
-    svg-dark: https://raw.githubusercontent.com/ouroboric-dev/ouroboric/4ab80ed2486a5e0ab0ade13e5089c2a4acdb4216/docs/7-branding/identity/logo/ouroboric-logo-horizontal-dark.svg
-    text: "open factories that improve themselves"
-    width: "224"
-    height: "44"
 date: "November 2026"
 version: "v0 (preprint, not peer reviewed)"
 keywords:
@@ -120,7 +110,7 @@ abstract: |
   cannot. I argue that the ethical answer to universal reverse engineering is professional
   citation: persistent identifiers, machine-readable citation metadata and agents that borrow,
   cite and propagate credit by default. I describe Paper Fabric, an open, self-improving
-  pipeline in the Ouroboric style that produced this preprint, and answer six objections.
+  pipeline that produced this preprint, and answer six objections.
 arxiv:
   primary: cs.CY
   cross-list: [cs.SE, cs.CR, cs.DL]

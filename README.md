@@ -25,8 +25,7 @@
 a book on why closed source failed as a protection, for science first, and on what to do
 instead: publish the method, mint an identifier, cite what you use. it stands on robert m.
 pirsig's *zen and the art of motorcycle maintenance* (1974). it is the first book made with
-**paper fabric**, an open pipeline in the [ouroboric](https://github.com/ouroboric-dev/ouroboric)
-style: markdown in, PDF out, every reference checked, every release citable.
+**paper fabric**, an open, self-improving pipeline: markdown in, PDF out, every reference checked, every release citable.
 
 **read the paper:** [preview the PDF in the browser](https://h0ffmann.github.io/closed-source/paper.pdf) ·
 download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
@@ -48,7 +47,9 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
   can test. that is why the book puts open source first for science.
 - **the shape.** 66 pages: 33 thinkers, two first-person pages each ([`33THINKERS.md`](33THINKERS.md)),
   in english and in brazilian portuguese. the cover names mr. nobody; the writer is matheus
-  hoffmann, of the escola politécnica of UFRJ. the ouroboric ideas are bruno valério's.
+  hoffmann, of the escola politécnica of UFRJ. the idea of a
+  self-improving factory is bruno valério's. the partners are
+  [piabrota](https://github.com/piabrota) and [marola-dev](https://github.com/marola-dev).
 - **status:** v0.3.4 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer
   reviewed. what must change before v1: the [readiness assessment](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
 
@@ -195,7 +196,7 @@ just --list            # every recipe
 
 **tooling.** the checks and generators are one gleam project (erlang target) in `tools/`. run
 them as `tools/fabric <command>` from the repository root, in `nix develop`. the commands are
-`arxiv`, `book-check`, `citation`, `cite-check`, `content`, `logos`, `notes-check`, `ouroboric`,
+`arxiv`, `book-check`, `citation`, `cite-check`, `content`, `logos`, `notes-check`,
 `refs-check`, `ste-check` and `zenodo-upload`. `just` calls them for you. `cd tools && gleam test`
 runs their tests.
 
@@ -234,9 +235,8 @@ each half runs in its own toolchain from picasso: the `paper` lab for the PDFs a
 pull request and publishes `site/dist` to github pages from `main`. turn that on once in
 github → settings → pages → source: **github actions**. pages needs no secret.
 
-the cover carries a stamp for marola and one for ouroboric, after the logo band of picasso's site:
-each links its project and loads the project's logo from its own repository, at the commit the
-paper's title page pins (`logos:` in the paper's `metadata.md`). no logo is copied here
+the cover carries a stamp for marola, after the logo band of picasso's site: it links the
+project and loads its logo from its own repository, at the commit the paper's title page pins (`logos:` in the paper's `metadata.md`). no logo is copied here
 ([`TRADEMARKS.md`](TRADEMARKS.md)).
 
 the front page opens with the 33 thinkers and the second brain (`notes/`). the site is set like a
@@ -277,13 +277,12 @@ says more, with the other books behind this repository.
 | [`WORKS.md`](WORKS.md) | the index of the writer's open works on h0ffmann, marola-dev and piabrota, with DOIs, licences and commits, and its date of record |
 | [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.3.4 is the latest |
 | [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | how a reader finds this work: the zenodo keywords, the works this one is tied to in zenodo and datacite, and the github topics, each with its counts and its date of record |
-| [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of five READMEs is cited (this one, marola, ouroboric-dev, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
+| [`CITATION_SCORES.md`](CITATION_SCORES.md) | how much of four READMEs is cited (this one, marola, h0ffmann, picasso), measured by the `citation-score` skill; `just citation-board` writes it and the website shows it |
 | [`BOOKS.md`](BOOKS.md) | the books behind the paper: pirsig, hoppe, kinsella, boldrin and levine |
-| [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
 | [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), [`notes/`](notes/index.md) | the slip box: zettelkasten notes for the book, obsidian readable; `/note` makes one |
 | [`DESCRIPTION.md`](DESCRIPTION.md), [`QUOTES.md`](QUOTES.md), [`ACRONYMOUS.md`](ACRONYMOUS.md), [`INDEX_REMISS.md`](INDEX_REMISS.md) | the one-paragraph description, the quotations with their sources, the acronyms, and the index of cross-references; skeletons until the ingest |
 | [`NAGORI.md`](NAGORI.md) | the partial snapshot of the private `h0ffmann/nagori` after the 66 pages; written by the owner by hand, never by an agent or automation (hard rule) |
-| [`forks/`](forks/README.md) | the owner's forks as shallow git submodules: rea, ouroboric, ouroboric-dev/.github, WW4, picasso, h0ffmann, ww3-gpu and marola |
+| [`forks/`](forks/README.md) | the owner's forks as shallow git submodules: rea, WW4, picasso, h0ffmann, ww3-gpu and marola |
 | [`PERSONAS.md`](PERSONAS.md) | the personas that every markdown file cites as its main and last author (hard rule) |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |
 
@@ -458,8 +457,6 @@ ABNT (NBR 6023):
 - paper text, docs and figures: [CC BY 4.0](LICENSE).
 - scripts, workflows, build files and the website (`scripts/`, `.github/`, `justfile`, `flake.nix`, `site/`): [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
 - latex template (`format/`), which other papers copy: [MIT](LICENSES/MIT.txt).
-- ouroboric's names and logos are not licensed here; see ouroboric's
-  [trademark policy](https://github.com/ouroboric-dev/ouroboric/blob/main/TRADEMARKS.md).
 - the website's footer shows gleam's lucy ([gleam-lang/branding](https://github.com/gleam-lang/branding)) and
   the claude code icon. both load from their owners' sites, and neither is licensed here.
 

@@ -20,8 +20,8 @@ with a concept DOI, and carries machine-readable citation metadata.
   letters with OCR and a language model, and stores its identifiers in Latin through a Git filter;
   Section [-@sec:securing] discusses it as an example of obfuscation and its limits.
 
-One influence is not my work. The ouroboric ideas in this paper are Bruno Valério's: Ouroboric
-[@ouroboric2026], open factories that improve themselves, for software and companies. Its
+One influence is not my work. The idea of a self-improving factory in this paper is Bruno Valério's:
+open factories that improve themselves, for software and companies. His
 documentation standard, writing styles and readiness checklist shaped Paper Fabric.
 
 **[AUTHOR ANECDOTE: why the author has worked in the open for years, in the author's own words.

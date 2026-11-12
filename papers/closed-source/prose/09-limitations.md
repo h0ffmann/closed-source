@@ -1,7 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Limitations {#sec:limits}
 
-I state the limits of my argument plainly, in line with the Ouroboric value of honesty about
+I state the limits of my argument plainly, in line with the value of honesty about
 results.
 
 - **Position, not measurement.** This paper argues from cited evidence; it reports no new

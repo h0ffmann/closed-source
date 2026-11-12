@@ -54,8 +54,7 @@ shorter and were written for this repository.
 
 | Left out | Of | Why |
 |---|---|---|
-| `forks/`, `LICENSES/`, `docs/4-ways-of-working/ouroboric/` | all three | other people's text |
-| `OUROBORIC.md`, `OUROBORIC_RESEARCH.md` | all three | written by `just ouroboric-sources`, not by hand |
+| `forks/`, `LICENSES/` | all three | other people's text |
 | `CLAUDE_PROJECT.md`, `NAGORI.md` | all three | the hard rules: no agent reads the first, only the owner writes the second |
 | `papers/*/prose*/`, `papers/*/metadata.md` | all three | pandoc's Markdown; `tools/fabric ste-check` is their check |
 | files in Portuguese | Vale | the rules are for English |

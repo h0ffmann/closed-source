@@ -25,8 +25,7 @@ measurably better with every paper.
 
 ## Principles
 
-Paper Fabric adopts the Ouroboric [charter](https://github.com/ouroboric-dev/ouroboric/blob/main/docs/1-company/charter.md)
-principles. In this product they mean:
+Paper Fabric adopts the principles of Bruno Valério's charter. In this product they mean:
 
 1. **Humans steer, agents build.** Authors own the thesis, the authorship and every personal
    account. Agents draft, check, build and propose.
@@ -40,7 +39,7 @@ principles. In this product they mean:
 7. **Narrow first.** One paper, one repository, one toolchain, until the second paper shows what
    is shared.
 
-## What makes it ouroboric
+## What makes it self-improving
 
 1. **It improves itself:** each paper's reference log, readiness gaps and journal entry feed the
    next paper's starting point.
@@ -60,5 +59,4 @@ principles. In this product they mean:
   release.
 - **Not peer review.** Paper Fabric prepares preprints; journals and reviewers judge them.
 - **Not a ghost-writer.** Agents never invent an author's experience or a reference.
-- **Focus.** The Ouroboric charter puts Yggdrasil and Asgard before any new factory. Paper Fabric
-  is an independent experiment until the Ouroboric operators decide otherwise (see readiness).
+- **Focus.** Paper Fabric is an independent experiment.

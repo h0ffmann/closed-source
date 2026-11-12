@@ -16,8 +16,8 @@
 
 No skill was invoked. The skills available in the session (document, slide and spreadsheet
 skills, research and review skills, and several repository-specific skills from the owner's other
-projects) did not match a Markdown-to-PDF paper build. Ouroboric's vendored writing skills
-(`journalism-ap` for the `research` style) were applied as house rules from the Ouroboric writing
+projects) did not match a Markdown-to-PDF paper build. Bruno Valério's vendored writing skills
+(`journalism-ap` for the `research` style) were applied as house rules from his writing
 styles document, not loaded as skills; vendoring them is issue N6 in the readiness assessment.
 
 ## Agents

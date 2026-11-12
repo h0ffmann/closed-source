@@ -4,8 +4,8 @@ title: "The Ouroboros: the myth of the serpent that eats its tail"
 type: literature
 status: partial
 source: "https://en.wikipedia.org/wiki/Ouroboros, read 2026-10-15"
-tags: [ouroboros, myth, egypt, alchemy, gnosticism, norse, jung, ouroboric]
-cssclasses: [ouroboric]
+tags: [ouroboros, myth, egypt, alchemy, gnosticism, norse, jung]
+cssclasses: [ouroboros]
 created: 2026-10-15
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
@@ -25,4 +25,4 @@ created: 2026-10-15
   the opposite, i.e. of the shadow" (*Collected Works* 14, para. 513).
 
 **Status: partial.** Read in Wikipedia, which cites the sources above; the primary texts were not
-fetched. Fetching Hornung and CW 14 would verify it. Policy: [[202610150157-policy-ouroboric-ideas-reptilians-eternal-cycle]].
+fetched. Fetching Hornung and CW 14 would verify it. Policy: [[202610150157-policy-ouroboros-myth-reptilians-eternal-cycle]].

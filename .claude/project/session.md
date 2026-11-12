@@ -18,7 +18,7 @@
 | h0ffmann/picasso | read | `scripts/citation.py` (copied), `.zenodo.json`, citation workflow |
 | marola-dev/marola | read | authors' names and ORCIDs from `.zenodo.json` |
 | h0ffmann/chemo-rx | read | facts for the Chemo-RX section |
-| ouroboric-dev/ouroboric, asgard, .github | read | charter, docs standard, writing styles, journal, readiness checklist, PR template |
+| Bruno Valério's repositories (three) | read | charter, docs standard, writing styles, journal, readiness checklist, PR template |
 | isovector/thinking-with-types, algebra-driven-design, certainty-by-construction | read | the Makefile, pandoc and XeLaTeX layout mirrored here |
 
 ## Toolchain installed in the container

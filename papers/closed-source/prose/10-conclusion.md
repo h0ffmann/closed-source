@@ -47,7 +47,7 @@ they will know whose it is.
 **Authorship.** The cover names Mr. Nobody. I, Matheus Hoffmann, wrote this paper in the first
 person, and the citation metadata names me.
 
-**Acknowledgements.** The ouroboric ideas in this paper are Bruno Valério's [@ouroboric2026].
+**Acknowledgements.** The idea of a self-improving factory in this paper is Bruno Valério's.
 
 **Use of AI.** The structure, prose drafts, reference checks, build tooling and repository
 configuration of this v0 were produced by a Claude coding agent (Anthropic) working in a Claude
