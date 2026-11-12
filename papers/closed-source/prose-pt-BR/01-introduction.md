@@ -47,8 +47,7 @@ máquina e, cada vez mais, agentes que citam por padrão. Essa resposta tem um l
 descrevo também o pipeline aberto que produziu este artigo.
 
 O artigo está organizado da seguinte forma. A Seção [-@sec:bazaar] revisita o Linux e o Git como
-evidência de que a abertura escala. A Seção [-@sec:chemorx] é uma confissão sobre o meu trabalho de
-conclusão de curso fechado. A Seção [-@sec:espionage] examina a ciência e a espionagem em 2026 e a
+evidência de que a abertura escala. A Seção [-@sec:espionage] examina a ciência e a espionagem em 2026 e a
 explosão da engenharia reversa assistida por IA. A Seção [-@sec:dead] reúne cinco linhas de evidência
 de que o código fechado está morto como forma de proteção. A Seção [-@sec:securing] trata da ofuscação,
 das cartas de John Nash sobre criptografia e de como proteger código-fonte em 2026. A Seção

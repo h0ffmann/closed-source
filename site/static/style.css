@@ -272,6 +272,7 @@ main section.shelf { padding-top: 48px; }
 .tile-marola { --tile: #0A4D7C; --drawing: url(drawings/fish.svg); }
 .tile-ww3-gpu { --tile: #0E4B43; --drawing: url(drawings/wave.svg); }
 .tile-gramatico { --tile: #0B5E36; --drawing: url(drawings/letter-g.svg); }
+.tile-marola-bench { --tile: #23356B; --drawing: url(drawings/bars.svg); }
 .tile-picasso { --tile: #DCE7F7; --on: #16233F; --soft: rgba(22, 35, 63, .74); --chip: rgba(22, 35, 63, .1); --drawing: url(drawings/guitar.svg); }
 /* A friend's work: a wide tile like the paper's, in Ouroboric's orange. */
 .tile-friend { grid-column: 1 / -1; min-height: 280px; }

@@ -47,8 +47,7 @@ metadata and, more and more, agents that cite by default. This answer has a prac
 also describe the open pipeline that produced this paper.
 
 The structure of this paper is as follows. Section [-@sec:bazaar] examines Linux and Git again as
-evidence that openness works at a large scale. Section [-@sec:chemorx] is a confession about
-my closed undergraduate thesis. Section [-@sec:espionage] reviews science and espionage
+evidence that openness works at a large scale. Section [-@sec:espionage] reviews science and espionage
 in 2026, and the explosion of AI-assisted reverse engineering.
 
 Section [-@sec:dead] gives five lines of evidence that closed source is dead as a protection.

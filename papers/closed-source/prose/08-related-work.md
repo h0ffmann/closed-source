@@ -1,8 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Related work by the same author {#sec:related}
 
-The argument of this paper is also a description of how I have worked since the
-closed thesis of Section [-@sec:chemorx]. Each project below is open source, archived on Zenodo
+The argument of this paper is also a description of how I work. Each project below is open source, archived on Zenodo
 with a concept DOI, and carries machine-readable citation metadata.
 
 - **WW3 GPU Lab** [@hoffmann2026ww3gpu]: a book in progress on agentic coding and agentic
@@ -26,7 +25,7 @@ One influence is not my work. The ouroboric ideas in this paper are Bruno Valér
 documentation standard, writing styles and readiness checklist shaped Paper Fabric.
 
 **[AUTHOR ANECDOTE: why the author has worked in the open for years, in the author's own words.
-For example, what changed after Chemo-RX, and what open work has returned to the author.]**
+For example, what open work has returned to the author.]**
 
 For prior work by others on the themes of this paper, see Raymond on the social method of open
 source [@raymond1998cathedral], Samuelson and Scotchmer on the law and economics of reverse

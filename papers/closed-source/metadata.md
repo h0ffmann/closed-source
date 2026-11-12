@@ -20,9 +20,13 @@ tags: [non-profit, ideas]
 # 2026); gramatico, of piabrota, was added from it. It is not a tie in .zenodo.json: the book does
 # not cite it. Its `tags` are proposed, not yet the owner's words: "FOSS" from the piabrota
 # profile ("Every project is FOSS", piabrota/.github at 481e94f) and "portuguese" from its subject.
+# marola's `text` names the marola-dev repositories its record archives (marola .zenodo.json at
+# 94121b8, read on 12 November 2026). marola-bench, of marola-dev, was added from WORKS.md: its DOI
+# is in the marola-research README at 59d7ef6 (HEAD on 12 November 2026). Its `tags` are proposed:
+# "non-profit" as for marola, and "benchmark" from its subject.
 works:
   - name: marola
-    text: "an open, non-profit platform for sea conditions and bathing-water quality at Brazilian beaches"
+    text: "an open, non-profit platform for sea conditions and bathing-water quality at Brazilian beaches, on marola-dev: the app, the site at marola.dev, the open ocean data store, the corpus, the models and the devkit"
     doi: 10.5281/zenodo.23224155
     tags: [non-profit, water]
     href: https://github.com/marola-dev/marola
@@ -46,13 +50,20 @@ works:
     doi: 10.5281/zenodo.23554531
     tags: [FOSS, portuguese]
     href: https://github.com/piabrota/gramatico
+  - name: marola-bench
+    text: "a WeatherBench for Brazil: a proposal, in marola-research, beside marola's wave models on GPUs"
+    doi: 10.5281/zenodo.23352633
+    tags: [non-profit, benchmark]
+    href: https://github.com/marola-dev/marola-research
 # Work by friends that this paper stands on, for a wide tile in the site's DOIs section. It is not
 # the writer's work, so it is not in `works` and not in the Author section. `tags` are the owner's
 # words (Hoffmann, 13 October 2026); the question mark is his. `text` is from OUROBORIC.md, section
 # 2 (the charter: "Making money is not a goal for Ouroboric for now"). No `doi`: none exists yet.
+# The yggdrasil and asgard clause is from those repositories' GitHub descriptions, read on
+# 12 November 2026 (ouroboric-dev/yggdrasil at a77e5d2; ouroboric-dev/asgard at dc16824).
 friends:
   - name: ouroboric
-    text: "open factories that improve themselves, by Bruno Valério. a company whose charter says that making money is not a goal for now. the ouroboric ideas in this paper are his."
+    text: "open factories that improve themselves, by Bruno Valério: yggdrasil, an open software factory where agents build and humans steer, and asgard, the company factory on it, both in design. a company whose charter says that making money is not a goal for now. the ouroboric ideas in this paper are his."
     href: https://github.com/ouroboric-dev
     tags: ["profit (?)", ideas, friends]
 # Shown on the title page. Trademarks of their projects, not licensed here: `tools/fabric logos`

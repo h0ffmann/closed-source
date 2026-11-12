@@ -1,8 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Related work by the same author {#sec:related}
 
-The argument of this paper also describes how I worked from the time of the closed
-thesis of Section [-@sec:chemorx] until now. Each project below is open source and has an archive
+The argument of this paper also describes how I work. Each project below is open source and has an archive
 on Zenodo with a concept DOI. Each project also has machine-readable citation metadata.
 
 - **WW3 GPU Lab** [@hoffmann2026ww3gpu]: a book, not yet complete, about agentic coding and
@@ -29,7 +28,7 @@ and companies. Its documentation standard, its writing styles and its readiness 
 Paper Fabric its form.
 
 **[AUTHOR ANECDOTE: why the author has worked in the open for years, in the author's own words.
-For example, what changed after Chemo-RX, and what open work has returned to the author.]**
+For example, what open work has returned to the author.]**
 
 For prior work by other authors on the subjects of this paper, refer to these four sources. Raymond
 wrote about the social method of open source [@raymond1998cathedral]. Samuelson and Scotchmer
