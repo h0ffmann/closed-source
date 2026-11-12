@@ -101,7 +101,7 @@ echo "md-quality: prose: Vale on ${#prose[@]} files (an error fails; a warning i
 vale --no-wrap --output=line "${prose[@]}" >&2 || bad=1
 
 mapfile -t ste < <(ste_files)
-echo "md-quality: ASD-STE100: Vale (fabric and ste) on ${#ste[@]} files (an error fails; a warning is advice)" >&2
+echo "md-quality: ASD-STE100: Vale (ste) on ${#ste[@]} files (an error fails; a warning is advice)" >&2
 vale --no-wrap --output=line "${ste[@]}" >&2 || bad=1
 
 # 403, 405 and 429 count as an answer: the site is there and refuses a robot (a publisher's page
