@@ -12,9 +12,10 @@ open import Data.Nat using (ℕ; _≤_; _≤?_; s≤s; z≤n)
 open import Data.Nat.Properties using (≤-trans)
 open import Data.List using (List; []; _∷_; [_]; length; concat; map)
 open import Data.List.Relation.Unary.All using (All; []; _∷_; all?)
-open import Data.Product using (Σ; _×_; _,_)
+open import Data.Product using (Σ; _×_; _,_; proj₁; proj₂)
 open import Relation.Binary.PropositionalEquality using (_≡_; refl; cong)
-open import Relation.Nullary.Decidable using (Dec; _×?_; True; toWitness)
+open import Relation.Nullary using (Dec; yes; no)
+open import Relation.Nullary.Decidable using (True; toWitness)
 open import Relation.Unary using (Decidable)
 
 -- A sentence is an instruction or a description. The limit depends on the kind.
@@ -63,7 +64,12 @@ WellFormed : Paragraph → Set
 WellFormed p = (length p ≤ maxSentences) × All Short p
 
 wellFormed? : Decidable WellFormed
-wellFormed? p = (length p ≤? maxSentences) ×? all? short? p
+-- (Written out, not with the library's product of decisions, whose name changed between
+-- versions of the standard library.)
+wellFormed? p with length p ≤? maxSentences | all? short? p
+... | yes a | yes b = yes (a , b)
+... | no ¬a | _     = no (λ w → ¬a (proj₁ w))
+... | _     | no ¬b = no (λ w → ¬b (proj₂ w))
 
 -- The fix that Vale asks for is always possible, and it loses nothing: each paragraph can be
 -- split into paragraphs of at most six sentences whose sentences, in order, are the sentences of

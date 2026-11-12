@@ -14,8 +14,8 @@ open import Data.List.Properties using (length-++; length-map)
 open import Data.List.Membership.Propositional using (_∈_)
 open import Data.List.Membership.Propositional.Properties using (∈-++⁺ˡ; ∈-++⁺ʳ; ∈-map⁺)
 open import Data.List.Relation.Unary.Any using (here)
-open import Data.Nat using (ℕ; zero; suc; _+_; _^_; _<_)
-open import Data.Nat.Properties using (+-identityʳ; m^n>0; m<m+n)
+open import Data.Nat using (ℕ; zero; suc; _+_; _^_; _<_; s≤s; z≤n)
+open import Data.Nat.Properties using (+-identityʳ; m<m+n; m≤m+n; ≤-trans)
 open import Data.Vec using (Vec; []; _∷_)
 open import Relation.Binary.PropositionalEquality using (_≡_; refl; cong; cong₂; trans; sym)
 
@@ -48,4 +48,8 @@ doubles n = cong (2 ^ n +_) (+-identityʳ (2 ^ n))
 
 -- ... and so it always grows.
 grows : ∀ n → 2 ^ n < 2 ^ suc n
-grows n rewrite doubles n = m<m+n (2 ^ n) (m^n>0 2 n)
+grows n rewrite doubles n = m<m+n (2 ^ n) (positive n)
+  where
+    positive : ∀ n → 0 < 2 ^ n
+    positive zero    = s≤s z≤n
+    positive (suc n) = ≤-trans (positive n) (m≤m+n (2 ^ n) (2 ^ n + 0))
