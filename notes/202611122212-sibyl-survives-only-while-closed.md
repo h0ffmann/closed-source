@@ -25,7 +25,7 @@ read from outside; it is hard to keep closed from inside" (`papers/closed-source
 In episode 16 outsiders walk into the core, and in episode 17 the system shows itself to the one
 man it cannot measure. The secret leaks to exactly the people it was hidden from.
 
-**[ANALYSIS] Who judges the judge.** Sibyl is run by those who "deviate from the system", so no
+**[ANALYSIS] Who judges the judge.** Sibyl is run by the criminally asymptomatic, the people it cannot measure, so no
 one outside can say how good the judge is. This is the MetaQuality question
 ([[202610131752-what-is-metaquality]]) with no answer allowed.
 
