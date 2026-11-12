@@ -1,8 +1,9 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Books
 
-Three books are behind this repository, and a fourth is the economic case beside the third. They
-are background reading. Since 18 October 2026 the paper cites the first one, *Zen and the Art of
+Three books are behind this repository, and a fourth is the economic case beside the third. A
+fifth, added on 12 November 2026, is for the types and proofs of the tools. They are background
+reading. Since 18 October 2026 the paper cites the first one, *Zen and the Art of
 Motorcycle Maintenance* (`pirsig1974zen` in `refs.bib`); it does not cite the others. If a later
 version of the paper uses one of them, add the entry to `refs.bib` and log it in
 `papers/closed-source/REFERENCES.md`, as AGENTS.md says.
@@ -88,3 +89,18 @@ results. It is the empirical companion for a reader who does not accept a rights
 and the closest of the four books to the paper's own method: look at what happens, then decide.
 
 - Publisher: [Cambridge Core](https://doi.org/10.1017/CBO9780511510854)
+
+## Certainty by Construction
+
+> Maguire, Sandy. *Certainty by Construction: Software and Mathematics in Agda*. Leanpub. 384 pp.
+> PDF and EPUB; last updated 29 April 2024 (the Leanpub page, read on 12 November 2026).
+
+Maguire teaches Agda, a dependently typed language, to model problems and to prove things about
+them. The page says "Agda is not just a programming language; it's a completely new way of
+thinking about software". One section of the book is "Statements are Types; Programs are Proofs".
+
+**Why it matters here.** The note [Agda over Lean: types are
+signals](notes/202611120009-agda-over-lean-types-are-signals.md) argues that a type is a signal
+you read on the page. This book is where to learn to write those signals in Agda.
+
+- Book page: [Leanpub](https://leanpub.com/certainty-by-construction)
