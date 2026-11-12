@@ -5,6 +5,7 @@ import closed_source_site/content.{
   type Author, type Logo, type Note, type Score, type Thinker, type Work,
 }
 import closed_source_site/ffi
+import closed_source_site/projects.{type Project}
 import gleam/int
 import gleam/list
 import gleam/result
@@ -107,7 +108,6 @@ pub fn view(model: Model) -> Element(Msg) {
   html.div([], [
     header(),
     html.main([attribute.class("wrap")], [
-      shelf_section(),
       changes_section(),
       thinkers_section(),
       notes_section(),
@@ -120,6 +120,7 @@ pub fn view(model: Model) -> Element(Msg) {
       live_section(model),
       scores_section(),
       cite_section(model),
+      projects_section(),
     ]),
     footer(),
   ])
@@ -214,162 +215,6 @@ fn dois() -> Element(msg) {
   }
 }
 
-/// One work as one large tile. The whole tile opens `href`; `more` holds the tile's second
-/// link, which stays clickable above it. `label` and `value` are the line under the text: "DOI"
-/// and the DOI, or what stands in for one.
-fn tile(
-  kind: String,
-  tags: List(String),
-  name: String,
-  text: String,
-  href: String,
-  label: String,
-  value: String,
-  more: Element(msg),
-) -> Element(msg) {
-  html.li([attribute.class("tile tile-" <> kind)], [
-    html.p(
-      [attribute.class("tile-tags")],
-      list.map(tags, fn(t) { html.span([], [html.text(t)]) }),
-    ),
-    html.h3([], [
-      html.a(
-        [
-          attribute.class("tile-link"),
-          attribute.href(href),
-          attribute.rel("noopener"),
-        ],
-        [html.text(name)],
-      ),
-    ]),
-    html.p([attribute.class("tile-text")], [html.text(text)]),
-    html.p([attribute.class("tile-doi")], [
-      html.span([], [html.text(label)]),
-      html.text(" " <> value),
-    ]),
-    html.p([attribute.class("tile-more")], [more]),
-    html.span([attribute.class("tile-go"), attribute.aria_hidden(True)], []),
-  ])
-}
-
-/// A tile for a work with a DOI: the tile opens doi.org.
-fn doi_tile(
-  kind: String,
-  tags: List(String),
-  name: String,
-  text: String,
-  doi: String,
-  more: Element(msg),
-) -> Element(msg) {
-  tile(kind, tags, name, text, "https://doi.org/" <> doi, "DOI", doi, more)
-}
-
-/// A wide tile for a friend's work. With no DOI yet, it opens the work's own page and says so.
-fn friend_tile(k: Work) -> Element(msg) {
-  case k.doi {
-    "" ->
-      tile(
-        k.name <> " tile-friend",
-        k.tags,
-        k.name,
-        k.text,
-        k.href,
-        "DOI",
-        "none yet",
-        external(k.href, string.replace(k.href, "https://", "")),
-      )
-    doi ->
-      doi_tile(
-        k.name <> " tile-friend",
-        k.tags,
-        k.name,
-        k.text,
-        doi,
-        external(k.href, "repository"),
-      )
-  }
-}
-
-/// The works on the shelf: this paper, the writer's other works and the friends' works.
-pub fn shelf_works() -> Int {
-  1 + list.length(content.works) + list.length(content.friends)
-}
-
-/// How many of them have a DOI.
-pub fn shelf_dois() -> Int {
-  1
-  + list.length(content.works)
-  + list.length(list.filter(content.friends, fn(k: Work) { k.doi != "" }))
-}
-
-/// Every DOI of the writer's work, this paper's first: large tiles that open doi.org.
-fn shelf_section() -> Element(msg) {
-  case content.doi {
-    "" -> element.none()
-    doi ->
-      html.section(
-        [attribute.class("shelf"), attribute.aria_labelledby("dois")],
-        [
-          html.h2([attribute.id("dois")], [
-            html.text(
-              int.to_string(shelf_works())
-              <> " works, "
-              <> int.to_string(shelf_dois())
-              <> " DOIs.",
-            ),
-          ]),
-          html.p([attribute.class("shelf-lede")], [
-            html.text(
-              "Click a tile to open its DOI, or the work's own page when it has no DOI yet. A DOI still resolves after a repository moves, so cite the DOI, not the URL.",
-            ),
-          ]),
-          html.ul(
-            [attribute.class("tiles")],
-            list.flatten([
-              [
-                doi_tile(
-                  "paper",
-                  content.tags,
-                  content.slug,
-                  string.lowercase(content.title)
-                    <> ": the paper you are reading about. its latest DOI always opens the newest release.",
-                  doi,
-                  html.span([], [
-                    link(pdf(Original), "read the paper (PDF)"),
-                    html.text(" · "),
-                    case latest_version() {
-                      Ok(#(version, own)) ->
-                        external(
-                          "https://doi.org/" <> own,
-                          "permanent DOI for " <> version <> ": " <> own,
-                        )
-                      Error(_) ->
-                        external(
-                          "https://zenodo.org/doi/" <> doi,
-                          "all versions",
-                        )
-                    },
-                  ]),
-                ),
-              ],
-              list.map(content.works, fn(k: Work) {
-                doi_tile(
-                  k.name,
-                  k.tags,
-                  k.name,
-                  k.text,
-                  k.doi,
-                  external(k.href, "repository"),
-                )
-              }),
-              list.map(content.friends, friend_tile),
-            ]),
-          ),
-        ],
-      )
-  }
-}
-
 /// What the latest release changed: the newest changelog of RELEASES.md, which `just minted`
 /// writes after each release. Nothing when RELEASES.md has no changelog yet.
 fn changes_section() -> Element(msg) {
@@ -423,7 +268,6 @@ fn header() -> Element(msg) {
 
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
-    link("#dois", "DOIs"),
     link("#changes", "Changes"),
     link("#thinkers", "50 Thinkers"),
     link("#notes", "Second brain"),
@@ -436,6 +280,7 @@ fn jump() -> Element(msg) {
     link("#live", "Live"),
     link("#scores", "Scores"),
     link("#cite", "Cite"),
+    link("#projects", "Projects"),
   ])
 }
 
@@ -1392,6 +1237,22 @@ fn scores_section() -> Element(msg) {
         ]),
       ])
   }
+}
+
+/// The writer's top 10 projects, a plain ranked list. The order lives in projects.gleam.
+fn projects_section() -> Element(msg) {
+  html.section([attribute.aria_labelledby("projects")], [
+    section_head("projects", "Top 10 projects", element.none()),
+    html.ol(
+      [attribute.class("projects")],
+      list.map(projects.projects, fn(p: Project) {
+        html.li([], [
+          external(p.href, p.name),
+          html.text(": " <> p.text),
+        ])
+      }),
+    ),
+  ])
 }
 
 fn cite_section(model: Model) -> Element(Msg) {

@@ -1,5 +1,6 @@
 import closed_source_site/app
 import closed_source_site/content
+import closed_source_site/projects
 import gleam/int
 import gleam/list
 import gleam/string
@@ -67,25 +68,14 @@ pub fn both_dois_and_the_other_works_are_on_the_page_test() {
   })
 }
 
-pub fn the_dois_section_has_a_tile_for_each_work_test() {
+pub fn the_top_projects_close_the_page_test() {
   let html = app.initial() |> app.view |> element.to_string
-  assert string.contains(html, "id=\"dois\"")
-  assert string.contains(html, "8 works, 7 DOIs.")
-  assert app.shelf_works() == 8
-  assert app.shelf_dois() == 7
-  assert list.all(content.friends, fn(w) {
-    string.contains(html, "tile-" <> w.name <> " tile-friend")
-    && w.doi == ""
-    && string.contains(html, "none yet")
-    && list.all(w.tags, fn(t) { string.contains(html, ">" <> t <> "<") })
-  })
-  assert string.contains(html, "tile-paper")
-  assert list.all(content.works, fn(w) {
-    string.contains(html, "tile-" <> w.name)
-    && list.length(w.tags) == 2
-    && list.all(w.tags, fn(t) { string.contains(html, ">" <> t <> "<") })
-  })
-  assert list.all(content.tags, fn(t) { string.contains(html, ">" <> t <> "<") })
+  assert list.length(projects.projects) == 10
+  assert string.contains(html, "id=\"projects\"")
+  assert !string.contains(html, "id=\"dois\"")
+  assert list.all(projects.projects, fn(p) { string.contains(html, p.href) })
+  let assert [_, after_cite] = string.split(html, "id=\"cite\"")
+  assert string.contains(after_cite, "id=\"projects\"")
 }
 
 pub fn the_citation_scores_are_on_the_page_test() {
