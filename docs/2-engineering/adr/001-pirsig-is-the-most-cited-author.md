@@ -16,7 +16,7 @@ itself that later work must follow.
 ## Context
 
 *Zen and the Art of Motorcycle Maintenance* is the first book of [`BOOKS.md`](../../../BOOKS.md),
-and Pirsig is thinker 30 of [`50THINKERS.md`](../../../50THINKERS.md). The word "Quality" already
+and Pirsig is thinker 18 of [`50THINKERS.md`](../../../50THINKERS.md). The word "Quality" already
 names what the checks of this repository are for. On 14 October 2026 the owner wrote that Pirsig
 "will be the more cited author in this book (ADR 001)", and asked for his biography, a note, and
 an essay on his two questions.
@@ -34,7 +34,7 @@ Robert M. Pirsig is the author that *Closed Source: The God that Failed* cites m
 3. **When the paper cites him**, his book enters `papers/closed-source/refs.bib` and
    `REFERENCES.md`, as AGENTS.md says. Today it does not: `BOOKS.md` says the paper does not cite
    the books behind it.
-4. **Most cited is a count, so it can be checked.** When the 100 pages exist, a count of the
+4. **Most cited is a count, so it can be checked.** When the 66 pages exist, a count of the
    citations of each author must put Pirsig first. No check does this yet.
 5. It does not change the roster. The 50 thinkers and their two pages each stay as they are.
 

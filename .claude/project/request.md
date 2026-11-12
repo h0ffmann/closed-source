@@ -1183,3 +1183,17 @@ Gregory. Wolfe's words come from Jonathan Master's review in The Englewood Revie
 (fetched 2026-10-14); the book's own record on PhilArchive answered 403, so the note says it was
 not verified at the source. The note adds no argument the owner did not give beyond a marked
 reading that ties the two, and leaves the question open.
+
+## The roster cut to 33 thinkers
+
+Hoffmann, 2026-11-12, verbatim (in the "Closed Source" Claude project):
+
+```text
+in a new PR reduce to 33 thinkers
+```
+
+Read as: the hard rule of the book goes from 50 authors and 100 pages to 33 authors and 66 pages,
+two pages each as before. The owner named no rows, so the cut keeps every row the owner chose,
+the open reverse-engineering row, Pirsig and Hoppe, and the 7 proposed thinkers the paper cites
+most; the 17 cut rows and the rule are in
+`docs/2-engineering/changes/2026-11-12-33-thinkers/proposal.md`.

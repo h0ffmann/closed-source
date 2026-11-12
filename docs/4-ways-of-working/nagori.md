@@ -10,7 +10,7 @@ style: procedure
 # NAGORI.md is written by hand
 
 `NAGORI.md` holds the partial snapshot of the private `h0ffmann/nagori` that the book carries
-after its 100 pages. Only the owner writes it, by hand (Hoffmann, 13 October 2026). This is a hard
+after its 66 pages. Only the owner writes it, by hand (Hoffmann, 13 October 2026). This is a hard
 rule in `AGENTS.md`.
 
 ## For agents

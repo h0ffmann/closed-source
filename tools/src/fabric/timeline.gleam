@@ -422,7 +422,7 @@ pub fn draw(
       <> ".</text>"
   }
   let title =
-    "The 50 thinkers, their lives: "
+    "The 33 thinkers, their lives: "
     <> n(list.length(lives))
     <> " lives from "
     <> year_label(case lives {
@@ -482,7 +482,7 @@ pub fn draw(
   <> n(width)
   <> "\" height=\"96\"/><text class=\"tl-head\" x=\""
   <> n(left)
-  <> "\" y=\"52\">THE 50 THINKERS, THEIR LIVES</text><text class=\"tl-sub\" x=\""
+  <> "\" y=\"52\">THE 33 THINKERS, THEIR LIVES</text><text class=\"tl-sub\" x=\""
   <> n(left)
   <> "\" y=\"80\">"
   <> n(px_per_year)

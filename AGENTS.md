@@ -61,15 +61,17 @@ Invariants 8 to 10 follow Ouroboric's AGENTS.md (invariants 3, 5 and 8; ourobori
 
 ## The book (hard rule)
 
-*Closed Source: The God that Failed* has exactly 100 pages: 50 authors, two pages per author
-(Hoffmann, 12 October 2026; first 50 pages and one per author, changed the same evening). The 50
+*Closed Source: The God that Failed* has exactly 66 pages: 33 authors, two pages per author
+(Hoffmann, 12 October 2026; first 50 pages and one per author, changed the same evening; 100 pages
+and 50 authors until Hoffmann cut the roster to 33 on 12 November 2026,
+`docs/2-engineering/changes/2026-11-12-33-thinkers/proposal.md`). The 33
 authors are thinkers the book is about, and each gets two first-person pages; the cover names Mr.
 Nobody. `50THINKERS.md` is the roster, chosen from the long list in `500AUTHORS.md` (at most 500 authors, every thinker listed), and `just check` fails unless it has
-exactly 50 distinct thinkers. A change that breaks the 100-page count is wrong. The current
+exactly 33 distinct thinkers. A change that breaks the 66-page count is wrong. The current
 11-section text is material for those pages; ask the owner before you restructure it.
 
-After the 100 pages, the book carries a partial snapshot of `h0ffmann/nagori` (Hoffmann, 12
-October 2026), outside the 100-page count. nagori is a private repository: the owner chooses which
+After the 66 pages, the book carries a partial snapshot of `h0ffmann/nagori` (Hoffmann, 12
+October 2026), outside the 66-page count. nagori is a private repository: the owner chooses which
 parts go in and at which commit, and an agent copies nothing from it that the owner did not name.
 The snapshot states the commit it was taken from.
 
@@ -94,7 +96,7 @@ owner approves.
 ## Two languages (hard rule)
 
 The book is distributed in Brazilian Portuguese (pt-BR) and English (en) (Hoffmann, 12 October
-2026). Every release ships both editions, each with the same 50 thinkers and 100 pages. A change
+2026). Every release ships both editions, each with the same 33 thinkers and 66 pages. A change
 to one edition's facts goes into the other in the same pull request, as `prose/` and `prose-ste/`
 already do. The paper's printed pt-BR edition is `prose-pt-BR/`, built to
 `pdf/<slug>-pt-BR.pdf`; `tools/fabric ste-check --translation` fails when it loses a citation,
@@ -103,7 +105,7 @@ number, quotation or marker of `prose/`. Quotations stay in English, with a tran
 ## The opponent (hard rule)
 
 The book's enemies are the proclaimed AI gurus (Hoffmann, 12 October 2026): people who sell
-certainty about AI without open work that anyone can check. None of the 50 thinkers is one. The
+certainty about AI without open work that anyone can check. None of the 33 thinkers is one. The
 book argues against their claims, not their persons: quote each claim exactly, cite where it was
 made, and answer it with evidence. Name a person only for a public claim that a source records;
 never state a private fact, a motive or an accusation that no source supports.
