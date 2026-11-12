@@ -43,6 +43,9 @@ style.
 | `fabric.ShortSentences` | "Short sentences" | warning | a sentence of more than 35 words |
 | `fabric.ActiveVoice` | "Active voice" | suggestion | a verb that may be passive |
 
+A paper's ASD-STE100 text, `papers/*/prose-ste/`, also gets the style `ste`: six rules of
+ASD-STE100, in [ste100.md](ste100.md).
+
 The two errors have one fix each, so they can fail a build. A long sentence and a passive verb
 are sometimes right, so they are advice. `vale --minAlertLevel=suggestion <file>` shows all four.
 

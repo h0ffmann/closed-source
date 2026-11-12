@@ -51,6 +51,6 @@ its reason. Nothing in it needs permission from anyone.
     [-@sec:law] and [-@sec:espionage]).
 
 **[ANALYSIS]** The list is short on purpose. Each item costs minutes or hours, one time. Each item
-protects something that secrecy cannot protect: that others can check the work, that the work is
-the work of the author, and that the author gets credit when people use it. After the REA
-explosion, these are the only protections that still work.
+protects something that secrecy cannot protect. Others can check the work, the work is the work of
+the author, and the author gets credit when people use it. After the REA explosion, these are the
+only protections that still work.

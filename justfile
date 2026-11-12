@@ -90,6 +90,12 @@ self-test:
 md-quality *args:
     nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file .#md --command scripts/md-quality.sh {{args}}
 
+# Agda (docs/4-ways-of-working/agda.md), in the flake's `agda` shell: every module of agda/ under
+# --safe, the self-test (agda/SelfTest/ must fail), and the check that Vale's `ste` style and the
+# Agda model of its rules agree.
+agda:
+    nix develop --extra-experimental-features 'nix-command flakes' --no-update-lock-file .#agda --command scripts/agda-check.sh
+
 # Unison (unison/refpulse/README.md): make the refpulse project in unison/.codebase/, with its
 # libraries from Unison Share. Run it again after a change to refpulse.u.
 unison-install:

@@ -30,9 +30,10 @@ is open, and only the key is secret.
 
 Obfuscation changes a program so that it does the same thing but is more difficult to read. It
 renames identifiers, encrypts strings, makes control flow flat, or adds code that does nothing. To
-see what it gives, I made a small, honest example. *nashkell* is a Haskell pipeline that applies OCR to the
-declassified letters of Nash. It asks a language model to annotate and cross-check the letters. It
-stores its source code in Git with identifiers translated into Latin [@hoffmann2026nashkell].
+see what it gives, I made a small, honest example. *nashkell* is a Haskell pipeline that applies OCR
+to the declassified letters of Nash. It asks a language model to annotate and cross-check the
+letters. It stores its source code in Git with identifiers translated into Latin
+[@hoffmann2026nashkell].
 
 On commit, a Git `clean` filter translates English identifiers to Latin. On checkout, a `smudge`
 filter translates them to English again. Both filters use a fixed dictionary. If a person clones
@@ -110,10 +111,11 @@ possible to check, and openness makes the content possible to check. Each one ne
 Hash functions are also important. In 2017, Stevens and colleagues produced the first collision for
 full SHA-1 [@stevens2017first]. Git used SHA-1 as the hash for its object names. Git version 2.29
 added a SHA-256 object format, and Git marked this format as experimental at first
-[@git2020relnotes229]. Hashes also help citation. Since April 2025, the Software Hash
-Identifier (SWHID) is the international standard ISO/IEC 18670. A SWHID names each artefact of
-source code by its cryptographic hash, from one file to a full snapshot of a repository
-[@swh2026swhid].
+[@git2020relnotes229].
+
+Hashes also help citation. Since April 2025, the Software Hash Identifier (SWHID) is the
+international standard ISO/IEC 18670. A SWHID names each artefact of source code by its
+cryptographic hash, from one file to a full snapshot of a repository [@swh2026swhid].
 
 **[ANALYSIS]** In this standard, the hash that proves integrity and the identifier that gives
 credit are the same string.

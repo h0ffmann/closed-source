@@ -1,0 +1,12 @@
+# ASD-STE100, issue 9: use only the infinitive, the imperative, the simple present, the simple
+# past, the simple future and the past participle as an adjective, and "do not use auxiliary verbs
+# to make complex verb constructions" (Wikipedia, "Simplified Technical English", read 12
+# November 2026). This finds the perfect and the progressive. A warning: "has been" can be a
+# passive description, which the rule permits when the agent is not known.
+extends: existence
+message: "'%s' is a complex verb form (ASD-STE100: simple tenses only). Use the simple past or present."
+level: warning
+ignorecase: true
+tokens:
+  - '\b(has|have|had|will have|would have)\s+(been|\w+ed|built|done|found|given|held|kept|made|read|run|seen|sent|shown|taken|written|become|begun|grown|known|gone|come)\b'
+  - '\b(is|are|was|were|will be)\s+being\b'

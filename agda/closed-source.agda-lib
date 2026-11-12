@@ -1,0 +1,4 @@
+name: closed-source
+depend: standard-library
+include: .
+flags: --safe --without-K
