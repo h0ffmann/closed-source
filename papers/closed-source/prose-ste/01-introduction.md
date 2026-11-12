@@ -36,10 +36,12 @@ keep it closed from inside.
 
 The second article failed because the costs of secrecy fall on science. If nobody can examine a
 result, nobody can reproduce it [@ince2012case]. If nobody can find code, nobody can credit it
-[@smith2016software]. Researchers tried to build the code of 601 computer-systems papers. Only 27%
-of these papers had code that was publicly available [@collberg2016repeatability]. A whole economy
-now operates on code that someone chose to make open. One estimate says that the open source that
-firms use would cost about 8.8 trillion US dollars to build again [@hoffmann2024value].
+[@smith2016software].
+
+Researchers tried to build the code of 601 computer-systems papers. Only 27% of these papers had
+code that was publicly available [@collberg2016repeatability]. A whole economy now operates on code
+that someone chose to make open. One estimate says that the open source that firms use would cost
+about 8.8 trillion US dollars to build again [@hoffmann2024value].
 
 Robert M. Pirsig wrote the book that this book stands on. In *Zen and the Art of Motorcycle
 Maintenance*, he gives the problem of science in one sentence: "The number of rational hypotheses
@@ -53,10 +55,12 @@ after.
 If anyone can reverse engineer anything, the useful question is no longer *how do I hide my work*?
 The useful question is now *how do I make sure that people credit my work when they use it*? My
 answer is professional citation. It has these parts: persistent identifiers, machine-readable
-metadata and, more and more, agents that cite by default. This is urgent. In January 2026, an
-audit of the accepted papers of one of the largest machine-learning conferences found 100
-fabricated citations. These citations passed peer review [@gptzero2026neurips]. My answer has a
-practical side. Thus I also describe the open pipeline that produced this paper.
+metadata and, more and more, agents that cite by default.
+
+This is urgent. In January 2026, an audit of the accepted papers of one of the largest
+machine-learning conferences found 100 fabricated citations. These citations passed peer review
+[@gptzero2026neurips]. My answer has a practical side. Thus I also describe the open pipeline that
+produced this paper.
 
 ## Contributions
 
@@ -64,9 +68,9 @@ This paper has five contributions.
 
 1. It collects the evidence from 2024 to 12 November 2026 that secrecy no longer protects code,
    models or methods. Each item has a source (Sections [-@sec:espionage] and [-@sec:dead]).
-2. It shows that the law of the United States, the European Union and Brazil accepts reverse
-   engineering of a lawfully obtained product as a lawful means. Thus closed source never had a
-   legal guarantee against understanding (Section [-@sec:law]).
+2. It shows that the law accepts reverse engineering of a lawfully obtained product as a lawful
+   means. This is true in the United States, the European Union and Brazil. Thus closed source
+   never had a legal guarantee against understanding (Section [-@sec:law]).
 3. It separates the things that cryptography can protect (integrity and identity) from the thing
    that it cannot protect (readability). It lists the tools for integrity and identity in 2026
    (Section [-@sec:securing]).
@@ -96,7 +100,8 @@ groups by the type of source. Section [-@sec:limits] gives the limits of my argu
 
 This paragraph is about my method. This is a position paper. It uses the *research* style of the
 Ouroboric documentation standard. In this style, each factual claim has a citation, and the mark
-**[ANALYSIS]** shows each passage of interpretation. I report allegations as allegations, with the
-source and the status of the case. I fetched each source before I cited it. I fetched the sources
-about events after June 2026 on 12 November 2026. This paper is a v0 preprint, and it is not peer
-reviewed.
+**[ANALYSIS]** shows each passage of interpretation.
+
+I report allegations as allegations, with the source and the status of the case. I fetched each
+source before I cited it. I fetched the sources about events after June 2026 on 12 November 2026.
+This paper is a v0 preprint, and it is not peer reviewed.

@@ -3,7 +3,7 @@ id: "202611122213"
 title: "Akane reads the source and keeps it closed"
 type: permanent
 status: open-question
-source: "Psycho-Pass Wiki (Fandom), episodes 0120 and 0122; Wikipedia, Psycho-Pass season 1; Angry Anime Bitches, episode 20 review; read 2026-11-12"
+source: "Psycho-Pass Wiki (Fandom), episodes 0120 and 0122; Wikipedia, Psycho-Pass season 1; The Fandom Post, episodes 19-20 review; read 2026-11-12"
 tags: [psycho-pass, sibyl, closed-source, open-source, law]
 created: 2026-11-12
 ---
@@ -13,9 +13,10 @@ created: 2026-11-12
 
 **The facts.** In episode 20, "The Place Where Justice Is Found" (7 March 2013), Sibyl reveals
 itself to Inspector Akane Tsunemori; she "comes to understand why the system is necessary, though
-not whether it is justifiable" (Psycho-Pass Wiki, *0120*). A review gives her reason for silence
-as "Japan would collapse if Sibyl were to disappear right now" (Angry Anime Bitches, episode 20
-review; a paraphrase, not her line).
+not whether it is justifiable" (Psycho-Pass Wiki, *0120*). A review says she is "told that Sybil is
+made of brains of freakishly demented murderers" and that she will obey Sibyl "because it KNOWS she
+believes in social stability" (The Fandom Post, episodes 19-20 review, 10 March 2013; the
+reviewer's words, not hers).
 
 In episode 22, "Perfect World" (22 March 2013), she tells Sibyl: "You shouldn't underestimate
 humans. We're always aiming for a better society. One day, someone will come to this room to turn
@@ -46,5 +47,5 @@ The claim she answers: [[202611122212-sibyl-survives-only-while-closed]].
 - Psycho-Pass Wiki, "0120 The Place Where Justice is Found": <https://psychopass.fandom.com/wiki/0120_The_Place_Where_Justice_is_Found>
 - Psycho-Pass Wiki, "0122 Perfect World": <https://psychopass.fandom.com/wiki/0122_Perfect_World>
 - Wikipedia, "Psycho-Pass season 1": <https://en.wikipedia.org/wiki/Psycho-Pass_season_1>
-- Angry Anime Bitches, "Psycho-Pass Episode 20: Where Justice Lies":
-  <https://angryanimebitches.com/2013/03/psycho-pass-episode-20-where-justice-lies>
+- The Fandom Post, review of Psycho-Pass episodes 19 and 20 (10 March 2013):
+  <https://www.fandompost.com/2013/03/10/psycho-pass-episode-19-20-anime-review/>

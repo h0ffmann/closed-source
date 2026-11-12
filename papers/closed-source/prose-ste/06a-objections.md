@@ -12,10 +12,12 @@ this paper are the exceptions: the most valuable companies and the most valuable
 
 **[ANALYSIS]** The objection is true about attention and false about cost. Secrecy protected most
 software because reverse engineering was expensive. Thus only valuable targets were worth the cost.
-Section [-@sec:espionage] shows that the cost decreased for everyone at the same time. An open tool
-operates Ghidra, IDA and a browser from a prompt [@morluto2026rea]. It does not care if a target is
-famous. When the cost of reading decreases to the price of a prompt, the set of targets that are
-"worth it" increases to almost everything. The exception becomes the rule.
+Section [-@sec:espionage] shows that the cost decreased for everyone at the same time.
+
+**[ANALYSIS]** An open tool operates Ghidra, IDA and a browser from a prompt [@morluto2026rea]. It
+does not care if a target is famous. When the cost of reading decreases to the price of a prompt,
+the set of targets that are "worth it" increases to almost everything. The exception becomes the
+rule.
 
 ## Objection 2: open weights and open methods are dangerous
 
@@ -33,8 +35,8 @@ through the API at industrial scale [@anthropic2026distillation; @csa2026distill
 measure that leaks to the most determined adversaries, but stops honest researchers, protects the
 wrong side.
 
-**[ANALYSIS]** Second, the attack in the espionage report of 2025 used a closed, hosted agent, not an
-open agent [@anthropic2025espionage]. Closed source did not prevent misuse. Detection and
+**[ANALYSIS]** Second, the attack in the espionage report of 2025 used a closed, hosted agent, not
+an open agent [@anthropic2025espionage]. Closed source did not prevent misuse. Detection and
 publication of the misuse did the work. It can be correct to keep one specific dangerous capability
 secret. But that is an argument about that capability, made in the open. It is not a general
 argument for closed source.

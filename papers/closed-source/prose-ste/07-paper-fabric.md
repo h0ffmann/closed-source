@@ -2,29 +2,31 @@
 # Paper Fabric: an ouroboric factory for papers {#sec:fabric}
 
 Paper Fabric is the open pipeline that produced this preprint. Its design permits reuse for any
-paper, and it follows the philosophy of Ouroboric, the project of Bruno Valério. The Ouroboric charter describes "open,
-self-improving factories" that produce work, measure it and apply what they learn to themselves
-[@ouroboric2026]. The charter lists a research factory "for scientific research and papers" as a
-possible future direction. The charter explicitly states that this direction is not a commitment
-[@ouroboric2026]. Paper Fabric is an independent experiment in that direction.
+paper, and it follows the philosophy of Ouroboric, the project of Bruno Valério. The Ouroboric
+charter describes "open, self-improving factories" that produce work, measure it and apply what they
+learn to themselves [@ouroboric2026]. The charter lists a research factory "for scientific research
+and papers" as a possible future direction. The charter explicitly states that this direction is not
+a commitment [@ouroboric2026]. Paper Fabric is an independent experiment in that direction.
 
 ## Principles
 
-Paper Fabric uses four principles of Ouroboric directly. These ideas are from Valério. *Humans steer, agents build*: I
-approve the direction and every claim that is based on my own experience, and agents draft,
-check and build. *Checks, not promises*: citations are checked against the source, and the build
-fails if a citation is missing. *Read before you borrow*: licences decide what may be reused, and
-each thing that is taken gets credit. *Learn in public*: the pipeline, the prompts and the agent
-configuration that produced a paper are published with it.
+Paper Fabric uses four principles of Ouroboric directly. These ideas are from Valério. *Humans
+steer, agents build*: I approve the direction and every claim that is based on my own experience,
+and agents draft, check and build. *Checks, not promises*: citations are checked against the source,
+and the build fails if a citation is missing. *Read before you borrow*: licences decide what may be
+reused, and each thing that is taken gets credit. *Learn in public*: the pipeline, the prompts and
+the agent configuration that produced a paper are published with it.
 
 ## Pipeline
 
 The toolchain follows the books of Sandy Maguire [@maguire2019thinking]. The prose is in Markdown,
 with one file for each section. A `justfile` runs pandoc with a custom LaTeX template and a BibTeX
 bibliography, and then runs XeLaTeX. The `justfile` then stamps the PDF with the Git revision that
-the build used. A Nix flake sets each tool to one version, through the `paper` lab of picasso
-[@hoffmann2026picasso]. Pandoc's built-in citeproc resolves the citations. The build treats warnings as
-errors, so an unresolved citation key stops the build.
+the build used.
+
+A Nix flake sets each tool to one version, through the `paper` lab of picasso
+[@hoffmann2026picasso]. Pandoc's built-in citeproc resolves the citations. The build treats warnings
+as errors, so an unresolved citation key stops the build.
 
 Each paper is in its own directory, `papers/<slug>/`, with a `metadata.md`, numbered prose files
 and a `refs.bib`. The citation metadata for the repository is in `.zenodo.json`, and `CITATION.cff`
@@ -66,18 +68,22 @@ part of the same pull request that introduced the paper.
 **[ANALYSIS]** This version is an example of the loop. On 12 November 2026, its owner asked for
 these changes: make the paper longer, fill its holes, and bring its evidence up to that day. The
 agent read the readiness assessment. It listed a case number that nobody verified, a missing entry
-for the 1949 anthology, a missing DOI and a broken sentence. This version corrects each item, and
-the reference log or the diff shows each correction. The agent could not write the experience of
-the author. It left that part with a marker for the author.
+for the 1949 anthology, a missing DOI and a broken sentence.
+
+**[ANALYSIS]** This version corrects each item, and the reference log or the diff shows each
+correction. The agent could not write the experience of the author. It left that part with a marker
+for the author.
 
 ## This version in numbers
 
-The version of 12 November 2026 has 16 sections. Before, it had 10 sections. Its bibliography had
-41 entries, and now it has 81. I fetched each of the 40 new entries on that day, and each has a row
-in the reference log. Of these 40 entries, 6 have the status `partial`, because I could not read a
-detail from the primary document. The paper has three editions. They use the same sources and the
-same bibliography. The translation check passes for the ASD-STE100 edition and for the Brazilian
-Portuguese edition. One passage is still for the author, and no agent wrote it.
+The version of 12 November 2026 has 16 sections. Before, it had 10 sections. Its bibliography had 41
+entries, and now it has 81. I fetched each of the 40 new entries on that day, and each has a row in
+the reference log. Of these 40 entries, 6 have the status `partial`, because I could not read a
+detail from the primary document.
+
+The paper has three editions. They use the same sources and the same bibliography. The translation
+check passes for the ASD-STE100 edition and for the Brazilian Portuguese edition. One passage is
+still for the author, and no agent wrote it.
 
 **[ANALYSIS]** I give these numbers because a position paper about citation must be measurable by
 its own standard. A reader can count the entries, open the log, follow each link and check if the

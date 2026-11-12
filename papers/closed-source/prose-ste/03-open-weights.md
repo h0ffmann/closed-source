@@ -21,10 +21,10 @@ information about the training data to let a skilled person build a substantiall
 system [@osi2024osaid].
 
 **[ANALYSIS]** The definition is important here because most "open" models do not meet it. Weights
-without training code and data information are a binary. A binary is useful, and people can
-examine parts of it. But it is not a method that another laboratory can test. The difference
-between open weights and an open method is the same difference that this paper makes between a
-product that people can use and a result that people can check.
+without training code and data information are a binary. A binary is useful, and people can examine
+parts of it. But it is not a method that another laboratory can test. Open weights differ from an
+open method. This paper makes the same difference between a product that people can use and a result
+that people can check.
 
 ## DeepSeek-R1: a frontier model in the peer-reviewed record
 
@@ -56,17 +56,20 @@ accelerate leading edge research" [@openai2025gptoss].
 
 **[ANALYSIS]** This release does not make OpenAI an open laboratory. The Open Source AI Definition
 asks for more than weights [@osi2024osaid]. But the direction is the evidence. This laboratory
-serves its frontier models only through an API, and in 2026 a company sued it about secrets
-(Section [-@sec:espionage]). It decided that publication gives more value than secrecy for some of
-its work. The owners of the most valuable closed artefacts now open some of them. Thus the owners
-themselves no longer think that secrecy is the thing that keeps these artefacts valuable.
+serves its frontier models only through an API, and in 2026 a company sued it about secrets (Section
+[-@sec:espionage]).
+
+**[ANALYSIS]** It decided that publication gives more value than secrecy for some of its work. The
+owners of the most valuable closed artefacts now open some of them. Thus the owners themselves no
+longer think that secrecy is the thing that keeps these artefacts valuable.
 
 ## What the three events have in common
 
 **[ANALYSIS]** None of the three events is charity, and my argument does not need charity. Each
-event is a bet that value comes from use, study and citation more than from secrecy. The definition
-says what openness requires. The *Nature* paper shows that a frontier method can go into the
-scientific record. The open-weight release shows that even a laboratory known for closed models sees
-a return in publication. The remaining sections of this paper ask what this means for one
-researcher. The work of one researcher has much less to hide, and much more to gain when people find
-it.
+event is a bet that value comes from use, study and citation more than from secrecy.
+
+**[ANALYSIS]** The definition says what openness requires. The *Nature* paper shows that a frontier
+method can go into the scientific record. The open-weight release shows that even a laboratory known
+for closed models sees a return in publication. The remaining sections of this paper ask what this
+means for one researcher. The work of one researcher has much less to hide, and much more to gain
+when people find it.

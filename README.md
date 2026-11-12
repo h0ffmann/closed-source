@@ -150,19 +150,11 @@ the book's record cites the first four. the rest of the index, with no DOI yet:
 
 ## the engineering loop
 
-tools, checks and the site are built with coding agents, in two tools adopted after
-[ww3-gpu](https://github.com/h0ffmann/ww3-gpu): compound engineering and archify.
+tools, checks and the site are built with coding agents. flows are drawn with archify, adopted
+after [ww3-gpu](https://github.com/h0ffmann/ww3-gpu).
 
-<details><summary>compound engineering: plan, work, review, compound; archify: drawings of a flow</summary>
+<details><summary>archify: drawings of a flow</summary>
 
-- **compound engineering** ([everyinc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin),
-  MIT) is a claude code plugin, pinned to `compound-engineering-v3.30.3` in
-  [`.claude/settings.json`](.claude/settings.json). each problem solved leaves a short lesson in
-  [`docs/compound/`](docs/compound/README.md), and the next plan reads it first. a small change
-  is work, `just check` and a pull request; a medium one is `/ce-plan`, `/ce-work`,
-  `/ce-code-review` and `/ce-compound`. the rules that win over a step are in
-  [`AGENTS.md`](AGENTS.md#engineering-work-the-compound-loop). if `/ce-plan` is not offered, run
-  `/plugin` and install `compound-engineering` from that marketplace.
 - **archify** ([tt-a1i/archify](https://github.com/tt-a1i/archify), MIT) draws a flow as an
   explorable HTML page with inline SVG. it is not copied: it is the submodule `vendor/archify`,
   pinned at v3.0.1 (`2ab3cae`), and `.claude/skills/archify` links to it. `just archify init`

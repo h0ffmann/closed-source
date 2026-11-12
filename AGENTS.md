@@ -9,6 +9,8 @@ linked docs before you change what they cover.
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
 - Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
   `flake.lock`). Release and secrets: the README.
+- Agda: `agda/`, the proofs behind claims of mathematics and types, and of the ASD-STE100 rules.
+  `just agda`; `docs/4-ways-of-working/agda.md`.
 - Website: `site/` (Gleam + Lustre). `just site-build`. `tools/fabric content` generates its content
   from the paper; never write a fact into `site/src` by hand.
 - Tools: `tools/` is one Gleam project. Run `tools/fabric <command>`; `cd tools && gleam test`.
@@ -30,7 +32,7 @@ linked docs before you change what they cover.
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
   rules in `docs/4-ways-of-working/md-quality.md`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.
-- Engineering work: the compound loop (below), `docs/compound/`; drawings: `docs/archify/`.
+- Drawings of a flow: `docs/archify/`.
 - Where the memory of this repository is, the long-term memory (ai-memory) and the code
   graph (graphify): `MEMORY.md`.
 
@@ -143,7 +145,8 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 
 - A paper's ASD-STE100 text is `papers/<slug>/prose-ste/`. If you change a fact in `prose/`,
   change it in `prose-ste/` in the same pull request. Use `/ste100` and log the pass in
-  `papers/<slug>/STE100.md`.
+  `papers/<slug>/STE100.md`. Vale's style `ste` checks the rules in CI
+  (`docs/4-ways-of-working/ste100.md`).
 
 - `OUROBORIC.md` and `OUROBORIC_RESEARCH.md` digest the public ouroboric-dev repositories. Refresh
   them with `just ouroboric-sources` and `/update-ouroboric`. Each fact in them has a source line;
@@ -169,32 +172,12 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
   slides or a badge.
 - Style: `research` for papers (Ouroboric writing styles), `agent-facing` for this file.
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
+- A claim of mathematics or types (in a paper, a note or a doc) follows an Agda module in
+  `agda/` that checks under `--safe` (the owner, 12 November 2026). Add the module and its row
+  in `docs/4-ways-of-working/agda.md` in the same pull request; `just agda` checks it.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.
 
-## Engineering work: the compound loop
-
-The owner, 18 October 2026, as in ww3-gpu: when the owner guides engineering work (a tool, a
-check, a script, the site), agents follow Compound Engineering's loop. The plugin
-(`compound-engineering@compound-engineering-plugin`, EveryInc, MIT) is enabled in
-`.claude/settings.json`, pinned to `compound-engineering-v3.30.3`. The book's text is not
-engineering work: notes, essays and prose follow their own rules above.
-
-| Size | Example | Steps |
-|---|---|---|
-| Small | a fix in one file, a doc, a flag | work, `just check`, a pull request |
-| Medium | a tool, a check, a recipe | `/ce-plan`, `/ce-work`, `/ce-code-review`, `/ce-compound` when the lesson is not obvious from the diff |
-| Large | a new tool family, a change to the build | `/ce-brainstorm` first, then the medium loop |
-
-Where a step's default clashes with a rule of this file, the rule wins:
-
-- Plans go to `docs/compound/plans/`, learnings to `docs/compound/solutions/`
-  (`.compound-engineering/config.yaml`).
-- `/ce-work` works on a branch and opens a pull request; it never merges, tags or releases
-  (invariants 6 and 8).
-- `/ce-code-review` reports and does not rewrite. Its cross-model pass is off, because it would
-  send the diff to another provider; the owner can ask for it in a run.
-- `/ce-compound` never edits this file or `CLAUDE.md` unless the owner agrees in that session.
-- `/lfg` (the whole pipeline unattended) runs only when the owner asks for it.
+## Drawings
 
 Drawings of a flow use the `archify` skill; their sources and PDFs live in `docs/archify/`
 (`just archify`).
