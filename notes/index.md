@@ -86,6 +86,7 @@ The essay derived from them: [The hypotheses have no end, 2026](../essays/2026-t
 - [[202610132353-marcus-baffa-laughed-with-me]]: Marcus Baffa laughed with me (fleeting, unverified)
 - [[202610132354-the-preposition-makes-the-difference]]: the preposition makes the difference (permanent, open question)
 - [[202610132355-gleam-principles-and-the-port-to-pure-gleam]]: Gleam's principles, and why the tools here became pure Gleam (literature, partial)
+- [[202611120009-agda-over-lean-types-are-signals]]: Agda over Lean: types are signals (permanent, open question)
 
 ## Game theory
 
