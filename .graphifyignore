@@ -10,9 +10,8 @@ site/dist/**
 # Kept out of any graph, the code graph and a document pass alike:
 # no agent reads this file, "not in a search across the repository" (AGENTS.md, hard rule).
 CLAUDE_PROJECT.md
-# Licence texts and Ouroboric's docs copied as is: other people's text, 9 files and 100 kB.
+# Licence texts copied as is: other people's text.
 LICENSES/**
-docs/4-ways-of-working/ouroboric/**
 # The two renderings of prose/. They restate it section by section, so a graph that reads them
 # gets each concept of the paper three times.
 papers/*/prose-ste/**

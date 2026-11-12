@@ -1,16 +1,14 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-# Paper Fabric: an ouroboric factory for papers {#sec:fabric}
+# Paper Fabric: a self-improving factory for papers {#sec:fabric}
 
 Paper Fabric is the open pipeline that produced this preprint. It is designed to be reused for
-any paper, and it follows the philosophy of Ouroboric, Bruno Valério's project, whose charter describes "open,
-self-improving factories" that produce work, measure it and feed what they learn back into
-themselves [@ouroboric2026]. The Ouroboric charter lists a research factory "for scientific
-research and papers" as a possible future direction, explicitly not a commitment
-[@ouroboric2026]. Paper Fabric is an independent experiment in that direction.
+any paper. It follows an idea of Bruno Valério's: open, self-improving factories that produce
+work, measure it and feed what they learn back into themselves. Paper Fabric is an independent
+experiment with that idea, for papers.
 
 ## Principles
 
-Paper Fabric takes four of Ouroboric's principles directly; the ideas are Valério's. *Humans steer, agents build*: I
+Paper Fabric takes four of Valério's principles directly. *Humans steer, agents build*: I
 approve the direction and every claim that rests on my own experience; agents draft,
 check and build. *Checks, not promises*: citations are verified against the source, and the
 build fails on a missing citation. *Read before you borrow*: licences decide what may be reused,
@@ -55,7 +53,7 @@ them on every pull request. I list them because they are how the rules of Sectio
 
 ## The loop
 
-**[ANALYSIS]** What makes the pipeline ouroboric rather than merely automated is that each paper
+**[ANALYSIS]** What makes the pipeline self-improving rather than merely automated is that each paper
 feeds the next. The reference log, the readiness assessment and the exported agent configuration
 are kept in the repository. The next paper starts from them, and the journal records what went
 wrong. This paper's own known defects are listed in the repository's readiness assessment, which

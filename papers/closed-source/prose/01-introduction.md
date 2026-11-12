@@ -84,8 +84,7 @@ and states rules for agents. Section [-@sec:objections] answers six objections. 
 [-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists my related work, and Section
 [-@sec:limits] states the limits of my argument.
 
-A note on method. This is a position paper, written in the *research* style of the Ouroboric
-documentation standard: every factual claim carries a citation, and passages of interpretation are
+A note on method. This is a position paper, written in a *research* style: every factual claim carries a citation, and passages of interpretation are
 marked **[ANALYSIS]**. Allegations are reported as allegations, with the source and the status of
 the case. Every source was fetched before it was cited; sources about events after June 2026 were
 fetched on 12 November 2026. It is a v0 preprint and has not been peer reviewed.

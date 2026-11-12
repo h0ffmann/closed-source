@@ -949,10 +949,23 @@ fn authors_section() -> Element(msg) {
                 ),
               ])
           },
+          html.p(
+            [],
+            list.flatten([
+              [html.text("Partners: ")],
+              list.intersperse(
+                list.map(content.partners, fn(p: Work) {
+                  external(p.href, p.name)
+                }),
+                html.text(" and "),
+              ),
+              [html.text(".")],
+            ]),
+          ),
           html.p([], [
-            html.text("The ouroboric ideas are Bruno Valério's ("),
-            external("https://github.com/ouroboric-dev/ouroboric", "Ouroboric"),
-            html.text(")."),
+            html.text(
+              "The idea of a self-improving factory in the book is Bruno Valério's.",
+            ),
           ]),
         ])
       }),
@@ -1339,7 +1352,7 @@ fn footer() -> Element(msg) {
     ]),
     html.p([], [
       html.text(
-        "The cover after the type and colours of the cover of Hoppe's Democracy: The God That Failed (2001); no cover art is reproduced. Marola's, Ouroboric's, Gleam's and Claude Code's names and logos are not licensed here; the logos load from their owners' sites.",
+        "The cover after the type and colours of the cover of Hoppe's Democracy: The God That Failed (2001); no cover art is reproduced. Marola's, Gleam's and Claude Code's names and logos are not licensed here; the logos load from their owners' sites.",
       ),
     ]),
   ])

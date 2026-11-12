@@ -17,7 +17,7 @@ pull request that carries this proposal is the decision; the owner then writes
 
 The owner asked to see how `just release` works in marola-dev/marola and to copy that pattern to
 this repository, with the Zenodo DOI minted by the release (Hoffmann, 13 October 2026). The
-method is Ouroboric's Read, Evaluate, Adopt.
+method is Read, Evaluate, Adopt.
 
 The repository's rules and its state had also come apart:
 

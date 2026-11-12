@@ -5,8 +5,8 @@ The names **Paper Fabric**, **Closed Source: The God that Failed** as the title 
 the pen name **Mr. Nobody** as used for this project are **not** licensed under the code or text
 licences. The licences cover the code and the text, not the names.
 
-The names and logos of **Marola** and **Ouroboric** that appear here belong to those projects and
-are not licensed by this repository; the logos load from their own repositories (README).
+The name and logo of **Marola** that appear here belong to that project and are not licensed by
+this repository; the logo loads from its own repository (README).
 
 **You may:**
 
@@ -17,9 +17,8 @@ are not licensed by this repository; the logos load from their own repositories 
 
 - name a fork, a product or a service with these names, or with names that are confusingly
   similar;
-- suggest that your work is made or endorsed by this project, Marola or Ouroboric.
+- suggest that your work is made or endorsed by this project or Marola.
 
 A fork is welcome under the licences; it needs its own name.
 
-Adapted from Ouroboric's
-[TRADEMARKS.md](https://github.com/ouroboric-dev/ouroboric/blob/35e6d331f9455c0ef07cf0c37ff1a61b8f5d0be5/TRADEMARKS.md) (CC BY 4.0).
+Adapted from a TRADEMARKS.md by Bruno Valério, at commit `35e6d33` (CC BY 4.0).

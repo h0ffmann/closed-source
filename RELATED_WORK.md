@@ -64,7 +64,7 @@ it after; steps 2 to 5 are what the indexes showed, not a promise.
 Two things follow for an author:
 
 - **A tie counts only if it is a DOI.** DataCite counted six references for this record; the two
-  ties that are URLs (the repository and Ouroboric) are stored, and not counted.
+  ties that are URLs (the repository and Bruno Valério's project) are stored, and not counted.
 - **A tie is frozen in each version.** It reaches Zenodo only with a release, and a published
   version keeps what it had. A tie added today shows from the next release on.
 
@@ -80,7 +80,7 @@ Nine ties, as DataCite holds them for v0.2.0.
 | cites | [10.5281/zenodo.23224155](https://doi.org/10.5281/zenodo.23224155) | [zenodo.org/doi/10.5281/zenodo.23224155](https://zenodo.org/doi/10.5281/zenodo.23224155) | the writer with five other people: Hoffmann, Valério, Soares da Silva Junior, Oliveira, Almeida and Ribeiro | marola, an open, non-profit platform for sea conditions and bathing-water quality |
 | cites | [10.5281/zenodo.23221351](https://doi.org/10.5281/zenodo.23221351) | [zenodo.org/doi/10.5281/zenodo.23221351](https://zenodo.org/doi/10.5281/zenodo.23221351) | the writer: Hoffmann | WW3 GPU Lab, a bit-for-bit GPU port of WAVEWATCH III |
 | cites | [10.5281/zenodo.23311208](https://doi.org/10.5281/zenodo.23311208) | [zenodo.org/doi/10.5281/zenodo.23311208](https://zenodo.org/doi/10.5281/zenodo.23311208) | the writer: Hoffmann | picasso, Nix flakes for scientific and agentic toolchains |
-| cites | none: a URL | <https://github.com/ouroboric-dev/ouroboric> | another person: Bruno Valério | Ouroboric. It has no DOI yet (issue #40 asks for one), so the tie is stored and not counted |
+| cites | none: a URL | the address of Bruno Valério's project, dropped from `.zenodo.json` on 12 November 2026 | another person: Bruno Valério | His project. It has no DOI yet (issue #40 asks for one), so the tie is stored and not counted |
 | is a supplement to | none: a URL | <https://github.com/h0ffmann/closed-source> | the writer | this repository |
 | is a version of | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | [zenodo.org/doi/10.5281/zenodo.23333656](https://zenodo.org/doi/10.5281/zenodo.23333656) | the writer | the concept DOI, which ties every release of this work together |
 
@@ -184,7 +184,7 @@ Where this work is already tied to people other than the writer, on the date of 
 1. **Three works it cites** were written by other people, and the tie is in DataCite: Smith and
    others (2016), Barker and others (2022), and Ince, Hatton and Graham-Cumming (2012).
 2. **marola**, which it cites, has six creators; five are not the writer.
-3. **Ouroboric**, which it cites by URL, is Bruno Valério's.
+3. **Bruno Valério's project**, which it cites by URL.
 4. **Its keywords** are shared with records by other people; [`KEYWORDS.md`](KEYWORDS.md) has the
    counts.
 

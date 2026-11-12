@@ -30,8 +30,8 @@ abstract: |
 
   Then I argue that professional citation is the ethical answer to universal reverse engineering.
   It has these parts: persistent identifiers, machine-readable citation metadata, and agents that
-  borrow, cite and propagate credit by default. I describe Paper Fabric, an open pipeline in the
-  Ouroboric style that improves itself and that produced this preprint. I answer six objections,
+  borrow, cite and propagate credit by default. I describe Paper Fabric, an open pipeline
+  that improves itself and that produced this preprint. I answer six objections,
   and I list the known limitations of the paper.
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->

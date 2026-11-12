@@ -2,7 +2,7 @@
 title: How Paper Fabric makes a paper
 status: draft
 date: 2026-10-12
-related: [../1-product/charter.md, ouroboric-patterns.md, releasing.md]
+related: [../1-product/charter.md, patterns.md, releasing.md]
 style: guide
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
@@ -21,7 +21,7 @@ directory.
 
 ## 2. The loop
 
-Each paper runs the same loop. The *who* column is the Ouroboric rule: humans steer, agents build.
+Each paper runs the same loop. The *who* column is the rule: humans steer, agents build.
 
 | Step | Who | Output |
 |---|---|---|

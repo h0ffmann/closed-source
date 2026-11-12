@@ -1,0 +1,16 @@
+/* Ouroboros notes (tag ouroboros, cssclasses: [ouroboros]) get an orange highlight. */
+.ouroboros {
+  --ouroboros-orange: #f28c28;
+}
+.ouroboros .inline-title,
+.ouroboros h1 {
+  color: var(--ouroboros-orange);
+}
+.ouroboros .markdown-preview-view,
+.ouroboros .markdown-source-view {
+  border-left: 4px solid var(--ouroboros-orange);
+}
+.tag[href="#ouroboros"] {
+  background-color: rgba(242, 140, 40, 0.2);
+  color: #f28c28;
+}
