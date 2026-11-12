@@ -46,7 +46,7 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
   phenomenon is infinite" ([the note](notes/202610181353-pirsig-infinite-hypotheses-science-does-not-close.md)).
   so science never closes, and a method that only its owner can open is one that nobody else
   can test. that is why the book puts open source first for science.
-- **the shape.** 66 pages: 33 thinkers, two first-person pages each ([`50THINKERS.md`](50THINKERS.md)),
+- **the shape.** 66 pages: 33 thinkers, two first-person pages each ([`33THINKERS.md`](33THINKERS.md)),
   in english and in brazilian portuguese. the cover names mr. nobody; the writer is matheus
   hoffmann, of the escola politécnica of UFRJ. the ouroboric ideas are bruno valério's.
 - **status:** v0.3.4 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer
@@ -280,7 +280,7 @@ says more, with the other books behind this repository.
 | [`docs/`](docs/README.md) | paper fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported claude project configuration that produced this repository |
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
-| [`50THINKERS.md`](50THINKERS.md) | the book's roster: 33 thinkers, two pages each, 66 pages (the hard rule in AGENTS.md) |
+| [`33THINKERS.md`](33THINKERS.md) | the book's roster: 33 thinkers, two pages each, 66 pages (the hard rule in AGENTS.md) |
 | [`500AUTHORS.md`](500AUTHORS.md) | the long list the 33 thinkers are chosen from: up to 500 authors the book reads |
 | [`WORKS.md`](WORKS.md) | the index of the writer's open works on h0ffmann, marola-dev and piabrota, with DOIs, licences and commits, and its date of record |
 | [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.3.4 is the latest |

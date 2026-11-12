@@ -1210,3 +1210,17 @@ Read as: in `50THINKERS.md` and its easy pt-BR version, each thinker's name link
 thinker's English Wikipedia page, each page opened before it was linked. A thinker with no page
 gets no link, and the roster says so. `book-check` reads the name without the link and fails on
 a link that is not a Wikipedia page; the site links each name. Stacked on the cut to 33.
+
+## The roster file renamed to 33THINKERS
+
+Hoffmann, 2026-11-12, verbatim (in the "Closed Source" Claude project):
+
+```text
+change to 33THINKERS
+```
+
+Read as: `50THINKERS.md` becomes `33THINKERS.md`, and `50THINKERS.easy.pt-BR.md` becomes
+`33THINKERS.easy.pt-BR.md`, with every reference and link in the repository changed to the new
+names: the tools, the site, the skills, the docs, and the links in notes and essays. Left as they
+are: `CLAUDE_PROJECT.md` (not for agents, hard rule) and the verbatim requests and readings above
+in this file, which say what was true on their date.

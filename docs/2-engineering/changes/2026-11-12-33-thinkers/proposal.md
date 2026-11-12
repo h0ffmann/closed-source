@@ -2,7 +2,7 @@
 title: "Cut the roster from 50 thinkers to 33"
 status: proposed
 date: 2026-11-12
-related: [../README.md, ../../../../AGENTS.md, ../../../../50THINKERS.md, ../../../../50THINKERS.easy.pt-BR.md, ../../../../500AUTHORS.md, ../../../../timeline/lives.tsv]
+related: [../README.md, ../../../../AGENTS.md, ../../../../33THINKERS.md, ../../../../33THINKERS.easy.pt-BR.md, ../../../../500AUTHORS.md, ../../../../timeline/lives.tsv]
 style: procedure
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
@@ -58,7 +58,7 @@ Any of them can come back: swap it for a kept row.
 
 ## What changes
 
-- `50THINKERS.md` and `50THINKERS.easy.pt-BR.md`: 33 rows, in the same order, numbered 1 to 33.
+- `33THINKERS.md` and `33THINKERS.easy.pt-BR.md`: 33 rows, in the same order, numbered 1 to 33.
   After the cut no two neighbours share an area. The easy version drops the hard words that only
   the cut rows used.
 - `AGENTS.md`: the hard rule is 66 pages and 33 authors, in both editions.
@@ -74,8 +74,8 @@ Any of them can come back: swap it for a kept row.
 
 - The paper: `refs.bib` and the prose keep every citation. A thinker is a person the book is
   about; cutting one removes no reference.
-- The file name `50THINKERS.md`, so that the tools, the site and the links keep working. A rename
-  is a separate change.
+- The file name stayed `50THINKERS.md` in this change. The owner asked for the rename to
+  `33THINKERS.md` later the same day ("change to 33THINKERS"), in a separate pull request.
 - `NAGORI.md` (written by hand, hard rule) and `CLAUDE_PROJECT.md` (not for agents, hard rule)
   still say 100 pages. Only the owner changes them.
 - Dated texts (essays, notes, `RELEASES.md`, `.claude/project/request.md`, the social posts) say

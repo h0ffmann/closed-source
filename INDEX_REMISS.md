@@ -2,7 +2,7 @@
 title: Index of cross-references
 status: draft
 date: 2026-10-13
-related: [50THINKERS.md, notes/index.md]
+related: [33THINKERS.md, notes/index.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Index of cross-references

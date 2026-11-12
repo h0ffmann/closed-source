@@ -466,7 +466,7 @@ fn thinkers_section() -> Element(Msg) {
       section_head(
         "thinkers",
         "The " <> int.to_string(list.length(content.thinkers)) <> " Thinkers",
-        external(content.repo <> "/blob/main/50THINKERS.md", "50THINKERS.md"),
+        external(content.repo <> "/blob/main/33THINKERS.md", "33THINKERS.md"),
       ),
       html.p([attribute.class("sub")], [
         html.text(

@@ -105,7 +105,7 @@ and the quality was not.
 Montaigne is the source of the rules. Theodore Dalrymple, the pen name of Anthony Daniels, is a
 second model, for the essay of cultural criticism written from a working life. He was a
 psychiatrist and prison doctor in Birmingham, at City Hospital and Winson Green Prison, and
-wrote for *City Journal*; he is thinker 22 of `50THINKERS.md`. Read him for rules 2, 7 and 14:
+wrote for *City Journal*; he is thinker 22 of `33THINKERS.md`. Read him for rules 2, 7 and 14:
 the case before the claim, the writer's own measure, and the place he speaks from.
 
 | Work | What to read it for | Status |

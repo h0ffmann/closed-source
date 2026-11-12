@@ -2,7 +2,7 @@
 title: "instagram_001: the book, the author, the skill, the thinkers"
 status: draft
 date: 2026-10-13
-related: [render.mjs, ../../../CITATION_SCORES.md, ../../../50THINKERS.md, ../../../.claude/skills/citation-score/SKILL.md]
+related: [render.mjs, ../../../CITATION_SCORES.md, ../../../33THINKERS.md, ../../../.claude/skills/citation-score/SKILL.md]
 style: reference
 instagram: not posted
 caption: pt-BR
@@ -32,12 +32,12 @@ identity, black and red with yellow letters, in place of picasso's blue.
 | [slide-1.png](slide-1.png) | the book: the cover block, "if anyone can reverse engineer anything, cite what you borrow", the DOI; the owl | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656), from `CITATION.cff` |
 | [slide-2.png](slide-2.png) | the author: Mr. Nobody on the cover, written by Matheus Hoffmann; his three other DOIs; the face | [`papers/closed-source/metadata.md`](../../../papers/closed-source/metadata.md) (`writer`, `works`) |
 | [slide-3.png](slide-3.png) | the skill: `citation-score`, the two ends of its scale, and five READMEs scored | [`CITATION_SCORES.md`](../../../CITATION_SCORES.md), made by [`scripts/citation-score.sh`](../../../scripts/citation-score.sh) on 2026-10-13 |
-| [slide-4.png](slide-4.png) | the references: 50 thinkers, 100 pages, 42 named, 41 references; fourteen names; the guitar | [`50THINKERS.md`](../../../50THINKERS.md); [`papers/closed-source/REFERENCES.md`](../../../papers/closed-source/REFERENCES.md) |
+| [slide-4.png](slide-4.png) | the references: 50 thinkers, 100 pages, 42 named, 41 references; fourteen names; the guitar | [`33THINKERS.md`](../../../33THINKERS.md); [`papers/closed-source/REFERENCES.md`](../../../papers/closed-source/REFERENCES.md) |
 | [slide-5.png](slide-5.png) | borrow, cite, propagate: the paper, the DOI, the site and the source; the dove | the generated citation in [`README.md`](../../../README.md#cite) |
 
 - The two verdicts on slide 3, "PERFECT. HIGHEST MATURITY LEVEL." and "POOR. 2 DIGIT IQ.", are
   the two ends of the skill's scale, in the owner's words. They are verdicts on a text.
-- The fourteen names on slide 4 are the first rows of `50THINKERS.md` whose status is not `open`,
+- The fourteen names on slide 4 are the first rows of `33THINKERS.md` whose status is not `open`,
   in the file's order. A thinker listed under an alias from `PERSONAS.md` is not shown. The
   roster's status for most is `proposed`: the book has not been written, and no thinker has
   endorsed it.

@@ -1,6 +1,6 @@
 //// book-check: the book's hard rule (AGENTS.md): 33 thinkers, two pages each, 66 pages.
 ////
-//// Checks 50THINKERS.md (columns # | Thinker | Area | Why | Cited | Status): rows numbered 1 to
+//// Checks 33THINKERS.md (columns # | Thinker | Area | Why | Cited | Status): rows numbered 1 to
 //// 33 in order, no thinker named twice, a known status, and Cited is ☑ or ☐ on a named row. The
 //// order of the names is shuffled on purpose (an essay, not a ranking), so it is not checked.
 //// Open rows (thinker "—") are allowed while the roster is a draft; the check says how many are
@@ -97,7 +97,7 @@ fn in_order(rows: List(List(String))) -> Bool {
   |> list.all(fn(ok) { ok })
 }
 
-/// The errors in 50THINKERS.md, and how many rows are still open.
+/// The errors in 33THINKERS.md, and how many rows are still open.
 pub fn check(text: String) -> #(List(String), Int) {
   let rows = rows(thinker_re(), text)
   let numbering = case in_order(rows) && list.length(rows) == thinkers {
@@ -165,7 +165,7 @@ pub fn check(text: String) -> #(List(String), Int) {
   )
 }
 
-/// The errors in 500AUTHORS.md, given the thinkers named in 50THINKERS.md.
+/// The errors in 500AUTHORS.md, given the thinkers named in 33THINKERS.md.
 pub fn check_authors(text: String, named: List(String)) -> List(String) {
   let rows = rows(row_re(), text)
   let n = list.length(rows)
@@ -195,7 +195,7 @@ pub fn check_authors(text: String, named: List(String)) -> List(String) {
   list.flatten([numbering, size, twice, missing])
 }
 
-/// The thinkers named in 50THINKERS.md, open rows left out.
+/// The thinkers named in 33THINKERS.md, open rows left out.
 pub fn named(text: String) -> List(String) {
   rows(thinker_re(), text)
   |> list.map(fn(r) { name_of(at(r, 1)) })
@@ -210,14 +210,14 @@ pub fn cited_names(text: String) -> List(String) {
 }
 
 pub fn main(_args: List(String)) -> Int {
-  case pystr.read_text("50THINKERS.md") {
+  case pystr.read_text("33THINKERS.md") {
     Error(e) -> {
       sys.eprintln("book_check: " <> e)
       1
     }
     Ok(text) -> {
       let #(errs, left) = check(text)
-      let errs = list.map(errs, fn(e) { "50THINKERS.md: " <> e })
+      let errs = list.map(errs, fn(e) { "33THINKERS.md: " <> e })
       let #(errs, n) = case sys.exists("500AUTHORS.md") {
         False -> #(errs, 0)
         True ->

@@ -42,7 +42,7 @@ the wrong way, by the wrong person. Peer reviewing is a ritual.
   "infiltrates a masked orgy held by a secret society"; Kubrick "submitted his final cut of the
   film to Warner Bros. on March 1, 1999", and "died of a heart attack six days later"
   (Wikipedia, "Eyes Wide Shut", revision [1379745898](https://en.wikipedia.org/w/index.php?title=Eyes_Wide_Shut&oldid=1379745898) of 11 October 2026). That the film is about peer review is my reading, not the film's own statement.
-  He is thinker 39 of [`50THINKERS.md`](../50THINKERS.md).
+  He is thinker 39 of [`33THINKERS.md`](../33THINKERS.md).
 
 **What this note does not say.** I asked for more links: from this business to Jeffrey Epstein,
 and from him to intelligence services, to named politicians and businessmen, to paedophilia, to

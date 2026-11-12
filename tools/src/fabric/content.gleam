@@ -176,7 +176,7 @@ pub type Thinker {
   Thinker(n: Int, name: String, wiki: String, why: String, status: String)
 }
 
-/// One row of 50THINKERS.md's table (# | Thinker | Area | Why | Cited | Status). The rows stay
+/// One row of 33THINKERS.md's table (# | Thinker | Area | Why | Cited | Status). The rows stay
 /// in the file's order, which is shuffled on purpose. `wiki` is the thinker's Wikipedia page, from
 /// a name written as `[Name](url)`, or "" when the row has none.
 pub fn thinkers(roster: String) -> List(Thinker) {
@@ -538,8 +538,8 @@ fn render(slug: String) -> Result(String, String) {
     sys.glob(sys.join(paper, "prose"), ".md") |> list.try_map(read),
   )
   let secs = list.map(sections(prose), gleam_string)
-  use roster <- result.try(case sys.exists("50THINKERS.md") {
-    True -> read("50THINKERS.md") |> result.map(thinkers)
+  use roster <- result.try(case sys.exists("33THINKERS.md") {
+    True -> read("33THINKERS.md") |> result.map(thinkers)
     False -> Ok([])
   })
   // The thinkers' lives, drawn by `tools/fabric timeline`; the site inlines it so its points

@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="5ee2d7fcae2f90aa3a6af98cff23864472a853c5ac16c0dc3c23dd36e874e81f" -->
+<!-- easy: source="README.md"; sha256="fa1d25ade9fac93c716d4057b2920912bc9c2a2ebd7e79538f0c1f99911ab0f8" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -38,7 +38,7 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
   então a ciência nunca se fecha. e um método que só o dono abre, ninguém mais consegue testar.
   por isso o livro põe o código aberto em primeiro lugar para a ciência.
 - **a forma.** 66 páginas: 33 pensadores, duas páginas para cada um
-  ([`50THINKERS.md`](50THINKERS.md)), em inglês e em português. a capa diz mr. nobody (senhor
+  ([`33THINKERS.md`](33THINKERS.md)), em inglês e em português. a capa diz mr. nobody (senhor
   ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. as ideias da
   ouroboric são de bruno valério.
 - **o estado.** a versão v0.3.4 está no ar ([versões](RELEASES.md)). no zenodo, ela é um

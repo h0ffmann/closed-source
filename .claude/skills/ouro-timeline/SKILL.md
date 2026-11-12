@@ -1,6 +1,6 @@
 ---
 name: ouro-timeline
-description: "Draw the lives of the thinkers of 50THINKERS.md on one timeline (timeline/thinkers.svg), in the book's black, red and yellow and after picasso's line drawings. Use when asked for a timeline, a chronology or a drawing of when the thinkers lived, when a thinker is added to or removed from 50THINKERS.md, when a thinker's dates change, or when `tools/fabric timeline --check` fails."
+description: "Draw the lives of the thinkers of 33THINKERS.md on one timeline (timeline/thinkers.svg), in the book's black, red and yellow and after picasso's line drawings. Use when asked for a timeline, a chronology or a drawing of when the thinkers lived, when a thinker is added to or removed from 33THINKERS.md, when a thinker's dates change, or when `tools/fabric timeline --check` fails."
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
@@ -44,7 +44,7 @@ rules 1 to 3.
 
 ## Steps
 
-1. **Data.** Every named thinker of `50THINKERS.md` has a row in `timeline/lives.tsv`:
+1. **Data.** Every named thinker of `33THINKERS.md` has a row in `timeline/lives.tsv`:
    number, name (exactly as in the table), born, died, Wikidata item. A year BCE is negative; an
    empty `died` is a living person; empty `born` and `died` is a life not drawn. Take the years
    from the person's Wikidata item (P569, P570), and check that the item is the right person (the

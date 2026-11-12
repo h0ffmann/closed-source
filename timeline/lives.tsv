@@ -1,5 +1,5 @@
-# The lives of the thinkers of 50THINKERS.md, for `tools/fabric timeline` (the ouro-timeline skill).
-# Columns: number, name (as in 50THINKERS.md), born, died, Wikidata item. A year before the
+# The lives of the thinkers of 33THINKERS.md, for `tools/fabric timeline` (the ouro-timeline skill).
+# Columns: number, name (as in 33THINKERS.md), born, died, Wikidata item. A year before the
 # common era is negative (-470 is 470 BCE). An empty "died" is a living person; an empty "born"
 # is a life not drawn, because no source gave its dates. Years read from Wikidata on 2026-10-15.
 now	2026

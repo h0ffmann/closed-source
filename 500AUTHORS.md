@@ -2,14 +2,14 @@
 title: "The 500 authors: the long list behind the 33 thinkers"
 status: draft
 date: 2026-10-13
-related: [50THINKERS.md, BOOKS.md, papers/closed-source/refs.bib]
+related: [33THINKERS.md, BOOKS.md, papers/closed-source/refs.bib]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # The 500 authors
 
 The long list: every person whose work this book reads, up to 500. The 33 thinkers
-([50THINKERS.md](50THINKERS.md)) are chosen from it, so every named thinker must have a row here.
+([33THINKERS.md](33THINKERS.md)) are chosen from it, so every named thinker must have a row here.
 `just check` (`tools/fabric book-check`) fails if the table has more than 500 rows, if the rows are
 not numbered from 1 in order, if a name appears twice, or if a thinker is missing.
 

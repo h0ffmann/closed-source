@@ -246,7 +246,7 @@ pessoa cita exatamente o que estava lá naquele dia, e não o que eu gostaria qu
 
 Um desses DOIs é deste repositório. Ele guarda um livro que eu estou escrevendo, *Closed Source:
 The God that Failed*. O livro terá 100 páginas: 50 pensadores, duas páginas para cada um. A lista
-dos 50 fica em `50THINKERS.md`. Montaigne é o número 50, e a linha dele diz: "the *Essays*: why one
+dos 50 fica em `33THINKERS.md`. Montaigne é o número 50, e a linha dele diz: "the *Essays*: why one
 writes at all". Em português: "os *Ensaios*: por que alguém escreve". Eu ainda não escrevi essas
 duas páginas. Talvez este ensaio seja o rascunho delas. Theodore Dalrymple também está na lista,
 como número 37, e a linha dele ainda diz "to be written later".
@@ -574,7 +574,7 @@ fragmento.
 - Os seis DOIs (marola, ww3-gpu, picasso, closed source, marola-bench, nashkell): a legenda do
   post "meus temas", [`docs/social/instagram_004/README.md`](../docs/social/instagram_004/README.md).
 - O livro, os 50 pensadores, Montaigne como número 50 e Dalrymple como número 37:
-  [`50THINKERS.md`](../50THINKERS.md) e `AGENTS.md`, "The book".
+  [`33THINKERS.md`](../33THINKERS.md) e `AGENTS.md`, "The book".
 - Anthony Daniels (Theodore Dalrymple), 1949, psiquiatra e médico de prisão no City Hospital e
   na prisão de Winson Green, em Birmingham; aposentado em 2005; colaborador da *City Journal*:
   Wikipedia, "Theodore Dalrymple", lida em 2026-10-25. Status: partial.

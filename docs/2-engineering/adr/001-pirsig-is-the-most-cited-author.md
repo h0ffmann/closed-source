@@ -2,7 +2,7 @@
 title: "ADR 001: Robert M. Pirsig is the most cited author of the book"
 status: accepted
 date: 2026-10-14
-related: [../../../BIO_ROBERT_PIRSIG.md, ../../../BOOKS.md, ../../../QUOTES.md, ../../../50THINKERS.md, ../../../DERIVATION.md]
+related: [../../../BIO_ROBERT_PIRSIG.md, ../../../BOOKS.md, ../../../QUOTES.md, ../../../33THINKERS.md, ../../../DERIVATION.md]
 style: research
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
@@ -16,7 +16,7 @@ itself that later work must follow.
 ## Context
 
 *Zen and the Art of Motorcycle Maintenance* is the first book of [`BOOKS.md`](../../../BOOKS.md),
-and Pirsig is thinker 18 of [`50THINKERS.md`](../../../50THINKERS.md). The word "Quality" already
+and Pirsig is thinker 18 of [`33THINKERS.md`](../../../33THINKERS.md). The word "Quality" already
 names what the checks of this repository are for. On 14 October 2026 the owner wrote that Pirsig
 "will be the more cited author in this book (ADR 001)", and asked for his biography, a note, and
 an essay on his two questions.

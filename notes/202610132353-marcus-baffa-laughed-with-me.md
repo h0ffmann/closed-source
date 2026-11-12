@@ -11,7 +11,7 @@ created: 2026-10-13
 
 # Marcus Baffa laughed with me
 
-Marcus Baffa is thinker 46 of [`50THINKERS.md`](../50THINKERS.md), where his reason is still "to
+Marcus Baffa is thinker 46 of [`33THINKERS.md`](../33THINKERS.md), where his reason is still "to
 be explained". This note is a part of the explanation. Everything in it is my memory; nothing
 was checked against an outside source.
 

@@ -2,14 +2,14 @@
 title: "Robert M. Pirsig: a short biography"
 status: draft
 date: 2026-10-14
-related: [BOOKS.md, QUOTES.md, 50THINKERS.md, docs/2-engineering/adr/001-pirsig-is-the-most-cited-author.md, notes/202610140003-robert-pirsig-the-legend.md]
+related: [BOOKS.md, QUOTES.md, 33THINKERS.md, docs/2-engineering/adr/001-pirsig-is-the-most-cited-author.md, notes/202610140003-robert-pirsig-the-legend.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
 # Robert M. Pirsig: a short biography
 
 Robert Maynard Pirsig (6 September 1928 to 24 April 2017) was an American writer and
-philosopher. He is thinker 18 of [`50THINKERS.md`](50THINKERS.md), and the author this book will
+philosopher. He is thinker 18 of [`33THINKERS.md`](33THINKERS.md), and the author this book will
 cite most ([ADR 001](docs/2-engineering/adr/001-pirsig-is-the-most-cited-author.md)).
 
 **One source.** Every fact below was read from one page: Wikipedia, "Robert M. Pirsig", revision
