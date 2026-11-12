@@ -22,6 +22,6 @@ test:
 
 # Formatting, tests and a build: what CI runs
 ci:
-    gleam format --check src/closed_source_site/app.gleam src/closed_source_site/page.gleam src/closed_source_site/prerender.gleam src/closed_source_site/ffi.gleam src/closed_source_site.gleam test
+    gleam format --check src/closed_source_site/app.gleam src/closed_source_site/page.gleam src/closed_source_site/prerender.gleam src/closed_source_site/ffi.gleam src/closed_source_site/projects.gleam src/closed_source_site.gleam test
     just test
     just build

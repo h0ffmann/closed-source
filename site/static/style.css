@@ -625,3 +625,10 @@ a:hover { text-shadow: var(--glow-soft); }
   0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
   20%, 24%, 55% { opacity: .55; }
 }
+
+/* The top 10 projects, last on the page: a plain numbered list in the neon style. */
+.projects { margin: 20px 0 0; padding: 0 0 0 2.2em; max-width: 46em; display: grid; gap: 10px; }
+.projects li { padding-left: 6px; color: var(--muted); }
+.projects li::marker { color: var(--neon); font-family: var(--caps); }
+.projects li > a { font-weight: 700; color: var(--ink); }
+.projects li > a:hover { color: var(--neon); text-shadow: var(--glow-soft); }
