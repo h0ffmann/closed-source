@@ -99,16 +99,6 @@ pub fn the_cover_counts_the_commits_beside_the_pages_and_the_notes_test() {
   assert string.contains(html, ">notes in the second brain<")
 }
 
-pub fn the_paper_tile_is_in_lower_case_test() {
-  let html = app.initial() |> app.view |> element.to_string
-  assert string.contains(
-    html,
-    string.lowercase(content.title) <> ": the paper you are reading about.",
-  )
-  assert string.contains(html, "permanent DOI for ")
-    || string.contains(html, "all versions")
-}
-
 pub fn the_github_pill_names_the_repository_and_the_latest_release_test() {
   let html = app.initial() |> app.view |> element.to_string
   assert app.repo_name() == #("h0ffmann", "closed-source")
@@ -122,13 +112,12 @@ pub fn the_github_pill_names_the_repository_and_the_latest_release_test() {
   }
 }
 
-pub fn the_paper_pdf_is_linked_from_the_cover_the_tile_and_read_test() {
+pub fn the_paper_pdf_is_linked_from_the_cover_and_read_test() {
   let html = app.initial() |> app.view |> element.to_string
   let link = "href=\"" <> app.pdf(app.Original) <> "\""
-  // The cover's pill, the paper's tile and the Read section.
-  assert list.length(string.split(html, link)) - 1 >= 3
+  // The cover's pill and the Read section.
+  assert list.length(string.split(html, link)) - 1 >= 2
   assert string.contains(html, "gh gh-read")
-  assert string.contains(html, "read the paper (PDF)")
   // The preview, from the name the Zenodo record links to.
   assert app.paper == "paper.pdf"
   assert string.contains(html, "<iframe class=\"preview\"")
