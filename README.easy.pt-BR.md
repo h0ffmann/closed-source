@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="fa1d25ade9fac93c716d4057b2920912bc9c2a2ebd7e79538f0c1f99911ab0f8" -->
+<!-- easy: source="README.md"; sha256="dd71669a1538c1486e651d2e337df3bd0cc0216f7fae313e6e22f876a8d3aac3" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -146,12 +146,9 @@ o registro do livro cita os quatro primeiros. os outros trabalhos, ainda sem DOI
 
 ## o ciclo de engenharia
 
-as ferramentas, as conferências e o site são feitos com agentes. aqui se usam duas ferramentas,
+as ferramentas, as conferências e o site são feitos com agentes. aqui se usa uma ferramenta,
 do mesmo jeito que no [ww3-gpu](https://github.com/h0ffmann/ww3-gpu).
 
-- **compound engineering** é um plugin do claude code. cada problema resolvido deixa uma lição
-  curta em [`docs/compound/`](docs/compound/README.md), e o próximo plano lê essa lição antes.
-  as regras que valem mais que o plugin estão em [`AGENTS.md`](AGENTS.md#engineering-work-the-compound-loop).
 - **archify** desenha um fluxo como uma página que você pode explorar. ele não é copiado: fica
   em `vendor/archify`, numa versão fixa. veja [`docs/archify/`](docs/archify/README.md).
 

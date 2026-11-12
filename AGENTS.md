@@ -30,7 +30,7 @@ linked docs before you change what they cover.
 - The quality of the Markdown files: `just md-quality` (markdownlint-cli2, Vale, lychee), and its
   rules in `docs/4-ways-of-working/md-quality.md`.
 - Issue and pull request labels: `ISSUE_LABELS.md`.
-- Engineering work: the compound loop (below), `docs/compound/`; drawings: `docs/archify/`.
+- Drawings of a flow: `docs/archify/`.
 - Where the memory of this repository is, the long-term memory (ai-memory) and the code
   graph (graphify): `MEMORY.md`.
 
@@ -171,30 +171,7 @@ is cited, and friends under an alias from `PERSONAS.md`. `/note` makes them; `ju
 - Short sentences. Active voice. No undefined jargon. Numbers over adjectives.
 - Every doc has front matter: `title`, `status`, `date`, `related`, optional `style`.
 
-## Engineering work: the compound loop
-
-The owner, 18 October 2026, as in ww3-gpu: when the owner guides engineering work (a tool, a
-check, a script, the site), agents follow Compound Engineering's loop. The plugin
-(`compound-engineering@compound-engineering-plugin`, EveryInc, MIT) is enabled in
-`.claude/settings.json`, pinned to `compound-engineering-v3.30.3`. The book's text is not
-engineering work: notes, essays and prose follow their own rules above.
-
-| Size | Example | Steps |
-|---|---|---|
-| Small | a fix in one file, a doc, a flag | work, `just check`, a pull request |
-| Medium | a tool, a check, a recipe | `/ce-plan`, `/ce-work`, `/ce-code-review`, `/ce-compound` when the lesson is not obvious from the diff |
-| Large | a new tool family, a change to the build | `/ce-brainstorm` first, then the medium loop |
-
-Where a step's default clashes with a rule of this file, the rule wins:
-
-- Plans go to `docs/compound/plans/`, learnings to `docs/compound/solutions/`
-  (`.compound-engineering/config.yaml`).
-- `/ce-work` works on a branch and opens a pull request; it never merges, tags or releases
-  (invariants 6 and 8).
-- `/ce-code-review` reports and does not rewrite. Its cross-model pass is off, because it would
-  send the diff to another provider; the owner can ask for it in a run.
-- `/ce-compound` never edits this file or `CLAUDE.md` unless the owner agrees in that session.
-- `/lfg` (the whole pipeline unattended) runs only when the owner asks for it.
+## Drawings
 
 Drawings of a flow use the `archify` skill; their sources and PDFs live in `docs/archify/`
 (`just archify`).
