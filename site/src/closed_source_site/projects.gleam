@@ -22,11 +22,7 @@ pub const projects = [
     "https://github.com/h0ffmann/ww3-gpu",
     "a bit-for-bit GPU port of WAVEWATCH III, built with agentic coding and research.",
   ),
-  Project(
-    "pirsig",
-    "https://github.com/piabrota/pirsig",
-    "an agentic brain.",
-  ),
+  Project("pirsig", "https://github.com/piabrota/pirsig", "an agentic brain."),
   Project(
     "proof",
     "https://github.com/h0ffmann/proof",
