@@ -93,7 +93,7 @@ construídos. O Git oferece um formato de objetos SHA-256 desde a versão 2.29, 
 como experimental [@git2020relnotes229].
 
 O que permanece secreto sob esse modelo é pouco e explícito: chaves privadas, credenciais e dados
-pessoais ou sujeitos a acordo, como na Seção [-@sec:chemorx]. Esses merecem criptografia e controle
+pessoais ou sujeitos a acordo. Esses merecem criptografia e controle
 de acesso. O próprio código-fonte é mais bem servido sendo publicado, assinado e citado.
 
 **[ANÁLISE]** No vocabulário do próprio Nash, trata-se de uma mudança de estratégia em um jogo cujos

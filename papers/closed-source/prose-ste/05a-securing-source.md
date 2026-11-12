@@ -91,7 +91,7 @@ added a SHA-256 object format, and Git marked this format as experimental at fir
 [@git2020relnotes229].
 
 In this model, only a small and explicit set of things stays secret. These things are private
-keys, credentials, and data that is personal or under agreement, as in Section [-@sec:chemorx].
+keys, credentials, and data that is personal or under agreement.
 These things should have encryption and access control. For the source code itself, it is better
 to publish it, sign it and cite it.
 

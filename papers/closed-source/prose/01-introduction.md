@@ -44,8 +44,7 @@ by default. That answer has a practical side, so I also describe the open pipeli
 this paper.
 
 The paper is organised as follows. Section [-@sec:bazaar] revisits Linux and Git as evidence that
-openness scales. Section [-@sec:chemorx] is a confession about my closed
-undergraduate thesis. Section [-@sec:espionage] reviews science and espionage in 2026 and the explosion of
+openness scales. Section [-@sec:espionage] reviews science and espionage in 2026 and the explosion of
 AI-assisted reverse engineering. Section [-@sec:dead] gathers five lines of evidence that closed
 source is dead as a protection. Section [-@sec:securing] turns to obfuscation, John Nash's
 letters on cryptography and how to secure source code in 2026. Section [-@sec:citing] argues

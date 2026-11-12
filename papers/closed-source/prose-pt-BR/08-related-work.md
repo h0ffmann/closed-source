@@ -1,8 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Trabalhos relacionados do mesmo autor {#sec:related}
 
-O argumento deste artigo é também uma descrição de como trabalho desde a
-tese fechada da Seção [-@sec:chemorx]. Cada projeto abaixo é de código aberto, está arquivado no Zenodo
+O argumento deste artigo é também uma descrição de como trabalho. Cada projeto abaixo é de código aberto, está arquivado no Zenodo
 com um DOI de conceito e traz metadados de citação legíveis por máquina.
 
 - **WW3 GPU Lab** [@hoffmann2026ww3gpu]: um livro em andamento sobre programação agêntica e pesquisa
@@ -26,7 +25,7 @@ Uma influência não é obra minha. As ideias ouroboric deste artigo são de Bru
 padrão de documentação, seus estilos de escrita e sua lista de verificação de prontidão moldaram o Paper Fabric.
 
 **[RELATO DO AUTOR: por que o autor trabalha abertamente há anos, nas próprias palavras do autor.
-Por exemplo, o que mudou depois do Chemo-RX e o que o trabalho aberto devolveu ao autor.]**
+Por exemplo, o que o trabalho aberto devolveu ao autor.]**
 
 Para trabalhos anteriores de outros autores sobre os temas deste artigo, ver Raymond sobre o método social do código
 aberto [@raymond1998cathedral], Samuelson e Scotchmer sobre o direito e a economia da engenharia

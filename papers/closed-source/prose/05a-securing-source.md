@@ -82,7 +82,7 @@ SHA-1 [@stevens2017first], the hash on which Git's object names were built. Git 
 SHA-256 object format since version 2.29, first marked experimental [@git2020relnotes229].
 
 What stays secret under this model is small and explicit: private keys, credentials, and data that
-is personal or under agreement, as in Section [-@sec:chemorx]. Those deserve encryption and access
+is personal or under agreement. Those deserve encryption and access
 control. The source code itself is better published, signed and cited.
 
 **[ANALYSIS]** In Nash's own vocabulary, this is a change of strategy in a game whose payoffs have
