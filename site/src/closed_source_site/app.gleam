@@ -269,7 +269,10 @@ fn header() -> Element(msg) {
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
     link("#changes", "Changes"),
-    link("#thinkers", int.to_string(list.length(content.thinkers)) <> " Thinkers"),
+    link(
+      "#thinkers",
+      int.to_string(list.length(content.thinkers)) <> " Thinkers",
+    ),
     link("#notes", "Second brain"),
     link("#read", "Read"),
     link("#abstract", "Abstract"),
@@ -327,7 +330,11 @@ fn cover() -> Element(msg) {
         doi_badges(),
         html.div([attribute.class("figures")], [
           figure(list.length(content.thinkers), "thinkers", "#thinkers"),
-          figure(2 * list.length(content.thinkers), "pages, two each", "#thinkers"),
+          figure(
+            2 * list.length(content.thinkers),
+            "pages, two each",
+            "#thinkers",
+          ),
           figure(
             list.length(content.notes),
             "notes in the second brain",
