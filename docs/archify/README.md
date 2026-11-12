@@ -2,7 +2,7 @@
 title: "Archify pages"
 status: draft
 date: 2026-10-18
-related: [../../scripts/archify.sh, ../../AGENTS.md, ../compound/README.md]
+related: [../../scripts/archify.sh, ../../AGENTS.md]
 ---
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 
