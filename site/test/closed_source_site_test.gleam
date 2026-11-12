@@ -34,8 +34,8 @@ pub fn prerender_has_the_title_and_every_section_test() {
 
 pub fn front_page_shows_the_thinkers_and_the_notes_test() {
   let html = app.initial() |> app.view |> element.to_string
-  assert list.length(content.thinkers) == 50
-  assert string.contains(html, "The 50 Thinkers")
+  assert list.length(content.thinkers) == 33
+  assert string.contains(html, "The 33 Thinkers")
   assert string.contains(html, "Second brain")
   assert list.all(content.notes, fn(n) { string.contains(html, n.file) })
 }

@@ -1,7 +1,7 @@
-//// book-check: the book's hard rule (AGENTS.md): 50 thinkers, two pages each, 100 pages.
+//// book-check: the book's hard rule (AGENTS.md): 33 thinkers, two pages each, 66 pages.
 ////
 //// Checks 50THINKERS.md (columns # | Thinker | Area | Why | Cited | Status): rows numbered 1 to
-//// 50 in order, no thinker named twice, a known status, and Cited is ☑ or ☐ on a named row. The
+//// 33 in order, no thinker named twice, a known status, and Cited is ☑ or ☐ on a named row. The
 //// order of the names is shuffled on purpose (an essay, not a ranking), so it is not checked.
 //// Open rows (thinker "—") are allowed while the roster is a draft; the check says how many are
 //// left. Checks 500AUTHORS.md, the long list the thinkers come from: at most 500 rows numbered
@@ -16,7 +16,7 @@ import gleam/int
 import gleam/list
 import gleam/string
 
-const thinkers = 50
+const thinkers = 33
 
 const authors = 500
 

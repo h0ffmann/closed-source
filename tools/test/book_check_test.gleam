@@ -4,7 +4,7 @@ import gleam/list
 import gleam/string
 
 fn table() -> String {
-  list.repeat(Nil, 50)
+  list.repeat(Nil, 33)
   |> list.index_map(fn(_, i) {
     let n = int.to_string(i + 1)
     "| " <> n <> " | T" <> n <> " | area | why | ☐ | proposed |"
@@ -25,11 +25,11 @@ pub fn missing_row_test() {
   let #(errs, _) =
     book_check.check(string.replace(
       table(),
-      "| 50 | T50 | area | why | ☐ | proposed |",
+      "| 33 | T33 | area | why | ☐ | proposed |",
       "",
     ))
   assert errs
-    == ["the table must have rows numbered 1 to 50 in order; it has 49 rows"]
+    == ["the table must have rows numbered 1 to 33 in order; it has 32 rows"]
 }
 
 pub fn open_row_test() {

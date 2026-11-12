@@ -26,7 +26,7 @@ The same words as the commit subjects (`feat`, `fix`, `docs`, `chore`).
 
 | Label | Colour | Means |
 |---|---|---|
-| `area/book` | `#C2E0C6` | The 100 pages: `50THINKERS.md`, `500AUTHORS.md`, `QUOTES.md`, the index and the acronyms |
+| `area/book` | `#C2E0C6` | The 66 pages: `50THINKERS.md`, `500AUTHORS.md`, `QUOTES.md`, the index and the acronyms |
 | `area/paper` | `#C2E0C6` | `papers/`: prose, `refs.bib`, `REFERENCES.md`, the ASD-STE100 text |
 | `area/translation` | `#C2E0C6` | The pt-BR edition (`prose-pt-BR/`) and its translation check |
 | `area/notes` | `#C2E0C6` | `notes/`: the Zettelkasten and `SMART_NOTE_POLICY.md` |

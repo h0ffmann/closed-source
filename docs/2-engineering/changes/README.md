@@ -7,7 +7,7 @@ date: 2026-10-13
 # Change proposals
 
 A change to something that already exists and that the owner decides (a hard rule in AGENTS.md,
-the 50 thinkers, the 100-page structure, the book's sections) gets one folder,
+the 33 thinkers, the 66-page structure, the book's sections) gets one folder,
 `YYYY-MM-DD-<slug>/`, holding:
 
 - `proposal.md`: why, and what changes;

@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="1d0de93206ba7f2c1b89815a0d5371a6f084cad3ddf72c725b6747de666c07a9" -->
+<!-- easy: source="README.md"; sha256="5ee2d7fcae2f90aa3a6af98cff23864472a853c5ac16c0dc3c23dd36e874e81f" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -37,7 +37,7 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
   é infinito; [a nota](notes/202610181353-pirsig-infinite-hypotheses-science-does-not-close.md)).
   então a ciência nunca se fecha. e um método que só o dono abre, ninguém mais consegue testar.
   por isso o livro põe o código aberto em primeiro lugar para a ciência.
-- **a forma.** 100 páginas: 50 pensadores, duas páginas para cada um
+- **a forma.** 66 páginas: 33 pensadores, duas páginas para cada um
   ([`50THINKERS.md`](50THINKERS.md)), em inglês e em português. a capa diz mr. nobody (senhor
   ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. as ideias da
   ouroboric são de bruno valério.
@@ -65,7 +65,8 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
 o repositório e o primeiro rascunho nasceram em 12 de outubro de 2026, como um preprint (um
 texto antes da revisão). no dia seguinte vieram três versões, e a v0.3.0 virou um livro no
 zenodo ([a nota](notes/202610132130-why-i-wrote-fast-from-preprint-to-book.md)). as regras do
-livro estão em [`AGENTS.md`](AGENTS.md): 100 páginas, 50 pensadores, duas línguas, os
+livro estão em [`AGENTS.md`](AGENTS.md): 66 páginas, 33 pensadores (100 e 50 até 12 de
+novembro de 2026), duas línguas, os
 "gurus de IA" como adversários, e o nome dos autores em cada arquivo.
 
 - **o título** vem de *the god that failed*, um livro de 1949 de seis escritores que deixaram o

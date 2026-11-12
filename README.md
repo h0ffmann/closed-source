@@ -46,7 +46,7 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
   phenomenon is infinite" ([the note](notes/202610181353-pirsig-infinite-hypotheses-science-does-not-close.md)).
   so science never closes, and a method that only its owner can open is one that nobody else
   can test. that is why the book puts open source first for science.
-- **the shape.** 100 pages: 50 thinkers, two first-person pages each ([`50THINKERS.md`](50THINKERS.md)),
+- **the shape.** 66 pages: 33 thinkers, two first-person pages each ([`50THINKERS.md`](50THINKERS.md)),
   in english and in brazilian portuguese. the cover names mr. nobody; the writer is matheus
   hoffmann, of the escola politécnica of UFRJ. the ouroboric ideas are bruno valério's.
 - **status:** v0.3.4 is live ([releases](RELEASES.md)). on zenodo it is a book; it is not peer
@@ -72,8 +72,8 @@ download: [the PDF](https://github.com/h0ffmann/closed-source/releases/latest/do
 the repository and the first draft were made on 12 october 2026, as a v0 preprint. the next day
 it had three releases, and v0.3.0 became a book on zenodo
 ([note](notes/202610132130-why-i-wrote-fast-from-preprint-to-book.md)). the rules of the book
-came from the owner in those days and are in [`AGENTS.md`](AGENTS.md): 100 pages, 50 thinkers,
-two languages, the proclaimed AI gurus as the opponent, and a cite line on every file.
+came from the owner in those days and are in [`AGENTS.md`](AGENTS.md): 66 pages, 33 thinkers (100 and
+50 until 12 november 2026), two languages, the proclaimed AI gurus as the opponent, and a cite line on every file.
 
 <details><summary>the title, the intent and what the book is not</summary>
 
@@ -184,7 +184,7 @@ curl -fsSL https://nixos.org/nix/install | sh -s -- --daemon        # Nix, once;
 echo 'experimental-features = nix-command flakes' | sudo tee -a /etc/nix/nix.conf   # flakes on, once
 sudo apt install just                                               # just 1.21 on 24.04
 just paper     # the PDFs, in picasso's paper lab -> pdf/
-just book      # the PDFs and the book's checks (50 thinkers, cite lines, references, STE)
+just book      # the PDFs and the book's checks (33 thinkers, cite lines, references, STE)
 ```
 
 the tools (pandoc 3.7, pandoc-crossref, xelatex, pdflatex, gleam, erlang, just, gh) come from the
@@ -247,7 +247,7 @@ each links its project and loads the project's logo from its own repository, at 
 paper's title page pins (`logos:` in the paper's `metadata.md`). no logo is copied here
 ([`TRADEMARKS.md`](TRADEMARKS.md)).
 
-the front page opens with the 50 thinkers and the second brain (`notes/`). the site is set like a
+the front page opens with the 33 thinkers and the second brain (`notes/`). the site is set like a
 book cover, after the colour scheme and type of the cover of
 
 > hoppe, hans-hermann. *democracy—the god that failed: the economics and politics of monarchy,
@@ -280,8 +280,8 @@ says more, with the other books behind this repository.
 | [`docs/`](docs/README.md) | paper fabric's charter, ways of working, journal and readiness |
 | [`.claude/`](.claude/README.md) | the exported claude project configuration that produced this repository |
 | [`TRADEMARKS.md`](TRADEMARKS.md), [`SECURITY.md`](SECURITY.md) | the names the licences do not cover; how to report a vulnerability |
-| [`50THINKERS.md`](50THINKERS.md) | the book's roster: 50 thinkers, two pages each, 100 pages (the hard rule in AGENTS.md) |
-| [`500AUTHORS.md`](500AUTHORS.md) | the long list the 50 thinkers are chosen from: up to 500 authors the book reads |
+| [`50THINKERS.md`](50THINKERS.md) | the book's roster: 33 thinkers, two pages each, 66 pages (the hard rule in AGENTS.md) |
+| [`500AUTHORS.md`](500AUTHORS.md) | the long list the 33 thinkers are chosen from: up to 500 authors the book reads |
 | [`WORKS.md`](WORKS.md) | the index of the writer's open works on h0ffmann, marola-dev and piabrota, with DOIs, licences and commits, and its date of record |
 | [`RELEASES.md`](RELEASES.md) | each release with its date, its permanent DOI and what changed; v0.3.4 is the latest |
 | [`KEYWORDS.md`](KEYWORDS.md), [`RELATED_WORK.md`](RELATED_WORK.md), [`GITHUB_REPO_TOPICS.md`](GITHUB_REPO_TOPICS.md) | how a reader finds this work: the zenodo keywords, the works this one is tied to in zenodo and datacite, and the github topics, each with its counts and its date of record |
@@ -290,7 +290,7 @@ says more, with the other books behind this repository.
 | [`OUROBORIC.md`](OUROBORIC.md), [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md) | one-note digest of the public ouroboric-dev repositories, ethics included, and an index of their research material; refresh with `just ouroboric-sources` then `/update-ouroboric` |
 | [`SMART_NOTE_POLICY.md`](SMART_NOTE_POLICY.md), [`notes/`](notes/index.md) | the slip box: zettelkasten notes for the book, obsidian readable; `/note` makes one |
 | [`DESCRIPTION.md`](DESCRIPTION.md), [`QUOTES.md`](QUOTES.md), [`ACRONYMOUS.md`](ACRONYMOUS.md), [`INDEX_REMISS.md`](INDEX_REMISS.md) | the one-paragraph description, the quotations with their sources, the acronyms, and the index of cross-references; skeletons until the ingest |
-| [`NAGORI.md`](NAGORI.md) | the partial snapshot of the private `h0ffmann/nagori` after the 100 pages; written by the owner by hand, never by an agent or automation (hard rule) |
+| [`NAGORI.md`](NAGORI.md) | the partial snapshot of the private `h0ffmann/nagori` after the 66 pages; written by the owner by hand, never by an agent or automation (hard rule) |
 | [`forks/`](forks/README.md) | the owner's forks as shallow git submodules: rea, ouroboric, ouroboric-dev/.github, WW4, picasso, h0ffmann, ww3-gpu and marola |
 | [`PERSONAS.md`](PERSONAS.md) | the personas that every markdown file cites as its main and last author (hard rule) |
 | [`AGENTS.md`](AGENTS.md) | the rules every agent follows here, including borrow, cite, propagate |

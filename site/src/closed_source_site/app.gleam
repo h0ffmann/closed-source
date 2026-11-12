@@ -269,7 +269,10 @@ fn header() -> Element(msg) {
 fn jump() -> Element(msg) {
   html.nav([attribute.class("jump wrap")], [
     link("#changes", "Changes"),
-    link("#thinkers", "50 Thinkers"),
+    link(
+      "#thinkers",
+      int.to_string(list.length(content.thinkers)) <> " Thinkers",
+    ),
     link("#notes", "Second brain"),
     link("#read", "Read"),
     link("#abstract", "Abstract"),
@@ -326,8 +329,12 @@ fn cover() -> Element(msg) {
         html.p([attribute.class("byline")], [html.text(author_names(" · "))]),
         doi_badges(),
         html.div([attribute.class("figures")], [
-          figure(50, "thinkers", "#thinkers"),
-          figure(100, "pages, two each", "#thinkers"),
+          figure(list.length(content.thinkers), "thinkers", "#thinkers"),
+          figure(
+            2 * list.length(content.thinkers),
+            "pages, two each",
+            "#thinkers",
+          ),
           figure(
             list.length(content.notes),
             "notes in the second brain",
@@ -458,15 +465,19 @@ fn thinkers_section() -> Element(Msg) {
     [
       section_head(
         "thinkers",
-        "The 50 Thinkers",
+        "The " <> int.to_string(list.length(content.thinkers)) <> " Thinkers",
         external(content.repo <> "/blob/main/50THINKERS.md", "50THINKERS.md"),
       ),
       html.p([attribute.class("sub")], [
         html.text(
-          "The book is 100 pages: 50 thinkers, two first-person pages each. "
+          "The book is "
+          <> int.to_string(2 * list.length(content.thinkers))
+          <> " pages: "
+          <> int.to_string(list.length(content.thinkers))
+          <> " thinkers, two first-person pages each. "
           <> int.to_string(list.length(named))
           <> " are proposed, "
-          <> int.to_string(50 - list.length(named))
+          <> int.to_string(list.length(content.thinkers) - list.length(named))
           <> " places are still open.",
         ),
       ]),
