@@ -83,20 +83,22 @@ This paper has five contributions.
 
 Section [-@sec:history] examines three documents, from 1976, 1983 and 1998. In these documents,
 the faith started, people argued against it, and a company left it for the first time. Section
-[-@sec:bazaar] examines Linux and Git again as evidence that openness works at a large
-scale. It also examines two failures of open source. Section [-@sec:openweights] reviews how the
-closed laboratories started to publish weights and methods. Section [-@sec:espionage] reviews
-science and espionage in 2026, and the explosion of AI-assisted reverse engineering. Section
-[-@sec:dead] gives seven lines of evidence that closed source is dead as a protection. Section
-[-@sec:law] examines the law.
+[-@sec:bazaar] examines Linux and Git again as evidence that openness works at a large scale. It
+also examines two failures of open source.
+
+Section [-@sec:openweights] reviews how the closed laboratories started to publish weights and
+methods. Section [-@sec:espionage] reviews science and espionage in 2026, and the explosion of
+AI-assisted reverse engineering. Section [-@sec:dead] gives seven lines of evidence that closed
+source is dead as a protection. Section [-@sec:law] examines the law.
 
 Section [-@sec:securing] examines obfuscation, John Nash's letters on cryptography, and how to
 secure source code in 2026. Section [-@sec:citing] argues for professional citation and gives rules
 for agents. Section [-@sec:objections] answers six objections. Section [-@sec:checklist] changes
-the argument into a checklist. Section [-@sec:fabric] describes Paper Fabric. Section
-[-@sec:related] lists my related work. Section [-@sec:evidence] puts the 2026 evidence into
-groups by the type of source. Section [-@sec:limits] gives the limits of my argument. Section
-[-@sec:conclusion] gives the conclusion.
+the argument into a checklist.
+
+Section [-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists my related work.
+Section [-@sec:evidence] puts the 2026 evidence into groups by the type of source. Section
+[-@sec:limits] gives the limits of my argument. Section [-@sec:conclusion] gives the conclusion.
 
 This paragraph is about my method. This is a position paper. It uses the *research* style of the
 Ouroboric documentation standard. In this style, each factual claim has a citation, and the mark
