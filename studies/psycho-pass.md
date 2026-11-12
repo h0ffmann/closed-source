@@ -40,17 +40,17 @@ Priority: **A** feeds an existing note or the paper's argument directly; **B** i
 
 | Ep | Title | Aired | Watch for | Note | Pri |
 |---|---|---|---|---|---|
-| 1 | Crime Coefficient | 2012-10-12 | the hostage's coefficient rises from fear; the Dominator goes lethal; Akane paralyzes Kogami | [[202611122214-the-dominator-the-human-is-only-the-trigger]] | A |
+| 1 | Crime Coefficient | 2012-10-12 | the hostage's coefficient rises from fear; the Dominator goes lethal; Akane paralyzes Kogami | [202611122214](../notes/202611122214-the-dominator-the-human-is-only-the-trigger.md) | A |
 | 2 | Those Capable | 2012-10-19 | Akane doubts her own call against the system | 202611122214 | B |
 | 3 | Rearing Conventions | 2012-10-26 | Unit One "must work without the Sybil System": what judging looks like when the system is offline | new note? | A |
-| 4 | Nobody Knows Your Mask | 2012-11-02 | Makishima names *Nineteen Eighty-Four* (per the fan wiki) | [[202611122215-makishimas-library]] | B |
+| 4 | Nobody Knows Your Mask | 2012-11-02 | Makishima names *Nineteen Eighty-Four* (per the fan wiki) | [202611122215](../notes/202611122215-makishimas-library.md) | B |
 | 5 | Nobody Knows Your Face | 2012-11-09 | Kogami's past; Ginoza's view of Enforcers | | C |
 | 6 | Return of the Psychotic Prince | 2012-11-16 | Shakespeare quotes; a mastermind behind copycat killings | 202611122215 | C |
 | 7 | Symbolism of Bletilla Striata | 2012-11-23 | | | C |
 | 8 | The Rest Is Silence | 2012-11-30 | Shakespeare again (title) | 202611122215 | C |
 | 9 | Paradise Fruit | 2012-12-07 | Saiga's profiling: human judgement taught by a person, not a system | new note? | B |
 | 10 | Methuselah's Game | 2012-12-14 | | | C |
-| 11 | Saint's Supper | 2012-12-21 | Makishima kills Yuki in front of Akane, and she cannot stop him: check whether the Dominator refuses to fire, and how the scene shows it | [[202611122211-sibyl-is-a-closed-judge]] | A |
+| 11 | Saint's Supper | 2012-12-21 | Makishima kills Yuki in front of Akane, and she cannot stop him: check whether the Dominator refuses to fire, and how the scene shows it | [202611122211](../notes/202611122211-sibyl-is-a-closed-judge.md) | A |
 | 12 | Devil's Crossroad | 2013-01-10 | | | C |
 | 13 | Invitation from the Abyss | 2013-01-17 | "criminally asymptomatic" is first named (per the fan wiki) | 202611122215 | B |
 | 14 | Sweet Poison | 2013-01-24 | helmeted criminals "exploit bystanders' low Crime Coefficients": an attack on the system's own logic | new note? | A |
@@ -59,7 +59,7 @@ Priority: **A** feeds an existing note or the paper's argument directly; **B** i
 | 17 | Iron Heart | 2013-02-14 | the reveal: the brains of the criminally asymptomatic; Makishima refuses to join | 202611122211 | A |
 | 18 | A Promise Written on Water | 2013-02-21 | Kogami steps "outside the law" | | B |
 | 19 | Transparent Shadow | 2013-02-28 | the Sibyl System contacts Akane | 202611122213 | B |
-| 20 | Where Justice Lies | 2013-03-07 | Sibyl reveals itself to Akane; her deal to spare Kogami; why she keeps the secret, in her words | [[202611122213-akane-reads-the-source-and-keeps-it-closed]] | A |
+| 20 | Where Justice Lies | 2013-03-07 | Sibyl reveals itself to Akane; her deal to spare Kogami; why she keeps the secret, in her words | [202611122213](../notes/202611122213-akane-reads-the-source-and-keeps-it-closed.md) | A |
 | 21 | Blood-Stained Reward | 2013-03-14 | | | C |
 | 22 | Perfect World | 2013-03-22 | "kept secret out of consideration for public opinion"; "someone will come to this room to turn off the power"; "people protect the law" | 202611122211, 202611122213 | A |
 
