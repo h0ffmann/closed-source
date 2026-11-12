@@ -29,7 +29,7 @@ while IFS=$'\t' read -r name repo path; do
 done <scripts/citation-board.tsv
 
 {
-  printf '%s\n' '---' 'title: "Citation scores of five READMEs"' 'status: draft' "date: $(date -u +%F)" \
+  printf '%s\n' '---' 'title: "Citation scores of four READMEs"' 'status: draft' "date: $(date -u +%F)" \
     'related: [.claude/skills/citation-score/SKILL.md, scripts/citation-score.sh, scripts/citation-board.sh]' \
     'style: reference' '---' '<!-- cite: main="Claude"; last="Matheus Hoffmann" -->' '' '# Citation scores' ''
   printf '%s\n' \

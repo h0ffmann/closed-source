@@ -100,9 +100,9 @@ Section [-@sec:fabric] describes Paper Fabric. Section [-@sec:related] lists my 
 Section [-@sec:evidence] puts the 2026 evidence into groups by the type of source. Section
 [-@sec:limits] gives the limits of my argument. Section [-@sec:conclusion] gives the conclusion.
 
-This paragraph is about my method. This is a position paper. It uses the *research* style of the
-Ouroboric documentation standard. In this style, each factual claim has a citation, and the mark
-**[ANALYSIS]** shows each passage of interpretation.
+This paragraph is about my method. This is a position paper. It uses a *research* style. In this
+style, each factual claim has a citation, and the mark **[ANALYSIS]** shows each passage of
+interpretation.
 
 I report allegations as allegations, with the source and the status of the case. I fetched each
 source before I cited it. I fetched the sources about events after June 2026 on 12 November 2026.

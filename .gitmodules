@@ -2,14 +2,6 @@
 	path = forks/rea
 	url = https://github.com/h0ffmann/rea.git
 	shallow = true
-[submodule "forks/ouroboric"]
-	path = forks/ouroboric
-	url = https://github.com/h0ffmann/ouroboric.git
-	shallow = true
-[submodule "forks/ouroboric-github"]
-	path = forks/ouroboric-github
-	url = https://github.com/h0ffmann/.github.git
-	shallow = true
 [submodule "forks/WW4"]
 	path = forks/WW4
 	url = https://github.com/h0ffmann/WW4.git

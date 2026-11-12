@@ -67,7 +67,7 @@ Link in the bio: https://h0ffmann.github.io/closed-source/
 
 1. A book cover block: CLOSED SOURCE in yellow letters on black, THE GOD THAT FAILED on a red band. Text: if anyone can reverse engineer anything, cite what you borrow. The DOI 10.5281/zenodo.23333656. A one-line owl.
 2. The author. Mr. Nobody on the cover, a person behind it: written in the first person by Matheus Hoffmann, Escola Politécnica, UFRJ. Three other works with their DOIs: marola, ww3-gpu and picasso. A one-line face.
-3. The skill. How much of your text is cited? 100%: perfect, highest maturity level. 0%: poor, 2 digit IQ. Five READMEs scored as bars: closed-source 30%, marola 48%, ouroboric-dev 50%, h0ffmann 73%, picasso 42%. It counts marks, not truth.
+3. The skill. How much of your text is cited? 100%: perfect, highest maturity level. 0%: poor, 2 digit IQ. Five READMEs scored as bars: closed-source 30%, marola 48%, another organisation 50%, h0ffmann 73%, picasso 42%. It counts marks, not truth.
 4. The references. 50 thinkers, two pages each: 100 pages, 42 thinkers named and 8 places open; 41 references in the paper, each fetched before it was cited. Fourteen names, from Auguste Kerckhoffs to Geoffrey Hinton. A one-line cubist guitar.
 5. Publish the method, mint an identifier, cite what you use. A position paper, v0, not peer reviewed. The DOI, the site and the source link. A one-line dove.
 

@@ -49,7 +49,7 @@ tranquila: sim, e quando fizerem, saberão de quem ele é.
 **Autoria.** A capa nomeia Mr. Nobody. Eu, Matheus Hoffmann, escrevi este artigo na primeira
 pessoa, e os metadados de citação me nomeiam.
 
-**Agradecimentos.** As ideias ouroboric deste artigo são de Bruno Valério [@ouroboric2026].
+**Agradecimentos.** A ideia de uma fábrica autoaperfeiçoável deste artigo é de Bruno Valério.
 
 **Uso de IA.** A estrutura, os rascunhos do texto, as verificações de referências, as ferramentas de build e a
 configuração do repositório desta v0 foram produzidos por um agente de programação Claude (Anthropic) trabalhando em um

@@ -1,7 +1,7 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
 # Limitations {#sec:limits}
 
-I state the limits of my argument clearly. This agrees with the Ouroboric value of honesty about
+I state the limits of my argument clearly. This agrees with the value of honesty about
 results.
 
 - **Position, not measurement.** This paper uses cited evidence for its argument. It does not

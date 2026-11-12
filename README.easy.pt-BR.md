@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="dd71669a1538c1486e651d2e337df3bd0cc0216f7fae313e6e22f876a8d3aac3" -->
+<!-- easy: source="README.md"; sha256="f9fa62649b256f9f2ad9931ad99ecde5f31f4a6d9ae2f49d6975c49ba6d3f6aa" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -18,8 +18,7 @@ the god that failed* ("código fechado: o deus que falhou"). ele diz por que o c
 falhou como proteção, primeiro para a ciência, e o que fazer no lugar: publicar o método, dar a
 ele um identificador e citar o que se usa. o livro se apoia em *zen and the art of motorcycle
 maintenance* (1974), de robert m. pirsig. a ferramenta se chama **paper fabric**: ela recebe
-texto em markdown, entrega um PDF e confere cada referência. o estilo é o da
-[ouroboric](https://github.com/ouroboric-dev/ouroboric).
+texto em markdown, entrega um PDF e confere cada referência. ela melhora a si mesma.
 
 **leia o livro:** [veja o PDF no navegador, sem baixar](https://h0ffmann.github.io/closed-source/paper.pdf) ·
 para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releases/latest/download/closed-source.pdf) ·
@@ -39,8 +38,9 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
   por isso o livro põe o código aberto em primeiro lugar para a ciência.
 - **a forma.** 66 páginas: 33 pensadores, duas páginas para cada um
   ([`33THINKERS.md`](33THINKERS.md)), em inglês e em português. a capa diz mr. nobody (senhor
-  ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. as ideias da
-  ouroboric são de bruno valério.
+  ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. a ideia de uma
+  fábrica que melhora a si mesma é de bruno valério. os parceiros são
+  [piabrota](https://github.com/piabrota) e [marola-dev](https://github.com/marola-dev).
 - **o estado.** a versão v0.3.4 está no ar ([versões](RELEASES.md)). no zenodo, ela é um
   livro. ninguém revisou o livro ainda (não tem revisão por pares). o que falta para a v1 está
   na [avaliação](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
@@ -207,6 +207,5 @@ as referências prontas (bibtex, APA e ABNT) estão na seção [cite](README.md#
 - o texto do livro, os documentos e as figuras: [CC BY 4.0](LICENSE).
 - os scripts, os fluxos do CI e o site: [AGPL-3.0-only](LICENSES/AGPL-3.0-only.txt).
 - o modelo de latex (`format/`): [MIT](LICENSES/MIT.txt).
-- os nomes e logos da ouroboric não são licenciados aqui.
 
 a licença de cada arquivo está em [`REUSE.toml`](REUSE.toml).

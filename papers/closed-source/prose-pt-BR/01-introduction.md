@@ -92,8 +92,7 @@ o argumento numa lista de verificação. A Seção [-@sec:fabric] descreve o Pap
 de 2026 pelo tipo de fonte, a Seção [-@sec:limits] expõe os limites do meu argumento e a Seção
 [-@sec:conclusion] conclui.
 
-Uma nota sobre o método. Este é um artigo de posição, escrito no estilo *research* do padrão de
-documentação Ouroboric: toda afirmação factual traz uma citação, e as passagens de interpretação vêm
+Uma nota sobre o método. Este é um artigo de posição, escrito em um estilo *research*: toda afirmação factual traz uma citação, e as passagens de interpretação vêm
 marcadas com **[ANÁLISE]**. Alegações são relatadas como alegações, com a fonte e a situação do
 processo. Cada fonte foi buscada antes de ser citada; as fontes sobre eventos posteriores a junho de
 2026 foram buscadas em 12 de novembro de 2026. É um preprint v0 e não passou por revisão por pares.

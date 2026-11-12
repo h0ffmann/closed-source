@@ -53,7 +53,7 @@ twice.
 |---|---|
 | `_rules/` | `AGENTS.md`: the invariants and each hard rule, one page each |
 | `decisions/` | `docs/2-engineering/changes/*/proposal.md`, one page for each change |
-| `procedures/` | `docs/4-ways-of-working/releasing.md`, `paper-fabric.md`, `md-quality.md`, `ouroboric-patterns.md` |
+| `procedures/` | `docs/4-ways-of-working/releasing.md`, `paper-fabric.md`, `md-quality.md`, `patterns.md` |
 | `concepts/` | `RELEASES.md`, `KEYWORDS.md`, `RELATED_WORK.md`, `GITHUB_REPO_TOPICS.md`, `ISSUE_LABELS.md`, `PERSONAS.md` (the aliases only, no real name) |
 | `notes/` | `notes/*.md`, one page for each note, with its id |
 | — | `.claude/project/request.md`: one page that says where the owner's requests are |

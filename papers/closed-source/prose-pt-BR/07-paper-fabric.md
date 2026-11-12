@@ -1,18 +1,14 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-# Paper Fabric: uma fábrica ourobórica de artigos {#sec:fabric}
+# Paper Fabric: uma fábrica autoaperfeiçoável de artigos {#sec:fabric}
 
 Paper Fabric é o pipeline aberto que produziu este preprint. Ele foi projetado para ser reutilizado
-em qualquer artigo e segue a filosofia do Ouroboric, o projeto de Bruno Valério, cuja carta descreve "open,
-self-improving factories" (em tradução livre: fábricas abertas e autoaperfeiçoáveis) que produzem
-trabalho, medem-no e realimentam a si mesmas com o que aprendem [@ouroboric2026]. A carta do
-Ouroboric lista uma fábrica de pesquisa "for scientific
-research and papers" (em tradução livre: para
-pesquisa científica e artigos) como uma possível direção futura, explicitamente não um compromisso
-[@ouroboric2026]. Paper Fabric é um experimento independente nessa direção.
+em qualquer artigo. Ele segue uma ideia de Bruno Valério: fábricas abertas e autoaperfeiçoáveis
+que produzem trabalho, medem-no e realimentam a si mesmas com o que aprendem. Paper Fabric é um
+experimento independente com essa ideia, para artigos.
 
 ## Princípios
 
-Paper Fabric adota diretamente quatro dos princípios do Ouroboric; as ideias são de Valério. *Humanos conduzem, agentes constroem*: eu
+Paper Fabric adota diretamente quatro dos princípios de Valério. *Humanos conduzem, agentes constroem*: eu
 aprovo a direção e cada afirmação que se apoia na minha própria experiência; os agentes redigem,
 verificam e constroem. *Verificações, não promessas*: as citações são conferidas com a fonte, e o
 build falha diante de uma citação ausente. *Leia antes de tomar emprestado*: as licenças decidem o
@@ -59,7 +55,7 @@ da Seção [-@sec:citing] mais do que conselhos.
 
 ## O ciclo
 
-**[ANÁLISE]** O que torna o pipeline ourobórico, e não meramente automatizado, é que cada artigo
+**[ANÁLISE]** O que torna o pipeline autoaperfeiçoável, e não meramente automatizado, é que cada artigo
 alimenta o seguinte. O log de referências, a avaliação de prontidão e a configuração de agentes
 exportada são mantidos no repositório. O artigo seguinte parte deles, e o diário registra o que deu
 errado. Os defeitos conhecidos deste próprio artigo estão listados na avaliação de prontidão do

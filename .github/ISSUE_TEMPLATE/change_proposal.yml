@@ -1,4 +1,4 @@
-# Adapted from ouroboric-dev/.github ISSUE_TEMPLATE/change_proposal.yml (MIT, © 2026 Bruno Guilhermo de Barros Valério).
+# Adapted from an ISSUE_TEMPLATE/change_proposal.yml by Bruno Valério (MIT, © 2026 Bruno Guilhermo de Barros Valério).
 name: Change proposal
 description: A change to something that exists, such as a hard rule, the roster or the book's structure. Needs the owner's approval.
 labels: ["kind/proposal"]

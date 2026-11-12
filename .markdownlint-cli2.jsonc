@@ -19,10 +19,6 @@
   "globs": ["**/*.md"],
   "ignores": [
     "forks/**", "LICENSES/**", "site/build/**", "tools/build/**", "build/**",
-    // Other people's text, copied as is.
-    "docs/4-ways-of-working/ouroboric/**",
-    // Written by `just ouroboric-sources`, not by hand.
-    "OUROBORIC.md", "OUROBORIC_RESEARCH.md",
     // No agent reads the first or edits the second (AGENTS.md, hard rules).
     "CLAUDE_PROJECT.md", "NAGORI.md",
     // pandoc sources: their syntax is pandoc's, and ste-check is their check.

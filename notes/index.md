@@ -94,7 +94,7 @@ The essay derived from them: [The hypotheses have no end, 2026](../essays/2026-t
 
 ## Myth: Ouroboros, reptilians and the eternal cycle
 
-- [[202610150157-policy-ouroboric-ideas-reptilians-eternal-cycle]]: policy: Ouroboric ideas, reptilians and the eternal cycle (permanent, open question)
+- [[202610150157-policy-ouroboros-myth-reptilians-eternal-cycle]]: policy: the Ouroboros myth, reptilians and the eternal cycle (permanent, open question)
 - [[202610150158-ouroboros-the-myth]]: the Ouroboros, the myth (literature, partial)
 - [[202610150159-reptilians-from-occultism-to-conspiracy]]: reptilians, from occultism to conspiracy theory (literature, partial)
 - [[202610150200-the-eternal-cycle]]: the eternal cycle, from Pythagoras to Nietzsche (literature, partial)

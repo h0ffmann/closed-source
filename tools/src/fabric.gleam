@@ -9,7 +9,6 @@ import fabric/content
 import fabric/drawings
 import fabric/logos
 import fabric/notes_check
-import fabric/ouroboric
 import fabric/refs_check
 import fabric/ste_check
 import fabric/sys
@@ -28,7 +27,6 @@ fn commands() -> List(#(String, fn(List(String)) -> Int)) {
     #("drawings", drawings.main),
     #("logos", logos.main),
     #("notes-check", notes_check.main),
-    #("ouroboric", ouroboric.main),
     #("refs-check", refs_check.main),
     #("ste-check", ste_check.main),
     #("timeline", timeline.main),

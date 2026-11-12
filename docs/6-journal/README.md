@@ -9,7 +9,7 @@ style: journal
 
 # Journal
 
-One entry per challenge met while building Paper Fabric, in the Ouroboric journal format
+One entry per challenge met while building Paper Fabric, in a journal format by Bruno Valério
 (Challenge, Context, Options, Decision, Result, Lessons). Scrubbing rules: no secrets, private
 names, client data or raw transcripts.
 

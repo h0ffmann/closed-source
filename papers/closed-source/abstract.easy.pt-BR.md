@@ -48,7 +48,7 @@ Este livro é sobre uma promessa que não se cumpriu. Vamos por partes.
 
 **12. A resposta ética: citar.** Hoje qualquer pessoa consegue desmontar qualquer programa. Isso é a engenharia reversa: desmontar uma coisa pronta para ver como foi feita. Para o autor, a resposta ética a isso é a citação profissional, ou seja, dar o crédito. Ela tem três partes: identificadores que não mudam (como o DOI), dados de citação que uma máquina consegue ler, e agentes de inteligência artificial que, por padrão, pegam emprestado, citam e passam o crédito adiante.
 
-**13. Como o livro foi feito.** O autor descreve o Paper Fabric. É uma sequência aberta de programas que produziu este texto e que melhora a si mesma, no estilo Ouroboric. O autor também lista as limitações do Paper Fabric que ele já conhece.
+**13. Como o livro foi feito.** O autor descreve o Paper Fabric. É uma sequência aberta de programas que produziu este texto e que melhora a si mesma. O autor também lista as limitações do Paper Fabric que ele já conhece.
 
 **Uma última coisa.** Este texto ainda não foi revisado por uma revista científica.
 <!-- easy-abstract:end -->

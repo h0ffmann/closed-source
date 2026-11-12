@@ -1,21 +1,19 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-# Paper Fabric: an ouroboric factory for papers {#sec:fabric}
+# Paper Fabric: a self-improving factory for papers {#sec:fabric}
 
 Paper Fabric is the open pipeline that produced this preprint. Its design permits reuse for any
-paper, and it follows the philosophy of Ouroboric, the project of Bruno Valério. The Ouroboric
-charter describes "open, self-improving factories" that produce work, measure it and apply what they
-learn to themselves [@ouroboric2026]. The charter lists a research factory "for scientific research
-and papers" as a possible future direction. The charter explicitly states that this direction is not
-a commitment [@ouroboric2026]. Paper Fabric is an independent experiment in that direction.
+paper. It follows an idea of Bruno Valério: open, self-improving factories that produce work,
+measure it and apply what they learn to themselves. Paper Fabric is an independent experiment with
+that idea, for papers.
 
 ## Principles
 
-Paper Fabric uses four principles of Ouroboric directly. These ideas are from Valério. *Humans
-steer, agents build*: I approve the direction and every claim that is based on my own experience,
-and agents draft, check and build. *Checks, not promises*: citations are checked against the source,
-and the build fails if a citation is missing. *Read before you borrow*: licences decide what may be
-reused, and each thing that is taken gets credit. *Learn in public*: the pipeline, the prompts and
-the agent configuration that produced a paper are published with it.
+Paper Fabric uses four principles of Valério directly. *Humans steer, agents build*: I approve the
+direction and every claim that is based on my own experience, and agents draft, check and build.
+*Checks, not promises*: citations are checked against the source, and the build fails if a citation
+is missing. *Read before you borrow*: licences decide what may be reused, and each thing that is
+taken gets credit. *Learn in public*: the pipeline, the prompts and the agent configuration that
+produced a paper are published with it.
 
 ## Pipeline
 
@@ -59,7 +57,7 @@ runs them on each pull request. I list them, because they make the rules of Sect
 
 ## The loop
 
-**[ANALYSIS]** The pipeline is ouroboric, not only automated, because each paper gives input to the
+**[ANALYSIS]** The pipeline improves itself and is not only automated, because each paper gives input to the
 next paper. The repository keeps the reference log, the readiness assessment and the exported agent
 configuration. The next paper starts from these files. The journal records the problems. The
 readiness assessment of the repository lists the known defects of this paper. This assessment is

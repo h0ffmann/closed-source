@@ -22,9 +22,9 @@ on Zenodo with a concept DOI. Each project also has machine-readable citation me
   Section [-@sec:securing] examines it as an example of obfuscation and of the limits of
   obfuscation.
 
-One influence is not my work. The ouroboric ideas in this paper are from Bruno Valério. His
-project Ouroboric [@ouroboric2026] is about open factories that improve themselves, for software
-and companies. Its documentation standard, its writing styles and its readiness checklist gave
+One influence is not my work. The idea of a self-improving factory in this paper is from Bruno
+Valério. His idea is about open factories that improve themselves, for software and companies.
+His documentation standard, its writing styles and its readiness checklist gave
 Paper Fabric its form.
 
 **[AUTHOR ANECDOTE: why the author has worked in the open for years, in the author's own words.

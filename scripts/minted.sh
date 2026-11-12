@@ -14,8 +14,8 @@
 #   - docs/social/*/README*.md that are drafts: the previous version's name becomes the new one.
 # It asks Zenodo's public API and needs no token. It changes files and commits nothing: read the
 # diff, then open the pull request (`--pr-body` prints a body for it).
-# The shape (bash with --self-test, run by `just`) is scripts/release.sh's; the loop is Ouroboric's
-# "it documents itself as it documents its output" (docs/4-ways-of-working/ouroboric-patterns.md).
+# The shape (bash with --self-test, run by `just`) is scripts/release.sh's; the loop is the rule
+# "it documents itself as it documents its output" (docs/4-ways-of-working/patterns.md).
 #   just minted                 # write the latest release into the repository
 #   scripts/minted.sh --wait    # first wait, up to 20 minutes, until Zenodo has minted its DOI
 #   scripts/minted.sh --pr-body # print the pull request's body for the latest release

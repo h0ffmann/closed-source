@@ -46,7 +46,7 @@ abstract: |
   segredo não protege. Em seguida, argumento que a resposta ética à engenharia reversa universal é
   a citação profissional: identificadores persistentes, metadados de citação legíveis por máquina
   e agentes que pegam emprestado, citam e propagam o crédito por padrão. Descrevo o Paper Fabric,
-  um pipeline aberto que melhora a si mesmo, no estilo Ouroboric, que produziu este preprint,
+  um pipeline aberto que melhora a si mesmo, que produziu este preprint,
   respondo a seis objeções e listo as limitações conhecidas do artigo.
 ---
 <!-- cite: main="Matheus Hoffmann"; last="Claude" -->

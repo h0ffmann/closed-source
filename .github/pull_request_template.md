@@ -15,4 +15,4 @@ What this changes, and the issue or owner's message it answers.
 - [ ] A change to a hard rule links its change proposal in `docs/2-engineering/changes/`.
 - [ ] A journal entry is added if this change met a challenge worth recording.
 
-<!-- Adapted from ouroboric-dev/.github pull_request_template.md (MIT, © 2026 Bruno Guilhermo de Barros Valério). -->
+<!-- Adapted from a pull_request_template.md by Bruno Valério (MIT, © 2026 Bruno Guilhermo de Barros Valério). -->

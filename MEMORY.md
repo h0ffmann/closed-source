@@ -14,7 +14,7 @@ record: what a reader or an agent must know is in files in the repository. This 
 | The rules and the hard rules | [`AGENTS.md`](AGENTS.md) |
 | Each request of the owner, verbatim, with how it was read | [`.claude/project/request.md`](.claude/project/request.md) |
 | The Claude project's settings and brief | [`.claude/project/`](.claude/project/) |
-| The Ouroboric patterns that this repository uses | [`docs/4-ways-of-working/ouroboric-patterns.md`](docs/4-ways-of-working/ouroboric-patterns.md) |
+| The patterns that this repository uses | [`docs/4-ways-of-working/patterns.md`](docs/4-ways-of-working/patterns.md) |
 | Decisions and the changes that are open | [`docs/2-engineering/changes/`](docs/2-engineering/changes/) |
 | The people and their aliases | [`PERSONAS.md`](PERSONAS.md) |
 | The labels for issues and pull requests | [`ISSUE_LABELS.md`](ISSUE_LABELS.md) |
@@ -89,7 +89,7 @@ What the graph covers, measured on 13 October 2026 with graphify 0.9.88:
   the module list in `tools/src/fabric/cli.gleam`.
 - `fabric_ffi.erl` adds nothing until the lab installs graphify's `erlang` extra.
 - `.graphifyignore` also keeps out `CLAUDE_PROJECT.md` (the hard rule in AGENTS.md), the licence
-  texts, Ouroboric's docs copied as is, and the two renderings of `prose/`. With them, a document
+  texts and the two renderings of `prose/`. With them, a document
   pass reads 85 files and 50,000 words, not 118 files and 79,000 words.
 - One document pass was run with the `/graphify` skill at the owner's request, against the rule
   above: 832 nodes, 62 communities, about 745,000 tokens. It is at
@@ -97,5 +97,4 @@ What the graph covers, measured on 13 October 2026 with graphify 0.9.88:
   named in several files becomes one node for each file, so the three editions of the paper
   tripled its concepts.
 
-graphify is in the code-graph routing part of [`OUROBORIC_RESEARCH.md`](OUROBORIC_RESEARCH.md)
-(section 2.7), with its upstream, [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify).
+graphify's upstream is [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify).

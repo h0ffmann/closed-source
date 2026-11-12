@@ -5,7 +5,7 @@
 //// Zenodo's deposit API instead, with the metadata in .zenodo.json.
 ////
 //// By default it creates a draft: nothing is public and no DOI is registered until a person
-//// reviews the draft on zenodo.org and presses Publish (Ouroboric principle: humans steer; a DOI
+//// reviews the draft on zenodo.org and presses Publish (the principle: humans steer; a DOI
 //// is permanent). --publish publishes straight away and is meant for a human at a terminal.
 ////
 //// Environment: ZENODO_TOKEN (scope deposit:write, plus deposit:actions for --publish);
@@ -50,7 +50,7 @@ the whole source tree, so it stays switched off for this repository; this comman
 deposit API instead, with the metadata in .zenodo.json.
 
 By default it creates a **draft**: nothing is public and no DOI is registered until a person
-reviews the draft on zenodo.org and presses Publish (Ouroboric principle: humans steer; a DOI is
+reviews the draft on zenodo.org and presses Publish (the principle: humans steer; a DOI is
 permanent). --publish publishes straight away and is meant for a human at a terminal, not CI.
 
     tools/fabric zenodo-upload pdf/closed-source.pdf pdf/closed-source-ste.pdf --version v0.1.0 --dry-run
