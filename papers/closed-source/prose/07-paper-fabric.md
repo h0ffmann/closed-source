@@ -34,6 +34,25 @@ workflow builds the PDF, attaches it to a GitHub release and, only when a mainta
 Zenodo token, uploads *only the PDF* to a Zenodo draft deposit. Publishing the deposit, which
 mints a permanent DOI, stays a human decision.
 
+## Checks
+
+The build is surrounded by checks, each a small program in the repository's own tools, and CI runs
+them on every pull request. I list them because they are how the rules of Section
+[-@sec:citing] become more than advice.
+
+1. **References.** Every key in the bibliography must have a row in the reference log, with a
+   status of `verified` or `partial` and a note of what was fetched; a key without a row, or a row
+   without a key, fails the build.
+2. **Citations in every file.** Every Markdown file in the repository names its main author and its
+   last author on one line; a file without that line fails.
+3. **Translations keep the facts.** The paper is written three times: in English, in ASD-STE100
+   Simplified Technical English and in Brazilian Portuguese. A check compares each version with
+   the English text and fails if a citation, a number, a quotation or a marker of interpretation
+   was lost or added.
+4. **Warnings are errors.** Pandoc runs with warnings treated as errors, so an unresolved citation
+   key or a broken cross-reference stops the build.
+5. **Live links.** The links of the repository's Markdown files are checked on every pull request.
+
 ## The loop
 
 **[ANALYSIS]** What makes the pipeline ouroboric rather than merely automated is that each paper
@@ -41,3 +60,24 @@ feeds the next. The reference log, the readiness assessment and the exported age
 are kept in the repository. The next paper starts from them, and the journal records what went
 wrong. This paper's own known defects are listed in the repository's readiness assessment, which
 is part of the same pull request that introduced it.
+
+**[ANALYSIS]** This version is an example of the loop. Its owner asked, on 12 November 2026, for the
+paper to be expanded, its holes filled and its evidence brought up to that day. The agent read the
+readiness assessment, which listed an unverified case number, a missing entry for the 1949
+anthology, a missing DOI and a broken sentence; each is fixed in this version, and each fix is in
+the reference log or the diff. What the agent could not do, write the author's own experience, it
+left marked for the author.
+
+## This version in numbers
+
+The version of 12 November 2026 grew from 10 sections to 16. Its bibliography grew from 41 entries
+to 81: each of the 40 new entries was fetched on that day and has a row in the reference log, and 6
+of the 40 are marked `partial` because a detail could not be read from the primary document. The
+paper exists in three editions built from the same sources and the same bibliography, and the
+translation check passes for both the ASD-STE100 edition and the Brazilian Portuguese edition. One
+passage is still reserved for the author, and no agent wrote it.
+
+**[ANALYSIS]** I give these numbers because a position paper about citation should be measurable by
+its own standard. A reader can count the entries, open the log, follow each link and check whether
+the paper did what it asks of others. If it did not, the defect is visible, and the next version
+can fix it.
