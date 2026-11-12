@@ -14,11 +14,17 @@ pub fn citations_test() {
 
 pub fn thinkers_test() {
   let roster =
-    "| # | Thinker | Area | Why | Cited | Status |\n|---:|---|---|---|:---:|---|\n| 1 | Linus Torvalds | software | Linux | ☑ | proposed |\n| 2 | — | — | — | — | open |\n"
+    "| # | Thinker | Area | Why | Cited | Status |\n|---:|---|---|---|:---:|---|\n| 1 | [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds) | software | Linux | ☑ | proposed |\n| 2 | — | — | — | — | open |\n"
   assert content.thinkers(roster)
     == [
-      content.Thinker(1, "Linus Torvalds", "Linux", "proposed"),
-      content.Thinker(2, "—", "—", "open"),
+      content.Thinker(
+        1,
+        "Linus Torvalds",
+        "https://en.wikipedia.org/wiki/Linus_Torvalds",
+        "Linux",
+        "proposed",
+      ),
+      content.Thinker(2, "—", "", "—", "open"),
     ]
 }
 

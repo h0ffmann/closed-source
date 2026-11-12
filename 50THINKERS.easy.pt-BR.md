@@ -60,6 +60,10 @@ fora da contagem. O dono escolhe o que entra nele (`AGENTS.md`).
 
 ## Como ler a tabela
 
+- **Pensador** tem um link para a página do pensador na Wikipédia em inglês. Cada página foi
+  aberta e lida em 12 de novembro de 2026. Três pensadores não têm página lá, e o nome deles fica
+  sem link: Gregory Wolfe (a página "Gregory Wolfe" é de outra pessoa, um diplomata), Florian
+  Tramèr e Arfon M. Smith. personX e Marcus Baffa também não têm.
 - **Área** é o campo de trabalho do pensador.
 - **Citado** tem ☑ quando o artigo já cita uma obra do pensador (ele é autor em
   `papers/closed-source/refs.bib`). Tem ☐ quando ainda não cita. Tem — numa linha aberta.
@@ -84,39 +88,39 @@ desenho.
 
 | # | Pensador | Área | Por que está no livro | Citado | Situação |
 |---:|---|---|---|:---:|---|
-| 1 | Mário Ferreira dos Santos | filosofia | filósofo brasileiro, *Filosofia Concreta* (1957); pitagórico (*Pitágoras e o Tema do Número*, 1956) | ☐ | chosen |
-| 2 | Austin Kleon | criatividade | *Steal Like an Artist* (2012; *Roube como um Artista*, Rocco, 2013): o trabalho criativo se apoia no trabalho dos outros | ☐ | chosen |
-| 3 | Socrates | matemática | matemática | ☐ | chosen |
+| 1 | [Mário Ferreira dos Santos](https://en.wikipedia.org/wiki/Mário_Ferreira_dos_Santos) | filosofia | filósofo brasileiro, *Filosofia Concreta* (1957); pitagórico (*Pitágoras e o Tema do Número*, 1956) | ☐ | chosen |
+| 2 | [Austin Kleon](https://en.wikipedia.org/wiki/Austin_Kleon) | criatividade | *Steal Like an Artist* (2012; *Roube como um Artista*, Rocco, 2013): o trabalho criativo se apoia no trabalho dos outros | ☐ | chosen |
+| 3 | [Socrates](https://en.wikipedia.org/wiki/Socrates) | matemática | matemática | ☐ | chosen |
 | 4 | Gregory Wolfe | literatura, cultura | *Beauty Will Save the World* (2011; *A Beleza Salvará o Mundo*): recuperar o humano numa época ideológica | ☐ | chosen |
-| 5 | Edmund Burke | política, filosofia | mais tarde chamado de fundador do conservadorismo; em 1775 ele foi contra estender a patente da máquina a vapor de Watt, e a favor de estender uma patente de porcelana (notes/202610130526) | ☐ | chosen |
-| 6 | Carl Jung | psicologia | teoria dos sonhos: sonhos e mitos como a língua do inconsciente; arquétipos e o inconsciente coletivo; o Ouroboros como arquétipo (*Obras Completas* 14) | ☐ | chosen |
-| 7 | Julia Cameron | criatividade | *The Artist's Way* (1992; *O Caminho do Artista*): criatividade como prática diária | ☐ | chosen |
-| 8 | Dante Alighieri | literatura | motivo a escrever | ☐ | chosen |
-| 9 | Nicholas Carlini | segurança de aprendizado de máquina | roubo de parte de um modelo de linguagem em produção (Seção 4) | ☑ | proposed |
-| 10 | Fiódor Dostoiévski | literatura | "O Sonho de um Homem Ridículo" (1877); notas depois | ☐ | chosen |
-| 11 | Hans-Hermann Hoppe | economia, filosofia | a fórmula do título; ideias não podem ser propriedade (BOOKS.md) | ☐ | proposed |
+| 5 | [Edmund Burke](https://en.wikipedia.org/wiki/Edmund_Burke) | política, filosofia | mais tarde chamado de fundador do conservadorismo; em 1775 ele foi contra estender a patente da máquina a vapor de Watt, e a favor de estender uma patente de porcelana (notes/202610130526) | ☐ | chosen |
+| 6 | [Carl Jung](https://en.wikipedia.org/wiki/Carl_Jung) | psicologia | teoria dos sonhos: sonhos e mitos como a língua do inconsciente; arquétipos e o inconsciente coletivo; o Ouroboros como arquétipo (*Obras Completas* 14) | ☐ | chosen |
+| 7 | [Julia Cameron](https://en.wikipedia.org/wiki/Julia_Cameron) | criatividade | *The Artist's Way* (1992; *O Caminho do Artista*): criatividade como prática diária | ☐ | chosen |
+| 8 | [Dante Alighieri](https://en.wikipedia.org/wiki/Dante_Alighieri) | literatura | motivo a escrever | ☐ | chosen |
+| 9 | [Nicholas Carlini](https://en.wikipedia.org/wiki/Nicholas_Carlini) | segurança de aprendizado de máquina | roubo de parte de um modelo de linguagem em produção (Seção 4) | ☑ | proposed |
+| 10 | [Fiódor Dostoiévski](https://en.wikipedia.org/wiki/Fyodor_Dostoevsky) | literatura | "O Sonho de um Homem Ridículo" (1877); notas depois | ☐ | chosen |
+| 11 | [Hans-Hermann Hoppe](https://en.wikipedia.org/wiki/Hans-Hermann_Hoppe) | economia, filosofia | a fórmula do título; ideias não podem ser propriedade (BOOKS.md) | ☐ | proposed |
 | 12 | Florian Tramèr | segurança de aprendizado de máquina | extração de modelos por meio de APIs de previsão (Seção 4) | ☑ | proposed |
 | 13 | Arfon M. Smith | software de pesquisa | princípios de citação de software (Seção 6) | ☑ | proposed |
-| 14 | Olavo de Carvalho | filosofia | *O Jardim das Aflições* (1995), e *Símbolos e Mitos no Filme "O Silêncio dos Inocentes"* | ☐ | chosen |
-| 15 | John F. Nash | matemática | segurança que vem do custo de calcular, as cartas de 1955 (Seção 5a) | ☑ | proposed |
-| 16 | Luiz Felipe Pondé | filosofia | filósofo brasileiro; motivo a escrever | ☐ | chosen |
-| 17 | Cicero | matemática | matemática | ☐ | chosen |
-| 18 | Robert M. Pirsig | filosofia | Qualidade, e cuidar da própria máquina (BOOKS.md) | ☐ | proposed |
+| 14 | [Olavo de Carvalho](https://en.wikipedia.org/wiki/Olavo_de_Carvalho) | filosofia | *O Jardim das Aflições* (1995), e *Símbolos e Mitos no Filme "O Silêncio dos Inocentes"* | ☐ | chosen |
+| 15 | [John F. Nash](https://en.wikipedia.org/wiki/John_Forbes_Nash_Jr.) | matemática | segurança que vem do custo de calcular, as cartas de 1955 (Seção 5a) | ☑ | proposed |
+| 16 | [Luiz Felipe Pondé](https://en.wikipedia.org/wiki/Luiz_Felipe_Pondé) | filosofia | filósofo brasileiro; motivo a escrever | ☐ | chosen |
+| 17 | [Cicero](https://en.wikipedia.org/wiki/Cicero) | matemática | matemática | ☐ | chosen |
+| 18 | [Robert M. Pirsig](https://en.wikipedia.org/wiki/Robert_M._Pirsig) | filosofia | Qualidade, e cuidar da própria máquina (BOOKS.md) | ☐ | proposed |
 | 19 | — | — | o principal pensador de engenharia reversa de 2026 (ainda sem nome) | — | open |
-| 20 | Jiang Xueqin | história | as aulas Predictive History (YouTube, desde 2023); motivo a escrever | ☐ | chosen |
-| 21 | Hideaki Anno | animação | criador de *Neon Genesis Evangelion*, o anime mais clássico da história | ☐ | chosen |
-| 22 | Theodore Dalrymple | ensaios | a escrever mais tarde | ☐ | chosen |
-| 23 | Stanley Kubrick | cinema | "o destruidor do revisor por pares" (palavras do dono): *De Olhos Bem Fechados* (1999), seu último filme, uma obra sobre segredos | ☐ | chosen |
-| 24 | Isaac Asimov | literatura, ficção científica | motivo a escrever | ☐ | chosen |
+| 20 | [Jiang Xueqin](https://en.wikipedia.org/wiki/Jiang_Xueqin) | história | as aulas Predictive History (YouTube, desde 2023); motivo a escrever | ☐ | chosen |
+| 21 | [Hideaki Anno](https://en.wikipedia.org/wiki/Hideaki_Anno) | animação | criador de *Neon Genesis Evangelion*, o anime mais clássico da história | ☐ | chosen |
+| 22 | [Theodore Dalrymple](https://en.wikipedia.org/wiki/Theodore_Dalrymple) | ensaios | a escrever mais tarde | ☐ | chosen |
+| 23 | [Stanley Kubrick](https://en.wikipedia.org/wiki/Stanley_Kubrick) | cinema | "o destruidor do revisor por pares" (palavras do dono): *De Olhos Bem Fechados* (1999), seu último filme, uma obra sobre segredos | ☐ | chosen |
+| 24 | [Isaac Asimov](https://en.wikipedia.org/wiki/Isaac_Asimov) | literatura, ficção científica | motivo a escrever | ☐ | chosen |
 | 25 | personX | — | quem compartilha, multiplica | ☐ | chosen |
-| 26 | Plato | matemática | matemática | ☐ | chosen |
-| 27 | Pamela Samuelson | direito | direito e economia da engenharia reversa | ☑ | proposed |
-| 28 | Eric S. Raymond | engenharia de software | a catedral e o bazar (Seção 2, trabalhos relacionados) | ☑ | proposed |
+| 26 | [Plato](https://en.wikipedia.org/wiki/Plato) | matemática | matemática | ☐ | chosen |
+| 27 | [Pamela Samuelson](https://en.wikipedia.org/wiki/Pamela_Samuelson) | direito | direito e economia da engenharia reversa | ☑ | proposed |
+| 28 | [Eric S. Raymond](https://en.wikipedia.org/wiki/Eric_S._Raymond) | engenharia de software | a catedral e o bazar (Seção 2, trabalhos relacionados) | ☑ | proposed |
 | 29 | Marcus Baffa | — | a explicar | ☐ | chosen |
-| 30 | George Orwell | literatura | motivo a escrever | ☐ | chosen |
-| 31 | Aristotle | matemática | matemática | ☐ | chosen |
-| 32 | Suzanne Scotchmer | economia | direito e economia da engenharia reversa | ☑ | proposed |
-| 33 | Michel de Montaigne | ensaios, filosofia | os *Ensaios*: por que alguém escreve | ☐ | chosen |
+| 30 | [George Orwell](https://en.wikipedia.org/wiki/George_Orwell) | literatura | motivo a escrever | ☐ | chosen |
+| 31 | [Aristotle](https://en.wikipedia.org/wiki/Aristotle) | matemática | matemática | ☐ | chosen |
+| 32 | [Suzanne Scotchmer](https://en.wikipedia.org/wiki/Suzanne_Scotchmer) | economia | direito e economia da engenharia reversa | ☑ | proposed |
+| 33 | [Michel de Montaigne](https://en.wikipedia.org/wiki/Michel_de_Montaigne) | ensaios, filosofia | os *Ensaios*: por que alguém escreve | ☐ | chosen |
 
 ## Palavras difíceis
 
