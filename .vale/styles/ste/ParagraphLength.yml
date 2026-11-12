@@ -1,10 +1,76 @@
 # ASD-STE100, issue 9: "Do not write more than six sentences in each paragraph" (Wikipedia,
-# "Simplified Technical English", read 12 November 2026). A sentence ends with ".", "!" or "?"
-# before a space or the end; an initial ("M.") and a short abbreviation ("e.g.", "No.") do not
-# end one.
-extends: occurrence
+# "Simplified Technical English", read 12 November 2026). A list and a table are not a paragraph.
+# Quotations are blanked first, so a full stop inside a quotation does not end a sentence. A
+# script, for the reason in SentenceLength.yml. agda/ClosedSource/STE/Rules.agda holds the limit.
+extends: script
 message: "A paragraph of more than six sentences (ASD-STE100). Split it by topic."
 level: error
-scope: paragraph
-max: 6
-token: '(?<!\b[A-Z]|\b(?:e\.g|i\.e|etc|No|Art|vs|Inc|Ltd|Co|Mr|Ms|Dr|St|U\.S|al|v))[.!?](?=\s|$)'
+scope: raw
+script: |
+  text := import("text")
+  matches := []
+
+  // Blank out what is not the STE writer's words, and keep every offset.
+  blank := func(s, pat) {
+    found := text.re_find(pat, s, -1)
+    if found == undefined { return s }
+    out := ""
+    last := 0
+    for f in found {
+      m := f[0]
+      out += s[last:m.begin] + text.repeat(" ", m.end - m.begin)
+      last = m.end
+    }
+    return out + s[last:]
+  }
+  s := scope
+  for p in [`(?s)\A---\n.*?\n---\n`, `(?s)<!--.*?-->`, "(?s)```.*?```", "`[^`\n]*`", `"[^"]*"`, `“[^”]*”`, `\[-?@[^\]]*\]`, `@[\w:.-]+`, `\{#[^}]*\}`, `<?https?://[^\s>)]+>?`] {
+    s = blank(s, p)
+  }
+
+  // A sentence ends with ".", "!" or "?" before a space or the end, except after an initial
+  // ("M.") or a short abbreviation ("e.g.", "No.").
+  abbrev := `^([A-Z]|e\.g|i\.e|etc|No|Art|vs|Inc|Ltd|Co|Mr|Ms|Dr|St|U\.S|al|v)$`
+  ends := func(b) {
+    out := []
+    found := text.re_find(`[.!?]+\**(\s|$)`, b, -1)
+    if found == undefined { return out }
+    for f in found {
+      m := f[0]
+      before := b[:m.begin]
+      // the number of a numbered item or heading, "**6. Secrecy ...", ends nothing
+      if text.re_match(`^\s*\**\d+$`, before) { continue }
+      w := text.re_find(`(^|[^A-Za-z0-9])([A-Za-z.]+)$`, before, 1)
+      if w != undefined && text.re_match(abbrev, w[0][2].text) { continue }
+      out = append(out, m.end)
+    }
+    return out
+  }
+  words := func(t) {
+    w := text.re_find(`\b\w+\b`, t, -1)
+    if w == undefined { return 0 }
+    return len(w)
+  }
+  // Blocks: runs of lines that are not blank. A heading, a table and a code block are not prose.
+  blocks := text.re_find(`(?m)(?:^[^\n]*\S[^\n]*(?:\n|$))+`, s, -1)
+  if blocks == undefined { blocks = [] }
+  // The items of a list, each one on its own: an item is a sentence or a few, not a paragraph.
+  items := func(blk) {
+    if !text.re_match(`^\s*([-*+]|\d+\.)\s`, blk.text) { return [blk] }
+    found := text.re_find(`(?m)^[ \t]*(?:[-*+]|\d+\.)\s[^\n]*(?:\n|$)(?:^[ \t]+(?:[^-*+\d\s]|\d+[^.\d\n]|[-*+]\S)[^\n]*(?:\n|$))*`, blk.text, -1)
+    if found == undefined { return [blk] }
+    out := []
+    for f in found { out = append(out, {text: f[0].text, begin: blk.begin + f[0].begin}) }
+    return out
+  }
+
+  for bl in blocks {
+    blk := bl[0]
+    b := blk.text
+    if text.re_match(`^\s*(#|\||[-*+]\s|\d+\.\s)`, b) { continue }
+    n := len(ends(b))
+    if text.re_match(`[^.!?\s*]\s*$`, b) { n += 1 }
+    if n > 6 {
+      matches = append(matches, {begin: blk.begin, end: blk.begin + len(text.trim_right(b, " \n"))})
+    }
+  }
