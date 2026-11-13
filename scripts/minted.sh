@@ -202,7 +202,6 @@ badge="[![$latest DOI](https://img.shields.io/badge/${latest}_DOI-${doi/\//%2F}-
 replace_once README.md '^\[!\[v\S+ DOI\]\(.*$' "$badge"
 replace_once README.md '\*\*status:\*\* v\S+ is live' "**status:** $latest is live"
 replace_once README.md '^\| this work \| .*$' "| this work | $(doi_link "$c") | $latest: $(doi_link "$doi"); earlier versions: [\`RELEASES.md\`](RELEASES.md) |"
-replace_once README.md '; v\S+ is the latest \|' "; $latest is the latest |"
 replace_once README.easy.pt-BR.md 'a versão v\S+ está no ar' "a versão $latest está no ar"
 replace_once README.easy.pt-BR.md '^\| deste trabalho \| .*$' "| deste trabalho | $(doi_link "$c") | $latest: $(doi_link "$doi"); versões anteriores: [\`RELEASES.md\`](RELEASES.md) |"
 scripts/readme.sh --stamp

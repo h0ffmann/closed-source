@@ -8,7 +8,8 @@ linked docs before you change what they cover.
 
 - Papers: `papers/<slug>/` holds `metadata.md`, `prose/NN-*.md`, `refs.bib` and `REFERENCES.md`.
 - Build: `just`, `just check`, `just --list`. Toolchain: `nix develop` (picasso's `paper` lab, pinned in
-  `flake.lock`). Release and secrets: the README.
+  `flake.lock`). Build, site and layout:
+  `docs/4-ways-of-working/building.md`. Release and secrets: `docs/4-ways-of-working/releasing.md`.
 - Agda: `agda/`, the proofs behind claims of mathematics and types, and of the ASD-STE100 rules.
   `just agda`; `docs/4-ways-of-working/agda.md`.
 - Website: `site/` (Gleam + Lustre). `just site-build`. `tools/fabric content` generates its content

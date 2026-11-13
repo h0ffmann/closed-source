@@ -160,13 +160,13 @@ releases:
 # Upload pdf/*.pdf from this machine to a Zenodo draft (needs ZENODO_TOKEN). Not part of a
 # release: the webhook archives each release. A draft made here is a separate record.
 zenodo-draft version: check
-    @[ -n "${ZENODO_TOKEN:-}" ] || { echo "zenodo-draft: export ZENODO_TOKEN first (README, Secrets)" >&2; exit 1; }
+    @[ -n "${ZENODO_TOKEN:-}" ] || { echo "zenodo-draft: export ZENODO_TOKEN first (docs/4-ways-of-working/releasing.md, secrets)" >&2; exit 1; }
     tools/fabric zenodo-upload pdf/*.pdf --version {{version}} \
       ${ZENODO_CONCEPT_RECID:+--concept-recid "$ZENODO_CONCEPT_RECID"}
 
 # The same against sandbox.zenodo.org, to rehearse (needs ZENODO_SANDBOX_TOKEN).
 zenodo-sandbox version: check
-    @[ -n "${ZENODO_SANDBOX_TOKEN:-}" ] || { echo "zenodo-sandbox: export ZENODO_SANDBOX_TOKEN first (README, Secrets)" >&2; exit 1; }
+    @[ -n "${ZENODO_SANDBOX_TOKEN:-}" ] || { echo "zenodo-sandbox: export ZENODO_SANDBOX_TOKEN first (docs/4-ways-of-working/releasing.md, secrets)" >&2; exit 1; }
     ZENODO_URL=https://sandbox.zenodo.org ZENODO_TOKEN="$ZENODO_SANDBOX_TOKEN" \
       tools/fabric zenodo-upload pdf/*.pdf --version {{version}}
 
