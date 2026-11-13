@@ -1,0 +1,22 @@
+# temporary: run scripts/minted.sh on a runner (zenodo.org is blocked in the agent sandbox). not merged.
+name: tmp-minted
+on:
+  push:
+    branches: [ci/minted]
+permissions:
+  contents: write
+jobs:
+  minted:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch --tags --force origin
+      - run: scripts/minted.sh --wait
+      - run: scripts/minted.sh --pr-body > minted-pr-body.md
+      - run: git status --short && git diff --stat
+      - run: |
+          git config user.name github-actions && git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A && git commit -m "minted output (tmp-minted job)" && git push origin HEAD:refs/heads/ci/minted-out
