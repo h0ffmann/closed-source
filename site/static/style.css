@@ -150,7 +150,8 @@ code, pre { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .
 .figure span { font-size: 12px; }
 .figure:hover { background: var(--ink); color: var(--paper); text-decoration: none; }
 /* The project stamps, after the logo band of picasso's site. Marola's mark carries its own white
-   disc, so it needs no plate in dark mode. */
+   disc, piabrota's its own red square and Ouroboric publishes a dark logo, so none needs a plate
+   in dark mode. */
 .stamps {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;
   margin: 28px 0 0;

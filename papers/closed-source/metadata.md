@@ -57,6 +57,8 @@ works:
     href: https://github.com/marola-dev/marola-research
 # The writer's partners (Hoffmann, 12 November 2026: "Partners are piabrota and marola-dev"). The
 # texts follow README.md, "the writer's works". `tools/fabric content` writes them for the site.
+# ouroboric-dev is a partner by name and logo only (Hoffmann, 13 November 2026: "ouroboric dev
+# (just logo and mention as partner)"); no other ouroboric content comes back.
 partners:
   - name: piabrota
     text: "an open software fabric made in rio de janeiro"
@@ -64,6 +66,9 @@ partners:
   - name: marola-dev
     text: "marola and water: open ocean science"
     href: https://github.com/marola-dev
+  - name: ouroboric-dev
+    text: "open factories that improve themselves, by Bruno Valério"
+    href: https://github.com/ouroboric-dev
 # Shown on the title page. Trademarks of their projects, not licensed here: `tools/fabric logos`
 # fetches each SVG at a pinned commit, checks its hash and converts it; nothing is committed.
 # The website shows the same marks as linked stamps, after picasso's site, and reads the keys from
@@ -77,6 +82,25 @@ logos:
     text: "open ocean science, live at marola.dev"
     width: "56"
     height: "54"
+  # piabrota's mark, the open green eye on red: favicon/favicon.svg of piabrota/nix-os, its one
+  # source (site/DESIGN.md there, "The piabrota mark").
+  - file: logos/piabrota.pdf
+    svg: https://raw.githubusercontent.com/piabrota/nix-os/a7bafcd8e009d1b5ce8529e11735f8eb0313eae6/favicon/favicon.svg
+    sha256: fb86eefac7e3de0a3e4357fcecbdf3f6ba7c06b7f6fa322f0416799da836da68
+    href: https://github.com/piabrota
+    label: piabrota
+    text: "an open software fabric made in rio de janeiro"
+    width: "54"
+    height: "54"
+  # The horizontal logo and its dark version, at the commit the title page used before
+  # 8cc9c68 (ouroboric-dev/ouroboric, docs/7-branding/identity/logo).
+  - file: logos/ouroboric.pdf
+    svg: https://raw.githubusercontent.com/ouroboric-dev/ouroboric/4ab80ed2486a5e0ab0ade13e5089c2a4acdb4216/docs/7-branding/identity/logo/ouroboric-logo-horizontal.svg
+    sha256: 935eb9acf636f5da8651bdee14e6b53670e216d6a1667b46c48d62ec6f26f59d
+    href: https://github.com/ouroboric-dev
+    svg-dark: https://raw.githubusercontent.com/ouroboric-dev/ouroboric/4ab80ed2486a5e0ab0ade13e5089c2a4acdb4216/docs/7-branding/identity/logo/ouroboric-logo-horizontal-dark.svg
+    width: "224"
+    height: "44"
 date: "November 2026"
 version: "v0 (preprint, not peer reviewed)"
 keywords:

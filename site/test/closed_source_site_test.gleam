@@ -42,7 +42,8 @@ pub fn front_page_shows_the_thinkers_and_the_notes_test() {
 
 pub fn each_project_stamp_links_its_project_and_loads_its_logo_test() {
   let html = app.initial() |> app.view |> element.to_string
-  assert list.length(content.logos) == 1
+  assert list.map(content.logos, fn(l) { l.name })
+    == ["marola", "piabrota", "ouroboric"]
   assert list.all(content.logos, fn(l) {
     string.contains(html, "data-logo=\"" <> l.name <> "\"")
     && string.contains(html, "href=\"" <> l.href <> "\"")
@@ -56,7 +57,7 @@ pub fn each_project_stamp_links_its_project_and_loads_its_logo_test() {
 pub fn the_partners_are_on_the_page_test() {
   let html = app.initial() |> app.view |> element.to_string
   assert list.map(content.partners, fn(p) { p.name })
-    == ["piabrota", "marola-dev"]
+    == ["piabrota", "marola-dev", "ouroboric-dev"]
   assert list.all(content.partners, fn(p) {
     string.contains(html, "href=\"" <> p.href <> "\"")
   })
