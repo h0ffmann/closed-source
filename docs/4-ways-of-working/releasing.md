@@ -22,8 +22,8 @@ release. arXiv receives the LaTeX source, because arXiv compiles submissions its
 PDFs made from TeX.
 
 <!-- minted:start -->
-The latest release is v0.3.4, with the version DOI
-[10.5281/zenodo.23679470](https://doi.org/10.5281/zenodo.23679470). The concept DOI, which always resolves to the latest version, is
+The latest release is v0.4.0, with the version DOI
+[10.5281/zenodo.24182034](https://doi.org/10.5281/zenodo.24182034). The concept DOI, which always resolves to the latest version, is
 [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656). [`RELEASES.md`](../../RELEASES.md) lists every release.
 <!-- minted:end -->
 

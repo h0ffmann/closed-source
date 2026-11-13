@@ -16,10 +16,11 @@ row of a release is added in a pull request after it, by one command
 ([releasing](docs/4-ways-of-working/releasing.md), "The report after a release").
 
 <!-- releases:start -->
-**v0.3.4 is live** (25 October 2026).
+**v0.4.0 is live** (12 November 2026).
 
 | Version | Date | Permanent DOI | Release | Pull requests merged since the version before |
 |---|---|---|---|---|
+| v0.4.0 | 2026-11-12 | [10.5281/zenodo.24182034](https://doi.org/10.5281/zenodo.24182034) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.4.0), [Zenodo](https://zenodo.org/records/24182034) | release: regenerate the timeline; keep person-only files out of the zenodo archive (#94); release: prepare v0.4.0 (#93); partners are piabrota and marola-dev (onto main) (#92); paper: second writing pass over the 33-page text (#88); agda: back the ASD-STE100 rules and the paper's math claims with Agda (#90); studies: a plan for the psycho-pass study (#85); and 13 more |
 | v0.3.4 | 2026-10-25 | [10.5281/zenodo.23679470](https://doi.org/10.5281/zenodo.23679470) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.4), [Zenodo](https://zenodo.org/records/23679470) | Chautauqua no. 01 "Why I write" in en and pt-BR, essay check in two languages, five Instagram posts (#72); Add the pirsig-slips skill: Pirsig's paper slips from Lila (#71) |
 | v0.3.3 | 2026-10-18 | [10.5281/zenodo.23460477](https://doi.org/10.5281/zenodo.23460477) | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.3), [Zenodo](https://zenodo.org/records/23460477) | notes: the magic you're looking for is in the work you're avoiding (#70); Pirsig and ZAMM in the abstract and on Zenodo; live links fixed; README in one screen; archify and compound; the digest of a friend's project refreshed (#69) |
 | v0.3.2 | 2026-10-15 | not minted | [GitHub](https://github.com/h0ffmann/closed-source/releases/tag/v0.3.2) | notes: what is distillation; Ortega y Gasset; OpenAI's integer multiplication preprint (#68); unison: refpulse, the live DOI check behind the site's button (#67); unison: refpulse, a Unison service behind the site's Live button (#66); tools: svg_path, and four experimental one-line drawings (#65); skills: ouro-timeline, the thinkers' lives on one timeline (#63); skills: ouro-get, full texts that are free to copy (#62); and 2 more |
@@ -42,7 +43,7 @@ release, `just minted` changes its heading to `## vX.Y.Z: what changed` and the 
 The website shows the newest such section, so a reader of the site sees what the latest release
 changed.
 
-## Next: v0.4.0 (not released yet)
+## v0.4.0: what changed
 
 Changes since v0.3.4 (#73 to #92):
 
