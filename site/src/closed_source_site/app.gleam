@@ -953,11 +953,10 @@ fn authors_section() -> Element(msg) {
             [],
             list.flatten([
               [html.text("Partners: ")],
-              list.intersperse(
+              join_and(
                 list.map(content.partners, fn(p: Work) {
                   external(p.href, p.name)
                 }),
-                html.text(" and "),
               ),
               [html.text(".")],
             ]),
@@ -971,6 +970,15 @@ fn authors_section() -> Element(msg) {
       }),
     ),
   ])
+}
+
+/// Joins elements as English does: "a", "a and b", "a, b and c".
+fn join_and(items: List(Element(msg))) -> List(Element(msg)) {
+  case items {
+    [] | [_] -> items
+    [a, b] -> [a, html.text(" and "), b]
+    [a, ..rest] -> [a, html.text(", "), ..join_and(rest)]
+  }
 }
 
 fn fabric_section() -> Element(msg) {
@@ -1352,7 +1360,7 @@ fn footer() -> Element(msg) {
     ]),
     html.p([], [
       html.text(
-        "The cover after the type and colours of the cover of Hoppe's Democracy: The God That Failed (2001); no cover art is reproduced. Marola's, Gleam's and Claude Code's names and logos are not licensed here; the logos load from their owners' sites.",
+        "The cover after the type and colours of the cover of Hoppe's Democracy: The God That Failed (2001); no cover art is reproduced. Marola's, piabrota's, Ouroboric's, Gleam's and Claude Code's names and logos are not licensed here; the logos load from their owners' sites.",
       ),
     ]),
   ])
