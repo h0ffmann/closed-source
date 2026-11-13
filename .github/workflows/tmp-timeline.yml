@@ -1,0 +1,20 @@
+# temporary: regenerate timeline/thinkers.svg in CI (hex.pm is blocked in the agent sandbox). removed before merge.
+name: tmp-timeline
+on:
+  push:
+    branches: [ci/timeline-regen]
+permissions:
+  contents: read
+jobs:
+  timeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v31
+      - run: nix develop --no-update-lock-file --command tools/fabric timeline
+      - run: nix develop --no-update-lock-file --command tools/fabric timeline --check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: timeline
+          path: timeline/thinkers.svg
