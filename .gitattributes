@@ -1,0 +1,5 @@
+# Person-only files stay out of `git archive` and GitHub's source zipball, so out of the
+# Zenodo record that the webhook makes from each release (releasing.md).
+CLAUDE_PROJECT.md export-ignore
+NAGORI.md export-ignore
+.claude/project/ export-ignore
