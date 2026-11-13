@@ -42,6 +42,24 @@ release, `just minted` changes its heading to `## vX.Y.Z: what changed` and the 
 The website shows the newest such section, so a reader of the site sees what the latest release
 changed.
 
+## Next: v0.4.0 (not released yet)
+
+Changes since v0.3.4 (#73 to #92):
+
+- the paper grows to 33 pages, with evidence from 2024 to 12 November 2026 (#77), and a second
+  writing pass corrects claims that went further than their sources (#88);
+- the paper no longer tells the story of the writer's closed undergraduate thesis (#74), and the
+  record's description no longer says that it does;
+- the book's roster is cut from 50 thinkers to 33, each linked to their Wikipedia page, in
+  `33THINKERS.md` (#81 to #83);
+- the paper's STE text is checked against ASD-STE100 with Vale (#87), and Agda proofs back the
+  STE rules and the paper's mathematical claims (#90);
+- notes on Psycho-Pass and its Sibyl system as a closed judge, with a study plan (#80, #84, #85);
+- the website: a retro restyle in orange neon (#76) and the writer's top 10 projects at the
+  bottom (#78, #79);
+- compound engineering and a side project are removed; the record names the writer's
+  partners, piabrota and marola-dev (#86, #89, #92).
+
 ## v0.3.0: what changed
 
 Changes since v0.2.1 (#44 to #47):

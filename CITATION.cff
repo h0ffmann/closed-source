@@ -19,10 +19,10 @@ abstract: >-
   turns on people, laptops and recruiting rather than on code that stayed secret.
 
   Against this background the paper revisits Linus Torvalds' Linux and Git as evidence that
-  openness scales, and the author's closed undergraduate thesis as evidence of what secrecy costs
-  a researcher. It argues that the ethical answer to universal reverse engineering is professional
-  citation, proposes three rules for AI agents (borrow, cite, propagate), and describes Paper
-  Fabric, the open, self-improving pipeline that produced it.
+  openness scales, and Heartbleed and the xz backdoor as evidence that open failures get found. It
+  argues that the ethical answer to universal reverse engineering is professional citation,
+  proposes three rules for AI agents (borrow, cite, propagate), and describes Paper Fabric, the
+  open, self-improving pipeline that produced it.
 
   This record is a book. It has not been peer reviewed. It holds the source of the book at the
   release tag: the Markdown text, the build and the agent configuration. The rendered PDFs are
