@@ -9,7 +9,7 @@ style: procedure
 
 # Releasing a paper
 
-The README's "Release" section is the short checklist. This page gives the reasons.
+The README's "Release it" section is the short version. This page gives the steps and the reasons.
 
 Policy: every published GitHub release is archived by Zenodo's GitHub webhook, which mints a
 version DOI under one concept DOI. The pattern is marola's
@@ -33,7 +33,24 @@ The latest release is v0.4.0, with the version DOI
    GitHub). Zenodo then adds a webhook to the repository. No token is stored in GitHub.
 2. Keep `ZENODO_TOKEN` **unset** as a repository secret. Nothing in the release reads it.
 
-The README's "Secrets and keys" table lists every key, where it lives and how to get it.
+The next section lists every key, where it lives and how to get it.
+
+## Secrets and keys
+
+Nothing secret is in this repository. A release needs these, and only these:
+
+| What | Where it lives | Needed for | How to get it |
+|---|---|---|---|
+| GitHub account with **2FA** on | you | pushing, `just release` | github.com → Settings → Password and authentication |
+| SSH key (or `gh auth login`) that can push to this repository | your machine | `just release` pushes a tag | `ssh-keygen -t ed25519-sk` makes a key that stays on a FIDO security key; add it in GitHub → Settings → SSH and GPG keys |
+| signing key (optional, recommended) | your machine, `git config user.signingkey` | `just release` signs the tag when it is set | the same SSH key: `git config gpg.format ssh`, `git config user.signingkey ~/.ssh/id_ed25519_sk.pub`, and add it again in GitHub as a **signing key** |
+| Zenodo account linked to GitHub, with this repository switched on | zenodo.org → your account menu → GitHub | the DOI that Zenodo mints for each release | log in to zenodo.org with GitHub, then flip the switch beside `h0ffmann/closed-source`; no token is stored anywhere |
+| `ZENODO_SANDBOX_TOKEN` (optional) | your shell, never in a file in the repository | `just zenodo-sandbox`, a rehearsal of a hand-made deposit | sandbox.zenodo.org, a separate account → Applications → Personal access tokens |
+| arXiv account, with an endorsement for `cs.CY` | arxiv.org | the arXiv submission | arxiv.org → Register; a first submission to a category needs an endorsement |
+
+The `release` workflow also uses `GITHUB_TOKEN`, which GitHub gives every run; you do not set it.
+**Never** commit a token, paste it in an issue or pull request, or put it in `.zenodo.json`. If a
+token leaks, delete it where it was made at once and make a new one.
 
 ## Each release
 
