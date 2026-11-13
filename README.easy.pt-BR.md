@@ -1,5 +1,5 @@
 <!-- cite: main="Claude"; last="Matheus Hoffmann" -->
-<!-- easy: source="README.md"; sha256="f9fa62649b256f9f2ad9931ad99ecde5f31f4a6d9ae2f49d6975c49ba6d3f6aa" -->
+<!-- easy: source="README.md"; sha256="4751800a6710f6b0f06f40b98e96159087b0c4a68016501588bae4d260534fcf" -->
 # versão fácil: closed source: the god that failed
 
 > **esta é a versão fácil, em português, do [README.md](README.md).**
@@ -41,7 +41,7 @@ para baixar: [o PDF em inglês](https://github.com/h0ffmann/closed-source/releas
   ninguém). quem escreve é matheus hoffmann, da escola politécnica da UFRJ. a ideia de uma
   fábrica que melhora a si mesma é de bruno valério. os parceiros são
   [piabrota](https://github.com/piabrota) e [marola-dev](https://github.com/marola-dev).
-- **o estado.** a versão v0.3.4 está no ar ([versões](RELEASES.md)). no zenodo, ela é um
+- **o estado.** a versão v0.4.0 está no ar ([versões](RELEASES.md)). no zenodo, ela é um
   livro. ninguém revisou o livro ainda (não tem revisão por pares). o que falta para a v1 está
   na [avaliação](docs/1-product/readiness/2026-10-12-ready-to-promote.md).
 
@@ -198,7 +198,7 @@ mais nova. quando a frase exata importa, cite também o DOI da versão que você
 
 | | o DOI mais recente | o DOI da versão |
 |---|---|---|
-| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.3.4: [10.5281/zenodo.23679470](https://doi.org/10.5281/zenodo.23679470); versões anteriores: [`RELEASES.md`](RELEASES.md) |
+| deste trabalho | [10.5281/zenodo.23333656](https://doi.org/10.5281/zenodo.23333656) | v0.4.0: [10.5281/zenodo.24182034](https://doi.org/10.5281/zenodo.24182034); versões anteriores: [`RELEASES.md`](RELEASES.md) |
 
 as referências prontas (bibtex, APA e ABNT) estão na seção [cite](README.md#cite) do original.
 

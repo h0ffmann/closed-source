@@ -26,6 +26,17 @@ repo_url=https://github.com/h0ffmann/closed-source
 zenodo="${ZENODO_URL:-https://zenodo.org}"
 
 # rows: "<tag>\t<date>" on stdin and a file of "<tag>\t<doi>"; prints the table rows, newest first.
+# unnamed <text>: exit 1 if <text> names a project the owner removed from the repository, whose
+# name must not be found in it (owner, 12 November 2026). A pull request title that names it is
+# left out of the table.
+unnamed() { ! grep -qiE 'ouro''boric' <<<"$1"; }
+
+# kept_changes <tag>: the last cell of <tag>'s row in RELEASES.md, if it has one. A row, once
+# written, keeps its words, so a wording fixed by hand is not undone by the next run.
+kept_changes() {
+  grep -m1 "^| $1 |" RELEASES.md 2>/dev/null | sed -E 's/^(\|[^|]*){4}\| (.*) \|$/\2/' || true
+}
+
 # changes <prev-or-empty> <tag>: the merged pull requests between two tags, as "title (#n); ...".
 changes() {
   local range="${1:+$1..}$2" out="" n=0 sha subject title num
@@ -34,6 +45,8 @@ changes() {
     if [[ "$subject" =~ ^Merge\ pull\ request\ \#([0-9]+) ]]; then
       num="${BASH_REMATCH[1]}"
       title="$(git log -1 --format=%b "$sha" | grep -m1 -v '^[[:space:]]*$' || echo "$subject")"
+      # The owner's rule: a removed project's name is never written back (see `unnamed`).
+      unnamed "$title" || continue
       n=$((n + 1))
       if [ "$n" -le 6 ]; then out+="${out:+; }${title//|/\\|} (#$num)"; fi
     fi
@@ -92,6 +105,8 @@ case "${1:-}" in
     got="$(printf '%s' "$json" | pick_versions 10.5281/zenodo.8)"
     [ "$got" = $'v0.1.1\t10.5281/zenodo.9' ] || fail "version_dois: $got"
     [ "$(doi_link 10.5281/zenodo.9)" = '[10.5281/zenodo.9](https://doi.org/10.5281/zenodo.9)' ] || fail "doi_link"
+    if unnamed "remove every Ouro""boric mention"; then fail "unnamed let a removed name through"; fi
+    unnamed "partners are piabrota and marola-dev" || fail "unnamed refused a clean title"
     echo "minted: self-test ok" >&2
     exit 0
     ;;
@@ -161,7 +176,9 @@ for tag in $(git tag -l 'v*' --sort=-v:refname); do
   cell="not minted"
   links="[GitHub]($repo_url/releases/tag/$tag)"
   if [ -n "$d" ]; then cell="$(doi_link "$d")"; links+=", [Zenodo]($zenodo/records/${d##*zenodo.})"; fi
-  rows+="| $tag | $(git log -1 --format=%cs "$tag") | $cell | $links | $(changes "$(prev_of "$tag")" "$tag") |"$'\n'
+  c="$(kept_changes "$tag")"
+  [ -n "$c" ] || c="$(changes "$(prev_of "$tag")" "$tag")"
+  rows+="| $tag | $(git log -1 --format=%cs "$tag") | $cell | $links | $c |"$'\n'
 done
 block="<!-- releases:start -->
 **$latest is live** ($long_date).
